@@ -143,3 +143,88 @@ h1,h2,h3,h4,h5,h6,.brand b,.metric b,.score,.rank,strong,b{font-weight:600}
 .method-grid>div{background:white;border:1px solid #edf1f3;border-radius:8px;padding:10px 11px}
 .method-grid p{font-size:11px;line-height:1.5;color:var(--muted);margin:5px 0 0}
 @media(max-width:850px){.method-grid{grid-template-columns:1fr}}
+
+/* FUNDING RADAR CODIR UI v12.5 */
+:root{--ui-font:Aptos,"Segoe UI Variable Text","Segoe UI","Helvetica Neue",Arial,sans-serif}
+body,button,input,select,textarea{font-family:var(--ui-font)!important;font-size:14px}
+body{line-height:1.45}
+.topbar{height:70px;padding:0 20px;position:sticky;display:flex;align-items:center;gap:16px}
+.brand-left{min-width:130px}
+.brandmark{font-size:19px!important;font-weight:700!important;letter-spacing:.09em!important;border-left:5px solid var(--orange);padding-left:10px}
+.app-identity{position:absolute;left:50%;transform:translateX(-50%);text-align:center;line-height:1.15;pointer-events:none}
+.app-identity b{display:block;font-size:17px;font-weight:650;letter-spacing:.08em;color:var(--navy)}
+.app-identity span{display:block;font-size:11.5px;color:var(--muted);margin-top:4px;letter-spacing:.02em}
+.top-actions{margin-left:auto;gap:8px}
+.top-actions .btn{font-size:12px;padding:8px 11px}
+.layout{grid-template-columns:220px minmax(0,1fr);min-height:calc(100vh - 70px)}
+.sidebar{top:70px;height:calc(100vh - 70px);padding:17px 12px}
+.scope{padding:14px 13px;margin-bottom:15px}
+.scope b{font-size:12.5px;letter-spacing:.1em}
+.scope span{font-size:12px!important;line-height:1.45;margin-top:7px!important}
+.nav{font-size:14px!important;padding:11px 12px!important}
+main{padding:20px 22px}
+.page-head h1{font-size:31px!important;line-height:1.15;margin:5px 0 8px}
+.sub{font-size:14px!important;line-height:1.55}
+.eyebrow{font-size:11.5px!important}
+.hero{padding:32px 34px;border-radius:17px}
+.hero h1{font-size:39px!important;line-height:1.08}
+.hero p{font-size:15px;line-height:1.55;max-width:980px}
+.metric,.card{padding:17px}
+.metric b{font-size:29px!important}
+.metric span{font-size:12.5px!important}
+.metric small,.mini{font-size:11.5px!important;line-height:1.45}
+.card h3{font-size:18px}
+.btn{font-size:13px;padding:9px 13px}
+.btn.small{font-size:11.5px;padding:7px 10px}
+.input,select,textarea{font-size:14px!important;padding:10px 11px!important}
+.field{font-size:12.5px!important;margin-bottom:7px}
+.step{font-size:12.5px!important;padding:9px 13px}
+.badge,.pill{font-size:10.5px!important;padding:6px 9px}
+th{font-size:11.5px!important;padding:10px 11px}
+td{font-size:12.5px!important;padding:10px 11px}
+.link-button{font-size:11.5px!important}
+.table-wrap table{min-width:880px}
+.sheet-box h4{font-size:11.5px}
+.sheet-box p{font-size:13px}
+.proof{font-size:11.5px}
+.callout{font-size:12.5px}
+.score{font-size:28px!important}
+.aid-title-link{font-size:17px!important}
+.watch-item{display:flex;justify-content:space-between;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.watch-item:last-child{border-bottom:0}
+.watch-card h3{margin-bottom:8px}
+.sources-table .source-name{font-size:13px}
+.method-grid p{font-size:12px!important}
+.score-line{font-size:12px!important}
+.analysis-audit{font-size:12px!important}
+.executive-hero h1{max-width:900px}
+.executive-metrics .metric{min-height:108px}
+@media(max-width:1450px) and (min-width:1051px){
+  .topbar{height:66px;padding:0 14px}
+  .brandmark{font-size:17px!important}
+  .app-identity b{font-size:15.5px}
+  .app-identity span{font-size:10.5px}
+  .layout{grid-template-columns:205px minmax(0,1fr)}
+  .sidebar{top:66px;height:calc(100vh - 66px);padding:13px 10px}
+  main{padding:16px 18px}
+  .scope span{font-size:11.5px!important}
+  .nav{font-size:13.5px!important;padding:10px!important}
+  .page-head h1{font-size:28px!important}
+  .sub{font-size:13.5px!important}
+  .input,select,textarea{font-size:13.5px!important}
+  .filters,.filters.six{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .top-actions #today,.top-actions #engineBadge{display:none}
+  .top-actions .btn{font-size:11.5px;padding:7px 9px}
+  .hero h1{font-size:34px!important}
+  td{font-size:12px!important}
+}
+@media(max-width:1180px) and (min-width:1051px){
+  .app-identity{display:none}
+  .layout{grid-template-columns:195px minmax(0,1fr)}
+  .filters,.filters.six{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:1050px){
+  .app-identity{position:static;transform:none;text-align:left;margin-right:auto}
+  .brand-left{min-width:auto}
+  .top-actions #sidebarToggle{display:none}
+}
