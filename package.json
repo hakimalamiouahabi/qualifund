@@ -1,9 +1,9 @@
 {
   "name": "qualifund",
-  "version": "12.5.0",
+  "version": "12.6.0",
   "private": true,
   "type": "module",
-  "description": "FUNDING RADAR — moteur de cartographie et qualification des financements publics",
+  "description": "Leyton_Veilles A&S — cartographie et qualification des financements publics",
   "scripts": {
     "update": "node scripts/update-library.mjs",
     "update:full": "node scripts/update-library.mjs --full",
