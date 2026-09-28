@@ -4,7 +4,7 @@ Bibliothèque de dispositifs français pour les startups, PME, ETI et grandes en
 
 ## Statut réel
 
-Le corpus embarqué au démarrage contient 678 fiches datées du 22 septembre 2026, dont **0 fiche au statut vérifié**, 86 avec un lien de cahier des charges ou règlement et 166 avec une échéance renseignée. Le registre comporte 145 entrées, dont 34 de contrôle uniquement. Ces nombres ne démontrent ni l'actualité ni l'exhaustivité des dispositifs. Le cycle de collecte complète lancé le 28 septembre 2026 doit encore fournir ses résultats et son rapport d'anomalies.
+Le corpus embarqué au démarrage contient 678 fiches datées du 22 septembre 2026, dont **0 fiche au statut vérifié**, 86 avec un lien de cahier des charges ou règlement, 166 avec une échéance renseignée et **1 seule avec un critère de sélection renseigné**. Les catégories instrumentales se recoupent : 665 fiches mentionnent une subvention, 58 une avance remboursable et 2 un prêt à taux zéro. Le registre comporte 145 entrées, dont 34 de contrôle uniquement. Ces nombres ne démontrent ni l'actualité ni l'exhaustivité des dispositifs. Le cycle de collecte complète lancé le 28 septembre 2026 doit encore fournir ses résultats et son rapport d'anomalies.
 
 Une source configurée ≠ une source collectée ; une fiche importée ≠ une fiche vérifiée ; une correspondance thématique ≠ une éligibilité. Les critères absents restent « À VÉRIFIER ».
 
