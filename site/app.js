@@ -84,7 +84,10 @@ function usableAid(a){
   if(nd.reason==='J1'&&nd.date&&daysUntil(nd.date)<1)return false;
   return true;
 }
-function officialUrl(a){return /^https?:\/\//i.test(String(a?.officialPage||''))?a.officialPage:null}
+function officialUrl(a){
+  const candidates=[a?.officialPage,...arr(a?.sourceLinks).map(x=>typeof x==='string'?x:x?.url),...arr(a?.formLinks).map(x=>typeof x==='string'?x:x?.url)];
+  return candidates.find(u=>/^https?:\/\//i.test(String(u||''))&&!/data\.aides-entreprises\.fr\/stock\/?(?:$|[?#])/i.test(String(u)))||null;
+}
 
 async function loadAll(){const j=await api('./data/library.json');state.lib=j.aaps||[];state.meta=j.meta||{};for(const[k,p]of[['coverage','./data/coverage.json'],['changes','./data/changes.json']])try{state[k]=await api(p)}catch{};try{state.sources=(await api('./data/sources.json')).sources||[]}catch{};try{state.readiness=await api('./data/production-readiness.json')}catch{};await loadClientLibrary();render();const deep=new URLSearchParams(location.search).get('aid');if(deep&&state.lib.some(a=>a.id===deep))openAid(deep)}
 function route(r){state.route=r;$$('.nav[data-route]').forEach(x=>x.classList.toggle('active',x.dataset.route===r));$('#sidebar')?.classList.remove('open');render()}
