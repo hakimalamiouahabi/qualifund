@@ -6,11 +6,11 @@ import path from 'node:path';
 const ROOT=path.resolve(new URL('..',import.meta.url).pathname);
 const read=p=>fs.readFileSync(path.join(ROOT,p),'utf8');
 
-test('périmètre final amendé : SUBVENTION + AVANCE_REMBOURSABLE + PRET_TAUX_ZERO uniquement',()=>{
-  const utils=read('scripts/lib/utils.mjs');
-  assert.doesNotMatch(utils,/o\.push\(['"]PRET['"]\)/); assert.match(utils,/PRET_TAUX_ZERO/);
+test('bibliothèque exhaustive large et recommandation strictement SUB/AR/PTZ',()=>{
   const upd=read('scripts/update-library.mjs');
-  assert.match(upd,/SUBVENTION/); assert.match(upd,/AVANCE_REMBOURSABLE/); assert.match(upd,/PRET_TAUX_ZERO/); assert.doesNotMatch(upd,/['"]PRET['"]/);
+  assert.match(upd,/BROAD_ENTERPRISE_CATALOG/);
+  for(const token of ['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO','PRET','GARANTIE','ALLEGEMENT_FISCAL'])assert.ok(upd.includes(token),token);
+  assert.match(upd,/recommendationInstruments=\['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO'\]/);
   const cfg=JSON.parse(read('config/sources.json'));
   for(const id of ['occitanie_foster','paca_feder_loan']){const s=cfg.sources.find(x=>x.id===id);assert.equal(s?.strategy,'official-page');assert.equal(s?.forceAidType,'PRET_TAUX_ZERO');}
 });
