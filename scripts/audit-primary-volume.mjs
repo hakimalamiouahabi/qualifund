@@ -9,7 +9,7 @@ const out={generatedAt:new Date().toISOString(),version:cfg.version};
 
 try{
   const r=await collectAidesEntreprises(ae,{log:console.log});
-  out.aidesEntreprises={discovered:r.discovered,retained:r.aids.length,scopeCounts:r.aids.reduce((m,a)=>(m[a.scope]=(m[a.scope]||0)+1,m),{}),sizeKnown:r.aids.filter(a=>(a.companyCategories||[]).length).length,sizeUnknown:r.aids.filter(a=>!(a.companyCategories||[]).length).length};
+  const today=new Date().toISOString().slice(0,10);const active=r.aids.filter(a=>a.permanent||!a.finalClosingDate&&!a.closingDate||String(a.finalClosingDate||a.closingDate)>=today);out.aidesEntreprises={discovered:r.discovered,retained:r.aids.length,activeByKnownClosingDate:active.length,closedByKnownClosingDate:r.aids.length-active.length,scopeCounts:r.aids.reduce((m,a)=>(m[a.scope]=(m[a.scope]||0)+1,m),{}),sizeKnown:r.aids.filter(a=>(a.companyCategories||[]).length).length,sizeUnknown:r.aids.filter(a=>!(a.companyCategories||[]).length).length};
 }catch(e){out.aidesEntreprises={error:e.message}}
 
 try{
