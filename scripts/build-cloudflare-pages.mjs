@@ -10,6 +10,7 @@ const TARGET_PART=18*1024*1024;
 const excluded=new Set([
   'data/bootstrap.js',
   'data/library.json',
+  'data/library.previous.json',
   'bibliotheque/qualifund-library.json',
   'bibliotheque/radar-library.json'
 ]);
