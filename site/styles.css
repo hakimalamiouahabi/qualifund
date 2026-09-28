@@ -96,3 +96,29 @@ b,strong{font-weight:600}
 .layout{grid-template-columns:176px minmax(0,1fr)}.top-actions #sidebarToggle{display:none}.filters,.filters.six{grid-template-columns:repeat(2,minmax(0,1fr))}
 main{padding:12px}table{min-width:760px}
 }
+
+/* QUALIFUND PRODUCT UI v12.3.0 */
+:root{--ui-font:Aptos,"Segoe UI Variable Text","Segoe UI","Helvetica Neue",Arial,sans-serif}
+body,button,input,select,textarea{font-family:var(--ui-font)!important;font-weight:400;letter-spacing:0}
+h1,h2,h3,h4,h5,h6,.brand b,.brandmark,.metric b,.score,.rank,.btn,.badge,.pill,.field,.eyebrow,th,strong,b{font-family:var(--ui-font)!important}
+h1,h2,h3,h4,h5,h6,.brand b,.metric b,.score,.rank,strong,b{font-weight:600}
+.btn,.badge,.pill,.field,.eyebrow,th,.brandmark{font-weight:600}
+.link{font-weight:600}
+.library-size-filter{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:10px 0 12px}
+.link-button{border:0;background:transparent;padding:4px 0;color:#176b95;font:inherit;font-size:10.5px;font-weight:600;cursor:pointer;text-decoration:underline}
+.aid-result-block{border-left:4px solid var(--orange);padding:18px 20px;margin:14px 0}
+.aid-result-head{align-items:flex-start}
+.aid-title-link{font-size:18px;font-weight:600;color:var(--navy);text-decoration:none;line-height:1.3}
+.aid-title-link:hover{text-decoration:underline}
+.aid-title-link.no-link{cursor:default}
+.aid-result-badges{margin-top:10px}
+.aid-result-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:14px}
+.aid-result-grid section{background:#f8fafb;border:1px solid var(--line);border-radius:10px;padding:12px 13px;min-width:0}
+.aid-result-grid section h4{margin:0 0 7px;font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;color:#627681}
+.aid-result-grid section p{margin:0;line-height:1.5;font-size:12px}
+.aid-result-grid .span-2{grid-column:1/-1}
+.eligibility-note{border-left:3px solid var(--orange)!important;background:#fffaf7!important}
+.aid-result-actions{margin-top:12px}
+.study-kpi{margin-bottom:14px}
+@media(max-width:1050px){.aid-result-grid{grid-template-columns:1fr}.aid-result-grid .span-2{grid-column:auto}}
+@media(max-width:700px){.aid-title-link{font-size:16px}.aid-result-block{padding:14px}.aid-result-actions{justify-content:flex-start}}
