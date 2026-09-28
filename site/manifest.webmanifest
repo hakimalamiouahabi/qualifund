@@ -1,10 +1,10 @@
 {
-  "name": "QUALIFUND — Aides & financements publics",
-  "short_name": "QUALIFUND",
+  "name": "FUNDING RADAR — Financements publics",
+  "short_name": "FUNDING RADAR",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#F3F6F8",
   "theme_color": "#102D3F",
   "lang": "fr",
-  "description": "Cartographie · Faisabilité · Veille des aides et financements publics"
+  "description": "Cartographie, qualification et veille des aides et financements publics"
 }
