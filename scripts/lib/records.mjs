@@ -65,7 +65,7 @@ export function fromAidesEntreprises(raw,audit=null){
     prerequisites:htmlToText(raw.aid_conditions)||null,selectionCriteria:null,programme,operator:null,
     attentionPoints:dl?[]:['Date de clôture non documentée : recontrôler la source officielle avant recommandation.'],
     cdcLinks:regs.filter(x=>/pdf|cahier|reglement|règlement/i.test(`${x.label} ${x.url}`)),
-    sourceLinks:srcs,regulationLinks:regs,formLinks:forms,officialPage:official||stock,apiUrl:null,
+    sourceLinks:srcs,regulationLinks:regs,formLinks:forms,officialPage:official||null,apiUrl:null,
     funder:uniq(asArr(raw?.cache_indexation?.financeurs).map(x=>x.org_nom)),
     projectLabels:uniq(asArr(raw?.cache_indexation?.projets).map(x=>x.proj_libelle).filter(Boolean)),
     natureLabels:uniq(natureLabels.filter(Boolean)),
