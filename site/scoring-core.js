@@ -45,10 +45,13 @@
     const bigram=PB.length?bigramHits.length/Math.min(PB.length,8):0;
     const ac=new Set(conceptSet(aText)),pc=conceptSet(pText),concepts=pc.filter(x=>ac.has(x));
     const concept=pc.length?concepts.length/Math.max(1,Math.ceil(pc.length*.55)):0;
-    const ratio=Math.max(
+    let ratio=Math.max(
       Math.min(1,.55*coverage+.15*precision+.15*bigram+.15*Math.min(1,concept)),
       Math.min(1,.72*concept+.28*coverage)
     );
+    // Bonus de cohérence seulement lorsque plusieurs termes/concepts précis convergent.
+    if(matched.length>=4)ratio+=.08;
+    if(concepts.length>=2)ratio+=.06;
     return{ratio:Math.max(0,Math.min(1,ratio)),matched:uniq([...matched,...concepts]).slice(0,12),tokenHits:matched.length,conceptHits:concepts.length,bigramHits:bigramHits.length};
   }
   function fit(aText,pText){return overlapDetails(aText,pText).ratio}
