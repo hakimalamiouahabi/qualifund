@@ -1,70 +1,41 @@
-# LEYTON RADAR v12.2.0
+# QUALIFUND — bibliothèque indépendante des aides publiques
 
-# LEYTON RADAR
+Bibliothèque des appels à projets (AAP), appels à manifestation d'intérêt (AMI) et aides nationales ou régionales en France pour les startups, PME, ETI et grandes entreprises. Périmètre : **subventions**, **avances remboursables** et **prêts explicitement à taux zéro**. Les prêts garantis et les prêts classiques sont hors périmètre.
 
-> **Release courante : v12.2.0 — Final Release Candidate.**  
-> Sources : 145 (111 ingestion + 34 contrôle) · règle calendrier J+1 · pertinence >=85 % · validation finale pilotée par `PRODUCTION_READINESS.md`.  
-> Voir `FINAL_RELEASE_v12.2.0.md` et `FINAL_ACTIVATION.md` pour le statut et l’activation production.
+## Statut réel
 
-**Aides & financements publics**  
-**Cartographie · Faisabilité · Veille**
+Le corpus embarqué au démarrage contient 678 fiches, dont **60 classées AAP / AMI** datées du 22 septembre 2026, dont **0 fiche au statut vérifié**, 86 avec un lien de cahier des charges ou règlement, 166 avec une échéance renseignée et **1 seule avec un critère de sélection renseigné**. Les catégories instrumentales se recoupent : 665 fiches mentionnent une subvention, 58 une avance remboursable et 2 un prêt à taux zéro. Le registre comporte 145 entrées, dont 34 de contrôle uniquement. Le classement AAP / AMI peut contenir des erreurs et ne démontre pas une couverture exhaustive des appels à projets ni des aides nationales et régionales. Ces nombres ne démontrent ni l'actualité ni l'exhaustivité des dispositifs. Le cycle de collecte complète lancé le 28 septembre 2026 doit encore fournir ses résultats et son rapport d'anomalies.
 
-LEYTON RADAR est une application web destinée à la qualification senior des aides publiques françaises pour les **START-UP, PME, ETI et GE**. Le périmètre financier couvre **subventions, avances remboursables et prêts à taux zéro explicitement documentés**. Les prêts classiques avec intérêts restent exclus.
+Une source configurée ≠ une source collectée ; une fiche importée ≠ une fiche vérifiée ; une correspondance thématique ≠ une éligibilité. Les critères absents restent « À VÉRIFIER ».
 
-## Finalité
+Les programmes FEDER et FEADER mis en œuvre en France entrent dans ce périmètre lorsqu'un dispositif s'adresse effectivement aux entreprises et utilise l'un des instruments retenus. Le registre comprend notamment des sources Bpifrance, ANR, ADEME et des programmes régionaux européens ; leur configuration ne prouve pas leur collecte.\n\n## Collecte et preuves
 
-1. Maintenir une bibliothèque nationale/régionale alimentée par le registre maître des sources publiques.
-2. Reconstruire et contrôler la bibliothèque automatiquement chaque jour à **02:00 Europe/Paris** et à la demande.
-3. Construire une **fiche réglementaire normalisée et sourcée** pour chaque aide/AAP.
-4. Enrichir la fiche entreprise à partir d'un **SIREN/SIRET**, avec sources publiques officielles prioritaires et Pappers facultatif côté serveur.
-5. Qualifier un projet et n'afficher dans la cartographie finale que les dispositifs **sans incompatibilité bloquante** et présentant une **pertinence projet >= 85 %**.
+1. Interroger les API publiques officielles gratuites lorsqu'elles exposent effectivement les fiches et conditions.
+2. Compléter par les fichiers ouverts officiels, puis les pages et règlements officiels des éditions en vigueur.
+3. Enregistrer par critère la règle explicite, son extrait, son URL, l'édition et la date de contrôle.
+4. Écarter des résultats ouverts les éditions closes et signaler les sources inaccessibles ou incomplètes.
+5. Produire un rapport par source : découvertes, importées, vérifiées, rejetées, dernier succès et anomalies.
 
-## Trois indicateurs séparés
+Voir [la politique de couverture](POLITIQUE_COUVERTURE_2026-09-28.md) pour les limites et critères de recette.
 
-- **Éligibilité** : CONFORME / À VÉRIFIER / NON CONFORME.
-- **Pertinence projet** : score 0–100 % basé uniquement sur l'adéquation projet/dispositif. Seuil d'affichage : 85 %.
-- **Confiance documentaire** : qualité et couverture des preuves officielles. Elle n'ajoute aucun point à la pertinence.
+## Évaluation
 
-Un score de 92 % signifie donc « forte adéquation avec le projet », jamais « 92 % de probabilité d'obtenir l'aide ».
+Le dossier entreprise décrit la taille et le périmètre du groupe, le territoire, le secteur, les comptes et le projet (budget, dépenses, calendrier, maturité). Chaque condition reçoit un verdict **CONFORME**, **NON CONFORME** ou **À VÉRIFIER**, avec la donnée comparée et la preuve officielle. Les critères qualitatifs de sélection sont examinés séparément ; le score de pertinence n'est jamais une probabilité d'obtention.
 
-## Fiche AAP / aide
+## Exécution locale
 
-La fiche standard comprend : objectif, thématiques, bénéficiaires, type d'aide, répartition SUB/AR/PTZ, assiette min/max, montant d'aide min/max, taux par taille, portée, région, financeur, opérateur, dépenses éligibles et exclues, projets attendus, prérequis, critères de sélection, points de vigilance, ouverture, clôture, relèves, prochaine relève, modalités de versement, remboursement AR/PTZ, aides d'État/cumul, CdC/règlement, annexes, source officielle, dernière vérification et preuve par champ.
+```bash
+npm ci
+npm test
+npm run audit:sources
+npm run preflight:sources
+npm run update:full
+npm run audit:ingestion
+npm run validate
+```
 
-Toute donnée publique manquante reste : **NON DOCUMENTÉ — À VÉRIFIER**.
+La collecte planifiée est définie dans `.github/workflows/update-and-deploy.yml`. L'interface statique est dans `site/` et les données générées dans `site/data/`. Le bouton de mise à jour côté navigateur ne remplace pas la collecte serveur complète. Les données projet restent dans le navigateur dans la version statique.
 
-## Mise à jour
+## Indépendance
 
-Le workflow `.github/workflows/update-and-deploy.yml` :
-
-- s'exécute tous les jours à **02:00 Europe/Paris** ;
-- exécute les connecteurs ;
-- enrichit les fiches avec les pages officielles et PDF ;
-- exécute les tests et contrôles QA ;
-- produit un rapport delta quotidien ;
-- publie `site/` sur GitHub Pages.
-
-Le bouton **Mettre à jour la cartographie** utilise `api/refresh.js` uniquement lorsqu’un endpoint serverless sécurisé est déployé. Sur GitHub Pages, la collecte planifiée reste indépendante du navigateur. Dans le fichier HTML autonome v12.2, le bouton lance une actualisation navigateur des agrégateurs publics compatibles et permet aussi l’import du stock officiel Aides Entreprises. Les secrets GitHub ne sont jamais placés dans le navigateur.
-
-## Déploiement
-
-### GitHub Pages
-
-Idéal pour la bibliothèque publique et la mise à jour automatique. Le workflow planifié ne nécessite aucune action de l'utilisateur après configuration du dépôt.
-
-### GitHub + Vercel
-
-Recommandé si l'on souhaite aussi le déclenchement manuel depuis l'application : `api/refresh.js` appelle GitHub Actions côté serveur. Variables requises :
-
-- `GITHUB_REPOSITORY=owner/repo`
-- `GITHUB_TOKEN=<token limité au workflow>`
-- `GITHUB_BRANCH=main`
-- `PAPPERS_API_TOKEN=<facultatif>`
-
-## Données entreprise
-
-`api/company.js` interroge d'abord l'API Recherche d'entreprises de la DINUM. Si `PAPPERS_API_TOKEN` est configuré, Pappers est utilisé uniquement comme enrichissement complémentaire et non comme dépendance bloquante.
-
-## Confidentialité
-
-Les données de projet saisies dans l'interface restent dans le navigateur (`localStorage`) dans la version statique. Elles ne sont jamais publiées dans la bibliothèque.
+Ce dépôt est consacré à QUALIFUND. Il n'est lié à aucune application tierce et ne constitue pas le code source d'une autre interface de qualification.

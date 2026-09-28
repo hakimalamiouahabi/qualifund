@@ -3,11 +3,12 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { execFileSync } from 'node:child_process';
 
-test('sans cycle live, Gate 3 est NOT_RUN et PASS_TECH ne suffit pas au GO',()=>{
+test('Gate 3 reflète la présence d’un cycle live sans déclarer GO prématurément',()=>{
   execFileSync(process.execPath,['scripts/production-gates.mjs'],{cwd:new URL('..',import.meta.url),stdio:'ignore'});
   const r=JSON.parse(fs.readFileSync(new URL('../site/data/production-readiness.json',import.meta.url),'utf8'));
-  assert.equal(r.gates.find(g=>g.id===3).status,'NOT_RUN');
-  assert.equal(r.gates.find(g=>g.id===6).status,'PASS_TECH');
+  const coverage=JSON.parse(fs.readFileSync(new URL('../site/data/coverage.json',import.meta.url),'utf8'));
+  assert.equal(r.gates.find(g=>g.id===3).status==='NOT_RUN',coverage.length===0);
+  assert.ok(['PASS_TECH','PASS'].includes(r.gates.find(g=>g.id===6).status));
   assert.equal(r.goProduction,false);
 });
 

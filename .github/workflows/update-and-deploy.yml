@@ -1,4 +1,4 @@
-name: LEYTON RADAR — collecte, QA et publication
+name: QUALIFUND — collecte, QA et publication
 
 on:
   workflow_dispatch:
@@ -25,7 +25,7 @@ on:
       - '.github/workflows/**'
 
 concurrency:
-  group: leyton-radar-production
+  group: qualifund-production
   cancel-in-progress: true
 
 jobs:
@@ -63,8 +63,8 @@ jobs:
         run: |
           set -euo pipefail
           if ! git ls-files --error-unmatch package-lock.json >/dev/null 2>&1; then
-            git config user.name "leyton-radar-bot"
-            git config user.email "leyton-radar-bot@users.noreply.github.com"
+            git config user.name "qualifund-bot"
+            git config user.email "qualifund-bot@users.noreply.github.com"
             git add package-lock.json
             git commit -m "chore(deps): bootstrap package-lock [skip ci]"
             git pull --rebase origin main
@@ -78,20 +78,22 @@ jobs:
         run: npm run preflight:sources
       - name: Sauvegarder la bibliothèque précédente
         run: |
-          mkdir -p /tmp/leyton-radar
-          cp site/data/library.json /tmp/leyton-radar/library-before.json || echo '{"aaps":[]}' > /tmp/leyton-radar/library-before.json
+          mkdir -p /tmp/qualifund
+          cp site/data/library.json /tmp/qualifund/library-before.json || echo '{"aaps":[]}' > /tmp/qualifund/library-before.json
       - name: Collecte complète quotidienne / manuelle
         env:
-          LEYTON_RADAR_FULL_REFRESH: '1'
+          QUALIFUND_FULL_REFRESH: '1'
         run: npm run update:full
       - name: Rapport quotidien des changements
-        run: node scripts/generate-daily-report.mjs /tmp/leyton-radar/library-before.json site/data/library.json site/bibliotheque/rapports
+        run: node scripts/generate-daily-report.mjs /tmp/qualifund/library-before.json site/data/library.json site/bibliotheque/rapports
       - name: Synchroniser les artefacts publics
         run: npm run sync:metadata
       - name: Reconstruire l'index de recherche
         run: npm run build:index
       - name: Auditer l'ingestion
         run: npm run audit:ingestion
+      - name: Auditer les critères et leurs preuves officielles
+        run: npm run audit:criteria
       - name: Tests unitaires
         run: npm test
       - name: Validation schéma
@@ -111,11 +113,11 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          git config user.name "leyton-radar-bot"
-          git config user.email "leyton-radar-bot@users.noreply.github.com"
+          git config user.name "qualifund-bot"
+          git config user.email "qualifund-bot@users.noreply.github.com"
           git add package-lock.json site/data site/bibliotheque PRODUCTION_READINESS.md REMEDIATION_REPORT.md || true
           if ! git diff --cached --quiet; then
-            git commit -m "chore(data): actualisation LEYTON RADAR [skip ci]"
+            git commit -m "chore(data): actualisation QUALIFUND [skip ci]"
             git pull --rebase origin main
             git push origin HEAD:main
           fi
@@ -176,8 +178,8 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          git config user.name "leyton-radar-bot"
-          git config user.email "leyton-radar-bot@users.noreply.github.com"
+          git config user.name "qualifund-bot"
+          git config user.email "qualifund-bot@users.noreply.github.com"
           git add site/data/live-smoke.json site/data/uat-results.json site/data/production-readiness.json PRODUCTION_READINESS.md
           if ! git diff --cached --quiet; then
             git commit -m "chore(validation): preuves production [skip ci]"
