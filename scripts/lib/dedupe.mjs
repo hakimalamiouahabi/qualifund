@@ -22,11 +22,13 @@ function canonicalOfficialUrl(raw=''){
   try{
     const u=new URL(raw);
     u.hash='';
-    for(const k of [...u.searchParams.keys()]){
-      if(/^utm_/i.test(k)||['fbclid','gclid','mc_cid','mc_eid'].includes(k)) u.searchParams.delete(k);
-    }
-    u.pathname=u.pathname.replace(/\/+$/,'')||'/';
-    return u.href;
+    const kept=[...u.searchParams.entries()]
+      .filter(([k])=>!(/^utm_/i.test(k)||['fbclid','gclid','mc_cid','mc_eid'].includes(k)))
+      .sort(([ak,av],[bk,bv])=>ak.localeCompare(bk)||av.localeCompare(bv));
+    u.search='';
+    for(const [k,v] of kept)u.searchParams.append(k,v);
+    const pathname=u.pathname.replace(/\/+$/,'')||'/';
+    return `${u.protocol}//${u.host}${pathname}${u.search}`;
   }catch{return null}
 }
 
@@ -34,7 +36,7 @@ function isGenericCatalogUrl(raw=''){
   const u=canonicalOfficialUrl(raw);
   if(!u) return true;
   try{
-    const x=new URL(u), p=x.pathname.toLowerCase();
+    const x=new URL(u),p=x.pathname.toLowerCase();
     return [
       '/stock','/catalogue','/aides','/les-aides','/vos-aides','/appels','/fr/appels',
       '/les-aides-et-appels-a-projets','/aides-financieres/catalogue'
