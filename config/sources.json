@@ -102,9 +102,6 @@
       "official": true,
       "priority": 1,
       "browserFallback": true,
-      "coveredBy": [
-        "aides_entreprises"
-      ],
       "notes": "Page-cadre officielle conservée comme contrôle. Les dispositifs France 2030 sont ingérés via les opérateurs officiels déjà configurés : Bpifrance, ANR, Banque des Territoires et ADEME selon le dispositif."
     },
     {
@@ -131,10 +128,7 @@
       "webVerifiedAt": "2026-09-22",
       "webEvidenceUrl": "https://www.data.gouv.fr/dataservices/api-aides-territoires",
       "notes": "Contrôle de disponibilité uniquement : l’endpoint API observé renvoie HTTP 401 lors des collectes automatisées. Le catalogue entreprises est couvert par le stock Open Data Aides Entreprises, sans dépendance à une API authentifiée.",
-      "browserFallback": true,
-      "coveredBy": [
-        "aides_entreprises"
-      ]
+      "browserFallback": true
     },
     {
       "id": "ofb_financements",
@@ -214,9 +208,6 @@
       "official": true,
       "priority": 1,
       "browserFallback": true,
-      "coveredBy": [
-        "aides_entreprises"
-      ],
       "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
     },
     {
@@ -231,9 +222,6 @@
       "official": true,
       "priority": 1,
       "browserFallback": true,
-      "coveredBy": [
-        "aides_entreprises"
-      ],
       "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
     },
     {
@@ -248,9 +236,6 @@
       "official": true,
       "priority": 1,
       "browserFallback": true,
-      "coveredBy": [
-        "aides_entreprises"
-      ],
       "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
     },
     {
@@ -296,9 +281,6 @@
       "webEvidenceUrl": "https://www.iledefrance.fr/aides-et-appels-a-projets",
       "observedCatalogCount": 346,
       "observedProfessionalCount": 171,
-      "coveredBy": [
-        "aides_entreprises"
-      ],
       "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
     },
     {
@@ -316,9 +298,6 @@
       "webVerifiedAt": "2026-09-28",
       "webEvidenceUrl": "https://www.normandie.fr/aides-regionales",
       "catalogLinkSelector": "h3 a[href]",
-      "coveredBy": [
-        "aides_entreprises"
-      ],
       "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
     },
     {
@@ -397,9 +376,6 @@
       "official": true,
       "priority": 1,
       "browserFallback": true,
-      "coveredBy": [
-        "aides_entreprises"
-      ],
       "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
     },
     {
@@ -442,9 +418,6 @@
       "browserFallback": true,
       "webVerifiedAt": "2026-09-22",
       "webEvidenceUrl": "https://www.regionreunion.com/aides-services/?mot_public=Entreprise",
-      "coveredBy": [
-        "aides_entreprises"
-      ],
       "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
     },
     {
@@ -458,9 +431,6 @@
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "coveredBy": [
-        "aides_entreprises"
-      ],
       "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
     },
     {
@@ -508,9 +478,6 @@
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "coveredBy": [
-        "aides_entreprises"
-      ],
       "notes": "Liste officielle conservée comme contrôle car son contenu est rendu dynamiquement et peut être vide côté automate. L’ingestion des appels est assurée par les opérateurs officiels France 2030."
     },
     {
@@ -577,9 +544,6 @@
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "coveredBy": [
-        "aides_entreprises"
-      ],
       "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
     },
     {
@@ -616,9 +580,6 @@
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "coveredBy": [
-        "aides_entreprises"
-      ],
       "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
     },
     {
@@ -757,9 +718,6 @@
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "coveredBy": [
-        "aides_entreprises"
-      ],
       "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
     },
     {
@@ -808,9 +766,6 @@
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "coveredBy": [
-        "aides_entreprises"
-      ],
       "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
     },
     {
@@ -823,9 +778,6 @@
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "coveredBy": [
-        "aides_entreprises"
-      ],
       "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
     },
     {
@@ -838,9 +790,6 @@
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "coveredBy": [
-        "aides_entreprises"
-      ],
       "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
     },
     {
@@ -853,9 +802,6 @@
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "coveredBy": [
-        "aides_entreprises"
-      ],
       "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
     },
     {
@@ -1038,9 +984,6 @@
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "coveredBy": [
-        "aides_entreprises"
-      ],
       "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
     },
     {
@@ -1053,9 +996,6 @@
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "coveredBy": [
-        "aides_entreprises"
-      ],
       "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
     },
     {
@@ -1068,9 +1008,6 @@
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "coveredBy": [
-        "aides_entreprises"
-      ],
       "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
     },
     {
@@ -1083,9 +1020,6 @@
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "coveredBy": [
-        "aides_entreprises"
-      ],
       "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
     },
     {
@@ -1098,9 +1032,6 @@
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "coveredBy": [
-        "aides_entreprises"
-      ],
       "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
     },
     {
@@ -1236,9 +1167,6 @@
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "coveredBy": [
-        "aides_entreprises"
-      ],
       "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
     },
     {
@@ -1310,9 +1238,6 @@
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "coveredBy": [
-        "aides_entreprises"
-      ],
       "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
     },
     {
@@ -1325,9 +1250,6 @@
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "coveredBy": [
-        "aides_entreprises"
-      ],
       "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
     },
     {
@@ -1340,9 +1262,6 @@
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "coveredBy": [
-        "aides_entreprises"
-      ],
       "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
     },
     {
@@ -1368,9 +1287,6 @@
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "coveredBy": [
-        "aides_entreprises"
-      ],
       "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
     },
     {
@@ -1383,9 +1299,6 @@
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "coveredBy": [
-        "aides_entreprises"
-      ],
       "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
     },
     {
@@ -1398,9 +1311,6 @@
       "official": true,
       "priority": 1,
       "browserFallback": true,
-      "coveredBy": [
-        "aides_entreprises"
-      ],
       "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
     },
     {
@@ -1455,9 +1365,6 @@
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "coveredBy": [
-        "aides_entreprises"
-      ],
       "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
     },
     {
@@ -1737,9 +1644,6 @@
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "coveredBy": [
-        "aides_entreprises"
-      ],
       "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
     },
     {
