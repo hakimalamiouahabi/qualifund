@@ -1,10 +1,10 @@
 {
-  "name": "FUNDING RADAR — Financements publics",
-  "short_name": "FUNDING RADAR",
+  "name": "Leyton_Veilles A&S — Financements publics",
+  "short_name": "Leyton_Veilles A&S",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#F3F6F8",
   "theme_color": "#102D3F",
   "lang": "fr",
-  "description": "Cartographie, qualification et veille des aides et financements publics"
+  "description": "Cartographie, qualification et veille des aides et financements publics en France"
 }
