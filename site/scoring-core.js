@@ -144,36 +144,59 @@
     const expectedText=arr(a.projectsExpected).join(' ');
     const expenseText=String(a.eligibleExpenses||'');
     const dims=[];
-    const add=(label,max,ratio,detail,matched=[])=>dims.push({label,max,score:Math.round(max*Math.max(0,Math.min(1,ratio))),ratio:Math.round(100*Math.max(0,Math.min(1,ratio))),detail,matched:arr(matched).slice(0,10)});
+    const add=(label,max,ratio,detail,matched=[],documented=true)=>dims.push({
+      label,max,
+      score:documented?Math.round(max*Math.max(0,Math.min(1,ratio))):0,
+      ratio:documented?Math.round(100*Math.max(0,Math.min(1,ratio))):null,
+      detail,matched:arr(matched).slice(0,10),documented
+    });
 
     const objective=overlapDetails(objectiveText,description);
-    add('Objectifs & thématiques',22,objective.ratio,objective.ratio>=.72?'Concordance forte':objective.ratio>=.45?'Concordance significative':'Concordance faible',objective.matched);
+    add('Objectifs & thématiques',22,objective.ratio,objective.ratio>=.72?'Concordance forte':objective.ratio>=.45?'Concordance significative':'Concordance faible',objective.matched,Boolean(objectiveText.trim()));
 
-    const expected=expectedText?overlapDetails(expectedText,description):{ratio:.5,matched:[]};
-    add('Projets attendus',18,expected.ratio,expectedText?'Rapprochement avec les projets attendus':'Champ non documenté : pondération neutralisée',expected.matched);
+    const expected=expectedText?overlapDetails(expectedText,description):{ratio:0,matched:[]};
+    add('Projets attendus',18,expected.ratio,expectedText?'Rapprochement avec les projets attendus':'Champ non documenté : exclu du calcul',expected.matched,Boolean(expectedText));
 
-    const expenses=expenseText?overlapDetails(expenseText,expenseQuery):{ratio:.5,matched:[]};
-    add('Dépenses éligibles',15,expenses.ratio,expenseText?'Rapprochement des postes de dépenses':'Champ non documenté : pondération neutralisée',expenses.matched);
+    const expenses=expenseText?overlapDetails(expenseText,expenseQuery):{ratio:0,matched:[]};
+    add('Dépenses éligibles',15,expenses.ratio,expenseText?'Rapprochement des postes de dépenses':'Champ non documenté : exclu du calcul',expenses.matched,Boolean(expenseText));
 
-    const sel=selectionFit(a,p);
-    add('Critères de sélection & prérequis',12,sel.ratio,(a.selectionCriteria||a.prerequisites)?'Critères rapprochés des impacts, travaux et maturité':'Critères non documentés : pondération neutralisée',sel.matched);
+    const selectionDocumented=Boolean(a.selectionCriteria||a.prerequisites);
+    const sel=selectionDocumented?selectionFit(a,p):{ratio:0,matched:[]};
+    add('Critères de sélection & prérequis',12,sel.ratio,selectionDocumented?'Critères rapprochés des impacts, travaux et maturité':'Critères non documentés : exclus du calcul',sel.matched,selectionDocumented);
 
+    const beneficiaryDocumented=Boolean(String(a.beneficiaries||'').trim()||arr(a.companyCategories).length);
     const bf=beneficiaryFit(a,p);
-    add('Bénéficiaires & secteur',10,bf,bf>=.8?'Profil entreprise cohérent':bf===0?'Profil incompatible':'Profil à confirmer');
+    add('Bénéficiaires & secteur',10,bf,beneficiaryDocumented?(bf>=.8?'Profil entreprise cohérent':bf===0?'Profil incompatible':'Profil à confirmer'):'Bénéficiaires non documentés : exclus du calcul',[],beneficiaryDocumented);
 
+    const typeDocumented=Boolean(a.objective||arr(a.themes).length||arr(a.projectsExpected).length);
     const tf=typeFit(a,p),mf=maturityFit(a,p);
-    add('Typologie & maturité',8,.65*tf+.35*mf,tf>=.75?'Typologie bien couverte':'Typologie ou maturité à confirmer');
+    add('Typologie & maturité',8,.65*tf+.35*mf,typeDocumented?(tf>=.75?'Typologie bien couverte':'Typologie ou maturité à confirmer'):'Typologie non documentée : exclue du calcul',[],typeDocumented);
 
+    const financeDocumented=Boolean(
+      a.minimumProjectCost!=null||a.maximumProjectCost!=null||
+      a.aidRate?.min!=null||a.aidRate?.max!=null||a.aidAmount?.min!=null||a.aidAmount?.max!=null||
+      a.aidRate?.raw||a.aidAmount?.raw
+    );
     const ff=financeFit(a,p);
-    add('Budget & modalités financières',6,ff,ff>=.8?'Budget compatible avec les données disponibles':ff===0?'Budget hors assiette connue':'Modalités à sécuriser');
+    add('Budget & modalités financières',6,ff,financeDocumented?(ff>=.8?'Budget compatible avec les données disponibles':ff===0?'Budget hors assiette connue':'Modalités à sécuriser'):'Modalités financières non documentées : exclues du calcul',[],financeDocumented);
 
+    const calendarDocumented=Boolean(a.permanent||a.closingDate||a.finalClosingDate||arr(a.deadlines).length);
     const cf=calendarFit(a,p);
-    add('Calendrier',5,cf,cf===1?'Fenêtre exploitable':cf===0?'Fenêtre non exploitable':'Calendrier à sécuriser');
+    add('Calendrier',5,cf,calendarDocumented?(cf===1?'Fenêtre exploitable':cf===0?'Fenêtre non exploitable':'Calendrier à sécuriser'):'Calendrier non documenté : exclu du calcul',[],calendarDocumented);
 
+    const territoryDocumented=Boolean(a.scope);
     const tr=territoryFit(a,p);
-    add('Territorialité',4,tr,tr===1?'Territoire compatible':tr===0?'Territoire incompatible':'Territoire à confirmer');
+    add('Territorialité',4,tr,territoryDocumented?(tr===1?'Territoire compatible':tr===0?'Territoire incompatible':'Territoire à confirmer'):'Territoire non documenté : exclu du calcul',[],territoryDocumented);
 
-    return{score:dims.reduce((s,x)=>s+x.score,0),dims,checks:dims.length};
+    const documentedWeight=dims.filter(d=>d.documented).reduce((s,d)=>s+d.max,0);
+    const earned=dims.filter(d=>d.documented).reduce((s,d)=>s+d.score,0);
+    const normalized=documentedWeight?100*earned/documentedWeight:0;
+    // Un dossier documentaire incomplet ne reçoit pas artificiellement des points.
+    // La normalisation évite de confondre "non documenté" avec "non pertinent",
+    // puis un facteur de couverture empêche une fiche très pauvre d'atteindre 100.
+    const coverageFactor=.75+.25*(documentedWeight/100);
+    const score=Math.round(Math.min(100,normalized*coverageFactor));
+    return{score,dims,checks:dims.length,documentedWeight,coverageFactor:Math.round(coverageFactor*100)};
   }
   root.LEYTON_SCORING={relevance,tokens,norm,conceptSet,overlapDetails,typeFit,maturityFit,version:'12.4.0'};
 })(typeof globalThis!=='undefined'?globalThis:this);
