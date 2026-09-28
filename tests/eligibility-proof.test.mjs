@@ -8,6 +8,7 @@ const match=source.match(/function eligibility\(a,p\)\{[\s\S]*?\n\}\nfunction re
 assert.ok(match,'moteur d’éligibilité présent');
 const context={
   arr:x=>Array.isArray(x)?x:[],
+  REGIONS:['Île-de-France','Bretagne'],
   nextDeadline:()=>({ok:false,reason:'DATE_MISSING'}),
   explicitExclusion:()=>null,
   specializedMismatch:()=>null,
@@ -38,4 +39,14 @@ test('une incompatibilité documentée par preuve A/B est bloquante',()=>{
   assert.equal(result.criteria.find(c=>c.label==='Taille entreprise')?.status,'NON CONFORME');
   assert.equal(result.criteria.find(c=>c.label==='Budget')?.status,'NON CONFORME');
   assert.equal(result.criteria.find(c=>c.label==='Critères de sélection')?.status,'À VÉRIFIER');
+});
+
+test('une taille ou région non renseignée ne déclenche pas une exclusion',()=>{
+  const documented={...aid,verification:{fieldEvidence:[
+    {field:'beneficiaries',sourceTier:'A',sourceUrl:'https://example.gouv.fr/reglement.pdf',evidenceText:'ETI en Bretagne'}
+  ]}};
+  const result=context.eligibility(documented,{...project,category:'À préciser',region:'À préciser'});
+  assert.equal(result.eligible,true);
+  assert.equal(result.criteria.find(c=>c.label==='Taille entreprise')?.status,'À VÉRIFIER');
+  assert.equal(result.criteria.find(c=>c.label==='Territoire')?.status,'À VÉRIFIER');
 });
