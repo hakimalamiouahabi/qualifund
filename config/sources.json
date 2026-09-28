@@ -487,14 +487,13 @@
       "id": "france2030_appels",
       "name": "France 2030 — appels à candidatures",
       "scope": "France",
-      "type": "web",
-      "strategy": "catalog-html",
+      "type": "control",
+      "strategy": "control-only",
       "url": "https://www.info.gouv.fr/grand-dossier/france-2030/appels-a-candidatures",
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "notes": "Liste officielle France 2030 : tentative de collecte directe avec repli navigateur ; les opérateurs officiels restent également suivis individuellement.",
-      "minExpected": 1
+      "notes": "Liste officielle France 2030 conservée comme source de contrôle directe. L’ingestion des dispositifs est assurée par les opérateurs officiels suivis individuellement (Bpifrance, ADEME, ANR, Banque des Territoires et déclinaisons régionales)."
     },
     {
       "id": "france2030_laureats",
