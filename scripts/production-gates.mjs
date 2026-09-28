@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { CRITICAL_FIELDS, evidenceCoverage, verificationStatus } from './lib/qa.mjs';
+import { isActiveAtJPlusOne, jPlusOneDate } from './lib/jplus1.mjs';
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const read=async(p,d)=>{try{return JSON.parse(await fs.readFile(p,'utf8'))}catch{return d}};
 const lib=await read(path.join(ROOT,'site','data','library.json'),{meta:{},aaps:[]});
@@ -12,10 +13,11 @@ const uat=await read(path.join(ROOT,'site','data','uat-results.json'),{total:0,p
 const smoke=await read(path.join(ROOT,'site','data','live-smoke.json'),{companyApi:{ok:false},publicSite:{ok:false}});
 const remediation=await read(path.join(ROOT,'site','data','remediation.json'),null);
 const active=(lib.aaps||[]).filter(a=>a.lifecycleStatus!=='ARCHIVE');
-const verifiedActive=active.filter(a=>a.verification?.status==='VERIFIE');
+const activeJPlusOne=active.filter(a=>isActiveAtJPlusOne(a));
+const verifiedActive=activeJPlusOne.filter(a=>a.verification?.status==='VERIFIE');
 const verified=verifiedActive.length;
-const withCdc=active.filter(a=>(a.cdcLinks||[]).length).length;
-const withDeadline=active.filter(a=>a.permanent||a.finalClosingDate||a.closingDate||(a.deadlines||[]).length).length;
+const withCdc=activeJPlusOne.filter(a=>(a.cdcLinks||[]).length).length;
+const withDeadline=activeJPlusOne.filter(a=>a.permanent||a.finalClosingDate||a.closingDate||(a.deadlines||[]).length).length;
 const repo=process.env.GITHUB_REPOSITORY||lib.meta?.repositoryUrl||null;
 const configuredPublicUrl=process.env.RADAR_PUBLIC_URL||process.env.VERCEL_URL||null;
 const deployed=Boolean(smoke.publicSite?.ok);
@@ -45,8 +47,8 @@ const verifiedEvidenceIntegrity=verifiedActive.filter(a=>{
   return CRITICAL_FIELDS.every(f=>['A','B'].includes(coverage[f]));
 }).length;
 const remediationFresh=Boolean(remediation&&remediation.version===(cfg.version||lib.meta?.version)&&remediation.activeFiches===active.length&&remediation.generatedAt);
-const volumeTarget=2001;
-const gate4Pass=gate3Pass&&active.length>=volumeTarget&&verified>0&&verifiedIntegrity===verified;
+const volumeTarget=2002;
+const gate4Pass=gate3Pass&&activeJPlusOne.length>=volumeTarget&&verified>0&&verifiedIntegrity===verified;
 const gate5Pass=gate4Pass&&verifiedEvidenceIntegrity===verified&&remediationFresh;
 // Un run workflow_dispatch/push exerce exactement la même chaîne que le cron. Le test statique vérifie séparément le cron + timezone.
 const workflowLiveOk=Boolean(inActions&&repo&&deployed&&gate3Pass&&['schedule','workflow_dispatch','push'].includes(workflowEvent));
@@ -55,8 +57,8 @@ const gates=[
  {id:1,name:'Dépôt GitHub et versionnement',status:repo?'PASS':'BLOCKED',detail:repo||'Aucun dépôt GitHub accessible/configuré.'},
  {id:2,name:'URL permanente',status:deployed?'PASS':configuredPublicUrl?'READY':'BLOCKED',detail:deployed?`${deployedUrl} — smoke HTTP concluant.`:configuredPublicUrl?`${configuredPublicUrl} configurée mais non encore validée par smoke HTTP.`:'Déploiement permanent non confirmé.'},
  {id:3,name:'Collecte réelle des sources',status:gate3Status,detail:`Ingestion: ${ingestiveExecuted}/${ingestiveSources.length} exécutées, ${ingestiveSuccess} succès, ${ingestiveImported} imports bruts. Contrôles: ${controlExecuted}/${controlSources.length}. Corpus hors bootstrap Aides Entreprises: ${nonBootstrap}. ${health.summary?.environmentSuspect?'Préflight local non concluant (réseau du runner indisponible).':`Préflight réseau: ${health.summary?.ok??0}/${health.summary?.total??0} accessibles/protégées.`}`},
- {id:4,name:'Bibliothèque réglementaire vérifiée',status:gate4Pass?'PASS':gate3Pass?(verified?'PARTIAL':'FAIL'):(verified?'PARTIAL':'WAIT_LIVE'),detail:`${verified}/${active.length} fiches actives strictement VÉRIFIÉES ; cible de couverture > 2000 : ${active.length}/${volumeTarget} ; intégrité recalculée ${verifiedIntegrity}/${verified}. Les priorités fermes sont limitées aux fiches VÉRIFIÉES ; les autres restent en pistes à sécuriser.`},
- {id:5,name:'Extraction CdC / preuves par champ',status:gate5Pass?'PASS':gate3Pass?(verified?'PARTIAL':'FAIL'):'WAIT_LIVE',detail:`Preuves A/B complètes sur les 8 champs critiques : ${verifiedEvidenceIntegrity}/${verified||0} fiches VÉRIFIÉES. File de remédiation synchronisée : ${remediationFresh?'oui':'non'}. Couverture globale indicative : ${withCdc}/${active.length} avec CdC/règlement.`},
+ {id:4,name:'Bibliothèque réglementaire vérifiée',status:gate4Pass?'PASS':gate3Pass?(verified?'PARTIAL':'FAIL'):(verified?'PARTIAL':'WAIT_LIVE'),detail:`${verified}/${activeJPlusOne.length} fiches J+1 strictement VÉRIFIÉES ; cible > 2 001, soit minimum ${volumeTarget} : ${activeJPlusOne.length}/${volumeTarget} au ${jPlusOneDate()}. Sont comptées uniquement les aides permanentes ou avec clôture documentée >= J+1 ; les dates manquantes sont exclues du compteur. Intégrité recalculée ${verifiedIntegrity}/${verified}.`},
+ {id:5,name:'Extraction CdC / preuves par champ',status:gate5Pass?'PASS':gate3Pass?(verified?'PARTIAL':'FAIL'):'WAIT_LIVE',detail:`Preuves A/B complètes sur les 8 champs critiques : ${verifiedEvidenceIntegrity}/${verified||0} fiches VÉRIFIÉES. File de remédiation synchronisée : ${remediationFresh?'oui':'non'}. Couverture J+1 indicative : ${withCdc}/${activeJPlusOne.length} avec CdC/règlement.`},
  {id:6,name:'Déduplication et fraîcheur',status:gate3Pass&&nonBootstrap>0?'PASS':'PASS_TECH',detail:'Scans vides non destructifs, ordre multi-source neutralisé, réactivation et J+1 couverts par tests. PASS final après corpus multi-sources réel.'},
  {id:7,name:'Enrichissement SIREN/SIRET',status:companyLiveOk?'PASS':'READY',detail:companyLiveOk?'API Recherche d’entreprises DINUM validée par smoke live.':'Fallback navigateur + endpoint /api/company disponibles ; smoke live non concluant ou non exécuté.'},
  {id:8,name:'Pertinence projet ≥85 %',status:consultantCases>=5&&uat.total>=5?'PASS':'PARTIAL',detail:`Moteur partagé navigateur/recette, pondération finale 25/15/20/15/10/10/5. Cas UAT réussis : ${consultantCases}/${uat.total||0}. Minimum : 5.`},
@@ -64,6 +66,6 @@ const gates=[
 ];
 const preProductionPass=gates.every(g=>g.status==='PASS');
 gates.push({id:10,name:'Recette production',status:preProductionPass?'PASS':'NOT_STARTED',detail:preProductionPass?'Gates 1–9 validées ; recette production finale autorisée.':'GO uniquement quand les Gates 1–9 sont validées et sans anomalie P0.'});
-const summary={generatedAt:new Date().toISOString(),version:cfg.version||'unknown',gates,counts:{sourcesConfigured:cfg.sources.length,ingestiveSources:ingestiveSources.length,controlSources:controlSources.length,sourcesInLastCycle:sourceCycles,sourcesSuccess:sourceSuccess,ingestiveExecuted,ingestiveSuccess,ingestiveImported,controlExecuted,nonBootstrapFiches:nonBootstrap,activeFiches:active.length,verifiedFiches:verified,verifiedIntegrity,verifiedEvidenceIntegrity,withCdc,withDeadline,consultantCases,uatTotal:uat.total,companySmokeOk:companyLiveOk,publicSmokeOk:deployed,workflowEvent,inActions,remediationFresh},goProduction:preProductionPass};
+const summary={generatedAt:new Date().toISOString(),version:cfg.version||'unknown',gates,counts:{sourcesConfigured:cfg.sources.length,ingestiveSources:ingestiveSources.length,controlSources:controlSources.length,sourcesInLastCycle:sourceCycles,sourcesSuccess:sourceSuccess,ingestiveExecuted,ingestiveSuccess,ingestiveImported,controlExecuted,nonBootstrapFiches:nonBootstrap,activeFiches:active.length,jPlusOneDate:jPlusOneDate(),jPlusOneActiveFiches:activeJPlusOne.length,volumeTarget,verifiedFiches:verified,verifiedIntegrity,verifiedEvidenceIntegrity,withCdc,withDeadline,consultantCases,uatTotal:uat.total,companySmokeOk:companyLiveOk,publicSmokeOk:deployed,workflowEvent,inActions,remediationFresh},goProduction:preProductionPass};
 const outDir=path.join(ROOT,'site','data');await fs.mkdir(outDir,{recursive:true});await fs.writeFile(path.join(outDir,'production-readiness.json'),JSON.stringify(summary,null,2),'utf8');
 const md=[`# LEYTON RADAR — Production Readiness v${cfg.version||'unknown'}`,'',`Généré : ${summary.generatedAt}`,'',...gates.map(g=>`- **Gate ${g.id} — ${g.name}** : ${g.status} — ${g.detail}`),'',`**GO PRODUCTION : ${summary.goProduction?'OUI':'NON'}**`].join('\n');await fs.writeFile(path.join(ROOT,'PRODUCTION_READINESS.md'),md,'utf8');console.log(md);
