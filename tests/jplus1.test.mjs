@@ -24,6 +24,6 @@ test('une date manquante ne compte jamais comme active J+1',()=>{
   assert.equal(isActiveAtJPlusOne({lifecycleStatus:'ACTIVE'},now),false);
 });
 
-test('une fiche archivée est exclue même si elle est permanente',()=>{
+test('une fiche STALE est exclue du compteur J+1',()=>{\n  assert.equal(isActiveAtJPlusOne({lifecycleStatus:'STALE'},now),false);\n});\n\ntest('une fiche archivée est exclue même si elle est permanente',()=>{
   assert.equal(isActiveAtJPlusOne({lifecycleStatus:'ARCHIVE',permanent:true},now),false);
 });

@@ -18,9 +18,12 @@ export function aidClosingDate(a={}){
 }
 
 export function isActiveAtJPlusOne(a={},now=new Date()){
-  if(a.lifecycleStatus==='ARCHIVE')return false;
+  if(a.lifecycleStatus&&a.lifecycleStatus!=='ACTIVE')return false;
   if(a.permanent===true)return true;
   const closing=aidClosingDate(a);
-  if(!closing)return false;
-  return closing>=jPlusOneDate(now);
+  if(closing)return closing>=jPlusOneDate(now);
+  // Une fiche retrouvée comme ACTIVE dans le cycle courant reste ouverte
+  // lorsqu'aucune date de fin n'est publiée par la source. On ne lui invente
+  // pas une date : elle est comptée comme "active sans échéance publiée".
+  return a.lifecycleStatus==='ACTIVE';
 }
