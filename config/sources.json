@@ -565,13 +565,13 @@
       "id": "bfc_france2030",
       "name": "Bourgogne-Franche-Comté — France 2030 régionalisé",
       "scope": "Bourgogne-Franche-Comté",
-      "type": "web",
-      "strategy": "catalog-html",
+      "type": "control",
+      "strategy": "control-only",
       "url": "https://france2030.bourgognefranchecomte.fr/",
       "official": true,
       "priority": 0,
-      "minExpected": 2,
-      "browserFallback": true
+      "browserFallback": true,
+      "notes": "Page-cadre conservée comme contrôle direct ; l’axe Projets d’innovation est collecté via sa page officielle dédiée."
     },
     {
       "id": "bfc_europe",
@@ -601,13 +601,13 @@
       "id": "bretagne_france2030",
       "name": "Bretagne — France 2030 régionalisé",
       "scope": "Bretagne",
-      "type": "web",
-      "strategy": "catalog-html",
+      "type": "control",
+      "strategy": "control-only",
       "url": "https://inno-avenir.bretagne.bzh/",
       "official": true,
       "priority": 0,
-      "minExpected": 2,
-      "browserFallback": true
+      "browserFallback": true,
+      "notes": "Page-cadre conservée comme contrôle direct ; l’axe Projets d’innovation est collecté via sa page officielle dédiée."
     },
     {
       "id": "bretagne_opendata",
@@ -714,14 +714,13 @@
       "id": "grand_est_france2030",
       "name": "Grand Est — France 2030 régionalisé",
       "scope": "Grand Est",
-      "type": "web",
-      "strategy": "catalog-html",
+      "type": "control",
+      "strategy": "control-only",
       "url": "https://innovationavenir.grandest.fr/",
       "official": true,
       "priority": 0,
-      "minExpected": 1,
       "browserFallback": true,
-      "notes": "Seuil de contrôle recalé sur le volume officiel effectivement publié (1) afin d’éviter un faux négatif de couverture."
+      "notes": "Seuil de contrôle recalé sur le volume officiel effectivement publié (1) afin d’éviter un faux négatif de couverture. Page-cadre conservée comme contrôle direct ; l’axe Projets d’innovation est collecté via sa page officielle dédiée."
     },
     {
       "id": "guadeloupe_france2030",
@@ -823,14 +822,13 @@
       "id": "guyane_france2030",
       "name": "Guyane — France 2030 régionalisé",
       "scope": "Guyane",
-      "type": "web",
-      "strategy": "catalog-html",
+      "type": "control",
+      "strategy": "control-only",
       "url": "https://france2030regionalise.ctguyane.fr/",
       "official": true,
       "priority": 0,
-      "minExpected": 1,
       "browserFallback": true,
-      "notes": "Seuil de contrôle recalé sur le volume officiel effectivement publié (1) afin d’éviter un faux négatif de couverture."
+      "notes": "Seuil de contrôle recalé sur le volume officiel effectivement publié (1) afin d’éviter un faux négatif de couverture. Page-cadre conservée comme contrôle direct ; l’axe Projets d’innovation est collecté via sa page officielle dédiée."
     },
     {
       "id": "guyane_opendata",
@@ -868,14 +866,13 @@
       "id": "hdf_france2030",
       "name": "Hauts-de-France — France 2030 régionalisé",
       "scope": "Hauts-de-France",
-      "type": "web",
-      "strategy": "catalog-html",
+      "type": "control",
+      "strategy": "control-only",
       "url": "https://inno-avenir.hautsdefrance.fr/",
       "official": true,
       "priority": 0,
-      "minExpected": 1,
       "browserFallback": true,
-      "notes": "Seuil de contrôle recalé sur le volume officiel effectivement publié (1) afin d’éviter un faux négatif de couverture."
+      "notes": "Seuil de contrôle recalé sur le volume officiel effectivement publié (1) afin d’éviter un faux négatif de couverture. Page-cadre conservée comme contrôle direct ; l’axe Projets d’innovation est collecté via sa page officielle dédiée."
     },
     {
       "id": "hdf_europe",
@@ -1133,14 +1130,13 @@
       "id": "martinique_france2030",
       "name": "Martinique — France 2030 régionalisé",
       "scope": "Martinique",
-      "type": "web",
-      "strategy": "catalog-html",
+      "type": "control",
+      "strategy": "control-only",
       "url": "https://france2030regionalise-pref.collectivitedemartinique.mq/",
       "official": true,
       "priority": 0,
-      "minExpected": 1,
       "browserFallback": true,
-      "notes": "Seuil de contrôle recalé sur le volume officiel effectivement publié (1) afin d’éviter un faux négatif de couverture."
+      "notes": "Seuil de contrôle recalé sur le volume officiel effectivement publié (1) afin d’éviter un faux négatif de couverture. Page-cadre conservée comme contrôle direct ; l’axe Projets d’innovation est collecté via sa page officielle dédiée."
     },
     {
       "id": "martinique_europe_beneficiaires",
@@ -1283,14 +1279,13 @@
       "id": "normandie_france2030",
       "name": "Normandie — France 2030 régionalisé",
       "scope": "Normandie",
-      "type": "web",
-      "strategy": "catalog-html",
+      "type": "control",
+      "strategy": "control-only",
       "url": "https://innov-avenir.normandie.fr/",
       "official": true,
       "priority": 0,
-      "minExpected": 1,
       "browserFallback": true,
-      "notes": "Seuil de contrôle recalé sur le volume officiel effectivement publié (1) afin d’éviter un faux négatif de couverture."
+      "notes": "Seuil de contrôle recalé sur le volume officiel effectivement publié (1) afin d’éviter un faux négatif de couverture. Page-cadre conservée comme contrôle direct ; l’axe Projets d’innovation est collecté via sa page officielle dédiée."
     },
     {
       "id": "normandie_europe",
@@ -1607,14 +1602,13 @@
       "id": "pdl_france2030",
       "name": "Pays de la Loire — France 2030 régionalisé",
       "scope": "Pays de la Loire",
-      "type": "web",
-      "strategy": "catalog-html",
+      "type": "control",
+      "strategy": "control-only",
       "url": "https://pia.paysdelaloire.fr/",
       "official": true,
       "priority": 0,
-      "minExpected": 2,
       "browserFallback": true,
-      "notes": "Seuil de contrôle recalé sur le volume officiel effectivement publié (2) afin d’éviter un faux négatif de couverture."
+      "notes": "Seuil de contrôle recalé sur le volume officiel effectivement publié (2) afin d’éviter un faux négatif de couverture. Page-cadre conservée comme contrôle direct ; l’axe Projets d’innovation est collecté via sa page officielle dédiée."
     },
     {
       "id": "pdl_feder",
@@ -1842,6 +1836,118 @@
       "kindOverride": "AAP / AMI",
       "funder": "État · Région Nouvelle-Aquitaine · Bpifrance",
       "notes": "Page officielle dédiée : projets collaboratifs de R&D, consortium d’entreprises et partenaire de recherche."
+    },
+    {
+      "id": "bfc_france2030_innovation_direct",
+      "name": "Bourgogne-Franche-Comté — France 2030 — Projets d’innovation",
+      "scope": "Bourgogne-Franche-Comté",
+      "type": "web",
+      "strategy": "official-page",
+      "url": "https://france2030.bourgognefranchecomte.fr/projets-d-innovation/",
+      "official": true,
+      "priority": 0,
+      "browserFallback": true,
+      "titleOverride": "France 2030 - Appel à projets « Projets d'Innovation »",
+      "kindOverride": "AAP / AMI",
+      "funder": "État · Région Bourgogne-Franche-Comté · Bpifrance"
+    },
+    {
+      "id": "bretagne_france2030_innovation_direct",
+      "name": "Bretagne — France 2030 — INNO AVENIR Projets",
+      "scope": "Bretagne",
+      "type": "web",
+      "strategy": "official-page",
+      "url": "https://inno-avenir.bretagne.bzh/projets-dentreprises/",
+      "official": true,
+      "priority": 0,
+      "browserFallback": true,
+      "titleOverride": "France 2030 : Appel à projets régionalisé « INNO AVENIR Projets » - Bretagne",
+      "kindOverride": "AAP / AMI",
+      "funder": "État · Région Bretagne · Bpifrance"
+    },
+    {
+      "id": "grand_est_france2030_innovation_direct",
+      "name": "Grand Est — France 2030 — Projets d’innovation",
+      "scope": "Grand Est",
+      "type": "web",
+      "strategy": "official-page",
+      "url": "https://innovationavenir.grandest.fr/projets-davenir-innovation/",
+      "official": true,
+      "priority": 0,
+      "browserFallback": true,
+      "titleOverride": "France 2030 - Appel à projets « Projets d'Innovation en Région Grand Est »",
+      "kindOverride": "AAP / AMI",
+      "funder": "État · Région Grand Est · Bpifrance"
+    },
+    {
+      "id": "guyane_france2030_innovation_direct",
+      "name": "Guyane — France 2030 — Projets d’innovation",
+      "scope": "Guyane",
+      "type": "web",
+      "strategy": "official-page",
+      "url": "https://france2030regionalise.ctguyane.fr/projets-d-innovation/",
+      "official": true,
+      "priority": 0,
+      "browserFallback": true,
+      "titleOverride": "France 2030 - Projets d'innovation - Guyane",
+      "kindOverride": "AAP / AMI",
+      "funder": "État · Collectivité Territoriale de Guyane · Bpifrance"
+    },
+    {
+      "id": "hdf_france2030_innovation_direct",
+      "name": "Hauts-de-France — France 2030 — Projets d’innovation",
+      "scope": "Hauts-de-France",
+      "type": "web",
+      "strategy": "official-page",
+      "url": "https://inno-avenir.hautsdefrance.fr/projets-d-innovation/",
+      "official": true,
+      "priority": 0,
+      "browserFallback": true,
+      "titleOverride": "France 2030 (volet régionalisé) : Appel à projets « Projets d'innovation » - Hauts-de-France",
+      "kindOverride": "AAP / AMI",
+      "funder": "État · Région Hauts-de-France · Bpifrance"
+    },
+    {
+      "id": "martinique_france2030_innovation_direct",
+      "name": "Martinique — France 2030 — Projets d’innovation",
+      "scope": "Martinique",
+      "type": "web",
+      "strategy": "official-page",
+      "url": "https://france2030regionalise-pref.collectivitedemartinique.mq/projets-d-innovation/",
+      "official": true,
+      "priority": 0,
+      "browserFallback": true,
+      "titleOverride": "France 2030 : Appel à projets « Projets d'Innovation » - Martinique",
+      "kindOverride": "AAP / AMI",
+      "funder": "État · Collectivité Territoriale de Martinique · Bpifrance"
+    },
+    {
+      "id": "normandie_france2030_innovation_direct",
+      "name": "Normandie — France 2030 — Projets d’innovation",
+      "scope": "Normandie",
+      "type": "web",
+      "strategy": "official-page",
+      "url": "https://innov-avenir.normandie.fr/projets-d-innovation/",
+      "official": true,
+      "priority": 0,
+      "browserFallback": true,
+      "titleOverride": "France 2030 : Appel à projets « Projets d'Innovation » - Normandie",
+      "kindOverride": "AAP / AMI",
+      "funder": "État · Région Normandie · Bpifrance"
+    },
+    {
+      "id": "pdl_france2030_innovation_direct",
+      "name": "Pays de la Loire — France 2030 — Projets d’innovation",
+      "scope": "Pays de la Loire",
+      "type": "web",
+      "strategy": "official-page",
+      "url": "http://pia.paysdelaloire.fr/Projets-d-Innovation",
+      "official": true,
+      "priority": 0,
+      "browserFallback": true,
+      "titleOverride": "France 2030 (volet régionalisé) : Appel à projets « Pays de la Loire Innovation »",
+      "kindOverride": "AAP / AMI",
+      "funder": "État · Région Pays de la Loire · Bpifrance"
     }
   ]
 }
