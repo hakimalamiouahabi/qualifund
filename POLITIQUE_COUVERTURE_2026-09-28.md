@@ -1,7 +1,7 @@
 # Politique de couverture et de qualification — 28 septembre 2026
 
 ## Périmètre
-Entreprises : startups, PME, ETI et grandes entreprises. Instruments : subventions, avances remboursables et prêts explicitement à taux zéro. Les prêts garantis et prêts classiques sont exclus.
+Entreprises : startups, PME, ETI et grandes entreprises. Dispositifs : appels à projets, appels à manifestation d'intérêt et aides nationales ou régionales en France, y compris FEDER et FEADER lorsque le dispositif vise effectivement les entreprises. Instruments : subventions, avances remboursables et prêts explicitement à taux zéro. Les prêts garantis et prêts classiques sont exclus.
 
 ## Collecte
 1. Exploiter l'API publique officielle lorsqu'elle fournit les fiches et leurs conditions sans coût ni secret supplémentaire.
