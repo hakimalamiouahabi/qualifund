@@ -8,7 +8,7 @@ const fmtDate=v=>{if(!v)return'—';const d=new Date(v+'T00:00:00');return isNaN
 const money=v=>v==null?'—':new Intl.NumberFormat('fr-FR',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(v);
 const missing=()=>'<span class="missing">NON DOCUMENTÉ — À VÉRIFIER</span>';
 const aidTypeLabel=t=>({SUBVENTION:'Subvention',AVANCE_REMBOURSABLE:'Avance remboursable',PRET_TAUX_ZERO:'Prêt à taux zéro',PRET:'Prêt',BONIFICATION_INTERET:"Bonification d’intérêt",GARANTIE:'Garantie',ALLEGEMENT_FISCAL:'Allègement fiscal',PARTICIPATION_CAPITAL:'Participation au capital',APPEL_A_PROJET:'Appel à projets',ACCOMPAGNEMENT_GRATUIT:'Accompagnement gratuit',CREDIT_BAIL:'Crédit-bail',AUTRE:'Autre dispositif'}[t]||t);
-const CONFIG=window.LEYTON_RADAR_CONFIG||{minRelevance:85};
+const CONFIG=window.LEYTON_RADAR_CONFIG||{minRelevance:80};
 const REGIONS=['Auvergne-Rhône-Alpes','Bourgogne-Franche-Comté','Bretagne','Centre-Val de Loire','Corse','Grand Est','Hauts-de-France','Île-de-France','Normandie','Nouvelle-Aquitaine','Occitanie','Pays de la Loire','Provence-Alpes-Côte d’Azur','Guadeloupe','Guyane','Martinique','La Réunion','Mayotte'];
 const TYPES=['R&D / Innovation','Investissement productif','Transition numérique','Transition écologique'];
 const MATURITY=['À préciser','Faisabilité','PoC','Prototype','Démonstrateur / pilote','Première industrialisation','Investissement / déploiement'];
@@ -278,7 +278,7 @@ async function runFeasibility(){
   <div class="analysis-audit"><b>${checks.toLocaleString('fr-FR')} contrôles exécutés</b> sur ${corpus.length.toLocaleString('fr-FR')} dispositifs en ${duration.toLocaleString('fr-FR')} ms · ${rejected.length.toLocaleString('fr-FR')} incompatibilités bloquantes écartées · ${scored.length.toLocaleString('fr-FR')} dispositifs scorés.</div></div>
 
   <div class="section-title"><h3>Dispositifs prioritaires</h3></div>
-  ${priorities.length?priorities.map((x,i)=>resultCard(x,i+1,'PRIORITAIRE')).join(''):'<div class="callout">Aucun dispositif n’atteint 85 %. Les meilleures correspondances restent visibles dans les niveaux suivants.</div>'}
+  ${priorities.length?priorities.map((x,i)=>resultCard(x,i+1,'PRIORITAIRE')).join(''):'<div class="callout">Aucun dispositif ne ressort comme prioritaire avec les informations actuellement disponibles. Les meilleures correspondances restent visibles ci-dessous.</div>'}
   <div class="section-title"><h3>À approfondir</h3></div>
   ${leads.length?leads.map((x,i)=>resultCard(x,i+1,'À APPROFONDIR')).join(''):'<div class="callout">Aucune correspondance supplémentaire de niveau intermédiaire.</div>'}
   ${potentials.length?`<div class="section-title"><h3>Correspondances potentielles</h3></div>${potentials.map((x,i)=>resultCard(x,i+1,'POTENTIEL')).join('')}`:''}
