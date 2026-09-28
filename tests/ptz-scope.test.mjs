@@ -17,11 +17,11 @@ test('Aides Territoires : un loan n’entre que si le texte prouve le taux zéro
   assert.equal(fromAidesTerritoires({...base,name:'Prêt croissance',description:'Prêt avec intérêts au taux de 3,5 %'}),null);
 });
 
-test('Aides Entreprises : prêt honneur/taux zéro est accepté sans ouvrir les prêts classiques',()=>{
+test('Aides Entreprises : PTZ recommandé, prêt classique conservé seulement dans la bibliothèque',()=>{
   const raw={id_aid:42,aid_nom:"Prêt d'honneur innovation",aid_objet:'Financer un projet innovant',aid_montant:'Prêt à taux zéro de 20 000 €',aid_conditions:'PME',aid_benef:'PME',date_fin:'2027-12-31',cache_indexation:{natures:[{id_typ:5,typ_libelle:"Prêt d'honneur"}],profils:[{id_tut:4}],territoires:[{ter_libelle:'FRANCE'}],projets:[],financeurs:[]},complements:{source:[],reglement:[],formulaire:[]}};
   const a=fromAidesEntreprises(raw);assert.ok(a);assert.ok(a.aidTypes.includes('PRET_TAUX_ZERO'));
   const classic={...raw,id_aid:43,aid_nom:'Prêt croissance',aid_montant:'Prêt à 4 %',cache_indexation:{...raw.cache_indexation,natures:[{id_typ:5,typ_libelle:'Prêt'}]}};
-  assert.equal(fromAidesEntreprises(classic),null);
+  const c=fromAidesEntreprises(classic);assert.ok(c);assert.ok(c.aidTypes.includes('PRET'));assert.equal(c.aidTypes.some(x=>['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO'].includes(x)),false);
 });
 
 test('sources PTZ officielles Occitanie et Région Sud sont ingestives',()=>{
