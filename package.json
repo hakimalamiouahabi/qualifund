@@ -1,9 +1,9 @@
 {
-  "name": "leyton-radar",
+  "name": "qualifund",
   "version": "12.2.0",
   "private": true,
   "type": "module",
-  "description": "LEYTON RADAR — cartographie, faisabilité et veille des aides & financements publics",
+  "description": "QUALIFUND — bibliothèque officielle et évaluation prudente des aides publiques",
   "scripts": {
     "update": "node scripts/update-library.mjs",
     "update:full": "node scripts/update-library.mjs --full",
