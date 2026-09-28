@@ -2,7 +2,7 @@
 
 Bibliothèque des appels à projets (AAP), appels à manifestation d'intérêt (AMI) et aides nationales ou régionales en France pour les startups, PME, ETI et grandes entreprises. Périmètre : **subventions**, **avances remboursables** et **prêts explicitement à taux zéro**. Les prêts garantis et les prêts classiques sont hors périmètre.
 
-## Statut réel
+## Objectif de couverture\n\nPlus de 2 000 dispositifs distincts, nationaux ou régionaux, réellement dans le périmètre entreprise et instruments retenus. Le seuil est une cible de recette et ne justifie jamais l'ajout de doublons, d'éditions closes, de bénéficiaires publics uniquement ou d'autres produits financiers.\n\n## Statut réel
 
 Le corpus embarqué au démarrage contient 678 fiches, dont **60 classées AAP / AMI** datées du 22 septembre 2026, dont **0 fiche au statut vérifié**, 86 avec un lien de cahier des charges ou règlement, 166 avec une échéance renseignée et **1 seule avec un critère de sélection renseigné**. Les catégories instrumentales se recoupent : 665 fiches mentionnent une subvention, 58 une avance remboursable et 2 un prêt à taux zéro. Le registre comporte 145 entrées, dont 34 de contrôle uniquement. Le classement AAP / AMI peut contenir des erreurs et ne démontre pas une couverture exhaustive des appels à projets ni des aides nationales et régionales. Ces nombres ne démontrent ni l'actualité ni l'exhaustivité des dispositifs. Le cycle de collecte complète lancé le 28 septembre 2026 doit encore fournir ses résultats et son rapport d'anomalies.
 

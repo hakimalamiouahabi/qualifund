@@ -45,7 +45,8 @@ const verifiedEvidenceIntegrity=verifiedActive.filter(a=>{
   return CRITICAL_FIELDS.every(f=>['A','B'].includes(coverage[f]));
 }).length;
 const remediationFresh=Boolean(remediation&&remediation.version===(cfg.version||lib.meta?.version)&&remediation.activeFiches===active.length&&remediation.generatedAt);
-const gate4Pass=gate3Pass&&verified>0&&verifiedIntegrity===verified;
+const volumeTarget=2001;
+const gate4Pass=gate3Pass&&active.length>=volumeTarget&&verified>0&&verifiedIntegrity===verified;
 const gate5Pass=gate4Pass&&verifiedEvidenceIntegrity===verified&&remediationFresh;
 // Un run workflow_dispatch/push exerce exactement la même chaîne que le cron. Le test statique vérifie séparément le cron + timezone.
 const workflowLiveOk=Boolean(inActions&&repo&&deployed&&gate3Pass&&['schedule','workflow_dispatch','push'].includes(workflowEvent));
@@ -54,7 +55,7 @@ const gates=[
  {id:1,name:'Dépôt GitHub et versionnement',status:repo?'PASS':'BLOCKED',detail:repo||'Aucun dépôt GitHub accessible/configuré.'},
  {id:2,name:'URL permanente',status:deployed?'PASS':configuredPublicUrl?'READY':'BLOCKED',detail:deployed?`${deployedUrl} — smoke HTTP concluant.`:configuredPublicUrl?`${configuredPublicUrl} configurée mais non encore validée par smoke HTTP.`:'Déploiement permanent non confirmé.'},
  {id:3,name:'Collecte réelle des sources',status:gate3Status,detail:`Ingestion: ${ingestiveExecuted}/${ingestiveSources.length} exécutées, ${ingestiveSuccess} succès, ${ingestiveImported} imports bruts. Contrôles: ${controlExecuted}/${controlSources.length}. Corpus hors bootstrap Aides Entreprises: ${nonBootstrap}. ${health.summary?.environmentSuspect?'Préflight local non concluant (réseau du runner indisponible).':`Préflight réseau: ${health.summary?.ok??0}/${health.summary?.total??0} accessibles/protégées.`}`},
- {id:4,name:'Bibliothèque réglementaire vérifiée',status:gate4Pass?'PASS':gate3Pass?(verified?'PARTIAL':'FAIL'):(verified?'PARTIAL':'WAIT_LIVE'),detail:`${verified}/${active.length} fiches actives strictement VÉRIFIÉES ; intégrité recalculée ${verifiedIntegrity}/${verified}. Les priorités fermes sont limitées aux fiches VÉRIFIÉES ; les autres restent en pistes à sécuriser.`},
+ {id:4,name:'Bibliothèque réglementaire vérifiée',status:gate4Pass?'PASS':gate3Pass?(verified?'PARTIAL':'FAIL'):(verified?'PARTIAL':'WAIT_LIVE'),detail:`${verified}/${active.length} fiches actives strictement VÉRIFIÉES ; cible de couverture > 2000 : ${active.length}/${volumeTarget} ; intégrité recalculée ${verifiedIntegrity}/${verified}. Les priorités fermes sont limitées aux fiches VÉRIFIÉES ; les autres restent en pistes à sécuriser.`},
  {id:5,name:'Extraction CdC / preuves par champ',status:gate5Pass?'PASS':gate3Pass?(verified?'PARTIAL':'FAIL'):'WAIT_LIVE',detail:`Preuves A/B complètes sur les 8 champs critiques : ${verifiedEvidenceIntegrity}/${verified||0} fiches VÉRIFIÉES. File de remédiation synchronisée : ${remediationFresh?'oui':'non'}. Couverture globale indicative : ${withCdc}/${active.length} avec CdC/règlement.`},
  {id:6,name:'Déduplication et fraîcheur',status:gate3Pass&&nonBootstrap>0?'PASS':'PASS_TECH',detail:'Scans vides non destructifs, ordre multi-source neutralisé, réactivation et J+1 couverts par tests. PASS final après corpus multi-sources réel.'},
  {id:7,name:'Enrichissement SIREN/SIRET',status:companyLiveOk?'PASS':'READY',detail:companyLiveOk?'API Recherche d’entreprises DINUM validée par smoke live.':'Fallback navigateur + endpoint /api/company disponibles ; smoke live non concluant ou non exécuté.'},

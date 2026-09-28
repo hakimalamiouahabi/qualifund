@@ -14,14 +14,14 @@ function rowsFromStock(json){
 async function collectFromStock(source,{log=console.log}={}){
   const stockUrl=source.stockUrl||DEFAULT_STOCK_URL;
   const {json}=await fetchJson(stockUrl,{timeoutMs:Number(source.stockTimeoutMs||120000),retries:2});
-  const rows=rowsFromStock(json),out=[];
+  const rows=rowsFromStock(json),out=[],audit={inactive:0};
   for(const raw of rows){
-    if(Number(raw?.status??1)!==1) continue;
-    const a=fromAidesEntreprises(raw);
+    if(Number(raw?.status??1)!==1){audit.inactive++;continue}
+    const a=fromAidesEntreprises(raw,audit);
     if(a) out.push(a);
   }
-  log(`[Aides Entreprises/stock] ${rows.length} enregistrements lus, ${out.length} fiches Qualifund avant filtre thématique`);
-  return {aids:out,discovered:rows.length,message:`Stock officiel complet: ${rows.length} enregistrements lus, ${out.length} fiches Qualifund`};
+  log(`[Aides Entreprises/stock] ${rows.length} enregistrements lus, ${out.length} fiches candidates, exclusions: ${JSON.stringify(audit)}`);
+  return {aids:out,discovered:rows.length,audit,message:`Stock officiel: ${rows.length} lignes ; ${out.length} retenues ; exclusions ${JSON.stringify(audit)}`};
 }
 
 async function collectFromApi(source,{log=console.log}={}){
