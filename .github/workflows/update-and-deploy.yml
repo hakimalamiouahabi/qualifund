@@ -1,0 +1,212 @@
+name: LEYTON RADAR — collecte, QA et publication
+
+on:
+  workflow_dispatch:
+    inputs:
+      full_refresh:
+        description: 'Recontrôler et enrichir toutes les fiches'
+        required: false
+        type: boolean
+        default: true
+  schedule:
+    - cron: '0 2 * * *'
+      timezone: 'Europe/Paris'
+  push:
+    branches: [main]
+    paths:
+      - 'site/**'
+      - 'scripts/**'
+      - 'config/**'
+      - 'schemas/**'
+      - 'tests/**'
+      - 'api/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/**'
+
+concurrency:
+  group: leyton-radar-production
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    permissions:
+      contents: write
+      pages: read
+    outputs:
+      data_sha: ${{ steps.commit_data.outputs.sha }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+      - name: Node 22
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - name: Installer les dépendances de façon reproductible
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -f package-lock.json ]; then
+            npm ci --ignore-scripts --no-audit --no-fund
+          else
+            echo 'Bootstrap du lockfile npm (première exécution uniquement).'
+            npm install --ignore-scripts --no-audit --no-fund
+          fi
+      - name: Persister le lockfile bootstrap avant la collecte
+        if: ${{ hashFiles('package-lock.json') != '' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if ! git ls-files --error-unmatch package-lock.json >/dev/null 2>&1; then
+            git config user.name "leyton-radar-bot"
+            git config user.email "leyton-radar-bot@users.noreply.github.com"
+            git add package-lock.json
+            git commit -m "chore(deps): bootstrap package-lock [skip ci]"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - name: Installer Chromium Playwright
+        run: npx playwright install --with-deps chromium
+      - name: Auditer le registre maître
+        run: npm run audit:sources
+      - name: Préflight santé des 145 sources
+        run: npm run preflight:sources
+      - name: Sauvegarder la bibliothèque précédente
+        run: |
+          mkdir -p /tmp/leyton-radar
+          cp site/data/library.json /tmp/leyton-radar/library-before.json || echo '{"aaps":[]}' > /tmp/leyton-radar/library-before.json
+      - name: Collecte complète quotidienne / manuelle
+        env:
+          LEYTON_RADAR_FULL_REFRESH: '1'
+        run: npm run update:full
+      - name: Rapport quotidien des changements
+        run: node scripts/generate-daily-report.mjs /tmp/leyton-radar/library-before.json site/data/library.json site/bibliotheque/rapports
+      - name: Synchroniser les artefacts publics
+        run: npm run sync:metadata
+      - name: Reconstruire l'index de recherche
+        run: npm run build:index
+      - name: Auditer l'ingestion
+        run: npm run audit:ingestion
+      - name: Tests unitaires
+        run: npm test
+      - name: Validation schéma
+        run: npm run validate
+      - name: Recette UAT pertinence
+        run: npm run uat
+      - name: Smoke SIREN officiel
+        run: npm run smoke:live -- --strict-company
+      - name: QA
+        run: npm run qa >> "$GITHUB_STEP_SUMMARY"
+      - name: Rapport de remédiation preuves
+        run: npm run remediation >> "$GITHUB_STEP_SUMMARY"
+      - name: Pré-readiness avant déploiement
+        run: npm run production:gates >> "$GITHUB_STEP_SUMMARY"
+      - name: Commit des données générées
+        id: commit_data
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "leyton-radar-bot"
+          git config user.email "leyton-radar-bot@users.noreply.github.com"
+          git add package-lock.json site/data site/bibliotheque PRODUCTION_READINESS.md REMEDIATION_REPORT.md || true
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(data): actualisation LEYTON RADAR [skip ci]"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Configurer GitHub Pages
+        id: pages
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+      - name: Charger l'artefact Pages
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
+
+  verify-production:
+    needs: [build, deploy]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: read
+    steps:
+      - name: Checkout du corpus réellement publié
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          ref: ${{ needs.build.outputs.data_sha }}
+      - name: Node 22
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - name: Valider SIREN + site public après déploiement
+        env:
+          RADAR_PUBLIC_URL: ${{ needs.deploy.outputs.page_url }}
+        run: node scripts/live-smoke.mjs --strict-company --strict-public
+      - name: Recette UAT finale
+        run: npm run uat
+      - name: Calculer la readiness finale sur le SHA publié
+        env:
+          RADAR_PUBLIC_URL: ${{ needs.deploy.outputs.page_url }}
+        run: npm run production:gates >> "$GITHUB_STEP_SUMMARY"
+      - name: Persister les preuves de production
+        id: commit_proofs
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "leyton-radar-bot"
+          git config user.email "leyton-radar-bot@users.noreply.github.com"
+          git add site/data/live-smoke.json site/data/uat-results.json site/data/production-readiness.json PRODUCTION_READINESS.md
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(validation): preuves production [skip ci]"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Certification production stricte
+        run: npm run certify:production
+      - name: Reconfigurer Pages pour l'artefact vérifié
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+      - name: Charger le site avec readiness finale
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          name: github-pages-verified
+          path: site
+
+  redeploy-verified:
+    needs: verify-production
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.final_deployment.outputs.page_url }}
+    steps:
+      - name: Publier la version avec preuves finales
+        id: final_deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
+        with:
+          artifact_name: github-pages-verified
