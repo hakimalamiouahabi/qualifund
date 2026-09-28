@@ -6,8 +6,11 @@ export function assessCollection(source,result={}){
   // Un scan d'ingestion vide n'est jamais assez probant pour invalider l'historique.
   // Les contrôles seuls peuvent légitimement ne produire aucune fiche importable.
   const emptyIngestion=!isControl && imported===0;
-  const success=!suspiciousVolume && !emptyIngestion;
-  const lifecycleSafe=success && !isControl && imported>0;
+  // Un volume inférieur au plancher est une alerte de couverture, pas une panne technique
+  // lorsque la source a réellement fourni des fiches. En revanche, on interdit alors
+  // toute dépréciation automatique de l'historique (lifecycleSafe=false).
+  const success=!emptyIngestion && (isControl || imported>0);
+  const lifecycleSafe=success && !isControl && imported>0 && !suspiciousVolume;
   const reasons=[];
   if(suspiciousVolume)reasons.push(`volume suspect (${discovered} < ${source.minExpected})`);
   if(emptyIngestion)reasons.push('scan d’ingestion vide');
