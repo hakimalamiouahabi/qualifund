@@ -221,13 +221,13 @@ async function runFeasibility(){
   }
 
   const started=performance.now(),corpus=state.lib.filter(usableAid),scored=[],rejected=[];
-  root.innerHTML=`<div class="analysis-progress"><div class="row between"><b>Cartographie en cours</b><span id="analysisProgressLabel">0 / ${corpus.length}</span></div><div class="progress"><i id="analysisProgressBar" style="width:0%"></i></div><p class="mini">Contrôle de l’éligibilité, puis rapprochement déterministe sur 9 dimensions.</p></div>`;
+  root.innerHTML=`<div class="analysis-progress"><div class="row between"><b>Cartographie en cours</b><span id="analysisProgressLabel">0 / ${corpus.length}</span></div><div class="progress"><i id="analysisProgressBar" style="width:0%"></i></div><p class="mini">Contrôle de l’éligibilité puis analyse adaptée au financeur et au type de dispositif.</p></div>`;
 
   for(let i=0;i<corpus.length;i++){
     const a=corpus[i],e=eligibility(a,p);
     if(e.eligible){
       const rel=relevance(a,p);
-      scored.push({a,elig:e,relevance:rel,confidence:a.verification?.confidence||0,completeness:a.verification?.completeness||0});
+      scored.push({a,elig:e,relevance:rel});
     }else rejected.push({a,elig:e});
     if(i%120===0||i===corpus.length-1){
       const pct=Math.round(((i+1)/Math.max(1,corpus.length))*100);
@@ -238,13 +238,13 @@ async function runFeasibility(){
     }
   }
 
-  scored.sort((x,y)=>y.relevance.score-x.relevance.score||y.confidence-x.confidence||y.completeness-x.completeness);
-  const strongFloor=CONFIG.minRelevance||85;
+  scored.sort((x,y)=>y.relevance.score-x.relevance.score||y.relevance.documentedWeight-x.relevance.documentedWeight);
+  const strongFloor=80,leadFloor=65,potentialFloor=50;
   const priorities=scored.filter(x=>x.relevance.score>=strongFloor).slice(0,10);
   const priorityIds=new Set(priorities.map(x=>x.a.id));
-  const leads=scored.filter(x=>!priorityIds.has(x.a.id)&&x.relevance.score>=70).slice(0,10);
+  const leads=scored.filter(x=>!priorityIds.has(x.a.id)&&x.relevance.score>=leadFloor).slice(0,10);
   const leadIds=new Set(leads.map(x=>x.a.id));
-  const potentials=scored.filter(x=>!priorityIds.has(x.a.id)&&!leadIds.has(x.a.id)&&x.relevance.score>=55).slice(0,8);
+  const potentials=scored.filter(x=>!priorityIds.has(x.a.id)&&!leadIds.has(x.a.id)&&x.relevance.score>=potentialFloor).slice(0,8);
   const shownIds=new Set([...priorities,...leads,...potentials].map(x=>x.a.id));
   const bestBelow=scored.filter(x=>!shownIds.has(x.a.id)).slice(0,5);
   const duration=Math.round(performance.now()-started);
@@ -254,21 +254,21 @@ async function runFeasibility(){
   root.innerHTML=`<div class="section-title"><h2>Cartographie des dispositifs pertinents</h2></div>
   <div class="card study-kpi"><div class="grid g4">
     <div class="metric"><b>${corpus.length}</b><span>dispositifs analysés</span></div>
-    <div class="metric"><b>${priorities.length}</b><span>forte pertinence</span><small>≥ ${strongFloor}%</small></div>
-    <div class="metric"><b>${leads.length}</b><span>à approfondir</span><small>70–${strongFloor-1}%</small></div>
-    <div class="metric"><b>${potentials.length}</b><span>potentiels</span><small>55–69%</small></div>
+    <div class="metric"><b>${priorities.length}</b><span>prioritaires</span><small>meilleures adéquations</small></div>
+    <div class="metric"><b>${leads.length}</b><span>à approfondir</span><small>adéquation significative</small></div>
+    <div class="metric"><b>${potentials.length}</b><span>pistes complémentaires</span><small>à qualifier</small></div>
   </div>
   <div class="analysis-audit"><b>${checks.toLocaleString('fr-FR')} contrôles exécutés</b> sur ${corpus.length.toLocaleString('fr-FR')} dispositifs en ${duration.toLocaleString('fr-FR')} ms · ${rejected.length.toLocaleString('fr-FR')} incompatibilités bloquantes écartées · ${scored.length.toLocaleString('fr-FR')} dispositifs scorés.</div></div>
 
-  <div class="section-title"><h3>Forte pertinence</h3></div>
-  ${priorities.length?priorities.map((x,i)=>resultCard(x,i+1,'FORTE PERTINENCE')).join(''):'<div class="callout">Aucun dispositif n’atteint 85 %. Les meilleures correspondances restent visibles dans les niveaux suivants.</div>'}
+  <div class="section-title"><h3>Dispositifs prioritaires</h3></div>
+  ${priorities.length?priorities.map((x,i)=>resultCard(x,i+1,'PRIORITAIRE')).join(''):'<div class="callout">Aucun dispositif n’atteint 85 %. Les meilleures correspondances restent visibles dans les niveaux suivants.</div>'}
   <div class="section-title"><h3>À approfondir</h3></div>
-  ${leads.length?leads.map((x,i)=>resultCard(x,i+1,'À APPROFONDIR')).join(''):'<div class="callout">Aucune correspondance entre 70 % et ${strongFloor-1} %.</div>'}
+  ${leads.length?leads.map((x,i)=>resultCard(x,i+1,'À APPROFONDIR')).join(''):'<div class="callout">Aucune correspondance supplémentaire de niveau intermédiaire.</div>'}
   ${potentials.length?`<div class="section-title"><h3>Correspondances potentielles</h3></div>${potentials.map((x,i)=>resultCard(x,i+1,'POTENTIEL')).join('')}`:''}
-  ${!priorities.length&&!leads.length&&!potentials.length&&bestBelow.length?`<div class="section-title"><h3>Meilleures correspondances disponibles</h3></div><div class="callout warn">Aucune fiche ne dépasse 55 %. Les cinq meilleures correspondances sont affichées à titre de diagnostic, sans recommandation.</div>${bestBelow.map((x,i)=>resultCard(x,i+1,'FAIBLE CONCORDANCE')).join('')}`:''}`;
+  ${!priorities.length&&!leads.length&&!potentials.length&&bestBelow.length?`<div class="section-title"><h3>Meilleures correspondances disponibles</h3></div><div class="callout warn">Aucun dispositif ne franchit le niveau minimal de recommandation. Les cinq meilleures correspondances sont affichées pour diagnostic.</div>${bestBelow.map((x,i)=>resultCard(x,i+1,'À QUALIFIER')).join('')}`:''}`;
   root.scrollIntoView({behavior:'smooth',block:'start'});
 }
-function securityPoints(r){const a=r.a,pts=[];for(const c of r.elig.criteria)if(c.status==='À VÉRIFIER')pts.push(`${c.label} : ${c.detail||'à confirmer'}`);if(a.verification?.status!=='VERIFIE')pts.push('Preuves A/B incomplètes : fiche à revalider avant recommandation ferme.');for(const x of arr(a.attentionPoints))if(x&&!pts.includes(x))pts.push(x);return uniq(pts).sort((x,y)=>Number(/^(Critères de sélection|Pré-requis|Dépenses éligibles)/.test(y))-Number(/^(Critères de sélection|Pré-requis|Dépenses éligibles)/.test(x))).slice(0,10)}
+function securityPoints(r){const a=r.a,pts=[];for(const c of r.elig.criteria)if(c.status==='À VÉRIFIER')pts.push(`${c.label} : ${c.detail||'à confirmer'}`);if(a.verification?.status!=='VERIFIE')pts.push('Certaines informations de la fiche restent à confirmer sur la source officielle.');for(const x of arr(a.attentionPoints))if(x&&!pts.includes(x))pts.push(x);return uniq(pts).sort((x,y)=>Number(/^(Critères de sélection|Pré-requis|Dépenses éligibles)/.test(y))-Number(/^(Critères de sélection|Pré-requis|Dépenses éligibles)/.test(x))).slice(0,10)}
 function eligibilityComment(r){
   const preferred=['Territoire','Taille entreprise','Calendrier','Budget','Pré-requis'];
   const by=new Map(r.elig.criteria.map(x=>[x.label,x]));
@@ -302,7 +302,7 @@ function resultCard(r,rank,kind='À APPROFONDIR'){
       <div class="score">${r.relevance.score}%<small> pertinence</small></div>
     </div>
     <div class="row aid-result-badges">
-      <span class="pill ${r.relevance.score>=(CONFIG.minRelevance||85)?'ok':'info'}">${esc(kind)}</span>
+      <span class="pill ${r.relevance.score>=80?'ok':'info'}">${esc(kind)}</span><span class="pill">${esc(r.relevance.profileLabel||'Grille générale')}</span>
       ${criterionBadge(r.elig.status)}
 
     </div>
@@ -316,7 +316,7 @@ function resultCard(r,rank,kind='À APPROFONDIR'){
       <section><h4>Pré-requis</h4>${listText(a.prerequisites)}</section>
       <section class="span-2 eligibility-note"><h4>Éligibilité — commentaire</h4><p>${esc(eligibilityComment(r))}</p></section>
     </div>
-    <details class="score-audit"><summary>Pourquoi ce score ? Voir les 9 calculs</summary><div class="mini" style="margin:8px 0">Couverture documentaire du score : ${r.relevance.documentedWeight??'—'} / 100 · facteur de couverture : ${r.relevance.coverageFactor??'—'} %.</div>${scoreAudit}</details>
+    <details class="score-audit"><summary>Lire l’analyse détaillée</summary><div class="mini" style="margin:8px 0">Grille : ${esc(r.relevance.profileLabel||'Grille générale')} · base projet : ${esc(r.relevance.basis||'données disponibles')} · couverture des critères documentés : ${r.relevance.documentedWeight??'—'} / 100.</div>${scoreAudit}</details>
     <div class="row end aid-result-actions">
       <a class="btn small open-result" data-id="${esc(a.id)}" href="${esc(deepHref)}">Voir la fiche complète</a>
       ${url?`<a class="btn primary small" href="${esc(url)}" target="_blank" rel="noopener">Ouvrir la source officielle ↗</a>`:''}
@@ -365,7 +365,7 @@ function openAid(id){
 }
 function csvCell(v){return '"'+String(v??'').replaceAll('"','""').replace(/\r?\n/g,' ')+'"'}
 function exportLibraryCsv(rows){
-  const header=['Nom AAP / aide','Financeurs','Bénéficiaires / taille','Thématiques visées','Portée','Régions','Type aide','Assiette min','Assiette max','Montant aide min','Montant aide max','Taux min','Taux max','Taux / montants par taille','Projets attendus','Dépenses éligibles','Pré-requis','Critères de sélection','Relèves','Date de clôture','Lien officiel','Statut vérification'];
+  const header=['Nom AAP / aide','Financeurs','Bénéficiaires / taille','Thématiques visées','Portée','Régions','Type aide','Assiette min','Assiette max','Montant aide min','Montant aide max','Taux min','Taux max','Taux / montants par taille','Projets attendus','Dépenses éligibles','Pré-requis','Critères de sélection','Relèves','Date de clôture','Lien officiel'];
   const lines=[header.map(csvCell).join(';')];
   for(const a of rows){
     const bySize=arr(a.aidAmount?.byCompanySize).concat(arr(a.aidRate?.byCompanySize)).map(x=>`${x.category||''}: taux ${x.rateMin??x.min??'—'}-${x.rateMax??x.max??'—'}%; montant ${x.amountMin??'—'}-${x.amountMax??'—'}`).join(' | ');
@@ -374,7 +374,7 @@ function exportLibraryCsv(rows){
       a.scope==='NATIONAL'?'National':'Régional',arr(a.regions).join(' | '),arr(a.aidTypes).map(aidTypeLabel).join(' | '),
       a.minimumProjectCost??'',a.maximumProjectCost??'',a.aidAmount?.min??'',a.aidAmount?.max??'',a.aidRate?.min??'',a.aidRate?.max??'',bySize,
       arr(a.projectsExpected).join(' | '),a.eligibleExpenses||'',a.prerequisites||'',a.selectionCriteria||'',
-      arr(a.deadlines).map(x=>typeof x==='string'?x:x?.date).filter(Boolean).join(' | '),a.finalClosingDate||a.closingDate||'',officialUrl(a)||'',a.verification?.status||''
+      arr(a.deadlines).map(x=>typeof x==='string'?x:x?.date).filter(Boolean).join(' | '),a.finalClosingDate||a.closingDate||'',officialUrl(a)||''
     ].map(csvCell).join(';'));
   }
   const blob=new Blob(['\ufeff'+lines.join('\r\n')],{type:'text/csv;charset=utf-8'});
@@ -382,12 +382,12 @@ function exportLibraryCsv(rows){
   a.href=href;a.download=`FUNDING RADAR_bibliotheque_${today()}.csv`;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(href),1000);
 }
 function library(){
-  const q=window.__q||'',region=window.__reg||'',kind=window.__kind||'',theme=window.__theme||'',instrument=window.__instrument||'',time=window.__time||'',verification=window.__ver||'',selectedCategories=window.__categories||[];
+  const q=window.__q||'',region=window.__reg||'',kind=window.__kind||'',theme=window.__theme||'',instrument=window.__instrument||'',time=window.__time||'',selectedCategories=window.__categories||[];
   const activeLib=state.lib.filter(usableAid);
   const themes=uniq(activeLib.flatMap(a=>arr(a.themes))).sort((a,b)=>a.localeCompare(b,'fr'));
   const instruments=uniq(activeLib.flatMap(a=>arr(a.aidTypes))).sort((a,b)=>aidTypeLabel(a).localeCompare(aidTypeLabel(b),'fr'));
-  let list=activeLib.filter(a=>{
-    const txt=norm([a.title,a.objective,a.beneficiaries,...arr(a.themes),...arr(a.projectsExpected),...arr(a.funder),a.programme].join(' '));
+  const list=activeLib.filter(a=>{
+    const txt=norm([a.title,a.objective,a.beneficiaries,...arr(a.themes),...arr(a.projectsExpected),...arr(a.funder),a.programme,a.operator].join(' '));
     if(q&&!txt.includes(norm(q)))return false;
     if(region&&!arr(a.regions).includes(region)&&!arr(a.regions).includes('Toutes les Régions'))return false;
     if(kind&&a.kind!==kind)return false;
@@ -395,40 +395,66 @@ function library(){
     if(instrument&&!arr(a.aidTypes).includes(instrument))return false;
     if(time==='j1'&&!nextDeadline(a).ok)return false;
     if(time==='nodate'&&nextDeadline(a).reason!=='DATE_MISSING')return false;
-    if(verification&&a.verification?.status!==verification)return false;
     if(selectedCategories.length&&!selectedCategories.some(c=>arr(a.companyCategories).includes(c)))return false;
     return true;
   }).sort((a,b)=>(nextDeadline(a).date||'9999').localeCompare(nextDeadline(b).date||'9999'));
   window.__lastLibraryList=list;
-  $('#app').innerHTML=`<div class="page-head"><div><div class="eyebrow">Bibliothèque des aides et appels à projets</div><h1>Aides et appels à projets</h1><p class="sub">Catalogue exploitable : bénéficiaires, thématiques, portée, modalités financières, projets attendus, clôtures, relèves, pré-requis et lien officiel.</p></div><div class="row end"><span class="badge info">${list.length} résultat(s)</span><button class="btn primary" id="exportLibraryCsv">Exporter CSV</button></div></div>
-  <div class="filters six"><input class="input" id="libQ" placeholder="Titre, objectif, thématique, financeur…" value="${esc(q)}"><select id="libRegion"><option value="">Toutes régions</option>${REGIONS.map(r=>`<option ${r===region?'selected':''}>${esc(r)}</option>`).join('')}</select><select id="libTheme" aria-label="Thématique"><option value="">Toutes thématiques</option>${themes.map(t=>`<option value="${esc(t)}" ${t===theme?'selected':''}>${esc(t)}</option>`).join('')}</select><select id="libInstrument" aria-label="Instrument"><option value="">Tous instruments</option>${instruments.map(t=>`<option value="${esc(t)}" ${t===instrument?'selected':''}>${esc(aidTypeLabel(t))}</option>`).join('')}</select><select id="libKind"><option value="">Tous les dispositifs</option><option ${kind==='AAP / AMI'?'selected':''}>AAP / AMI</option><option ${kind==='AIDE'?'selected':''}>AIDE</option></select><select id="libTime"><option value="">Toutes dates exploitables</option><option value="j1" ${time==='j1'?'selected':''}>≥ J+1 / permanent</option><option value="nodate" ${time==='nodate'?'selected':''}>Date à vérifier</option></select><select id="libVer"><option value="">Tous niveaux</option><option value="VERIFIE" ${verification==='VERIFIE'?'selected':''}>Vérifié</option><option value="A_REVERIFIER" ${verification==='A_REVERIFIER'?'selected':''}>À revérifier</option></select><button class="btn" id="libRefresh">Rafraîchir</button></div>
+  $('#app').innerHTML=`<div class="page-head"><div><div class="eyebrow">Bibliothèque des aides et appels à projets</div><h1>Aides et appels à projets</h1><p class="sub">Bénéficiaires, thématiques, portée, modalités financières, projets attendus, dépenses, clôtures, relèves, prérequis et accès direct à la source officielle.</p></div><div class="row end"><span class="badge info">${list.length} résultat(s)</span><button class="btn primary" id="exportLibraryCsv">Exporter CSV</button></div></div>
+  <div class="filters six"><input class="input" id="libQ" placeholder="Rechercher un dispositif, une thématique, un financeur…" value="${esc(q)}"><select id="libRegion"><option value="">Toutes régions</option>${REGIONS.map(r=>`<option ${r===region?'selected':''}>${esc(r)}</option>`).join('')}</select><select id="libTheme" aria-label="Thématique"><option value="">Toutes thématiques</option>${themes.map(t=>`<option value="${esc(t)}" ${t===theme?'selected':''}>${esc(t)}</option>`).join('')}</select><select id="libInstrument" aria-label="Instrument"><option value="">Tous instruments</option>${instruments.map(t=>`<option value="${esc(t)}" ${t===instrument?'selected':''}>${esc(aidTypeLabel(t))}</option>`).join('')}</select><select id="libKind"><option value="">Tous les dispositifs</option><option ${kind==='AAP / AMI'?'selected':''}>AAP / AMI</option><option ${kind==='AIDE'?'selected':''}>AIDE</option></select><select id="libTime"><option value="">Toutes dates</option><option value="j1" ${time==='j1'?'selected':''}>Ouvert / ≥ J+1</option><option value="nodate" ${time==='nodate'?'selected':''}>Date non publiée</option></select><button class="btn" id="libRefresh">Rafraîchir</button></div>
   <div role="group" aria-label="Taille d’entreprise" class="library-size-filter"><span class="mini">Taille d’entreprise :</span>${['PME','ETI','GE','STARTUP'].map(c=>`<label class="pill"><input type="checkbox" class="libCategory" value="${c}" ${selectedCategories.includes(c)?'checked':''}> ${c==='STARTUP'?'Startup':c}</label>`).join('')}</div>
-  <div class="table-wrap"><table><thead><tr><th>Aide / AAP</th><th>Portée</th><th>Instrument</th><th>Entreprise</th><th>Échéance</th><th>CdC</th><th>Confiance</th></tr></thead><tbody>${list.map(a=>{const nd=nextDeadline(a),url=officialUrl(a);return`<tr><td>${url?`<a href="${esc(url)}" target="_blank" rel="noopener" class="link"><b>${esc(a.title)} ↗</b></a>`:`<b>${esc(a.title)}</b>`}<div class="mini">${esc(arr(a.funder).join(', ')||'Financeur à vérifier')}</div><a class="link-button open-aid" data-id="${esc(a.id)}" href="?aid=${encodeURIComponent(a.id)}">Voir la fiche</a></td><td>${a.scope==='NATIONAL'?'<span class="pill">National</span>':`<span class="pill">${esc(arr(a.regions).join(', '))}</span>`}</td><td>${arr(a.aidTypes).map(x=>`<span class="pill ok">${esc(aidTypeLabel(x))}</span>`).join('')}</td><td>${esc(arr(a.companyCategories).join(', ')||'—')}</td><td>${a.permanent?'Permanent':nd.date?`${fmtDate(nd.date)} <span class="mini">J+${Math.max(0,daysUntil(nd.date))}</span>`:missing()}</td><td>${arr(a.cdcLinks).length?`<span class="badge ok">${arr(a.cdcLinks).length}</span>`:'—'}</td><td><span class="badge ${a.verification?.status==='VERIFIE'?'ok':'warn'}">${a.verification?.status==='VERIFIE'?'Vérifié':'À sécuriser'} · ${a.verification?.confidence||0}%</span></td></tr>`}).join('')}</tbody></table></div>`;
-  $('#libQ').oninput=e=>{window.__q=e.target.value;library()};
+  <div class="table-wrap"><table><thead><tr><th>Aide / AAP</th><th>Portée</th><th>Instrument</th><th>Entreprise</th><th>Échéance</th><th>Documents</th></tr></thead><tbody>${list.map(a=>{const nd=nextDeadline(a),url=officialUrl(a);return`<tr><td>${url?`<a href="${esc(url)}" target="_blank" rel="noopener" class="link"><b>${esc(a.title)} ↗</b></a>`:`<b>${esc(a.title)}</b>`}<div class="mini">${esc(arr(a.funder).join(', ')||'Financeur à préciser')}</div><a class="link-button open-aid" data-id="${esc(a.id)}" href="?aid=${encodeURIComponent(a.id)}">Voir la fiche</a></td><td>${a.scope==='NATIONAL'?'<span class="pill">National</span>':`<span class="pill">${esc(arr(a.regions).join(', ')||'Régional')}</span>`}</td><td>${arr(a.aidTypes).map(x=>`<span class="pill ok">${esc(aidTypeLabel(x))}</span>`).join('')}</td><td>${esc(arr(a.companyCategories).join(', ')||'—')}</td><td>${a.permanent?'Permanent':nd.date?`${fmtDate(nd.date)} <span class="mini">J+${Math.max(0,daysUntil(nd.date))}</span>`:missing()}</td><td>${arr(a.cdcLinks).length?`<span class="badge ok">${arr(a.cdcLinks).length} doc.</span>`:'—'}</td></tr>`}).join('')}</tbody></table></div>`;
+
+  const qInput=$('#libQ');
+  qInput.oninput=e=>{
+    window.__q=e.target.value;
+    const caret=e.target.selectionStart??e.target.value.length;
+    clearTimeout(window.__libSearchTimer);
+    window.__libSearchTimer=setTimeout(()=>{
+      library();
+      const next=$('#libQ');
+      if(next){next.focus();const p=Math.min(caret,next.value.length);next.setSelectionRange?.(p,p)}
+    },260);
+  };
   $('#libRegion').onchange=e=>{window.__reg=e.target.value;library()};
   $('#libKind').onchange=e=>{window.__kind=e.target.value;library()};
   $('#libTheme').onchange=e=>{window.__theme=e.target.value;library()};
   $('#libInstrument').onchange=e=>{window.__instrument=e.target.value;library()};
   $('#libTime').onchange=e=>{window.__time=e.target.value;library()};
-  $('#libVer').onchange=e=>{window.__ver=e.target.value;library()};
   $$('.libCategory').forEach(x=>x.onchange=()=>{window.__categories=$$('.libCategory:checked').map(y=>y.value);library()});
   $('#libRefresh').onclick=loadAll;
   $('#exportLibraryCsv').onclick=()=>exportLibraryCsv(window.__lastLibraryList||list);
-  $('.open-aid').forEach(x=>x.onclick=e=>{e.preventDefault();openAid(x.dataset.id)});
+  $$('.open-aid').forEach(x=>x.onclick=e=>{e.preventDefault();openAid(x.dataset.id)});
 }
-function watch(){const ch=state.changes.slice().reverse();$('#app').innerHTML=`<div class="page-head"><div><div class="eyebrow">Veille</div><h1>Changements détectés</h1><p class="sub">Nouvelles aides, modifications, fermetures, nouvelles échéances et anomalies documentaires.</p></div><button class="btn primary" id="watchCollect">Mettre à jour la cartographie</button></div><div class="grid g3"><div class="metric"><b>${ch.filter(x=>x.type==='CREATION').length}</b><span>créations enregistrées</span></div><div class="metric"><b>${ch.filter(x=>x.type==='MODIFICATION').length}</b><span>modifications</span></div><div class="metric"><b>${ch.filter(x=>/SORTIE|CLOS|ARCHIVE/.test(x.type)).length}</b><span>sorties / clôtures</span></div></div><div class="card" style="margin-top:16px"><h3>Journal</h3>${ch.length?ch.slice(0,200).map(x=>`<div class="change"><b>${esc(x.type)}</b> — ${esc(x.title||x.id)} ${arr(x.fields).length?`<span class="mini">(${esc(x.fields.join(', '))})</span>`:''}<span class="mini"> ${x.at?new Date(x.at).toLocaleString('fr-FR'):''}</span></div>`).join(''):'<div class="empty">Aucun changement enregistré dans le bootstrap actuel.</div>'}</div>`;$('#watchCollect').onclick=requestCollection}
+function watch(){
+  const ch=state.changes.slice().reverse();
+  const creations=ch.filter(x=>x.type==='CREATION');
+  const businessFields=new Set(['closingDate','finalClosingDate','deadlines','aidRate','aidAmount','aidTypes','eligibleExpenses','prerequisites','selectionCriteria','beneficiaries','themes','minimumProjectCost','maximumProjectCost']);
+  const updates=ch.filter(x=>x.type==='MODIFICATION'&&arr(x.fields).some(f=>businessFields.has(f)));
+  const closures=ch.filter(x=>/SORTIE|CLOS|ARCHIVE/.test(x.type));
+  const findAid=x=>state.lib.find(a=>a.id===x.id)||state.lib.find(a=>norm(a.title)===norm(x.title||''));
+  const item=(x,label)=>{const a=findAid(x),url=a?officialUrl(a):null;return`<div class="watch-item"><div><span class="pill ${label==='Nouveau'?'ok':label==='Clôture'?'warn':'info'}">${label}</span> <b>${esc(x.title||a?.title||x.id)}</b>${arr(x.fields).length?`<div class="mini">Mise à jour : ${esc(arr(x.fields).join(', '))}</div>`:''}</div><div class="row">${a?`<a class="btn small open-aid" data-id="${esc(a.id)}" href="?aid=${encodeURIComponent(a.id)}">Voir la fiche</a>`:''}${url?`<a class="btn small" target="_blank" rel="noopener" href="${esc(url)}">Source officielle ↗</a>`:''}</div></div>`};
+  $('#app').innerHTML=`<div class="page-head"><div><div class="eyebrow">Veille des financements</div><h1>Nouveaux AAP & aides</h1><p class="sub">Les nouveaux dispositifs intégrés dans la bibliothèque et les évolutions qui modifient réellement la possibilité de financement : échéance, bénéficiaires, montant, taux, dépenses ou critères.</p></div><button class="btn primary" id="watchCollect">Actualiser la bibliothèque</button></div>
+  <div class="grid g3"><div class="metric"><b>${creations.length}</b><span>nouveaux dispositifs intégrés</span></div><div class="metric"><b>${updates.length}</b><span>mises à jour utiles</span></div><div class="metric"><b>${closures.length}</b><span>sorties / clôtures</span></div></div>
+  <div class="card watch-card" style="margin-top:16px"><h3>Derniers dispositifs intégrés</h3>${creations.length?creations.slice(0,40).map(x=>item(x,'Nouveau')).join(''):'<div class="empty">Aucun nouveau dispositif depuis la dernière actualisation.</div>'}</div>
+  ${updates.length?`<div class="card watch-card" style="margin-top:16px"><h3>Évolutions à prendre en compte</h3>${updates.slice(0,30).map(x=>item(x,'Mise à jour')).join('')}</div>`:''}
+  ${closures.length?`<div class="card watch-card" style="margin-top:16px"><h3>Dispositifs sortis ou clôturés</h3>${closures.slice(0,20).map(x=>item(x,'Clôture')).join('')}</div>`:''}`;
+  $('#watchCollect').onclick=requestCollection;
+  $$('.open-aid').forEach(x=>x.onclick=e=>{e.preventDefault();openAid(x.dataset.id)});
+}
 function sourceMeta(id){return state.sources.find(s=>s.id===id)||null}
 function sourceIsControl(id){const s=sourceMeta(id);return s?.type==='control'||s?.strategy==='control-only'}
 function sources(){
-  const rows=state.coverage||[],collectionRows=rows.filter(x=>!sourceIsControl(x.id)),controlRows=rows.filter(x=>sourceIsControl(x.id)),okRows=collectionRows.filter(x=>x.success);
-  $('#app').innerHTML=`<div class="page-head"><div><div class="eyebrow">Sources officielles</div><h1>Couverture des sources publiques</h1><p class="sub">FUNDING RADAR consolide des sources nationales et régionales officielles. Le statut ci-dessous distingue une collecte directe validée d’une source suivie en contrôle ou encore à sécuriser techniquement.</p></div><button class="btn" id="sourcesRefresh">Rafraîchir</button></div>
-  <div class="grid g3"><div class="metric"><b>${state.sources.length||state.meta.sourceCount||'—'}</b><span>sources suivies</span></div><div class="metric"><b>${okRows.length}</b><span>collectes directes validées</span></div><div class="metric"><b>${controlRows.length}</b><span>sources de contrôle</span></div></div>
-  <div class="table-wrap" style="margin-top:14px"><table><thead><tr><th>Source</th><th>Périmètre</th><th>Mode de couverture</th><th>Dernier contrôle</th></tr></thead><tbody>${rows.map(x=>{const control=sourceIsControl(x.id);const label=x.success?(control?'Contrôle officiel accessible':'Collecte directe validée'):(control?'Contrôle officiel à sécuriser':'Collecte directe à sécuriser');return`<tr><td><b>${esc(x.name)}</b></td><td>${esc(x.scope)}</td><td><span class="badge ${x.success?'ok':'warn'}">${esc(label)}</span></td><td>${x.checkedAt?new Date(x.checkedAt).toLocaleString('fr-FR'):'—'}</td></tr>`}).join('')}</tbody></table></div>`;
+  const coverageById=new Map(arr(state.coverage).map(x=>[x.id,x]));
+  const rows=arr(state.sources);
+  const national=rows.filter(s=>s.scope==='France').length;
+  const regional=rows.length-national;
+  $('#app').innerHTML=`<div class="page-head"><div><div class="eyebrow">Référentiel officiel</div><h1>Sources publiques</h1><p class="sub">Chaque source référencée est accessible directement. Les contrôles techniques de collecte restent gérés en arrière-plan et ne modifient pas la qualification métier d’un dispositif.</p></div><button class="btn" id="sourcesRefresh">Rafraîchir</button></div>
+  <div class="grid g3"><div class="metric"><b>${rows.length||state.meta.sourceCount||'—'}</b><span>sources officielles référencées</span></div><div class="metric"><b>${national}</b><span>sources nationales</span></div><div class="metric"><b>${regional}</b><span>sources régionales</span></div></div>
+  <div class="table-wrap sources-table" style="margin-top:14px"><table><thead><tr><th>Source officielle</th><th>Périmètre</th><th>Accès</th><th>Dernière synchronisation</th></tr></thead><tbody>${rows.map(s=>{const cv=coverageById.get(s.id);return`<tr><td><a class="link source-name" href="${esc(s.url)}" target="_blank" rel="noopener"><b>${esc(s.name)}</b> ↗</a></td><td>${esc(s.scope==='France'?'National':s.scope)}</td><td><span class="badge ok">Source officielle</span></td><td>${cv?.checkedAt?new Date(cv.checkedAt).toLocaleString('fr-FR'):'—'}</td></tr>`}).join('')}</tbody></table></div>`;
   $('#sourcesRefresh').onclick=loadAll;
 }
+function production(){const r=state.readiness;const gates=r?.gates||[];$('#app').innerHTML=`<div class="page-head"><div><div class="eyebrow">Production Readiness</div><h1>Validation interne</h1><p class="sub">Les 10 gates de passage en production. Un point n'est considéré validé qu'après preuve d'exécution réelle.</p></div><span class="badge ${r?.goProduction?'ok':'warn'}">${r?.goProduction?'GO PRODUCTION':'EN COURS'}</span></div>${gates.length?`<div class="grid g2">${gates.map(g=>`<div class="card"><div class="row between"><h3>Gate ${g.id}</h3><span class="badge ${/PASS/.test(g.status)?'ok':g.status==='FAIL'||g.status==='BLOCKED'?'block':'warn'}">${esc(g.status)}</span></div><b>${esc(g.name)}</b><p class="mini">${esc(g.detail)}</p></div>`).join('')}</div>`:'<div class="callout warn">Le rapport de readiness sera généré par le pipeline de production.</div>'}`}
 
-function production(){const r=state.readiness;const gates=r?.gates||[];$('#app').innerHTML=`<div class="page-head"><div><div class="eyebrow">Production Readiness</div><h1>Validation FUNDING RADAR</h1><p class="sub">Les 10 gates de passage en production. Un point n'est considéré validé qu'après preuve d'exécution réelle.</p></div><span class="badge ${r?.goProduction?'ok':'warn'}">${r?.goProduction?'GO PRODUCTION':'EN COURS'}</span></div>${gates.length?`<div class="grid g2">${gates.map(g=>`<div class="card"><div class="row between"><h3>Gate ${g.id}</h3><span class="badge ${/PASS/.test(g.status)?'ok':g.status==='FAIL'||g.status==='BLOCKED'?'block':'warn'}">${esc(g.status)}</span></div><b>${esc(g.name)}</b><p class="mini">${esc(g.detail)}</p></div>`).join('')}</div>`:'<div class="callout warn">Le rapport de readiness sera généré par le pipeline de production.</div>'}`}
-
-async function requestCollection(){if(CONFIG.refreshEndpoint){const token=window.prompt('Code administrateur FUNDING RADAR (non enregistré)');if(!token)return;try{toast('Demande de collecte envoyée…');const r=await fetch(CONFIG.refreshEndpoint,{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+token},body:JSON.stringify({action:'full-refresh'})});const j=await r.json().catch(()=>({}));if(!r.ok)throw new Error(j.error||('HTTP '+r.status));toast('Collecte demandée. Le rapport sera mis à jour après le cycle.')}catch(e){toast(`Impossible de déclencher la collecte : ${esc(e.message)}`)}}else if(hostedProduction()){await loadAll();toast('Bibliothèque officielle publiée rechargée. La collecte complète reste exécutée côté serveur.')}else{clientLiveRefresh({full:true,silent:false}).catch(()=>{})}}
+async function requestCollection(){if(CONFIG.refreshEndpoint){const token=window.prompt('Code administrateur (non enregistré)');if(!token)return;try{toast('Demande de collecte envoyée…');const r=await fetch(CONFIG.refreshEndpoint,{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+token},body:JSON.stringify({action:'full-refresh'})});const j=await r.json().catch(()=>({}));if(!r.ok)throw new Error(j.error||('HTTP '+r.status));toast('Collecte demandée. Le rapport sera mis à jour après le cycle.')}catch(e){toast(`Impossible de déclencher la collecte : ${esc(e.message)}`)}}else if(hostedProduction()){await loadAll();toast('Bibliothèque officielle publiée rechargée. La collecte complète reste exécutée côté serveur.')}else{clientLiveRefresh({full:true,silent:false}).catch(()=>{})}}
 document.addEventListener('click',e=>{const t=e.target.closest('.open-result,.open-aid');if(t){e.preventDefault();openAid(t.dataset.id)}});
 loadAll().then(()=>{scheduleClientDailyRefresh();return maybeAutoClientRefresh()}).catch(e=>{$('#app').innerHTML=`<div class="callout warn"><b>Bibliothèque publiée indisponible.</b><br>${esc(e.message)}<br>La dernière version embarquée reste accessible si elle est présente.</div>`});
