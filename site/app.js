@@ -316,7 +316,7 @@ function resultCard(r,rank,kind='À APPROFONDIR'){
         ${url?`<a class="aid-title-link" href="${esc(url)}" target="_blank" rel="noopener">${esc(a.title)} ↗</a>`:`<span class="aid-title-link no-link">${esc(a.title)}</span>`}
         <div class="mini">${esc(arr(a.funder).join(', ')||'Financeur à documenter')}</div>
       </div>
-      <div class="score">${r.relevance.score}%<small> pertinence</small></div>
+      <div class="score">${r.relevance.score}<small>/100 · indice d’adéquation</small></div>
     </div>
     <div class="row aid-result-badges">
       <span class="pill ${r.relevance.score>=80?'ok':'info'}">${esc(kind)}</span><span class="pill">${esc(r.relevance.profileLabel||'Grille générale')}</span>
