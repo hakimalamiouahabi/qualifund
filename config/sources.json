@@ -1374,14 +1374,13 @@
       "id": "nouvelle_aquitaine_france2030",
       "name": "Nouvelle-Aquitaine — France 2030 régionalisé",
       "scope": "Nouvelle-Aquitaine",
-      "type": "web",
-      "strategy": "catalog-html",
+      "type": "control",
+      "strategy": "control-only",
       "url": "https://www.france2030-en-nouvelle-aquitaine.fr/",
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "notes": "Catalogue officiel France 2030 régionalisé Nouvelle-Aquitaine : Projets d’innovation, Projets de filières et I-Démo régionalisé.",
-      "minExpected": 3
+      "notes": "Page d’entrée officielle France 2030 Nouvelle-Aquitaine conservée comme contrôle direct. Les trois axes sont collectés via leurs pages officielles dédiées."
     },
     {
       "id": "nouvelle_aquitaine_france2030_innovation",
@@ -1813,6 +1812,36 @@
       "funder": "Région Sud / FEDER / Bpifrance",
       "webVerifiedAt": "2026-09-23",
       "webEvidenceUrl": "https://europe.maregionsud.fr/actualites/detail/pret-feder-sud-innovation"
+    },
+    {
+      "id": "nouvelle_aquitaine_france2030_filieres",
+      "name": "France 2030 régionalisé — Projets de filières — Nouvelle-Aquitaine",
+      "scope": "Nouvelle-Aquitaine",
+      "type": "web",
+      "strategy": "official-page",
+      "url": "https://www.france2030-en-nouvelle-aquitaine.fr/projets-d-avenir-filieres/",
+      "official": true,
+      "priority": 0,
+      "browserFallback": true,
+      "titleOverride": "France 2030 régionalisé — Projets de filières — Nouvelle-Aquitaine",
+      "kindOverride": "AAP / AMI",
+      "funder": "État · Région Nouvelle-Aquitaine · Bpifrance",
+      "notes": "Page officielle dédiée : structuration et transformation des filières stratégiques régionales."
+    },
+    {
+      "id": "nouvelle_aquitaine_france2030_idemo",
+      "name": "France 2030 régionalisé — I-Démo — Nouvelle-Aquitaine",
+      "scope": "Nouvelle-Aquitaine",
+      "type": "web",
+      "strategy": "official-page",
+      "url": "https://www.france2030-en-nouvelle-aquitaine.fr/projets-d-avenir-i-demo/",
+      "official": true,
+      "priority": 0,
+      "browserFallback": true,
+      "titleOverride": "France 2030 régionalisé — Projets collaboratifs I-Démo — Nouvelle-Aquitaine",
+      "kindOverride": "AAP / AMI",
+      "funder": "État · Région Nouvelle-Aquitaine · Bpifrance",
+      "notes": "Page officielle dédiée : projets collaboratifs de R&D, consortium d’entreprises et partenaire de recherche."
     }
   ]
 }
