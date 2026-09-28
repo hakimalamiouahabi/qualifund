@@ -19,14 +19,30 @@ const state={route:'home',studyStep:1,lib:[],meta:{},coverage:[],changes:[],sour
 const today=()=>new Date().toISOString().slice(0,10);
 const daysUntil=v=>v?Math.floor((new Date(v+'T23:59:59')-new Date(today()+'T00:00:00'))/86400000):null;
 const bootstrap=()=>window.__LEYTON_RADAR_BOOTSTRAP__||window.__QUALIFUND_BOOTSTRAP__||null;
-async function chunkedLibrary(manifestPath='./data/library-manifest.json'){
-  const mr=await fetch(manifestPath,{cache:'no-store'});
-  if(!mr.ok)throw new Error('HTTP '+mr.status);
-  const m=await mr.json(),base=manifestPath.slice(0,manifestPath.lastIndexOf('/')+1);
-  const chunks=await Promise.all((m.parts||[]).map(async part=>{const r=await fetch(base+part,{cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status+' '+part);return r.json()}));
-  return{meta:m.meta||{},aaps:chunks.flatMap(x=>Array.isArray(x)?x:(x.aaps||[]))};
+async function fetchJsonStrict(url){
+  const r=await fetch(url,{cache:'no-store',headers:{Accept:'application/json'}});
+  if(!r.ok)throw new Error(`HTTP ${r.status} — ${url}`);
+  const text=await r.text();
+  if(/^\s*</.test(text))throw new Error(`Réponse HTML reçue à la place du JSON — ${url}`);
+  try{return JSON.parse(text)}catch(e){throw new Error(`JSON invalide — ${url} — ${e.message}`)}
 }
-const api=async p=>{try{const r=await fetch(p,{cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status);return r.json()}catch(e){if(p.includes('library.json')){try{return await chunkedLibrary('./data/library-manifest.json')}catch{}}const b=bootstrap();if(b){if(p.includes('library.json'))return b.library;if(p.includes('coverage.json'))return b.coverage;if(p.includes('changes.json'))return b.changes;if(p.includes('sources.json'))return b.sources;if(p.includes('production-readiness.json')&&window.__LEYTON_RADAR_READINESS__)return window.__LEYTON_RADAR_READINESS__}throw e}};
+async function chunkedLibrary(manifestPath='./data/library-manifest.json'){
+  const m=await fetchJsonStrict(manifestPath),base=manifestPath.slice(0,manifestPath.lastIndexOf('/')+1);
+  if(!Array.isArray(m.parts)||!m.parts.length)throw new Error('Manifeste de bibliothèque vide ou invalide.');
+  const chunks=[];
+  for(const part of m.parts)chunks.push(await fetchJsonStrict(base+part));
+  const aaps=chunks.flatMap(x=>Array.isArray(x)?x:(x.aaps||[]));
+  if(m.count!=null&&aaps.length!==Number(m.count))throw new Error(`Bibliothèque incomplète : ${aaps.length}/${m.count} fiches chargées.`);
+  return{meta:m.meta||{},aaps};
+}
+const api=async p=>{
+  if(p.includes('library.json')){
+    try{return await chunkedLibrary('./data/library-manifest.json')}
+    catch(e){const b=bootstrap();if(b?.library)return b.library;throw e}
+  }
+  try{return await fetchJsonStrict(p)}
+  catch(e){const b=bootstrap();if(b){if(p.includes('coverage.json'))return b.coverage;if(p.includes('changes.json'))return b.changes;if(p.includes('sources.json'))return b.sources;if(p.includes('production-readiness.json')&&window.__LEYTON_RADAR_READINESS__)return window.__LEYTON_RADAR_READINESS__}throw e}
+};
 const idbOpen=()=>new Promise((resolve,reject)=>{try{const q=indexedDB.open(LIVE_DB,1);q.onupgradeneeded=()=>{const db=q.result;if(!db.objectStoreNames.contains(LIVE_STORE))db.createObjectStore(LIVE_STORE)};q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error)}catch(e){reject(e)}});
 async function liveGet(key){try{const db=await idbOpen();return await new Promise((resolve,reject)=>{const tx=db.transaction(LIVE_STORE,'readonly'),q=tx.objectStore(LIVE_STORE).get(key);q.onsuccess=()=>resolve(q.result??null);q.onerror=()=>reject(q.error)})}catch{return null}}
 async function liveSet(key,value){const db=await idbOpen();return new Promise((resolve,reject)=>{const tx=db.transaction(LIVE_STORE,'readwrite');tx.objectStore(LIVE_STORE).put(value,key);tx.oncomplete=()=>resolve(true);tx.onerror=()=>reject(tx.error)})}
