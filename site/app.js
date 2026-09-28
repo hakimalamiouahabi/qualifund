@@ -191,8 +191,25 @@ function eligibility(a,p){
     add('Secteur',specialized?'À VÉRIFIER':'CONFORME',specialized||'Aucune exclusion sectorielle explicite détectée dans les données structurées','beneficiaries');
   }
 
-  add('Dépenses éligibles',a.eligibleExpenses?'À VÉRIFIER':'À VÉRIFIER',a.eligibleExpenses?'Les postes seront rapprochés des dépenses publiées':'Dépenses éligibles non documentées','eligibleExpenses');
-  add('Pré-requis','À VÉRIFIER',a.prerequisites?'Les pré-requis seront rapprochés du profil et de la maturité':'Pré-requis non documentés','prerequisites');
+  add('Dépenses éligibles','À VÉRIFIER',a.eligibleExpenses?'Les postes seront rapprochés des dépenses publiées':'Dépenses éligibles non documentées','eligibleExpenses');
+
+  const ruleText=norm([a.prerequisites,a.selectionCriteria,a.objective,a.eligibleExpenses].filter(Boolean).join(' '));
+  const incentiveRequired=/(avant demarrage|avant le demarrage|prealablement au demarrage|effet incitatif|aucune depense.*avant|depot.*avant.*demarrage|demande.*avant.*demarrage)/.test(ruleText);
+  if(incentiveRequired){
+    if(p.startDate){
+      const started=String(p.startDate)<=today();
+      add('Effet incitatif',started?'À VÉRIFIER':'CONFORME',started?'Le dispositif exige un dépôt avant démarrage et la date de début renseignée est atteinte : vérifier la date réelle de dépôt avant toute conclusion.':'Le démarrage renseigné est postérieur à aujourd’hui ; conserver un dépôt préalable au démarrage.','prerequisites');
+    }else add('Effet incitatif','À VÉRIFIER','Le texte du dispositif impose un dépôt avant démarrage ; renseigner ou vérifier la date de début du projet.','prerequisites');
+  }
+
+  const consortiumRequired=/(consortium|partenariat obligatoire|projet collaboratif|au moins deux partenaires|minimum de deux partenaires|entreprises partenaires)/.test(ruleText);
+  if(consortiumRequired){
+    const partnerText=norm(p.partners||'');
+    const explicitSolo=/(aucun partenaire|sans partenaire|projet seul|porte seul|entreprise seule)/.test(partnerText);
+    add('Consortium / partenaires',explicitSolo?'NON CONFORME':'À VÉRIFIER',explicitSolo?'Le dispositif exige un montage partenarial alors que le projet est déclaré sans partenaire.':p.partners?'Exigence partenariale détectée : vérifier la composition, l’indépendance et le rôle des partenaires.':'Exigence partenariale détectée : composition du consortium à renseigner.','prerequisites',explicitSolo);
+  }
+
+  add('Pré-requis','À VÉRIFIER',a.prerequisites?'Les pré-requis seront rapprochés du profil, de la maturité et du montage du projet':'Pré-requis non documentés','prerequisites');
   add('Critères de sélection','À VÉRIFIER',a.selectionCriteria?'Les critères seront rapprochés des impacts, travaux, partenaires et maturité':'Critères de sélection non documentés','selectionCriteria');
 
   const confirmed=criteria.filter(x=>x.hard).length>0&&criteria.filter(x=>x.hard).every(x=>x.status==='CONFORME');
