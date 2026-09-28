@@ -1,10 +1,10 @@
 # QUALIFUND — bibliothèque indépendante des aides publiques
 
-Bibliothèque de dispositifs français pour les startups, PME, ETI et grandes entreprises. Périmètre : **subventions**, **avances remboursables** et **prêts explicitement à taux zéro**. Les prêts garantis et les prêts classiques sont hors périmètre.
+Bibliothèque centrée sur les appels à projets (AAP) et appels à manifestation d'intérêt (AMI) français pour les startups, PME, ETI et grandes entreprises. Périmètre : **subventions**, **avances remboursables** et **prêts explicitement à taux zéro**. Les prêts garantis et les prêts classiques sont hors périmètre.
 
 ## Statut réel
 
-Le corpus embarqué au démarrage contient 678 fiches datées du 22 septembre 2026, dont **0 fiche au statut vérifié**, 86 avec un lien de cahier des charges ou règlement, 166 avec une échéance renseignée et **1 seule avec un critère de sélection renseigné**. Les catégories instrumentales se recoupent : 665 fiches mentionnent une subvention, 58 une avance remboursable et 2 un prêt à taux zéro. Le registre comporte 145 entrées, dont 34 de contrôle uniquement. Ces nombres ne démontrent ni l'actualité ni l'exhaustivité des dispositifs. Le cycle de collecte complète lancé le 28 septembre 2026 doit encore fournir ses résultats et son rapport d'anomalies.
+Le corpus embarqué au démarrage contient 678 fiches, dont **60 classées AAP / AMI** datées du 22 septembre 2026, dont **0 fiche au statut vérifié**, 86 avec un lien de cahier des charges ou règlement, 166 avec une échéance renseignée et **1 seule avec un critère de sélection renseigné**. Les catégories instrumentales se recoupent : 665 fiches mentionnent une subvention, 58 une avance remboursable et 2 un prêt à taux zéro. Le registre comporte 145 entrées, dont 34 de contrôle uniquement. Le classement AAP / AMI peut contenir des erreurs et ne démontre pas une couverture exhaustive des appels à projets. Ces nombres ne démontrent ni l'actualité ni l'exhaustivité des dispositifs. Le cycle de collecte complète lancé le 28 septembre 2026 doit encore fournir ses résultats et son rapport d'anomalies.
 
 Une source configurée ≠ une source collectée ; une fiche importée ≠ une fiche vérifiée ; une correspondance thématique ≠ une éligibilité. Les critères absents restent « À VÉRIFIER ».
 
