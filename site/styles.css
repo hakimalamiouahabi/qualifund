@@ -136,3 +136,10 @@ h1,h2,h3,h4,h5,h6,.brand b,.metric b,.score,.rank,strong,b{font-weight:600}
 .score-line small{display:block;color:var(--muted);margin-top:3px;line-height:1.4}
 .score-line strong{white-space:nowrap;color:var(--navy)}
 .link-button{display:inline-block;text-decoration:underline}
+
+.method-card{margin:12px 0;border:1px solid var(--line);border-radius:10px;background:#fbfcfd;padding:11px 13px}
+.method-card summary{cursor:pointer;font-weight:600;color:var(--navy)}
+.method-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px}
+.method-grid>div{background:white;border:1px solid #edf1f3;border-radius:8px;padding:10px 11px}
+.method-grid p{font-size:11px;line-height:1.5;color:var(--muted);margin:5px 0 0}
+@media(max-width:850px){.method-grid{grid-template-columns:1fr}}
