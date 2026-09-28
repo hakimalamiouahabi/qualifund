@@ -21,3 +21,9 @@ Le registre v12.2.0 comprend 145 entrées : 96 en lecture de catalogue HTML, 34 
 - Nombre de fiches actives et vérifiées, par instrument, taille d'entreprise, région et famille thématique.
 - Pour chaque fiche recommandée : édition et calendrier actuels, bénéficiaires, territoire, assiette, dépenses, prérequis, sélection, conditions financières, règlement et preuve par champ critique.
 - Échantillon de dossiers startup, PME, ETI et GE relu par un consultant ; correction des faux « conforme » et des exclusions injustifiées avant mise en production.
+
+## Sources officielles consultées
+- https://data.aides-entreprises.fr/documentation
+- https://data.aides-entreprises.fr/stock
+- https://www.data.gouv.fr/dataservices/api-aides-territoires
+- https://aides-territoires.beta.gouv.fr/
