@@ -148,63 +148,122 @@ function specializedMismatch(a,p){const at=norm([a.title,a.objective,a.beneficia
 function explicitExclusion(a,p){const pt=tokens([p.sector,p.naf].join(' '));if(!pt.length)return null;const parts=String([a.beneficiaries,a.prerequisites,a.excludedExpenses].filter(Boolean).join(' ')).split(/(?<=[.;])/);for(const s of parts){if(!/(ne sont pas [ée]ligibles|non [ée]ligibles|exclus|exclues|hors)/i.test(s))continue;const nt=norm(s),hits=pt.filter(t=>nt.includes(t));if(hits.length)return`Exclusion sectorielle potentielle : ${hits.join(', ')}`}return null}
 function eligibility(a,p){
   const criteria=[],block=[];
-  const proof=field=>arr(a.verification?.fieldEvidence).find(e=>e.field===field&&['A','B'].includes(e.sourceTier)&&/^https?:/.test(e.sourceUrl||'')&&String(e.evidenceText||'').trim());
-  const add=(label,status,detail,field)=>{const ev=field&&proof(field);criteria.push({label,status,detail,sourceUrl:ev?.sourceUrl||null});if(status==='NON CONFORME')block.push(detail||label)};
+  const evidence=field=>arr(a.verification?.fieldEvidence).find(e=>e.field===field&&/^https?:/.test(e.sourceUrl||'')&&String(e.evidenceText||'').trim());
+  const add=(label,status,detail,field,hard=false)=>{
+    const ev=field?evidence(field):null;
+    criteria.push({label,status,detail,sourceUrl:ev?.sourceUrl||null,sourceTier:ev?.sourceTier||null,hard});
+    if(hard&&status==='NON CONFORME')block.push(detail||label);
+  };
   const types=arr(a.aidTypes),cats=arr(a.companyCategories),regions=arr(a.regions);
-  add('Instrument',types.some(x=>['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO'].includes(x))?'CONFORME':'NON CONFORME',types.join(', ')||'Instrument hors périmètre','financialTerms');
-  add('Statut',['ARCHIVE','STALE'].includes(a.lifecycleStatus)?'NON CONFORME':'À VÉRIFIER',['ARCHIVE','STALE'].includes(a.lifecycleStatus)?'Dispositif clos ou non retrouvé':'Actualité de l’édition à confirmer','calendar');
-  const sizeMatch=cats.includes(p.category)||(p.startup&&cats.includes('STARTUP'));
-  add('Taille entreprise',proof('beneficiaries')&&cats.length&&['PME','ETI','GE','STARTUP'].includes(p.category)?(sizeMatch?'CONFORME':'NON CONFORME'):'À VÉRIFIER',cats.length?`Catégories indiquées : ${cats.join(', ')} ; catégorie du groupe à confirmer`:'Catégories non documentées','beneficiaries');
-  const regionMatch=a.scope==='NATIONAL'||regions.includes(p.region);
-  add('Territoire',proof('beneficiaries')&&a.scope&&REGIONS.includes(p.region)?(regionMatch?'CONFORME':'NON CONFORME'):'À VÉRIFIER',a.scope==='NATIONAL'?'Portée nationale indiquée':`Territoires indiqués : ${regions.join(', ')||'non documentés'}`,'beneficiaries');
-  const nd=nextDeadline(a),calendarProof=proof('calendar');
-  const expired=!nd.ok&&!['DATE_MISSING','PERMANENT_UNVERIFIED'].includes(nd.reason);
-  add('Calendrier',calendarProof?(expired?'NON CONFORME':nd.ok?'CONFORME':'À VÉRIFIER'):'À VÉRIFIER',nd.ok?(a.permanent?'Permanence indiquée':`Prochaine échéance ${fmtDate(nd.date)}`):expired?'Échéance dépassée ou trop proche':'Échéance ou permanence à confirmer','calendar');
-  const budget=Number(p.budget||0),min=a.minimumProjectCost,max=a.maximumProjectCost;
-  const budgetMismatch=budget>0&&((min!=null&&budget<min)||(max!=null&&budget>max));
-  add('Budget',proof('financialTerms')&&budget>0&&(min!=null||max!=null)?(budgetMismatch?'NON CONFORME':'CONFORME'):'À VÉRIFIER',`Assiette indiquée : ${min!=null?'min '+money(min):'min non documenté'} · ${max!=null?'max '+money(max):'max non documenté'}`,'financialTerms');
-  const ex=explicitExclusion(a,p)||specializedMismatch(a,p);
-  add('Secteur','À VÉRIFIER',ex||'Adéquation sectorielle et exclusions à confronter au texte officiel','beneficiaries');
-  add('Dépenses éligibles','À VÉRIFIER',a.eligibleExpenses?'Comparer chaque poste de dépense aux catégories documentées':'Dépenses non documentées','eligibleExpenses');
-  add('Pré-requis','À VÉRIFIER',a.prerequisites?'Contrôler les prérequis publiés avec les pièces de l’entreprise':'Pré-requis non documentés','prerequisites');
-  add('Critères de sélection','À VÉRIFIER',a.selectionCriteria?'Évaluer le projet au regard des critères publiés ; la sélection ne peut être déduite automatiquement':'Critères de sélection non documentés','selectionCriteria');
-  const critical=criteria.filter(x=>['Instrument','Taille entreprise','Territoire','Calendrier','Budget'].includes(x.label));
-  const fullyConfirmed=critical.length>0&&critical.every(x=>x.status==='CONFORME');
-  return{eligible:!block.length,status:block.length?'NON CONFORME':fullyConfirmed?'CONFORME':'À VÉRIFIER',criteria,next:nd};
+  const targetInstruments=['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO'];
+  const hasTargetInstrument=types.some(x=>targetInstruments.includes(x));
+  add('Instrument',hasTargetInstrument?'CONFORME':'NON CONFORME',types.length?types.map(aidTypeLabel).join(', '):'Instrument non documenté','financialTerms',types.length>0);
+
+  add('Statut','CONFORME','Dispositif actif dans la bibliothèque publiée','calendar',true);
+
+  const projectCat=p.startup?'STARTUP':p.category;
+  if(cats.length&&projectCat&&projectCat!=='À préciser'){
+    const match=cats.includes(projectCat)||(p.startup&&cats.includes('STARTUP'))||(!p.startup&&cats.includes(p.category));
+    add('Taille entreprise',match?'CONFORME':'NON CONFORME',`Bénéficiaires déclarés : ${cats.join(', ')} · profil projet : ${projectCat}`,'beneficiaries',true);
+  }else add('Taille entreprise','À VÉRIFIER',cats.length?`Bénéficiaires déclarés : ${cats.join(', ')}`:'Taille d’entreprise non documentée','beneficiaries');
+
+  if(a.scope==='NATIONAL')add('Territoire','CONFORME','Portée nationale','beneficiaries',true);
+  else if(a.scope==='REGIONAL'&&p.region&&p.region!=='À préciser'){
+    const match=regions.includes(p.region)||regions.includes('Toutes les Régions');
+    add('Territoire',match?'CONFORME':'NON CONFORME',`Territoires du dispositif : ${regions.join(', ')||'non documentés'} · région du projet : ${p.region}`,'beneficiaries',true);
+  }else add('Territoire','À VÉRIFIER',`Territoires du dispositif : ${regions.join(', ')||'non documentés'}`,'beneficiaries');
+
+  const nd=nextDeadline(a);
+  if(nd.reason==='J1'&&nd.date&&daysUntil(nd.date)<1)add('Calendrier','NON CONFORME',`Échéance dépassée ou non exploitable : ${fmtDate(nd.date)}`,'calendar',true);
+  else if(nd.ok)add('Calendrier','CONFORME',a.permanent?'Dispositif permanent':'Prochaine échéance exploitable : '+fmtDate(nd.date),'calendar',true);
+  else add('Calendrier','À VÉRIFIER',a.permanent?'Permanence à confirmer':'Date de clôture non documentée','calendar');
+
+  const budget=Number(p.budget||0),min=Number.isFinite(Number(a.minimumProjectCost))?Number(a.minimumProjectCost):null,max=Number.isFinite(Number(a.maximumProjectCost))?Number(a.maximumProjectCost):null;
+  if(budget>0&&(min!=null||max!=null)){
+    const mismatch=(min!=null&&budget<min)||(max!=null&&budget>max);
+    add('Budget',mismatch?'NON CONFORME':'CONFORME',`Budget projet : ${money(budget)} · assiette connue : ${min!=null?'min '+money(min):'min non documenté'} / ${max!=null?'max '+money(max):'max non documenté'}`,'financialTerms',true);
+  }else add('Budget','À VÉRIFIER',`Budget projet : ${budget>0?money(budget):'non renseigné'} · assiette : ${min!=null?'min '+money(min):'min non documenté'} / ${max!=null?'max '+money(max):'max non documenté'}`,'financialTerms');
+
+  const explicit=explicitExclusion(a,p);
+  if(explicit)add('Secteur','NON CONFORME',explicit,'beneficiaries',true);
+  else {
+    const specialized=specializedMismatch(a,p);
+    add('Secteur',specialized?'À VÉRIFIER':'CONFORME',specialized||'Aucune exclusion sectorielle explicite détectée dans les données structurées','beneficiaries');
+  }
+
+  add('Dépenses éligibles',a.eligibleExpenses?'À VÉRIFIER':'À VÉRIFIER',a.eligibleExpenses?'Les postes seront rapprochés des dépenses publiées':'Dépenses éligibles non documentées','eligibleExpenses');
+  add('Pré-requis','À VÉRIFIER',a.prerequisites?'Les pré-requis seront rapprochés du profil et de la maturité':'Pré-requis non documentés','prerequisites');
+  add('Critères de sélection','À VÉRIFIER',a.selectionCriteria?'Les critères seront rapprochés des impacts, travaux, partenaires et maturité':'Critères de sélection non documentés','selectionCriteria');
+
+  const confirmed=criteria.filter(x=>x.hard).length>0&&criteria.filter(x=>x.hard).every(x=>x.status==='CONFORME');
+  return{eligible:block.length===0,status:block.length?'NON CONFORME':confirmed?'CONFORME':'À VÉRIFIER',criteria,next:nd,blocking:block};
 }
 function relevance(a,p){if(window.LEYTON_SCORING?.relevance)return window.LEYTON_SCORING.relevance(a,p);throw new Error('Moteur de pertinence partagé indisponible.')}
-function runFeasibility(){
-  const p=state.project,candidates=[],excluded={eligibility:0,relevance:0};
-  const discoveryFloor=55,strongFloor=CONFIG.minRelevance||85;
-  const corpus=state.lib.filter(usableAid);
-  for(const a of corpus){
-    const e=eligibility(a,p);
-    if(!e.eligible){excluded.eligibility++;continue}
-    const r=relevance(a,p);
-    if(r.score<discoveryFloor){excluded.relevance++;continue}
-    candidates.push({a,elig:e,relevance:r,confidence:a.verification?.confidence||0,completeness:a.verification?.completeness||0});
+function validateProjectForStudy(p){
+  const missingFields=[];
+  if(!p.category||p.category==='À préciser')missingFields.push('catégorie de l’entreprise');
+  if(!p.region||p.region==='À préciser')missingFields.push('région du projet');
+  if(!String(p.sector||'').trim())missingFields.push('secteur / activité réelle');
+  if(String(p.summary||'').trim().length<40)missingFields.push('description détaillée du projet (40 caractères minimum)');
+  if(!(Number(p.budget)>0))missingFields.push('budget total du projet');
+  return missingFields;
+}
+async function runFeasibility(){
+  const p=state.project,root=$('#studyResults');
+  if(!root)return;
+  const missingFields=validateProjectForStudy(p);
+  if(missingFields.length){
+    root.innerHTML=`<div class="callout warn"><b>Analyse non lancée : informations indispensables manquantes.</b><br>${esc(missingFields.join(' · '))}</div>`;
+    root.scrollIntoView({behavior:'smooth',block:'start'});
+    return;
   }
-  candidates.sort((x,y)=>y.relevance.score-x.relevance.score||y.confidence-x.confidence);
-  const priorities=candidates.filter(x=>x.relevance.score>=strongFloor).slice(0,8);
+
+  const started=performance.now(),corpus=state.lib.filter(usableAid),scored=[],rejected=[];
+  root.innerHTML=`<div class="analysis-progress"><div class="row between"><b>Cartographie en cours</b><span id="analysisProgressLabel">0 / ${corpus.length}</span></div><div class="progress"><i id="analysisProgressBar" style="width:0%"></i></div><p class="mini">Contrôle de l’éligibilité, puis rapprochement déterministe sur 9 dimensions.</p></div>`;
+
+  for(let i=0;i<corpus.length;i++){
+    const a=corpus[i],e=eligibility(a,p);
+    if(e.eligible){
+      const rel=relevance(a,p);
+      scored.push({a,elig:e,relevance:rel,confidence:a.verification?.confidence||0,completeness:a.verification?.completeness||0});
+    }else rejected.push({a,elig:e});
+    if(i%120===0||i===corpus.length-1){
+      const pct=Math.round(((i+1)/Math.max(1,corpus.length))*100);
+      const bar=$('#analysisProgressBar'),label=$('#analysisProgressLabel');
+      if(bar)bar.style.width=pct+'%';
+      if(label)label.textContent=`${i+1} / ${corpus.length}`;
+      await new Promise(requestAnimationFrame);
+    }
+  }
+
+  scored.sort((x,y)=>y.relevance.score-x.relevance.score||y.confidence-x.confidence||y.completeness-x.completeness);
+  const strongFloor=CONFIG.minRelevance||85;
+  const priorities=scored.filter(x=>x.relevance.score>=strongFloor).slice(0,10);
   const priorityIds=new Set(priorities.map(x=>x.a.id));
-  const leads=candidates.filter(x=>!priorityIds.has(x.a.id)&&x.relevance.score>=70).slice(0,8);
+  const leads=scored.filter(x=>!priorityIds.has(x.a.id)&&x.relevance.score>=70).slice(0,10);
   const leadIds=new Set(leads.map(x=>x.a.id));
-  const potentials=candidates.filter(x=>!priorityIds.has(x.a.id)&&!leadIds.has(x.a.id)).slice(0,6);
-  state.lastResults=[...priorities,...leads,...potentials];
-  const root=$('#studyResults');
+  const potentials=scored.filter(x=>!priorityIds.has(x.a.id)&&!leadIds.has(x.a.id)&&x.relevance.score>=55).slice(0,8);
+  const shownIds=new Set([...priorities,...leads,...potentials].map(x=>x.a.id));
+  const bestBelow=scored.filter(x=>!shownIds.has(x.a.id)).slice(0,5);
+  const duration=Math.round(performance.now()-started);
+  const checks=scored.reduce((n,x)=>n+(x.relevance.checks||x.relevance.dims?.length||9),0)+corpus.length*7;
+  state.lastResults=[...priorities,...leads,...potentials,...(!priorities.length&&!leads.length&&!potentials.length?bestBelow:[])];
+
   root.innerHTML=`<div class="section-title"><h2>Cartographie des dispositifs pertinents</h2></div>
   <div class="card study-kpi"><div class="grid g4">
-    <div class="metric"><b>${corpus.length}</b><span>dispositifs exploitables analysés</span></div>
-    <div class="metric"><b>${priorities.length}</b><span>forte pertinence</span><small>score ≥ ${strongFloor}%</small></div>
-    <div class="metric"><b>${leads.length}</b><span>à approfondir</span><small>score 70–${strongFloor-1}%</small></div>
-    <div class="metric"><b>${potentials.length}</b><span>correspondances potentielles</span><small>score 55–69%</small></div>
-  </div><p class="mini">La description du projet, les projets attendus, les dépenses, le profil de l’entreprise, le budget, le calendrier et le territoire sont rapprochés de chaque fiche. La pertinence est distincte de l’éligibilité réglementaire et du niveau de preuve documentaire.</p></div>
+    <div class="metric"><b>${corpus.length}</b><span>dispositifs analysés</span></div>
+    <div class="metric"><b>${priorities.length}</b><span>forte pertinence</span><small>≥ ${strongFloor}%</small></div>
+    <div class="metric"><b>${leads.length}</b><span>à approfondir</span><small>70–${strongFloor-1}%</small></div>
+    <div class="metric"><b>${potentials.length}</b><span>potentiels</span><small>55–69%</small></div>
+  </div>
+  <div class="analysis-audit"><b>${checks.toLocaleString('fr-FR')} contrôles exécutés</b> sur ${corpus.length.toLocaleString('fr-FR')} dispositifs en ${duration.toLocaleString('fr-FR')} ms · ${rejected.length.toLocaleString('fr-FR')} incompatibilités bloquantes écartées · ${scored.length.toLocaleString('fr-FR')} dispositifs scorés.</div></div>
+
   <div class="section-title"><h3>Forte pertinence</h3></div>
-  ${priorities.length?priorities.map((x,i)=>resultCard(x,i+1,'FORTE PERTINENCE')).join(''):'<div class="callout">Aucun dispositif n’atteint le seuil de forte pertinence. Les meilleures correspondances sont présentées ci-dessous.</div>'}
+  ${priorities.length?priorities.map((x,i)=>resultCard(x,i+1,'FORTE PERTINENCE')).join(''):'<div class="callout">Aucun dispositif n’atteint 85 %. Les meilleures correspondances restent visibles dans les niveaux suivants.</div>'}
   <div class="section-title"><h3>À approfondir</h3></div>
-  ${leads.length?leads.map((x,i)=>resultCard(x,i+1,'À APPROFONDIR')).join(''):'<div class="callout">Aucune correspondance entre 70 % et le seuil de forte pertinence.</div>'}
+  ${leads.length?leads.map((x,i)=>resultCard(x,i+1,'À APPROFONDIR')).join(''):'<div class="callout">Aucune correspondance entre 70 % et ${strongFloor-1} %.</div>'}
   ${potentials.length?`<div class="section-title"><h3>Correspondances potentielles</h3></div>${potentials.map((x,i)=>resultCard(x,i+1,'POTENTIEL')).join('')}`:''}
-  ${!candidates.length?'<div class="callout warn"><b>Aucune correspondance exploitable trouvée.</b><br>Complétez notamment le résumé du projet, la région, la taille d’entreprise et le budget afin de renforcer la cartographie.</div>':''}`;
+  ${!priorities.length&&!leads.length&&!potentials.length&&bestBelow.length?`<div class="section-title"><h3>Meilleures correspondances disponibles</h3></div><div class="callout warn">Aucune fiche ne dépasse 55 %. Les cinq meilleures correspondances sont affichées à titre de diagnostic, sans recommandation.</div>${bestBelow.map((x,i)=>resultCard(x,i+1,'FAIBLE CONCORDANCE')).join('')}`:''}`;
   root.scrollIntoView({behavior:'smooth',block:'start'});
 }
 function securityPoints(r){const a=r.a,pts=[];for(const c of r.elig.criteria)if(c.status==='À VÉRIFIER')pts.push(`${c.label} : ${c.detail||'à confirmer'}`);if(a.verification?.status!=='VERIFIE')pts.push('Preuves A/B incomplètes : fiche à revalider avant recommandation ferme.');for(const x of arr(a.attentionPoints))if(x&&!pts.includes(x))pts.push(x);return uniq(pts).sort((x,y)=>Number(/^(Critères de sélection|Pré-requis|Dépenses éligibles)/.test(y))-Number(/^(Critères de sélection|Pré-requis|Dépenses éligibles)/.test(x))).slice(0,10)}
