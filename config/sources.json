@@ -1941,7 +1941,7 @@
       "scope": "Pays de la Loire",
       "type": "web",
       "strategy": "official-page",
-      "url": "http://pia.paysdelaloire.fr/Projets-d-Innovation",
+      "url": "https://pia.paysdelaloire.fr/Projets-d-Innovation/",
       "official": true,
       "priority": 0,
       "browserFallback": true,
