@@ -1385,6 +1385,21 @@
       "minExpected": 3
     },
     {
+      "id": "nouvelle_aquitaine_france2030_innovation",
+      "name": "France 2030 régionalisé — Projets d’innovation — Nouvelle-Aquitaine",
+      "scope": "Nouvelle-Aquitaine",
+      "type": "web",
+      "strategy": "official-page",
+      "url": "https://www.france2030-en-nouvelle-aquitaine.fr/projets-davenir-innovation/",
+      "official": true,
+      "priority": 0,
+      "browserFallback": true,
+      "titleOverride": "France 2030 régionalisé — Projets d’innovation — Nouvelle-Aquitaine",
+      "kindOverride": "AAP / AMI",
+      "funder": "État · Région Nouvelle-Aquitaine · Bpifrance",
+      "notes": "Source officielle dédiée : aide de 75 k€ à 500 k€, subvention et/ou avance récupérable, projet individuel de faisabilité ou développement/pré-industrialisation."
+    },
+    {
       "id": "nouvelle_aquitaine_europe_aap",
       "name": "Nouvelle-Aquitaine — appels à projets FEDER/FEADER",
       "scope": "Nouvelle-Aquitaine",
