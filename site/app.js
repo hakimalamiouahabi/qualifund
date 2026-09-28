@@ -253,19 +253,20 @@ async function runFeasibility(){
   if(!root)return;
   const missingFields=validateProjectForStudy(p);
   if(missingFields.length){
-    root.innerHTML=`<div class="callout warn"><b>Analyse non lancée : informations indispensables manquantes.</b><br>${esc(missingFields.join(' · '))}</div>`;
+    root.innerHTML=`<div class="callout warn"><b>Analyse non lancée : base de recherche insuffisante.</b><br>Renseignez au moins ${esc(missingFields.join(' · '))}.</div>`;
     root.scrollIntoView({behavior:'smooth',block:'start'});
     return;
   }
 
   const started=performance.now(),corpus=state.lib.filter(usableAid),scored=[],rejected=[];
-  root.innerHTML=`<div class="analysis-progress"><div class="row between"><b>Cartographie en cours</b><span id="analysisProgressLabel">0 / ${corpus.length}</span></div><div class="progress"><i id="analysisProgressBar" style="width:0%"></i></div><p class="mini">Contrôle de l’éligibilité puis analyse adaptée au financeur et au type de dispositif.</p></div>`;
+  root.innerHTML=`<div class="analysis-progress"><div class="row between"><b>Cartographie en cours</b><span id="analysisProgressLabel">0 / ${corpus.length}</span></div><div class="progress"><i id="analysisProgressBar" style="width:0%"></i></div><p class="mini">Étape 1 : incompatibilités réglementaires explicites. Étape 2 : analyse structurée des critères. Étape 3 : classement documentaire BM25F et fusion des rangs.</p></div>`;
 
+  const bm25=window.LEYTON_SCORING?.bm25fRank?window.LEYTON_SCORING.bm25fRank(corpus,p):new Map();
   for(let i=0;i<corpus.length;i++){
     const a=corpus[i],e=eligibility(a,p);
     if(e.eligible){
       const rel=relevance(a,p);
-      scored.push({a,elig:e,relevance:rel});
+      scored.push({a,elig:e,relevance:rel,bm25:Number(bm25.get(a.id)||0)});
     }else rejected.push({a,elig:e});
     if(i%120===0||i===corpus.length-1){
       const pct=Math.round(((i+1)/Math.max(1,corpus.length))*100);
@@ -276,33 +277,53 @@ async function runFeasibility(){
     }
   }
 
-  scored.sort((x,y)=>y.relevance.score-x.relevance.score||y.relevance.documentedWeight-x.relevance.documentedWeight);
-  const strongFloor=80,leadFloor=65,potentialFloor=50;
-  const priorities=scored.filter(x=>x.elig.status==='CONFORME'&&x.relevance.score>=strongFloor&&x.relevance.basis==='description projet').slice(0,10);
+  // Deux classements indépendants sont fusionnés par Reciprocal Rank Fusion (RRF).
+  // Cela évite qu'un unique score arbitraire décide seul du classement.
+  const structured=[...scored].sort((x,y)=>y.relevance.score-x.relevance.score||y.relevance.documentedWeight-x.relevance.documentedWeight);
+  const lexical=[...scored].sort((x,y)=>y.bm25-x.bm25||y.relevance.score-x.relevance.score);
+  const rankStructured=new Map(structured.map((x,i)=>[x.a.id,i+1]));
+  const rankLexical=new Map(lexical.map((x,i)=>[x.a.id,i+1]));
+  for(const x of scored){
+    const rs=rankStructured.get(x.a.id)||scored.length,rl=rankLexical.get(x.a.id)||scored.length;
+    x.rrf=1/(60+rs)+1/(60+rl);
+    const dims=arr(x.relevance.dims).filter(d=>d.documented!==false);
+    x.expertSignals={
+      documented:dims.length,
+      strong:dims.filter(d=>(d.ratio??0)>=65).length,
+      medium:dims.filter(d=>(d.ratio??0)>=40).length,
+      core:dims.some(d=>['strategic','expected','beneficiary'].includes(d.key)&&(d.ratio??0)>=55),
+      direct:Boolean(officialUrl(x.a))
+    };
+  }
+  scored.sort((x,y)=>y.rrf-x.rrf||y.relevance.score-x.relevance.score);
+
+  const isProject=String(p.summary||'').trim().length>0;
+  const priorities=scored.filter(x=>isProject&&x.expertSignals.direct&&x.expertSignals.documented>=5&&x.expertSignals.strong>=3&&x.expertSignals.core).slice(0,10);
   const priorityIds=new Set(priorities.map(x=>x.a.id));
-  const leads=scored.filter(x=>!priorityIds.has(x.a.id)&&x.relevance.score>=leadFloor).slice(0,10);
+  const leads=scored.filter(x=>!priorityIds.has(x.a.id)&&x.expertSignals.documented>=3&&(x.expertSignals.strong>=2||x.expertSignals.strong+x.expertSignals.medium>=4)&&x.expertSignals.core).slice(0,12);
   const leadIds=new Set(leads.map(x=>x.a.id));
-  const potentials=scored.filter(x=>!priorityIds.has(x.a.id)&&!leadIds.has(x.a.id)&&x.relevance.score>=potentialFloor).slice(0,8);
+  const potentials=scored.filter(x=>!priorityIds.has(x.a.id)&&!leadIds.has(x.a.id)&&x.expertSignals.core).slice(0,10);
   const shownIds=new Set([...priorities,...leads,...potentials].map(x=>x.a.id));
   const bestBelow=scored.filter(x=>!shownIds.has(x.a.id)).slice(0,5);
   const duration=Math.round(performance.now()-started);
   const checks=[...scored,...rejected].reduce((n,x)=>n+x.elig.criteria.length,0);
   state.lastResults=[...priorities,...leads,...potentials,...(!priorities.length&&!leads.length&&!potentials.length?bestBelow:[])];
 
-  root.innerHTML=`<div class="section-title"><h2>Cartographie des dispositifs pertinents</h2></div>
+  const mode=isProject?'Projet renseigné':'Prospection activité / NAF / thématiques';
+  root.innerHTML=`<div class="section-title"><h2>Cartographie des financements</h2></div>
   <div class="card study-kpi"><div class="grid g4">
     <div class="metric"><b>${corpus.length}</b><span>dispositifs analysés</span></div>
-    <div class="metric"><b>${priorities.length}</b><span>prioritaires</span><small>meilleures adéquations</small></div>
-    <div class="metric"><b>${leads.length}</b><span>à approfondir</span><small>adéquation significative</small></div>
-    <div class="metric"><b>${potentials.length}</b><span>pistes complémentaires</span><small>à qualifier</small></div>
+    <div class="metric"><b>${priorities.length}</b><span>prioritaires à instruire</span><small>projet suffisamment renseigné</small></div>
+    <div class="metric"><b>${leads.length}</b><span>à approfondir</span><small>plusieurs signaux convergents</small></div>
+    <div class="metric"><b>${potentials.length}</b><span>pistes complémentaires</span><small>correspondance à qualifier</small></div>
   </div>
-  <div class="analysis-audit"><b>${scored.length.toLocaleString('fr-FR')} dispositifs sans incompatibilité identifiée</b> · ${rejected.length.toLocaleString('fr-FR')} dispositifs écartés. Les correspondances textuelles orientent la recherche ; les conditions non vérifiées restent à instruire.</div></div>
+  <div class="analysis-audit"><b>${mode}</b> · ${scored.length.toLocaleString('fr-FR')} dispositifs sans incompatibilité explicite · ${rejected.length.toLocaleString('fr-FR')} écartés sur règle bloquante · ${checks.toLocaleString('fr-FR')} contrôles structurés. Classement obtenu par double analyse déterministe : critères structurés + BM25F documentaire, fusionnés par RRF. Aucun barème officiel Bpifrance, ADEME ou FEDER n'est simulé.</div></div>
 
-  ${priorities.length?`<div class="section-title"><h3>Dispositifs prioritaires</h3></div>${priorities.map((x,i)=>resultCard(x,i+1,'PRIORITAIRE')).join('')}`:''}
+  ${priorities.length?`<div class="section-title"><h3>Prioritaires à instruire</h3></div>${priorities.map((x,i)=>resultCard(x,i+1,'PRIORITAIRE À INSTRUIRE')).join('')}`:''}
   <div class="section-title"><h3>À approfondir</h3></div>
-  ${leads.length?leads.map((x,i)=>resultCard(x,i+1,'À APPROFONDIR')).join(''):'<div class="callout">Aucune correspondance supplémentaire de niveau intermédiaire.</div>'}
-  ${potentials.length?`<div class="section-title"><h3>Correspondances potentielles</h3></div>${potentials.map((x,i)=>resultCard(x,i+1,'POTENTIEL')).join('')}`:''}
-  ${!priorities.length&&!leads.length&&!potentials.length&&bestBelow.length?`<div class="section-title"><h3>Meilleures correspondances disponibles</h3></div><div class="callout warn">Aucun dispositif ne franchit le niveau minimal de recommandation. Les cinq meilleures correspondances sont affichées pour diagnostic.</div>${bestBelow.map((x,i)=>resultCard(x,i+1,'À QUALIFIER')).join('')}`:''}`;
+  ${leads.length?leads.map((x,i)=>resultCard(x,i+1,'À APPROFONDIR')).join(''):'<div class="callout">Aucune correspondance intermédiaire suffisamment étayée.</div>'}
+  ${potentials.length?`<div class="section-title"><h3>Pistes complémentaires</h3></div>${potentials.map((x,i)=>resultCard(x,i+1,'À QUALIFIER')).join('')}`:''}
+  ${!priorities.length&&!leads.length&&!potentials.length&&bestBelow.length?`<div class="section-title"><h3>Meilleures correspondances disponibles</h3></div><div class="callout warn">Aucune fiche ne présente assez de signaux convergents pour être recommandée. Les cinq meilleures correspondances sont affichées uniquement pour diagnostic.</div>${bestBelow.map((x,i)=>resultCard(x,i+1,'DIAGNOSTIC')).join('')}`:''}`;
   root.scrollIntoView({behavior:'smooth',block:'start'});
 }
 function securityPoints(r){const a=r.a,pts=[];for(const c of r.elig.criteria)if(c.status==='À VÉRIFIER')pts.push(`${c.label} : ${c.detail||'à confirmer'}`);if(a.verification?.status!=='VERIFIE')pts.push('Certaines informations de la fiche restent à confirmer sur la source officielle.');for(const x of arr(a.attentionPoints))if(x&&!pts.includes(x))pts.push(x);return uniq(pts).sort((x,y)=>Number(/^(Critères de sélection|Pré-requis|Dépenses éligibles)/.test(y))-Number(/^(Critères de sélection|Pré-requis|Dépenses éligibles)/.test(x))).slice(0,10)}
