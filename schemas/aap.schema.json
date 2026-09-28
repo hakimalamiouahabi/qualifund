@@ -90,7 +90,16 @@
         "enum": [
           "SUBVENTION",
           "AVANCE_REMBOURSABLE",
-          "PRET_TAUX_ZERO"
+          "PRET_TAUX_ZERO",
+          "PRET",
+          "BONIFICATION_INTERET",
+          "GARANTIE",
+          "ALLEGEMENT_FISCAL",
+          "PARTICIPATION_CAPITAL",
+          "APPEL_A_PROJET",
+          "ACCOMPAGNEMENT_GRATUIT",
+          "CREDIT_BAIL",
+          "AUTRE"
         ]
       }
     },
