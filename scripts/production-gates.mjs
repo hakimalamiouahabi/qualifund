@@ -45,7 +45,8 @@ const verifiedEvidenceIntegrity=verifiedActive.filter(a=>{
   return CRITICAL_FIELDS.every(f=>['A','B'].includes(coverage[f]));
 }).length;
 const remediationFresh=Boolean(remediation&&remediation.version===(cfg.version||lib.meta?.version)&&remediation.activeFiches===active.length&&remediation.generatedAt);
-const volumeTarget=2001;\nconst gate4Pass=gate3Pass&&active.length>=volumeTarget&&verified>0&&verifiedIntegrity===verified;
+const volumeTarget=2001;
+const gate4Pass=gate3Pass&&active.length>=volumeTarget&&verified>0&&verifiedIntegrity===verified;
 const gate5Pass=gate4Pass&&verifiedEvidenceIntegrity===verified&&remediationFresh;
 // Un run workflow_dispatch/push exerce exactement la même chaîne que le cron. Le test statique vérifie séparément le cron + timezone.
 const workflowLiveOk=Boolean(inActions&&repo&&deployed&&gate3Pass&&['schedule','workflow_dispatch','push'].includes(workflowEvent));
