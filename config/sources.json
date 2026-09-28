@@ -292,8 +292,9 @@
       "minExpected": 10,
       "browserFallback": true,
       "observedCatalogCount": 265,
-      "webVerifiedAt": "2026-09-22",
-      "webEvidenceUrl": "https://www.normandie.fr/aides-regionales"
+      "webVerifiedAt": "2026-09-28",
+      "webEvidenceUrl": "https://www.normandie.fr/aides-regionales",
+      "catalogLinkSelector": "h3 a[href]"
     },
     {
       "id": "naquitaine",
@@ -321,10 +322,10 @@
       "priority": 0,
       "minExpected": 1,
       "datasetInclude": "aides|appels|interventions",
-      "datasetId": "aides-et-appels-a-projets-de-la-region-occitanie@occitanie",
-      "webVerifiedAt": "2026-09-22",
-      "webEvidenceUrl": "https://www.laregion.fr/Les-aides-et-appels-a-projets",
-      "observedCatalogCount": 353
+      "datasetId": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "webVerifiedAt": "2026-09-28",
+      "webEvidenceUrl": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "observedCatalogCount": 223
     },
     {
       "id": "pdl",
