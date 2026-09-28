@@ -177,6 +177,81 @@
     return .58*territoryFit(a,p)+.42*calendarFit(a,p);
   }
 
+
+  // Moteur de recherche documentaire déterministe.
+  // BM25F sert uniquement à classer les fiches par proximité documentaire ;
+  // il ne reproduit ni ne remplace le barème de sélection d'un financeur.
+  const BM25_FIELDS={
+    title:3.2,
+    themes:2.8,
+    objective:2.4,
+    projectsExpected:2.2,
+    selectionCriteria:2.0,
+    eligibleExpenses:1.8,
+    prerequisites:1.6,
+    beneficiaries:1.2
+  };
+  function rawTerms(s){
+    return norm(s).split(' ').filter(x=>x.length>2&&!STOP.has(x));
+  }
+  function retrievalFields(a){
+    return{
+      title:String(a.title||''),
+      themes:arr(a.themes).join(' '),
+      objective:String(a.objective||''),
+      projectsExpected:arr(a.projectsExpected).join(' '),
+      selectionCriteria:String(a.selectionCriteria||''),
+      eligibleExpenses:String(a.eligibleExpenses||''),
+      prerequisites:String(a.prerequisites||''),
+      beneficiaries:[a.beneficiaries,...arr(a.companyCategories),...arr(a.regions)].join(' ')
+    };
+  }
+  function retrievalQuery(p){
+    return rawTerms([
+      p.name,p.summary,p.sector,p.naf,nafText(p.naf),...arr(p.types),
+      p.digital,p.environment,p.impacts,p.expenses,p.maturity,p.partners
+    ].join(' '));
+  }
+  function bm25fRank(aids,p){
+    const query=uniq(retrievalQuery(p));
+    const N=Math.max(1,aids.length),k1=1.2,b=.72;
+    if(!query.length)return new Map(aids.map(a=>[a.id,0]));
+    const docs=aids.map(a=>{
+      const fields=retrievalFields(a),terms={};
+      for(const key of Object.keys(BM25_FIELDS))terms[key]=rawTerms(fields[key]);
+      return{a,terms};
+    });
+    const avg={};
+    for(const key of Object.keys(BM25_FIELDS)){
+      avg[key]=Math.max(1,docs.reduce((s,d)=>s+d.terms[key].length,0)/N);
+    }
+    const df=new Map(query.map(t=>[t,0]));
+    for(const t of query){
+      for(const d of docs){
+        if(Object.values(d.terms).some(xs=>xs.includes(t)))df.set(t,(df.get(t)||0)+1);
+      }
+    }
+    const scores=new Map();
+    for(const d of docs){
+      let total=0;
+      for(const t of query){
+        const n=df.get(t)||0;
+        const idf=Math.log(1+(N-n+.5)/(n+.5));
+        let fieldSum=0;
+        for(const [key,boost] of Object.entries(BM25_FIELDS)){
+          const xs=d.terms[key],len=xs.length;
+          if(!len)continue;
+          let tf=0;for(const x of xs)if(x===t)tf++;
+          if(!tf)continue;
+          const normTf=(tf*(k1+1))/(tf+k1*(1-b+b*(len/avg[key])));
+          fieldSum+=boost*normTf;
+        }
+        total+=idf*fieldSum;
+      }
+      scores.set(d.a.id,total);
+    }
+    return scores;
+  }
   function relevance(a,p){
     const family=detectFamily(a),w=RETRIEVAL_DIMENSIONS,ctx=projectContext(p),dims=[];
     const present=v=>String(v??'').trim()!==''&&v!=='À préciser'&&v!=='À vérifier';
@@ -244,6 +319,6 @@
     };
   }
 
-  root.LEYTON_SCORING={relevance,tokens,norm,conceptSet,overlapDetails,detectFamily,nafText,projectContext,version:'12.5.0'};
+  root.LEYTON_SCORING={relevance,tokens,norm,conceptSet,overlapDetails,detectFamily,nafText,projectContext,bm25fRank,retrievalQuery,version:'12.6.0'};
 })(typeof globalThis!=='undefined'?globalThis:this);
 
