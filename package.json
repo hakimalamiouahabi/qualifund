@@ -1,6 +1,6 @@
 {
   "name": "qualifund",
-  "version": "12.2.0",
+  "version": "12.3.0",
   "private": true,
   "type": "module",
   "description": "QUALIFUND — bibliothèque officielle et évaluation prudente des aides publiques",
