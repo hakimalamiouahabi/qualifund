@@ -16,9 +16,9 @@ test('une source control-only vide peut rester concluante sans agir sur le cycle
   assert.equal(a.lifecycleSafe,false);
 });
 
-test('un plancher minExpected insuffisant conserve la dernière version valide',()=>{
+test('un plancher minExpected insuffisant reste un succès technique mais bloque le lifecycle',()=>{
   const a=assessCollection({id:'x',strategy:'catalog-html',minExpected:5},{discovered:3,aids:[{title:'A'}]});
-  assert.equal(a.success,false);
+  assert.equal(a.success,true);
   assert.equal(a.suspiciousVolume,true);
   assert.equal(a.lifecycleSafe,false);
 });
