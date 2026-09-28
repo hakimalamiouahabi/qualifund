@@ -1,0 +1,21 @@
+{
+  "summary": {
+    "generatedAt": "2026-09-22T20:27:16.700Z",
+    "total": 145,
+    "ok": 0,
+    "failed": 0,
+    "protected": 0,
+    "unprobed": 0,
+    "timeouts": 0,
+    "networkErrors": 145,
+    "environmentSuspect": true,
+    "note": "145 sources ont été tentées dans le runner local mais 145 ont échoué au niveau réseau; 0 résultat concluant. Ce fichier ne constitue pas une preuve de santé des sources.",
+    "version": "11.1.6",
+    "ingestiveSources": 110,
+    "controlSources": 35,
+    "liveCycleExecuted": false,
+    "probed": 145,
+    "conclusive": 0
+  },
+  "results": []
+}

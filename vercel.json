@@ -1,0 +1,37 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/site/index.html"
+    },
+    {
+      "source": "/bibliotheque/:path*",
+      "destination": "/site/bibliotheque/:path*"
+    },
+    {
+      "source": "/data/:path*",
+      "destination": "/site/data/:path*"
+    },
+    {
+      "source": "/app.js",
+      "destination": "/site/app.js"
+    },
+    {
+      "source": "/styles.css",
+      "destination": "/site/styles.css"
+    },
+    {
+      "source": "/runtime-config.js",
+      "destination": "/site/runtime-config.js"
+    },
+    {
+      "source": "/manifest.webmanifest",
+      "destination": "/site/manifest.webmanifest"
+    },
+    {
+      "source": "/sw.js",
+      "destination": "/site/sw.js"
+    }
+  ]
+}

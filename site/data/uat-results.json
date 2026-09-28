@@ -1,0 +1,265 @@
+{
+  "version": "12.2.0",
+  "generatedAt": "2026-09-22T22:20:45.252Z",
+  "engineVersion": "12.2.0",
+  "total": 5,
+  "passed": 5,
+  "threshold": 85,
+  "results": [
+    {
+      "id": "innovation-ai-poc",
+      "name": "R&D / IA — prototype et PoC",
+      "score": 96,
+      "min": 85,
+      "pass": true,
+      "dims": [
+        {
+          "label": "Objectifs & thématiques",
+          "max": 25,
+          "score": 25,
+          "detail": "Forte concordance"
+        },
+        {
+          "label": "Typologie de projet",
+          "max": 15,
+          "score": 15,
+          "detail": "Typologie 100%"
+        },
+        {
+          "label": "Dépenses éligibles",
+          "max": 20,
+          "score": 20,
+          "detail": "Lots de coûts bien couverts"
+        },
+        {
+          "label": "Éligibilité / sélection",
+          "max": 15,
+          "score": 11,
+          "detail": "Critères publiés rapprochés du projet"
+        },
+        {
+          "label": "Finance",
+          "max": 10,
+          "score": 10,
+          "detail": "Assiette / modalités cohérentes"
+        },
+        {
+          "label": "Calendrier / maturité",
+          "max": 10,
+          "score": 10,
+          "detail": "Fenêtre exploitable et maturité rapprochée"
+        },
+        {
+          "label": "Territorialité / stratégie",
+          "max": 5,
+          "score": 5,
+          "detail": "Territoire compatible"
+        }
+      ]
+    },
+    {
+      "id": "industrialisation",
+      "name": "Investissement productif — industrialisation",
+      "score": 95,
+      "min": 85,
+      "pass": true,
+      "dims": [
+        {
+          "label": "Objectifs & thématiques",
+          "max": 25,
+          "score": 25,
+          "detail": "Forte concordance"
+        },
+        {
+          "label": "Typologie de projet",
+          "max": 15,
+          "score": 15,
+          "detail": "Typologie 100%"
+        },
+        {
+          "label": "Dépenses éligibles",
+          "max": 20,
+          "score": 20,
+          "detail": "Lots de coûts bien couverts"
+        },
+        {
+          "label": "Éligibilité / sélection",
+          "max": 15,
+          "score": 10,
+          "detail": "Critères publiés rapprochés du projet"
+        },
+        {
+          "label": "Finance",
+          "max": 10,
+          "score": 10,
+          "detail": "Assiette / modalités cohérentes"
+        },
+        {
+          "label": "Calendrier / maturité",
+          "max": 10,
+          "score": 10,
+          "detail": "Fenêtre exploitable et maturité rapprochée"
+        },
+        {
+          "label": "Territorialité / stratégie",
+          "max": 5,
+          "score": 5,
+          "detail": "Territoire compatible"
+        }
+      ]
+    },
+    {
+      "id": "cyber-digital",
+      "name": "Transformation numérique / cybersécurité",
+      "score": 100,
+      "min": 85,
+      "pass": true,
+      "dims": [
+        {
+          "label": "Objectifs & thématiques",
+          "max": 25,
+          "score": 25,
+          "detail": "Forte concordance"
+        },
+        {
+          "label": "Typologie de projet",
+          "max": 15,
+          "score": 15,
+          "detail": "Typologie 100%"
+        },
+        {
+          "label": "Dépenses éligibles",
+          "max": 20,
+          "score": 20,
+          "detail": "Lots de coûts bien couverts"
+        },
+        {
+          "label": "Éligibilité / sélection",
+          "max": 15,
+          "score": 15,
+          "detail": "Critères publiés rapprochés du projet"
+        },
+        {
+          "label": "Finance",
+          "max": 10,
+          "score": 10,
+          "detail": "Assiette / modalités cohérentes"
+        },
+        {
+          "label": "Calendrier / maturité",
+          "max": 10,
+          "score": 10,
+          "detail": "Fenêtre exploitable et maturité rapprochée"
+        },
+        {
+          "label": "Territorialité / stratégie",
+          "max": 5,
+          "score": 5,
+          "detail": "Territoire compatible"
+        }
+      ]
+    },
+    {
+      "id": "decarbonation-energy",
+      "name": "Décarbonation / efficacité énergétique",
+      "score": 100,
+      "min": 85,
+      "pass": true,
+      "dims": [
+        {
+          "label": "Objectifs & thématiques",
+          "max": 25,
+          "score": 25,
+          "detail": "Forte concordance"
+        },
+        {
+          "label": "Typologie de projet",
+          "max": 15,
+          "score": 15,
+          "detail": "Typologie 100%"
+        },
+        {
+          "label": "Dépenses éligibles",
+          "max": 20,
+          "score": 20,
+          "detail": "Lots de coûts bien couverts"
+        },
+        {
+          "label": "Éligibilité / sélection",
+          "max": 15,
+          "score": 15,
+          "detail": "Critères publiés rapprochés du projet"
+        },
+        {
+          "label": "Finance",
+          "max": 10,
+          "score": 10,
+          "detail": "Assiette / modalités cohérentes"
+        },
+        {
+          "label": "Calendrier / maturité",
+          "max": 10,
+          "score": 10,
+          "detail": "Fenêtre exploitable et maturité rapprochée"
+        },
+        {
+          "label": "Territorialité / stratégie",
+          "max": 5,
+          "score": 5,
+          "detail": "Territoire compatible"
+        }
+      ]
+    },
+    {
+      "id": "circular-water",
+      "name": "Économie circulaire / eau",
+      "score": 100,
+      "min": 85,
+      "pass": true,
+      "dims": [
+        {
+          "label": "Objectifs & thématiques",
+          "max": 25,
+          "score": 25,
+          "detail": "Forte concordance"
+        },
+        {
+          "label": "Typologie de projet",
+          "max": 15,
+          "score": 15,
+          "detail": "Typologie 100%"
+        },
+        {
+          "label": "Dépenses éligibles",
+          "max": 20,
+          "score": 20,
+          "detail": "Lots de coûts bien couverts"
+        },
+        {
+          "label": "Éligibilité / sélection",
+          "max": 15,
+          "score": 15,
+          "detail": "Critères publiés rapprochés du projet"
+        },
+        {
+          "label": "Finance",
+          "max": 10,
+          "score": 10,
+          "detail": "Assiette / modalités cohérentes"
+        },
+        {
+          "label": "Calendrier / maturité",
+          "max": 10,
+          "score": 10,
+          "detail": "Fenêtre exploitable et maturité rapprochée"
+        },
+        {
+          "label": "Territorialité / stratégie",
+          "max": 5,
+          "score": 5,
+          "detail": "Territoire compatible"
+        }
+      ]
+    }
+  ]
+}

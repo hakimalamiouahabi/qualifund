@@ -1,0 +1,7 @@
+import { norm, sha256, canonicalUrl, arr, uniq } from './utils.mjs';
+import { mergeAid } from './merge.mjs';
+function titleCore(s=''){return norm(s).replace(/\b(france 2030|appel a projets?|appel a manifestation d interet|aap|ami|dispositif|aide)\b/g,' ').replace(/\s+/g,' ').trim()}
+function urlAlias(a){const u=canonicalUrl(a.officialPage||arr(a.sourceLinks)[0]?.url||'');return u?`url:${u}`:null}
+function titleAlias(a){const reg=a.scope==='REGIONAL'?arr(a.regions).sort().join('|'):'FRANCE';return `title:${titleCore(a.title)}|${a.scope||''}|${reg}`}
+export function canonicalKey(a){if(a.canonicalId)return a.canonicalId;if(a.sourceRecordId&&a.sourceId)return `${a.sourceId}:${a.sourceRecordId}`;return sha256(titleAlias(a)).slice(0,24)}
+export function dedupe(aids){const groups=[],groupSources=[],aliasMap=new Map();for(const a0 of aids){let a={...a0};const aliases=[urlAlias(a),titleAlias(a)].filter(Boolean);let idx=aliases.map(k=>aliasMap.get(k)).find(v=>v!=null);if(idx==null){idx=groups.length;groups.push(a);groupSources[idx]=new Set()}else groups[idx]=mergeAid(groups[idx],a);for(const sid of [...arr(a.sourceAliases),a.sourceId].filter(Boolean))groupSources[idx].add(sid);for(const k of aliases)aliasMap.set(k,idx)}return groups.map((a,i)=>({...a,canonicalId:a.canonicalId||sha256(titleAlias(a)).slice(0,24),sourceAliases:uniq([...groupSources[i],...arr(a.sourceAliases),...arr(a.sourceId)]) }))}

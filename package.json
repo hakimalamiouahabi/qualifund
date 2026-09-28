@@ -1,0 +1,39 @@
+{
+  "name": "leyton-radar",
+  "version": "12.2.0",
+  "private": true,
+  "type": "module",
+  "description": "LEYTON RADAR — cartographie, faisabilité et veille des aides & financements publics",
+  "scripts": {
+    "update": "node scripts/update-library.mjs",
+    "update:full": "node scripts/update-library.mjs --full",
+    "validate": "node scripts/validate-library.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "qa": "node scripts/quality-report.mjs",
+    "audit:sources": "node scripts/audit-sources.mjs",
+    "daily:report": "node scripts/generate-daily-report.mjs",
+    "build:index": "node scripts/build-search-index.mjs",
+    "preflight:sources": "node scripts/preflight-sources.mjs",
+    "production:gates": "node scripts/production-gates.mjs",
+    "audit:ingestion": "node scripts/audit-ingestion.mjs",
+    "sync:metadata": "node scripts/sync-static-metadata.mjs",
+    "migrate:provenance": "node scripts/normalize-bootstrap-provenance.mjs",
+    "uat": "node scripts/uat-relevance.mjs",
+    "smoke:live": "node scripts/live-smoke.mjs",
+    "release:verify": "npm run sync:metadata && npm run build:index && npm run audit:sources && npm run audit:ingestion && npm test && npm run validate && npm run uat && npm run qa && npm run remediation && npm run production:gates",
+    "remediation": "node scripts/remediation-report.mjs",
+    "certify:local": "npm run release:verify",
+    "certify:production": "node scripts/certify-production.mjs"
+  },
+  "dependencies": {
+    "ajv": "8.17.1",
+    "cheerio": "1.0.0",
+    "fast-xml-parser": "5.2.5",
+    "pdf-parse": "1.1.1",
+    "playwright": "1.55.0",
+    "xlsx": "0.18.5"
+  },
+  "engines": {
+    "node": ">=22 <23"
+  }
+}

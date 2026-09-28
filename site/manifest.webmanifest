@@ -1,0 +1,10 @@
+{
+  "name": "LEYTON RADAR — Aides & financements publics",
+  "short_name": "LEYTON RADAR",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#F3F6F8",
+  "theme_color": "#102D3F",
+  "lang": "fr",
+  "description": "Cartographie · Faisabilité · Veille des aides et financements publics"
+}

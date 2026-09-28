@@ -1,0 +1,362 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "scope",
+    "regions",
+    "aidTypes",
+    "companyCategories",
+    "verification"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "canonicalId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "programme": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "operator": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "objective": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "beneficiaries": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "companyCategories": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "STARTUP",
+          "PME",
+          "ETI",
+          "GE"
+        ]
+      }
+    },
+    "themes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "scope": {
+      "enum": [
+        "NATIONAL",
+        "REGIONAL"
+      ]
+    },
+    "regions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "aidTypes": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "SUBVENTION",
+          "AVANCE_REMBOURSABLE",
+          "PRET_TAUX_ZERO"
+        ]
+      }
+    },
+    "aidRate": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "aidAmount": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "minimumProjectCost": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "maximumProjectCost": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "projectsExpected": {
+      "type": "array"
+    },
+    "eligibleExpenses": {
+      "type": [
+        "string",
+        "array",
+        "null"
+      ]
+    },
+    "excludedExpenses": {
+      "type": [
+        "string",
+        "array",
+        "null"
+      ]
+    },
+    "openingDate": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "closingDate": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "finalClosingDate": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "deadlines": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "date": {
+                "type": "string"
+              },
+              "type": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "date"
+            ],
+            "additionalProperties": true
+          }
+        ]
+      }
+    },
+    "permanent": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "prerequisites": {
+      "type": [
+        "string",
+        "array",
+        "null"
+      ]
+    },
+    "selectionCriteria": {
+      "type": [
+        "string",
+        "array",
+        "null"
+      ]
+    },
+    "attentionPoints": {
+      "type": "array"
+    },
+    "cdcLinks": {
+      "type": "array"
+    },
+    "sourceLinks": {
+      "type": "array"
+    },
+    "regulationLinks": {
+      "type": "array"
+    },
+    "officialPage": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "funder": {
+      "type": "array"
+    },
+    "lifecycleStatus": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "verification": {
+      "type": "object",
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "VERIFIE",
+            "A_REVERIFIER"
+          ]
+        },
+        "sourceTier": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "lastChecked": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "completeness": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "confidence": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "fieldEvidence": {
+          "type": "array"
+        }
+      }
+    },
+    "aidSplit": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "disbursementTerms": {
+      "type": [
+        "string",
+        "array",
+        "null"
+      ]
+    },
+    "repaymentTerms": {
+      "type": [
+        "string",
+        "array",
+        "null"
+      ]
+    },
+    "stateAidRules": {
+      "type": [
+        "string",
+        "array",
+        "null"
+      ]
+    },
+    "cumulationRules": {
+      "type": [
+        "string",
+        "array",
+        "null"
+      ]
+    },
+    "applicationProcess": {
+      "type": [
+        "string",
+        "array",
+        "null"
+      ]
+    },
+    "contact": {
+      "type": [
+        "string",
+        "array",
+        "null"
+      ]
+    },
+    "formLinks": {
+      "type": "array"
+    },
+    "sourceUpdatedAt": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "sourceValidationDate": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "contentHash": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "sourceId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "sourceRecordId": {
+      "type": [
+        "string",
+        "number",
+        "null"
+      ]
+    },
+    "apiUrl": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

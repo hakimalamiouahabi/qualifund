@@ -1,0 +1,6 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {verificationStatus,qaAid} from '../scripts/lib/qa.mjs';
+const evidence=field=>({field,sourceTier:'A',sourceUrl:'https://example.fr',locator:'PDF p.1'});
+test('VERIFIE exige toutes les preuves critiques A/B',()=>{const fields=['objective','beneficiaries','financialTerms','projectsExpected','eligibleExpenses','calendar','prerequisites','selectionCriteria'];const a={title:'x',officialPage:'https://x',objective:'o',beneficiaries:'b',aidTypes:['SUBVENTION'],companyCategories:['PME'],eligibleExpenses:'e',prerequisites:'p',selectionCriteria:'s',closingDate:'2027-01-01',verification:{fieldEvidence:fields.map(evidence)}};assert.equal(verificationStatus(a),'VERIFIE');});
+test('avance remboursable sans modalités de remboursement reste à revérifier',()=>{const fields=['objective','beneficiaries','financialTerms','projectsExpected','eligibleExpenses','calendar','prerequisites','selectionCriteria'];const a={title:'x',officialPage:'https://x',objective:'o',beneficiaries:'b',aidTypes:['AVANCE_REMBOURSABLE'],companyCategories:['PME'],eligibleExpenses:'e',prerequisites:'p',selectionCriteria:'s',closingDate:'2027-01-01',verification:{fieldEvidence:fields.map(evidence)}};assert.equal(verificationStatus(a),'A_REVERIFIER');assert.ok(qaAid(a).includes('MISSING_REPAYMENT_TERMS'));});
