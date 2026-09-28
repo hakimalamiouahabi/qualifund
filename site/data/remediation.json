@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-09-22T22:21:03.508Z",
+  "generatedAt": "2026-09-28T10:45:13.087Z",
   "version": "12.2.0",
-  "activeFiches": 678,
-  "verifiedFiches": 0,
+  "activeFiches": 749,
+  "verifiedFiches": 5,
   "criticalFields": [
     "objective",
     "beneficiaries",
@@ -14,29 +14,1472 @@
     "selectionCriteria"
   ],
   "missingEvidenceABByField": {
-    "objective": 676,
-    "beneficiaries": 676,
-    "financialTerms": 676,
-    "projectsExpected": 678,
-    "eligibleExpenses": 677,
-    "calendar": 678,
-    "prerequisites": 677,
-    "selectionCriteria": 677
+    "objective": 724,
+    "beneficiaries": 736,
+    "financialTerms": 732,
+    "projectsExpected": 743,
+    "eligibleExpenses": 740,
+    "calendar": 737,
+    "prerequisites": 737,
+    "selectionCriteria": 735
   },
   "qaFlags": {
-    "MISSING_DEADLINE": 512,
-    "MISSING_PREREQUISITES": 341,
-    "MISSING_SELECTION_CRITERIA": 677,
-    "MISSING_CDC": 592,
-    "MISSING_DISBURSEMENT_TERMS": 677,
-    "MISSING_REPAYMENT_TERMS": 59,
-    "MISSING_ELIGIBLE_EXPENSES": 1
+    "MISSING_PREREQUISITES": 364,
+    "MISSING_SELECTION_CRITERIA": 735,
+    "MISSING_CDC": 646,
+    "MISSING_DISBURSEMENT_TERMS": 737,
+    "MISSING_DEADLINE": 574,
+    "MISSING_REPAYMENT_TERMS": 75,
+    "MISSING_BENEFICIARIES": 48,
+    "MISSING_ELIGIBLE_EXPENSES": 65,
+    "MISSING_COMPANY_CATEGORY": 52,
+    "MISSING_FINANCIAL_TERMS": 56
   },
-  "permanentUnverified": 0,
-  "advancesMissingRepayment": 59,
-  "missingCriticalDocs": 589,
-  "remediationQueueCount": 678,
+  "permanentUnverified": 1,
+  "advancesMissingRepayment": 75,
+  "missingCriticalDocs": 643,
+  "remediationQueueCount": 745,
   "topPriority": [
+    {
+      "id": "pdl_ods_29",
+      "title": "Espace Usagers",
+      "sourceId": "pdl",
+      "severity": 94,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS",
+        "MISSING_REPAYMENT_TERMS"
+      ],
+      "officialPage": "https://les-aides.paysdelaloire.fr/aides/#/prod/connecte/dashboard/accueil",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "tee_dg_176",
+      "title": "FASEP",
+      "sourceId": "tee",
+      "severity": 94,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS",
+        "MISSING_REPAYMENT_TERMS"
+      ],
+      "officialPage": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/fasep?utm_campaign=openData",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "tee_dg_148",
+      "title": "Impulsion Environnement",
+      "sourceId": "tee",
+      "severity": 94,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS",
+        "MISSING_REPAYMENT_TERMS"
+      ],
+      "officialPage": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/impulsion-environnement?utm_campaign=openData",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "tee_dg_151",
+      "title": "Agir en Pays de la Loire",
+      "sourceId": "tee",
+      "severity": 93,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/agir-pdl?utm_campaign=openData",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "tee_dg_154",
+      "title": "Aide à l'hôtellerie indépendante",
+      "sourceId": "tee",
+      "severity": 93,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/hotellerie-independante-na?utm_campaign=openData",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "tee_dg_158",
+      "title": "Aide à l’hôtellerie indépendante en Bourgogne-Franche-Comté",
+      "sourceId": "tee",
+      "severity": 93,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/hotellerie-independante-bfc?utm_campaign=openData",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "tee_dg_156",
+      "title": "Aide à l'investissement des transitions",
+      "sourceId": "tee",
+      "severity": 93,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/aide-tpe-transition-na?utm_campaign=openData",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "tee_dg_137",
+      "title": "Aide au déploiement de flottes hydrogène",
+      "sourceId": "tee",
+      "severity": 93,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/deploiement-flottes-hydrogene?utm_campaign=openData",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "tee_dg_111",
+      "title": "Aide au financement en Occitanie",
+      "sourceId": "tee",
+      "severity": 93,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/aide-financement-occitanie?utm_campaign=openData",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "tee_dg_159",
+      "title": "Aide aux campings indépendants de Bourgogne-Franche-Comté",
+      "sourceId": "tee",
+      "severity": 93,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/camping-independant-bfc?utm_campaign=openData",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "tee_dg_155",
+      "title": "Aide aux campings indépendants de Nouvelle-Aquitaine",
+      "sourceId": "tee",
+      "severity": 93,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/camping-independant-na?utm_campaign=openData",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "tee_dg_136",
+      "title": "Aide aux travaux de rénovation énergétique",
+      "sourceId": "tee",
+      "severity": 93,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/perf-crise-energetique-aura?utm_campaign=openData",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "tee_dg_162",
+      "title": "Aide régionale au développement de produits touristiques",
+      "sourceId": "tee",
+      "severity": 93,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/aide-tourisme-guadeloupe?utm_campaign=openData",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "tee_dg_139",
+      "title": "Aide travaux hébergements touristiques",
+      "sourceId": "tee",
+      "severity": 93,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/aide-travaux-tourisme-aura?utm_campaign=openData",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "tee_dg_180",
+      "title": "Booster Transformation Rev3",
+      "sourceId": "tee",
+      "severity": 93,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/booster-transformation-rev-3?utm_campaign=openData",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "tee_dg_135",
+      "title": "CEDRE Ambition",
+      "sourceId": "tee",
+      "severity": 93,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/cedre-ambition?utm_campaign=openData",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "tee_dg_121",
+      "title": "CEDRE Investissement",
+      "sourceId": "tee",
+      "severity": 93,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/cedre-investissement?utm_campaign=openData",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "tee_dg_120",
+      "title": "CEDRE Premier Pas",
+      "sourceId": "tee",
+      "severity": 93,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/cedre-premier-pas?utm_campaign=openData",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "tee_dg_84",
+      "title": "Diag Perf'Immo",
+      "sourceId": "tee",
+      "severity": 93,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/diag-perf-immo?utm_campaign=openData",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "tee_dg_21",
+      "title": "Étude \"Alimentation durable\"",
+      "sourceId": "tee",
+      "severity": 93,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/etude-alimentation-durable?utm_campaign=openData",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "tee_dg_39",
+      "title": "Étude \"projet de recherche\"",
+      "sourceId": "tee",
+      "severity": 93,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/etude-projet-de-recherche?utm_campaign=openData",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "tee_dg_62",
+      "title": "Investissement \"Chaleur bois\"",
+      "sourceId": "tee",
+      "severity": 93,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/investissement-chaleur-bois?utm_campaign=openData",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "tee_dg_73",
+      "title": "Investissement \"PAC solaire\"",
+      "sourceId": "tee",
+      "severity": 93,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/investissement-pac-solaire?utm_campaign=openData",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "tee_dg_77",
+      "title": "Investissement \"réemploi réutilisation réparation\"",
+      "sourceId": "tee",
+      "severity": 93,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/investissement-reemploi-reutilisation-reparation?utm_campaign=openData",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "tee_dg_81",
+      "title": "Investissement \"solaire thermique Outre-mer\"",
+      "sourceId": "tee",
+      "severity": 93,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/investissement-solaire-thermique-outre-mer?utm_campaign=openData",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "tee_dg_80",
+      "title": "Investissement \"Solaire thermique\"",
+      "sourceId": "tee",
+      "severity": 93,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/investissement-solaire-thermique?utm_campaign=openData",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "tee_dg_66",
+      "title": "Investissement contre le gaspillage alimentaire",
+      "sourceId": "tee",
+      "severity": 93,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/investissement-contre-le-gaspillage-alimentaire?utm_campaign=openData",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "tee_dg_91",
+      "title": "Mission de Conseil RSE",
+      "sourceId": "tee",
+      "severity": 93,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/mission-conseil-rse?utm_campaign=openData",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "tee_dg_125",
+      "title": "Nature ta ville",
+      "sourceId": "tee",
+      "severity": 93,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/nature-ta-ville?utm_campaign=openData",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "tee_dg_142",
+      "title": "Pass Transformation Ecologique",
+      "sourceId": "tee",
+      "severity": 93,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/pass-transformation-ecologique?utm_campaign=openData",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "tee_dg_173",
+      "title": "Plan d'aide au report modal (PARM)",
+      "sourceId": "tee",
+      "severity": 93,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/parm-vnf?utm_campaign=openData",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "tee_dg_126",
+      "title": "Plan Solaire : Paré pour le solaire",
+      "sourceId": "tee",
+      "severity": 93,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/solaire-ready?utm_campaign=openData",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "tee_dg_127",
+      "title": "Plan Solaire Sud PV Plus",
+      "sourceId": "tee",
+      "severity": 93,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/smart-pv?utm_campaign=openData",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "pdl_ods_8",
+      "title": "Prêt d'honneur Création Reprise",
+      "sourceId": "pdl",
+      "severity": 93,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_DISBURSEMENT_TERMS",
+        "MISSING_REPAYMENT_TERMS"
+      ],
+      "officialPage": "https://www.paysdelaloire.fr/les-aides",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "tee_dg_157",
+      "title": "Priorités régionales d'interventions touristiques",
+      "sourceId": "tee",
+      "severity": 93,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/prit-hdf?utm_campaign=openData",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "tee_dg_124",
+      "title": "Sites touristiques exemplaires",
+      "sourceId": "tee",
+      "severity": 93,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/sites-touristiques-exemplaires?utm_campaign=openData",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "tee_dg_138",
+      "title": "Soutien au photovoltaïque en Grand Est",
+      "sourceId": "tee",
+      "severity": 93,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/soutien-pv-grand-est?utm_campaign=openData",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "idf_ods_300",
+      "title": "AMI Questions d'Intérêt Majeur (QIM)",
+      "sourceId": "idf",
+      "severity": 92,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/313",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "idf_ods_292",
+      "title": "AMI solutions digitales à destination des collectivités pour le développement des commerces",
+      "sourceId": "idf",
+      "severity": 92,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/358",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "idf_ods_27",
+      "title": "APPEL A MANIFESTATION D’INTERET - Activité économique de surf sur l'île de loisirs de Vaires-Torcy",
+      "sourceId": "idf",
+      "severity": 92,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/279",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "idf_ods_0",
+      "title": "Appel à manifestation d'intérêt - Valorisation du site de La Boissière-École",
+      "sourceId": "idf",
+      "severity": 92,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/614",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "idf_ods_273",
+      "title": "Appel à projets \" Île-de-France BTP circulaire\"",
+      "sourceId": "idf",
+      "severity": 92,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/804",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "pdl_ods_11",
+      "title": "Appel à projets « Biodiversité en Pays de la Loire 2026 » - Groupe Régional des Fondations en faveur de la Biodiversité",
+      "sourceId": "pdl",
+      "severity": 92,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "ftp://ftpdata.paysdelaloire.fr/Documents_aides/Subvention_V2Formulaire-AAP_5ec780be_PAPIER_INDIVIDUEL.docx",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "idf_ods_82",
+      "title": "Appel à projets « Île-de-France zéro plastique »",
+      "sourceId": "idf",
+      "severity": 92,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/697",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "idf_ods_13",
+      "title": "Appel à projets École-Entreprise : partenariats associatifs",
+      "sourceId": "idf",
+      "severity": 92,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/808",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "idf_ods_171",
+      "title": "Appel à projets Ingénierie et Formations professionnelles (IFP Île-de-France)",
+      "sourceId": "idf",
+      "severity": 92,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/305",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "idf_ods_215",
+      "title": "FEADER - Investissements agricoles - Adaptation au changement climatique et Transition AAP 2026",
+      "sourceId": "idf",
+      "severity": 92,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/832",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "idf_ods_314",
+      "title": "FEADER - Soutien aux investissements agricoles - Diversification AAP 2026",
+      "sourceId": "idf",
+      "severity": 92,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/830",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "idf_ods_122",
+      "title": "FEADER - Soutien aux investissements agricoles - Modernisation des exploitations AAP 2026",
+      "sourceId": "idf",
+      "severity": 92,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/831",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "pdl_ods_110",
+      "title": "Subvention pour la mise en place d'un abri sur un point d'arrêt de ligne scolaire",
+      "sourceId": "pdl",
+      "severity": 92,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "ftp://ftpdata.paysdelaloire.fr/Documents_aides/_SUBVENTION-POUR-LA-MISE-EN-PLACE-DUN-ABRI-SUR-UN-_c1dd2988_RI.pdf",
+      "hasCriticalDoc": false
+    },
     {
       "id": "ae_9401",
       "title": "Accélération Start-Up",
@@ -173,6 +1616,168 @@
       "hasCriticalDoc": false
     },
     {
+      "id": "idf_ods_96",
+      "title": "AMI accompagnement à la modernisation et transition écologique des PME et ETI industrielles",
+      "sourceId": "idf",
+      "severity": 91,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/616",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "idf_ods_74",
+      "title": "AMI Fonds de capital investissement ciblant les structures de la Femtech",
+      "sourceId": "idf",
+      "severity": 91,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/812",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "pdl_ods_93",
+      "title": "AMI Industrie du Futur",
+      "sourceId": "pdl",
+      "severity": 91,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "ftp://ftpdata.paysdelaloire.fr/Documents_aides/Subvention,Pret_Dossier-de-candidature-AMI-IDF-2026-v2_e6325e7c_PAPIER_INDIVIDUEL.doc",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "idf_ods_224",
+      "title": "AMI pour la sélection d'un fonds ciblant les structures de l'ESS et à impact en phase d'amorçage",
+      "sourceId": "idf",
+      "severity": 91,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/627",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "ae_8100",
+      "title": "Amorçage Start-up",
+      "sourceId": "aides_entreprises",
+      "severity": 91,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_DISBURSEMENT_TERMS",
+        "MISSING_REPAYMENT_TERMS"
+      ],
+      "officialPage": "https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/amorcage-start",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "idf_ods_246",
+      "title": "Appel à projets collaboratifs - Innovation de Rupture et Résilience Industrielle (IRRI)",
+      "sourceId": "idf",
+      "severity": 91,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/851",
+      "hasCriticalDoc": false
+    },
+    {
       "id": "ae_1145",
       "title": "Assurance Prospection",
       "sourceId": "aides_entreprises",
@@ -227,6 +1832,33 @@
       "hasCriticalDoc": false
     },
     {
+      "id": "ae_11377",
+      "title": "Avance remboursable - Consolidation financière de l’entreprise",
+      "sourceId": "aides_entreprises",
+      "severity": 91,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_DISBURSEMENT_TERMS",
+        "MISSING_REPAYMENT_TERMS"
+      ],
+      "officialPage": "https://www.bourgognefranchecomte.fr/node/290",
+      "hasCriticalDoc": false
+    },
+    {
       "id": "ae_10520",
       "title": "Fonds de soutien Audiovisuel - Aide à la production",
       "sourceId": "aides_entreprises",
@@ -278,33 +1910,6 @@
         "MISSING_REPAYMENT_TERMS"
       ],
       "officialPage": "https://www.bourgognefranchecomte.fr/node/386",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_8974",
-      "title": "Fonds Régional d'Innovation (FRI) - Normandie",
-      "sourceId": "aides_entreprises",
-      "severity": 91,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS",
-        "MISSING_REPAYMENT_TERMS"
-      ],
-      "officialPage": "https://data.aides-entreprises.fr/stock",
       "hasCriticalDoc": false
     },
     {
@@ -413,6 +2018,168 @@
         "MISSING_REPAYMENT_TERMS"
       ],
       "officialPage": "https://www.adie.org/a-la-une/actualite/ladie-met-en-place-le-pret-apport-en-capital-une-avance-jusqua-3-000-euros-a-taux-zero/",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "ae_12588",
+      "title": "Prêt d’Honneur Innovation",
+      "sourceId": "aides_entreprises",
+      "severity": 91,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_DISBURSEMENT_TERMS",
+        "MISSING_REPAYMENT_TERMS"
+      ],
+      "officialPage": "https://www.aquiti.fr/metiers/pret-dhonneur",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "ae_2559",
+      "title": "Prêt d'honneur Réseau Entreprendre Bretagne",
+      "sourceId": "aides_entreprises",
+      "severity": 91,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_DISBURSEMENT_TERMS",
+        "MISSING_REPAYMENT_TERMS"
+      ],
+      "officialPage": "https://www.reseau-entreprendre.org/bretagne/",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "ae_7943",
+      "title": "Prêt d'honneur Réseau Entreprendre Guadeloupe",
+      "sourceId": "aides_entreprises",
+      "severity": 91,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_DISBURSEMENT_TERMS",
+        "MISSING_REPAYMENT_TERMS"
+      ],
+      "officialPage": "https://www.reseau-entreprendre.org/guadeloupe/",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "ae_4490",
+      "title": "Prêt d'honneur Réseau Entreprendre Guyane",
+      "sourceId": "aides_entreprises",
+      "severity": 91,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_DISBURSEMENT_TERMS",
+        "MISSING_REPAYMENT_TERMS"
+      ],
+      "officialPage": "https://www.reseau-entreprendre.org/guyane/",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "ae_7944",
+      "title": "Prêt d'honneur Réseau Entreprendre Martinique",
+      "sourceId": "aides_entreprises",
+      "severity": 91,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_DISBURSEMENT_TERMS",
+        "MISSING_REPAYMENT_TERMS"
+      ],
+      "officialPage": "https://www.reseau-entreprendre.org/martinique/",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "ae_9916",
+      "title": "VTE France – Volontariat Territorial en Entreprise",
+      "sourceId": "aides_entreprises",
+      "severity": 91,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://www.vte-france.fr/aide-vte-vert/",
       "hasCriticalDoc": false
     },
     {
@@ -1196,58 +2963,6 @@
       "hasCriticalDoc": false
     },
     {
-      "id": "ae_7481",
-      "title": "Aide à la connaissance - Innovation",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS",
-        "MISSING_REPAYMENT_TERMS"
-      ],
-      "officialPage": "https://www.ademe.fr/aides-financieres-lademe",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_7480",
-      "title": "Aide à la connaissance - Recherche et développement",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS",
-        "MISSING_REPAYMENT_TERMS"
-      ],
-      "officialPage": "https://www.ademe.fr/aides-financieres-lademe",
-      "hasCriticalDoc": false
-    },
-    {
       "id": "ae_9446",
       "title": "Aide à la création",
       "sourceId": "aides_entreprises",
@@ -1768,58 +3483,6 @@
       "hasCriticalDoc": false
     },
     {
-      "id": "ae_7473",
-      "title": "Aide à la réalisation - Décision (études de diagnostic et d’accompagnement de projets)",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS",
-        "MISSING_REPAYMENT_TERMS"
-      ],
-      "officialPage": "https://www.ademe.fr/aides-financieres-lademe",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_7478",
-      "title": "Aide à la réalisation - Mise en oeuvre des projets environnementaux (investissements)",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS",
-        "MISSING_REPAYMENT_TERMS"
-      ],
-      "officialPage": "https://www.ademe.fr/aides-financieres-lademe",
-      "hasCriticalDoc": false
-    },
-    {
       "id": "ae_8788",
       "title": "Aide à la réalisation de projets locaux en matière d’économie circulaire et de déchets",
       "sourceId": "aides_entreprises",
@@ -2025,32 +3688,6 @@
         "MISSING_DISBURSEMENT_TERMS"
       ],
       "officialPage": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054424002",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_12305",
-      "title": "Aide à une démarche de biodiversité",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.grandest.fr/vos-aides-regionales/modules-transformants-biodiversite/",
       "hasCriticalDoc": false
     },
     {
@@ -3198,8 +4835,8 @@
       "hasCriticalDoc": false
     },
     {
-      "id": "ae_9916",
-      "title": "Aide Volontariat Territorial en Entreprise Vert (VTE Vert)",
+      "id": "ae_8868",
+      "title": "Aide unique aux employeurs d'apprentis",
       "sourceId": "aides_entreprises",
       "severity": 90,
       "verification": "A_REVERIFIER",
@@ -3215,12 +4852,12 @@
       ],
       "qaFlags": [
         "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
         "MISSING_SELECTION_CRITERIA",
         "MISSING_CDC",
+        "MISSING_FINANCIAL_TERMS",
         "MISSING_DISBURSEMENT_TERMS"
       ],
-      "officialPage": "https://www.vte-france.fr/aide-vte-vert/",
+      "officialPage": "https://travail-emploi.gouv.fr/laide-aux-employeurs-qui-recrutent-en-apprentissage",
       "hasCriticalDoc": false
     },
     {
@@ -3273,6 +4910,32 @@
         "MISSING_DISBURSEMENT_TERMS"
       ],
       "officialPage": "https://www.maregionsud.fr/vos-aides/detail/etude-de-faisabilite-pour-des-projets-de-geothermie/thalassothermie",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "ae_902",
+      "title": "Allocation de chômage partiel",
+      "sourceId": "aides_entreprises",
+      "severity": 90,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://travail-emploi.gouv.fr/emploi-et-insertion/accompagnement-des-mutations-economiques/activite-partielle-chomage-partiel/faq-chomage-partiel-activite-partielle",
       "hasCriticalDoc": false
     },
     {
@@ -4047,9 +5710,9 @@
       ],
       "qaFlags": [
         "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
         "MISSING_SELECTION_CRITERIA",
         "MISSING_CDC",
+        "MISSING_FINANCIAL_TERMS",
         "MISSING_DISBURSEMENT_TERMS"
       ],
       "officialPage": "https://www.bpifrance.fr/catalogue-offres/diag-adaptation",
@@ -4134,6 +5797,32 @@
       "hasCriticalDoc": false
     },
     {
+      "id": "ae_10667",
+      "title": "Diag Décarbon’Action",
+      "sourceId": "aides_entreprises",
+      "severity": 90,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://diag.bpifrance.fr/diag-decarbon-action",
+      "hasCriticalDoc": false
+    },
+    {
       "id": "ae_10320",
       "title": "Diag Eco-Flux",
       "sourceId": "aides_entreprises",
@@ -4151,9 +5840,9 @@
       ],
       "qaFlags": [
         "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
         "MISSING_SELECTION_CRITERIA",
         "MISSING_CDC",
+        "MISSING_FINANCIAL_TERMS",
         "MISSING_DISBURSEMENT_TERMS"
       ],
       "officialPage": "https://www.bpifrance.fr/catalogue-offres/transition-ecologique-et-energetique/diag-eco-flux",
@@ -4177,9 +5866,9 @@
       ],
       "qaFlags": [
         "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
         "MISSING_SELECTION_CRITERIA",
         "MISSING_CDC",
+        "MISSING_FINANCIAL_TERMS",
         "MISSING_DISBURSEMENT_TERMS"
       ],
       "officialPage": "https://diagecoconception.bpifrance.fr/",
@@ -4316,6 +6005,32 @@
       "hasCriticalDoc": false
     },
     {
+      "id": "ae_11390",
+      "title": "Dispositif \"Je recrute mon premier docteur\"",
+      "sourceId": "aides_entreprises",
+      "severity": 90,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://aides.regionguadeloupe.fr/Je-recrute-mon-premier-docteur",
+      "hasCriticalDoc": false
+    },
+    {
       "id": "ae_12000",
       "title": "Dispositif \"Mon assistant IA\"",
       "sourceId": "aides_entreprises",
@@ -4339,32 +6054,6 @@
         "MISSING_DISBURSEMENT_TERMS"
       ],
       "officialPage": "https://www.maregionsud.fr/vos-aides/detail/mon-assistant-ia",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_11676",
-      "title": "Dispositif DEDIHCATED",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://data.aides-entreprises.fr/stock",
       "hasCriticalDoc": false
     },
     {
@@ -4732,6 +6421,32 @@
       "hasCriticalDoc": false
     },
     {
+      "id": "ae_11725",
+      "title": "Fonds de prêts d'honneur Néoterra",
+      "sourceId": "aides_entreprises",
+      "severity": 90,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_DISBURSEMENT_TERMS",
+        "MISSING_REPAYMENT_TERMS"
+      ],
+      "officialPage": "https://www.initiative-nouvelleaquitaine.fr/reprise-neoterra.html",
+      "hasCriticalDoc": false
+    },
+    {
       "id": "ae_11076",
       "title": "Fonds de Prévention des Risques Naturels Majeurs (FPRNM)",
       "sourceId": "aides_entreprises",
@@ -4810,84 +6525,6 @@
       "hasCriticalDoc": false
     },
     {
-      "id": "ae_11870",
-      "title": "Fonds régional d'aide à la fiction cinématographique et audiovisuelle - Long métrage, court métrage, animation, série et unitaire",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.pictanovo.com/financer-un-projet/",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_11872",
-      "title": "Fonds régional d'aide au jeu vidéo",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.pictanovo.com/financer-un-projet/",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_11874",
-      "title": "Fonds régional d'aide aux nouveaux médias et expériences interactives",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.pictanovo.com/financer-un-projet/",
-      "hasCriticalDoc": false
-    },
-    {
       "id": "ae_11309",
       "title": "Fonds Régional d'Amplification de la Troisième Révolution Industrielle - REV3",
       "sourceId": "aides_entreprises",
@@ -4911,58 +6548,6 @@
         "MISSING_DISBURSEMENT_TERMS"
       ],
       "officialPage": "https://guide-aides.hautsdefrance.fr/dispositif655",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_11877",
-      "title": "Fonds régional de soutien économique à la production pour la filière cinématographique et audiovisuelle",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.pictanovo.com/financer-un-projet/",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_11873",
-      "title": "Fonds régional documentaire audiovisuel et cinématographique",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.pictanovo.com/financer-un-projet/",
       "hasCriticalDoc": false
     },
     {
@@ -5119,1436 +6704,6 @@
         "MISSING_DISBURSEMENT_TERMS"
       ],
       "officialPage": "https://www.normandie.fr/idee-action-mobilite-durable",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_8376",
-      "title": "IDEE Action production d'énergies renouvelables",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.normandie.fr/idee-action-production-denergies-renouvelables",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_11610",
-      "title": "IDEE Conseil \"Economie circulaire, prévention et gestion des déchets\"",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.normandie.fr/idee-conseil-economie-circulaire-prevention-et-gestion-des-dechets",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_12105",
-      "title": "IDEE Innovation transition écologique",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.normandie.fr/idee-innovation-transition-ecologique",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_7785",
-      "title": "Impulsion Innovation",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS",
-        "MISSING_REPAYMENT_TERMS"
-      ],
-      "officialPage": "https://www.normandie.fr/impulsion-innovation",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_8975",
-      "title": "Impulsion Invest",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://adnormandie.fr/offre/impulsion-invest-btob/",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_10628",
-      "title": "INNO Expé Numérique",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS",
-        "MISSING_REPAYMENT_TERMS"
-      ],
-      "officialPage": "https://www.bretagne.bzh/aides/fiches/inno-experimentation-numerique/",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_9342",
-      "title": "Innov'up",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS",
-        "MISSING_REPAYMENT_TERMS"
-      ],
-      "officialPage": "https://www.iledefrance.fr/innovup",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_11103",
-      "title": "Innov’up Expérimentation Silver Économie/Bien vieillir",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS",
-        "MISSING_REPAYMENT_TERMS"
-      ],
-      "officialPage": "https://www.iledefrance.fr/innovup-experimentation-silver-economie-bien-vieillir",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_9046",
-      "title": "Innover par les usages",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.auvergnerhonealpes.fr/aides/innover-par-les-usages",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_8081",
-      "title": "Investissement Start-up",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/investissement-start",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_10979",
-      "title": "Kap Numérik",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://lanouvelleeconomie.re/aides/1-2-5-kap-numerik/",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_12120",
-      "title": "KAP TPE",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.regionreunion.com/actualite/toute-l-actualite/article/dispositif-kap-tpe-un-benefice-pour-les-entreprises",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_12634",
-      "title": "Module Stratégie d’Entreprise : Export",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.grandest.fr/vos-aides-regionales/module-strategie-dentreprise-export/",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_11102",
-      "title": "Modules Transformants Industrie 5.0",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.grandest.fr/vos-aides-regionales/modules-transformants-industrie-5-0/",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_12180",
-      "title": "Mon bouclier cyber essentiel",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.maregionsud.fr/vos-aides/detail/mon-bouclier-cyber-essentiel",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_11388",
-      "title": "Normandie Entreprises Industries - Industries agroalimentaires",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.normandie.fr/normandie-entreprises-industries-industries-agroalimentaires",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_11044",
-      "title": "Pack IA (Intelligence Artificielle)",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.packia.fr/",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_11006",
-      "title": "Pack relocalisation - Renfort des filières stratégiques",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.auvergnerhonealpes.fr/aides/pack-relocalisation-renforcer-les-filieres-strategiques",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_10996",
-      "title": "Pack relocalisation - Soutien à l'investissement industriel",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.auvergnerhonealpes.fr/aides/pack-relocalisation-soutenir-linvestissement-industriel",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_11034",
-      "title": "Pacte Emergence",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://fondes.fr/produit/pacte-emergence/",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_9175",
-      "title": "Pass Cyber Conseil",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://guide-aides.hautsdefrance.fr/spip.php?page=dispositif&id_dispositif=867",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_10124",
-      "title": "Pass Cyber Formation",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://guide-aides.hautsdefrance.fr/dispositif924",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_8880",
-      "title": "Pass Métiers d’Arts",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.laregion.fr/Pass-Metiers-d-art",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_7757",
-      "title": "Pass PI",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.inpi.fr/fr/pass-pi",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_12362",
-      "title": "Passeport pour le retour, pour la mobilité des actifs salariés et pour la mobilité des entreprises innovantes",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000052199768",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_9065",
-      "title": "Pays de la Loire Accès Innovation",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.paysdelaloire.fr/les-aides/pays-de-la-loire-acces-innovation",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_9064",
-      "title": "Pays de la Loire Accès recherche",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.paysdelaloire.fr/les-aides/pays-de-la-loire-acces-recherche",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_9362",
-      "title": "Pays de la Loire Entrepreneurs Engagés",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.paysdelaloire.fr/les-aides/pays-de-la-loire-entrepreneurs-engages",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_11996",
-      "title": "Pays de la Loire Prêt Entreprise",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.paysdelaloire.fr/les-aides/pays-de-la-loire-pret-entreprise",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_12756",
-      "title": "Prêt Défense Souveraineté territoriale - Hauts-de-France",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.bpifrance.fr/pret-defense-souverainete-territoriale-21-27",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_9470",
-      "title": "Prim'Export",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.regionreunion.com/aides-services/article/prim-export",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_10411",
-      "title": "Programme Hauts-de-France Export et Volontaire International en entreprise",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://guide-aides.hautsdefrance.fr/dispositif947",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_12648",
-      "title": "Programme Impulse Intelligence Artificielle",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.bourgognefranchecomte.cci.fr/impulseia#section-presentation-du-programme-60706",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_10981",
-      "title": "Programme Transformation numérique des TPE - Les Défis Numériques",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/programme-les-defis-numeriques-des-tres-petites-entreprises-tpe",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_2328",
-      "title": "Réduction de 50 % sur les redevances brevets",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.inpi.fr/fr/comprendre-la-propriete-intellectuelle/le-brevet/combien-coute-un-brevet",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_4555",
-      "title": "Régime d'appui aux PME pour l'innovation duale - RAPID",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.defense.gouv.fr/aid/deposez-votre-projet/rapid-regime-dappui-linnovation-duale",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_8383",
-      "title": "Soutien à l’émergence et au développement d'Espace Public Numérique et de Tiers-Lieux labélisés dans le cadre du réseau Normandie Connectée",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.normandie.fr/soutien-lemergence-et-au-developpement-despace-public-numerique-et-de-tiers-lieux-labelises-dans-le",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_8646",
-      "title": "Soutien à l'hébergement touristique",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.maregionsud.fr/vos-aides/detail/soutien-a-lhebergement-touristique",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_9870",
-      "title": "Soutien à l'hôtellerie",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.grandest.fr/vos-aides-regionales/soutien-hotellerie/",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_7915",
-      "title": "Soutien à l’hydro-électricité",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.grandest.fr/vos-aides-regionales/soutien-a-lhydro-electricite/",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_8787",
-      "title": "Soutien à la création audiovisuelle",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.laregion.fr/Cinema-Audiovisuel-Multimedia-Aide-a-la-creation-audiovisuelle",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_7900",
-      "title": "Soutien à la géothermie de surface",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_ELIGIBLE_EXPENSES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.grandest.fr/vos-aides-regionales/soutien-a-geothermie-de-surface-2/",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_7913",
-      "title": "Soutien au bois énergie",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.grandest.fr/vos-aides-regionales/soutien-bois-energie/",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_10647",
-      "title": "Soutien au développement du tourisme fluvial et fluvestre",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.grandest.fr/vos-aides-regionales/soutien-au-developpement-du-tourisme-fluvial-et-fluvestre/",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_7914",
-      "title": "Soutien au photovoltaïque",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.grandest.fr/vos-aides-regionales/soutien-au-photovoltaique/",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_11944",
-      "title": "Soutien au réemploi, à la réparation et/ou la réutilisation",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.grandest.fr/vos-aides-regionales/soutien-au-reemploi-a-la-reparation-et-ou-la-reutilisation/",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_7901",
-      "title": "Soutien au solaire thermique",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.grandest.fr/vos-aides-regionales/soutien-solaire-thermique-2/",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_11612",
-      "title": "Soutien au tourisme de savoir-faire",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.normandie.fr/tourisme-de-savoir-faire",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_11940",
-      "title": "Soutien au tourisme patrimonial",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.grandest.fr/vos-aides-regionales/tourisme-patrimonial/",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_10970",
-      "title": "Soutien aux audits et réhabilitation d’installations solaires thermiques collectives",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.maregionsud.fr/vos-aides/detail/soutien-aux-audits-et-rehabilitation-dinstallations-solaires-thermiques-collectives-installations-existantes",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_12713",
-      "title": "Soutien aux hébergements collectifs",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.grandest.fr/vos-aides-regionales/hebergements-collectifs/",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_12714",
-      "title": "Soutien aux hébergements de type \"hostels\"",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.grandest.fr/vos-aides-regionales/soutien-hostels/",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_9363",
-      "title": "Soutien aux nouveaux modèles économiques",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.grandest.fr/vos-aides-regionales/soutien-aux-nouveaux-modeles-economiques/",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_6997",
-      "title": "Soutien aux professionnels des métiers d’art et aux salons de promotion à vocation régionale",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.grandest.fr/vos-aides-regionales/soutien-professionnels-metiers-art-salons-investissements/",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "ae_12306",
-      "title": "Soutien aux réseaux de chaleur et de froid",
-      "sourceId": "aides_entreprises",
-      "severity": 90,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.grandest.fr/vos-aides-regionales/soutien-aux-reseaux-de-chaleur-et-de-froid/",
       "hasCriticalDoc": false
     }
   ]

@@ -1,1 +1,842 @@
-[]
+[
+  {
+    "type": "CREATION",
+    "id": "aura_feder_aHR0cHM6Ly93d3cuZXVyb3BlLWVu",
+    "title": "Accueil | L'Europe s'engage en France, le portail des Fonds européens",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "tee_dg_151",
+    "title": "Agir en Pays de la Loire",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "tee_dg_154",
+    "title": "Aide à l'hôtellerie indépendante",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "tee_dg_158",
+    "title": "Aide à l’hôtellerie indépendante en Bourgogne-Franche-Comté",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ae_8036",
+    "title": "Aide à l'implantation",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "tee_dg_156",
+    "title": "Aide à l'investissement des transitions",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ae_612",
+    "title": "Aide à la réalisation du contrat pour la mixité des emplois et l'égalité professionnelle",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "tee_dg_137",
+    "title": "Aide au déploiement de flottes hydrogène",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "tee_dg_111",
+    "title": "Aide au financement en Occitanie",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "tee_dg_159",
+    "title": "Aide aux campings indépendants de Bourgogne-Franche-Comté",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "tee_dg_155",
+    "title": "Aide aux campings indépendants de Nouvelle-Aquitaine",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "franceagrimer_aHR0cHM6Ly93d3cuZnJhbmNlYWdy",
+    "title": "Aide aux plus démunis",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "tee_dg_136",
+    "title": "Aide aux travaux de rénovation énergétique",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "tee_dg_162",
+    "title": "Aide régionale au développement de produits touristiques",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "tee_dg_139",
+    "title": "Aide travaux hébergements touristiques",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "hdf_hdfid_aap_aHR0cHM6Ly9lbnRyZXByaXNlcy5o",
+    "title": "Aides et Dispositifs - Hauts-de-France Entreprises",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ae_902",
+    "title": "Allocation de chômage partiel",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "idf_ods_96",
+    "title": "AMI accompagnement à la modernisation et transition écologique des PME et ETI industrielles",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "idf_ods_74",
+    "title": "AMI Fonds de capital investissement ciblant les structures de la Femtech",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "pdl_ods_93",
+    "title": "AMI Industrie du Futur",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "idf_ods_224",
+    "title": "AMI pour la sélection d'un fonds ciblant les structures de l'ESS et à impact en phase d'amorçage",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "idf_ods_300",
+    "title": "AMI Questions d'Intérêt Majeur (QIM)",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "idf_ods_292",
+    "title": "AMI solutions digitales à destination des collectivités pour le développement des commerces",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ae_8100",
+    "title": "Amorçage Start-up",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "idf_ods_27",
+    "title": "APPEL A MANIFESTATION D’INTERET - Activité économique de surf sur l'île de loisirs de Vaires-Torcy",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "idf_ods_0",
+    "title": "Appel à manifestation d'intérêt - Valorisation du site de La Boissière-École",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "idf_ods_273",
+    "title": "Appel à projets \" Île-de-France BTP circulaire\"",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "pdl_ods_11",
+    "title": "Appel à projets « Biodiversité en Pays de la Loire 2026 » - Groupe Régional des Fondations en faveur de la Biodiversité",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "idf_ods_82",
+    "title": "Appel à projets « Île-de-France zéro plastique »",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "idf_ods_246",
+    "title": "Appel à projets collaboratifs - Innovation de Rupture et Résilience Industrielle (IRRI)",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "idf_ods_13",
+    "title": "Appel à projets École-Entreprise : partenariats associatifs",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "idf_ods_171",
+    "title": "Appel à projets Ingénierie et Formations professionnelles (IFP Île-de-France)",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "bpifrance_aHR0cHM6Ly93d3cuYnBpZnJhbmNl",
+    "title": "Appels à projets et concours | Bpifrance",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ae_11377",
+    "title": "Avance remboursable - Consolidation financière de l’entreprise",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ae_9158",
+    "title": "Booster Exportation - Compte Individuel Export (CIE)",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "tee_dg_180",
+    "title": "Booster Transformation Rev3",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "tee_dg_135",
+    "title": "CEDRE Ambition",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "tee_dg_121",
+    "title": "CEDRE Investissement",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "tee_dg_120",
+    "title": "CEDRE Premier Pas",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "tee_dg_84",
+    "title": "Diag Perf'Immo",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ae_11390",
+    "title": "Dispositif \"Je recrute mon premier docteur\"",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "bfc_aHR0cHM6Ly93d3cuYm91cmdvZ25l",
+    "title": "Document officiel",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "hdf_aHR0cHM6Ly9ndWlkZS1haWRlcy5o",
+    "title": "Document officiel",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "naquitaine_aHR0cHM6Ly9sZXMtYWlkZXMubm91",
+    "title": "Document officiel",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "pdl_aHR0cHM6Ly93d3cucGF5c2RlbGFs",
+    "title": "Document officiel",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "paca_aHR0cHM6Ly9lbnRyZXByaXNlcy5t",
+    "title": "Document officiel",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "guyane_aHR0cHM6Ly93d3cuY3RndXlhbmUu",
+    "title": "Document officiel",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "martinique_aHR0cHM6Ly93d3cuY29sbGVjdGl2",
+    "title": "Document officiel",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "aura_france2030_aHR0cHM6Ly93d3cuZGVtYXJjaGVz",
+    "title": "Document officiel",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "bretagne_france2030_aHR0cHM6Ly9pbm5vLWF2ZW5pci5i",
+    "title": "Document officiel",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "cvl_europe_aHR0cHM6Ly93d3cuZXVyb3Blb2Nl",
+    "title": "Document officiel",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "corse_europa_aHR0cHM6Ly9ldXJvcGEuY29yc2lj",
+    "title": "Document officiel",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "grand_est_europe_aHR0cHM6Ly9iZWV1cm9wZS5ncmFu",
+    "title": "Document officiel",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "guadeloupe_europe_aHR0cHM6Ly93d3cuZXVyb3BlLWd1",
+    "title": "Document officiel",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "mayotte_adim_aHR0cHM6Ly93d3cuYWRpbS1tYXlv",
+    "title": "Document officiel",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "pdl_ods_29",
+    "title": "Espace Usagers",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "aura_aHR0cHM6Ly93d3cuYXV2ZXJnbmVy",
+    "title": "Etre conseillé sur notre activité de transformation et de commercialisation",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "tee_dg_21",
+    "title": "Étude \"Alimentation durable\"",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "tee_dg_39",
+    "title": "Étude \"projet de recherche\"",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "paca_aHR0cHM6Ly9ldXJvcGUubWFyZWdp",
+    "title": "Europe en Région Sud",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "tee_dg_176",
+    "title": "FASEP",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "idf_ods_215",
+    "title": "FEADER - Investissements agricoles - Adaptation au changement climatique et Transition AAP 2026",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "idf_ods_314",
+    "title": "FEADER - Soutien aux investissements agricoles - Diversification AAP 2026",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "idf_ods_122",
+    "title": "FEADER - Soutien aux investissements agricoles - Modernisation des exploitations AAP 2026",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "martinique_feder_aHR0cHM6Ly93d3cuZXVyb3BlLW1h",
+    "title": "FEDER 2014 – 2020",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "guadeloupe_aHR0cHM6Ly93d3cuZXVyb3BlLWd1",
+    "title": "FEDER- FSE+ REGION GUADELOUPE",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ae_11725",
+    "title": "Fonds de prêts d'honneur Néoterra",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ae_12835",
+    "title": "Fonds local pour l’adaptation en Guadeloupe (FLAG) 2.0",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "occitanie_foster_official",
+    "title": "FOSTER Région Occitanie — Prêt innovation à taux 0%",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "hdf_aHR0cDovL2d1aWRlLWFpZGVzLmhh",
+    "title": "Guide des aides - Région Hauts-de-France",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "tee_dg_148",
+    "title": "Impulsion Environnement",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "tee_dg_62",
+    "title": "Investissement \"Chaleur bois\"",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "tee_dg_73",
+    "title": "Investissement \"PAC solaire\"",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "tee_dg_77",
+    "title": "Investissement \"réemploi réutilisation réparation\"",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "tee_dg_81",
+    "title": "Investissement \"solaire thermique Outre-mer\"",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "tee_dg_80",
+    "title": "Investissement \"Solaire thermique\"",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "tee_dg_66",
+    "title": "Investissement contre le gaspillage alimentaire",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "tee_dg_91",
+    "title": "Mission de Conseil RSE",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "tee_dg_125",
+    "title": "Nature ta ville",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ae_10601",
+    "title": "Pack relocalisation - Aide à la formation des salariés",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ae_8076",
+    "title": "Pass Start Up",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "tee_dg_142",
+    "title": "Pass Transformation Ecologique",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "tee_dg_173",
+    "title": "Plan d'aide au report modal (PARM)",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "tee_dg_126",
+    "title": "Plan Solaire : Paré pour le solaire",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "tee_dg_127",
+    "title": "Plan Solaire Sud PV Plus",
+    "at": "2026-09-28T10:43:36.187Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ae_11302",
+    "title": "Prêt d’amorçage Grand Est",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ae_2696",
+    "title": "Prêt d'honneur Créalia",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "pdl_ods_8",
+    "title": "Prêt d'honneur Création Reprise",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ae_2103",
+    "title": "Prêt d'honneur HODEFI",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ae_2259",
+    "title": "Prêt d'honneur IMACréa",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ae_2152",
+    "title": "Prêt d'honneur Indre Initiative",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ae_3600",
+    "title": "Prêt d'honneur Initiative Guadeloupe",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ae_6784",
+    "title": "Prêt d'honneur Initiative Réunion",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ae_12588",
+    "title": "Prêt d’Honneur Innovation",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ae_8783",
+    "title": "Prêt d’honneur Occitanie Transmission",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ae_7929",
+    "title": "Prêt d'honneur Pays de La Loire transmission-reprise",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ae_5079",
+    "title": "Prêt d'honneur pour l'amorçage régional (PHAR) Bretagne",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ae_2559",
+    "title": "Prêt d'honneur Réseau Entreprendre Bretagne",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ae_7943",
+    "title": "Prêt d'honneur Réseau Entreprendre Guadeloupe",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ae_4490",
+    "title": "Prêt d'honneur Réseau Entreprendre Guyane",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ae_7944",
+    "title": "Prêt d'honneur Réseau Entreprendre Martinique",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ae_10572",
+    "title": "Prime Jeune",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "tee_dg_157",
+    "title": "Priorités régionales d'interventions touristiques",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "tee_dg_124",
+    "title": "Sites touristiques exemplaires",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "tee_dg_138",
+    "title": "Soutien au photovoltaïque en Grand Est",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ae_11942",
+    "title": "Soutien au thermalisme et au bien être",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "pdl_ods_110",
+    "title": "Subvention pour la mise en place d'un abri sur un point d'arrêt de ligne scolaire",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ae_12178",
+    "title": "Subvention Prévention TPE - Locaux + sûrs",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ae_12483",
+    "title": "Sud Prévention TPE-PME",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "guadeloupe_aHR0cHM6Ly9haWRlcy5yZWdpb25n",
+    "title": "Toutes les aides",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "nouvelle_aquitaine_entreprises_aHR0cHM6Ly9lbnRyZXByaXNlcy5u",
+    "title": "Vous recherchez une aide ? | Entreprises",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "SORTIE_PERIMETRE",
+    "id": "ae_12066",
+    "title": "Aide aux campings de tourisme indépendants - Communes littorales",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "SORTIE_PERIMETRE",
+    "id": "ae_7480",
+    "title": "Aide à la connaissance - Recherche et développement",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "SORTIE_PERIMETRE",
+    "id": "ae_10844",
+    "title": "Aide à la production audiovisuelle et nouveaux médias fiction prise de vue réelle",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "SORTIE_PERIMETRE",
+    "id": "ae_11159",
+    "title": "Aide à la reprise d'entreprise",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "SORTIE_PERIMETRE",
+    "id": "ae_7473",
+    "title": "Aide à la réalisation - Décision (études de diagnostic et d’accompagnement de projets)",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "SORTIE_PERIMETRE",
+    "id": "ae_7478",
+    "title": "Aide à la réalisation - Mise en oeuvre des projets environnementaux (investissements)",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "SORTIE_PERIMETRE",
+    "id": "ae_6096",
+    "title": "Concours Créatrices d'avenir",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "SORTIE_PERIMETRE",
+    "id": "ae_11676",
+    "title": "Dispositif DEDIHCATED",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "SORTIE_PERIMETRE",
+    "id": "ae_12158",
+    "title": "Fonds de Secours pour l’Outre-Mer (FSOM)",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "SORTIE_PERIMETRE",
+    "id": "ae_9215",
+    "title": "Fonds partenarial économie de proximité",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "SORTIE_PERIMETRE",
+    "id": "ae_11872",
+    "title": "Fonds régional d'aide au jeu vidéo",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "SORTIE_PERIMETRE",
+    "id": "ae_11874",
+    "title": "Fonds régional d'aide aux nouveaux médias et expériences interactives",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "SORTIE_PERIMETRE",
+    "id": "ae_11870",
+    "title": "Fonds régional d'aide à la fiction cinématographique et audiovisuelle - Long métrage, court métrage, animation, série et unitaire",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "SORTIE_PERIMETRE",
+    "id": "ae_8974",
+    "title": "Fonds Régional d'Innovation (FRI) - Normandie",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "SORTIE_PERIMETRE",
+    "id": "ae_11877",
+    "title": "Fonds régional de soutien économique à la production pour la filière cinématographique et audiovisuelle",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "SORTIE_PERIMETRE",
+    "id": "ae_11873",
+    "title": "Fonds régional documentaire audiovisuel et cinématographique",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "SORTIE_PERIMETRE",
+    "id": "ae_11876",
+    "title": "Fonds régional programme éditorial d’aide à l’écriture et au développement",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "SORTIE_PERIMETRE",
+    "id": "ae_12085",
+    "title": "Fonds Régional Tourisme de Savoir-Faire - Audit",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "SORTIE_PERIMETRE",
+    "id": "ae_12086",
+    "title": "Fonds Régional Tourisme de Savoir-Faire - Réalisation",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "SORTIE_PERIMETRE",
+    "id": "ae_11875",
+    "title": "Fonds régional vidéaste \"Hauts-de-France Talent\"",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "SORTIE_PERIMETRE",
+    "id": "ae_11021",
+    "title": "France 2030 - Appel à projets \"Projets d'innovation\"",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "SORTIE_PERIMETRE",
+    "id": "ae_12712",
+    "title": "Modules Transformants Biodiversité",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "SORTIE_PERIMETRE",
+    "id": "ae_11891",
+    "title": "Plan d'Amplification RSE (PARSE)",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "SORTIE_PERIMETRE",
+    "id": "ae_12633",
+    "title": "Prêt transitions Bretagne",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "SORTIE_PERIMETRE",
+    "id": "ae_8905",
+    "title": "Solaire thermique - Aides à l'investissement",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "SORTIE_PERIMETRE",
+    "id": "ae_12629",
+    "title": "Soutien à l’investissement pour la création, l’équipement et la réhabilitation des salles de cinéma",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "SORTIE_PERIMETRE",
+    "id": "ae_12609",
+    "title": "Subvention Prévention TPE - Boulangerie Pâtisserie",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "SORTIE_PERIMETRE",
+    "id": "ae_10082",
+    "title": "Subvention Prévention TPE - Réduction de l'exposition au gaz radon",
+    "at": "2026-09-28T10:43:36.188Z"
+  },
+  {
+    "type": "SORTIE_PERIMETRE",
+    "id": "ae_12610",
+    "title": "Subvention Prévention TPE - UV solaires - Chaleur",
+    "at": "2026-09-28T10:43:36.188Z"
+  }
+]

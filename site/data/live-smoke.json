@@ -1,0 +1,19 @@
+{
+  "version": "12.2.0",
+  "generatedAt": "2026-09-28T10:45:12.514Z",
+  "companyApi": {
+    "ok": true,
+    "status": 200,
+    "url": "https://recherche-entreprises.api.gouv.fr/search?q=751500851&per_page=1",
+    "bytes": 3195,
+    "error": null,
+    "sampleSiren": "751500851"
+  },
+  "publicSite": {
+    "ok": false,
+    "skipped": true,
+    "url": null,
+    "index": null,
+    "readiness": null
+  }
+}

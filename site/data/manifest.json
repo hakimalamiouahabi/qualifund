@@ -1,14 +1,18 @@
 {
   "version": "12.2.0",
-  "generatedAt": "2026-09-22T22:16:19Z",
-  "count": 678,
-  "architecture": "GitHub Actions + GitHub Pages/Vercel + preuve par champ + pertinence >=85%",
-  "libraryCount": 678,
-  "activeCount": 678,
-  "archivedCount": 0,
-  "aapCount": 60,
+  "generatedAt": "2026-09-28T10:43:36.188Z",
+  "repositoryUrl": "https://github.com/hakimalamiouahabi/qualifund",
   "sourceCount": 145,
-  "verifiedCount": 0,
-  "withCdc": 86,
-  "withDeadline": 166
+  "sourcesOk": 108,
+  "sourcesFailed": 37,
+  "libraryCount": 760,
+  "activeCount": 749,
+  "archivedCount": 11,
+  "aapCount": 81,
+  "verifiedCount": 5,
+  "withCdc": 103,
+  "withDeadline": 175,
+  "fullRefresh": true,
+  "contentSha256": "c69fb099660ac903b65521f146f8412f0c1ba834c9fbd0d1ea02ddce552a9372",
+  "count": 760
 }

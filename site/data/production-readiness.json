@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-22T22:21:03.990Z",
+  "generatedAt": "2026-09-28T10:45:13.363Z",
   "version": "12.2.0",
   "gates": [
     {
       "id": 1,
       "name": "Dépôt GitHub et versionnement",
-      "status": "BLOCKED",
-      "detail": "Aucun dépôt GitHub accessible/configuré."
+      "status": "PASS",
+      "detail": "hakimalamiouahabi/qualifund"
     },
     {
       "id": 2,
@@ -17,20 +17,20 @@
     {
       "id": 3,
       "name": "Collecte réelle des sources",
-      "status": "NOT_RUN",
-      "detail": "Ingestion: 0/111 exécutées, 0 succès, 0 imports bruts. Contrôles: 0/34. Corpus hors bootstrap Aides Entreprises: 2. Préflight local non concluant (réseau du runner indisponible)."
+      "status": "PARTIAL",
+      "detail": "Ingestion: 111/111 exécutées, 74 succès, 4214 imports bruts. Contrôles: 34/34. Corpus hors bootstrap Aides Entreprises: 73. Préflight réseau: 136/145 accessibles/protégées."
     },
     {
       "id": 4,
       "name": "Bibliothèque réglementaire vérifiée",
-      "status": "WAIT_LIVE",
-      "detail": "0/678 fiches actives strictement VÉRIFIÉES ; intégrité recalculée 0/0. Les priorités fermes sont limitées aux fiches VÉRIFIÉES ; les autres restent en pistes à sécuriser."
+      "status": "PARTIAL",
+      "detail": "5/749 fiches actives strictement VÉRIFIÉES ; intégrité recalculée 5/5. Les priorités fermes sont limitées aux fiches VÉRIFIÉES ; les autres restent en pistes à sécuriser."
     },
     {
       "id": 5,
       "name": "Extraction CdC / preuves par champ",
       "status": "WAIT_LIVE",
-      "detail": "Preuves A/B complètes sur les 8 champs critiques : 0/0 fiches VÉRIFIÉES. File de remédiation synchronisée : oui. Couverture globale indicative : 86/678 avec CdC/règlement."
+      "detail": "Preuves A/B complètes sur les 8 champs critiques : 5/5 fiches VÉRIFIÉES. File de remédiation synchronisée : oui. Couverture globale indicative : 103/749 avec CdC/règlement."
     },
     {
       "id": 6,
@@ -41,8 +41,8 @@
     {
       "id": 7,
       "name": "Enrichissement SIREN/SIRET",
-      "status": "READY",
-      "detail": "Fallback navigateur + endpoint /api/company disponibles ; smoke live non concluant ou non exécuté."
+      "status": "PASS",
+      "detail": "API Recherche d’entreprises DINUM validée par smoke live."
     },
     {
       "id": 8,
@@ -67,25 +67,25 @@
     "sourcesConfigured": 145,
     "ingestiveSources": 111,
     "controlSources": 34,
-    "sourcesInLastCycle": 0,
-    "sourcesSuccess": 0,
-    "ingestiveExecuted": 0,
-    "ingestiveSuccess": 0,
-    "ingestiveImported": 0,
-    "controlExecuted": 0,
-    "nonBootstrapFiches": 2,
-    "activeFiches": 678,
-    "verifiedFiches": 0,
-    "verifiedIntegrity": 0,
-    "verifiedEvidenceIntegrity": 0,
-    "withCdc": 86,
-    "withDeadline": 166,
+    "sourcesInLastCycle": 145,
+    "sourcesSuccess": 108,
+    "ingestiveExecuted": 111,
+    "ingestiveSuccess": 74,
+    "ingestiveImported": 4214,
+    "controlExecuted": 34,
+    "nonBootstrapFiches": 73,
+    "activeFiches": 749,
+    "verifiedFiches": 5,
+    "verifiedIntegrity": 5,
+    "verifiedEvidenceIntegrity": 5,
+    "withCdc": 103,
+    "withDeadline": 175,
     "consultantCases": 5,
     "uatTotal": 5,
-    "companySmokeOk": false,
+    "companySmokeOk": true,
     "publicSmokeOk": false,
-    "workflowEvent": "",
-    "inActions": false,
+    "workflowEvent": "push",
+    "inActions": true,
     "remediationFresh": true
   },
   "goProduction": false
