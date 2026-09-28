@@ -69,3 +69,30 @@ table{min-width:960px}
   .sidebar{top:62px;height:calc(100vh - 62px)}
   main{padding:14px}
 }
+
+/* QUALIFUND 13-INCH COMPACT UI v2 */
+:root{--ui-font:Aptos,"Segoe UI Variable Text","Segoe UI","Helvetica Neue",Arial,sans-serif}
+html,body{width:100%;max-width:100%;overflow-x:hidden}
+body{font-family:var(--ui-font);font-weight:400;letter-spacing:0}
+b,strong{font-weight:600}
+.brandmark{font-weight:650}.brand b,.page-head h1,.hero h1,.card h3,.metric b{font-weight:600}
+.btn,.badge,.pill,.field,.eyebrow,th{font-weight:600}
+.table-wrap{width:100%;max-width:100%;overflow-x:auto}table{min-width:840px}
+@media (max-width:1440px) and (min-width:1051px){
+.topbar{height:58px;padding:0 12px;gap:10px}.brand{gap:8px}.brandmark{font-size:12px;letter-spacing:.06em;padding-left:7px}
+.brand b{font-size:14px}.brand span{font-size:10px;margin-top:1px}.top-actions{gap:6px;flex-wrap:nowrap}
+.top-actions .btn{padding:7px 9px;font-size:10.5px;border-radius:7px}.layout{grid-template-columns:188px minmax(0,1fr);min-height:calc(100vh - 58px)}
+.sidebar{top:58px;height:calc(100vh - 58px);padding:11px 8px}.scope{padding:10px;margin-bottom:9px;border-radius:10px}
+.scope b{font-size:11.5px}.scope span{font-size:9.5px;line-height:1.35}.nav{padding:8px 9px;font-size:11.5px;border-radius:7px;margin:2px 0}
+.sidefoot{font-size:9px;line-height:1.45;padding:6px}main{padding:13px 15px}.page-head{gap:12px;margin-bottom:12px}
+.page-head h1{font-size:23px;margin:3px 0 5px}.eyebrow{font-size:9.5px}.sub{font-size:12px;line-height:1.4;max-width:900px}
+.metric,.card{padding:12px;border-radius:10px}.metric b{font-size:23px}.metric span{font-size:10.5px}.metric small,.mini{font-size:9.5px}
+.filters,.filters.six{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin-bottom:9px}.input,select,textarea{padding:8px 9px;font-size:11.5px;border-radius:7px}
+.btn{padding:8px 11px;font-size:11px}th,td{padding:8px 9px}th{font-size:9.5px}td{font-size:10.5px}table{min-width:820px}
+.badge,.pill{font-size:9px;padding:5px 7px}.callout{padding:10px 12px;font-size:10.5px;margin:9px 0}.section-title{margin:16px 0 9px}
+.toast{right:14px;bottom:14px;font-size:10.5px}
+}
+@media (max-width:1250px) and (min-width:1051px){
+.layout{grid-template-columns:176px minmax(0,1fr)}.top-actions #sidebarToggle{display:none}.filters,.filters.six{grid-template-columns:repeat(2,minmax(0,1fr))}
+main{padding:12px}table{min-width:760px}
+}
