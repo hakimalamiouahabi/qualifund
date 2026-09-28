@@ -20,6 +20,7 @@ import { shouldMarkStale } from './lib/lifecycle.mjs';
 import { isActiveAtJPlusOne, jPlusOneDate } from './lib/jplus1.mjs';
 const KNOWN_AID_TYPES=new Set(['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO','PRET','BONIFICATION_INTERET','GARANTIE','ALLEGEMENT_FISCAL','PARTICIPATION_CAPITAL','APPEL_A_PROJET','ACCOMPAGNEMENT_GRATUIT','CREDIT_BAIL','AUTRE']);
 function sanitizeAidTypes(xs=[]){const vals=arr(xs).filter(x=>typeof x==='string'&&x);const known=vals.filter(x=>KNOWN_AID_TYPES.has(x));return uniq(known.length?known:['AUTRE']);}
+function unusableAidTitle(v=''){const t=String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[’']/g,"'").replace(/\s+/g,' ').trim();return !t||t.length<4||/(desole.*offre.*plus disponible|offre.*plus disponible|document officiel|page introuvable|page non trouvee|erreur 404|404 not found|access denied|forbidden|service indisponible|site en maintenance)/i.test(t);}
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'),SITE=path.join(ROOT,'site'),DATA=path.join(SITE,'data'),FULL=process.argv.includes('--full')||(process.env.LEYTON_RADAR_FULL_REFRESH==='1'||process.env.QUALIFUND_FULL_REFRESH==='1');const log=(...x)=>console.log(new Date().toISOString(),...x);
 const previous=await readJson(path.join(DATA,'library.json'),{meta:{},aaps:[]}),previousCoverage=await readJson(path.join(DATA,'coverage.json'),[]),prevCov=new Map(previousCoverage.map(x=>[x.id,x])),prevMap=new Map((previous.aaps||[]).map(a=>[canonicalKey(a),a])),cfg=await readJson(path.join(ROOT,'config','sources.json'),{sources:[]}),coverage=[],changes=[],current=new Map(prevMap),cycleSeenKeys=new Set();
@@ -86,7 +87,8 @@ const batch=candidates.slice(0,enrichLimit);
 log(`Enrichissement officiel borné: ${batch.length}/${candidates.length} (limite ${enrichLimit})`);const enriched=new Map();let cursor=0;const workers=Array.from({length:6},async()=>{while(true){const i=cursor++;if(i>=batch.length)return;const a=batch[i];try{const e=await withTimeout(enrichAid(a,{log}),120000,`enrich ${a.id}`);e.verification={...(e.verification||{}),lastChecked:nowIso()};enriched.set(canonicalKey(e),e)}catch(err){log(`Enrichissement ignoré ${a.title}: ${err.message}`)}}});await Promise.all(workers);for(const[k,a]of enriched)current.set(k,a);
 aids=dedupe([...current.values()])
   // Bibliothèque large : on conserve toutes les natures d'aides destinées aux entreprises.
-  // Le moteur de recommandation reste, lui, strictement limité à SUB/AR/PTZ.
+  // Les pages d'erreur et titres génériques ne sont jamais exposés comme dispositifs.
+  .filter(a=>!unusableAidTitle(a.title))
   .filter(a=>!arr(a.companyCategories).length||arr(a.companyCategories).some(x=>['STARTUP','PME','ETI','GE'].includes(x)))
   .filter(a=>['NATIONAL','REGIONAL'].includes(a.scope))
   .map(a=>({...a,themes:uniq(a.themes||[]),aidTypes:sanitizeAidTypes(a.aidTypes)}));
@@ -107,8 +109,16 @@ if((previous.aaps||[]).length)await writeJsonAtomic(path.join(DATA,'library.prev
 await writeJsonAtomic(path.join(DATA,'library.json'),{meta:manifest,aaps:aids});await writeJsonAtomic(path.join(DATA,'coverage.json'),coverage);const oldChanges=await readJson(path.join(DATA,'changes.json'),[]);await writeJsonAtomic(path.join(DATA,'changes.json'),[...oldChanges,...changes].slice(-1200));await writeJsonAtomic(path.join(DATA,'manifest.json'),manifest);await writeJsonAtomic(path.join(DATA,'sources.json'),{version:cfg.version||'unknown',sources:cfg.sources.map(({id,name,scope,type,strategy,url,official,priority})=>({id,name,scope,type,strategy,url,official,priority}))});
 const PUBLIC_DIR=path.join(ROOT,'site','bibliotheque');await fs.mkdir(PUBLIC_DIR,{recursive:true});
 const csvEsc=v=>`"${String(v??'').replaceAll('"','""')}"`;
-const csvRows=[['id','titre','type','portee','regions','financeurs','instruments','beneficiaires','assiette_min','assiette_max','aide_min','aide_max','taux_min','taux_max','cloture','permanent','page_officielle','cdc','statut_verification','completude','confiance'].join(',')];
-for(const a of aids)csvRows.push([a.id,a.title,a.kind,a.scope,arr(a.regions).join(' | '),arr(a.funder).join(' | '),arr(a.aidTypes).join(' | '),arr(a.companyCategories).join(' | '),a.minimumProjectCost??'',a.maximumProjectCost??'',a.aidAmount?.min??'',a.aidAmount?.max??'',a.aidRate?.min??'',a.aidRate?.max??'',a.finalClosingDate||a.closingDate||'',a.permanent?'oui':'non',a.officialPage||'',arr(a.cdcLinks).map(x=>x.url).join(' | '),a.verification?.status||'',a.verification?.completeness??'',a.verification?.confidence??''].map(csvEsc).join(','));
+const csvRows=[['id','titre','type','portee','regions','financeurs','instruments','beneficiaires','thematiques','assiette_min','assiette_max','aide_min','aide_max','taux_min','taux_max','taux_montants_par_taille','projets_attendus','depenses_eligibles','prerequis','criteres_selection','releves','cloture','permanent','page_officielle','cdc','statut_verification','completude','confiance'].join(',')];
+for(const a of aids)csvRows.push([
+  a.id,a.title,a.kind,a.scope,arr(a.regions).join(' | '),arr(a.funder).join(' | '),arr(a.aidTypes).join(' | '),arr(a.companyCategories).join(' | '),arr(a.themes).join(' | '),
+  a.minimumProjectCost??'',a.maximumProjectCost??'',a.aidAmount?.min??'',a.aidAmount?.max??'',a.aidRate?.min??'',a.aidRate?.max??'',
+  arr(a.aidAmount?.byCompanySize).concat(arr(a.aidRate?.byCompanySize)).map(x=>[x.category,x.rateMin??x.min??'',x.rateMax??x.max??'',x.amountMin??'',x.amountMax??''].join(':')).join(' | '),
+  arr(a.projectsExpected).join(' | '),a.eligibleExpenses||'',a.prerequisites||'',a.selectionCriteria||'',
+  arr(a.deadlines).map(x=>typeof x==='string'?x:(x?.date||'')).filter(Boolean).join(' | '),
+  a.finalClosingDate||a.closingDate||'',a.permanent?'oui':'non',a.officialPage||'',arr(a.cdcLinks).map(x=>x?.url||x).filter(Boolean).join(' | '),
+  a.verification?.status||'',a.verification?.completeness??'',a.verification?.confidence??''
+].map(csvEsc).join(','));
 await fs.writeFile(path.join(PUBLIC_DIR,'radar-library.csv'),csvRows.join('\n'),'utf8');
 await writeJsonAtomic(path.join(PUBLIC_DIR,'radar-library.json'),{meta:manifest,aaps:aids});
 // Compatibilité v9 : conserver les anciens noms pendant la transition.
