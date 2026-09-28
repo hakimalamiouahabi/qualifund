@@ -26,3 +26,11 @@ test('une annexe PDF générique ne remplace ni le nom ni la page officielle du 
   assert.equal(out.officialPage,'https://example.fr/appel');
   assert.equal(out.objective,'Texte enrichi');
 });
+
+
+test('un lien officiel spécifique remplace un lien générique lors de la fusion',()=>{
+  const base={title:'Aide innovation',officialPage:'https://data.aides-entreprises.fr/stock',verification:{sourceTier:'C',fieldEvidence:[]}};
+  const inc={title:'Aide innovation',officialPage:'https://www.bpifrance.fr/catalogue-offres/aide-pour-le-developpement-de-linnovation',verification:{sourceTier:'B',fieldEvidence:[]}};
+  const out=mergeAid(base,inc);
+  assert.equal(out.officialPage,inc.officialPage);
+});
