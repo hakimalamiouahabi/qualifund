@@ -17,10 +17,16 @@ export function parseRssLinks(xml,source){
   })).filter(x=>x.url&&relevantLink(source,x.label,x.url));
 }
 async function rssLinks(source){if(!source.rssUrl)return[];try{return parseRssLinks((await fetchText(source.rssUrl,{timeoutMs:18000,retries:1})).text,source)}catch{return[]}}
+function unusableTitle(v=''){
+  const t=cleanTitle(v).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  return !t||t.length<4||/(desole.*offre.*plus disponible|offre.*plus disponible|document officiel|page introuvable|page non trouvee|erreur 404|404 not found|access denied|forbidden|service indisponible|site en maintenance)/i.test(t);
+}
 async function extractOne(source,l){
   const h=await getHtml(source,l.url);
   const a=extractFromHtml(h,{url:l.url,sourceTier:'B',scope:source.scope==='France'?'NATIONAL':'REGIONAL',region:source.scope==='France'?null:source.scope});
-  if((!a.title||a.title.length<4)&&l.label&&cleanTitle(l.label).length>=4)a.title=cleanTitle(l.label);if(!a.title||a.title.length<4)return null;
+  const label=cleanTitle(l.label||'');
+  if(unusableTitle(a.title)&&!unusableTitle(label))a.title=label;
+  if(unusableTitle(a.title))return null;
   a.id=`${source.id}_${Buffer.from(l.url).toString('base64url').slice(0,28)}`;
   a.canonicalId=a.id;
   a.sourceId=source.id;
