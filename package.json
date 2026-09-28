@@ -23,7 +23,8 @@
     "release:verify": "npm run sync:metadata && npm run build:index && npm run audit:sources && npm run audit:ingestion && npm test && npm run validate && npm run uat && npm run qa && npm run remediation && npm run production:gates",
     "remediation": "node scripts/remediation-report.mjs",
     "certify:local": "npm run release:verify",
-    "certify:production": "node scripts/certify-production.mjs"
+    "certify:production": "node scripts/certify-production.mjs",
+    "audit:criteria": "node scripts/audit-criteria.mjs"
   },
   "dependencies": {
     "ajv": "8.17.1",
