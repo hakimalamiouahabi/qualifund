@@ -3,18 +3,18 @@
   const arr=v=>Array.isArray(v)?v:(v==null||v===''?[]:[v]);
   const uniq=a=>[...new Set(a.filter(Boolean))];
   const norm=s=>String(s??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[’']/g,"'").replace(/[^a-z0-9%€+\- /]/g,' ').replace(/\s+/g,' ').trim();
-  const STOP=new Set('avec pour dans des les une un aux sur par est sont ou et du de la le ce cette ces au en à a d l se son sa ses leur leurs qui que quoi dont plus moins tout tous toute toutes entre vers afin ainsi peut peuvent sera seront doit doivent projet projets aide aides entreprise entreprises financement programme appel appels dispositif dispositifs travaux objectif objectifs attendu attendus'.split(' '));
+  const STOP=new Set('avec pour dans des les une un aux sur par est sont ou et du de la le ce cette ces au en a d l se son sa ses leur leurs qui que quoi dont plus moins tout tous toute toutes entre vers afin ainsi peut peuvent sera seront doit doivent projet projets aide aides entreprise entreprises financement programme appel appels dispositif dispositifs travaux objectif objectifs attendu attendus'.split(' '));
   const tokens=s=>uniq(norm(s).split(' ').filter(x=>x.length>2&&!STOP.has(x)));
   const bigrams=s=>{const t=tokens(s),o=[];for(let i=0;i<t.length-1;i++)o.push(t[i]+' '+t[i+1]);return uniq(o)};
 
   const CONCEPTS={
-    innovation:['innovation','r&d','recherche','prototype','poc','demonstrateur','technologie','experimental','brevet','preuve de concept'],
-    industrialisation:['industrialisation','usine','production','machine','equipement','capacite','ligne','atelier','modernisation','outil productif'],
+    innovation:['innovation','r&d','recherche industrielle','developpement experimental','prototype','poc','demonstrateur','technologie','brevet','preuve de concept','deeptech'],
+    industrialisation:['industrialisation','usine','production','machine','equipement','capacite','ligne','atelier','modernisation','outil productif','premiere usine','passage a l echelle'],
     digital:['numerique','digital','logiciel','data','cloud','saas','automatisation','digitalisation','systeme information'],
-    ai:['ia','intelligence artificielle','machine learning','apprentissage','modele predictif'],
+    ai:['ia','intelligence artificielle','machine learning','apprentissage','modele predictif','deep learning'],
     cyber:['cyber','cybersecurite','securite informatique','securisation'],
-    decarbonation:['decarbonation','carbone','co2','gaz a effet de serre','sobriete','emissions'],
-    energy:['energie','energetique','chaleur','electrique','hydrogene','photovolta','efficacite energetique'],
+    decarbonation:['decarbonation','carbone','co2','gaz a effet de serre','sobriete','emissions','bas carbone'],
+    energy:['energie','energetique','chaleur','electrique','hydrogene','photovolta','efficacite energetique','recuperation chaleur'],
     circular:['economie circulaire','recyclage','reemploi','matiere recyclee','dechet','ecoconception','valorisation'],
     water:['eau','hydrique','reutilisation','effluent','traitement eau'],
     health:['sante','medical','biotherapie','dispositif medical','medicament','diagnostic'],
@@ -27,63 +27,95 @@
     employment:['emploi','emplois','recrutement','competences','formation'],
     export:['export','international','prospection','marche etranger'],
     investment:['investissement','capex','equipement','immobilier','batiment','travaux'],
-    sovereignty:['souverainete','relocalisation','strategique','chaine de valeur'],
-    circularity:['eco-conception','ecoconception','cycle de vie','matiere secondaire']
+    sovereignty:['souverainete','relocalisation','strategique','chaine de valeur','independance technologique'],
+    collaboration:['consortium','collaboratif','partenaire','laboratoire','cooperation','filiere','ecosysteme'],
+    market:['marche','commercialisation','industrialisation','business model','chiffre affaires','clients','debouches'],
+    environment:['performance environnementale','biodiversite','adaptation climatique','economie ressources','impact environnemental']
   };
 
+  const NAF_BUCKETS=[
+    [/^(01|02|03)/,'agriculture agroalimentaire biomasse'],
+    [/^(10|11|12)/,'agroalimentaire alimentation industrie'],
+    [/^(13|14|15)/,'textile mode recyclage industrie'],
+    [/^(16|17|18)/,'bois papier impression industrie'],
+    [/^(19|20|21|22)/,'chimie pharmacie plasturgie materiaux industrie'],
+    [/^(23|24|25)/,'materiaux metallurgie metal industrie'],
+    [/^(26|27|28)/,'electronique electrique machines industrie numerique'],
+    [/^(29|30)/,'automobile transport aeronautique naval industrie mobilite'],
+    [/^(31|32|33)/,'fabrication maintenance industrie'],
+    [/^(35)/,'energie electricite gaz chaleur'],
+    [/^(36|37|38|39)/,'eau dechets recyclage environnement'],
+    [/^(41|42|43)/,'construction batiment travaux ecoconstruction'],
+    [/^(49|50|51|52|53)/,'transport logistique mobilite'],
+    [/^(55|56)/,'tourisme hotel restauration'],
+    [/^(58|59|60|61|62|63)/,'numerique logiciel data telecom audiovisuel'],
+    [/^(64|65|66)/,'finance assurance'],
+    [/^(69|70|71|72|73|74|75)/,'services professionnels ingenierie recherche conseil'],
+    [/^(85)/,'formation education competences'],
+    [/^(86|87|88)/,'sante medical social'],
+    [/^(90|91|92|93)/,'culture loisirs sport']
+  ];
+  function nafText(naf=''){
+    const n=String(naf).replace(/\D/g,'').slice(0,2);
+    return (NAF_BUCKETS.find(([re])=>re.test(n))||[])[1]||'';
+  }
   function conceptSet(text){
     const n=norm(text),out=[];
-    for(const[k,ws] of Object.entries(CONCEPTS))if(ws.some(w=>n.includes(norm(w))))out.push(k);
+    for(const[k,ws]of Object.entries(CONCEPTS))if(ws.some(w=>n.includes(norm(w))))out.push(k);
     return out;
   }
   function overlapDetails(aText,pText){
     const A=new Set(tokens(aText)),P=tokens(pText),B=new Set(bigrams(aText)),PB=bigrams(pText);
     const matched=P.filter(x=>A.has(x));
     const bigramHits=PB.filter(x=>B.has(x));
-    const coverage=P.length?matched.length/Math.min(P.length,14):0;
-    const precision=A.size?matched.length/Math.min(A.size,18):0;
+    const coverage=P.length?matched.length/Math.min(P.length,16):0;
+    const precision=A.size?matched.length/Math.min(A.size,20):0;
     const bigram=PB.length?bigramHits.length/Math.min(PB.length,8):0;
     const ac=new Set(conceptSet(aText)),pc=conceptSet(pText),concepts=pc.filter(x=>ac.has(x));
     const concept=pc.length?concepts.length/Math.max(1,Math.ceil(pc.length*.55)):0;
     let ratio=Math.max(
-      Math.min(1,.55*coverage+.15*precision+.15*bigram+.15*Math.min(1,concept)),
-      Math.min(1,.72*concept+.28*coverage)
+      Math.min(1,.52*coverage+.16*precision+.14*bigram+.18*Math.min(1,concept)),
+      Math.min(1,.68*concept+.32*coverage)
     );
-    // Bonus de cohérence seulement lorsque plusieurs termes/concepts précis convergent.
-    if(matched.length>=4)ratio+=.08;
-    if(concepts.length>=2)ratio+=.06;
-    return{ratio:Math.max(0,Math.min(1,ratio)),matched:uniq([...matched,...concepts]).slice(0,12),tokenHits:matched.length,conceptHits:concepts.length,bigramHits:bigramHits.length};
+    if(matched.length>=4)ratio+=.07;
+    if(concepts.length>=2)ratio+=.07;
+    return{ratio:Math.max(0,Math.min(1,ratio)),matched:uniq([...matched,...concepts]).slice(0,14),tokenHits:matched.length,conceptHits:concepts.length,bigramHits:bigramHits.length};
   }
-  function fit(aText,pText){return overlapDetails(aText,pText).ratio}
-  function typeFit(a,p){
-    const at=norm([a.title,a.objective,...arr(a.themes),...arr(a.projectsExpected)].join(' '));
-    const pts=arr(p.types);if(!pts.length)return .55;
-    let h=0;
-    for(const t of pts){
-      const c={
-        'R&D / Innovation':['innovation','recherche','prototype','demonstrateur','poc','r&d'],
-        'Investissement productif':['investissement','industrialisation','production','equipement','machine','modernisation'],
-        'Transition numérique':['numerique','digital','ia','cyber','logiciel','robot','cloud','data'],
-        'Transition écologique':['decarbonation','energie','recyclage','eau','ecologique','sobriete','carbone']
-      }[t]||[];
-      if(c.some(x=>at.includes(norm(x))))h++;
-    }
-    return Math.min(1,h/pts.length);
+
+  function detectFamily(a){
+    const t=norm([a.sourceId,a.title,a.programme,a.operator,...arr(a.funder),...arr(a.sourceAliases)].join(' '));
+    if(/ademe|agir pour la transition/.test(t))return'ADEME';
+    if(/feder|fse\+?|ftj|europe en france|fonds europeen|programme regional 2021 2027/.test(t))return'FEDER';
+    if(/bpifrance|france 2030|pia ?4|pia4|i demo|projets d innovation/.test(t))return'BPIFRANCE_FRANCE2030';
+    if(a.scope==='REGIONAL')return'REGIONAL';
+    return'GENERAL';
   }
-  function maturityFit(a,p){
-    if(!p.maturity||p.maturity==='À préciser')return .6;
-    const m=norm(p.maturity),t=norm([a.objective,...arr(a.projectsExpected),a.prerequisites,a.selectionCriteria].join(' '));
-    const groups={
-      faisabilite:['faisabilite','etude'],
-      poc:['poc','preuve de concept','faisabilite'],
-      prototype:['prototype','prototypage'],
-      demonstrateur:['demonstrateur','pilote','demonstration'],
-      industrialisation:['industrialisation','premiere usine','pre-industrialisation'],
-      investissement:['investissement','deploiement','modernisation','production']
+  const WEIGHTS={
+    GENERAL:{strategic:18,expected:15,expenses:15,selection:12,beneficiary:10,maturity:8,impacts:10,finance:7,access:5},
+    BPIFRANCE_FRANCE2030:{strategic:18,expected:13,expenses:10,selection:14,beneficiary:8,maturity:12,impacts:15,finance:6,access:4},
+    ADEME:{strategic:14,expected:10,expenses:18,selection:14,beneficiary:7,maturity:8,impacts:20,finance:5,access:4},
+    FEDER:{strategic:20,expected:12,expenses:15,selection:12,beneficiary:8,maturity:6,impacts:10,finance:8,access:9},
+    REGIONAL:{strategic:18,expected:14,expenses:14,selection:12,beneficiary:10,maturity:8,impacts:10,finance:7,access:7}
+  };
+  const PROFILE_LABEL={
+    GENERAL:'Grille générale',
+    BPIFRANCE_FRANCE2030:'Bpifrance / France 2030',
+    ADEME:'ADEME',
+    FEDER:'FEDER / fonds européens',
+    REGIONAL:'Aide régionale'
+  };
+
+  function projectContext(p){
+    const naf=nafText(p.naf);
+    const anchor=[p.name,p.summary,p.sector,p.naf,naf,...arr(p.types),p.digital,p.environment].join(' ');
+    return{
+      anchor,
+      expenses:[p.expenses,p.summary,p.sector,naf].join(' '),
+      impacts:[p.impacts,p.jobs,p.environment,p.digital,p.summary,p.name].join(' '),
+      capacity:[p.partners,p.financing,p.group,p.employees,p.turnover,p.balanceSheet,p.summary].join(' '),
+      maturity:[p.maturity,...arr(p.types),p.summary,p.name].join(' '),
+      access:[p.region,p.startDate,p.endDate,p.budget,p.sector,p.naf,naf].join(' ')
     };
-    const key=Object.keys(groups).find(k=>m.includes(k));
-    if(!key)return .6;
-    return groups[key].some(x=>t.includes(norm(x)))?1:.3;
   }
   function validDate(v){return String(v||'').match(/^\d{4}-\d{2}-\d{2}/)?.[0]||null}
   function calendarFit(a,p){
@@ -92,111 +124,119 @@
     if(!ds.length)return .55;
     const now=new Date();now.setHours(0,0,0,0);
     const open=ds.filter(d=>new Date(d+'T23:59:59')>=now);
-    if(!open.length)return 0;
-    if(p.endDate){
-      const pe=new Date(p.endDate+'T23:59:59');
-      if(Number.isFinite(pe.getTime())&&open.every(d=>new Date(d+'T23:59:59')<now))return 0;
-    }
-    return 1;
+    return open.length?1:0;
   }
   function financeFit(a,p){
     const b=Number(p.budget||0);
     const min=(a.minimumProjectCost!=null&&a.minimumProjectCost!==''&&Number.isFinite(Number(a.minimumProjectCost)))?Number(a.minimumProjectCost):null;
     const max=(a.maximumProjectCost!=null&&a.maximumProjectCost!==''&&Number.isFinite(Number(a.maximumProjectCost)))?Number(a.maximumProjectCost):null;
     const hasTerms=a.aidRate?.min!=null||a.aidRate?.max!=null||a.aidAmount?.min!=null||a.aidAmount?.max!=null||a.aidRate?.raw||a.aidAmount?.raw;
-    if(b>0&&(min!=null||max!=null)){
-      if(min!=null&&b<min)return 0;
-      if(max!=null&&b>max)return 0;
-      return 1;
-    }
-    if(b>0&&hasTerms)return .8;
-    if(hasTerms)return .7;
-    return .5;
+    if(!b)return hasTerms?.65:.5;
+    if(min!=null&&b<min)return 0;
+    if(max!=null&&b>max)return 0;
+    return (min!=null||max!=null||hasTerms)?1:.65;
   }
   function territoryFit(a,p){
     if(a.scope==='NATIONAL')return 1;
-    if(a.scope==='REGIONAL'&&p.region&&p.region!=='À préciser')return arr(a.regions).includes(p.region)?1:0;
+    if(a.scope==='REGIONAL'&&p.region&&p.region!=='À préciser')return arr(a.regions).includes(p.region)||arr(a.regions).includes('Toutes les Régions')?1:0;
     if(a.scope==='REGIONAL')return .5;
-    return .35;
+    return .4;
   }
-  function beneficiaryFit(a,p){
+  function beneficiaryFit(a,p,ctx){
     const cats=arr(a.companyCategories),cat=String(p.category||'');
-    if(cat&&cat!=='À préciser'&&cats.length){
-      if(cats.includes(cat)||(p.startup&&cats.includes('STARTUP')))return 1;
-      return 0;
-    }
-    const aid=[a.beneficiaries,...cats,a.objective].join(' ');
-    const project=[p.category,p.startup?'startup':'',p.sector,p.naf,p.company].join(' ');
-    if(!aid.trim())return .55;
-    return Math.max(.35,fit(aid,project));
+    let size=.55;
+    if(cat&&cat!=='À préciser'&&cats.length)size=(cats.includes(cat)||(p.startup&&cats.includes('STARTUP')))?1:0;
+    const aidText=[a.beneficiaries,...cats,a.objective].join(' ');
+    const sector=aidText.trim()?overlapDetails(aidText,[p.sector,p.naf,nafText(p.naf),ctx.anchor].join(' ')).ratio:.55;
+    return .68*size+.32*sector;
   }
-  function selectionFit(a,p){
-    const atext=[a.selectionCriteria,a.prerequisites].filter(Boolean).join(' ');
-    if(!atext)return{ratio:.5,matched:[]};
-    const ptext=[p.summary,p.impacts,p.environment,p.digital,p.jobs,p.partners,p.maturity].join(' ');
-    const d=overlapDetails(atext,ptext);
-    return{ratio:d.ratio,matched:d.matched};
+  function maturityFit(a,p,ctx){
+    const aid=norm([a.objective,...arr(a.projectsExpected),a.prerequisites,a.selectionCriteria].join(' '));
+    if(!aid)return .55;
+    const m=norm(p.maturity||'');
+    const groups={
+      faisabilite:['faisabilite','etude','preuve de concept','poc'],
+      poc:['poc','preuve de concept','faisabilite'],
+      prototype:['prototype','prototypage','developpement experimental'],
+      demonstrateur:['demonstrateur','pilote','demonstration'],
+      industrialisation:['industrialisation','premiere usine','pre industrialisation','passage a l echelle'],
+      investissement:['investissement','deploiement','modernisation','production']
+    };
+    let stage=.55;
+    const key=Object.keys(groups).find(k=>m.includes(k));
+    if(key)stage=groups[key].some(x=>aid.includes(norm(x)))?1:.25;
+    const type=overlapDetails(aid,ctx.maturity).ratio;
+    return Math.max(stage,.75*type+.25*stage);
   }
+  function impactFit(a,p,ctx,family){
+    const aid=[a.selectionCriteria,a.objective,...arr(a.projectsExpected),a.prerequisites].filter(Boolean).join(' ');
+    if(!aid)return{ratio:0,matched:[],documented:false};
+    let project=ctx.impacts;
+    if(family==='ADEME')project=[p.environment,p.impacts,p.summary,p.expenses].join(' ');
+    if(family==='BPIFRANCE_FRANCE2030')project=[p.impacts,p.jobs,p.summary,p.digital,p.partners,ctx.capacity].join(' ');
+    if(family==='FEDER')project=[p.impacts,p.jobs,p.summary,p.sector,p.region,p.partners,ctx.capacity].join(' ');
+    const d=overlapDetails(aid,project);
+    return{...d,documented:true};
+  }
+  function accessFit(a,p){
+    return .58*territoryFit(a,p)+.42*calendarFit(a,p);
+  }
+
   function relevance(a,p){
-    const description=[p.name,p.summary,p.sector,p.naf,p.impacts,p.environment,p.digital,p.partners,...arr(p.types)].join(' ');
-    const expenseQuery=[p.expenses,p.summary,p.name].join(' ');
-    const objectiveText=[a.title,a.objective,...arr(a.themes),a.programme].join(' ');
+    const family=detectFamily(a),w=WEIGHTS[family]||WEIGHTS.GENERAL,ctx=projectContext(p),dims=[];
+    const add=(key,label,ratio,detail,matched=[],documented=true)=>{
+      const max=w[key],safe=Math.max(0,Math.min(1,ratio));
+      dims.push({key,label,max,score:documented?Math.round(max*safe):0,ratio:documented?Math.round(100*safe):null,detail,matched:arr(matched).slice(0,12),documented});
+    };
+
+    const strategicText=[a.title,a.objective,...arr(a.themes),a.programme].filter(Boolean).join(' ');
+    const strategic=overlapDetails(strategicText,ctx.anchor);
+    add('strategic','Objectifs, priorités & thématiques',strategic.ratio,strategic.ratio>=.72?'Alignement stratégique fort':strategic.ratio>=.45?'Alignement partiel':'Alignement faible',strategic.matched,Boolean(strategicText));
+
     const expectedText=arr(a.projectsExpected).join(' ');
+    const expected=expectedText?overlapDetails(expectedText,ctx.anchor):{ratio:0,matched:[]};
+    add('expected','Nature des projets attendus',expected.ratio,expectedText?'Projet comparé aux opérations attendues':'Projet attendu non documenté',expected.matched,Boolean(expectedText));
+
     const expenseText=String(a.eligibleExpenses||'');
-    const dims=[];
-    const add=(label,max,ratio,detail,matched=[],documented=true)=>dims.push({
-      label,max,
-      score:documented?Math.round(max*Math.max(0,Math.min(1,ratio))):0,
-      ratio:documented?Math.round(100*Math.max(0,Math.min(1,ratio))):null,
-      detail,matched:arr(matched).slice(0,10),documented
-    });
+    const expenses=expenseText?overlapDetails(expenseText,ctx.expenses):{ratio:0,matched:[]};
+    add('expenses','Dépenses & assiette éligible',expenses.ratio,expenseText?'Postes de dépenses rapprochés de l’assiette publiée':'Dépenses éligibles non documentées',expenses.matched,Boolean(expenseText));
 
-    const objective=overlapDetails(objectiveText,description);
-    add('Objectifs & thématiques',22,objective.ratio,objective.ratio>=.72?'Concordance forte':objective.ratio>=.45?'Concordance significative':'Concordance faible',objective.matched,Boolean(objectiveText.trim()));
-
-    const expected=expectedText?overlapDetails(expectedText,description):{ratio:0,matched:[]};
-    add('Projets attendus',18,expected.ratio,expectedText?'Rapprochement avec les projets attendus':'Champ non documenté : exclu du calcul',expected.matched,Boolean(expectedText));
-
-    const expenses=expenseText?overlapDetails(expenseText,expenseQuery):{ratio:0,matched:[]};
-    add('Dépenses éligibles',15,expenses.ratio,expenseText?'Rapprochement des postes de dépenses':'Champ non documenté : exclu du calcul',expenses.matched,Boolean(expenseText));
-
-    const selectionDocumented=Boolean(a.selectionCriteria||a.prerequisites);
-    const sel=selectionDocumented?selectionFit(a,p):{ratio:0,matched:[]};
-    add('Critères de sélection & prérequis',12,sel.ratio,selectionDocumented?'Critères rapprochés des impacts, travaux et maturité':'Critères non documentés : exclus du calcul',sel.matched,selectionDocumented);
+    const selectionText=[a.selectionCriteria,a.prerequisites].filter(Boolean).join(' ');
+    const selection=selectionText?overlapDetails(selectionText,[ctx.anchor,ctx.impacts,ctx.capacity,ctx.maturity].join(' ')):{ratio:0,matched:[]};
+    add('selection','Critères de sélection & prérequis',selection.ratio,selectionText?'Critères de sélection rapprochés du projet':'Critères de sélection non documentés',selection.matched,Boolean(selectionText));
 
     const beneficiaryDocumented=Boolean(String(a.beneficiaries||'').trim()||arr(a.companyCategories).length);
-    const bf=beneficiaryFit(a,p);
-    add('Bénéficiaires & secteur',10,bf,beneficiaryDocumented?(bf>=.8?'Profil entreprise cohérent':bf===0?'Profil incompatible':'Profil à confirmer'):'Bénéficiaires non documentés : exclus du calcul',[],beneficiaryDocumented);
+    const beneficiary=beneficiaryFit(a,p,ctx);
+    add('beneficiary','Bénéficiaire, activité & secteur',beneficiary,beneficiaryDocumented?(beneficiary>=.8?'Profil porteur cohérent':beneficiary<=.2?'Profil porteur peu compatible':'Profil porteur à confirmer'):'Bénéficiaires non documentés',[],beneficiaryDocumented);
 
-    const typeDocumented=Boolean(a.objective||arr(a.themes).length||arr(a.projectsExpected).length);
-    const tf=typeFit(a,p),mf=maturityFit(a,p);
-    add('Typologie & maturité',8,.65*tf+.35*mf,typeDocumented?(tf>=.75?'Typologie bien couverte':'Typologie ou maturité à confirmer'):'Typologie non documentée : exclue du calcul',[],typeDocumented);
+    const maturityDocumented=Boolean(a.objective||arr(a.projectsExpected).length||a.prerequisites||a.selectionCriteria);
+    const maturity=maturityFit(a,p,ctx);
+    add('maturity','Maturité technique & typologie',maturity,maturity>=.8?'Maturité et typologie cohérentes':maturity<=.3?'Maturité peu alignée':'Maturité à confirmer',[],maturityDocumented);
 
-    const financeDocumented=Boolean(
-      a.minimumProjectCost!=null||a.maximumProjectCost!=null||
-      a.aidRate?.min!=null||a.aidRate?.max!=null||a.aidAmount?.min!=null||a.aidAmount?.max!=null||
-      a.aidRate?.raw||a.aidAmount?.raw
-    );
-    const ff=financeFit(a,p);
-    add('Budget & modalités financières',6,ff,financeDocumented?(ff>=.8?'Budget compatible avec les données disponibles':ff===0?'Budget hors assiette connue':'Modalités à sécuriser'):'Modalités financières non documentées : exclues du calcul',[],financeDocumented);
+    const impact=impactFit(a,p,ctx,family);
+    const impactLabel=family==='ADEME'?'Performance environnementale & impacts':family==='BPIFRANCE_FRANCE2030'?'Innovation, retombées & capacité d’exécution':family==='FEDER'?'Impacts, indicateurs & cohérence programme':'Impacts attendus & valeur du projet';
+    add('impacts',impactLabel,impact.ratio,impact.documented?'Impacts rapprochés des attendus du financeur':'Impacts / attendus non documentés',impact.matched,impact.documented);
 
-    const calendarDocumented=Boolean(a.permanent||a.closingDate||a.finalClosingDate||arr(a.deadlines).length);
-    const cf=calendarFit(a,p);
-    add('Calendrier',5,cf,calendarDocumented?(cf===1?'Fenêtre exploitable':cf===0?'Fenêtre non exploitable':'Calendrier à sécuriser'):'Calendrier non documenté : exclu du calcul',[],calendarDocumented);
+    const financeDocumented=Boolean(a.minimumProjectCost!=null||a.maximumProjectCost!=null||a.aidRate?.min!=null||a.aidRate?.max!=null||a.aidAmount?.min!=null||a.aidAmount?.max!=null||a.aidRate?.raw||a.aidAmount?.raw);
+    const finance=financeFit(a,p);
+    add('finance','Budget, intensité & montage financier',finance,financeDocumented?(finance>=.8?'Budget compatible avec les modalités connues':finance===0?'Budget hors assiette connue':'Montage financier à confirmer'):'Modalités financières non documentées',[],financeDocumented);
 
-    const territoryDocumented=Boolean(a.scope);
-    const tr=territoryFit(a,p);
-    add('Territorialité',4,tr,territoryDocumented?(tr===1?'Territoire compatible':tr===0?'Territoire incompatible':'Territoire à confirmer'):'Territoire non documenté : exclu du calcul',[],territoryDocumented);
+    const accessDocumented=Boolean(a.scope||a.permanent||a.closingDate||a.finalClosingDate||arr(a.deadlines).length);
+    const access=accessFit(a,p);
+    add('access','Territoire, calendrier & accessibilité',access,access>=.85?'Accès temporel et territorial cohérent':access<=.25?'Accès peu compatible':'Accès à confirmer',[],accessDocumented);
 
     const documentedWeight=dims.filter(d=>d.documented).reduce((s,d)=>s+d.max,0);
     const earned=dims.filter(d=>d.documented).reduce((s,d)=>s+d.score,0);
     const normalized=documentedWeight?100*earned/documentedWeight:0;
-    // Un dossier documentaire incomplet ne reçoit pas artificiellement des points.
-    // La normalisation évite de confondre "non documenté" avec "non pertinent",
-    // puis un facteur de couverture empêche une fiche très pauvre d'atteindre 100.
-    const coverageFactor=.75+.25*(documentedWeight/100);
+    const coverageFactor=.72+.28*(documentedWeight/100);
     const score=Math.round(Math.min(100,normalized*coverageFactor));
-    return{score,dims,checks:dims.length,documentedWeight,coverageFactor:Math.round(coverageFactor*100)};
+    return{
+      score,dims,checks:dims.length,documentedWeight,
+      coverageFactor:Math.round(coverageFactor*100),
+      family,profileLabel:PROFILE_LABEL[family]||PROFILE_LABEL.GENERAL,
+      basis:String(p.summary||'').trim().length>=40?'description projet':'activité / NAF / thématiques'
+    };
   }
-  root.LEYTON_SCORING={relevance,tokens,norm,conceptSet,overlapDetails,typeFit,maturityFit,version:'12.4.0'};
+
+  root.LEYTON_SCORING={relevance,tokens,norm,conceptSet,overlapDetails,detectFamily,nafText,projectContext,version:'12.5.0'};
 })(typeof globalThis!=='undefined'?globalThis:this);
