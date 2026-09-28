@@ -33,7 +33,7 @@ function loadProjectState(){
 const state={route:'home',studyStep:1,lib:[],meta:{},coverage:[],changes:[],sources:[],readiness:null,project:loadProjectState(),lastResults:[]};
 const today=()=>new Date().toISOString().slice(0,10);
 const daysUntil=v=>v?Math.floor((new Date(v+'T23:59:59')-new Date(today()+'T00:00:00'))/86400000):null;
-const bootstrap=()=>window.__LEYTON_RADAR_BOOTSTRAP__||window.__FUNDING RADAR_BOOTSTRAP__||null;
+const bootstrap=()=>window.__LEYTON_RADAR_BOOTSTRAP__||window.__QUALIFUND_BOOTSTRAP__||null;
 async function fetchJsonStrict(url){
   const r=await fetch(url,{cache:'no-store',headers:{Accept:'application/json'}});
   if(!r.ok)throw new Error(`HTTP ${r.status} — ${url}`);
@@ -379,7 +379,7 @@ function exportLibraryCsv(rows){
   }
   const blob=new Blob(['\ufeff'+lines.join('\r\n')],{type:'text/csv;charset=utf-8'});
   const href=URL.createObjectURL(blob),a=document.createElement('a');
-  a.href=href;a.download=`FUNDING RADAR_bibliotheque_${today()}.csv`;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(href),1000);
+  a.href=href;a.download=`FUNDING_RADAR_bibliotheque_${today()}.csv`;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(href),1000);
 }
 function library(){
   const q=window.__q||'',region=window.__reg||'',kind=window.__kind||'',theme=window.__theme||'',instrument=window.__instrument||'',time=window.__time||'',selectedCategories=window.__categories||[];
