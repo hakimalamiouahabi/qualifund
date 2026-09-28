@@ -5,6 +5,24 @@ function genericTitle(v=''){
   const t=String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[’']/g,"'").replace(/\s+/g,' ').trim();
   return !t||t.length<4||/(document officiel|desole.*offre.*plus disponible|offre.*plus disponible|page introuvable|page non trouvee|erreur 404|404 not found|access denied|forbidden|service indisponible|site en maintenance)/i.test(t);
 }
+function officialUrlRank(raw=''){
+  if(!/^https?:/i.test(String(raw||'')))return 0;
+  try{
+    const u=new URL(raw),host=u.hostname.toLowerCase(),p=(u.pathname||'/').toLowerCase().replace(/\/+$/,'')||'/';
+    const generic=
+      /data\.aides-entreprises\.fr$/.test(host)&&(/^\/stock$/.test(p)||/^\/files\/aides\.json$/.test(p)) ||
+      ['/','/catalogue','/aides','/les-aides','/vos-aides','/appels','/fr/appels','/nos-appels-a-projets-concours'].includes(p);
+    if(generic)return 1;
+    if(/\.(pdf|docx?|xlsx?)(?:$|\?)/i.test(u.pathname))return 2;
+    return 3;
+  }catch{return 0}
+}
+function bestOfficialPage(a,b){
+  const ra=officialUrlRank(a),rb=officialUrlRank(b);
+  if(rb>ra)return b;
+  return a||b||null;
+}
+
 function bestTitle(a,b,ta='?',tb='?'){
   if(genericTitle(b))return a;
   if(genericTitle(a))return b;
@@ -16,7 +34,7 @@ export function mergeAid(base,incoming){
   out.title=bestTitle(base.title,incoming.title,ta,tb);
   // Une annexe PDF de niveau A enrichit la preuve mais ne remplace pas la page
   // officielle du dispositif déjà connue.
-  out.officialPage=base.officialPage||incoming.officialPage;
+  out.officialPage=bestOfficialPage(base.officialPage,incoming.officialPage);
   for(const k of ['objective','beneficiaries','eligibleExpenses','excludedExpenses','prerequisites','selectionCriteria','disbursementTerms','repaymentTerms','stateAidRules','applicationProcess','contact','closingDate','finalClosingDate','openingDate','programme','operator','minimumProjectCost','maximumProjectCost'])out[k]=bestScalar(base[k],incoming[k],ta,tb);
   for(const k of ['companyCategories','themes','regions','aidTypes','projectsExpected','deadlines','attentionPoints','cdcLinks','sourceLinks','regulationLinks','formLinks','funder','sourceAliases'])out[k]=uniq([...arr(base[k]),...arr(incoming[k])].map(x=>typeof x==='object'?JSON.stringify(x):x)).map(x=>{try{return x.startsWith?.('{')?JSON.parse(x):x}catch{return x}});
   if(incoming.aidRate && ((tierRank[tb]||0)>=(tierRank[ta]||0)))out.aidRate=incoming.aidRate;
