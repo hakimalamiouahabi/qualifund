@@ -1,6 +1,10 @@
 name: Importer la release QUALIFUND
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/import-release.yml'
 permissions:
   contents: write
 jobs:
