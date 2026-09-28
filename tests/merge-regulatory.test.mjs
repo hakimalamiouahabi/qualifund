@@ -17,3 +17,12 @@ test('la fusion conserve les champs réglementaires enrichis de meilleure preuve
   assert.deepEqual(out.aidSplit,inc.aidSplit);
   assert.equal(out.permanent,false);
 });
+
+test('une annexe PDF générique ne remplace ni le nom ni la page officielle du dispositif',()=>{
+  const base={title:'Projet d’innovation France 2030',officialPage:'https://example.fr/appel',verification:{sourceTier:'B',fieldEvidence:[]}};
+  const pdf={title:'Document officiel',officialPage:'https://example.fr/reglement.pdf',objective:'Texte enrichi',verification:{sourceTier:'A',fieldEvidence:[]}};
+  const out=mergeAid(base,pdf);
+  assert.equal(out.title,'Projet d’innovation France 2030');
+  assert.equal(out.officialPage,'https://example.fr/appel');
+  assert.equal(out.objective,'Texte enrichi');
+});
