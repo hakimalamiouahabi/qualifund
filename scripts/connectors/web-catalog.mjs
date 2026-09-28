@@ -20,7 +20,7 @@ async function rssLinks(source){if(!source.rssUrl)return[];try{return parseRssLi
 async function extractOne(source,l){
   const h=await getHtml(source,l.url);
   const a=extractFromHtml(h,{url:l.url,sourceTier:'B',scope:source.scope==='France'?'NATIONAL':'REGIONAL',region:source.scope==='France'?null:source.scope});
-  if(!a.title||a.title.length<4)return null;
+  if((!a.title||a.title.length<4)&&l.label&&cleanTitle(l.label).length>=4)a.title=cleanTitle(l.label);if(!a.title||a.title.length<4)return null;
   a.id=`${source.id}_${Buffer.from(l.url).toString('base64url').slice(0,28)}`;
   a.canonicalId=a.id;
   a.sourceId=source.id;
