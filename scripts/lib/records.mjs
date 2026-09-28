@@ -28,8 +28,7 @@ export function fromAidesEntreprises(raw,audit=null){
   const nids=new Set(natures.map(x=>String(x.id_typ)));
   const pids=new Set(asArr(raw?.cache_indexation?.profils).map(x=>String(x.id_tut)));
   const regions=uniq(asArr(raw?.cache_indexation?.territoires).map(x=>REGION_MAP[x.ter_libelle]).filter(Boolean));
-  if(!(pids.has('4')||pids.has('10')))return reject('profileNotIndexed');
-  if(!regions.length)return reject('regionNotMapped');
+  // Aides Entreprises est déjà une base dédiée aux entreprises : l'absence d'un profil\n  // de taille explicite ne doit pas supprimer la fiche de la bibliothèque. Les profils\n  // servent uniquement à alimenter les filtres PME/ETI/GE/Startup.\n  if(!regions.length)return reject('regionNotMapped');
 
   const natureLabels=natures.map(x=>String(x.typ_libelle||''));
   const srcs=asArr(raw?.complements?.source).filter(x=>x?.lien).map(x=>({label:htmlToText(x.texte||'Source officielle'),url:x.lien,date:x.date||null}));
