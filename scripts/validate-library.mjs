@@ -15,7 +15,7 @@ function basicValidate(a){
   if(typeof a?.title!=='string'||!a.title.trim()) errors.push('title: non-empty string required');
   if(!['NATIONAL','REGIONAL'].includes(a?.scope)) errors.push('scope: invalid enum');
   if(!Array.isArray(a?.regions)||a.regions.some(x=>typeof x!=='string')) errors.push('regions: string[] required');
-  const aidTypes=new Set(['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO']);
+  const aidTypes=new Set(['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO','PRET','BONIFICATION_INTERET','GARANTIE','ALLEGEMENT_FISCAL','PARTICIPATION_CAPITAL','APPEL_A_PROJET','ACCOMPAGNEMENT_GRATUIT','CREDIT_BAIL','AUTRE']);
   if(!Array.isArray(a?.aidTypes)||a.aidTypes.some(x=>!aidTypes.has(x))) errors.push('aidTypes: invalid enum');
   const cats=new Set(['STARTUP','PME','ETI','GE']);
   if(!Array.isArray(a?.companyCategories)||a.companyCategories.some(x=>!cats.has(x))) errors.push('companyCategories: invalid enum');

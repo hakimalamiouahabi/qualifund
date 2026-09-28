@@ -11,10 +11,10 @@ test('normalisation : accepte uniquement les prêts explicitement à taux zéro 
   assert.deepEqual(normalizeAidTypes('Prêt bancaire à 3,8 %'),[]);
 });
 
-test('Aides Territoires : un loan n’entre que si le texte prouve le taux zéro',()=>{
+test('Aides Territoires : un loan est classé PTZ seulement si le texte prouve le taux zéro',()=>{
   const base={id:1,slug:'ptz',url:'/aides/ptz/',name:'Prêt innovation à taux zéro',description:'Prêt sans intérêt pour un projet innovant.',eligibility:'PME entreprises privées',perimeter:'Occitanie',targeted_audiences:['Entreprises privées'],aid_types:['Prêt'],loan_amount:'50 000 €',submission_deadline:'2027-12-31'};
   const a=fromAidesTerritoires(base);assert.ok(a);assert.deepEqual(a.aidTypes,['PRET_TAUX_ZERO']);
-  assert.equal(fromAidesTerritoires({...base,name:'Prêt croissance',description:'Prêt avec intérêts au taux de 3,5 %'}),null);
+  const classic=fromAidesTerritoires({...base,name:'Prêt croissance',description:'Prêt avec intérêts au taux de 3,5 %'});assert.ok(classic);assert.deepEqual(classic.aidTypes,['PRET']);
 });
 
 test('Aides Entreprises : PTZ recommandé, prêt classique conservé seulement dans la bibliothèque',()=>{
