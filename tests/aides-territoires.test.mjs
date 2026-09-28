@@ -13,8 +13,9 @@ test('Aides Territoires exclut les aides réservées aux collectivités',()=>{
   assert.equal(fromAidesTerritoires({...base,targeted_audiences:['Communes']}),null);
 });
 
-test('Aides Territoires exclut l’ingénierie hors instruments Qualifund',()=>{
-  assert.equal(fromAidesTerritoires({...base,aid_types:['Ingénierie technique']}),null);
+test('Aides Territoires conserve l’ingénierie dans la bibliothèque exhaustive',()=>{
+  const a=fromAidesTerritoires({...base,aid_types:['Ingénierie technique']});
+  assert.ok(a);assert.ok(a.aidTypes.includes('ACCOMPAGNEMENT_GRATUIT'));
 });
 
 test('registre bascule Aides Territoires en ingestion avec plancher prudent',()=>{
