@@ -92,6 +92,8 @@ jobs:
         run: npm run build:index
       - name: Auditer l'ingestion
         run: npm run audit:ingestion
+      - name: Auditer les critères et leurs preuves officielles
+        run: npm run audit:criteria
       - name: Tests unitaires
         run: npm test
       - name: Validation schéma
