@@ -449,26 +449,6 @@
       "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
     },
     {
-      "id": "les_aides",
-      "name": "Les-aides.fr — contrôle couverture",
-      "scope": "France",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://les-aides.fr/",
-      "official": false,
-      "priority": 9
-    },
-    {
-      "id": "infogreffe",
-      "name": "Infogreffe — Mes aides publiques — contrôle couverture",
-      "scope": "France",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://mesaidespubliques.infogreffe.fr/aides/projets/financement-innovation/etat",
-      "official": false,
-      "priority": 9
-    },
-    {
       "id": "anr_france2030",
       "name": "ANR — France 2030",
       "scope": "France",
