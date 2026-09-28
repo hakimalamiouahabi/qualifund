@@ -1,5 +1,5 @@
 import * as cheerio from 'cheerio';
-import pdf from 'pdf-parse';
+import pdf from 'pdf-parse/lib/pdf-parse.js';
 import { cleanTitle, detectCurrencyAmounts, detectRates, normalizeAidTypes, normalizeCompanyCategories, safeUrl, uniq, norm } from './utils.mjs';
 import { inferThemes } from './concepts.mjs';
 import { extractCalendar } from './calendar.mjs';
