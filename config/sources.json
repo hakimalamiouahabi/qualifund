@@ -33,6 +33,7 @@
       "type": "web",
       "strategy": "catalog-html",
       "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue",
+      "rssUrl": "https://agirpourlatransition.ademe.fr/entreprises/rss/appels-a-projet",
       "linkInclude": "/entreprises/aides-financieres/",
       "official": true,
       "priority": 0,
