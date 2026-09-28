@@ -1,9 +1,9 @@
 {
   "name": "qualifund",
-  "version": "12.4.0",
+  "version": "12.5.0",
   "private": true,
   "type": "module",
-  "description": "QUALIFUND — bibliothèque officielle et évaluation prudente des aides publiques",
+  "description": "FUNDING RADAR — moteur de cartographie et qualification des financements publics",
   "scripts": {
     "update": "node scripts/update-library.mjs",
     "update:full": "node scripts/update-library.mjs --full",
