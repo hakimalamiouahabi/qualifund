@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T10:45:13.363Z",
+  "generatedAt": "2026-09-28T14:30:08.964Z",
   "version": "12.2.0",
   "gates": [
     {
@@ -18,19 +18,19 @@
       "id": 3,
       "name": "Collecte réelle des sources",
       "status": "PARTIAL",
-      "detail": "Ingestion: 111/111 exécutées, 74 succès, 4214 imports bruts. Contrôles: 34/34. Corpus hors bootstrap Aides Entreprises: 73. Préflight réseau: 136/145 accessibles/protégées."
+      "detail": "Ingestion: 111/111 exécutées, 77 succès, 5900 imports bruts. Contrôles: 34/34. Corpus hors bootstrap Aides Entreprises: 172. Préflight réseau: 137/145 accessibles/protégées."
     },
     {
       "id": 4,
       "name": "Bibliothèque réglementaire vérifiée",
       "status": "PARTIAL",
-      "detail": "5/749 fiches actives strictement VÉRIFIÉES ; intégrité recalculée 5/5. Les priorités fermes sont limitées aux fiches VÉRIFIÉES ; les autres restent en pistes à sécuriser."
+      "detail": "5/2185 fiches J+1 strictement VÉRIFIÉES ; cible > 2 001, soit minimum 2002 : 2185/2002 au 2026-09-29. Sont comptées les aides retrouvées ACTIVE sans échéance publiée, les aides permanentes et celles avec clôture documentée >= J+1 ; STALE et ARCHIVE sont exclues. Intégrité recalculée 5/5."
     },
     {
       "id": 5,
       "name": "Extraction CdC / preuves par champ",
       "status": "WAIT_LIVE",
-      "detail": "Preuves A/B complètes sur les 8 champs critiques : 5/5 fiches VÉRIFIÉES. File de remédiation synchronisée : oui. Couverture globale indicative : 103/749 avec CdC/règlement."
+      "detail": "Preuves A/B complètes sur les 8 champs critiques : 5/5 fiches VÉRIFIÉES. File de remédiation synchronisée : oui. Couverture J+1 indicative : 207/2185 avec CdC/règlement."
     },
     {
       "id": 6,
@@ -68,18 +68,21 @@
     "ingestiveSources": 111,
     "controlSources": 34,
     "sourcesInLastCycle": 145,
-    "sourcesSuccess": 108,
+    "sourcesSuccess": 111,
     "ingestiveExecuted": 111,
-    "ingestiveSuccess": 74,
-    "ingestiveImported": 4214,
+    "ingestiveSuccess": 77,
+    "ingestiveImported": 5900,
     "controlExecuted": 34,
-    "nonBootstrapFiches": 73,
-    "activeFiches": 749,
+    "nonBootstrapFiches": 172,
+    "activeFiches": 2187,
+    "jPlusOneDate": "2026-09-29",
+    "jPlusOneActiveFiches": 2185,
+    "volumeTarget": 2002,
     "verifiedFiches": 5,
     "verifiedIntegrity": 5,
     "verifiedEvidenceIntegrity": 5,
-    "withCdc": 103,
-    "withDeadline": 175,
+    "withCdc": 207,
+    "withDeadline": 411,
     "consultantCases": 5,
     "uatTotal": 5,
     "companySmokeOk": true,

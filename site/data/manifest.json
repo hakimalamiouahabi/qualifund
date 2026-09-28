@@ -1,18 +1,67 @@
 {
   "version": "12.2.0",
-  "generatedAt": "2026-09-28T10:43:36.188Z",
+  "generatedAt": "2026-09-28T14:28:24.620Z",
   "repositoryUrl": "https://github.com/hakimalamiouahabi/qualifund",
   "sourceCount": 145,
-  "sourcesOk": 108,
-  "sourcesFailed": 37,
-  "libraryCount": 760,
-  "activeCount": 749,
-  "archivedCount": 11,
-  "aapCount": 81,
+  "sourcesOk": 111,
+  "sourcesFailed": 34,
+  "libraryCount": 2202,
+  "activeCount": 2187,
+  "jPlusOneDate": "2026-09-29",
+  "jPlusOneActiveCount": 2185,
+  "archivedCount": 15,
+  "aapCount": 155,
   "verifiedCount": 5,
-  "withCdc": 103,
-  "withDeadline": 175,
+  "withCdc": 207,
+  "withDeadline": 411,
   "fullRefresh": true,
-  "contentSha256": "c69fb099660ac903b65521f146f8412f0c1ba834c9fbd0d1ea02ddce552a9372",
-  "count": 760
+  "libraryMode": "BROAD_ENTERPRISE_CATALOG",
+  "libraryInstruments": [
+    "ACCOMPAGNEMENT_GRATUIT",
+    "ALLEGEMENT_FISCAL",
+    "APPEL_A_PROJET",
+    "AUTRE",
+    "AVANCE_REMBOURSABLE",
+    "CREDIT_BAIL",
+    "GARANTIE",
+    "PARTICIPATION_CAPITAL",
+    "PRET",
+    "PRET_TAUX_ZERO",
+    "SUBVENTION"
+  ],
+  "recommendationInstruments": [
+    "SUBVENTION",
+    "AVANCE_REMBOURSABLE",
+    "PRET_TAUX_ZERO"
+  ],
+  "targetInstrumentCount": 1917,
+  "categoryCounts": {
+    "STARTUP": 88,
+    "PME": 2036,
+    "ETI": 570,
+    "GE": 561
+  },
+  "scopeCounts": {
+    "NATIONAL": 397,
+    "REGIONAL": 1790
+  },
+  "instrumentCounts": {
+    "ACCOMPAGNEMENT_GRATUIT": 184,
+    "ALLEGEMENT_FISCAL": 506,
+    "APPEL_A_PROJET": 87,
+    "AUTRE": 54,
+    "AVANCE_REMBOURSABLE": 170,
+    "CREDIT_BAIL": 63,
+    "GARANTIE": 422,
+    "PARTICIPATION_CAPITAL": 181,
+    "PRET": 417,
+    "PRET_TAUX_ZERO": 292,
+    "SUBVENTION": 1618
+  },
+  "targetRule": "ACTIVE_SANS_ECHEANCE_OU_PERMANENT_OU_CLOTURE_GTE_J_PLUS_1",
+  "targetCount": 2002,
+  "targetReached": true,
+  "coverageGap": 0,
+  "contentSha256": "594d0f74ccbd84d44cbbffe11345a4c5f494129c971ec9c00e9ab50dad99eb28",
+  "count": 2202
 }

@@ -1,415 +1,1515 @@
 # LEYTON RADAR — rapport quotidien 2026-09-28
 
-Généré : 2026-09-28T10:45:07.207Z
+Généré : 2026-09-28T14:29:58.998Z
 
-- Bibliothèque avant : **678**
-- Bibliothèque après : **760**
-- Nouvelles aides / AAP : **111**
-- Dispositifs modifiés : **649**
-- Clos / obsolètes / disparus : **32**
+- Bibliothèque avant : **760**
+- Bibliothèque après : **2202**
+- Nouvelles aides / AAP : **1444**
+- Dispositifs modifiés : **231**
+- Clos / obsolètes / disparus : **4**
 
 ## Nouvelles aides retenues
-- **Accueil | L'Europe s'engage en France, le portail des Fonds européens** — 2032-12-31 — https://www.europe-en-france.gouv.fr/fr
-- **Agir en Pays de la Loire** — échéance à vérifier — https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/agir-pdl?utm_campaign=openData
-- **Aide à l'hôtellerie indépendante** — échéance à vérifier — https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/hotellerie-independante-na?utm_campaign=openData
-- **Aide à l’hôtellerie indépendante en Bourgogne-Franche-Comté** — échéance à vérifier — https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/hotellerie-independante-bfc?utm_campaign=openData
-- **Aide à l'implantation** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/spip.php?page=dispositif&id_dispositif=683
-- **Aide à l'investissement des transitions** — échéance à vérifier — https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/aide-tpe-transition-na?utm_campaign=openData
-- **Aide à la réalisation du contrat pour la mixité des emplois et l'égalité professionnelle** — échéance à vérifier — http://circulaire.legifrance.gouv.fr/pdf/2012/02/cir_34661.pdf
-- **Aide au déploiement de flottes hydrogène** — échéance à vérifier — https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/deploiement-flottes-hydrogene?utm_campaign=openData
-- **Aide au financement en Occitanie** — échéance à vérifier — https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/aide-financement-occitanie?utm_campaign=openData
-- **Aide aux campings indépendants de Bourgogne-Franche-Comté** — échéance à vérifier — https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/camping-independant-bfc?utm_campaign=openData
-- **Aide aux campings indépendants de Nouvelle-Aquitaine** — échéance à vérifier — https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/camping-independant-na?utm_campaign=openData
-- **Aide aux plus démunis** — 2027-03-01 — https://www.franceagrimer.fr/aides/par-programme/aide-aux-plus-demunis
-- **Aide aux travaux de rénovation énergétique** — échéance à vérifier — https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/perf-crise-energetique-aura?utm_campaign=openData
-- **Aide régionale au développement de produits touristiques** — échéance à vérifier — https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/aide-tourisme-guadeloupe?utm_campaign=openData
-- **Aide travaux hébergements touristiques** — échéance à vérifier — https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/aide-travaux-tourisme-aura?utm_campaign=openData
-- **Aides et Dispositifs - Hauts-de-France Entreprises** — échéance à vérifier — https://entreprises.hautsdefrance.fr/aides-et-dispositifs
-- **Allocation de chômage partiel** — échéance à vérifier — https://travail-emploi.gouv.fr/emploi-et-insertion/accompagnement-des-mutations-economiques/activite-partielle-chomage-partiel/faq-chomage-partiel-activite-partielle
-- **AMI accompagnement à la modernisation et transition écologique des PME et ETI industrielles** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/616
-- **AMI Fonds de capital investissement ciblant les structures de la Femtech** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/812
-- **AMI Industrie du Futur** — échéance à vérifier — ftp://ftpdata.paysdelaloire.fr/Documents_aides/Subvention,Pret_Dossier-de-candidature-AMI-IDF-2026-v2_e6325e7c_PAPIER_INDIVIDUEL.doc
-- **AMI pour la sélection d'un fonds ciblant les structures de l'ESS et à impact en phase d'amorçage** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/627
-- **AMI Questions d'Intérêt Majeur (QIM)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/313
-- **AMI solutions digitales à destination des collectivités pour le développement des commerces** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/358
-- **Amorçage Start-up** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/amorcage-start
-- **APPEL A MANIFESTATION D’INTERET - Activité économique de surf sur l'île de loisirs de Vaires-Torcy** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/279
-- **Appel à manifestation d'intérêt - Valorisation du site de La Boissière-École** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/614
-- **Appel à projets " Île-de-France BTP circulaire"** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/804
-- **Appel à projets « Biodiversité en Pays de la Loire 2026 » - Groupe Régional des Fondations en faveur de la Biodiversité** — échéance à vérifier — ftp://ftpdata.paysdelaloire.fr/Documents_aides/Subvention_V2Formulaire-AAP_5ec780be_PAPIER_INDIVIDUEL.docx
-- **Appel à projets « Île-de-France zéro plastique »** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/697
-- **Appel à projets collaboratifs - Innovation de Rupture et Résilience Industrielle (IRRI)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/851
-- **Appel à projets École-Entreprise : partenariats associatifs** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/808
-- **Appel à projets Ingénierie et Formations professionnelles (IFP Île-de-France)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/305
-- **Appels à projets et concours | Bpifrance** — 2026-12-01 — https://www.bpifrance.fr/nos-appels-a-projets-concours#main-content
-- **Avance remboursable - Consolidation financière de l’entreprise** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/290
-- **Booster Exportation - Compte Individuel Export (CIE)** — échéance à vérifier — https://www.teamfrance-export.fr/hautsdefrance/solutions/le-compte-individuel-export---cie1
-- **Booster Transformation Rev3** — échéance à vérifier — https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/booster-transformation-rev-3?utm_campaign=openData
-- **CEDRE Ambition** — échéance à vérifier — https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/cedre-ambition?utm_campaign=openData
-- **CEDRE Investissement** — échéance à vérifier — https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/cedre-investissement?utm_campaign=openData
-- **CEDRE Premier Pas** — échéance à vérifier — https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/cedre-premier-pas?utm_campaign=openData
-- **Diag Perf'Immo** — échéance à vérifier — https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/diag-perf-immo?utm_campaign=openData
-- **Dispositif "Je recrute mon premier docteur"** — échéance à vérifier — https://aides.regionguadeloupe.fr/Je-recrute-mon-premier-docteur
-- **Document officiel** — 2027-12-31 — https://www.bourgognefranchecomte.fr/sites/default/files/2018-12/D%C3%A9cret%20mai%202017_%20donn%C3%A9es%20conv%20subventions.pdf
-- **Document officiel** — 2022-09-03 — https://delibinternet.hautsdefrance.fr/Docs/CommissionPermanente/2025/12/11/DELIBERATION/2025.01479_deliberation.PDF
-- **Document officiel** — 2028-12-31 — https://les-aides.nouvelle-aquitaine.fr/system/files/specific_pj_files/1_formulaire_D1_equipes_27.pdf
-- **Document officiel** — 2026-05-22 — https://www.paysdelaloire.fr/sites/default/files/2026-07/A5-flyer-Campus-a2pas-WEB.pdf
-- **Document officiel** — 2029-12-31 — https://www.maregionsud.fr/fileadmin/user_upload/1-FICHIERS/2-DOCUMENTS/Education-lycee-Formation/Communes_region_Loi_Montagne_-_Region_Sud.pdf
-- **Document officiel** — 2017-09-30 — https://www.ctguyane.fr/www/wp-content/uploads/2026/02/festivart-soutien-aux-festivals.pdf
-- **Document officiel** — 2019-04-30 — https://www.collectivitedemartinique.mq/wp-content/uploads/2026/07/DOSSIER-DE-CANDIDATURE-Formation-a-distance-2026-2027.pdf
-- **Document officiel** — 2022-06-01 — https://demarche.numerique.gouv.fr/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MTc1OTgyNjY0LCJleHAiOiIyMDI2LTA5LTI4VDExOjIwOjE0LjE1NVoiLCJwdXIiOiJibG9iX2lkIn19--393a87d375276f124d69831e8fecdc059a768d3a/AAPFormationProfessionnelle_FRANCE2030%20R%C3%A9gionalis%C3%A9_Auvergne%20Rh%C3%B4ne%20Alpes_Cahier%20des%20charges.pdf?disposition=attachment
-- **Document officiel** — 2026-06-30 — https://inno-avenir.bretagne.bzh/storage/sites/14/2026/01/2025-12-23-CdC_AAP_PIA4_InnoAvenir_filieres-Bretagne-maj-rev-ddsi.pdf
-- **Document officiel** — 2026-07-24 — https://www.europeocentre-valdeloire.eu/wp-content/uploads/2026/06/Trophees_FSE__2026___Reglement_1-3.pdf
-- **Document officiel** — 2026-09-30 — https://europa.corsica/wp-content/uploads/2026/03/AAP_DATA_CORSICA_Cahier_des_charges.pdf
-- **Document officiel** — 2026-12-31 — https://beeurope.grandest.fr/wp-content/uploads/2026/03/etapes.pdf
-- **Document officiel** — échéance à vérifier — https://www.europe-guadeloupe.fr/wp-content/uploads/2024/10/AAP-FEDER-FSE-2021-2027-octobre-2024.pdf
-- **Document officiel** — 2025-09-26 — https://www.adim-mayotte.fr/uploads//Guide%20mesures%20de%20soutien%20Mayotte.pdf
-- **Espace Usagers** — échéance à vérifier — https://les-aides.paysdelaloire.fr/aides/#/prod/connecte/dashboard/accueil
-- **Etre conseillé sur notre activité de transformation et de commercialisation** — 2026-08-31 — https://www.auvergnerhonealpes.fr/aides/etre-conseille-sur-notre-activite-de-transformation-et-de-commercialisation
-- **Étude "Alimentation durable"** — échéance à vérifier — https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/etude-alimentation-durable?utm_campaign=openData
-- **Étude "projet de recherche"** — échéance à vérifier — https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/etude-projet-de-recherche?utm_campaign=openData
-- **Europe en Région Sud** — échéance à vérifier — https://europe.maregionsud.fr/
-- **FASEP** — échéance à vérifier — https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/fasep?utm_campaign=openData
-- **FEADER - Investissements agricoles - Adaptation au changement climatique et Transition AAP 2026** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/832
-- **FEADER - Soutien aux investissements agricoles - Diversification AAP 2026** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/830
-- **FEADER - Soutien aux investissements agricoles - Modernisation des exploitations AAP 2026** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/831
-- **FEDER 2014 – 2020** — 2019-04-30 — https://www.europe-martinique.com/fonds-europeens-de-developpement-regional/
-- **FEDER- FSE+ REGION GUADELOUPE** — échéance à vérifier — https://www.europe-guadeloupe.fr/financement/feder-fse-region-guadeloupe_accompagnement-creation-reprise/
-- **Fonds de prêts d'honneur Néoterra** — échéance à vérifier — https://www.initiative-nouvelleaquitaine.fr/reprise-neoterra.html
-- **Fonds local pour l’adaptation en Guadeloupe (FLAG) 2.0** — 2026-11-10 — https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/fonds-local-pour-ladaptation-en-guadeloupe-flag-20
-- **FOSTER Région Occitanie — Prêt innovation à taux 0%** — échéance à vérifier — https://www.laregion.fr/foster
-- **Guide des aides - Région Hauts-de-France** — échéance à vérifier — http://guide-aides.hautsdefrance.fr/
-- **Impulsion Environnement** — échéance à vérifier — https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/impulsion-environnement?utm_campaign=openData
-- **Investissement "Chaleur bois"** — échéance à vérifier — https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/investissement-chaleur-bois?utm_campaign=openData
-- **Investissement "PAC solaire"** — échéance à vérifier — https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/investissement-pac-solaire?utm_campaign=openData
-- **Investissement "réemploi réutilisation réparation"** — échéance à vérifier — https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/investissement-reemploi-reutilisation-reparation?utm_campaign=openData
-- **Investissement "solaire thermique Outre-mer"** — échéance à vérifier — https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/investissement-solaire-thermique-outre-mer?utm_campaign=openData
-- **Investissement "Solaire thermique"** — échéance à vérifier — https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/investissement-solaire-thermique?utm_campaign=openData
-- **Investissement contre le gaspillage alimentaire** — échéance à vérifier — https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/investissement-contre-le-gaspillage-alimentaire?utm_campaign=openData
-- **Mission de Conseil RSE** — échéance à vérifier — https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/mission-conseil-rse?utm_campaign=openData
-- **Nature ta ville** — échéance à vérifier — https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/nature-ta-ville?utm_campaign=openData
-- **Pack relocalisation - Aide à la formation des salariés** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/pack-relocalisation-former-les-salaries
-- **Pass Start Up** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/pass-start
-- **Pass Transformation Ecologique** — échéance à vérifier — https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/pass-transformation-ecologique?utm_campaign=openData
-- **Plan d'aide au report modal (PARM)** — échéance à vérifier — https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/parm-vnf?utm_campaign=openData
-- **Plan Solaire : Paré pour le solaire** — échéance à vérifier — https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/solaire-ready?utm_campaign=openData
-- **Plan Solaire Sud PV Plus** — échéance à vérifier — https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/smart-pv?utm_campaign=openData
-- **Prêt d’amorçage Grand Est** — échéance à vérifier — https://www.grandest.fr/vos-aides-regionales/pret-amorcage/
-- **Prêt d'honneur Créalia** — échéance à vérifier — https://www.crealia.org/
-- **Prêt d'honneur Création Reprise** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides
-- **Prêt d'honneur HODEFI** — échéance à vérifier — https://www.hodefi.fr/
-- **Prêt d'honneur IMACréa** — échéance à vérifier — https://www.ima.mq/
-- **Prêt d'honneur Indre Initiative** — échéance à vérifier — http://www.initiative-indre.com/
-- **Prêt d'honneur Initiative Guadeloupe** — échéance à vérifier — http://www.initiative-guadeloupe.fr/
-- **Prêt d'honneur Initiative Réunion** — échéance à vérifier — http://www.initiative-reunion.fr/le-pret-d-honneur-alize.html
-- **Prêt d’Honneur Innovation** — échéance à vérifier — https://www.aquiti.fr/metiers/pret-dhonneur
-- **Prêt d’honneur Occitanie Transmission** — échéance à vérifier — http://www.initiative-occitanie.fr/le-pret-dhonneur-occitanie-transmission.html
-- **Prêt d'honneur Pays de La Loire transmission-reprise** — échéance à vérifier — http://www.initiative-paysdelaloire.fr/pays-de-la-loire-transmission-reprise.html
-- **Prêt d'honneur pour l'amorçage régional (PHAR) Bretagne** — échéance à vérifier — https://www.bretagne.bzh/aides/fiches/pret-honneur-amorcage-regional-phar-bretagne/
-- **Prêt d'honneur Réseau Entreprendre Bretagne** — échéance à vérifier — https://www.reseau-entreprendre.org/bretagne/
-- **Prêt d'honneur Réseau Entreprendre Guadeloupe** — échéance à vérifier — https://www.reseau-entreprendre.org/guadeloupe/
-- **Prêt d'honneur Réseau Entreprendre Guyane** — échéance à vérifier — https://www.reseau-entreprendre.org/guyane/
-- **Prêt d'honneur Réseau Entreprendre Martinique** — échéance à vérifier — https://www.reseau-entreprendre.org/martinique/
-- **Prime Jeune** — échéance à vérifier — https://www.adie.org/a-la-une/actualite/la-prime-de-1-000-euros-pour-les-jeunes-entrepreneurs-comment-ca-marche/
-- **Priorités régionales d'interventions touristiques** — échéance à vérifier — https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/prit-hdf?utm_campaign=openData
-- **Sites touristiques exemplaires** — échéance à vérifier — https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/sites-touristiques-exemplaires?utm_campaign=openData
-- **Soutien au photovoltaïque en Grand Est** — échéance à vérifier — https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/soutien-pv-grand-est?utm_campaign=openData
-- **Soutien au thermalisme et au bien être** — échéance à vérifier — https://www.grandest.fr/vos-aides-regionales/thermalisme-bien-etre/
-- **Subvention pour la mise en place d'un abri sur un point d'arrêt de ligne scolaire** — échéance à vérifier — ftp://ftpdata.paysdelaloire.fr/Documents_aides/_SUBVENTION-POUR-LA-MISE-EN-PLACE-DUN-ABRI-SUR-UN-_c1dd2988_RI.pdf
-- **Subvention Prévention TPE - Locaux + sûrs** — 2028-10-15 — https://www.carsat-sudest.fr/home/entreprises/prevenir-vos-risques-pros/financer-vos-actions-de-preventi/subv-1-49-salaries/locaux-plus-surs.html
-- **Sud Prévention TPE-PME** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/sud-prevention-tpe-pme
-- **Toutes les aides** — 2026-08-08 — https://aides.regionguadeloupe.fr/-Toutes-les-aides-#contenu-page
-- **Vous recherchez une aide ? | Entreprises** — échéance à vérifier — https://entreprises.nouvelle-aquitaine.fr/les-aides#naq-content
+- **"Zone franche urbaine - Territoire entrepreneur (ZFU-TE)" - Exonération de Cotisation foncière des entreprises (CFE)** — échéance à vérifier — https://sig.ville.gouv.fr/atlas/ZFU/
+- **360 Export** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/360-export
+- **404 | Région** — échéance à vérifier — https://www.nouvelle-aquitaine.fr/actualites/les-aides-regionales-soumises-des-%E2%80%A6
+- **Abattement sur la valeur locative des bâtiments affectés à des opérations de recherche éligibles au crédit d'impôt recherche** — échéance à vérifier — https://www.legifrance.gouv.fr/affichTexte.do;jsessionid=0C09FAB396C56193C83C55B9A2712EBB.tpdila22v_1?cidTexte=JORFTEXT000031732865&categorieLien=id
+- **Accélérateur Croissance Sud** — 2026-10-14 — https://www.bpifrance.fr/catalogue-offres/accelerateur-croissance-sud
+- **Accélérateur DINAMIC +** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/dinamic-entreprises
+- **Accélérateur International Occitanie** — 2027-02-01 — https://www.bpifrance.fr/catalogue-offres/accelerateur-international-occitanie
+- **Accélérateur Néo Propulseur Innovation** — 2026-11-18 — https://www.bpifrance.fr/catalogue-offres/accelerateur-neo-propulseur-innovation
+- **Accélérateur PE Croissance Meuse** — 2026-10-06 — https://www.bpifrance.fr/catalogue-offres/accelerateur-pe-croissance-meuse
+- **Accélérateur Sud** — 2027-03-16 — https://www.bpifrance.fr/catalogue-offres/accelerateur-sud
+- **Accélérateur Transmission-Reprise** — 2026-12-09 — https://www.bpifrance.fr/catalogue-offres/accelerateur-transmission-reprise
+- **Accompagnement de l'entreprise sur l'ingénierie de formation** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/accompagnement-de-lentreprise-sur-lingenierie-de-formation
+- **Accompagnement des commerces avec vitrines ou ambulants** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Accompagnement des commerces en ruralité pour la revitalisation des bourgs (ACCOR)** — échéance à vérifier — https://www.grandest.fr/vos-aides-regionales/accompagnement-commerces-ruralite-accor/
+- **Accompagnement des entreprises artisanales dans des démarches d'excellence** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Accompagnement des filières et les territoires pour une transition alimentaire favorable à la ressource en eau** — 2030-12-31 — https://aides-redevances.eau-loire-bretagne.fr/files/live/sites/aides-redevances/files/Aides-12prog/Fiches-actions/AGRI_4.pdf
+- **Accompagnement Individuel aux Entreprises - Structuration RH/RSE** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/accompagnement-de-lentreprise-sur-la-structuration-rh-et-la-rse?Profil=Entreprise&page=3
+- **Accompagnement individuel et financier Réseau Entreprendre Haute-Savoie** — échéance à vérifier — https://www.reseau-entreprendre.org/haute-savoie/
+- **ACTe - Aide aux Commerces des Territoires** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Action Collective de Proximité** — 2027-06-27 — https://data.aides-entreprises.fr/stock
+- **Action Collective de Proximité (ACP)** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Action Collective de Proximité à l’artisanat et au commerce de proximité** — 2026-12-31 — https://www.melloisenpoitou.fr/les-actions/economie-et-tourisme/47-accueil-accompagnement-et-aides-aux-entreprises
+- **Action collective de proximité à l'échelle du Médoc** — 2027-12-31 — https://www.cc-medoc-estuaire.fr/app/uploads/2025/02/Reglement-dIntervention-ACP-Medoc.pdf
+- **Action Collective pour la Dynamisation du Commerce & Artisanat** — échéance à vérifier — https://www.saint-lo-agglo.fr/fr/subvention-aux-investissements-acdca
+- **Actions Collectives de Proximité (ACP)** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Activité Partielle de Longue Durée (APLD)** — échéance à vérifier — https://travail-emploi.gouv.fr/lactivite-partielle-de-longue-duree-rebond-apld-r-questions-reponses-destination-des-entreprises
+- **ADEL Croissance** — échéance à vérifier — https://www.grand-cognac.fr/travailler-et-entreprendre/creation-reprise-et-developpement-dentreprises/les-aides-economiques-0
+- **ADICAPE - Aide Districale à l'Investissement des Commerçants, Artisans et Petites Entreprises** — échéance à vérifier — https://www.dufcc.com/fr/dispositif-adicape.html
+- **agirpourlatransition.ademe.fr** — 2026-11-10 — https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue?localisation%5BAuvergne-Rh%C3%B4ne-Alpes%5D=Auvergne-Rh%C3%B4ne-Alpes#filter-anchor
+- **Aide à destination des commerces de proximité** — échéance à vérifier — https://www.economie.grandsoissons.com/aide-commerce-de-proximite/
+- **Aide à l'accélération de la transformation en ETI** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/accelerer-ma-transformation-en-eti
+- **Aide à l'accélération des économies d’eau et à la réduction des prélèvements** — 2030-12-31 — https://aides-redevances.eau-loire-bretagne.fr/files/live/sites/aides-redevances/files/Aides-12prog/Fiches-actions/QUA_1.pdf
+- **Aide à l'accès à l'emploi** — échéance à vérifier — https://www.province-nord.nc/demarches/dispositif-aide-emploi-province-nord
+- **Aide à l'accessibilité des établissements recevant du public** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'accompagnement des entreprises fragilisées** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/accompagner-des-entreprises-fragilisees
+- **Aide à l'achat de flottes de vélos des entreprises** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'achat de véhicule électrique** — échéance à vérifier — https://ampmetropole.fr/mobilite-transports/roulez-vers-un-avenir-plus-vert-la-metropole-vous-aide-a-changer-de-vehicule/
+- **Aide à l'achat de vélos** — échéance à vérifier — https://metropole.nantes.fr/aide-achat-velo-pro#serviceTocEntry1
+- **Aide à l'achat de vélos-cargos et remorques** — 2027-12-31 — https://www.cma-auvergnerhonealpes.fr/actualites/une-nouvelle-aide-pour-sequiper-en-velo-cargo/
+- **Aide à l'achat et à l'aménagement de véhicules de services itinérants** — 2029-06-30 — https://data.aides-entreprises.fr/stock
+- **Aide à l'acquisition d'un véhicule moins polluant** — échéance à vérifier — https://www.grenoblealpesmetropole.fr/762-l-aide-a-l-achat-d-un-vehicule-faibles-emissions.htm
+- **Aide à l'acquisition d’un vélo cargo à assistance électrique** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'acquisition de friches immobilières, à la construction, à l'aménagement et à la rénovation d'immobilier d'entreprises** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'acquisition de locaux d'activité vacants** — échéance à vérifier — https://www.colmar.fr/sites/colmar.fr/files/documents/47-fe-aide-acquisition-locaux-vacants-colmar-agglomeration-2023.pdf
+- **Aide à l'acquisition de terrains à construire et de bâtiments appartenant à Carcassonne Agglo** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l’acquisition de véhicules propres** — échéance à vérifier — https://zfe.grandlyon.com/professionnel/
+- **Aide à l'acquisition de véhicules utilitaires propres** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/aide-a-lacquisition-de-vehicules-utilitaires-propres
+- **Aide à l'acquisition immobilière** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l’amélioration de l’accueil de la clientèle sur les points de vente** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'amélioration de l'offre d'hébergement touristique** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l’amélioration des points de vente commerce, artisanat et de services** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'aménagement d'un local commercial** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l’aménagement et à l’équipement des activités de loisirs** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l’aménagement et la modernisation des points de vente** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'aménagement intérieur des locaux commerciaux, artisanaux ou de services** — échéance à vérifier — https://www.colmar.fr/sites/colmar.fr/files/documents/46-fe-aide-amenagement-interieur-locaux-colmar-agglomeration-2023.pdf
+- **Aide à l’amorçage des TPE Industrielles, productives et services aux industries** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'apprentissage** — échéance à vérifier — https://www.val2c.fr/entreprendre/accueil-des-entreprises/aide-a-lapprentissage/
+- **Aide à l'Attractivité et au Développement Economique Local (ADEL)** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'économie territoriale** — 2027-12-01 — https://www.paysmorcenais.fr/content/download/26532/file/R%C3%A8glement%20Aide%20Communautaire%20du%20Pays%20Morcenais.pdf
+- **Aide à l'embauche en contrat d'apprentissage** — échéance à vérifier — https://www.agefiph.fr/aides-financieres/aide-lembauche-en-contrat-dapprentissage-dune-personne-en-situation-de-handicap
+- **Aide à l'embauche en contrat de professionnalisation** — échéance à vérifier — https://www.agefiph.fr/aides-financieres/aide-lembauche-en-contrat-de-professionnalisation-dune-personne-en-situation-de
+- **Aide à l'embellissement des façades et devantures commerciales** — 2027-06-30 — https://data.aides-entreprises.fr/stock
+- **Aide à l’embellissement et à la rénovation des devantures commerciales et artisanales** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'émergence de nouvelles activités de l'Economie Sociale et Solidaire** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif988
+- **Aide à l'émergence des entreprises de l'économie sociale et solidaire** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'emploi en faveur des jeunes diplômés calédoniens** — échéance à vérifier — https://www.province-sud.nc/catweb/app/demarches/demande-aide-emploi-jeunes-diplomes-caledoniens
+- **Aide à l'entrepreunariat du Rouillacais** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'équipement des entreprises** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'équipement des petites entreprises** — échéance à vérifier — https://www.ccism.pf/la-ccism/se-lancer/aides-et-dispositifs-d-accompagnement/les-aides-l-investissement
+- **Aide à l’équipement et aux petits investissements matériels des entreprises** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'étude d'opportunité du projet d'hébergement touristique** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/etudier-lopportunite-de-mon-projet-dhebergement-touristique
+- **Aide à l'hébergement des saisonniers** — 2027-12-01 — https://www.grand-saint-emilionnais.fr/wp-content/uploads/2024/02/DISPOSITIF_HEBERGEMENT_SAISONNIERS_TAMPONNE.pdf
+- **Aide à l’hébergement du tourisme social** — 2027-12-01 — https://www.grand-saint-emilionnais.fr/wp-content/uploads/2024/02/DISPOSITIF_HEBERGEMENT_TOURISME_SOCIAL_TAMPONNE.pdf
+- **Aide à l'hébergement touristique** — 2026-11-16 — https://www.montsdegy.fr/aides-economiques--1614694908.html
+- **Aide à l'immobilier** — échéance à vérifier — https://www.ccvosgesdusud.fr/immobilier-d-entreprise-reglement-d-intervention-ver03.pdf
+- **Aide à l'immobilier - activités économiques hors hébergements touristiques** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'immobilier - Aide sur les devantures commerciales** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'immobilier - Aide sur les travaux de mise aux normes** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'immobilier - hébergements touristiques** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'immobilier commercial et artisanal de centre bourg** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'immobilier d'entreprise** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'immobilier d'entreprise - Activités économiques hors hébergements touristiques** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'immobilier d'entreprise - Activités industrielles** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'immobilier d'entreprise - Artisanat** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'immobilier d'entreprise - Commerces et services** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'immobilier d'entreprise - Friches** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'immobilier d'entreprise - Hébergements touristiques** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'immobilier d'entreprise - Volet grands projets d'investissement** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'immobilier d'entreprise - Volet TPE de moins de 10 salariés** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'immobilier d'entreprise dans le périmètre zone urbaine/centre-bourg** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'immobilier d'entreprise de production** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'immobilier d'entreprise des hébergements touristiques** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'immobilier d'entreprise innovant** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'immobilier d'entreprise PME** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'immobilier d'entreprise pour l'industrie et l'artisanat** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'immobilier d'entreprise pour les PME** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'immobilier d'entreprise pour les TPE** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'immobilier d'entreprise TPE/PME** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'immobilier d'entreprise, rénovation et extension de locaux d’activités** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'immobilier d'entreprises** — 2026-12-31 — https://data.aides-entreprises.fr/stock
+- **Aide à l’immobilier d’entreprises industrielles** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'immobilier d'entreprises industrielles et artisanales de production** — échéance à vérifier — https://www.paysdenexon-montsdechalus.fr/accompagnement-et-aides.html
+- **Aide à l'immobilier d'entreprises pour la redynamisation des activités commerciales de centres-villes et centres-bourgs** — 2026-12-31 — https://data.aides-entreprises.fr/stock
+- **Aide à l'immobilier des entreprises** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l’immobilier des entreprises artisanales de production** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'immobilier des entreprises industrielles** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'immobilier des TPE ou PME** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'immobilier économique** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l’immobilier économique d’entreprises et des structures à vocation touristique** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l’immobilier pour les créations d’entreprises commerciales** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'immobilier pour les entreprises artisanales, commerciales et de services** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'immobilier pour les entreprises de l'ESS** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'immobilier pour les entreprises touristiques** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l’immobilier pour les projets issus de démarches coopératives** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l’immobilier touristique** — échéance à vérifier — https://coeurdelozere.fr/mes-demarches/economie/aide-a-limmobilier-touristique/
+- **Aide à l'implantation** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'implantation - Investissement** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'implantation commerciale** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'implantation commerciale - Fonctionnement** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'implantation d'entreprise** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'implantation en pépinière** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'innovation** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'innovation numérique** — 2027-12-01 — https://www.grand-saint-emilionnais.fr/wp-content/uploads/2024/02/DISPOSITIF_INNOVATION_NUMERIQUE_TAMPONNE.pdf
+- **Aide à l’innovation numérique et aux pratiques collaboratives des professionnels de santé** — 2027-12-01 — https://www.grand-saint-emilionnais.fr/wp-content/uploads/2024/02/DISPOSITIF_AIDE_INNOVATION_NUMERIQUE_PROFESSIONNELS_SANTE_TAMPONNE.pdf
+- **Aide à l'installation de commerces en centre-ville** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l’installation de nouvelles entreprises** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'installation des commerces en centre-ville ou centre-bourg** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l’installation, au développement et à la reprise d’une affaire** — échéance à vérifier — https://www.pau.fr/vie-quotidienne/commerce-economie-emploi/commerce/aide-linstallation-au-developpement-la-reprise
+- **Aide à l'investissement - Commerce et artisanat** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'investissement aux Artisans, Commerçants et Très Petites Entreprises (ACTPE)** — échéance à vérifier — https://www.thionville-fensch.fr/entreprendre-innover/entreprendre/aides-aux-entreprises
+- **Aide à l'investissement aux Transformations Ecologiques et Sociales** — échéance à vérifier — https://www.entreprendre-rennes.fr/dispositif/aide-investissement-transformations/
+- **Aide à l'investissement de proximité** — échéance à vérifier — https://cote-albatre.fr/aides-communautaires
+- **Aide à l'investissement des acteurs du tourisme** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'investissement des entreprises** — 2029-06-30 — https://data.aides-entreprises.fr/stock
+- **Aide à l'investissement des entreprises artisanales et commerciales** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'investissement des entreprises artisanales sans point de vente** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'investissement des entreprises commerciales** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'investissement des entreprises d'utilité sociale** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l’investissement des entreprises de l’hôtellerie** — échéance à vérifier — https://www.grenoblealpesmetropole.fr/651-faire-des-travaux-dans-mon-hotel.htm
+- **Aide à l'investissement des entreprises innovantes** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'investissement des PME** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'investissement des TPE** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'investissement des TPE, PME ou ETI** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l’investissement du mobilier productif** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'investissement en faveur de l'inclusion des personnes porteuses de handicap** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'investissement en faveur des TPE** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'investissement en faveur du recyclage et du réemploi des déchets - nouvelles activités** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l’investissement en matériel productif** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'investissement et à la création d'emplois** — échéance à vérifier — https://www.entreprendre-rennes.fr/dispositif/aide-investissement-et-creation-emplois-aice-2/
+- **Aide à l'investissement immobilier** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'investissement immobilier - Commerces de centre-bourgs** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'investissement immobilier - Hébergements touristiques** — 2026-12-31 — https://data.aides-entreprises.fr/stock
+- **Aide à l’investissement immobilier (hors secteur tourisme)** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l’investissement Immobilier d’entreprise** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'investissement immobilier d'entreprises** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'investissement immobilier des entreprises** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'investissement immobilier des entreprises - Commerces de détail et aux points de vente de proximité et à l’amélioration des linéaires commerciaux et artisanaux** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'investissement immobilier des entreprises - Entreprises artisanales et industrielles** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'investissement immobilier des entreprises - Entreprises touristiques** — échéance à vérifier — https://grandpicsaintloup.fr/content/uploads/2024/07/AIE-Reglement-2024.pdf
+- **Aide à l’investissement immobilier des hébergements touristiques** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'investissement immobilier hors commerces de centre-bourgs** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'investissement immobilier hors hébergements touristiques** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l’investissement immobilier industriel, artisanal ou tertiaire** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'investissement immobilier pour les TPE et PME** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'investissement matériel** — échéance à vérifier — https://www.val2c.fr/entreprendre/accueil-des-entreprises/aide-a-linvestissement-materiel/
+- **Aide à l'investissement matériel et immatériel** — 2026-10-15 — https://data.aides-entreprises.fr/stock
+- **Aide à l’investissement matériel ou immatériel** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l’investissement mobilier des hébergements touristiques** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'investissement mobilier productif** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'investissement pour le commerce de proximité** — échéance à vérifier — https://www.strasbourg.eu/commerces-proximite
+- **Aide à l'investissement pour le développement** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'investissement pour le développement du point de vente** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/region-commerce-et-artisanat-financer-linvestissement-de-mon-point-de-vente
+- **Aide à l'investissement pour les entreprises artisanales** — échéance à vérifier — https://www.parc-naturel-chevreuse.fr/le-fonctionnement/les-aides/10-developpement-economique
+- **Aide à l'investissement pour les hébergements et les équipements touristiques** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l’investissement pour les meublés de tourisme et les chambres d’hôtes** — échéance à vérifier — http://static.reseaudesintercoms.fr/cities/84/documents/s7gvj4475ezd2r.pdf
+- **Aide à l'investissement productif** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'investissement productif durable** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à l'investissement productif et à la performance énergétique des TPE** — échéance à vérifier — https://www.grandreims.fr/reimsbusiness/reims-business-des-services-a-votre-disposition/business/aide-a-linvestissement-productif-et-a-la-performance-energetique-des-tpe
+- **Aide à l’obtention du label RGE** — échéance à vérifier — http://static.reseaudesintercoms.fr/cities/84/documents/jt743lo7s6309w.pdf
+- **Aide à l'organisation de manifestations** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la compétitivité énergétique** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la consolidation financière** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la création** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la création d'emplois** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la création d'emplois pour des publics prioritaires** — échéance à vérifier — https://les-aides.fr/aide/cYQf/cci-oise/aide-a-la-creation-d-emplois-pour-des-publics-prioritaires.html
+- **Aide à la création d'entreprise** — échéance à vérifier — https://www.ccpaysdusaintois.fr/UserFiles/File/economie/eco-formulaire-aide-creation-entreprises-sept-2019.pdf
+- **Aide à la création d'entreprise commerciale dans les périmètres de centre-ville** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la création d'entreprises par des publics prioritaires** — échéance à vérifier — https://les-aides.fr/aide/cYKf/cci-oise/aide-a-la-creation-d-entreprises-par-des-publics-prioritaires.html
+- **Aide à la création d'un site web** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la création de places de stationnement perméables végétalisées** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la création des entreprises de l'économie sociale et solidaire** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la création et à l'amélioration d'hébergements touristiques** — échéance à vérifier — https://www.ccpaysdusaintois.fr/UserFiles/File/tourisme/tourisme-formulaire-subvention-maj-mai-2020.pdf
+- **Aide à la création et à la modernisation des commerces de proximité** — échéance à vérifier — https://www.sud-nivernais-communaute.fr/aide-aux-commerces-de-proximite/
+- **Aide à la création et à la réhabilitation d’hébergements touristiques** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la création et à la reprise** — 2026-12-31 — https://data.aides-entreprises.fr/stock
+- **Aide à la création et à la reprise d'activités commerciales, artisanales ou prestations de services** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la création et à la reprise d'entreprises** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la création et à la reprise de TPE** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la création et à la reprise des TPE** — 2028-12-31 — https://data.aides-entreprises.fr/stock
+- **Aide à la création et au développement d'entreprises** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la création et au développement des entreprises** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la création et au développement des entreprises de l'ESS** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la création et la reprise d'entreprise** — échéance à vérifier — https://www.agefiph.fr/aides-financieres/aide-la-creation-ou-la-reprise-dune-entreprise
+- **Aide à la création et reprise d'entreprises** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la création et reprises de commerces et services** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la création ou à la reprise de TPE** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la création ou la reprise de TPE** — 2027-12-01 — https://www.grand-saint-emilionnais.fr/wp-content/uploads/2024/02/DISPOSITIF_CREATION_REPRISE_TPE_TAMPONNE.pdf
+- **Aide à la création ou reprise d’un commerce ou entreprise artisanale et favoriser la reprise de local commercial vacant** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la création-reprise d'entreprises** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la création, à la croissance et à la transmission des entreprises de la première transformation du bois** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/326
+- **Aide à la création, à la reprise et au développement** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la création, au développement et à la labellisation de l'hébergement touristique** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la culture et à la création numérique** — échéance à vérifier — https://www.grandest.fr/vos-aides-regionales/culture-et-creation-numerique/
+- **Aide à la décarbonation des véhicules d'entreprise utilisés pour la logistique de livraison du dernier kilomètre, la vente ambulante et pour les cyclo- entrepreneurs** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la démarche RSE pour les hébergements et restaurants** — échéance à vérifier — https://investinclermont.eu/wp-content/uploads/2025/06/1_REGLEMENT-RSE-TOURISME_1.pdf
+- **Aide à la dernière activité indispensable à la population** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la digitalisation des entreprises** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la digitalisation des petites entreprises du commerce, de l’artisanat et des services** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la digitalisation et au développement de la communication des entreprises** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la fabrication additive** — échéance à vérifier — https://www.grandest.fr/vos-aides-regionales/module-industrie-5-0-fabrication-additive/
+- **Aide à la formation des créateurs-repreneurs d'entreprise** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la formation professionnelle pour les entreprises** — échéance à vérifier — https://www.province-nord.nc/demarches/demande-daide-formation-professionnelle-les-entreprises
+- **Aide à la gestion intégrée des eaux pluviales** — 2030-12-31 — https://eau-grandsudouest.fr/sites/default/files/2025-02/FICHE-THEMATIQUE_Industries_GIEP.pdf
+- **Aide à la gestion quantitative de la ressource et économies d’eau pour tous les usages** — 2030-12-31 — https://eau-grandsudouest.fr/sites/default/files/2025-01/FICHE-THEMATIQUE_GQ%20Projets%20multi-usages.pdf
+- **Aide à la labellisation/certification responsable de l’offre pour les hébergements et restaurants** — échéance à vérifier — https://investinclermont.eu/wp-content/uploads/2025/07/1_REGLEMENT-LABELLISATION.pdf
+- **Aide à la location d'un commerce de centre-bourg** — échéance à vérifier — https://www.pays-chataigneraie.fr/medias/2026/01/ECONOMIE-PCAT-AIDE-LOCATION-2026.pdf
+- **Aide à la location de locaux commerciaux** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la location immobilière** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la location pour la création - transmission et reprise** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la mise aux normes** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la mobilité** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la mobilité des artisans** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la modernisation** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la modernisation des activités commerciales et artisanales** — échéance à vérifier — https://www.agglo-rochefortocean.fr/aide-la-modernisation-des-activites-commerciales-et-artisanales
+- **Aide à la modernisation des commerces** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Aide à la modernisation des locaux artisanaux ou commerciaux** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la modernisation et à la décarbonation des hébergements touristiques** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la modernisation et à la mise en valeur des commerces** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la modernisation et la transformation de l’entreprise après reprise** — 2027-12-01 — https://www.grand-saint-emilionnais.fr/wp-content/uploads/2024/02/DISPOSITIF_MODERNISATION_REPRISE_TAMPONNE.pdf
+- **Aide à la navigation** — échéance à vérifier — https://www.grandest.fr/aide-et-accessibilite/
+- **Aide à la numérisation des entreprises artisanales et commerciales de proximité** — échéance à vérifier — https://www.province-sud.nc/catweb/app/demarches/aide-a-la-numerisation-des-entreprises
+- **Aide à la première embauche de salarié** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la prévention et à la gestion des déchets** — échéance à vérifier — https://www.province-sud.nc/catweb/app/demarches/demande-de-subvention-dechets
+- **Aide à la prise en charge des frais de stages inhérents à la conduite des projets innovants** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la promotion des éditeurs** — échéance à vérifier — https://www.iledefrance.fr/aide-la-promotion-des-editeurs-aide-aux-projets-des-professionnels-de-la-chaine-du-livre
+- **Aide à la promotion des zones d'activités communautaires** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la promotion touristique du territoire** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la qualification responsable de l’offre touristique** — échéance à vérifier — https://investinclermont.eu/wp-content/uploads/2025/06/1_REGLEMENT-QUALIFICATION.pdf
+- **Aide à la réalisation d'audits énergétiques** — échéance à vérifier — https://www.ccism.pf/actualites/entreprise-reduisez-vos-couts-energetiques-grace-l-ademe-polynesie
+- **Aide à la réalisation de travaux de mise aux normes d’accessibilité** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la récupération des eaux de pluie** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la réduction des pollutions** — 2030-12-31 — https://eau-grandsudouest.fr/sites/default/files/2025-02/FICHE-THEMATIQUE_Industries_Pollutions.pdf
+- **Aide à la réduction des pollutions de nature industrielle** — échéance à vérifier — https://www.eaurmc.fr/jcms/pro_128878/fr/ind1-reduction-des-pollutions-de-nature-industrielle
+- **Aide à la rénovation de façade** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la rénovation de façades** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la rénovation de façades artisanales et commerciales** — échéance à vérifier — https://www.legrandcharolais.fr/aides-aux-entreprises.html
+- **Aide à la rénovation de l’immobilier d’entreprise (ARIE)** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la rénovation des commerces des centres villes** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la rénovation des façades** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la rénovation des hébergements touristiques** — échéance à vérifier — https://www.province-nord.nc/demarches/demande-aide-renovation-hebergements-touristiques
+- **Aide à la rénovation des locaux commerciaux et développement de l’entreprise** — échéance à vérifier — https://www.creusot-montceau.org/wp-content/uploads/2022/04/Reglement-fonds-commerce_OK.pdf
+- **Aide à la rénovation des vitrines de boutiques** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la rénovation énergétique des TPE et PME** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la reprise** — 2029-06-30 — https://data.aides-entreprises.fr/stock
+- **Aide à la reprise d'entreprise** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la reprise d'entreprises en difficulté** — échéance à vérifier — https://www.grandest.fr/vos-aides-regionales/aide-a-reprise-dentreprises-difficultes/
+- **Aide à la reprise de l'activité suite à un acte de vandalisme** — échéance à vérifier — https://www.province-sud.nc/catweb/app/demarches/vandalisme-aide-pour-la-reprise-de-l'activite
+- **Aide à la reprise et à la transmission - Aide au cédant** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la reprise et à la transmission - Aide au repreneur** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la Reprise ou à la Création d'Entreprise (ARCE)** — échéance à vérifier — https://www.service-public.fr/particuliers/vosdroits/F15252
+- **Aide à la requalification des devantures** — 2026-12-31 — https://www.montpellier.fr/vie-quotidienne/vivre-ici/construire/renover/mission-grand-coeur/mission-grand-coeur-%3A-aide-a-la-renovation-de-devantures#9ce660c2-d058-4b2d-b2d1-d471c9ebe9a8
+- **Aide à la restructuration** — échéance à vérifier — https://www.grandest.fr/vos-aides-regionales/aide-a-restructuration/
+- **Aide à la restructuration financière des entreprises fragilisées** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/restructuration-financiere-des-entreprises-fragilisees
+- **Aide à la réutilisation des eaux non conventionnelles** — 2030-12-31 — https://eau-grandsudouest.fr/sites/default/files/2025-02/FICHE-THEMATIQUE_R%C3%A9utilisation%20des%20eaux%20non%20conventionnelles.pdf
+- **Aide à la sécurisation des commerces** — 2026-09-30 — https://www.province-sud.nc/catweb/app/demarches/aide-a-la-securisation-des-entreprises
+- **Aide à la stratégie** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la transformation numérique - Coup de pouce cyber** — échéance à vérifier — https://www.limoges-metropole.fr/fileadmin/3-ENTREPRENDRE/1-Outils_pour_les_entreprises/2-Accompagnement_financier/202307_Aides/20230705_Aide__Tranformation_Numerique_Cybersecurit%C3%A9_Site_Internet_Limoges_Metropole.pdf
+- **Aide à la transformation numérique - Coup de pouce digital** — échéance à vérifier — https://www.limoges-metropole.fr/fileadmin/3-ENTREPRENDRE/1-Outils_pour_les_entreprises/2-Accompagnement_financier/202307_Aides/20230822_Document_Aide_Transformation_Numerique_Site_Internet_Limoges_Metropole.pdf
+- **Aide à la transformation numérique des entreprises** — 2027-12-01 — https://www.grand-saint-emilionnais.fr/wp-content/uploads/2024/02/DISPOSITIF_TRANSFORMATION_NUMERIQUE_ENTREPRISES_TAMPONNE.pdf
+- **Aide à la transformation numérique des entreprises artisanales et commerciales** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la transition écologique des entreprises artisanales** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide à la transition numérique des entreprises** — 2029-06-30 — https://data.aides-entreprises.fr/stock
+- **Aide à la valorisation et au traitement des déchets** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide au bâtiment durable** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide au changement de véhicule** — échéance à vérifier — https://investinclermont.eu/service/financement-et-appel-a-projet/
+- **Aide au classement des hébergements touristiques** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide au commerce de proximité** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide au commerce et à l'artisanat de proximité** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide au commerce, à l'artisanat et aux services** — échéance à vérifier — https://www.loireforez.fr/entreprendre/les-aides-financieres/aide-commerces-artisanat-services/
+- **Aide au conseil pour accompagner les transformations écologiques et sociales** — échéance à vérifier — https://www.entreprendre-rennes.fr/dispositif/aide-au-conseil/
+- **Aide au conseil pour les PME** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide au démarrage et à la commercialisation à destination des commerçants et artisans avec acte de commerce** — échéance à vérifier — https://fr.calameo.com/read/0046502709f3de66c5baf
+- **Aide au déploiement d’un réseau de Tiers-lieux** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide au déploiement du Très Haut Débit** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide au dernier commerce** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide au désamiantage de toiture** — échéance à vérifier — https://www.grandannecy.fr/mon-quotidien/preserve-mon-environnement/lenvironnement/energie/laide-au-desamiantage
+- **Aide au développement de l’économie sociale et solidaire** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide au développement de l'ESS** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide au développement de la start-up** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/developper-ma-start
+- **Aide au développement des entreprises** — échéance à vérifier — https://sud-avesnois-invest.com/les-aides/
+- **Aide au développement des entreprises de l'économie sociale et solidaire** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide au développement des entreprises de l'Economie Sociale et Solidaire - SUCC'ESS** — échéance à vérifier — https://www.bethunebruay.fr/index.php/fr/economie-sociale-et-solidaire
+- **Aide au développement des grandes entreprises** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide au développement des petites entreprises du commerce et de l’artisanat** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide au développement des petites entreprises du commerce, de l’artisanat avec point de vente** — échéance à vérifier — https://www.hautesterres.fr/entreprendre/creer-developper-activite/les-aides-financieres/
+- **Aide au développement des PME** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide au développement des PME artisanales et de services sans point de vente en/ou hors agglomération** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide au développement des PME de plus de 3 ans** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide au développement des PME entre 1 et 3 ans** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide au développement des PME industrielles, productives et services aux industries** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide au développement des points de vente TPE** — 2028-12-31 — https://data.aides-entreprises.fr/stock
+- **Aide au développement des services à la population** — échéance à vérifier — https://www.grandreims.fr/reimsbusiness/reims-business-des-services-a-votre-disposition/business/laide-au-developpement-des-services-a-la-population
+- **Aide au développement des TPE** — 2026-12-31 — https://data.aides-entreprises.fr/stock
+- **Aide au développement des TPE artisanales, commerciales et de service** — échéance à vérifier — https://paysdelaserre.fr/entreprendre-et-travailler/les-aides-directes-aux-entreprises/
+- **Aide au développement des TPE artisanales, commerciales et de services** — 2028-12-31 — https://www.ponthieu-marquenterre.fr/wp-content/uploads/2025/03/DEV-ECO-mise-a-jour-brochure-20250324-VF.pdf
+- **Aide au développement des TPE artisanales, commerciales et de services, ayant entre 1 et 3 ans d'existence** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide au développement des TPE de plus de 3 ans** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide au développement du tourisme de savoir-faire** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/3571
+- **Aide au développement et à l'intégration de l'IA et de la Cybersécurité Numérique** — échéance à vérifier — https://les-aides.fr/aide/dHA_/cci-oise/developpement-et-integration-de-l-ia-et-de-la-cybersecurite.html
+- **Aide au développement et au maintien de l'activité pour toute manifestation internationale** — échéance à vérifier — https://les-aides.fr/aide/dHBP/cci-oise/developpement-et-maintien-de-l-activite-pour-toute-manifestation-internationale.html
+- **Aide au développement et maintien de l'activité économique en zone rurale** — échéance à vérifier — https://les-aides.fr/aide/cYRv/cci-oise/developpement-et-maintien-de-l-activite-economique-en-zone-rurale.html
+- **Aide au développement numérique** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide au financement d'équipements pour des économies d'eau** — échéance à vérifier — https://les-aides.fr/aide/cYSP/cci-oise/financement-d-equipements-pour-des-economies-d-eau.html
+- **Aide au financement de la Préparation Opérationnelle à l'Emploi (POE)** — échéance à vérifier — https://www.pole-emploi.fr/employeur/la-preparation-operationnelle-a-l-emploi-poe--@/article.jspz?id=60880
+- **Aide au financement des investissements des acteurs de circuits courts** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide au financement local** — échéance à vérifier — https://www.paysdelaloire.cci.fr/nantes-saint-nazaire/entreprise/financement/aides-au-financement-local-aid
+- **Aide au loyer** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide au loyer - Pépinière hors les murs** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide au loyer pour les créateurs de commerce en centres-villes et QPV** — 2026-09-30 — https://www.evreuxportesdenormandie.fr/economie-et-amenagements/economie-locale/commerce/
+- **Aide au maintien du commerce en milieu rural** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide au maintien, à l’installation et au développement des activités commerciales dans le cadre de la politique locale du commerce** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide au numérique** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide au passage aux emballages réemployables** — échéance à vérifier — https://cdn.paris.fr/paris/2023/07/25/35983-vdp-guide-consigne_web-APqr.pdf
+- **Aide au pluralisme des titres ultramarins** — échéance à vérifier — https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000043927356
+- **Aide au recrutement** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide au recrutement d'un cadre export** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/recruter-un-cadre-export
+- **Aide au recrutement des entreprises innovantes** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide au recrutement des TPE, PME ou ETI** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide au recrutement du personnel formé** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/recruter-du-personnel-forme-avec-le-pacte-region-pour-lemploi-pour-repondre-aux-besoins-de
+- **Aide au renouvellement de véhicule** — échéance à vérifier — https://www.grandannecy.fr/zfem/aides-et-conseils-en-mobilite
+- **Aide au titre des investissements productifs neufs en Outre-mer** — 2029-12-31 — https://bpifrance-creation.fr/encyclopedie/aides-a-creation-a-reprise-dentreprise/aides-outre-mer/allegements-fiscaux-outre-mer
+- **Aide au titre du contrat passerelle conclu par une entreprise d'insertion ou un atelier et chantier d'insertion** — échéance à vérifier — https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000050749302
+- **Aide aux actions d’information sur les métiers et les formations (hors événements)** — échéance à vérifier — https://www.bretagne.bzh/aides/fiches/action-dinformation-sur-les-metiers-et-les-formations/
+- **Aide aux actions de promotion des entreprises** — 2029-06-30 — https://data.aides-entreprises.fr/stock
+- **Aide aux activités ambulantes complémentaires à une activité sédentaire** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux activités commerciales et artisanales** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux artisans du BTP pour la gestion de l'eau** — échéance à vérifier — https://www.cma-alsace-moselle-grandest.fr/actualites/nouvelle-aide-financiere-pour-les-artisans-du-batiment-du-bassin-seine-normandie?department=meuse
+- **Aide aux artisans, commerçants et prestataires de service** — échéance à vérifier — https://coeurdostrevent.fr/accompagnement-projet-entreprise/aides-financieres-aux-entreprises/
+- **Aide aux autres hébergements touristiques écologiques** — échéance à vérifier — https://www.calameo.com/read/0020594285a1f6b6e88ec?page=9
+- **Aide aux commerçants et artisans** — échéance à vérifier — https://www.barsuraube.org/developpement-economique-aides-aux-acteurs-economiques/aides-aux-commercants-et-artisans
+- **Aide aux commerçants et artisans de proximité** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux commerçants, artisans et entrepreneurs** — 2026-12-31 — https://www.cc-saulnois.fr/wp-content/uploads/2025/01/2025-reglement-ACCAES.pdf
+- **Aide aux commerces** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux commerces alimentaires, non alimentaires et de services** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux commerces ambulants** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux commerces de centres villes et de centre-bourg** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux commerces de proximité** — 2026-12-31 — https://ccpvg.fr/vie-economique/entreprendre-et-travailler/aides-aux-entreprises/
+- **Aide aux commerces des territoires** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux commerces et services du quotidien** — 2028-12-31 — https://www.cc-creonnais.fr/page/aide-aux-entreprises
+- **Aide aux commerces et services du quotidien présents dans les centres-bourgs** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux commerces et TPE de centre-ville et centre-bourg** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux commerces, à l'artisanat et aux services de proximité** — 2026-12-31 — https://data.aides-entreprises.fr/stock
+- **Aide aux conseils** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux Cotisants en Difficulté (ACED)** — échéance à vérifier — https://secu-independants.fr/action-sociale/demander-une-aide/aide-aux-cotisants-en-difficulte
+- **Aide aux créateurs** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux créateurs d’entreprises, aux repreneurs d’entreprises et aux nouveaux établissements** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux Créateurs et Repreneurs d'Entreprise (ACRE) - Exonération de début d'activité** — échéance à vérifier — https://www.service-public.fr/particuliers/vosdroits/F11677
+- **Aide aux démarches collectives innovantes** — 2028-12-31 — https://www.calameo.com/read/0072204520041e348b0e4?fbclid=IwZXh0bgNhZW0CMTAAAR2bCyPrIMICTKl5USa2CqiKYvOWNTyeJDhpWKW3PeTfvWA8qCJ1GuYAsSU_aem_AWA_DhK7sZh3mcbpH6C8tCsK6uu934Abq9UZtKaIygPAs_ZICK2fZi0T2w4qUrdzCa1-KF-DCcMdUXqsqPnJ3J3w
+- **Aide aux économies d'eau** — 2030-12-31 — https://www.eau-seine-normandie.fr/entreprises/aides-financieres-du-programme-eau-climat-biodiversite
+- **Aide aux économies et au recyclage de l'eau** — 2030-12-31 — https://eau-grandsudouest.fr/sites/default/files/2025-02/FICHE-THEMATIQUE_Industries_Economies%20d%27eau.pdf
+- **Aide aux enseignes et vitrines en centre-bourg** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux entreprises** — échéance à vérifier — https://www.chalossetursan.fr/Amenager-votre-cadre-de-vie/Developpement-economique2
+- **Aide aux entreprises à fort impact territorial** — 2029-06-30 — https://data.aides-entreprises.fr/stock
+- **Aide aux entreprises de fret ferroviaire employant certains salariés affiliés au régime spécial de retraite du personnel de la SNCF** — échéance à vérifier — https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000052951041
+- **Aide aux entreprises de l'agroalimentaire, bois et pêche** — échéance à vérifier — https://demarches.dordogne.fr/guides-des-aides/dgatd/dde/eco-aides-aux-entreprises/
+- **Aide aux entreprises de l'économie sociale et solidaire** — 2029-06-30 — https://data.aides-entreprises.fr/stock
+- **Aide aux entreprises de transformation et commercialisation de produits agricoles** — échéance à vérifier — https://www.kreiz-breizh.fr/aide-aux-entreprises-de-transformation-et-de-commercialisation-de-produits-agricoles/
+- **Aide aux entreprises de transport pour l'acquisition de bâches personnalisées pour la promotion du territoire** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux entreprises des filières structurantes** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux entreprises en consolidation financière** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/spip.php?page=dispositif&id_dispositif=679
+- **Aide aux entreprises face à la crise énergétique** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux entreprises industrielles ou artisanales de production** — échéance à vérifier — https://www.kreiz-breizh.fr/laide-aux-entreprises-industrielles-et-artisanales-de-production/
+- **Aide aux entreprises menant un projet éco-responsable** — 2029-06-30 — https://data.aides-entreprises.fr/stock
+- **Aide aux entreprises pour leur investissement immobilier** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux entreprises s'établissant dans un local vacant en centre-bourg** — 2029-06-30 — https://data.aides-entreprises.fr/stock
+- **Aide aux équipements touristiques structurants** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux études** — 2030-12-31 — https://cdi.eau-rhin-meuse.fr/GEIDEFile/fiche_activites_eco.pdf?Archive=263787908196&File=fiche%5Factivites%5Feco%5Fpdf
+- **Aide aux études d'énergie** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux études de marché** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux études et aux formations pour les porteurs de projets** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux formations permettant d'améliorer la sécurité** — échéance à vérifier — https://www.ccism.pf/sites/default/files/docs/criteres_techniques_de_formations.pdf
+- **Aide aux frais d'acquisition foncière** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux frais de loyer** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux hébergements hôteliers** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux hébergements touristiques** — échéance à vérifier — https://www.calameo.com/read/0020594285a1f6b6e88ec?page=1
+- **Aide aux hébergements touristiques - Immobilier d'entreprise** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux hébergements touristiques : chambres d'hôtes** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux hébergements touristiques : hébergements de groupe** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux hébergements touristiques structurants - Chambres d'hôtes** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux hébergements touristiques structurants - Hébergements de groupe** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux hébergements touristiques structurants - Hôtellerie de plein air et hébergements innovants** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux hébergements touristiques structurants - Meublés de tourisme** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux investissements à destination des professionnels de santé** — 2029-06-30 — https://data.aides-entreprises.fr/stock
+- **Aide aux investissements des commerces de proximité** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux investissements des entreprises** — échéance à vérifier — https://lubersacpompadour.fr/aides-financieres-de-la-communaute-de-communes
+- **Aide aux investissements des TPE** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux investissements immobiliers** — 2027-12-01 — https://www.cc-larzacvallees.fr/sites/default/files/uploads/reglement_intervention_economique.pdf
+- **Aide aux investissements immobiliers - Crédit bail** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux investissements immobiliers et matériels** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux investissements matériels** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux investissements matériels à destination des TPE** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux investissements matériels et productifs des TPE** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux investissements matériels pour les TPE** — échéance à vérifier — https://www.amiens.fr/Media/Images/Vivre-a-Amiens/Developpement-economique/soutien/Aide-aux-investissements-materiels-des-TPE
+- **Aide aux investissements pour l'hôtellerie** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux investissements pour l'hôtellerie de plein air** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux investissements pour les chambres d'hôtes** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux investissements pour les gîtes de groupe** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux investissements pour les gîtes ou locations de meublés de tourisme** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux investissements pour les hébergements insolites** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux investissements pour les restaurateurs** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux investissements productifs des PME** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux investissements productifs pour les TPE** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux jeunes entreprises innovantes** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux jeunes entreprises sans point de vente** — échéance à vérifier — https://www.collines.org/vie-economique/beneficier-dune-aide/aides-financieres-economie-de-proximite/
+- **Aide aux jeunes pour bien vivre en montagne** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/aide-jeunes-bien-vivre-en-montagne
+- **Aide aux loyers** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux Loyers Commerciaux pour les Nouveaux Commerçants** — échéance à vérifier — https://www.2c2r.fr/aides-directes-aux-entreprises/
+- **Aide aux loyers de locaux commerciaux vacants en centre-ville** — échéance à vérifier — https://www.villedeguillestre.fr/vivre-guillestre/ouvrir-commerce
+- **Aide aux loyers des entreprises innovantes** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux loyers pour les créateurs et repreneurs d'activités commerciales de centre-ville** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux micro-projets** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux micro-projets immobiliers** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux mobilités propres** — échéance à vérifier — https://www.paris.fr/pages/lutte-contre-la-pollution-les-aides-a-la-mobilite-5373/
+- **Aide aux opérations collectives** — 2030-12-31 — https://eau-grandsudouest.fr/sites/default/files/2025-02/FICHE-THEMATIQUE_Industries_Op%C3%A9rations%20collectives.pdf
+- **Aide aux opérations groupées sectorielles** — 2030-12-31 — https://www.eaurmc.fr/jcms/pro_128880/fr/ind2-operations-groupees-sectorielles
+- **Aide aux outils plus sûrs** — échéance à vérifier — https://www.ccism.pf/sites/default/files/docs/criteres_techniques_materiels.pdf
+- **Aide aux petites entreprises** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux petites entreprises du commerce, de l'artisanat et des services avec point de vente** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux petites entreprises du commerce, de l’artisanat et des services de proximité** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux petites et moyennes entreprises** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux PME dans leur démarche RSE** — 2026-12-31 — https://data.aides-entreprises.fr/stock
+- **Aide aux PME et TPE** — échéance à vérifier — https://www.paysboulageois.fr/index.php/dev-eco/soutien-aux-pme-tpe
+- **Aide aux professionnels de santé** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux projets d’embellissement des façades en cœur de bourg et de ville** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux projets d'innovation** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux projets d’investissement immobilier des activités commerciales et de proximité** — échéance à vérifier — https://www.limoges-metropole.fr/fileadmin/3-ENTREPRENDRE/1-Outils_pour_les_entreprises/2-Accompagnement_financier/20230601_Document_Dispositif_d_aide_au_projet_d_investissement_immobilier_Commercedustrie_Site_Internet_Limoges_M%C3%A9tropole.pdf
+- **Aide aux projets d’investissement immobilier des activités industrielles** — échéance à vérifier — https://www.limoges-metropole.fr/fileadmin/3-ENTREPRENDRE/1-Outils_pour_les_entreprises/2-Accompagnement_financier/20230602_Document_Dispositif_d_aide_au_projet_d_investissement_immobilier_Industrie_Site_Internet_Limoges_M%C3%A9tropole.pdf
+- **Aide aux projets d’investissement immobilier des activités touristiques** — échéance à vérifier — https://www.limoges-metropole.fr/fileadmin/3-ENTREPRENDRE/1-Outils_pour_les_entreprises/2-Accompagnement_financier/20230601_Document_Dispositif_d_aide_au_projet_d_investissement_immobilier_Tourisme_Site_Internet_Limoges_M%C3%A9tropole.pdf
+- **Aide aux projets de l'économie sociale et solidaire** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux projets de recherche - développement - innovation** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux projets immobiliers d'entreprise** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux ravalements des façades** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux refuges de montagne** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/soutien-refuges-montagne
+- **Aide aux salons et manifestations** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux start-up de l’incubateur INNOGEX** — échéance à vérifier — https://www.paysdegexentreprises.fr/nos-services/innogex/
+- **Aide aux start-up du nouvel incubateur du Pays de Gex dédié à l’industrie 4.0 et aux énergies renouvelables** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux terrasses** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux tiers-lieux à vocation économique** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux TPE** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux travaux** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide aux travaux d'investissement des commerces** — échéance à vérifier — https://www.grenoblealpesmetropole.fr/404-faire-des-travaux-ou-acheter-du-materiel.htm
+- **Aide aux travaux dédiée aux devantures commerciales** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide bonus à l’emploi issu des ateliers et chantiers d’insertion** — échéance à vérifier — http://static.reseaudesintercoms.fr/cities/84/documents/t82w57rh1zrkn73.pdf
+- **Aide ciblée à l'investissement des commerces et de l'artisanat de proximité** — échéance à vérifier — https://www.agglo-saint-avold.fr/wp-content/uploads/2022/07/Dossier-de-demande-de-subvention-Aide-ciblee-CASAS-2.pdf
+- **Aide communale pour l'amélioration des points de vente** — échéance à vérifier — https://lavoultesurrhone.fr/fr/rb/2024362/aide-aux-commercants
+- **Aide communautaire à l'innovation (ACI)** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide communautaire à l'investissement des commerçants, artisans et entreprises** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide communautaire à l'investissement des PME** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide communautaire à l'investissement et à l'emploi (ACIE)** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide communautaire aux entreprises (ACE)** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide communautaire pour la participation à des manifestations commerciales extérieures au département (ACPMC)** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide Communautaire pour les Très Petites Entreprises (ACTPE)** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide départementale à la création d’entreprise nouvelle (ADEN)** — échéance à vérifier — https://www.departement974.fr/aide/aide-aide-departementale-creation-dentreprise-nouvelle-aden
+- **Aide directe à l’investissement des entreprises** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide directe au commerce et à l'artisanat de proximité** — échéance à vérifier — https://www.forez-est.fr/vie-economique-forez-est/aides-aux-entreprises
+- **Aide en faveur de l'investissement immobilier** — échéance à vérifier — https://www.valdebouzanne.fr/filesopen/ECONOMIE/AIDES/Aide-Immo.pdf
+- **Aide en faveur des enseignes** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide en faveur des entreprises commerciales et artisanales** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide en faveur des entreprises commerciales, artisanales et de services** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide en faveur des hébergements touristiques** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide en faveur des installations nouvelles - Pack In Centre Tarn** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide en faveur des TPE** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide en faveur des TPE du Territoire** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide exceptionnelle aux entreprises de transport public routier** — 2026-11-09 — https://www.asp.gouv.fr/aides/aides-exceptionnelles-aux-entreprises-de-transport-public-routier
+- **Aide financière exceptionnelle pour les travailleurs indépendants** — échéance à vérifier — https://secu-independants.fr/demander-une-aide/aides-cotisations/aide-urgence-cpsti
+- **Aide hors immobilier pour les commerces indépendants** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide hors immobilier pour les TPE** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide individuelle à la formation professionnelle (AIF)** — échéance à vérifier — https://www.pole-emploi.fr/candidat/l-aide-individuelle-a-la-formation-aif--@/article.jspz?id=60856
+- **Aide intercommunale à l'investissement, à l'embauche et à la reprise des entreprises de moins de 20 salariés** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide levier** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide levier LEADER** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide liée à la Reconnaissance de la Lourdeur du Handicap (RLH)** — échéance à vérifier — https://www.agefiph.fr/aides-financieres/aide-liee-la-reconnaissance-de-la-lourdeur-du-handicap
+- **Aide pour l’aménagement des entreprises commerciales et artisanales de proximité** — échéance à vérifier — https://www.grand-dax.fr/entreprendre/les-aides-economiques/
+- **Aide pour la création d'emplois** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide pour la prise en charge des coûts externes d’étude de projets d’innovation** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aide pour la rénovation des devantures, des enseignes et la mise en accessibilité des commerces** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aides à l'immobilier d'entreprise** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aides à l'immobilier d'entreprise - Agricole et agro-alimentaire** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aides à l'immobilier d'entreprise - Commerce et artisanat de proximité** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aides à l'immobilier d'entreprise - Industrie et artisanat de production** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aides à l'immobilier d'entreprise et à la création d'emplois** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aides à l’immobilier d’entreprise touristique** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aides à l'immobilier d'entreprises** — échéance à vérifier — https://www.portes-haut-doubs.com/sites/portes-haut-doubs.com/files/reglement_intervention_ccphd_aides_a_immobilier_entreprises_0.pdf
+- **Aides à l’immobilier d’entreprises du commerce et de l’artisanat de proximité** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aides à l'immobilier en faveur des points de fabrication et de vente de proximité** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aides à l'investissement en faveur des jeunes diplômés calédoniens** — échéance à vérifier — https://www.province-sud.nc/demarches/case-vote-en-2020-aides-a-l'investissement-en-faveur-des-jeunes-diplomes-caledoniens
+- **Aides à l’investissement pour les hébergements insolites** — échéance à vérifier — http://static.reseaudesintercoms.fr/cities/84/documents/armq3u67qgyzo0.pdf
+- **Aides à la location** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aides à la rénovation des locaux commerciaux et au développement de l’entreprise** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aides aux entreprises de proximité** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aides aux entreprises locales** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aides aux hébergements touristiques : hôtellerie** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aides aux hébergements touristiques : hôtellerie de plein air et hébergements innovants** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aides aux hébergements touristiques : meublés de tourisme** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aides aux investissements mobiliers nécessaires à la vente de produits locaux** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aides aux métiers d'art** — échéance à vérifier — https://www.villedieu-intercom.fr/%C3%A9conomie/m%C3%A9tiers-d-art/
+- **Aides aux prestations d’études dans un projet de développement économique** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Aides directes aux activités commerciales et artisanales** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **ALICCE - Accompagnement Local Interconsulaire pour la Croissance Commerciale et l’Emploi** — échéance à vérifier — https://www.moselle.cci.fr/produit/obtenir-un-pret-alicce
+- **Allocation exceptionnelle de maintien dans l’emploi** — 2026-12-31 — https://dtenc.gouv.nc/mesure-de-maintien-dans-lemploi
+- **AMI Retour de la Nature en Ville - soutien aux études de renaturation et de création d'espaces verts** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/669
+- **AMI Tourisme de Savoir-Faire** — échéance à vérifier — https://les-aides.paysdelaloire.fr/aides/#/prod/connecte/F_AMI_TSF/depot/simple
+- **Amortissement fiscal pour les entreprises qui investissent dans le capital des PME innovantes** — échéance à vérifier — https://www.legifrance.gouv.fr/affichTexteArticle.do;jsessionid=C37D653082461FDD9ED0AE1A926AAE8E.tpdjo07v_2?idArticle=JORFARTI000028401039&cidTexte=JORFTEXT000028400921&dateTexte=29990101&categorieLien=id
+- **Appel à manifestation "Campus A 2 PAS"** — échéance à vérifier — ftp://ftpdata.paysdelaloire.fr/Documents_aides/Subvention_Reglement-dintervention_962a8ce2_RI.docx
+- **Appel à manifestation d’intérêt - Ecole Régionale du Numérique 2027/2030** — échéance à vérifier — https://www.laregion.fr/AMI-Ecole-Regionale-du-Numerique
+- **Appel à Manifestation d’Intérêt - Offres de Bons Plans jeunesse "Carte Jeune Région"** — échéance à vérifier — https://www.laregion.fr/AMI-Bons-Plans-Jeunes
+- **Appel à manifestation d’intérêt - Projets structurants de Culture Scientifique Technique et Industrielle** — échéance à vérifier — https://www.laregion.fr/Appel-a-manifestation-d-interet-Projets-structurants-de-Culture-Scientifique
+- **Appel à Manifestation d’Intérêt (AMI) - Territoires viticoles pilotes, laboratoires d’une filière en mutation et d’une région aux avant-postes du changement climatique** — échéance à vérifier — https://www.laregion.fr/Appel-Manifestation-Interet-Territoires-viticoles-pilotes-filiere-mutation
+- **Appel à Manifestation d’Intérêt 2024-2025 &#171; Nouveaux modèles énergétiques citoyens &#187;** — échéance à vérifier — https://www.laregion.fr/Appel-a-Manifestation-d-Interet-2024-2025-Nouveaux-modeles-energetiques-citoyens
+- **Appel à manifestation d'intérêt Ingénierie territoriale** — échéance à vérifier — https://www.demarches-simplifiees.fr/commencer/ami-edition-2025-soutien-a-l-elaboration-d-actions
+- **Appel à manifestation d'intérêt pour intégrer l'espace partenaires du site de la Région Oriane.info** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/524
+- **Appel à manifestation d'intérêt Territoires Boca’Lab** — échéance à vérifier — ftp://ftpdata.paysdelaloire.fr/Documents_aides/Aide-en-nature_Formulaire-AMI-Territoires-BacaLab_c96f2984_PAPIER_INDIVIDUEL.pdf
+- **Appel à Manifestation d&#8217;Intérêt "Transformer son entreprise - Vers un engagement plus vert"** — échéance à vérifier — https://www.laregion.fr/AMI-FACE-Occitanie
+- **Appel à projet - "Investissement pour la solidarité alimentaire"** — échéance à vérifier — https://www.laregion.fr/Appel-a-projet-Investissement-pour-la-solidarite-alimentaire
+- **Appel à Projet - Accompagnement à la création d’activité agricole (post-installation)** — échéance à vérifier — https://www.laregion.fr/Appel-a-Projet-Accompagnement-a-la-creation-d-activite-agricole-post-installation
+- **Appel à Projet - Accompagnement à la création d’activité agricole (pré-installation)** — échéance à vérifier — https://www.laregion.fr/Appel-a-Projet-Accompagnement-a-la-creation-d-activite-agricole-pre-installation
+- **Appel à Projet - Plan Littoral 21 - Déploiement des Ports Propres en Occitanie** — échéance à vérifier — https://www.laregion.fr/Appel-a-Projet-Plan-Littoral-21-Deploiement-des-Ports-Propres-en-Occitanie
+- **Appel à projet - Programme d’investissements d’avenir 4 (PIA 4) Appel à projets France 2030 régionalisé - Innovation formations professionnelles** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides
+- **Appel à projets - « Coopération internationale pour l’eau et l’agroécologie » 2025** — échéance à vérifier — https://www.laregion.fr/Appel-a-projets-Cooperation-internationale-pour-l-eau-et-l-agroecologie-2025
+- **Appel à projets - Accompagnement des actions d’expérimentation en agriculture** — échéance à vérifier — https://www.laregion.fr/Appel-a-projets-Accompagnement-des-actions-d-experimentation-en-agriculture
+- **Appel à projets - Accompagner les transitions et les métiers de demain** — 2026-07-23 — https://www.laregion.fr/Appel-a-projets-Accompagner-les-transitions-et-les-metiers-de-demain-47882
+- **Appel à projets - Anim’Bio Pour le développement et la structuration des filières biologiques en Occitanie** — échéance à vérifier — https://www.laregion.fr/Appel-a-projets-Anim-Bio-Pour-le-developpement-et-la-structuration-des-filieres
+- **Appel à projets - Apprentissage en Occitanie 2026** — échéance à vérifier — https://www.laregion.fr/Appel-a-projets-Apprentissage-en-Occitanie-2026
+- **Appel à projets - Coopération transfrontalière dans les Pyrénées** — échéance à vérifier — https://www.laregion.fr/Appel-a-projets-Cooperation-transfrontaliere-dans-les-Pyrenees
+- **Appel à projets - Dispositif régional d’accompagnement des jeunes volontaires en service civique 2025/2026** — échéance à vérifier — https://www.laregion.fr/Appel-a-projets-service-civique
+- **Appel à projets - Foodtrucks 2025-2026 - Site de Capdeville** — échéance à vérifier — https://www.laregion.fr/Appel-a-projets-Foodtrucks-2024-2025-Site-de-Capdeville
+- **Appel à projets - France 2030 régionalisé – Projets d’innovation** — échéance à vérifier — https://www.laregion.fr/Appel-a-projets-France-2030-regionalise-Projets-d-innovation
+- **Appel à projets - Handicap Occitanie 2023** — échéance à vérifier — https://www.laregion.fr/AAP-Handicap-Occitanie
+- **Appel à projets - Impulser des formations d’enseignement supérieur pour préparer aux métiers de demain 2026** — échéance à vérifier — https://www.laregion.fr/Appel-a-projets-Impulser-des-formations-d-enseignement-superieur-pour-preparer-aux
+- **Appel à projets - Info métiers** — échéance à vérifier — https://www.laregion.fr/Appel-a-projets-Info-metiers
+- **Appel à projets - Nérée 4 : valorisation du patrimoine maritime régional d’Occitanie** — échéance à vérifier — https://www.laregion.fr/Appel-a-projets-Neree-4-valorisation-du-patrimoine-maritime-regional-d-Occitanie
+- **Appel à projets - Occitanie Libre et Solidaire – Handicap, Egalité femmes-hommes, Lutte contre le racisme et l’antisémitisme, les LGBTQIA+phobies et autres discriminations** — échéance à vérifier — https://www.laregion.fr/Appel-a-projets-Occitanie-Libre-et-Solidaire-Handicap-Egalite-femmes-hommes-Lutte
+- **Appel à projets - Réduction de l’impact des ancres des navires de plaisance par la mise en peuvre de mouillages organisés** — échéance à vérifier — https://www.laregion.fr/Appel-a-projets-Reduction-de-l-impact-des-ancres-des-navires-de-plaisance-par-la
+- **Appel à projets - Total Festum - Solstice d’été / Feu de la Saint-Jean** — échéance à vérifier — https://www.laregion.fr/Appel-a-projets-Total-Festum-Solstice-d-ete-Feu-de-la-Saint-Jean
+- **Appel à projets - Tourisme durable, responsable et solidaire** — échéance à vérifier — https://www.laregion.fr/Appel-a-projets-Tourisme-durable-responsable-et-solidaire
+- **Appel à projets : "Réussir les transitions dans l'économie"** — échéance à vérifier — https://brest.fr/professionnels/repondre-un-appel-projets/appel-projets-reussir-les-transitions-dans-leconomie
+- **Appel à projets : "Teste ta boutique"** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Appel à projets : Lutte contre l&#8217;illettrisme - sensibilisation et information des acteurs sur le repérage et l&#8217;orientation des publics** — échéance à vérifier — https://www.laregion.fr/Appel-a-projets-Lutte-contre-l-illettrisme-sensibilisation-et-information-des-36959
+- **Appel à projets "AI gigafactory (AIGF)"** — 2026-11-12 — https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/tender-details/bc712395-692d-41ab-aa25-8e254ae86eb2-CN
+- **Appel à projets "Compensation des surcoûts de transport - Financement complémentaire"** — 2026-09-30 — https://www.reunion.gouv.fr/Publications/Appels-a-projets/Aide-au-fret-2026
+- **Appel à projets "Développement d'activités"** — 2026-10-12 — https://data.aides-entreprises.fr/stock
+- **Appel à projets "Economie circulaire, alimentation durable et adaptation au changement climatique"** — 2026-12-01 — https://www.province-nord.nc/demarches/appel-projets-economie-circulaire-alimentation-durable-adaptation-changement-climatique
+- **Appel à projets "EMERGENCE" - Edition 2027** — échéance à vérifier — https://www.laregion.fr/Appel-a-projets-EMERGENCE
+- **Appel à projets "Inventez en Pays d'Uzerche"** — 2029-06-30 — https://data.aides-entreprises.fr/stock
+- **Appel à projets "Labellisation des hébergements touristiques"** — échéance à vérifier — https://www.entreprendre-rennes.fr/dispositif/labellisation-ecoresponsable-des-hebergements-touristiques/
+- **Appel à projets "Parcours Transition écologique des brasseries artisanales"** — 2026-10-30 — https://www.grandest.fr/appel-a-projet/parcours-transition-ecologique-des-brasseries-artisanales/
+- **Appel à projets "Solutions circulaires"** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Appel à projets "Soutien aux initiatives de l'économie sociale et solidaire"** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Appel à projets « Connect Talent »** — échéance à vérifier — https://les-aides.paysdelaloire.fr/aides/#/prod/connecte/CONNECT_TALENT/depot/simple
+- **Appel à projets « Culture dans les villages d'Île-de-France »** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/834
+- **Appel à projets Aquaculture - Pêche** — échéance à vérifier — ftp://ftpdata.paysdelaloire.fr/Documents_aides/Subvention_DossierdecandidatureAAPPecheAqua20252026VF_e64ef7eb_PAPIER_INDIVIDUEL.docx
+- **Appel à projets diffusion de la Culture Scientifique Technique et Industrielle (CSTI) 2027** — échéance à vérifier — https://www.laregion.fr/Appel-a-projets-diffusion-de-la-Culture-Scientifique-Technique-et-Industrielle-CSTI
+- **Appel à Projets du Cluster Eureka Eurogia** — 2026-10-29 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-du-cluster-eureka-eurogia
+- **Appel à projets en faveur de la sensibilisation et de l’amélioration des conditions d’accueil des bénéficiaires d’une protection internationale et des demandeurs d’asile** — échéance à vérifier — https://www.laregion.fr/Soutien-demandeurs-asile-bpi-refugies
+- **Appel à Projets en Innovation Sociale et Durable** — 2026-10-29 — https://www.grandsoissons.com/grandsoissons-agglomeration-met-en-lumiere-son-appel-a-projets-en-innovation/
+- **Appel à projets Entrepreneuriat** — échéance à vérifier — https://www.laregion.fr/Appel-a-projets-Entrepreneuriat
+- **Appel à projets Innovation** — échéance à vérifier — https://www.aggloroanne.fr/ma-collectivite/emploi-et-economie/developpement-economique/aides-aux-entreprises-3084.html
+- **Appel à projets plus pour les entreprises innovantes** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Appel à projets pour l’égalité réelle entre les Femmes et les Hommes en Occitanie 2023** — échéance à vérifier — https://www.laregion.fr/Appel-a-projets-pour-l-egalite-reelle-entre-les-Femmes-et-les-Hommes-en-Occitanie
+- **Appel à projets pour l'orientation des Franciliens tout au long de la vie** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/722
+- **Appel à projets pour le soutien aux Actions de développement et structuration des filières en Agriculture Biologique en Occitanie** — échéance à vérifier — https://www.laregion.fr/Appel-a-projets-soutien-Actions-developpement-structuration-des-filieres-Agriculture-Biologique-Occitanie
+- **Appel à projets READYNOV - Santé du futur, Silver Economie et Industrie du sport - Clos** — échéance à vérifier — https://www.laregion.fr/Appel-a-projets-READYNOV-Sante-du-futur-Silver-Economie-et-Industrie-du-sport-Clos
+- **Appel à projets Structuration des filières biologiques régionales** — échéance à vérifier — ftp://ftpdata.paysdelaloire.fr/Documents_aides/Subvention_DemandetechniqueAAPFILIEREBIO2025_e634be1c_PAPIER_INDIVIDUEL.doc
+- **Appel à projets Téro** — 2026-11-06 — https://www.agglo-larochelle.fr/economie-emploi-et-vie-etudiante/developpement-economique?article=soutenir-l-investissement-pour-la-transition-ecologiq-1&anchor=tero
+- **Appels en cours et à venir** — 2027-02-15 — https://anr.fr/fr/appels/#
+- **Appui au Développement des Ressources Humaines des entreprises (DVRH) - Sécurisation des parcours professionnels** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/spip.php?page=dispositif&id_dispositif=688
+- **ARDAN Développement** — échéance à vérifier — http://www.ardancentre.fr/notre-accompagnement/16-ardan-developpement.html
+- **ARME - Anticipation Redressement Mutations Economiques - Aide au conseil** — échéance à vérifier — https://www.normandie.fr/anticipation-redressement-mutations-economiques
+- **ARME - Anticipation Redressement Mutations Economiques - Soutien suite à un sinistre exceptionnel** — échéance à vérifier — https://www.normandie.fr/soutien-suite-un-sinistre-exceptionnel-arme-anticipation-redressement-mutations-economiques
+- **Assurance Change Négociation** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/assurance-change-negociation
+- **Assurance change négociation Stop Loss** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/internationalisation/assurance-change-negociation-stop-loss
+- **Assurance financement de projet** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/assurance-financement-de-projet
+- **Assurance Investissement** — échéance à vérifier — https://www.bpifrance.fr/Toutes-nos-solutions/Garanties-et-assurances/Assurance-investissement-a-l-international/Assurance-investissement
+- **Assurance Préfinancement Export** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/internationalisation/assurance-prefinancement-export
+- **Attribution gratuite d'actions** — échéance à vérifier — https://www.urssaf.fr/accueil/employeur/cotisations/liste-cotisations/stock-option-attribution-action.html
+- **Avance + Préfinancement de marchés pour les TPE et PME - Fonds de Garantie Court Terme** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/avance-prefinancement-de-marches-pour-les-tpe-et-pme-fonds-de-garantie-court-terme
+- **Avance Remboursable - Reprise d’Entreprise fragile** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Avance remboursable pour des travaux immobiliers** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Avance remboursable pour la création et la reprise des TPE artisanales,commerciales et de service** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/337
+- **Avance remboursable pour la structuration de filières locales et durables** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Avance remboursable pour les PME** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Avance Remboursable Terroir de Caux Initiative** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Avantages fiscaux pour le financement d'activités et de services à domicile (CESU préfinancé)** — échéance à vérifier — https://travail-emploi.gouv.fr/droit-du-travail/les-contrats-de-travail/article/le-cheque-emploi-service-universel-cesu-prefinance
+- **Bassins d'emploi à redynamiser (BER) - Exonération d'impôt sur les bénéfices** — 2027-12-31 — https://www.service-public.fr/professionnels-entreprises/vosdroits/F31154
+- **Bassins Urbains à Dynamiser (BUD) - Exonération d'impôt sur les bénéfices** — 2026-12-31 — https://www.service-public.fr/professionnels-entreprises/vosdroits/F34799
+- **Bazad’Immo** — échéance à vérifier — https://cdcdubazadais.fr/entreprendre/aides-aux-entreprises/
+- **Beecome** — échéance à vérifier — https://www.strasbourg.eu/beecome
+- **Boost Innov'** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Boost Num'** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Bourse à la création et à la reprise d'entreprise** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Bourse d'émergence SCOP / SCIC** — échéance à vérifier — https://www.grandest.fr/vos-aides-regionales/ess-bourses-emergence-scop-scic/
+- **Breizh Up - Fonds régional de Co-investissement** — échéance à vérifier — https://breizhup.bretagne.bzh/
+- **Bretagne Capital Solidaire (BCS) - Participation au capital de petites entreprises** — échéance à vérifier — http://www.bretagne-capital-solidaire.fr/
+- **Cap Rebond Transition Centre Val de Loire** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/cap-rebond-transition-centre-val-de-loire
+- **CAP TPE** — échéance à vérifier — https://www.bethunebruay.fr/index.php/fr/aides_TPE
+- **CAP'Immo - Aide aux loyers** — échéance à vérifier — https://www.capnordmartinique.fr/accompagnement-des-entreprises/dispositif-aide-immobilier-capimmo
+- **CASQ - Aide à l’investissement des artisans de la communauté d’agglomération du saint-quentinois** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **CASQ START - Aide à l’investissement des artisans de la communauté d’agglomération du saint-quentinois** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Centre-Val de Loire Investissements** — échéance à vérifier — https://www.centre-valdeloire.fr/le-guide-des-aides-de-la-region-centre-val-de-loire/centre-val-de-loire-investissements
+- **Challans Gois Commerce Artisanat** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Chèque CREA** — échéance à vérifier — https://www.grandest.fr/vos-aides-regionales/les-cheques-crea/
+- **Chèque Export** — échéance à vérifier — https://www.grandest.fr/vos-aides-regionales/cheque-export/
+- **Chéquier entreprise** — échéance à vérifier — https://www.spm-ct975.fr/a-votre-service/entreprise-et-professionnels/dispositif-daide-aux-entreprises/aides-a-la-creation-dentreprise/
+- **Comité départemental d'examen des difficultés de financement des entreprises (CODEFI) - Comité interministériel de restructuration industrielle (CIRI)** — échéance à vérifier — https://www.tresor.economie.gouv.fr/Ressources/ciri
+- **Commerce et Artisanat - Eco-Défis** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Commission des chefs des services financiers et des représentants des organismes de sécurité sociale et de l'assurance-chômage (CCSF)** — échéance à vérifier — http://bofip.impots.gouv.fr/bofip/285-PGP.html?identifiant=BOI-CTX-GCX-10-30-30-40-20120912
+- **Concours** — échéance à vérifier — https://ofb.gouv.fr/concours
+- **Concours "Les Défis Cap'inno"** — 2026-10-30 — https://www.grandperigueux.fr/actualites/defis-capinno-ledition-2026-est-lancee/
+- **Concours Ateliers d'Art de France** — 2026-12-02 — https://www.ateliersdart.com/concours-ateliers-d-art-de-france,5,106.htm
+- **Connexion** — échéance à vérifier — https://ma-demarche-fse.fr/si_fse/servlet/login.html
+- **Contact et aide** — échéance à vérifier — https://www.lio-occitanie.fr/contact-et-aide/
+- **Contrat d'appui au projet d'entreprise (CAPE)** — échéance à vérifier — https://www.service-public.fr/particuliers/vosdroits/F11299
+- **Contrat de chaleur renouvelable** — 2029-03-01 — https://www.grandchambery.fr/mes-demarches/aides-energies/contrat-de-chaleur-renouvelable-territorial
+- **Contrat de Chaleur Renouvelable territorial (CCRt)** — échéance à vérifier — https://lillemetropole.fr/chaleur-renouvelable-la-mel-accompagne-les-projets-de-son-territoire
+- **Contrat RH-conseil** — échéance à vérifier — https://www.laregion.fr/contrat-RH
+- **Contrat RH-recrutement** — échéance à vérifier — https://www.laregion.fr/contrat-recrutement
+- **Cotentin Proximité - Aide à l'investissement** — échéance à vérifier — https://publiact.fr/documentPublic/839620
+- **Cotentin Proximité - Aide au conseil** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Coup d'pouce - Aide à l'économie sociale et solidaire** — échéance à vérifier — https://www.agglo-henincarvin.fr/aides-coup-dpouce-ess
+- **Coup d'pouce - Aide à la sobriété énergétique** — échéance à vérifier — https://www.agglo-henincarvin.fr/aides-coup-dpouce-0
+- **Coup d'pouce - Commerçants et artisans** — échéance à vérifier — https://www.agglo-henincarvin.fr/aides-coup-dpouce
+- **Coup de pouce** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Coup de pouce Coeur de Charente** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Coup de pouce exceptionnel - Annulation festival BD Angoulême** — échéance à vérifier — https://www.grandangouleme.fr/aide-aux-entreprises-impactees-par-lannulation-du-festival-de-la-bd-2026/
+- **Coup de pouce TPE** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Cré’Avenir - Aide à la création ou reprise d’entreprise** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Créa Commerce** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Crédit d’impôt au titre des investissements en faveur de l’industrie verte (C3IV)** — 2028-12-31 — https://www.economie.gouv.fr/service-agrement-credit-impot-investissements-lindustrie-verte-c3iv#
+- **Crédit d’impôt en faveur de la recherche collaborative** — 2028-12-31 — https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000044637640
+- **Crédit d'impôt en faveur des créateurs de jeux vidéo** — 2031-12-31 — https://www.cnc.fr/professionnels/aides-et-financements/jeu-video/credit-dimpot-jeu-video_121078
+- **Crédit d'Impôt en faveur des Métiers d'Art (CIMA)** — échéance à vérifier — https://www.service-public.fr/professionnels-entreprises/vosdroits/F31461
+- **Crédit d'Impôt Innovation (CII)** — 2027-12-31 — https://entreprendre.service-public.fr/vosdroits/F35494
+- **Crédit d'impôt pour certains investissements réalisés et exploités en Corse** — échéance à vérifier — http://bofip.impots.gouv.fr/bofip/6493-PGP.html?identifiant=BOI-BIC-RICI-10-60-10-20190703
+- **Crédit d’impôt pour dépenses d’édition d’œuvres musicales** — 2027-12-31 — https://www.legifrance.gouv.fr/codes/id/LEGISCTA000044925436
+- **Crédit d'impôt pour dépenses de production d'œuvres phonographiques** — 2027-12-31 — http://bofip.impots.gouv.fr/bofip/4418-PGP.html?identifiant=BOI-IS-RICI-10-10-20190410
+- **Crédit d'impôt pour dépenses de production déléguée d'œuvres audiovisuelles (Crédit d'impôt audiovisuel)** — échéance à vérifier — https://www.cnc.fr/professionnels/aides-et-financements/audiovisuel/production/credit-dimpot-audiovisuel_778316
+- **Crédit d'impôt pour dépenses de production déléguée d'oeuvres cinématographiques ou audiovisuelles** — 2028-12-31 — https://www.cnc.fr/professionnels/aides-et-financements/cinema/production/credit-dimpot-cinema_132769
+- **Crédit d'Impôt pour dépenses de représentations théâtrales d'œuvres dramatiques ou de cirque** — 2027-12-31 — https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000046845677
+- **Crédit d'Impôt pour la Compétitivité et l'Emploi (CICE) - Mayotte** — 2026-12-31 — https://entreprendre.service-public.fr/vosdroits/F31326
+- **Crédit d'impôt Recherche (CIR)** — échéance à vérifier — https://entreprendre.service-public.fr/vosdroits/F23533
+- **Crédit Librement Utilisable (CLUB)** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/credit-librement-utilisable-par-le-beneficiaire-club
+- **Crédit-Bail Immobilier** — échéance à vérifier — https://www.bpifrance.fr/Toutes-nos-solutions/Prets/Credit-bail/Credit-Bail-immobilier
+- **Crédit-Bail Mobilier - Location financière** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/credit-bail-mobilier
+- **Cumul des revenus avec l’allocation d’aide au retour à l’emploi (ARE)** — échéance à vérifier — https://www.service-public.fr/particuliers/vosdroits/F14860
+- **Découvrez vos aides éligibles parmi tous les financeurs publics** — échéance à vérifier — https://mission-transition-ecologique.beta.gouv.fr/?profil-entreprise=oui&utm_campaign=agir-3
+- **Déduction fiscale optionnelle des amortissements des fonds commerciaux** — 2029-12-31 — https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000053508210
+- **Déduction forfaitaire des cotisations patronales au titre des rémunérations relatives aux heures supplémentaires** — échéance à vérifier — https://www.urssaf.fr/accueil/employeur/beneficier-exonerations/exonerations-heures/deduction-forfaitaire-patronale.html
+- **Déduction forfaitaire des cotisations patronales sur les heures supplémentaires pour les entreprises entre 20 et 250 salariés** — échéance à vérifier — https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000046677235
+- **Diagnostic d'aide aux créateurs** — échéance à vérifier — https://www.normandie.fr/un-diagnostic-pour-aider-les-createurs
+- **Dispositif "Champions du territoire"** — échéance à vérifier — https://www.limoges-metropole.fr/fileadmin/3-ENTREPRENDRE/1-Outils_pour_les_entreprises/2-Accompagnement_financier/202307_Aides/20230705_Aide_Expertise_Champion_Du_Territoire_Site_Internet_Limoges_Metropole.pdf
+- **Dispositif "Intégrer les fondamentaux du numérique"** — échéance à vérifier — https://www.entreprises.cci-paris-idf.fr/integrer-les-fondamentaux-du-numerique
+- **Dispositif "Je m'installe en centre bourg"** — échéance à vérifier — https://www.perigord-limousin.fr/vos-demarches-au-quotidien/espaces-entreprises/aides-aux-entreprises-2/je-minstalle-en-centre-bourg/
+- **Dispositif "Premiers pas vers l'innovation"** — échéance à vérifier — https://www.limoges-metropole.fr/fileadmin/3-ENTREPRISES/2-Notre-accompagnement/1_Cr%C3%A9er_son_entreprise/Premiers_pas_vers_l_innovation_Limoges_M%C3%A9tropole.pdf
+- **Dispositif ARTI +** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Dispositif Audace - Projets d'investissements** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Dispositif d'accompagnement des commerces en centralité rurale** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Dispositif d'accompagnement des commerces en milieu rural** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Dispositif d’appui aux structures de l'Économie Sociale et Solidaire** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif942
+- **Dispositif d’exonération d’octroi de mer - Importation de biens** — échéance à vérifier — https://aides.regionguadeloupe.fr/Dispositif-d-exoneration-d-octroi-de-mer-a-l-importation-de-biens
+- **Dispositif d’exonération d’octroi de mer - Livraison de biens** — échéance à vérifier — https://aides.regionguadeloupe.fr/Dispositif-d-exoneration-d-octroi-de-mer-a-la-livraison-de-biens
+- **Dispositif de revitalisation commerciale** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Dispositif de soutien au commerce de proximité - Ecoprox** — 2026-12-31 — https://www.cc-valleedechamonixmontblanc.fr/demarches/economie-et-entreprises/ecoprox-aide-aux-commerces-de-proximite/
+- **Dispositif de soutien exceptionnel aux débits de tabac** — échéance à vérifier — https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000048226799
+- **Dispositif de soutien forfaitaire aux buralistes** — échéance à vérifier — https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000048226778
+- **Dispositif DEDIHCATED** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Dispositif Eco-transition** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Dispositif Inond’Action** — échéance à vérifier — https://ampmetropole.fr/environnement/faites-face-aux-inondations-grace-au-dispositif-inondaction/
+- **Dispositif métropolitain de soutien aux activités de proximité** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Dispositif Move2Digital** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/move2digital
+- **Dispositif PEPICOS-MED - Aide aux professions médicales et paramédicales** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Dispositif SudPro** — 2026-10-31 — https://www.province-sud.nc/sudpro#1-prsentation-du-dispositif
+- **Dispositif Véhicules propres - Prime à la non-casse - Transformation de véhicules thermiques** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/dispositif-vehicules-propres-prime-la-non-casse-transformation-de-vehicules-thermiques
+- **Dotation jeunes agriculteurs (DJA) (FEADER)** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/etude-dinstallation-en-agriculture?sous_thematique=222
+- **Eco Pulse Investissements** — échéance à vérifier — https://www.tulleagglo.fr/entreprendre/les-aides/ecopulse/
+- **Emergence ESS coopérative** — échéance à vérifier — https://www.normandie.fr/emergence-ess-cooperative
+- **Entrepren@ Commerce - Aides à l’investissement immobilier pour les commerces de proximité situés dans les bourgs centres** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Entrepren@ Commerce - Aides à l’investissement immobilier pour les commerces de proximité situés dans les centres-villes** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Entrepren@ Immobilier - Aide au bâti** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Entrepren@ Immobilier - Projets stratégiques** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Entrepren@ Innovation - Aide aux études de faisabilité à destination des startups** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Epargne salariale - Plan d'épargne d'entreprise (PEE) - Exonérations sociales et fiscales** — échéance à vérifier — https://www.service-public.fr/particuliers/vosdroits/F2142
+- **Espace Usagers** — échéance à vérifier — https://lecd976soutientmonprojet.fr/
+- **Espace Usagers** — échéance à vérifier — https://nosaidesenligneregion.centre-valdeloire.fr/
+- **Espace Usagers** — échéance à vérifier — https://aidesenligne.maregionsud.fr/aides/#/crsud/connecte/F_S_HD_I/depot/simple
+- **EU Funding & Tenders Portal** — échéance à vérifier — https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/ESC-HUMAID-2021-QUAL-LABEL-FP?isExactMatch=true&status=31094501,31094502&frameworkProgramme=43254037&order=DESC&pageNumber=1&pageSize=50&sortBy=startDate
+- **Exonération de charges pour l'attribution de chèques vacances** — échéance à vérifier — https://www.urssaf.fr/accueil/employeur/gerer-entreprise/comite-social-et-economique/prestations-cse-exo-conditions.html
+- **Exonération de cotisations et contributions sociales liée à la pratique du sport en entreprise** — échéance à vérifier — https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000043548437
+- **Exonération de cotisations sociales patronales pour les entreprises de l'Outre-Mer** — échéance à vérifier — https://www.legifrance.gouv.fr/affichTexte.do;jsessionid=9BFDB3E23BF8940440A1EF8406F78E26.tplgfr31s_2?cidTexte=JORFTEXT000037847585&categorieLien=id#JORFARTI000037847662
+- **Exonération de la cotisation foncière des entreprises (CFE) - Diffuseurs de presse spécialistes** — échéance à vérifier — http://bofip.impots.gouv.fr/bofip/10874-PGP.html?identifiant=BOI-IF-CFE-10-30-10-45-20170705
+- **Exonération de la cotisation foncière des entreprises (CFE) - Entreprises de spectacles vivants** — échéance à vérifier — https://www.service-public.fr/professionnels-entreprises/vosdroits/F23547
+- **Exonération de la cotisation foncière des entreprises (CFE) - Etablissements cinématographiques** — échéance à vérifier — https://bofip.impots.gouv.fr/bofip/4227-PGP.html/identifiant%3DBOI-IF-CFE-10-30-30-20-20170503
+- **Exonération de la cotisation foncière des entreprises (CFE) - Sociétés coopératives de production (SCOP)** — échéance à vérifier — https://www.service-public.fr/professionnels-entreprises/vosdroits/F31913
+- **Exonération de la taxe annuelle sur les bureaux en région Ile-de-France** — échéance à vérifier — https://entreprendre.service-public.gouv.fr/vosdroits/F20668
+- **Exonération de la taxe annuelle sur les bureaux en région PACA** — échéance à vérifier — https://entreprendre.service-public.fr/vosdroits/F37028
+- **Exonération de la taxe spéciale de carburant - Artisans taxis et TPMR** — échéance à vérifier — https://aides.regionguadeloupe.fr/Remboursement-forfaitaire-de-la-taxe-speciale-de-consommation-sur-les
+- **Exonération de la taxe spéciale de carburant - BTP** — échéance à vérifier — https://aides.regionguadeloupe.fr/Remboursement-forfaitaire-de-la-taxe-speciale-de-consommation-sur-le-carburant
+- **Exonération de la taxe spéciale de carburant - GNR** — échéance à vérifier — https://aides.regionguadeloupe.fr/Exoneration-de-la-taxe-speciale-de-consommation-sur-le-carburant-TSC-et-d
+- **Exonération de la taxe spéciale de consommation sur le carburant - alimentation moteurs fixes** — échéance à vérifier — https://aides.regionguadeloupe.fr/Exoneration-de-la-taxe-speciale-de-consommation-sur-le-carburant-alimentation
+- **Exonération de la TICFE (Taxe Intérieure sur la Consommation Finale d’Électricité)** — échéance à vérifier — https://www.douane.gouv.fr/la-douane/informations/bulletins-officiels-des-douanes/bod/7313
+- **Exonération des droits de mutation à titre gratuit des entreprises transmises dans le cadre familial** — échéance à vérifier — https://www.legifrance.gouv.fr/affichTexte.do;jsessionid=D8FEB8FDE4116A85FB2412019B5B5FEB.tplgfr27s_1?cidTexte=JORFTEXT000037882341&categorieLien=id#JORFARTI000037882391
+- **Exonération des droits de mutation en cas de cession d'une entreprise à un salarié ou au conjoint du cédant** — échéance à vérifier — https://www.service-public.fr/professionnels-entreprises/vosdroits/F31837
+- **Exonération facultative de cotisation foncière des entreprises (CFE) - Créations ou extensions d'établissements** — échéance à vérifier — https://entreprendre.service-public.fr/vosdroits/F23547
+- **Exonération facultative de taxe foncière sur les propriétés bâties (TFPB) en faveur des activités artisanales ou commerciales situées dans les zones de revitalisation des centres-villes** — 2026-12-31 — https://www.legifrance.gouv.fr/affichTexte.do;jsessionid=232E939F69DFF888F05229A59408A39E.tplgfr27s_2?cidTexte=JORFTEXT000039683923&categorieLien=id#JORFARTI000039684048
+- **Exonération fiscale des accords de participation des salariés aux résultats de l'entreprise** — échéance à vérifier — https://travail-emploi.gouv.fr/droit-du-travail/l-epargne-salariale/article/les-avantages-sociaux-et-fiscaux-de-l-epargne-salariale
+- **Exonération sur les cotisations de sécurité sociale pour l'attribution de titres restaurants** — échéance à vérifier — https://www.urssaf.fr/portail/home/taux-et-baremes/frais-professionnels/les-titres-restaurant.html
+- **Exonération temporaire de CFE et TFPB en faveur des activités artisanales ou commerciales situées dans les zones de revitalisation des centres-villes** — échéance à vérifier — https://bofip.impots.gouv.fr/bofip/14176-PGP.html/ACTU-2024-00065
+- **Exonérations et abattements de Cotisation sur la Valeur Ajoutée des Entreprises (CVAE)** — échéance à vérifier — https://bofip.impots.gouv.fr/bofip/14510-PGP.html/ACTU-2024-00254
+- **Exonérations sur les indemnités versées en cas de rupture négociée du contrat de travail** — échéance à vérifier — https://travail-emploi.gouv.fr/droit-du-travail/la-rupture-du-contrat-de-travail/article/la-rupture-conventionnelle-du-contrat-de-travail-a-duree-indeterminee
+- **Expérimentation "Territoires zéro chômeur de longue durée"** — échéance à vérifier — https://etcld.fr/
+- **Facebook** — échéance à vérifier — https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.europe-guadeloupe.fr%2Ffinancement%2Ffeder-fse-region-guadeloupe_competitivite-entreprise%2F&t=FEDER-%20FSE%2B%20REGION%20GUADELOUPE
+- **Facebook** — échéance à vérifier — https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fhauts-de-france.dreets.gouv.fr%2FCalendrier-des-appels-a-projets-FSE-et-FTJ
+- **Facebook** — échéance à vérifier — http://www.facebook.com/share.php?u=https://www.europe-en-nouvelle-aquitaine.eu/fr/fonds-europeen/le-fonds-europeen-agricole-pour-le-developpement-rural-feader.html&title=Le%20Fonds%20europ%C3%A9en%20agricole%20pour%20le%20d%C3%A9veloppement%20rural%20%20(FEADER)
+- **Facebook** — échéance à vérifier — http://www.facebook.com/share.php?u=https%3A%2F%2Fwww.laregion.fr%2FLes-aides-et-appels-a-projets
+- **FAPA - Fonds d'appui à la promotion artisanale** — échéance à vérifier — https://www.cma.nc/votre-cma/actualites/aides-financieres-cma-2026
+- **FEADER** — échéance à vérifier — https://translate.google.com/translate?sl=auto&tl=en&u=https%3A%2F%2Fwww.europe-guyane.fr%2Fprogrammes%2Ffeader%2F
+- **FEADER - Soutien aux investissements agricoles environnementaux non productifs AAP 2026** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/833
+- **FEADER : Appel à projets PCAE Élevage** — échéance à vérifier — https://les-aides.paysdelaloire.fr/aides/#/prod/connecte/F_PDL73010105/depot/simple
+- **FEADER : Appel à projets PCAE Végétal** — échéance à vérifier — https://les-aides.paysdelaloire.fr/aides/#/prod/connecte/F_PDL73010204/depot/simple
+- **FEDER** — échéance à vérifier — https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwww.europe-guyane.fr%2Fprogrammes%2Ffeder%2F
+- **FEDER - Action "Créer et équiper des lieux partagés par des professionnels ou par des acteurs publics privés pour favoriser l'insertion des habitants et le lien social en tout point du territoire"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **FEDER - Action "Structurer la destination touristique enfants - familles et thermale"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **FEDER - Diversifier l’économie locale grâce à l’Economie Sociale et Solidaire** — 2027-12-31 — https://www.europe-paysbarval.fr/
+- **FEDER - Fonds pour une Transition Juste (FTJ) - Investissements dans les énergies renouvelables et les infrastructures vertes pour une transition juste** — échéance à vérifier — https://www.normandie.fr/investissements-dans-les-energies-renouvelables-et-les-infrastructures-vertes-pour-une-transition
+- **FEDER - Fonds pour une Transition Juste (FTJ) - Recherche et Innovation dans les entreprises pour une transition juste** — échéance à vérifier — https://www.normandie.fr/recherche-et-innovation-dans-les-entreprises-pour-une-transition-juste-ftj
+- **FEDER - Fonds Régional Avenir Industrie** — échéance à vérifier — https://www.auvergnerhonealpes-avenirindustrie.fr/
+- **FEDER - Soutien à l'investissement matériels des entreprises de loisirs touristiques** — 2027-12-31 — https://regionreunion.com/IMG/pdf/v4_fa_1.3.10_entp_loisirs_touristiques.pdf
+- **FEDER - Soutien aux projets innovants des entreprises** — 2027-12-31 — https://regionreunion.com/IMG/pdf/v3-_fa_1.1.10_soutien_aux_projets_innovants.pdf
+- **Fiches programmes régionaux et nationaux FEDER-FSE+ FTJ 2021-2027** — échéance à vérifier — https://europe-en-france.gouv.fr/fr/ressources/fiches-programmes-regionaux-et-nationaux-feder-fse-ftj-2021-2027
+- **Financements et appels à projets** — 2026-09-20 — https://ofb.gouv.fr/appels-a-projets
+- **Fond Métropolitain pour l'Entrepreneuriat de Production (FMEP)** — échéance à vérifier — https://www.initiative-clermont-metropole.com/fond-metropolitain-pour-entrepreneuriat-de-production.html
+- **Fond pour l’investissement et les travaux** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Fond pour le développement de nouveaux procédés d’économie circulaire** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Fonds "France Investissement Tourisme"** — échéance à vérifier — https://www.bpifrance.fr/nos-solutions/investissement/investissement-expertise/france-investissement-tourisme
+- **Fonds 1er secours +** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif999
+- **Fonds 1er secours F1PS** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/spip.php?page=dispositif&id_dispositif=652
+- **Fonds Air Entreprise de la Vallée de l'Arve** — 2026-12-31 — https://data.aides-entreprises.fr/stock
+- **Fonds Air Véhicule Pro** — échéance à vérifier — https://www.le-gresivaudan.fr/679-fonds-air-vehicule.htm
+- **Fonds Air Véhicules** — 2026-12-31 — https://www.ccpmb.fr/actualite/fondsairvehicules/
+- **Fonds Breizh Rebond** — échéance à vérifier — https://breizh-rebond.fr/
+- **Fonds Build-Up International** — échéance à vérifier — https://www.bpifrance.fr/nos-solutions/investissement/investissement-expertise/fonds-build-international
+- **Fonds Catastrophe et Intempéries (FCI)** — échéance à vérifier — https://secu-independants.fr/action-sociale/demander-une-aide/fonds-catastrophe-et-intemperies
+- **Fonds Chaleur - Grenoble Alpes Métropole** — échéance à vérifier — https://www.grenoblealpesmetropole.fr/554-installer-un-chauffage-a-energies-renouvelables.htm
+- **Fonds communautaire de soutien aux commerces et services de proximité** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Fonds d'aide à l'économie locale** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Fonds d'Aide à l'investissement Commercial Privé - Renforcement commercial des centres-bourgs** — échéance à vérifier — https://www.terresdebresse.fr/wp-content/uploads/2025/04/reglement-intervention-2025.pdf
+- **Fonds d’aide à la rénovation des devantures** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Fonds d'aide à la transition écologique pour les TPE** — échéance à vérifier — https://www.dlva.fr/wp-content/uploads/2025/04/DLVA_2024_Scheema-deeveloppement-eeconomique-FLYER-TRANSITION.pdf
+- **Fonds d’aide aux investissements pour la dynamisation du tissu économique** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Fonds d'aide aux TPE** — 2026-12-31 — https://data.aides-entreprises.fr/stock
+- **Fonds d'aide pour les centres-villes** — échéance à vérifier — https://www.dlva.fr/wp-content/uploads/2025/04/DLVA_2025_Schema-developpement-economique-FLYER-COMMERCEV2.pdf
+- **Fonds d'aides économiques** — échéance à vérifier — https://creuse-grand-sud.fr/pdf/actes-administratifs/deliberations/N%C2%B02024-083_PJ_Modification_Reglement-aides-economiques-CGS.pdf
+- **Fonds d'hébergement touristique** — échéance à vérifier — https://www.creusot-montceau.org/economie/nous-accompagnons-vos-projets/aides-et-financements/
+- **Fonds d’innovation pour la croissance (FIC)** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Fonds d'Intervention Artisans Commerçants** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Fonds d'intervention local** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Fonds d’Investissement "Croissance et Proximité 2"** — échéance à vérifier — https://www.normandie.fr/soutien-aux-fonds-propres-des-entreprises-le-fonds-dinvestissement-croissance-proximite-2
+- **Fonds d'Investissement au Développement de l'Economie Sociale et Solidaire** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif944
+- **Fonds d’Investissement FAIRE** — échéance à vérifier — https://regionreunion.com/actualite/toute-l-actualite/article/dispositif-faire-la-region-reunion-s-engage-pour-la-creation-et-le-developpement-des-pme
+- **Fonds de capital-amorçage IRDINOV 3** — échéance à vérifier — https://www.irdi.fr/innovation/irdinov-irdinov-2-irdinov-3/
+- **Fonds de garantie Bpifrance** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/fonds-de-garantie-en-partenariat-avec-bpi-france
+- **Fonds de Garantie Développement Industriel** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/obtenir-une-garantie-de-pret-bancaire-pour-mon-entreprise-industrielle
+- **Fonds de garantie France Active** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/fonds-de-garantie-en-partenariat-avec-france-active
+- **Fonds de garantie SIAGI** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/fonds-de-garantie-en-partenariat-avec-la-siagi
+- **Fonds de prêts Île-de-France Prévention** — 2027-12-31 — https://www.iledefrance.fr/actes/deliberations/CR2025-009DEL.pdf
+- **Fonds de Secours pour l’Outre-Mer (FSOM)** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Fonds de Soutien à l’Alternance Artisanale (FS2A)** — échéance à vérifier — https://www.cma.nc/votre-cma/actualites/fs2a-soutien-financier-aux-entreprises-artisanales-employeuses-d-alternants
+- **Fonds de soutien à l'économie locale** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Fonds de transition de Pévèle Carembault** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Fonds de transition des entreprises** — échéance à vérifier — https://www.laval-economie.fr/jai-besoin-de-soutien-financier/
+- **Fonds Départemental de Revitalisation du Territoire (FDRT) - Aide à l'emploi pour la transition écologique et numérique** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Fonds Départemental de Revitalisation du Territoire (FDRT) - Aide à l'emploi pour les entreprises qui recrutent des publics éloignés du marché du travail** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Fonds Départemental de Revitalisation du Territoire (FDRT) - Aide au développement** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Fonds direct "Breizh Invest PME"** — échéance à vérifier — https://www.breizh-invest-pme.bzh/
+- **Fonds direct "Femu Quì"** — échéance à vérifier — https://www.femuqui.com/
+- **Fonds direct "IRDI"** — échéance à vérifier — https://www.irdi.fr/
+- **Fonds direct "Jeremie Financement 2"** — échéance à vérifier — http://www.jeremie-auvergne.eu/
+- **Fonds direct "Jeremie Innovation 2"** — échéance à vérifier — http://www.jeremie-auvergne.eu/jeremie-innovation-22/
+- **Fonds direct "Reprendre et Développer II"** — échéance à vérifier — https://www.normandie.fr/soutien-aux-fonds-propres-des-entreprises-le-fonds-dinvestissement-reprendre-developper-2
+- **Fonds direct "Reprendre et Développer IV"** — échéance à vérifier — https://www.normandie.fr/nci-fonds-dinvestissement-reprendre-developper-4
+- **Fonds direct "Scientipôle Ile-de-France Capital"** — échéance à vérifier — https://scientipolecapital.fr/
+- **Fonds direct JEREMIE "CAP' PME 2"** — échéance à vérifier — http://www.jeremie-auvergne.eu/jeremie-financement-2-2/
+- **Fonds européens territorialisés 2021-2027 - Action "Accompagner l’essor du tourisme durable sur le territoire"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Fonds européens territorialisés 2021-2027 - Action "Développer une offre de services, de logements et de commerces des centres-bourgs garantissant la cohésion sociale"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Fonds européens territorialisés 2021-2027 - Action "Favoriser une alimentation durable et accessible pour tous"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Fonds Gâtine Initiatives** — échéance à vérifier — https://www.pays-gatine.com/fonds-g%C3%A2tine-initiatives-fgi.html
+- **Fonds Île de France Réindustrialisation** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/fonds-ile-de-france-reindustrialisation
+- **Fonds Île-de-France Décarbonation** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/fonds-ile-de-france-decarbonation
+- **Fonds Impact Local - Création ou reprise d'un commerce sous enseigne** — échéance à vérifier — https://www.impactlocal.fr/commerce-sous-enseigne
+- **Fonds Impact Local - Soutien aux commerces indépendants** — échéance à vérifier — https://www.impactlocal.fr/commerce-independant
+- **Fonds Initiative Innovation** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Fonds InvESS’t NA** — échéance à vérifier — https://www.banquedesterritoires.fr/sites/default/files/2026-06/20260612%2033%20CP%20Invesst%27in%20Fond%20ESS.pdf
+- **Fonds Mutualisé Départemental de Revitalisation (FMDR) - Aide à la création d'emplois en CDI en Indre et Loire** — échéance à vérifier — https://www.touraine.cci.fr/produit/fmdr-fonds-mutualise-departemental-de-revitalisation
+- **Fonds Parisien pour l’Innovation** — échéance à vérifier — https://cdn.paris.fr/paris/2025/08/07/fiche-fpi-fab-RWAR.pdf
+- **Fonds partenarial économie de proximité** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Fonds partenarial économie de proximité** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Fonds Régional d'Innovation (FRI) - Normandie** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Fonds Régional de Garantie Grand Est** — échéance à vérifier — https://www.grandest.fr/vos-aides-regionales/fonds-regional-de-garantie-grand-est/
+- **Fonds régional pour les talents émergents (FoRTE) - Subvention aux structures (2026)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/412
+- **Fonds Régional Tourisme de Savoir-Faire - Audit** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Fonds Régional Tourisme de Savoir-Faire - Réalisation** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Fonds social européen - Home | Le programme national FSE + et FTJ** — échéance à vérifier — https://fse.gouv.fr/
+- **Fonds Solidarité Métiers d’art** — échéance à vérifier — https://ateliersdart.com/action-syndicale/prevenir-et-proteger/fonds-solidarite-metiers-dart/
+- **Fonds souverain Auvergne-Rhône-Alpes** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/renforcer-les-fonds-propres-de-mon-entreprise-avec-le-fonds-souverain-auvergne-rhone-alpes
+- **Fonds Sud Innovation** — échéance à vérifier — https://www.province-sud.nc/catweb/app/demarches/fonds-sud-innovation-:-soutien-a-l%E2%80%99emergence-de-projets-innovants
+- **Fonds Terre de Provence** — échéance à vérifier — https://www.terredeprovence-agglo.com/page/commercants-artisans-renovez-vos-locaux
+- **Fonds Transméa** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/region-commerce-et-artisanat-creation-reprise-reprendre-mon-entreprise-avec-le-fonds-transmea
+- **Forward email** — échéance à vérifier — https://www.europe-en-nouvelle-aquitaine.eu/social-media-forward?subject=Le%20Fonds%20europ%C3%A9en%20agricole%20pour%20le%20d%C3%A9veloppement%20rural%20%20(FEADER)%20&body=https://www.europe-en-nouvelle-aquitaine.eu/fr/fonds-europeen/le-fonds-europeen-agricole-pour-le-developpement-rural-feader.html&destination=/node/18
+- **France 2030 - Appel à projet régionalisé "Projets d'Innovation" - Nouvelle-Calédonie** — 2026-09-30 — https://france2030regionalise.gouv.nc/projets-d-innovation/
+- **France 2030 - Appel à projets - Aides à l’innovation "Bottom-up" - Projets de formation professionnelle** — 2026-12-31 — https://www.banquedesterritoires.fr/aap-aides-innovation-bottomup-projets-formation-professionnelle-nouvelle-caledonie
+- **France 2030 - Prêt Nouvelle Industrie** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/premiere-industrialisation/pret-nouvelle-industrie
+- **France 2030 : Appel à projets "Projets d'Innovation" - Normandie** — 2026-09-30 — https://innov-avenir.normandie.fr/projets-d-innovation/
+- **France 2030 Auvergne-Rhône-Alpes Aides à l'innovation "Bottom-up"** — échéance à vérifier — https://france2030.auvergnerhonealpes.fr/#
+- **France 2030 régionalisé Bourgogne-Franche-Comté** — échéance à vérifier — https://france2030.bourgognefranchecomte.fr/#
+- **France 2030 régionalisé Centre-Val de Loire** — échéance à vérifier — https://innovationavenir.centrevaldeloire.fr/#
+- **France 2030 régionalisé Grand Est** — échéance à vérifier — https://innovationavenir.grandest.fr/#
+- **France 2030 régionalisé Guyane** — échéance à vérifier — https://france2030regionalise.ctguyane.fr/#
+- **France 2030 régionalisé Normandie** — échéance à vérifier — https://innov-avenir.normandie.fr/#
+- **France Active Investissement (FAI)** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **France Ruralité Revitalisation (FRR) - Exonération de l'impôt sur le revenu ou sur les sociétés** — échéance à vérifier — https://entreprendre.service-public.fr/vosdroits/F31139
+- **France Ruralité Revitalisation (FRR) - Exonérations de cotisations patronales** — échéance à vérifier — https://entreprendre.service-public.fr/vosdroits/F31048
+- **FRG (Fonds régional de garantie) - Auvergne-Rhône-Alpes** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/obtenir-une-garantie-de-pret-bancaire
+- **FRG (Fonds régional de garantie) - Bretagne** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **FRG (Fonds Régional de Garantie) - Centre-Val de Loire** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/frg-centre-val-de-loire
+- **FRG (Fonds régional de garantie) - Ile-de-France** — échéance à vérifier — https://www.iledefrance.fr/aides-services/fonds-regional-de-garantie
+- **FRG (Fonds Régional de Garantie) - Normandie** — échéance à vérifier — https://www.normandie.fr/fonds-regional-de-garantie-avec-bpi-france
+- **FRG (Fonds régional de garantie) - Nouvelle-Aquitaine** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/fonds-de-garantie-en-partenariat-avec-bpi-france
+- **FRG (Fonds Régional de Garantie) - Occitanie - Volet général** — échéance à vérifier — https://www.laregion.fr/IMG/pdf/fiche_frg_2_occitanie_-_volet_general.pdf
+- **FRG (Fonds Régional de Garantie) - Occitanie - Volet Prêt pour l'ESS** — échéance à vérifier — https://www.laregion.fr/IMG/pdf/fiche_frg_2_occitanie_-_volet_prets_ess.pdf
+- **FRG (Fonds Régional de Garantie) - Occitanie - Volet Prêts d’amorçage** — échéance à vérifier — https://www.laregion.fr/IMG/pdf/fiche_frg_2_occitanie_-_volet_prets_d_amorcage.pdf
+- **FRG (Fonds Régional de Garantie) - Pays de la Loire** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/pays-de-la-loire-garantie
+- **FSE - Fraudes : Accueil** — échéance à vérifier — https://www.plateforme-elios.fse.gouv.fr/
+- **Garantie aux entreprises culturelles et créatives** — échéance à vérifier — https://www.ifcic.fr/financement/la-garantie/
+- **Garantie Court Terme** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/garantie-court-terme-0
+- **Garantie Création** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/garantie-creation-standard
+- **Garantie Création Verte** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/garantie-creation-verte
+- **Garantie de prêts hébergements touristiques** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Garantie de projets à l'international** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/internationalisation/garantie-de-projets-a-linternational
+- **Garantie Développement** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/garantie-developpement-standard
+- **Garantie Développement Vert** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/garantie-developpement-vert
+- **Garantie EGALITE Femmes** — échéance à vérifier — https://bpifrance-creation.fr/encyclopedie/financements/dispositifs-garantie/garantie-egalite-femmes-ex-fgif
+- **Garantie FOSTER Région Occitanie** — échéance à vérifier — https://hubentreprendre.laregion.fr/financement/garantie-foster-region-occitanie
+- **Garantie Innovation** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/soutien-linnovation/garantie-innovation
+- **Garantie International** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/garantie-international-0
+- **Garantie Internationale Court Terme** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/garantie-internationale-court-terme
+- **Garantie Pure Inconditionnelle** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/garantie-pure-et-inconditionnelle
+- **Garantie Renforcement de la Trésorerie** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/garantie-renforcement-de-la-tresorerie-standard
+- **Garantie SOFISCOP** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Garantie Transmission** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/garantie-transmission-standard
+- **Garantie Transmission verte** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/garantie-transmission-verte
+- **Garanties France Active** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Gérer et aider à la gestion des espaces protégés** — échéance à vérifier — https://ofb.gouv.fr/gerer-et-aider-a-la-gestion-des-espaces-proteges
+- **Gestion des subventions et des aides individuelles** — échéance à vérifier — https://subventions.bourgognefranchecomte.fr/sub/tiers/aides/details/?sigle=FB-ACOL
+- **Hauts-de-France Prévention** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif704
+- **HubEntreprendre** — échéance à vérifier — https://hubentreprendre.laregion.fr/financement/france-2030-regionalise-appel-a-projets-dinnovation
+- **IMPACT +** — échéance à vérifier — https://investinclermont.eu/wp-content/uploads/2025/05/1_REGLEMENT-IMPACT_PLUS.pdf
+- **Impulsion Développement** — échéance à vérifier — https://www.normandie.fr/impulsion-developpement
+- **Impulsion Proximité - Investissement** — échéance à vérifier — https://adnormandie.fr/wp-content/uploads/2022/03/Reglement-imp-prox_28-avril-2025.pdf
+- **InvESS Île-de-France - Amorçage** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/invess-ile-de-france
+- **Jeune entreprise de croissance (JEC) - Exonération de taxe foncière sur les propriétés bâties (TFPB)** — échéance à vérifier — https://entreprendre.service-public.fr/vosdroits/F31188
+- **Jeune entreprise innovante (JEI) - Exonération fiscale (impôt sur les bénéfices, CFE, taxe foncière sur les propriétés bâties)** — 2028-12-31 — https://www.service-public.fr/professionnels-entreprises/vosdroits/F31188
+- **Jeune Entreprise Innovante à Impact (JEII) - Exonération des cotisations sociales patronales** — échéance à vérifier — https://entreprendre.service-public.gouv.fr/vosdroits/F31188
+- **La page que vous recherchez n'est pas disponible** — échéance à vérifier — https://fse.gouv.fr/sites/default/files/2023-03/ProgrammeFSE_A4_0.pdf
+- **Label "Fabriqué à Paris"** — 2026-09-30 — https://projets.bdmma.paris/fr/challenges/label-fabrique-a-paris-2027
+- **LEADER - Aide à la modernisation des locaux d'activités** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Les 3 systèmes d’information fédérateurs : eau, milieu marin, biodiversité** — échéance à vérifier — https://ofb.gouv.fr/les-3-systemes-information-federateurs-eau-milieu-marin-biodiversite
+- **Les aides aux communes** — échéance à vérifier — https://www.mayotte.fr/le-departement/territoire-et-collectivites/aides-aux-communes
+- **Les aides et appels à projets** — 2026-07-23 — https://www.laregion.fr/Les-aides-et-appels-a-projets
+- **Les aides européennes régionales par thématiques** — échéance à vérifier — https://www.europe-en-nouvelle-aquitaine.eu/fr/les-aides-europeennes-regionales-par-thematiques.html
+- **Lyon Eco Energie** — échéance à vérifier — https://plan-climat.grandlyon.com/rejoignez-nous/lyon-eco-energie/
+- **Minoration du taux de cotisation Accidents du Travail/Maladies Professionnelles** — échéance à vérifier — https://www.ameli.fr/entreprise/votre-entreprise/prevention-des-risques-reduction-et-majoration-des-cotisations/mp/reduire-cotisations-atmp-prevention
+- **Mur Mur TPE/PME** — échéance à vérifier — https://www.grenoblealpesmetropole.fr/553-realiser-des-travaux-de-renovation-dont-mur-mur-tpe-pme.htm
+- **Nouvelle page de connexion** — échéance à vérifier — https://efpconnect.emploi.gouv.fr/auth/realms/efp/protocol/cas/login?TARGET=https%3A%2F%2Fma-demarche-fse-plus.fr%2F#/
+- **NovESS - Fonds ESS** — échéance à vérifier — http://www.novess.fr/le-fonds/la-gestion-du-fonds/
+- **Objectif Commerce** — échéance à vérifier — https://www.agglo-lenslievin.fr/wp-content/uploads/2022/11/Flyer-Objectif-Commerces.pdf
+- **Objectif transmission TPE** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/objectif-transmission-tpe
+- **Odarc - Office du Développement Agricole et Rural de Corse** — échéance à vérifier — https://www.odarc.corsica/Les-aides-publiques_r37.html
+- **OPALE - Dispositif d’Aide au Loyer** — échéance à vérifier — https://www.pays-de-lure.fr/opale.htm
+- **Opération Collective de Modernisation** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Opération Collective de Modernisation (OCM)** — 2027-12-31 — https://www.ccpfbc.fr/wp-content/uploads/2024/10/PLAQUETTE-OCM.pdf
+- **Opération Collective de Modernisation (OCM) du Commerce, de l'Artisanat et des Services** — 2027-12-31 — http://www.p2ao.fr/fr/programmes-d-aides/ocm
+- **Opération Collective de Modernisation de l’Artisanat, du Commerce et des Services (OCMACS)** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Opération Commerce** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Opération de Modernisation des activités commerciales, artisanales et de service** — échéance à vérifier — https://www.agglo-forbach.fr/fr/soutien-au-commerce-et-a-l-artisanat.html
+- **Opération de modernisation des commerces** — 2026-12-31 — https://data.aides-entreprises.fr/stock
+- **Opération de Soutien au Commerce et à l'ARtisanat (OSCAR)** — échéance à vérifier — https://www.calameo.com/read/00513980807bcc0dc6cb6
+- **Opération façades d'entreprise** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Opération façades et devantures de locaux d’activités** — échéance à vérifier — https://www.ladomitienne.com/wp-content/uploads/2024/10/24.015.4_Annexe_HAB_Reglement_facades_devantures.pdf
+- **Opération Préventox - Action de réduction des toxiques Doubs et Ognon** — échéance à vérifier — https://artisanat-bfc.fr/galerie/1/f7376c21cfb7646d5055c2d7cd1d4e99.pdf
+- **Opération vitrines** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Optim'eau** — échéance à vérifier — https://www.limoges-metropole.fr/fileadmin/3-ENTREPRENDRE/1-Outils_pour_les_entreprises/2-Accompagnement_financier/202307_Aides/20230705_Aide_Territoire_En_Transition_Hydrique_Optimeau_Site_Internet_Limoges_Metropole.pdf
+- **Oser - Volet garantie** — échéance à vérifier — https://www.bourgognefranchecomte.fr/sites/default/files/2023-08/Flyer%20Oser%202023_0.pdf
+- **Pack Installation Artisan** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Pacte création - Prime pour les moins de 30 ans** — échéance à vérifier — https://www.franceactive.org/pactecreation/?gclid=EAIaIQobChMI8oCvh5-D_gIVNRAGAB134gmIEAAYASAAEgKq0_D_BwE
+- **Pacte Immo** — échéance à vérifier — https://www.cc-sud-herault.fr/pacte-immo/
+- **Page d'accueil | Votre guichet numérique** — échéance à vérifier — https://subventions.ctguyane.fr/SEWSaaS.Guichet/workflow_url?ECITIZ_ACTIVITY_PATH=Acteur+Par+Defaut
+- **Parcours Ambition - Réseau Entreprendre** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Parcours d’acquisition des compétences en entreprise (PACE)** — échéance à vérifier — https://www.grandest.fr/vos-aides-regionales/parcours-acquisition-competences-entreprise-pace/
+- **Participation au capital des SCIC** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/422
+- **Participation en capital des Clubs d'Investisseurs pour une Gestion Alternative et Locale de l'Epargne Solidaire (CIGALES)** — échéance à vérifier — http://www.cigales.asso.fr/club-cigales/
+- **Pass Entreprendre en Pays de la Loire – Pass Prêt d’Honneur / Microcrédit** — échéance à vérifier — https://les-aides.paysdelaloire.fr/aides/#/prod/connecte/F_PASS_FINANCE/depot/simple
+- **PASS Investissement** — 2027-12-31 — https://www.bretagne.bzh/aides/fiches/pass-investissement/
+- **PASS Investissement Entreprises touristiques – Reprise (ORATEL)** — échéance à vérifier — https://www.bretagne.bzh/aides/fiches/reprises-hotels-campings-oratel/
+- **Pass RH** — échéance à vérifier — https://www.laregion.fr/Pass-Conseil-RH
+- **PASS Volontaire International en Entreprise (V.I.E)** — échéance à vérifier — https://www.centre-valdeloire.fr/le-guide-des-aides-de-la-region-centre-val-de-loire/pass-volontaire-international-en-entreprise-vie
+- **Pays de la Loire Artisans Transition** — échéance à vérifier — https://fondes.fr/produit/pays-de-la-loire-artisans-transition/
+- **Pays de la Loire Commerce-Artisanat** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/pays-de-la-loire-commerce-artisanat
+- **Pays de la Loire Participations** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/pays-de-la-loire-participations
+- **Pays de la Loire Prêt TPE/PME** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/pays-de-la-loire-prets-tpe/pme
+- **Perche Ambition** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Perche Ambition Immobilier** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Plan Action Coeur de Ville - Pré-garantie** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Plan d'Aide au Commerce territorial (PACte)** — échéance à vérifier — https://cc82.malomagne.com/entreprendre-et-investir/aides-et-accompagnement/aides-communautaires/aides-aux-commerces/
+- **Prêt à moyen ou long terme classique** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/pret-a-moyen-ou-long-terme-classique
+- **Prêt Action Climat** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/transition-ecologique-et-energetique/pret-action-climat
+- **Prêt ADIE** — échéance à vérifier — https://www.adie.org/pour-creer-ou-developper-mon-entreprise/
+- **Prêt Artisan et commerçant Auvergne-Rhône-Alpes** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/obtenir-un-pret-taux-zero-pour-mon-entreprise-avec-le-pret-region-artisan-et-commercant
+- **Prêt au développement des maisons d'édition** — échéance à vérifier — https://centrenationaldulivre.fr/aides-financement/pret-economique-aux-editeurs
+- **Prêt aux entreprises culturelles et créatives** — échéance à vérifier — https://www.ifcic.fr/financement/le-pret/
+- **Prêt Boost** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/pret-boost
+- **Prêt Boost - Facturation électronique** — échéance à vérifier — https://flash.bpifrance.fr/financement/facturation-electronique
+- **Prêt Cap rebond** — échéance à vérifier — https://caprebond.centre-valdeloire.fr/
+- **Prêt Croissance** — échéance à vérifier — https://www.bpifrance.fr/Toutes-nos-solutions/Prets/Prets-sans-garantie/Pret-Croissance
+- **Prêt Croissance Brocéliande communauté** — échéance à vérifier — http://www.initiative-broceliande.bzh/
+- **Prêt Croissance Communauté de Communes de St Méen Montauban** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Prêt Croissance International** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/internationalisation/pret-croissance-international
+- **Prêt croissance Montfort Communauté** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Prêt Croissance Relance** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/generaliste/pret-croissance-relance
+- **Prêt Croissance TPE Bretagne** — échéance à vérifier — http://pretcroissancetpe.bretagne.bzh/
+- **Prêt Croissance TPE Grand Est** — échéance à vérifier — https://www.bpifrance.fr/Toutes-nos-solutions/Prets/Prets-regionaux/Pret-Croissance-TPE-Grand-Est
+- **Prêt Croissance TPE Hauts-de-France** — échéance à vérifier — http://pretcroissancetpe.hautsdefrance.fr/
+- **Prêt Croissance TPE Ile-de-France** — échéance à vérifier — http://pretcroissancetpe-iledefrance.bpifrance.fr/
+- **Prêt Croissance TPE Pays de la Loire** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/pret-croissance-tpe-pays-de-la-loire
+- **Prêt Croissance Transmission** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/pret-croissance-transmission
+- **Prêt d'Accompagnement** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/pret-daccompagnement-0
+- **Prêt d'honneur (BRIT) Bretagne Reprise Initiative Transmission** — échéance à vérifier — https://www.initiative-bretagne.bzh/pret-brit-reprise-entreprise.html
+- **Prêt d’honneur Agri Boost 40+** — échéance à vérifier — https://www.initiative-paysdelaloire.fr/pret-agricole-boost-40.html
+- **Prêt d'honneur Auvergne Transmission** — échéance à vérifier — http://www.initiative-auvergnerhonealpes.fr/initiative-auvergne-innovation-transmission-at2i.html
+- **Prêt d'honneur Bocage Initiatives** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Prêt d'honneur Bruche Mossig Piemont Initiative** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Prêt d'honneur Corse Active pour l'Initiative** — échéance à vérifier — https://capi.corsica/
+- **Prêt d'Honneur Croissance Développement** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides
+- **Prêt d'honneur Croissance Initiactive 95-78** — échéance à vérifier — https://www.initiactive95.fr/
+- **Prêt d'honneur Croissance Initiative Rouen** — échéance à vérifier — https://www.initiative-rouen.fr/
+- **Prêt d'honneur de Transition** — échéance à vérifier — https://www.initiative89.fr/
+- **Prêt d'honneur Douaisis Initiative Création** — échéance à vérifier — https://douaisis-initiative.fr/
+- **Prêt d'honneur et accompagnement Réseau Entreprendre Alsace** — échéance à vérifier — https://www.reseau-entreprendre.org/alsace/
+- **Prêt d'honneur France Active Métropole (Val de Marne)** — échéance à vérifier — https://franceactive-metropole.org/
+- **Prêt d'honneur Grenoble Alpes Initiative Active** — échéance à vérifier — http://www.gaia-isere.org/
+- **Prêt d'honneur Ile-de-France Transmission (IDFT)** — échéance à vérifier — http://www.initiative-iledefrance.fr/ile-de-france-transmission.html
+- **Prêt d'honneur IMAEmploi** — échéance à vérifier — www.ima.mq
+- **Prêt d'honneur Initiactive 26 07** — échéance à vérifier — http://initiactive2607.fr/
+- **Prêt d'honneur Initiative 89** — échéance à vérifier — http://initiactive89.fr/
+- **Prêt d'honneur Initiative Agglomération Sophia Antipolis (IASA)** — échéance à vérifier — http://www.initiative-asa.fr/index.php?page=59
+- **Prêt d'honneur Initiative Aisne** — échéance à vérifier — http://www.initiative-aisne.fr/
+- **Prêt d'honneur Initiative Allier** — échéance à vérifier — https://www.initiative-allier.fr/
+- **Prêt d'honneur Initiative Alpes Provence** — échéance à vérifier — https://www.initiativealpesprovence.org/
+- **Prêt d'honneur Initiative Alsace Centrale** — échéance à vérifier — https://www.initiative-iac.fr/
+- **Prêt d'honneur Initiative Anjou** — échéance à vérifier — http://www.initiative-anjou.com/
+- **Prêt d'honneur Initiative Ardennes** — échéance à vérifier — http://www.initiative-ardennes.fr/
+- **Prêt d'honneur Initiative Argoat-Goëllo** — échéance à vérifier — https://www.initiative-argoatgoelo.fr/
+- **Prêt d'honneur Initiative Ariège** — échéance à vérifier — http://www.initiativeariege.org/
+- **Prêt d'honneur Initiative Armor** — échéance à vérifier — http://www.initiative-armor.bzh/
+- **Prêt d'honneur Initiative Artois** — échéance à vérifier — https://www.initiative-artois.fr/
+- **Prêt d'honneur Initiative Aube** — échéance à vérifier — http://www.initiative-aube.fr/
+- **Prêt d'honneur Initiative Aveyron** — échéance à vérifier — https://www.initiative-aveyron.fr/
+- **Prêt d'honneur Initiative Baie du Mont-Saint-Michel** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Prêt d'honneur Initiative Béarn** — échéance à vérifier — http://www.initiative-bearn.fr/
+- **Prêt d'honneur Initiative Beaujolais** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Prêt d'honneur Initiative Bellegarde Pays de Gex** — échéance à vérifier — http://www.initiative-bellegarde-pays-de-gex.com/
+- **Prêt d'honneur Initiative Béziers Ouest Hérault** — échéance à vérifier — http://www.iboh.fr/
+- **Prêt d'honneur Initiative Bièvre Valloire** — échéance à vérifier — http://www.initiative-bievre-valloire.fr/
+- **Prêt d'honneur Initiative Boulogne-sur-Mer** — échéance à vérifier — http://www.initiative-boulognesurmer.com/
+- **Prêt d'honneur Initiative Brenne** — échéance à vérifier — http://www.initiative-brenne.fr/
+- **Prêt d'honneur Initiative Bresse Haut-Bugey** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Prêt d'honneur Initiative Bugey** — échéance à vérifier — http://www.initiativebugey.com/
+- **Prêt d'honneur Initiative Calaisis** — échéance à vérifier — https://www.initiative-calaisis.fr/
+- **Prêt d'honneur Initiative Calvados** — échéance à vérifier — http://www.initiative-calvados.fr/
+- **Prêt d'honneur Initiative Cambrésis** — échéance à vérifier — https://www.initiativecambresis.fr/
+- **Prêt d'honneur Initiative Cantal** — échéance à vérifier — http://www.initiative-auvergnerhonealpes.fr/
+- **Prêt d'honneur Initiative Carcassonne Castelnaudary** — échéance à vérifier — https://www.initiative-carcassonne-castelnaudary.fr/
+- **Prêt d'honneur Initiative Centre Bretagne** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Prêt d'honneur Initiative Centre Manche** — échéance à vérifier — http://www.initiative-centremanche.com/decouvrir-icm.html
+- **Prêt d'honneur Initiative Centre Ouest Bretagne** — échéance à vérifier — https://www.initiative-cob.fr/
+- **Prêt d'honneur Initiative Chablais** — échéance à vérifier — https://www.initiative-chablais.fr/
+- **Prêt d'honneur Initiative Charente** — échéance à vérifier — http://www.initiative-charente.com/
+- **Prêt d'honneur Initiative Charente-Maritime** — échéance à vérifier — http://www.initiativecharente-maritime.fr/
+- **Prêt d'honneur Initiative Cher** — échéance à vérifier — http://www.initiative-cher.fr/
+- **Prêt d'honneur Initiative Clermont Auvergne Métropole** — échéance à vérifier — https://www.initiative-clermont-metropole.com/
+- **Prêt d'honneur Initiative Coeur d'Hérault** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Prêt d'honneur Initiative Colmar Centre Alsace** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Prêt d'honneur Initiative Comminges** — échéance à vérifier — http://www.initiativecomminges.org/le-pret-d-honneur-initiative-comminges.html
+- **Prêt d'honneur Initiative Cornouaille** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Prêt d'honneur Initiative Corrèze** — échéance à vérifier — http://www.initiativecorreze.com/
+- **Prêt d'honneur Initiative Côte d'Or** — échéance à vérifier — http://www.initiative-cotedor.com/
+- **Prêt d'honneur Initiative Cotentin** — échéance à vérifier — http://www.initiative-cotentin.com/
+- **Prêt d’honneur Initiative Creuse** — échéance à vérifier — http://www.initiative-creuse.fr/
+- **Prêt d’honneur Initiative Creuse - Installation** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Prêt d'honneur Initiative Deux-Sèvres** — échéance à vérifier — https://www.dsinitiatives.com/
+- **Prêt d'honneur Initiative Dieppe Bresle** — échéance à vérifier — http://www.initiative-dieppe-bresle.fr/
+- **Prêt d'honneur Initiative Dombes Val de Saône (IDVS)** — échéance à vérifier — https://www.initiative-vsdi.fr/
+- **Prêt d'honneur Initiative Doubs Territoire de Belfort** — échéance à vérifier — http://www.initiative-doubsterritoiredebelfort.fr/
+- **Prêt d'honneur Initiative en Pays Lunévillois** — échéance à vérifier — https://www.initiative-lunevillois.fr/
+- **Prêt d'honneur Initiative Eure** — échéance à vérifier — http://www.initiative-eure.fr/
+- **Prêt d'honneur Initiative Eure-et-Loir** — échéance à vérifier — http://www.initiative-eureetloir.fr/
+- **Prêt d'honneur Initiative Faucigny Mont Blanc** — échéance à vérifier — http://www.initiative-faucigny-montblanc.fr/
+- **Prêt d'honneur Initiative Flandre** — échéance à vérifier — https://www.initiative-flandre.fr/
+- **Prêt d'honneur Initiative Flandre Intérieure** — échéance à vérifier — http://www.initiative-flandreinterieure.fr/
+- **Prêt d'honneur Initiative Gard** — échéance à vérifier — http://www.initiativegard.fr/
+- **Prêt d'honneur Initiative Garonne** — échéance à vérifier — http://www.initiative-garonne.fr/
+- **Prêt d'honneur Initiative Genevois** — échéance à vérifier — http://www.initiative-genevois.fr/
+- **Prêt d'honneur Initiative Gers** — échéance à vérifier — http://www.initiative-gers.fr/
+- **Prêt d'honneur Initiative Gironde** — échéance à vérifier — http://www.initiative-gironde.com/
+- **Prêt d'honneur Initiative Gohelle** — échéance à vérifier — http://www.initiative-gohelle.fr/
+- **Prêt d'honneur Initiative Grand Annecy** — échéance à vérifier — https://www.initiative-grand-annecy.fr/
+- **Prêt d'honneur Initiative Grand Arras** — échéance à vérifier — http://www.initiative-grandarras.com/
+- **Prêt d'honneur Initiative Grand Nancy** — échéance à vérifier — http://www.initiativegrandnancy.fr/
+- **Prêt d'honneur Initiative Grandes Ecoles & Universités** — échéance à vérifier — https://www.initiative-grandesecoles.fr/
+- **Prêt d'honneur Initiative Granville-Villedieu.Intercoms** — échéance à vérifier — http://www.initiative-granville.fr/
+- **Prêt d'honneur Initiative Grésivaudan Isère** — échéance à vérifier — http://www.igi38.fr/
+- **Prêt d'honneur Initiative Haute Garonne** — échéance à vérifier — https://initiative-haute-garonne.jimdofree.com/
+- **Prêt d'honneur Initiative Haute Marne** — échéance à vérifier — https://www.initiative-hautemarne.fr/
+- **Prêt d'honneur Initiative Haute Vallée de l'Aude** — échéance à vérifier — http://www.initiativehautevalleedelaude.com/
+- **Prêt d'honneur Initiative Haute Vienne** — échéance à vérifier — https://www.initiative-hautevienne.fr/
+- **Prêt d'honneur Initiative Haute-Loire** — échéance à vérifier — http://www.initiativehaute-loire.com/
+- **Prêt d'honneur Initiative Haute-Sâone** — échéance à vérifier — https://www.initiativehautesaone.fr/
+- **Prêt d'honneur Initiative Hautes Vosges** — échéance à vérifier — http://www.initiative-hautesvosges.fr/
+- **Prêt d'honneur Initiative Hauts-de-Seine** — échéance à vérifier — https://www.initiative-hds92.fr/
+- **Prêt d'honneur Initiative Hérault Est** — échéance à vérifier — http://www.initiative-he.fr/
+- **Prêt d'honneur Initiative Isère Vallée du Rhône** — échéance à vérifier — http://www.initiative-iserevalleedurhone.fr/
+- **Prêt d'honneur Initiative Issoire Brioude Sancy** — échéance à vérifier — https://www.initiative-issoire.com/
+- **Prêt d'honneur Initiative Jura** — échéance à vérifier — https://www.initiative-jura.fr/
+- **Prêt d'honneur Initiative Landes** — échéance à vérifier — https://www.initiative-landes.com/
+- **Prêt d'honneur Initiative Lille Métropole Nord** — échéance à vérifier — http://www.initiative-lillemetropolenord.fr/
+- **Prêt d'honneur Initiative Lille Métropole Sud** — échéance à vérifier — http://www.initiative-lillemetropolesud.fr/
+- **Prêt d'honneur Initiative Loir-et-Cher** — échéance à vérifier — http://www.initiative-loir-et-cher.fr/
+- **Prêt d'honneur Initiative Loire** — échéance à vérifier — https://www.initiative-loire.fr/
+- **Prêt d'honneur Initiative Loire Atlantique Nord** — échéance à vérifier — http://www.initiativeloireatlantiquenord.fr/
+- **Prêt d'honneur Initiative Loire Atlantique Sud** — échéance à vérifier — https://www.initiative-loireatlantiquesud.fr/
+- **Prêt d'honneur Initiative Loiret** — échéance à vérifier — http://www.initiative-loiret.fr/
+- **Prêt d'honneur Initiative Lorraine Nord** — échéance à vérifier — https://www.initiative-lorrainenord.fr/
+- **Prêt d'honneur Initiative Lot** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Prêt d'honneur Initiative Lot-et-Garonne** — échéance à vérifier — https://www.agropole.com/entreprise-ilg-56.html
+- **Prêt d'honneur Initiative Lozère** — échéance à vérifier — https://lozere.test.initiative-france.fr/
+- **Prêt d'honneur Initiative Marne Châlons en Champagne** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Prêt d'honneur Initiative Marne Champagne et Brie** — échéance à vérifier — https://www.initiative-marne-pbc.fr/
+- **Prêt d'honneur Initiative Marne Pays Rémois** — échéance à vérifier — http://www.initiative-paysremois.fr/
+- **Prêt d'honneur Initiative Marseille Métropole - Croissance** — échéance à vérifier — http://www.initiativemm.fr/
+- **Prêt d'honneur Initiative Mayenne** — échéance à vérifier — http://www.initiative-mayenne.fr/
+- **Prêt d'honneur Initiative Melun Val de Seine & Sud Seine-et-Marne** — échéance à vérifier — http://www.initiative-mvs-sud77.fr/un-pret-d-honneur-a-0-et-sans-garantie.html
+- **Prêt d'honneur Initiative Menton Riviera** — échéance à vérifier — http://www.initiative-riviera.fr/
+- **Prêt d'honneur Initiative Metz** — échéance à vérifier — https://www.initiative-metz.com/
+- **Prêt d'honneur Initiative Meuse** — échéance à vérifier — http://www.initiative-meuse.fr/
+- **Prêt d'honneur Initiative Montauban Tarn et Garonne** — échéance à vérifier — https://www.initiative-montauban-tarn-et-garonne.fr/
+- **Prêt d'honneur Initiative Montpellier PIC SAINT LOUP** — échéance à vérifier — http://www.initiative-montpellier-picsaintloup.fr/
+- **Prêt d'honneur Initiative Moselle Est** — échéance à vérifier — https://www.initiativemoselle-est.fr/
+- **Prêt d'honneur Initiative Moselle Nord** — échéance à vérifier — https://www.initiative-mosellenord.fr/
+- **Prêt d'honneur Initiative Moselle Sud** — échéance à vérifier — Initiative Moselle Sud
+- **Prêt d'honneur Initiative Nantes** — échéance à vérifier — http://www.initiative-nantes.fr/
+- **Prêt d'honneur Initiative Narbonne Arrondissement** — échéance à vérifier — https://www.initiative-narbonne-arrondissement.fr/
+- **Prêt d'honneur Initiative Nice Côte d’Azur** — échéance à vérifier — http://www.initiative-nca.fr/
+- **Prêt d'honneur Initiative Nièvre** — échéance à vérifier — http://www.initiative-nievre.com/
+- **Prêt d'honneur Initiative Nord Alsace** — échéance à vérifier — http://www.initiative-alsace-nord.com/
+- **Prêt d'honneur Initiative Nord et Ouest Vendée** — échéance à vérifier — https://www.inov85.fr/
+- **Prêt d'honneur Initiative Nord Isère** — échéance à vérifier — https://www.facebook.com/InitiativeNordIsere/
+- **Prêt d'honneur Initiative Nord Seine et Marne** — échéance à vérifier — https://www.initiative-nord77.fr/quels-prets-dhonneur-me-correspond.html
+- **Prêt d'honneur Initiative Nouvelle-Calédonie** — échéance à vérifier — http://www.initiative-nc.com/
+- **Prêt d'honneur Initiative Oise Est** — échéance à vérifier — http://www.initiative-oise.fr/
+- **Prêt d'honneur Initiative Oise Ouest** — échéance à vérifier — http://www.initiative-oise.fr/initiative-oise-ouest/
+- **Prêt d'honneur Initiative Oise Sud** — échéance à vérifier — http://www.initiative-oise.fr/initiative-oise-sud/
+- **Prêt d'honneur Initiative Ouest Provence** — échéance à vérifier — http://www.initiative-ouestprovence.com/
+- **Prêt d'honneur Initiative Pays Basque** — échéance à vérifier — https://www.bultza.org/
+- **Prêt d'honneur Initiative Pays Catalan** — échéance à vérifier — http://www.initiative-payscatalan.com/
+- **Prêt d'honneur Initiative Pays d'Aix** — échéance à vérifier — http://www.initiativepaysdaix.com/
+- **Prêt d'honneur Initiative Pays d'Ancenis** — échéance à vérifier — http://www.initiative-pays-ancenis.com/
+- **Prêt d'honneur Initiative Pays d'Arles** — échéance à vérifier — http://www.initiative-paysdarles.com/
+- **Prêt d'honneur Initiative Pays d'Aubagne La Ciotat** — échéance à vérifier — https://www.paci13.com/
+- **Prêt d'honneur Initiative Pays d'Auray** — échéance à vérifier — https://www.initiative-paysdauray.bzh/
+- **Prêt d'honneur Initiative Pays de Brest** — échéance à vérifier — http://www.initiative-paysdebrest.fr/
+- **Prêt d'honneur Initiative Pays de Dinan** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Prêt d'honneur Initiative Pays de Fougères** — échéance à vérifier — http://www.initiative-paysdefougeres.bzh/
+- **Prêt d'honneur Initiative Pays de Lorient** — échéance à vérifier — http://www.initiative-paysdelorient.com/
+- **Prêt d'honneur Initiative Pays de Martigues** — échéance à vérifier — http://www.initiative-paysdemartigues.fr/
+- **Prêt d'honneur Initiative Pays de Morlaix** — échéance à vérifier — http://www.initiative-bretagne.bzh/
+- **Prêt d'honneur Initiative Pays de Ploërmel** — échéance à vérifier — http://www.initiative-ploermel.bzh/
+- **Prêt d'honneur Initiative Pays de Pontivy** — échéance à vérifier — http://www.initiative-pays-pontivy.fr/
+- **Prêt d'honneur Initiative Pays de Saint-Malo** — échéance à vérifier — https://www.initiative-pays-de-saint-malo.fr/
+- **Prêt d'honneur Initiative Pays de Saint-Omer** — échéance à vérifier — http://www.initiative-paysdesaintomer.fr/
+- **Prêt d'honneur Initiative Pays de Vilaine** — échéance à vérifier — https://initiative-paysdevilaine.fr/
+- **Prêt d'honneur Initiative Pays Salonais** — échéance à vérifier — https://www.initiative-pays-salonais.com/
+- **Prêt d'honneur Initiative Pays Voironnais** — échéance à vérifier — https://www.initiativepaysvoironnais.com/
+- **Prêt d'honneur Initiative Périgord** — échéance à vérifier — https://www.initiative-perigord.fr/
+- **Prêt d'honneur Initiative Plaine de l'Ain Côtière** — échéance à vérifier — http://www.initiative-plainedelaincotiere.com/
+- **Prêt d'honneur Initiative Polynésie Française** — échéance à vérifier — http://www.initiative-pf.com/
+- **Prêt d'honneur Initiative Portes de Bretagne** — échéance à vérifier — http://www.initiative-portesdebretagne.fr/
+- **Prêt d'honneur Initiative Portes de Provence** — échéance à vérifier — http://www.initiative-portesdeprovence.com/
+- **Prêt d'honneur Initiative Pyrénées** — échéance à vérifier — https://www.initiative-pyrenees.com/
+- **Prêt d'honneur Initiative Rennes** — échéance à vérifier — https://www.initiative-rennes.fr/
+- **Prêt d'honneur Initiative Riom Combrailles** — échéance à vérifier — https://www.initiative-auvergnerhonealpes.fr/initiative-riom-combrailles.html
+- **Prêt d'honneur Initiative Saint Martin Active** — échéance à vérifier — http://www.initiative-saint-martin.fr/
+- **Prêt d'honneur Initiative Saint-Quentin-en-Yvelines** — échéance à vérifier — https://www.initiative-sqy.fr/
+- **Prêt d'honneur Initiative Sambre Avesnois** — échéance à vérifier — http://www.initiative-sambreavesnois.fr/
+- **Prêt d'honneur Initiative Saône-et-Loire** — échéance à vérifier — http://www.initiative-saone-et-loire.fr/
+- **Prêt d'honneur Initiative Sarthe** — échéance à vérifier — https://initiative-sarthe.fr/
+- **Prêt d'honneur Initiative Savoie** — échéance à vérifier — http://www.initiative-savoie.com/
+- **Prêt d'honneur Initiative Seine Yvelines** — échéance à vérifier — http://www.initiative-seineyvelines.com/
+- **Prêt d'honneur Initiative Seine-Saint-Denis** — échéance à vérifier — https://www.initiative-ssd.fr/
+- **Prêt d'honneur Initiative Seuil de Provence Ardèche Méridionale** — échéance à vérifier — http://www.initiative-sdpam.com/
+- **Prêt d'honneur Initiative Strasbourg** — échéance à vérifier — https://www.initiative-strasbourg.eu/
+- **Prêt d'honneur Initiative Sud Alsace** — échéance à vérifier — http://www.initiative-sudalsace.com/
+- **Prêt d'honneur Initiative Sud Luberon** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Prêt d'honneur Initiative Sud-Grésivaudan-Royans-Vercors** — échéance à vérifier — http://www.initiative-sgrv.fr/
+- **Prêt d'honneur Initiative Tarn** — échéance à vérifier — http://www.initiative-tarn.fr/
+- **Prêt d'honneur Initiative Ternois Artois 7 Vallées** — échéance à vérifier — https://www.initiativeternoisartois7vallees.fr/
+- **Prêt d'honneur Initiative Terres d'Azur** — échéance à vérifier — http://www.initiative-terres-dazur.com/
+- **Prêt d'honneur Initiative Terres de Lorraine** — échéance à vérifier — http://www.initiative-tdl.com/
+- **Prêt d'honneur Initiative Terres de Vaucluse** — échéance à vérifier — http://www.initiativeterresdevaucluse.fr/
+- **Prêt d'honneur Initiative Thau** — échéance à vérifier — http://www.initiative-thau.fr/
+- **Prêt d'honneur Initiative Thiers Ambert** — échéance à vérifier — http://www.initiative-auvergnerhonealpes.fr/initiative-thiers-ambert.html
+- **Prêt d'honneur Initiative Touraine Val de Loire** — échéance à vérifier — https://www.initiative-tourainevaldeloire.fr/
+- **Prêt d'honneur Initiative Trégor** — échéance à vérifier — http://www.technopole-anticipa.com/
+- **Prêt d'honneur Initiative Val de Lorraine** — échéance à vérifier — https://www.initiative-valdelorraine.fr/
+- **Prêt d'honneur Initiative Val-de-Marne** — échéance à vérifier — https://www.initiative-valdemarne.fr/
+- **Prêt d'honneur Initiative Valenciennes Hainaut** — échéance à vérifier — https://www.initiativevalencienneshainaut.fr/
+- **Prêt d'honneur Initiative Vallée de la Drôme Diois** — échéance à vérifier — http://www.initiative-valleedeladromediois.fr/
+- **Prêt d'honneur Initiative Vannes** — échéance à vérifier — http://www.initiative-vannes.fr/la-promesse-initiative-vannes.html
+- **Prêt d'honneur Initiative Var** — échéance à vérifier — http://www.initiative-var.fr/
+- **Prêt d'honneur Initiative Vendée Bocage** — échéance à vérifier — http://www.initiative-vendeebocage.fr/
+- **Prêt d'honneur Initiative Vendée Terres et Littoral** — échéance à vérifier — http://www.initiative-vendeeterresetlittoral.fr/
+- **Prêt d'honneur Initiative Ventoux** — échéance à vérifier — http://www.initiative-ventoux.fr/
+- **Prêt d'honneur Initiative Vienne** — échéance à vérifier — http://www.initiative-vienne.fr/
+- **Prêt d'honneur Initiative Vosges Centre Ouest** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Prêt d'honneur InnovProvence** — échéance à vérifier — https://innovation.ampmetropole.fr/participation/159/4-les-appels-a-innovation.htm
+- **Prêt d'honneur Le Havre Estuaire** — échéance à vérifier — https://www.initiative-lehavreestuaire.fr/
+- **Prêt d'honneur Lot Initiatives Artisanat Création** — échéance à vérifier — https://www.cma-cahors.fr/aides_developpement_lia/
+- **Prêt d'honneur Lot Initiatives Artisanat Développement** — échéance à vérifier — http://www.cma-cahors.fr/lot_initiatives_artisanat/
+- **Prêt d'honneur OSE (Orne Solidaire par l'Entrepreneuriat)** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Prêt d'honneur PIE (Paris Initiative Entreprise)** — échéance à vérifier — https://www.pie.paris/
+- **Prêt d'honneur Quartier** — échéance à vérifier — https://bpifrance-creation.fr/encyclopedie/financements/financement-fonds-propres/pret-dhonneur-quartier
+- **Prêt d'honneur RDI** — échéance à vérifier — http://www.rdi.asso.fr/
+- **Prêt d'honneur Réseau Entreprendre 92** — échéance à vérifier — https://www.reseau-entreprendre.org/92/
+- **Prêt d'honneur Réseau Entreprendre 93** — échéance à vérifier — https://www.reseau-entreprendre.org/93/
+- **Prêt d'honneur Réseau Entreprendre Adour** — échéance à vérifier — https://www.reseau-entreprendre.org/adour/
+- **Prêt d'honneur Réseau Entreprendre Ain & Val de Saône** — échéance à vérifier — https://www.reseau-entreprendre.org/ain-val-de-saone/
+- **Prêt d'honneur Réseau Entreprendre Alpes du Sud** — échéance à vérifier — https://www.reseau-entreprendre.org/alpes-du-sud/
+- **Prêt d'honneur Réseau Entreprendre Aquitaine** — échéance à vérifier — https://www.reseau-entreprendre.org/aquitaine/
+- **Prêt d'honneur Réseau Entreprendre Artois** — échéance à vérifier — https://www.reseau-entreprendre.org/artois/
+- **Prêt d'honneur Réseau Entreprendre Atlantique** — échéance à vérifier — https://www.reseau-entreprendre.org/atlantique/
+- **Prêt d'honneur Réseau Entreprendre Auvergne** — échéance à vérifier — https://www.reseau-entreprendre.org/auvergne/
+- **Prêt d'honneur Réseau Entreprendre Bourgogne** — échéance à vérifier — https://www.reseau-entreprendre.org/bourgogne/
+- **Prêt d'honneur Réseau Entreprendre Champagne-Ardenne** — échéance à vérifier — https://www.reseau-entreprendre.org/champagne-ardenne/
+- **Prêt d'honneur Réseau Entreprendre Côte d'Azur** — échéance à vérifier — https://www.reseau-entreprendre.org/cote-d-azur/
+- **Prêt d'honneur Réseau Entreprendre Côte d'Opale** — échéance à vérifier — https://www.reseau-entreprendre.org/cote-d-opale/
+- **Prêt d'honneur Réseau Entreprendre Drôme Ardèche** — échéance à vérifier — https://www.reseau-entreprendre.org/drome-ardeche/
+- **Prêt d'honneur Réseau Entreprendre Franche-Comté - création/reprise** — échéance à vérifier — https://www.reseau-entreprendre.org/franche-comte/
+- **Prêt d'honneur Réseau Entreprendre Franche-Comté - entreprises en mutation** — échéance à vérifier — https://www.reseau-entreprendre.org/franche-comte/?news=3585
+- **Prêt d'honneur Réseau Entreprendre Isère** — échéance à vérifier — https://www.reseau-entreprendre.org/isere/
+- **Prêt d'honneur Réseau Entreprendre Limousin** — échéance à vérifier — https://www.reseau-entreprendre.org/limousin/
+- **Prêt d'honneur Réseau Entreprendre Loir Et Berry** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Prêt d'honneur Réseau Entreprendre Loire Vallée** — échéance à vérifier — https://www.reseau-entreprendre.org/loire-vallee/
+- **Prêt d'honneur Réseau Entreprendre Lorraine** — échéance à vérifier — https://www.reseau-entreprendre.org/lorraine/
+- **Prêt d’honneur Réseau Entreprendre Maine & Loire** — échéance à vérifier — https://www.reseau-entreprendre.org/maine-et-loire/
+- **Prêt d'honneur Réseau Entreprendre Mayenne** — échéance à vérifier — https://www.reseau-entreprendre.org/mayenne/
+- **Prêt d'honneur Réseau Entreprendre Nord** — échéance à vérifier — https://www.reseau-entreprendre.org/nord/
+- **Prêt d'honneur Réseau Entreprendre Normandie Ouest** — échéance à vérifier — https://www.reseau-entreprendre.org/normandie-ouest/
+- **Prêt d'honneur Réseau Entreprendre Normandie Seine & Eure** — échéance à vérifier — https://www.reseau-entreprendre.org/normandie-seine-et-eure/
+- **Prêt d'honneur Réseau Entreprendre Occitanie Garonne** — échéance à vérifier — https://www.reseau-entreprendre.org/occitanie-garonne/
+- **Prêt d'honneur Réseau Entreprendre Occitanie Méditerranée** — échéance à vérifier — https://www.reseau-entreprendre.org/occitanie-mediterranee/
+- **Prêt d'honneur Réseau Entreprendre Paris** — échéance à vérifier — https://www.reseau-entreprendre.org/paris/
+- **Prêt d'honneur Réseau Entreprendre Picardie** — échéance à vérifier — https://www.reseau-entreprendre.org/picardie/
+- **Prêt d'honneur Réseau Entreprendre Poitou-Charentes** — échéance à vérifier — https://www.reseau-entreprendre.org/poitou-charentes/
+- **Prêt d'honneur Réseau Entreprendre Provence** — échéance à vérifier — https://www.reseau-entreprendre.org/provence/
+- **Prêt d'honneur Réseau Entreprendre Rhône** — échéance à vérifier — https://www.reseau-entreprendre.org/rhone/
+- **Prêt d'honneur Réseau Entreprendre Rhône Durance** — échéance à vérifier — https://www.reseau-entreprendre.org/rhone-durance/
+- **Prêt d'honneur Réseau Entreprendre Sarthe** — échéance à vérifier — https://www.reseau-entreprendre.org/sarthe/
+- **Prêt d'honneur Réseau Entreprendre Savoie** — échéance à vérifier — https://www.reseau-entreprendre.org/savoie/
+- **Prêt d'honneur Réseau Entreprendre Seine Estuaire** — échéance à vérifier — https://www.reseau-entreprendre.org/seine-estuaire/
+- **Prêt d'honneur Réseau Entreprendre Seine et Marne** — échéance à vérifier — https://www.reseau-entreprendre.org/seine-et-marne/2018/10/24/le-pret-dhonneur-de-reseau-entreprendre-seine-et-marne/
+- **Prêt d'honneur Réseau Entreprendre Tarn Aveyeron** — échéance à vérifier — https://www.reseau-entreprendre.org/tarn/
+- **Prêt d'honneur Réseau Entreprendre Val d'Oise** — échéance à vérifier — https://www.reseau-entreprendre.org/val-d-oise/
+- **Prêt d'honneur Réseau Entreprendre Val de Marne** — échéance à vérifier — https://www.reseau-entreprendre.org/val-de-marne/
+- **Prêt d'honneur Réseau Entreprendre Var** — échéance à vérifier — https://www.reseau-entreprendre.org/var/
+- **Prêt d'honneur Réseau Entreprendre Vendée** — échéance à vérifier — https://www.reseau-entreprendre.org/vendee/
+- **Prêt d'honneur Réseau Entreprendre Yvelines** — échéance à vérifier — https://www.reseau-entreprendre.org/yvelines/
+- **Prêt d'honneur Réseau Entreprendre® Hainaut** — échéance à vérifier — https://www.reseau-entreprendre.org/hainaut/
+- **Prêt d'honneur Réseau Entreprendre® Loire** — échéance à vérifier — https://www.reseau-entreprendre.org/loire/
+- **Prêt d'honneur Solidaire** — échéance à vérifier — https://bpifrance-creation.fr/encyclopedie/pret-dhonneur-solidaire-ph-solidaire
+- **Prêt d’honneur Terroir de Caux Initiative** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Prêt d'honneur Wilco Initiative** — échéance à vérifier — http://www.wilco-startup.com/
+- **Prêt d’honneur YADEC (Yvelines Afrique pour un Développement en Commun)** — échéance à vérifier — https://www.yvelines.fr/solidarite/cooperation-internationale/le-gip-yvelines-cooperation-internationale-developpement/economie-et-developpement/fonds-de-prets-dhonneur/
+- **Prêt de Dépôt de Garantie (PDG)** — échéance à vérifier — https://www.pie.paris/le-pret-depot-de-garantie/
+- **Prêt de Développement Outre-Mer (PDOM)** — échéance à vérifier — https://www.bpifrance.fr/Toutes-nos-solutions/Prets/Prets-sans-garantie/Pret-de-Developpement-Outre-Mer
+- **Prêt Def'fi** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/pret-deffi-ex-sofired-pme-defense
+- **Prêt Equipement** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/pret-equipement
+- **Prêt Flash Carburant** — échéance à vérifier — https://flash.bpifrance.fr/financement/pret-flash-carburant
+- **Prêt Flash Electrique** — échéance à vérifier — https://flash.bpifrance.fr/electrique
+- **Prêt Hôtellerie** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/pret-hotellerie-pprh
+- **Prêt Innovation R&D** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/pret-innovation-rd-classique-0
+- **Prêt JUMP - Aide aux entreprises des Quartiers Prioritaires de la Ville (QPV)** — échéance à vérifier — https://www.adie.org/fiches-pratiques/pret-jump-financement-entreprise-quartier-prioritaire
+- **Prêt Moyen ou Long Terme PREMO** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/pret-moyen-ou-long-terme-premo
+- **Prêt participatif filière bois (PP Bois)** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/pret-participatif-de-developpement-ppd-bois
+- **Prêt participatif Grand Est** — échéance à vérifier — https://www.grandest.fr/vos-aides-regionales/pret-participatif-grand-est/
+- **Prêt Rebond Grand Est** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/pret-rebond-grand-est
+- **Prêt Région Energie** — 2027-02-28 — https://www.auvergnerhonealpes.fr/aides/region-industrie-obtenir-un-pret-region-energie-en-auvergne-rhone-alpes
+- **Prêt Région Industrie Croissance** — échéance à vérifier — https://pretregion.auvergnerhonealpes.fr/
+- **Prêt Régional de Revitalisation - Hauts-de-France** — échéance à vérifier — https://www.bpifrance.fr/Toutes-nos-solutions/Prets/Prets-regionaux/Pret-Regional-de-Revitalisation-Hauts-de-France
+- **Prêt Relance Réunion** — échéance à vérifier — https://pret-relance.regionreunion.com/
+- **Prêt Territorial Guadeloupe** — échéance à vérifier — https://flash.bpifrance.fr/financement/pret-territorial-guadeloupe
+- **Prêt Territorial Région Guadeloupe** — échéance à vérifier — https://pret-territorial.regionguadeloupe.fr/?pk_vid=95e69986af5fc9d41782482174dc6a2d
+- **Prêt TPE** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/mon-pret-tpe
+- **Prêt Transition Ecologique Ile-de-France** — échéance à vérifier — https://flash.bpifrance.fr/financement/pret-transition-ecologique-idf
+- **Prêt transitions Bretagne** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Prêt transmission** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/generaliste/pret-transmission
+- **Prêt transmission Grand Est** — échéance à vérifier — https://www.grandest.fr/vos-aides-regionales/pret-transmission/
+- **Prêt UIMM** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/pret-uimm
+- **Prêt Vert** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/transition-ecologique-et-energetique/pret-vert
+- **Prêts Boost Carburant** — échéance à vérifier — https://presse.economie.gouv.fr/face-a-la-crise-energetique-le-gouvernement-engage-un-plan-de-soutien-immediat-en-faveur-de-lactivite-economique/
+- **Prêts d'honneur Initiative Essonne** — échéance à vérifier — http://www.initiative-essonne.com/
+- **Prêts d'honneur Initiative Loire Océan** — échéance à vérifier — http://www.initiative-loireocean.fr/
+- **Prévoyance complémentaire et retraite supplémentaire - Exonérations sociales** — échéance à vérifier — https://www.urssaf.fr/portail/home/employeur/calculer-les-cotisations/les-elements-a-prendre-en-compte/la-prevoyance-complementaire/la-limite-de-lexoneration-social.html
+- **Prime à l'embauche** — échéance à vérifier — https://www.tarn.cci.fr/sites/g/files/mwbcuj1676/files/2025-09/Flyer-Departement-Tarn-Flyer%20prime-a-lembauche_secteur-prive_2025.pdf?tstmp=1757787031
+- **Prime à la création-reprise dans les territoires fragilisés (PCRTF)** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/448
+- **Prime Eco-Chaleur** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Prime solaire** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Prime transport domicile-travail - Avantages fiscaux et sociaux** — échéance à vérifier — https://travail-emploi.gouv.fr/droit-du-travail/la-remuneration/article/la-prise-en-charge-des-frais-de-transport-par-l-employeur
+- **Prime véhicule + propre** — échéance à vérifier — https://www.toulouse-metropole.fr/-/aides-a-l-achat-la-transformation-ou-a-la-location-de-vehicules
+- **Prime vélo** — échéance à vérifier — https://www.toulouse-metropole.fr/missions/environnement/qualite-de-l-air/prime-velo
+- **Programme France 2030 régionalisé Hauts-de-France** — échéance à vérifier — https://inno-avenir.hautsdefrance.fr/#
+- **Programme France 2030 régionalisé Martinique** — échéance à vérifier — https://france2030regionalise-pref.collectivitedemartinique.mq/#
+- **Programme France 2030 Régionalisé Pays de la Loire** — échéance à vérifier — https://pia.paysdelaloire.fr/
+- **Programme LEADER 2023-2027 - Accompagner la transition écologique** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Accompagner le développement d'une production et d’une consommation responsables** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action " Développer l’attractivité du territoire en dynamisant l’offre de services et le cadre de vie"** — 2027-12-31 — https://pays-vitryat.fr/wp-content/uploads/2023/10/FA1_Attractivite_Services_-Cadre-de-vie.pdf
+- **Programme LEADER 2023-2027 - Action "Accélérer les transitions écologiques et énergétiques"** — 2027-12-31 — https://www.paysloirevaldaubois.fr/document-503.html
+- **Programme LEADER 2023-2027 - Action "Accélérer les transitions écologiques"** — 2027-12-31 — https://www.golfedumorbihan-vannesagglomeration.bzh/lagglo/programme-europeen-leader-2023-2027/
+- **Programme LEADER 2023-2027 - Action "Accompagner et développer le commerce de proximité"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Accompagner et favoriser les transitions et la diversification du tissu économique tout en confortant les moteurs du développement local"** — 2027-12-31 — https://www.cc-montesquieu.fr/wp-content/uploads/2025/10/FONDS-EUROPEENS-Livret-A5.pdf
+- **Programme LEADER 2023-2027 - Action "Accompagner la sobriété des ressources et des aménagements"** — 2027-12-31 — https://www.paysloiretouraine.fr/app/uploads/2023/11/Guide-Leader-2023-2027-1.pdf
+- **Programme LEADER 2023-2027 - Action "Accompagner la sobriété énergétique et encourager la production d’énergies nouvelles"** — 2027-12-31 — https://pays-vitryat.fr/wp-content/uploads/2023/10/FA3.-Sobriete-energetique_Energies-nouvelles.pdf
+- **Programme LEADER 2023-2027 - Action "Accompagner les dynamiques rurales de l'économie rurale"** — 2027-12-31 — https://www.pays-albigeois-bastides.fr/la-programmation-2023-2027
+- **Programme LEADER 2023-2027 - Action "Accompagner les entreprises et les projets qui créent de la valeur ajoutée locale"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Accompagner les initiatives en faveur de la biodiversité, de la résilience, de la réduction des déchets et de la limitation des polluants"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Accompagner les transitions économiques et les modes de consommation vers un modèle plus soutenable"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Action collective de partenariat, de mise en réseau, de promotion et de valorisation du territoire"** — 2027-12-31 — http://www.payshautecorrezeventadour.fr/medias/files/synthese-fa-3.pdf
+- **Programme LEADER 2023-2027 - Action "Adaptation aux changements climatiques, lutte contre l’érosion de la biodiversité, transition écologique et énergétique"** — 2027-12-31 — https://storage.e.jimdo.com/file/60ce36e4-3f39-46c6-afa2-0f9749c3441f/Programmes%20d'actions%20LEADER%202023-2027.pdf
+- **Programme LEADER 2023-2027 - Action "Adapter le bâti existant"** — 2027-12-31 — https://www.coutancesmeretbocage.fr/le-programme-leader/
+- **Programme LEADER 2023-2027 - Action "Agir en faveur de l’environnement"** — 2027-12-31 — http://www.syndicat-mixte-sarreguemines.org/upload/documents/Europe/Fiche_action_2.pdf
+- **Programme LEADER 2023-2027 - Action "Agir en faveur de transitions plus durables pour le territoire de demain"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Aide aux filières émergentes du territoire Ouest Charente"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Alimentation de proximité et de qualité"** — 2027-12-31 — https://www.pays-bresse-bourguignonne.com/wp-content/uploads/2023/09/LEADERconventionAout2023.pdf
+- **Programme LEADER 2023-2027 - Action "Alimentation durable, agriculture locale et circuits courts"** — 2027-12-31 — https://ilesetestuairescharentais.com/wp-content/uploads/2023/11/20230818_Fiches-actions-completes.pdf
+- **Programme LEADER 2023-2027 - Action "Améliorer l'expérience et enrichir l'offre touristique de l'Ouest Charente"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Asseoir nos filières sur notre terroir"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Attractivité et services"** — 2027-12-31 — https://www.pays-des-7-rivieres.com/fileadmin/user_upload/FA_2_Attractivite_et_Services.pdf
+- **Programme LEADER 2023-2027 - Action "Circuits courts et économie circulaire"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Concilier un développement harmonieux entre monde urbain et monde rural pour une cohabitation enrichie"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Conforter des réseaux économiques locaux contributifs à la lutte contre le dérèglement climatique"** — 2027-12-31 — http://paysloirenature.fr/wp-content/uploads/2023/11/guide-du-porteurfiches-actions.pdf
+- **Programme LEADER 2023-2027 - Action "Connaître et préserver nos ressources naturelles et énergétiques"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Conserver une ruralité fière de sa qualité de vie"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Contribuer à un accès équitable de la population aux équipements et services"** — 2027-12-31 — https://www.pays-graylois.fr/fa-n-5.pdf
+- **Programme LEADER 2023-2027 - Action "Contribuer à un territoire vivant, accueillant et solidaire"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Coopération"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Créer, structurer, développer et promouvoir les filières économiques basées sur les ressources et les savoir-faire"** — 2027-12-31 — https://www.pays-graylois.fr/fa-n-2.pdf
+- **Programme LEADER 2023-2027 - Action "Développer de nouvelles alternatives à l’autosolisme et favoriser la dé-mobilité"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Développer des mobilités durables adaptées aux besoins des habitants"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Développer et maintenir une offre de commerces de proximité en centre-bourg"** — 2027-12-31 — https://www.pays-gatine.com/files/tabularasa/images/pages/financer_projets/LEADER27/Fiches_actions/FA01-Pays-Gatine-Feder-Maintenir-developper-offre-commerces-proximite-centre-bourg.pdf
+- **Programme LEADER 2023-2027 - Action "Développer et promouvoir le système alimentaire local de la production à la consommation"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Développer l’attractivité du territoire"** — 2027-12-31 — https://www.valdeloirenivernais.fr/wp-content/uploads/2023/08/CONVENTION-SIGNEE-VAL-DE-LOIRE-NIVERNAIS-VF.pdf
+- **Programme LEADER 2023-2027 - Action "Développer la sobriété énergétique et les énergies renouvelables en faveur d'une transition décarbonée"** — 2027-12-31 — https://www.paysloirebeauce.fr/wp-content/uploads/2024/01/Fiche-Actions-3_Sobriete-energetique.pdf
+- **Programme LEADER 2023-2027 - Action "Développer les circuits courts alimentaires de proximité par un développement de l'offre et des débouchés locaux"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Développer les hébergements touristiques et leurs offres"** — 2027-12-31 — http://estcreuse.fr/wp-content/uploads/2023/12/toutes_fiches.pdf
+- **Programme LEADER 2023-2027 - Action "Devenir un territoire exemplaire qui consomme moins et mieux"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Dynamiser l’économie du territoire"** — 2027-12-31 — https://deodatie.com/download/fiche-action-n2/#
+- **Programme LEADER 2023-2027 - Action "Dynamiser les stations de tourisme et de loisirs et poursuivre le développement des activités de pleine nature"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Economie de proximité"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Enclencher la transition systémique"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Encourager des productions locales de proximité et de qualité"** — 2027-12-31 — https://www.auxoismorvan.fr/wp-content/uploads/2023/09/FA3-Productions-locales.pdf
+- **Programme LEADER 2023-2027 - Action "Encourager les dynamiques collectives, la promotion des ressources économiques et l’entrepreneuriat local"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Faciliter une expérience touristique durable"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Faire de l’Auxois Morvan un territoire intelligent, connecté et durable"** — 2027-12-31 — https://www.auxoismorvan.fr/wp-content/uploads/2023/09/FA2-Numerique.pdf
+- **Programme LEADER 2023-2027 - Action "Favoriser l’émergence de nouveaux services facilitant l’accès à l’emploi et vecteurs d’attractivité"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Favoriser l'entrepreneuriat et l'accès aux services de proximité dans l'Ouest Charente"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Favoriser la préservation et la valorisation des biens communs"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Favoriser le développement de filières locales environnementales"** — 2027-12-31 — https://www.paysloirebeauce.fr/wp-content/uploads/2024/01/Fiche-Actions-2_Filieres-locales.pdf
+- **Programme LEADER 2023-2027 - Action "Favoriser un développement économique qui valorise les ressources locales"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Gérer durablement les ressources locales, dans une dynamique de transition énergétique et d’économie circulaire"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Gestion et valorisation des ressources naturelles"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Innover en encourageant de nouvelles pratiques pour les mobilités"** — 2027-12-31 — https://www.pays-isle-perigord.com/wp-content/uploads/FA1-Mobilites.pdf
+- **Programme LEADER 2023-2027 - Action "Innover en rééquilibrant une offre touristique qui consolide l’identité du territoire"** — 2027-12-31 — https://www.pays-isle-perigord.com/wp-content/uploads/FA3-Tourisme.pdf
+- **Programme LEADER 2023-2027 - Action "Innover en soutenant une production et une consommation locales"** — 2027-12-31 — https://www.pays-isle-perigord.com/wp-content/uploads/FA6-Prod-et-Conso-locales.pdf
+- **Programme LEADER 2023-2027 - Action "Investissements dans l'agro-alimentaire, les métiers de bouche et les commerces de proximité"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Investissements permettant de soutenir le développement de l'économie sociale et solidaire"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "L’innovation au service de la qualité de vie sur le territoire et de son attractivité"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "L’offre touristique Loue Lison comme vecteur d’attractivité économique de proximité"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Mobilités et énergies"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Nouvelle économie territoriale"** — 2027-12-31 — https://www.issoudun.fr/wp-content/uploads/2023/10/Fiches-action-LEADER-2023-27.pdf
+- **Programme LEADER 2023-2027 - Action "Préservation, accompagnement et valorisation du développement des secteurs économique du territoire favorisant l'ancrage d'activités de proximité"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Préserver l’environnement, encourager la transition écologique et prévenir l’impact des changements climatiques"** — 2027-12-31 — https://deodatie.com/download/fiche-action-n4/#
+- **Programme LEADER 2023-2027 - Action "Préserver les patrimoines et conforter l’offre touristique"** — 2027-12-31 — https://pays-vitryat.fr/wp-content/uploads/2023/10/FA2.-Patrimoines_Offre-touristique.pdf
+- **Programme LEADER 2023-2027 - Action "Promotion du territoire via l'activité touristique/écotouristique"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Promouvoir un territoire de biens et de savoir-faire commun autour de l’agriculture, l’alimentation et l’artisanat"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Qualifier, diversifier et promouvoir l’offre touristique"** — 2027-12-31 — https://www.pays-gatine.com/files/tabularasa/images/pages/financer_projets/LEADER27/Fiches_actions/FA04-Pays-Gatine-Leader-Qualifier-diversifier-promouvoir-offre-touristique.pdf
+- **Programme LEADER 2023-2027 - Action "Réduire la dépendance et la facture énergétiques du territoire"** — 2027-12-31 — https://www.pays-graylois.fr/fa-n-11.pdf
+- **Programme LEADER 2023-2027 - Action "Renforcer l’économie et les services notamment en favorisant l’innovation sociale"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Renforcer la dynamique économique et l’attractivité du territoire par des aides aux commerces de proximité, par le développement des équipements et services à la population"** — 2027-12-31 — https://www.petr-vezere-auvezere.fr/userfile/fichier-telechargement/1706200086-Fiches-actions-PETRVA.pdf
+- **Programme LEADER 2023-2027 - Action "Renforcer la mise en valeur du territoire et structurer l’offre touristique et de loisirs"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Renforcer le développement touristique et valoriser l’identité locale"** — 2027-12-31 — http://www.syndicat-mixte-sarreguemines.org/upload/documents/Europe/Fiche_action_1.pdf
+- **Programme LEADER 2023-2027 - Action "Renforcer une économie locale ancrée sur le territoire, circulaire et porteuse de sens"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Se déplacer en expérimentant avec les structures dédiées et/ou des citoyens volontaires, des solutions de mobilités décarbonées ou de transports collectifs"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Soutenir et promouvoir une alimentation durable"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Soutenir l’économie locale"** — 2027-12-31 — https://pays-vitryat.fr/wp-content/uploads/2023/10/FA4.-Commerce_Artisanat_Filieres-courtes.-pdf.pdf
+- **Programme LEADER 2023-2027 - Action "Soutenir l’Economie Sociale et Solidaire (ESS) et l’innovation sociale pour une offre de services diversifiée et adaptée aux évolutions sociétales"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Soutenir l’émergence de nouvelles offres touristiques"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Soutenir l’offre culturelle, patrimoniale et les savoir-faire identitaires comme argument d’attractivité résidentielle et touristique"** — 2027-12-31 — https://www.chataigneraielimousine.fr/upload/SITE/Missions/Europe/FA1_prog_europ_FCL.pdf
+- **Programme LEADER 2023-2027 - Action "Soutenir les démarches de transition des filières, des entreprises et du grand public"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Soutenir les formes émergentes de tourisme et culture"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Soutien au développement de l’activité économique dans une logique d’économie circulaire"** — 2027-12-31 — https://156bfceb-04ba-4714-90c7-1ed408c92de6.filesusr.com/ugd/419f7f_08986142924c4b92bf80611c24a342da.pdf
+- **Programme LEADER 2023-2027 - Action "Soutien au Tourisme, la Culture et le Patrimoine de la Côte des Bar"** — 2027-12-31 — https://156bfceb-04ba-4714-90c7-1ed408c92de6.filesusr.com/ugd/419f7f_845df6a553134036871ea98ebbd4778f.pdf
+- **Programme LEADER 2023-2027 - Action "Soutien aux premiers et derniers commerces de centre-bourg"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Stimuler et favoriser un tourisme durable"** — 2027-12-31 — https://deodatie.com/download/fiche-action-n1/#
+- **Programme LEADER 2023-2027 - Action "Tourisme & Promotion du territoire"** — 2027-12-31 — https://www.pays-des-7-rivieres.com/fileadmin/user_upload/FA_3_Tourisme_et_Promotion_territoire.pdf
+- **Programme LEADER 2023-2027 - Action "Transitions énergétique, écologique et numérique"** — 2027-12-31 — https://www.pays-des-7-rivieres.com/fileadmin/user_upload/FA_1_Transitions_EEN.pdf
+- **Programme LEADER 2023-2027 - Action "Un territoire durable démographiquement - Conforter l'attractivité résidentielle** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Un territoire durable environnementalement - Aller vers une excellence écologique et énergétique"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Un territoire durable socialement et humainement - Soutenir et développer les projets créateurs de lien social"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Valoriser le terroir au travers de l'alimentation locale et du tourisme durable"** — 2027-12-31 — https://www.paysloirebeauce.fr/wp-content/uploads/2024/01/Fiche-Actions-5_Terroir-et-tourisme.pdf
+- **Programme LEADER 2023-2027 - Action "Valoriser les spécificités du territoire déjà connues ou émergentes pour composer un avenir durable"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Action "Vivre la transition au plus près des besoins en valorisant les ressources du territoire"** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Appel à projets "Dynamiser l’économie du territoire vers plus de proximité et de durabilité"** — 2027-12-31 — https://www.pays-lunevillois.fr/sites/default/files/2024-11/Prog%2023-27%20-%20Fiche%20Action%202%20simplifi%C3%A9e%20v2.pdf
+- **Programme LEADER 2023-2027 - Appel à projets "Revaloriser le Patrimoine et l’Accueil en Pays Lunévillois"** — 2027-12-31 — https://www.pays-lunevillois.fr/sites/default/files/2024-11/Prog%2023-27%20-%20Fiche%20Action%201%20simplifi%C3%A9e%20v2.pdf
+- **Programme LEADER 2023-2027 - Coeur du Jura** — 2027-12-31 — https://www.cc-coeurdujura.fr/connaitre-le-coeur-du-jura/politiques-territoriales/le-programme-leader
+- **Programme LEADER 2023-2027 - Pays de Remiremont et de ses vallées** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Programme LEADER 2023-2027 - Valoriser les atouts culturels, touristiques et patrimoniaux du territoire** — 2027-12-31 — https://data.aides-entreprises.fr/stock
+- **Projet Alimentaire Territorial Loire Layon Aubance** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Projet initiative-jeune (PIJ) - Aide nationale** — échéance à vérifier — https://travail-emploi.gouv.fr/le-projet-initiative-jeune-pij-creation-dentreprise
+- **Quartier Prioritaire de la Ville (QPV) - Exonération de l'impôt sur les bénéfices** — 2030-12-31 — https://entreprendre.service-public.gouv.fr/vosdroits/F34020
+- **Quartier Prioritaire de la Ville (QPV) - Exonération de la Cotisation foncière des entreprises (CFE)** — 2030-12-31 — https://www.service-public.fr/professionnels-entreprises/vosdroits/F34020
+- **Rechercher un ancien appel à projets** — 2026-09-01 — https://anr.fr/fr/rechercher-un-ancien-appel-a-projets/
+- **Réduction d'impôt au titre des mises à disposition de salariés sapeurs-pompiers volontaires ou réservistes, de salariés pour la réserve opérationnelle des forces armées ou pour la réserve opérationnelle de la gendarmerie nationale** — échéance à vérifier — http://bofip.impots.gouv.fr/bofip/6476-PGP.html?identifiant=BOI-BIC-RICI-20-30-10-20-20180103
+- **Réduction d'impôt pour les dons en faveur de l'achat par l'État ou toute personne publique d'un trésor national** — échéance à vérifier — https://entreprendre.service-public.fr/vosdroits/F35676
+- **Réduction d’impôt pour une mise à disposition d’une flotte de vélos** — échéance à vérifier — https://www.legifrance.gouv.fr/codes/id/LEGISCTA000031051281
+- **Réduction d'impôt sur les versements effectués au profit d'organismes d'intérêt général** — échéance à vérifier — https://www.legifrance.gouv.fr/affichTexte.do;jsessionid=FEBEE292CCB0CBBBC4787DD7A42974FD.tplgfr28s_3?cidTexte=JORFTEXT000039683923&categorieLien=id#JORFARTI000039684071
+- **Réduction du taux de l'impôt sur les sociétés pour les PME** — échéance à vérifier — https://www.service-public.fr/professionnels-entreprises/vosdroits/F23575
+- **Réduction générale dégressive des cotisations patronales de sécurité sociale** — échéance à vérifier — https://www.service-public.fr/professionnels-entreprises/vosdroits/F24542
+- **Remboursement des taxes de carburant pour les transporteurs** — échéance à vérifier — https://entreprendre.service-public.fr/vosdroits/F31222
+- **Remboursement forfaitaire de la taxe spéciale de consommation sur le carburant pour les exploitants de VTC** — échéance à vérifier — https://aides.regionguadeloupe.fr/Remboursement-forfaitaire-de-la-taxe-speciale-de-consommation-sur-le-carburant-135
+- **Renaudais Création Développement (RCD) - Aide à l'investissement** — échéance à vérifier — https://www.cc-castelrenaudais.fr/entreprendre/des-aides-publiques-incitatives/vous-avez-un-projet-dinvestissement/
+- **Renfort de l'action commerciale à l'international** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/renforcer-son-action-commerciale-linternational
+- **Saint-Quentin Commerce - Dispositif d’aide à l’embellissement et à l’aménagement des points de vente** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Sauldre et Sologne Actif** — échéance à vérifier — https://www.sauldre-sologne.fr/aides-financieres_fr.html
+- **SCOPINVEST - Obligation convertible** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **SCOPINVEST - Titre participatif** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **SIAGI - Aide aux entrepreneurs individuels** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **SIAGI - Garantie Création** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **SIAGI - Garantie Croissance** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **SIAGI - Garantie Reprise** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **SIAGI - Garanties RELAIS - REBOND** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **SIAGI - Renforcement de la trésorerie** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **SIAGI – Garantie 5/50** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Sign in** — échéance à vérifier — https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.europe-guadeloupe.fr%2Ffinancement%2Ffeder-fse-region-guadeloupe_competitivite-entreprise%2F&title=FEDER-%20FSE%2B%20REGION%20GUADELOUPE&summary=Le%20programme%20FEDER-%20FSE%2B%2C%20g%C3%A9r%C3%A9%20par%20la%20R%C3%A9gion%20Guadeloupe%2C%20vise%20%C3%A0%20renforcer%20la%20croissance%20durable%20et%20la%20comp%C3%A9titivit%C3%A9%20des%20PME%20et%20la%20cr%C3%A9ation%20d%E2%80%99emplois%2C%20y%20compris%20dans%20les%20investissements%20productifs.
+- **Signature - Appel à projets pour l’art et l’immobilier** — 2028-12-31 — https://www.strasbourg.eu/signature
+- **Sobriété en eau des activités industrielles et économiques** — 2030-12-31 — https://www.eaurmc.fr/jcms/pro_128682/fr/eco3-sobriete-en-eau-des-activites-industrielles-et-economiques
+- **Sorry, you have been blocked** — échéance à vérifier — https://www.reseaurural.fr/Tutoriel-mon-dossier-FEADER
+- **Soutien à l'artisanat et au commerce de proximité** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Soutien à l'investissement des opérateurs économiques** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Soutien à la qualification RGE à destination des entreprises du bâtiment** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Soutien antenne pour la diffusion des oeuvres cinématographiques de long métrage** — échéance à vérifier — https://www.cnc.fr/professionnels/aides-et-financements/cinema/production/soutien-antenne-pour-la-diffusion-des-oeuvres-cinematographiques-de-long-metrage_190686
+- **Soutien au capital des SCOP et SCIC (Tremplin SCOP-SCIC)** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/372
+- **Soutien au commerce de proximité** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Soutien au commerce et artisanat de proximité dans le cœur de ville et dans les centres bourgs** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Soutien au déploiement des tiers-lieux** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Soutien au développement international des entreprises du secteur de la mode** — échéance à vérifier — https://www.defimode.org/nos-aides/participation-salons/salons-internationaux/
+- **Soutien aux activités commerciales et artisanales** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Soutien aux activités économiques hors hébergements touristiques** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Soutien aux commerces de proximité** — échéance à vérifier — https://www.saint-etienne-metropole.fr/etudier-entreprendre/entreprises/accompagnement-economique
+- **Soutien aux commerces et services locaux - Aide à l’accompagnement à la transmission pour le cédant** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Soutien aux commerces ruraux de proximité** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/aide-aux-commerces-de-proximite-en-milieu-rural
+- **Soutien aux entreprises du Warndt** — échéance à vérifier — https://ccwarndt.fr/wp-content/uploads/R%C3%A8glement-SEW-final.pdf
+- **Soutien aux filières touristiques régionales** — échéance à vérifier — https://www.normandie.fr/structuration-et-developpement-des-filieres-touristiques
+- **Soutien aux fonds propres des entreprises via le fonds d’investissement Major Capital** — échéance à vérifier — https://www.normandie.fr/soutien-aux-fonds-propres-des-entreprises-le-fonds-dinvestissement-major-capital
+- **Soutien aux hébergements touristiques** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Soutien aux investissements d’envergure en matière d’immobilier d’entreprise** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Soutien aux Pôles Territoriaux de Coopération Economique (PTCE)** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/poles-territoriaux-de-cooperation-economique-ptce
+- **Soutien aux projets des TPE** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Soutien Economique aux Entreprises (SEE)** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Soutien européen à l’aide alimentaire du fonds social européen plus (FSE+) : la France et l’Europe renforcent leur engagement dans la lutte contre la précarité alimentaire par un programme de 647 millions d’euros pour la période 2022-2027** — échéance à vérifier — https://solidarites.gouv.fr/soutien-europeen-laide-alimentaire-du-fonds-social-europeen-plus-fse-la-france-et-leurope
+- **Stages en milieu professionnel - Franchise de cotisations et contributions sociales** — échéance à vérifier — https://www.urssaf.fr/accueil/outils-documentation/taux-baremes/base-forfaitaire-franchise.html
+- **Start Coup de pouce** — échéance à vérifier — https://www.normandie.fr/start-coup-de-pouce
+- **Start-RSE** — échéance à vérifier — https://www.strasbourg.eu/start-rse
+- **Subvention à la location** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Subvention Accompagnement** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Subvention Prévention TPE - Boulangerie Pâtisserie** — 2026-11-30 — https://data.aides-entreprises.fr/stock
+- **Subvention Prévention TPE - Equipement plus sûr** — 2028-10-31 — https://www.carsat-centreouest.fr/home/entreprise/prevenir-les-risques-professionn/financer-des-actions-de-preventi/les-subventions-prevention-pour/subventions-prevention-regiona-1.html
+- **Subvention Prévention TPE - Locaux + sûrs** — 2028-12-31 — https://www.carsat-alsacemoselle.fr/home/entreprises/prevenir-vos-risques-professionn/financer-des-actions-de-preventi/les-subventions-pour-les-entrepr.html
+- **Subvention Prévention TPE - Métallurgie** — échéance à vérifier — https://www.carsat-ra.fr/home/entreprise-nv/prevenir-risques-professionn/financer-des-actions-de-preven-1/aides-financieres-pour-les-entre.html
+- **Subvention Prévention TPE - Prévention BTP** — échéance à vérifier — https://www.carsat-lr.fr/files/live/sites/carsat-lr/files/pdf/entreprises/attribution-prevention-btp.pdf
+- **Subvention Prévention TPE - Prévention Malaises** — 2028-06-30 — https://www.carsat-aquitaine.fr/files/live/sites/carsat-aquitaine/files/documents/entreprises/prevention/subventions/subvention-prevention-malaises-conditions-attribution.pdf
+- **Subvention Prévention TPE - Risque Radon** — 2028-12-06 — https://www.carsat-auvergne.fr/home/radon.html
+- **Subvention Prévention TPE - Risques chimiques formation accompagnement** — échéance à vérifier — https://www.ameli.fr/entreprise/sante-travail/aides-financieres/subventions-nationales/risques-chimiques-formation-accompagnement
+- **Subvention Prévention TPE - RPS Accompagnement** — échéance à vérifier — https://www.ameli.fr/entreprise/sante-travail/aides-financieres/subventions-nationales/rps-accompagnement-0
+- **Subvention Prévention TPE - UV solaires - Chaleur** — 2026-11-30 — https://data.aides-entreprises.fr/stock
+- **Sud EntreprisesLa boite à outils pour le financement et l’accompagnement des entreprises régionales** — échéance à vérifier — https://entreprises.maregionsud.fr/financement/sud-entreprises
+- **Sud Garantie** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/sud-garantie
+- **Sud Jeunes - Aide à l'emploi en faveur des jeunes calédoniens** — échéance à vérifier — https://www.province-sud.nc/catweb/app/demarches/aide-a-lemploi-en-faveur-des-jeunes-caledoniens-sud-jeunes
+- **Sud Prêt Climat** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/sud-pret-climat
+- **Sud relance** — échéance à vérifier — https://www.province-sud.nc/catweb/app/demarches/pret-sud-relance
+- **SudRetour - Aide au recrutement** — 2027-12-31 — https://www.province-sud.nc/catweb/app/demarches/SudRetour-aide-au-recrutement
+- **Suramortissement pour les poids lourds peu polluants** — 2030-12-31 — https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000042753738
+- **Toutes les aides** — échéance à vérifier — https://www.laregion.fr/-Toutes-les-aides-
+- **TPE Booster** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Transfo Num'** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Tremplin pour l'Activité des Jeunes (TAJ)** — échéance à vérifier — https://www.departement974.fr/aide/aide-tremplin-pour-lactivite-des-jeunes-taj
+- **Val TPE** — échéance à vérifier — https://data.aides-entreprises.fr/stock
+- **Vendée Grand Sud Accélérateur** — échéance à vérifier — https://vendeegrandsud.fr/aides-financieres/
+- **Vendeurs à domicile - Exonération du paiement des cotisations et contributions de Sécurité sociale** — échéance à vérifier — https://www.urssaf.fr/accueil/employeur/cotisations/base-forfaitaire-franchise-cotis/vendeur-a-domicile.html
+- **Volontariat International en Entreprise (VIE)** — échéance à vérifier — https://e-vie.businessfrance.fr/0/Devis/DevisPublic
+- **Volontariat International en Entreprise (VIE) - Auvergne-Rhône-Alpes** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/recruter-un-volontaire-international-en-entreprise-vie
+- **X - The Everything App / X** — échéance à vérifier — https://twitter.com/i/flow/login?redirect_after_login=%2Ffse_nat
+- **Zone d'aide à l'Investissement des PME - Exonération de la cotisation foncière des entreprises (CFE)** — 2027-12-31 — https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000046003627
+- **Zone franche globale - Abattement pour les entreprises de Mayotte** — 2031-01-01 — https://bofip.impots.gouv.fr/bofip/14787-PGP.html/ACTU-2025-00136
+- **Zones Aide à finalité régionale (AFR) - Exonération d'impôt sur les bénéfices pour les entreprises nouvelles** — 2027-12-31 — https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054248472
+- **Zones de Développement Prioritaire (ZDP) - Exonération de la taxe foncière** — 2026-12-31 — https://bofip.impots.gouv.fr/bofip/14166-PGP.html/ACTU-2024-00056
+- **Zones de restructuration de la défense (ZRD) - Exonération d'impôt sur les bénéfices pour les entreprises nouvelles** — échéance à vérifier — https://www.urssaf.fr/portail/home/employeur/beneficier-dune-exoneration/exonerations-ou-aides-a-caracter/les-zones-de-restructuration-de.html
+- **Zones de restructuration de la défense (ZRD) - Exonération de la taxe foncière sur les propriétés bâties** — échéance à vérifier — https://www.economie.gouv.fr/entreprises/zones-restructuration-defense-zrd-avantages-impots
+- **Zones Franches d'Activité Nouvelle Génération (ZFANG) - Abattement annuel sur le bénéfice imposable** — échéance à vérifier — https://www.legifrance.gouv.fr/affichTexte.do?cidTexte=JORFTEXT000037882341&categorieLien=id#JORFARTI000037882370
 
 ## Modifications
-- **Accélérateur Agroalimentaire** — échéance/statut actuel : 2026-11-04
-- **Accélérateur Biens d'Equipement** — échéance/statut actuel : 2026-12-09
-- **Accélérateur Croissance Externe** — échéance/statut actuel : 2026-11-24
-- **Accélérateur Croissance Occitanie** — échéance/statut actuel : 2027-01-01
-- **Accélérateur Décarbonation** — échéance/statut actuel : 2026-09-30
-- **Accélérateur Défense** — échéance/statut actuel : 2026-10-27
-- **Accélérateur ETI** — échéance/statut actuel : 2026-11-17
-- **Accélérateur IA** — échéance/statut actuel : ACTIVE
-- **Accélérateur Industries Mécaniques** — échéance/statut actuel : 2026-12-01
-- **Accélérateur Néo - Startups Industrielles** — échéance/statut actuel : 2026-10-21
-- **Accélérateur Néo Pivot** — échéance/statut actuel : 2026-11-18
-- **Accélérateur PME Hauts-de-France** — échéance/statut actuel : 2026-12-08
-- **Accélérateur PME Nouvelle-Aquitaine** — échéance/statut actuel : 2026-10-14
 - **Accélération Start-Up** — échéance/statut actuel : ACTIVE
-- **Accompagnement CYBIAH** — échéance/statut actuel : ACTIVE
-- **Accompagnement de la transition touristique des territoires de montagne** — échéance/statut actuel : ACTIVE
-- **Accompagnement des acteurs de la filière nautique** — échéance/statut actuel : ACTIVE
+- **Accueil | L'Europe s'engage en France, le portail des Fonds européens** — échéance/statut actuel : 2032-12-31
 - **Action régionale pour le développement d'activités nouvelles (ARDAN)** — échéance/statut actuel : ACTIVE
 - **Agir tourisme** — échéance/statut actuel : ACTIVE
 - **Aide à l'accélération** — échéance/statut actuel : ACTIVE
 - **Aide à l’accompagnement de développement de carrière d’artistes professionnels-filière musique et spectacle vivant** — échéance/statut actuel : ACTIVE
-- **Aide à l'accompagnement versée au titre de l'accompagnement professionnel individualisé pour les entreprises adaptées hors expérimentation** — échéance/statut actuel : ACTIVE
-- **Aide à l'accueil, à l'intégration et à l'évolution professionnelle des personnes handicapées** — échéance/statut actuel : ACTIVE
 - **Aide à l'achat d'un nouveau taxi** — échéance/statut actuel : ACTIVE
 - **Aide à l'achat de véhicule de commerce ambulant des TPE artisanat-commerce** — échéance/statut actuel : ACTIVE
-- **Aide à l'achat ou à la location de véhicules peu polluants - Prime au rétrofit électrique** — échéance/statut actuel : ACTIVE
-- **Aide à l'acquisition d’équipement adapté pour l’accès aux loisirs des personnes en situation de handicap** — échéance/statut actuel : ACTIVE
-- **Aide à l’acquisition d’équipements et à l’organisation d’évènements nautiques** — échéance/statut actuel : ACTIVE
-- **Aide à l’activité de diffusion des lieux** — échéance/statut actuel : ACTIVE
-- **Aide à l'adaptation des situations de travail** — échéance/statut actuel : ACTIVE
 - **Aide à l’amorçage** — échéance/statut actuel : ACTIVE
-- **Aide à l’animation d’actions collectives en matière d’économie circulaire et de déchets** — échéance/statut actuel : ACTIVE
-- **Aide à l'attractivité touristique du territoire** — échéance/statut actuel : ACTIVE
-- **Aide à l’écriture cinéma, audiovisuel et nouveaux médias** — échéance/statut actuel : ACTIVE
-- **Aide à l’édition à l’édition et à la promotion de livres d’intérêt régional** — échéance/statut actuel : ACTIVE
 - **Aide à l'édition de musique contemporaine** — échéance/statut actuel : ACTIVE
-- **Aide à l'édition en langue bretonne** — échéance/statut actuel : ACTIVE
-- **Aide à l'édition en langue bretonne de séries de bandes dessinées classiques** — échéance/statut actuel : ACTIVE
-- **Aide à l'édition en langue gallèse** — échéance/statut actuel : ACTIVE
-- **Aide à l’édition indépendante** — échéance/statut actuel : ACTIVE
-- **Aide à l'efficacité hydrique des entreprises** — échéance/statut actuel : ACTIVE
-- **Aide à l'émergence et à la consolidation d'une économie circulaire en Outre-mer et Corse** — échéance/statut actuel : 2026-12-31
-- **Aide à l'entrepreneuriat des jeunes** — échéance/statut actuel : ACTIVE
-- **Aide à l'excellence opérationnelle** — échéance/statut actuel : ACTIVE
-- **Aide à l'exemplaire pour les titres de presse postés ou portés** — échéance/statut actuel : ACTIVE
-- **Aide à l'hôtellerie indépendante** — échéance/statut actuel : ACTIVE
-- **Aide à l'hôtellerie indépendante** — échéance/statut actuel : ACTIVE
-- **Aide à l'ingénierie des matériaux** — échéance/statut actuel : ACTIVE
-- **Aide à l'innovation "Inno Conseil"** — échéance/statut actuel : ACTIVE
-- **Aide à l'innovation "Inno Market'up"** — échéance/statut actuel : ACTIVE
-- **Aide à l'innovation "Inno R&D collaborative"** — échéance/statut actuel : ACTIVE
-- **Aide à l'innovation "Inno R&D"** — échéance/statut actuel : ACTIVE
-- **Aide à l'innovation durable par le design** — échéance/statut actuel : ACTIVE
+- **Aide à l'implantation** — échéance/statut actuel : ACTIVE
 - **Aide à l'innovation et à la R&D dans l'agroalimentaire** — échéance/statut actuel : ACTIVE
-- **Aide à l'innovation numérique responsable** — échéance/statut actuel : ACTIVE
-- **Aide à l’Insertion par l’Activité Économique (IAE)** — échéance/statut actuel : ACTIVE
-- **Aide à l'installation de production d'eau chaude solaire thermique** — échéance/statut actuel : 2026-12-31
-- **Aide à l'installation des jeunes de moins de 40 ans dans les secteurs de l’économie bleue** — échéance/statut actuel : ACTIVE
-- **Aide à l'intégration des solutions biosourcées** — échéance/statut actuel : ACTIVE
 - **Aide à l’investissement aux librairies françaises** — échéance/statut actuel : 2027-07-31
-- **Aide à l'investissement des entreprises de l'économie sociale et solidaire** — échéance/statut actuel : ACTIVE
-- **Aide à l'investissement des scieries** — échéance/statut actuel : 2027-12-31
-- **Aide à l’investissement des TPE à fort potentiel** — échéance/statut actuel : ACTIVE
-- **Aide à l'investissement des transitions - TPE** — échéance/statut actuel : ACTIVE
-- **Aide à l'investissement en faveur du recyclage et du réemploi des déchets** — échéance/statut actuel : ACTIVE
-- **Aide à l'investissement en méthanisation** — échéance/statut actuel : ACTIVE
 - **Aide à l'investissement et à l'emploi** — échéance/statut actuel : 2026-11-30
-- **Aide à l'investissement matériel** — échéance/statut actuel : ACTIVE
-- **Aide à l’investissement pour la création, l’équipement et la réhabilitation des salles de cinéma** — échéance/statut actuel : ACTIVE
-- **Aide à l'investissement reprise d'entreprise TPE** — échéance/statut actuel : ACTIVE
-- **Aide à l'itinérance cyclable** — échéance/statut actuel : ACTIVE
 - **Aide à la création** — échéance/statut actuel : ACTIVE
 - **Aide à la création d'emplois dans les entreprises culturelles** — échéance/statut actuel : ACTIVE
-- **Aide à la création de nouvelles activités en économie circulaire** — échéance/statut actuel : ACTIVE
-- **Aide à la création de ressources numériques pour l'apprentissage de la langue bretonne** — échéance/statut actuel : 2028-12-31
-- **Aide à la création et à la production d'oeuvres audiovisuelles de fiction** — échéance/statut actuel : ACTIVE
-- **Aide à la création et à la production d’œuvres d’animation** — échéance/statut actuel : ACTIVE
-- **Aide à la création et à la production d’œuvres de web-création** — échéance/statut actuel : ACTIVE
-- **Aide à la création et à la production d'oeuvres documentaires** — échéance/statut actuel : ACTIVE
-- **Aide à la création et à la production d’œuvres immersives** — échéance/statut actuel : ACTIVE
-- **Aide à la création et à la production de long métrage de fiction** — échéance/statut actuel : ACTIVE
-- **Aide à la création et au développement du livre audio** — échéance/statut actuel : 2027-08-27
-- **Aide à la création ou à la reprise d’activité de disquaires indépendants** — échéance/statut actuel : ACTIVE
-- **Aide à la création ou au développement d'une activité dans le secteur du tourisme gourmand** — échéance/statut actuel : ACTIVE
-- **Aide à la création, à la diversification et à la modernisation des sites de visites et des activités de loisirs** — échéance/statut actuel : ACTIVE
-- **Aide à la création, à la rénovation ou à la modernisation des hébergements touristiques** — échéance/statut actuel : ACTIVE
-- **Aide à la digitalisation des processus** — échéance/statut actuel : ACTIVE
-- **Aide à la distribution de films en salle** — échéance/statut actuel : ACTIVE
 - **Aide à la distribution de la presse : presse française à l'étranger** — échéance/statut actuel : ACTIVE
 - **Aide à la distribution de la presse : presse quotidienne d'information politique et générale en France** — échéance/statut actuel : ACTIVE
 - **Aide à la distribution de la presse nationale au numéro** — échéance/statut actuel : ACTIVE
 - **Aide à la faisabilité d'ouverture de l'entreprise au public** — échéance/statut actuel : ACTIVE
-- **Aide à la faisabilité du projet d'hébergement touristique** — échéance/statut actuel : ACTIVE
-- **Aide à la fiction longue cinématographique et audiovisuelle** — échéance/statut actuel : ACTIVE
-- **Aide à la lutte contre les pollutions - Déchets plastiques en milieux aquatiques** — échéance/statut actuel : ACTIVE
-- **Aide à la méthanisation** — échéance/statut actuel : ACTIVE
-- **Aide à la mise en oeuvre de la DATA et de l'IA** — échéance/statut actuel : ACTIVE
-- **Aide à la mise en place d'un contrat de prévention des risques professionnels** — échéance/statut actuel : ACTIVE
-- **Aide à la mobilité des éditeurs** — échéance/statut actuel : ACTIVE
-- **Aide à la modernisation de salles de cinéma** — échéance/statut actuel : ACTIVE
-- **Aide à la modernisation des diffuseurs de presse** — échéance/statut actuel : ACTIVE
-- **Aide à la modernisation des officines dans les zones rurales** — échéance/statut actuel : ACTIVE
-- **Aide à la modernisation et à la création d’installations terminales embranchées (ITE)** — échéance/statut actuel : ACTIVE
-- **Aide à la modernisation et à la montée en gamme des hébergements touristiques** — échéance/statut actuel : ACTIVE
-- **Aide à la numérisation rétrospective de revues** — échéance/statut actuel : 2026-10-29
-- **Aide à la participation aux salons parisiens, à des showrooms et des plateformes digitales pour les Jeunes Entreprises de Création (JEC)** — échéance/statut actuel : ACTIVE
-- **Aide à la participation des maisons d'édition de Bretagne à des événements hors région** — échéance/statut actuel : ACTIVE
-- **Aide à la première installation des artisans et commerçants en milieu rural** — échéance/statut actuel : ACTIVE
 - **Aide à la préparation et à la publication de projets éditoriaux d'envergure** — échéance/statut actuel : ACTIVE
-- **Aide à la préparation pour les films d'animation de long métrage cinéma (passerelle)** — échéance/statut actuel : ACTIVE
-- **Aide à la préparation pour les oeuvres cinématographiques de long métrage** — échéance/statut actuel : ACTIVE
-- **Aide à la prévention des déchets et à la tarification incitative** — échéance/statut actuel : ACTIVE
 - **Aide à la production audiovisuelle et nouveaux médias - Documentaires** — échéance/statut actuel : ACTIVE
 - **Aide à la production audiovisuelle et nouveaux médias - Fiction (prise de vue réelle)** — échéance/statut actuel : ACTIVE
-- **Aide à la production cinématographique de courts métrages** — échéance/statut actuel : ACTIVE
-- **Aide à la production de court métrage de fiction** — échéance/statut actuel : ACTIVE
 - **Aide à la production de courts métrages cinéma – Documentaire et fiction prise de vue réelle** — échéance/statut actuel : ACTIVE
-- **Aide à la production de jeux vidéos** — échéance/statut actuel : ACTIVE
-- **Aide à la production de longs métrages cinéma - Documentaire et fiction prise de vue réelle** — échéance/statut actuel : ACTIVE
 - **Aide à la production de musique en images** — échéance/statut actuel : ACTIVE
 - **Aide à la production de projets d'animation** — échéance/statut actuel : ACTIVE
 - **Aide à la production et à la diffusion de spectacle vivant** — échéance/statut actuel : ACTIVE
 - **Aide à la production phonographique** — échéance/statut actuel : ACTIVE
 - **Aide à la promotion de la culture et des savoir-faire alpins** — échéance/statut actuel : ACTIVE
 - **Aide à la publication d'ouvrages et de revues** — échéance/statut actuel : ACTIVE
-- **Aide à la réalisation de projets locaux en matière d’économie circulaire et de déchets** — échéance/statut actuel : ACTIVE
-- **Aide à la réalisation des travaux en domaine privé pour le raccordement à un réseau en fibre optique** — échéance/statut actuel : 2027-01-31
-- **Aide à la réalité virtuelle augmentée** — échéance/statut actuel : ACTIVE
-- **Aide à la recherche de financements européens** — échéance/statut actuel : ACTIVE
-- **Aide à la Recherche et Développement des TPE** — échéance/statut actuel : ACTIVE
-- **Aide à la réécriture de scénarios** — échéance/statut actuel : 2026-11-19
 - **Aide à la réhabilitation des commerces** — échéance/statut actuel : ACTIVE
 - **Aide à la rénovation des points de ventes fixes, artisanaux, commerciaux ou de services** — échéance/statut actuel : ACTIVE
-- **Aide à la reprise d'hôtels** — échéance/statut actuel : ACTIVE
-- **Aide à la restructuration économique** — échéance/statut actuel : ACTIVE
-- **Aide à la sécurisation des débits de tabac** — échéance/statut actuel : ACTIVE
-- **Aide à la stratégie RSE** — échéance/statut actuel : ACTIVE
-- **Aide à la traduction d'ouvrages étrangers en français** — échéance/statut actuel : 2026-10-29
-- **Aide à la traduction d'ouvrages français en langues étrangères** — échéance/statut actuel : 2026-10-29
-- **Aide à la traduction de ressources numériques en langue bretonne** — échéance/statut actuel : 2028-12-31
-- **Aide à la traduction littéraire en langue bretonne** — échéance/statut actuel : ACTIVE
-- **Aide à la transformation des débits de tabac ordinaires** — échéance/statut actuel : 2027-12-31
-- **Aide à la transformation et à la commercialisation des produits halieutiques** — échéance/statut actuel : ACTIVE
 - **Aide à la trésorerie pour les entreprises de transport public fluvial de marchandises ou de personnes ou mixte par pirogue en Guyane** — échéance/statut actuel : ACTIVE
-- **Aide à une démarche de biodiversité** — échéance/statut actuel : ACTIVE
-- **Aide après réalisation pour le cinéma** — échéance/statut actuel : ACTIVE
-- **Aide au codéveloppement et à la coproduction d’œuvres cinématographiques et audiovisuelles franco-italiennes** — échéance/statut actuel : 2026-12-03
-- **Aide au conseil à l'économie circulaire** — échéance/statut actuel : ACTIVE
-- **Aide au conseil en ressources humaines** — échéance/statut actuel : ACTIVE
-- **Aide au déploiement d'engins de chantier électriques** — échéance/statut actuel : 2026-12-31
-- **Aide au déploiement de flottes hydrogènes** — échéance/statut actuel : 2026-12-31
-- **Aide au développement d’œuvres cinématographiques de longue durée** — échéance/statut actuel : 2026-10-09
-- **Aide au développement de l'offre de produits touristiques** — échéance/statut actuel : ACTIVE
 - **Aide au développement de projets d'animation** — échéance/statut actuel : ACTIVE
-- **Aide au développement de prototypes fonctionnels** — échéance/statut actuel : ACTIVE
-- **Aide au développement deeptech (AAD)** — échéance/statut actuel : ACTIVE
-- **Aide au développement des activités oenotouristiques** — échéance/statut actuel : ACTIVE
-- **Aide au développement des activités touristiques** — échéance/statut actuel : ACTIVE
 - **Aide au développement des grandes entreprises** — échéance/statut actuel : ACTIVE
-- **Aide au développement des installations géothermiques** — échéance/statut actuel : 2026-12-31
-- **Aide au développement des itinéraires touristiques fluviaux, vélo, pédestres et équestres** — échéance/statut actuel : ACTIVE
 - **Aide au développement des œuvres cinématographiques et audiovisuelles ou à destination des nouveaux médias** — échéance/statut actuel : ACTIVE
 - **Aide au développement des PME ayant un projet structurant fortement créateur d'emplois** — échéance/statut actuel : ACTIVE
 - **Aide au développement des PME réalisant un saut technologique** — échéance/statut actuel : ACTIVE
 - **Aide au développement des TPE artisanales, commerciales et de services** — échéance/statut actuel : ACTIVE
-- **Aide au développement économique** — échéance/statut actuel : ACTIVE
-- **Aide au développement éditorial** — échéance/statut actuel : ACTIVE
-- **Aide au développement et à la diversification de l'offre des stations de montagne** — échéance/statut actuel : ACTIVE
-- **Aide au développement et à la valorisation de l'image digitale pour les métiers d'art** — échéance/statut actuel : ACTIVE
-- **Aide au développement par l'innovation sociale** — échéance/statut actuel : ACTIVE
-- **Aide au diagnostic Data Intelligence Artificielle** — échéance/statut actuel : ACTIVE
-- **Aide au documentaire cinématographique audiovisuel** — échéance/statut actuel : ACTIVE
 - **Aide au financement de la reprise d’entreprises à la barre du tribunal** — échéance/statut actuel : ACTIVE
-- **Aide au pluralisme de la presse périodique régionale et locale (PPR)** — échéance/statut actuel : ACTIVE
-- **Aide au poste pour les entreprises adaptées hors expérimentation** — échéance/statut actuel : ACTIVE
-- **Aide au programme éditorial** — échéance/statut actuel : ACTIVE
-- **Aide au programme éditorial** — échéance/statut actuel : ACTIVE
-- **Aide au projet éditorial exceptionnel** — échéance/statut actuel : ACTIVE
-- **Aide au prototypage de jeux vidéo** — échéance/statut actuel : ACTIVE
 - **Aide au prototypage de vidéo** — échéance/statut actuel : ACTIVE
-- **Aide au prototypage et à la production de jeu vidéo** — échéance/statut actuel : ACTIVE
-- **Aide au recrutement de cadres et au recrutement d’assistant(e) export** — échéance/statut actuel : ACTIVE
-- **Aide au recyclage et valorisation des matières et des ressources** — échéance/statut actuel : ACTIVE
-- **Aide au tourisme de savoir-faire en Auvergne-Rhône-Alpes** — échéance/statut actuel : ACTIVE
-- **Aide au tri et à la valorisation des biodéchets pour un retour au sol de la matière organique** — échéance/statut actuel : ACTIVE
-- **Aide automatique ou allocation directe aux effets visuels numériques** — échéance/statut actuel : ACTIVE
-- **Aide aux actions collectives dans l'économie circulaire** — échéance/statut actuel : ACTIVE
-- **Aide aux campings de tourisme indépendants - Communes hors littoral** — échéance/statut actuel : ACTIVE
 - **Aide aux cinémas du monde** — échéance/statut actuel : 2026-11-23
-- **Aide aux commerces/TPE & services du quotidien** — échéance/statut actuel : ACTIVE
-- **Aide aux derniers commerces multi-services et TPE** — échéance/statut actuel : ACTIVE
-- **Aide aux disquaires indépendants** — échéance/statut actuel : ACTIVE
-- **Aide aux entreprises exposées à un risque significatif de fuite de carbone** — échéance/statut actuel : ACTIVE
-- **Aide aux entreprises supportant une charge élevée de redevance sur la consommation d'eau potable au regard de leur valeur ajoutée** — échéance/statut actuel : 2027-03-01
-- **Aide aux études de faisabilité méthanisation** — échéance/statut actuel : ACTIVE
-- **Aide aux études de faisabilité pour des projets de méthanisation** — échéance/statut actuel : ACTIVE
-- **Aide aux études de faisabilité pour des projets de récupération de chaleur fatale** — échéance/statut actuel : ACTIVE
-- **Aide aux études en faveur de la mise en œuvre des thématiques stratégiques régionales coordonnées** — échéance/statut actuel : ACTIVE
-- **Aide aux études et travaux pour des projets de Bois Energie** — échéance/statut actuel : ACTIVE
-- **Aide aux études multi-acteurs pour la décarbonation de la mobilité lourde ou intensive** — échéance/statut actuel : 2026-12-31
-- **Aide aux études pour une installation hydroélectrique** — échéance/statut actuel : 2026-12-31
-- **Aide aux événements territoriaux à vocation économique des filières régionales** — échéance/statut actuel : 2030-12-30
 - **Aide aux évènements touristiques** — échéance/statut actuel : ACTIVE
-- **Aide aux événements touristiques d'envergure régionale** — échéance/statut actuel : ACTIVE
-- **Aide aux festivals** — échéance/statut actuel : ACTIVE
-- **Aide aux gîtes d'étape dans les massifs** — échéance/statut actuel : ACTIVE
-- **Aide aux groupements d'employeurs pour l'insertion et la qualification de leurs salariés en insertion** — échéance/statut actuel : ACTIVE
-- **Aide aux investissements d’écoconception pour améliorer la performance environnementale** — échéance/statut actuel : 2026-12-31
-- **Aide aux investissements dans les lieux de visite touristique** — échéance/statut actuel : ACTIVE
 - **Aide aux investissements des entreprises culturelles et cafés culture** — échéance/statut actuel : ACTIVE
-- **Aide aux investissements des entreprises visant à économiser l'énergie** — échéance/statut actuel : ACTIVE
-- **Aide aux investissements en faveur des salles de cinéma** — échéance/statut actuel : ACTIVE
 - **Aide aux investissements matériels des entreprises de la première transformation du bois** — échéance/statut actuel : 2026-12-31
 - **Aide aux investissements productifs dans l'agroalimentaire** — échéance/statut actuel : ACTIVE
-- **Aide aux librairies indépendantes** — échéance/statut actuel : 2028-12-31
-- **Aide aux librairies indépendantes** — échéance/statut actuel : ACTIVE
-- **Aide aux maisons d'édition pour la publication d’ouvrages** — échéance/statut actuel : 2026-10-29
-- **Aide aux meublés de tourisme** — échéance/statut actuel : ACTIVE
-- **Aide aux pactes de recherche Auvergne-Rhône-Alpes** — échéance/statut actuel : ACTIVE
-- **Aide aux petits campings** — échéance/statut actuel : ACTIVE
 - **Aide aux projets collaboratifs de recherche et de développement et d’innovation** — échéance/statut actuel : ACTIVE
-- **Aide aux projets collaboratifs entre les entreprises du territoire et les centres de transfert de technologies et de méthodologies et/ou laboratoires publics** — échéance/statut actuel : ACTIVE
-- **Aide aux projets collectifs dans le domaine du livre** — échéance/statut actuel : ACTIVE
-- **Aide aux projets d’hébergements touristiques** — échéance/statut actuel : ACTIVE
-- **Aide aux projets de développement international jazz - actions ponctuelles** — échéance/statut actuel : ACTIVE
-- **Aide aux projets de développement international jazz - projets ambitieux** — échéance/statut actuel : ACTIVE
-- **Aide aux projets de développement touristique (hors hébergement)** — échéance/statut actuel : ACTIVE
-- **Aide aux projets de E santé des professionnels de santé** — échéance/statut actuel : ACTIVE
-- **Aide aux projets de recherche et de développement et d’innovation des grandes entreprises** — échéance/statut actuel : ACTIVE
-- **Aide aux projets des groupements de la chaine du livre** — échéance/statut actuel : ACTIVE
-- **Aide aux projets développement international musiques actuelles - actions ponctuelles** — échéance/statut actuel : ACTIVE
-- **Aide aux projets développement international musiques actuelles - projets ambitieux** — échéance/statut actuel : ACTIVE
-- **Aide aux projets développement international musiques classiques - projets ambitieux** — échéance/statut actuel : ACTIVE
-- **Aide aux projets en faveur de l’égalité et de l’inclusion** — échéance/statut actuel : ACTIVE
-- **Aide aux projets en faveur de la transition écologique** — échéance/statut actuel : ACTIVE
-- **Aide aux projets exceptionnels des professionnels de la chaîne du livre** — échéance/statut actuel : ACTIVE
-- **Aide aux projets innovants de la chaîne du livre** — échéance/statut actuel : ACTIVE
-- **Aide aux projets innovants de production de gaz renouvelables (études & travaux)** — échéance/statut actuel : ACTIVE
-- **Aide aux projets solaires thermiques collectifs pour production d'eau chaude sanitaire, chauffage** — échéance/statut actuel : ACTIVE
-- **Aide aux promoteurs-diffuseurs de spectacles vivants** — échéance/statut actuel : ACTIVE
-- **Aide aux quotidiens régionaux, départementaux et locaux d'information politique et générale à faibles ressources de petites annonces** — échéance/statut actuel : ACTIVE
-- **Aide aux salles de cinéma de Normandie dotées des trois labels art & essai** — échéance/statut actuel : ACTIVE
 - **Aide aux salons et prospection internationale** — échéance/statut actuel : ACTIVE
 - **Aide aux services numériques** — échéance/statut actuel : 2027-04-30
-- **Aide aux sites de visites et activités de loisirs** — échéance/statut actuel : ACTIVE
-- **Aide aux sites touristiques exemplaires** — échéance/statut actuel : ACTIVE
-- **Aide aux travaux de géothermie/thalassothermie** — échéance/statut actuel : ACTIVE
-- **Aide aux travaux de récupération de chaleur fatale** — échéance/statut actuel : ACTIVE
-- **Aide aux travaux de réseaux de chaleur et de froid** — échéance/statut actuel : ACTIVE
-- **Aide avant réalisation à la production de courts métrages** — échéance/statut actuel : 2026-12-11
-- **Aide départementale à la création d’entreprise (PREFACE)** — échéance/statut actuel : ACTIVE
-- **Aide exceptionnelle aux employeurs d'apprentis** — échéance/statut actuel : ACTIVE
-- **Aide financière automatique à la diffusion en Vidéo à la Demande (VàD)** — échéance/statut actuel : ACTIVE
-- **Aide pour la réalisation d’unités de production de biogaz** — échéance/statut actuel : ACTIVE
-- **Aide pour les entreprises intégrant la démarche CEC (Convention des Entreprises pour le Climat)** — échéance/statut actuel : ACTIVE
-- **Aide régionale à l'investissement en faveur des industries agro-alimentaires (ARIAA- FEADER)** — échéance/statut actuel : ACTIVE
-- **Aide Régionale à l’Investissement et à la Création d’Entreprises (ARICE)** — échéance/statut actuel : 2026-10-31
-- **Aide régionale à la R&D et à l’innovation (ARRDI)** — échéance/statut actuel : ACTIVE
-- **Aide régionale au démarrage et au développement d’activités - ARDDA** — échéance/statut actuel : 2026-10-31
-- **Aide régionale au développement des chaufferies biomasse** — échéance/statut actuel : ACTIVE
-- **Aide régionale au développement des installations solaires thermiques** — échéance/statut actuel : ACTIVE
-- **Aide régionale aux librairies indépendantes** — échéance/statut actuel : ACTIVE
-- **Aide régionale aux structures de l'économie sociale et solidaire (ARSESS)** — échéance/statut actuel : ACTIVE
-- **Aide sélective à la distribution - Aide au film de répertoire (2ème collège)** — échéance/statut actuel : 2026-10-13
-- **Aide sélective à la distribution de films pour le jeune public (3ème collège)** — échéance/statut actuel : 2026-10-16
-- **Aide sélective à la production d’œuvres audiovisuelles de courte durée** — échéance/statut actuel : 2026-10-12
-- **Aide TPE/PME : Prestation Tremplin Innovation** — échéance/statut actuel : ACTIVE
-- **Aide triennale à la stratégie de promotion des maisons d’édition** — échéance/statut actuel : 2026-10-30
-- **Aide unique aux employeurs d'apprentis** — échéance/statut actuel : ACTIVE
-- **Aides à l’élaboration et au développement de séries documentaires** — échéance/statut actuel : 2026-10-04
-- **Aides aux études de faisabilité pour des réseaux de chaleur et de froid** — échéance/statut actuel : ACTIVE
-- **Aides aux études de faisabilité pour les projets de géothermie/thalassothermie** — échéance/statut actuel : ACTIVE
-- **Aides aux librairies indépendantes** — échéance/statut actuel : ACTIVE
-- **Aides aux moyens techniques - Collège "Diffusion"** — échéance/statut actuel : 2027-09-16
-- **Aides aux moyens techniques - Collège "production numérique"** — échéance/statut actuel : 2027-09-21
-- **Aides aux moyens techniques - Collège "Tournage"** — échéance/statut actuel : 2027-09-14
 - **Aides aux projets immobiliers des entreprises de l’ESS** — échéance/statut actuel : ACTIVE
 - **Aides immatérielles et compétences des entreprises culturelles - Recours au conseil extérieur** — échéance/statut actuel : ACTIVE
 - **Alimentation, bioéconomie, ressources naturelles, agriculture et environnement** — échéance/statut actuel : 2027-09-23
-- **Allocation directe aux courts métrages** — échéance/statut actuel : ACTIVE
-- **Allocations directes à la programmation en salles de films de court métrage** — échéance/statut actuel : ACTIVE
+- **Allocation de chômage partiel** — échéance/statut actuel : ACTIVE
 - **Ambition Région : "Être accompagné dans mon projet Industrie du futur"** — échéance/statut actuel : ACTIVE
-- **Amélioration de la qualité de l’air dans les territoires en PPA ou dans ceux concernés par des dépassements actuels ou prévisionnels 2030** — échéance/statut actuel : 2026-12-31
-- **Animation - Compte automatique - Aide à la préparation** — échéance/statut actuel : ACTIVE
-- **Animation : aide au développement et au pilote** — échéance/statut actuel : 2026-10-13
-- **Animation : aide sélective à la préparation** — échéance/statut actuel : 2026-10-26
-- **Animation : aide sélective à la production** — échéance/statut actuel : 2026-10-26
-- **Animation : compte automatique - Aide à la production** — échéance/statut actuel : ACTIVE
+- **Amorçage Start-up** — échéance/statut actuel : ACTIVE
 - **Appel à Manifestation d'Intérêt "Tiers-lieux"** — échéance/statut actuel : 2028-09-01
 - **Appel à Manifestation d'Intérêt "Tourisme de savoir-faire"** — échéance/statut actuel : ACTIVE
 - **Appel à Manifestation d'Intérêt (AMI) "Industrie du Futur"** — échéance/statut actuel : ACTIVE
@@ -438,158 +1538,62 @@ Généré : 2026-09-28T10:45:07.207Z
 - **Appel à projets Horizon Europe - 2ème pilier : Problématiques mondiales et compétitivité industrielle européenne - cluster sécurité** — échéance/statut actuel : 2027-11-04
 - **Appel à projets Industrie zéro fossile – volet 3 – DECARB FLASH** — échéance/statut actuel : 2027-02-15
 - **Appel à projets Tourisme "Identité et transitions" - Projets de développement touristique des 10 Destinations touristiques** — échéance/statut actuel : 2026-12-31
-- **Appui à l’identification et à la qualification de fournisseurs** — échéance/statut actuel : 2026-12-31
 - **ARME - Anticipation Redressement Mutations Economiques - Aide à la trésorerie et à l'investissement** — échéance/statut actuel : ACTIVE
 - **Assurance Prospection** — échéance/statut actuel : ACTIVE
-- **Atouts Numériques** — échéance/statut actuel : ACTIVE
-- **Autoconsommation Collective multi acteurs d’électricité renouvelable** — échéance/statut actuel : 2026-12-31
-- **Avance + CIR** — échéance/statut actuel : ACTIVE
-- **Avance Innovation** — échéance/statut actuel : ACTIVE
+- **Avance remboursable - Consolidation financière de l’entreprise** — échéance/statut actuel : ACTIVE
 - **Avance remboursable pour la croissance des TPE artisanales,commerciales et de service** — échéance/statut actuel : ACTIVE
-- **Booster Exportation - Missions de prospection et pavillons collectifs sur salon** — échéance/statut actuel : ACTIVE
 - **Booster Exportation - Programme Artisanal Régional International (PARI)** — échéance/statut actuel : ACTIVE
-- **Booster IA – Soutien à l’émergence de preuves de concept IA** — échéance/statut actuel : ACTIVE
-- **Booster TPE Artisans-Commerçants** — échéance/statut actuel : ACTIVE
-- **Bourse French Tech** — échéance/statut actuel : ACTIVE
-- **Bourse French Tech Emergence** — échéance/statut actuel : ACTIVE
-- **CAP Économie de Proximité - Fonds partenarial** — échéance/statut actuel : ACTIVE
 - **CAP PME-PMI** — échéance/statut actuel : ACTIVE
-- **CAP TE - Transition Écologique** — échéance/statut actuel : ACTIVE
-- **CAP'CREATION ESS** — échéance/statut actuel : ACTIVE
-- **CAP'TN - Transformation Numérique** — échéance/statut actuel : ACTIVE
-- **CEDRE Investissements** — échéance/statut actuel : ACTIVE
-- **CEDRE Premiers pas** — échéance/statut actuel : ACTIVE
 - **Chèque innovation** — échéance/statut actuel : ACTIVE
-- **Chèque prévention** — échéance/statut actuel : ACTIVE
-- **Chèque TIC** — échéance/statut actuel : ACTIVE
-- **CIFRE (Conventions Industrielles de Formation par la REcherche)** — échéance/statut actuel : ACTIVE
 - **Commerce et Artisanat - Aide aux activités non sédentaires** — échéance/statut actuel : ACTIVE
 - **Concours Résolutions** — échéance/statut actuel : ACTIVE
-- **Congé de conversion des salariés licenciés pour motif économique** — échéance/statut actuel : ACTIVE
-- **Conseil Performance Entreprise - Commercial & Marketing** — échéance/statut actuel : ACTIVE
-- **Contrat Chaleur Renouvelable Bretagne** — échéance/statut actuel : ACTIVE
 - **Contrat Entreprise d’Avenir** — échéance/statut actuel : ACTIVE
-- **Décarbonation des industries - Aide à l’investissement** — échéance/statut actuel : ACTIVE
-- **Décarbonation des industries - Aide au conseil** — échéance/statut actuel : ACTIVE
-- **Découverte économique : aide aux parcours de visite en entreprise** — échéance/statut actuel : ACTIVE
-- **Désolé, cette offre n'est plus disponible.** — échéance/statut actuel : 2026-09-22
-- **Diag 360** — échéance/statut actuel : ACTIVE
 - **Diag Adaptation** — échéance/statut actuel : ACTIVE
-- **Diag Biodiversité** — échéance/statut actuel : ACTIVE
-- **Diag Business International** — échéance/statut actuel : ACTIVE
-- **Diag Data IA** — échéance/statut actuel : ACTIVE
-- **Diag Décarbon’Action** — échéance/statut actuel : ACTIVE
+- **Diag Décarbon'Action** — échéance/statut actuel : ACTIVE
 - **Diag Eco-Flux** — échéance/statut actuel : ACTIVE
-- **Diag Écoconception** — échéance/statut actuel : ACTIVE
-- **Diagnostic Amorçage Industriel** — échéance/statut actuel : ACTIVE
+- **Diag Ecoconception** — échéance/statut actuel : ACTIVE
 - **Diagnostic cybersécurité** — échéance/statut actuel : ACTIVE
-- **Diagnostic Design** — échéance/statut actuel : ACTIVE
-- **Diagnostic Dispositif Médical** — échéance/statut actuel : ACTIVE
-- **Diagnostic Europe** — échéance/statut actuel : ACTIVE
-- **Diagnostic Impact Environnemental** — échéance/statut actuel : ACTIVE
-- **Diagnostic Partenariat Technologique International** — échéance/statut actuel : ACTIVE
-- **Diagnostic Perf'Immo** — échéance/statut actuel : ACTIVE
-- **Diagnostic stratégie propriété intellectuelle** — échéance/statut actuel : ACTIVE
 - **Dispositif "1000 bornes"** — échéance/statut actuel : ACTIVE
 - **Dispositif "Mon assistant IA"** — échéance/statut actuel : ACTIVE
 - **Dispositif "Mon projet de rénovation"** — échéance/statut actuel : ACTIVE
-- **Dispositif "Notre projet coopératif"** — échéance/statut actuel : ACTIVE
 - **Dispositif "Paré pour le solaire"** — échéance/statut actuel : ACTIVE
 - **Dispositif France Expérimentation** — échéance/statut actuel : ACTIVE
-- **Dispositif In 'Cube** — échéance/statut actuel : ACTIVE
-- **Dispositif Transitions collectives** — échéance/statut actuel : ACTIVE
-- **Document officiel** — échéance/statut actuel : 2026-11-10
+- **Document officiel** — échéance/statut actuel : 2027-03-01
 - **Document officiel** — échéance/statut actuel : 2026-09-25
 - **Document officiel** — échéance/statut actuel : 2026-11-30
-- **Documentaire : aide sélective à la préparation** — échéance/statut actuel : 2026-10-02
-- **Documentaire : aide sélective à la production** — échéance/statut actuel : 2026-10-02
-- **Documentaire : compte automatique - Aide à la préparation** — échéance/statut actuel : ACTIVE
-- **Documentaire : compte automatique - Aide à la production** — échéance/statut actuel : ACTIVE
-- **EFICAS : soutien des études d’autoconsommations spéciales** — échéance/statut actuel : ACTIVE
-- **Emergence ESS** — échéance/statut actuel : ACTIVE
+- **Document officiel** — échéance/statut actuel : 2027-12-31
+- **Document officiel** — échéance/statut actuel : 2022-09-03
+- **Document officiel** — échéance/statut actuel : 2028-12-31
+- **Document officiel** — échéance/statut actuel : 2026-05-22
+- **Document officiel** — échéance/statut actuel : 2029-12-31
+- **Document officiel** — échéance/statut actuel : 2017-09-30
+- **Document officiel** — échéance/statut actuel : 2019-04-30
+- **Document officiel** — échéance/statut actuel : 2022-06-01
+- **Document officiel** — échéance/statut actuel : 2026-06-30
+- **Document officiel** — échéance/statut actuel : 2026-07-24
+- **Document officiel** — échéance/statut actuel : 2026-09-30
+- **Document officiel** — échéance/statut actuel : 2026-12-31
+- **Document officiel** — échéance/statut actuel : 2015-06-24
+- **Document officiel** — échéance/statut actuel : 2025-09-26
 - **ETIK Projets - Projets entrepreneuriaux** — échéance/statut actuel : ACTIVE
-- **Etude de faisabilité pour des projets de solaire thermique** — échéance/statut actuel : ACTIVE
-- **Études et travaux de dépollution d'une friche - Fonds vert** — échéance/statut actuel : 2026-12-31
+- **Etre conseillé sur notre activité de transformation et de commercialisation** — échéance/statut actuel : 2026-08-31
+- **Étude "Alimentation durable"** — échéance/statut actuel : ACTIVE
+- **Étude "projet de recherche"** — échéance/statut actuel : ACTIVE
 - **Exonération fiscale sur le carburant destiné à l’avitaillement de certains navires et VNM (Véhicule Nautique à Moteur)** — échéance/statut actuel : ACTIVE
-- **Expérimentation de l'élargissement des formes d'insertion par l'activité économique au travail indépendant** — échéance/statut actuel : 2026-12-22
-- **Expérimentations de désamiantage de toitures en cas de solarisation** — échéance/statut actuel : 2026-12-31
-- **FASEP - Fonds d'études et d'aide au secteur privé** — échéance/statut actuel : ACTIVE
-- **FEADER - Aide à l'investissement des scieries** — échéance/statut actuel : ACTIVE
-- **FEADER - Aide aux investissements dans les entreprises agroalimentaires** — échéance/statut actuel : ACTIVE
-- **FEADER - Aide aux investissements des industries du bois** — échéance/statut actuel : 2027-12-31
 - **FEDER - "Accompagner des projets innovants d’entreprises et de créateurs"** — échéance/statut actuel : ACTIVE
-- **FEDER - "Contribuer au développement des usages tant sur le plan de l’émergence de services et contenus innovants que sur celui de leur appropriation par les usagers"** — échéance/statut actuel : 2027-12-31
-- **FEDER - "Investir dans les équipements et installations de production d’énergies à partir de sources renouvelables"** — échéance/statut actuel : ACTIVE
-- **FEDER - "Investir dans les installations et équipements en faveur de la production, distribution, du stockage et de l’usage de l’hydrogène renouvelable"** — échéance/statut actuel : ACTIVE
-- **FEDER - "Mieux trier et recycler les déchets"** — échéance/statut actuel : ACTIVE
-- **FEDER - "Soutenir la Production, l’acquisition, le stockage, l’agrégation, l’ouverture, le partage et les traitements de la donnée"** — échéance/statut actuel : 2027-12-31
-- **FEDER - "Soutenir les entreprises en vue de leur développement, leur expansion et de l'accès à des nouveaux marchés"** — échéance/statut actuel : ACTIVE
-- **FEDER - "Soutenir les investissements dans les entreprises du tourisme pour accompagner les transformations, l’innovation"** — échéance/statut actuel : ACTIVE
-- **FEDER - "Soutenir les projets de transition vers l’économie circulaire et de prévention des déchets"** — échéance/statut actuel : ACTIVE
-- **FEDER - Aide à l'investissement matériel dans l'économie circulaire** — échéance/statut actuel : 2027-12-31
-- **FEDER - Aide à la compensation des coûts de transport** — échéance/statut actuel : 2027-12-31
-- **FEDER - Aide à la compétitivité des entreprises** — échéance/statut actuel : 2027-12-31
-- **FEDER - Aide à la création d’hôtels de grande capacité, d’hôtels de charme et de nouveaux concepts d’hébergements** — échéance/statut actuel : 2027-12-31
-- **FEDER - Aide à la recherche et à l'innovation** — échéance/statut actuel : 2027-12-31
-- **FEDER - Aide à la requalification significative, l'extension et la montée en gamme des hébergements touristiques** — échéance/statut actuel : 2027-12-31
-- **FEDER - Aide au développement de structures hôtelières et de produits de loisir et d’animation** — échéance/statut actuel : 2027-12-31
-- **FEDER - Aide au fret** — échéance/statut actuel : 2027-12-31
-- **FEDER - Aide au numérique** — échéance/statut actuel : 2027-12-31
 - **FEDER - Aide aux investissements productifs dans les PME** — échéance/statut actuel : 2029-12-31
 - **FEDER - Aide aux recours aux compétences immatérielles** — échéance/statut actuel : 2027-12-31
-- **FEDER - Economie circulaire** — échéance/statut actuel : 2027-12-31
-- **FEDER - Energies renouvelables** — échéance/statut actuel : 2027-12-31
-- **FEDER - Energies renouvelables (études)** — échéance/statut actuel : 2027-12-31
-- **FEDER - Infrastructures de recharge de véhicules électriques par production solaire** — échéance/statut actuel : 2027-12-31
-- **FEDER - Installations photovoltaïques en autoconsommation tertiaires (y compris bâtiments publics) et industrielles** — échéance/statut actuel : 2027-12-31
-- **FEDER - Méthanisation** — échéance/statut actuel : ACTIVE
-- **FEDER - Projets de recherche collaboratifs** — échéance/statut actuel : 2027-12-31
-- **FEDER - Projets de valorisation énergétique de la biomasse et déchets organiques selon différentes voies** — échéance/statut actuel : 2027-12-31
-- **FEDER - Soutien à l’investissement des entreprises du secteur productif** — échéance/statut actuel : 2027-12-31
-- **FEDER - Soutien à l’investissement matériel des entreprises du secteur numérique** — échéance/statut actuel : 2027-12-31
-- **FEDER - Soutien à la création d'hébergements touristiques** — échéance/statut actuel : 2027-12-31
-- **FEDER - Soutien à la digitalisation des PME** — échéance/statut actuel : 2027-12-31
-- **FEDER - Soutien au développement des activités en zone des Hauts** — échéance/statut actuel : 2027-12-31
-- **FEDER - Soutien aux investissements des petites structures touristiques** — échéance/statut actuel : 2027-12-31
-- **FEDER - Soutien aux projets d’économie circulaire structurants** — échéance/statut actuel : ACTIVE
-- **FEDER - Tourisme durable, patrimoine et culture - zones rurales** — échéance/statut actuel : ACTIVE
-- **FEDER - Tourisme durable, patrimoine et culture - zones urbaines** — échéance/statut actuel : ACTIVE
-- **FEDER : "Favoriser le développement d’un tourisme responsable valorisant les atouts du territoire normand"** — échéance/statut actuel : ACTIVE
-- **Fiction - Compte automatique - Aide à la préparation** — échéance/statut actuel : ACTIVE
-- **Fiction - Compte automatique - Aide à la production** — échéance/statut actuel : ACTIVE
-- **Fiction : aide sélective à la préparation** — échéance/statut actuel : 2026-10-26
-- **Fiction : aide sélective à la production** — échéance/statut actuel : 2026-10-26
-- **Fonds Chaleur - Aide à l'installation de production d'eau chaude solaire thermique** — échéance/statut actuel : ACTIVE
-- **Fonds Chaleur - Aide à l'installation de production de chaleur à partir de la géothermie de surface** — échéance/statut actuel : 2027-06-30
-- **Fonds Chaleur - Aide à l'installation de production de chaleur biomasse** — échéance/statut actuel : 2027-06-30
-- **Fonds Chaleur - Aide à l'installation de système de récupération de chaleur fatale** — échéance/statut actuel : 2027-06-30
-- **Fonds d’aide à l’innovation en documentaire de création** — échéance/statut actuel : 2026-12-07
-- **Fonds d’aide à la création cinématographique et audiovisuelle (FACCA) - Aide à l'écriture et au développement** — échéance/statut actuel : 2026-10-05
+- **FEDER 2014 – 2020** — échéance/statut actuel : 2019-04-30
 - **Fonds d'aide à la création de jeux vidéo** — échéance/statut actuel : ACTIVE
 - **Fonds d'aide à la création et à la production cinéma et audiovisuel** — échéance/statut actuel : ACTIVE
-- **Fonds d’aide à la création immersive** — échéance/statut actuel : 2026-10-12
-- **Fonds d'aide à la promotion à l'étranger des œuvres cinématographiques** — échéance/statut actuel : ACTIVE
-- **Fonds d'Aide au Développement de l'Economie du Livre (FADEL)** — échéance/statut actuel : ACTIVE
-- **Fonds d'Aide au Jeu Vidéo (FAJV)** — échéance/statut actuel : 2027-09-20
-- **Fonds de Prévention des Risques Naturels Majeurs (FPRNM)** — échéance/statut actuel : ACTIVE
-- **Fonds de soutien au cinéma et à l’audiovisuel - Aide à la production** — échéance/statut actuel : ACTIVE
-- **Fonds de soutien au commerce rural** — échéance/statut actuel : ACTIVE
-- **Fonds de soutien Audiovisuel - Aide à la production** — échéance/statut actuel : ACTIVE
-- **Fonds de soutien Cinéma** — échéance/statut actuel : ACTIVE
-- **Fonds de soutien Cinéma international** — échéance/statut actuel : ACTIVE
-- **Fonds de soutien exceptionnel suite aux intempéries hivernales** — échéance/statut actuel : ACTIVE
-- **Fonds de soutien international Audiovisuel** — échéance/statut actuel : ACTIVE
-- **Fonds direct "Aelis Innovation 2"** — échéance/statut actuel : ACTIVE
-- **Fonds pour une transition juste (FTJ)** — échéance/statut actuel : ACTIVE
+- **Fonds de prêts d'honneur Néoterra** — échéance/statut actuel : ACTIVE
+- **Fonds local pour l’adaptation en Guadeloupe (FLAG) 2.0** — échéance/statut actuel : 2026-11-10
 - **Fonds Régional d’aide à l’Innovation (FRI) - Bourgogne Franche-Comté** — échéance/statut actuel : ACTIVE
 - **Fonds régional d'aide au court métrage hors animation** — échéance/statut actuel : ACTIVE
-- **Fonds régional d’aide aux œuvres audiovisuelles et cinématographiques** — échéance/statut actuel : ACTIVE
-- **Fonds Régional d'Amplification de la Troisième Révolution Industrielle - REV3** — échéance/statut actuel : ACTIVE
-- **Fonds régional pour le tourisme** — échéance/statut actuel : ACTIVE
-- **Fonds stratégique pour le développement de la presse** — échéance/statut actuel : ACTIVE
 - **Fonds Terra Nea** — échéance/statut actuel : ACTIVE
 - **Fonds Territorial d'Accessibilité** — échéance/statut actuel : ACTIVE
 - **Fonds Vert - Territoires d'Industrie en transition écologique** — échéance/statut actuel : 2026-12-31
+- **FOSTER Région Occitanie — Prêt innovation à taux 0%** — échéance/statut actuel : ACTIVE
 - **France 2030 - Appel à projets : "Projets collaboratifs / I-Démo Régionalisé" - Occitanie** — échéance/statut actuel : 2026-12-31
 - **France 2030 - Appel à projets : "Projets d'innovation" - PACA** — échéance/statut actuel : 2026-09-30
 - **France 2030 - Appel à projets : Standardisation des réseaux du futur** — échéance/statut actuel : 2027-01-15
@@ -604,7 +1608,6 @@ Généré : 2026-09-28T10:45:07.207Z
 - **France 2030 - Appel à projets "Projets d'innovation" - Nouvelle-Aquitaine** — échéance/statut actuel : 2026-09-30
 - **France 2030 - Appel à projets "Transition numérique de la Culture et appropriation de l’intelligence artificielle"** — échéance/statut actuel : 2027-06-16
 - **France 2030 - Appel à projets « Défi Flagships » - Sous-systèmes innovants pour la robotique et les équipements intelligents** — échéance/statut actuel : 2027-04-06
-- **France 2030 - Diagnostic Cybersécurité** — échéance/statut actuel : ACTIVE
 - **France 2030 - Projets d'innovation - Guyane** — échéance/statut actuel : 2026-09-30
 - **France 2030 : Appel à projets "Décarbonation de l'industrie - DECARB IND 25"** — échéance/statut actuel : 2027-05-20
 - **France 2030 : Appel à projets "Projets d'Innovation" - Martinique** — échéance/statut actuel : 2026-09-30
@@ -614,196 +1617,80 @@ Généré : 2026-09-28T10:45:07.207Z
 - **France 2030 (volet régionalisé) : Appel à projets "Projets d'innovation" - Hauts-de-France** — échéance/statut actuel : 2026-09-30
 - **Grand Est Agroalimentaire** — échéance/statut actuel : ACTIVE
 - **Grand Est innovation sociale en ruralité** — échéance/statut actuel : ACTIVE
-- **Grand Est Investissements Productifs Durables** — échéance/statut actuel : ACTIVE
 - **Grand Est Start-Up** — échéance/statut actuel : ACTIVE
-- **IDEE Action "Mobilité décarbonée"** — échéance/statut actuel : ACTIVE
-- **IDEE Action production d'énergies renouvelables** — échéance/statut actuel : ACTIVE
 - **IDEE CONSEIL : Aide à l’émergence et à la structuration d’un projet photovoltaïque exemplaire en autoconsommation** — échéance/statut actuel : ACTIVE
-- **IDEE Conseil "Economie circulaire, prévention et gestion des déchets"** — échéance/statut actuel : ACTIVE
-- **IDEE Innovation** — échéance/statut actuel : ACTIVE
-- **IDEE Innovation transition écologique** — échéance/statut actuel : ACTIVE
 - **Impulsion Conseil** — échéance/statut actuel : ACTIVE
 - **Impulsion environnement** — échéance/statut actuel : ACTIVE
 - **Impulsion Export Individuel** — échéance/statut actuel : ACTIVE
 - **Impulsion Innovation** — échéance/statut actuel : ACTIVE
 - **Impulsion Invest** — échéance/statut actuel : ACTIVE
 - **Impulsion Transition** — échéance/statut actuel : ACTIVE
-- **Incubateur Emergys Bretagne** — échéance/statut actuel : ACTIVE
 - **Indemnité carburant - Aide pour les travailleurs « grands rouleurs »** — échéance/statut actuel : 2026-09-30
-- **INNO Expé Numérique** — échéance/statut actuel : ACTIVE
-- **Innov'up** — échéance/statut actuel : ACTIVE
 - **Innov'up Expérimentation - Transition écologique des territoires** — échéance/statut actuel : ACTIVE
-- **Innov’up Expérimentation Silver Économie/Bien vieillir** — échéance/statut actuel : ACTIVE
 - **Innovation Start-up** — échéance/statut actuel : ACTIVE
-- **Innover par les usages** — échéance/statut actuel : ACTIVE
-- **Investissement de soutien automatique dans la production de films de court métrage** — échéance/statut actuel : ACTIVE
-- **Investissement Start-up** — échéance/statut actuel : ACTIVE
-- **Kap Numérik** — échéance/statut actuel : ACTIVE
+- **Investissement "Chaleur bois"** — échéance/statut actuel : ACTIVE
+- **Investissement "PAC solaire"** — échéance/statut actuel : ACTIVE
+- **Investissement "réemploi réutilisation réparation"** — échéance/statut actuel : ACTIVE
+- **Investissement "solaire thermique Outre-mer"** — échéance/statut actuel : ACTIVE
+- **Investissement contre le gaspillage alimentaire** — échéance/statut actuel : ACTIVE
 - **KAP TPE** — échéance/statut actuel : ACTIVE
-- **Magazine : aide sélective à la production** — échéance/statut actuel : 2026-10-02
-- **Mobili'Pro : optimisation des déplacements professionnels** — échéance/statut actuel : 2026-10-12
 - **Module Stratégie d’Entreprise : Export** — échéance/statut actuel : ACTIVE
 - **Modules Transformants Industrie 5.0** — échéance/statut actuel : ACTIVE
 - **Mon bouclier cyber essentiel** — échéance/statut actuel : ACTIVE
 - **Mon bouclier cyber expert** — échéance/statut actuel : ACTIVE
-- **Normandie Entreprises Industries - Industries agroalimentaires** — échéance/statut actuel : ACTIVE
-- **Normandie Incubation** — échéance/statut actuel : ACTIVE
-- **Pack IA (Intelligence Artificielle)** — échéance/statut actuel : ACTIVE
-- **Pack relocalisation - Aide aux partenariats entre les PME innovantes et les donneurs d'ordre** — échéance/statut actuel : ACTIVE
-- **Pack relocalisation - Renfort des filières stratégiques** — échéance/statut actuel : ACTIVE
-- **Pack relocalisation - Soutien à l'investissement industriel** — échéance/statut actuel : ACTIVE
 - **Pack relocalisation - Trouver les compétences** — échéance/statut actuel : ACTIVE
-- **Pacte Emergence** — échéance/statut actuel : ACTIVE
-- **PACTE Entreprises - Audit énergétique volontaire en industrie** — échéance/statut actuel : 2026-12-31
 - **PACTE Entreprises - Booster Entreprises** — échéance/statut actuel : 2026-12-31
-- **Parcours "De la matière à la marque - Parcours de valorisation pour innover et se différencier"** — échéance/statut actuel : 2027-04-01
-- **Pass Commerce et Artisanat** — échéance/statut actuel : ACTIVE
 - **Pass Cyber Conseil** — échéance/statut actuel : ACTIVE
-- **Pass Cyber Formation** — échéance/statut actuel : ACTIVE
-- **Pass Economie de Proximité** — échéance/statut actuel : ACTIVE
-- **PASS Investissement TPE** — échéance/statut actuel : 2026-10-01
 - **Pass Métiers d’Arts** — échéance/statut actuel : ACTIVE
 - **Pass PI** — échéance/statut actuel : ACTIVE
-- **Pass Transformation Ecologique** — échéance/statut actuel : ACTIVE
-- **PASS Transitions** — échéance/statut actuel : 2026-10-01
-- **Pass'export** — échéance/statut actuel : ACTIVE
-- **Passeport pour le retour, pour la mobilité des actifs salariés et pour la mobilité des entreprises innovantes** — échéance/statut actuel : ACTIVE
-- **Pays de la Loire Accès Innovation** — échéance/statut actuel : ACTIVE
-- **Pays de la Loire Accès recherche** — échéance/statut actuel : ACTIVE
+- **Pass Start Up** — échéance/statut actuel : ACTIVE
 - **Pays de la Loire Capital Impact** — échéance/statut actuel : ACTIVE
 - **Pays de la Loire Conseil** — échéance/statut actuel : ACTIVE
 - **Pays de la Loire Cyber Diagnostic** — échéance/statut actuel : ACTIVE
-- **Pays de la Loire Emploi Transitions** — échéance/statut actuel : ACTIVE
 - **Pays de la Loire Entrepreneurs Engagés** — échéance/statut actuel : ACTIVE
-- **Pays de la Loire Initiative Innovation** — échéance/statut actuel : ACTIVE
-- **Pays de la Loire Investissement numérique** — échéance/statut actuel : ACTIVE
 - **Pays de la Loire Prêt Entreprise** — échéance/statut actuel : ACTIVE
-- **Plan d'Amplification Digital (PAD)** — échéance/statut actuel : ACTIVE
 - **PM'up** — échéance/statut actuel : ACTIVE
-- **Presta’INNO** — échéance/statut actuel : ACTIVE
 - **Prêt Apport en Capital** — échéance/statut actuel : ACTIVE
+- **Prêt d’amorçage Grand Est** — échéance/statut actuel : ACTIVE
+- **Prêt d'honneur Créalia** — échéance/statut actuel : ACTIVE
+- **Prêt d'honneur Création Reprise** — échéance/statut actuel : ACTIVE
+- **Prêt d'honneur HODEFI** — échéance/statut actuel : ACTIVE
+- **Prêt d'honneur IMACréa** — échéance/statut actuel : ACTIVE
+- **Prêt d'honneur Indre Initiative** — échéance/statut actuel : ACTIVE
+- **Prêt d'honneur Initiative Guadeloupe** — échéance/statut actuel : ACTIVE
 - **Prêt d'honneur Initiative Mayotte** — échéance/statut actuel : ACTIVE
+- **Prêt d'honneur Initiative Réunion** — échéance/statut actuel : ACTIVE
+- **Prêt d’Honneur Innovation** — échéance/statut actuel : ACTIVE
+- **Prêt d’honneur Occitanie Transmission** — échéance/statut actuel : ACTIVE
+- **Prêt d'honneur Pays de La Loire transmission-reprise** — échéance/statut actuel : ACTIVE
+- **Prêt d'honneur pour l'amorçage régional (PHAR) Bretagne** — échéance/statut actuel : ACTIVE
+- **Prêt d'honneur Réseau Entreprendre Bretagne** — échéance/statut actuel : ACTIVE
+- **Prêt d'honneur Réseau Entreprendre Guadeloupe** — échéance/statut actuel : ACTIVE
+- **Prêt d'honneur Réseau Entreprendre Guyane** — échéance/statut actuel : ACTIVE
+- **Prêt d'honneur Réseau Entreprendre Martinique** — échéance/statut actuel : ACTIVE
 - **Prêt Défense Souveraineté territoriale - Hauts-de-France** — échéance/statut actuel : ACTIVE
-- **Prêt FEDER Sud Innovation — financement à taux zéro** — échéance/statut actuel : ACTIVE
 - **Prim'Export** — échéance/statut actuel : ACTIVE
-- **Prime énergie - Coup de pouce Chauffage des bâtiments tertiaires** — échéance/statut actuel : ACTIVE
-- **Programme Hauts-de-France Export et Volontaire International en entreprise** — échéance/statut actuel : ACTIVE
-- **Programme Impulse Intelligence Artificielle** — échéance/statut actuel : ACTIVE
-- **Programme Transformation numérique des TPE - Les Défis Numériques** — échéance/statut actuel : ACTIVE
-- **Réduction de 50 % sur les redevances brevets** — échéance/statut actuel : ACTIVE
-- **Régime d'appui aux PME pour l'innovation duale - RAPID** — échéance/statut actuel : ACTIVE
 - **Régime spécial de provision réglementée en faveur des entreprises de presse** — échéance/statut actuel : 2026-12-31
-- **Région Industrie : "Être conseillé pour améliorer la performance de mon entreprise"** — échéance/statut actuel : ACTIVE
-- **Services et mobilités en montagne** — échéance/statut actuel : ACTIVE
-- **SOLAIRE INNOV : soutien de projets solaires innovants** — échéance/statut actuel : ACTIVE
-- **Solaire thermique - Aides aux études** — échéance/statut actuel : ACTIVE
-- **Soutien à l’émergence et au développement d'Espace Public Numérique et de Tiers-Lieux labélisés dans le cadre du réseau Normandie Connectée** — échéance/statut actuel : ACTIVE
-- **Soutien à l'hébergement touristique** — échéance/statut actuel : ACTIVE
-- **Soutien à l’hébergement touristique – hébergements insolites** — échéance/statut actuel : ACTIVE
-- **Soutien à l’hébergement touristique – hôtellerie de plein air** — échéance/statut actuel : ACTIVE
-- **Soutien à l'hôtellerie** — échéance/statut actuel : ACTIVE
-- **Soutien à l’hydro-électricité** — échéance/statut actuel : ACTIVE
-- **Soutien à l'hydroélectricité** — échéance/statut actuel : ACTIVE
-- **Soutien à la création audiovisuelle** — échéance/statut actuel : ACTIVE
-- **Soutien à la géothermie de surface** — échéance/statut actuel : ACTIVE
-- **Soutien à la reconnaissance des matériaux biosourcés et bas carbone pour le bâtiment** — échéance/statut actuel : 2026-12-31
-- **Soutien au bois énergie** — échéance/statut actuel : ACTIVE
-- **Soutien au développement du tourisme fluvial et fluvestre** — échéance/statut actuel : ACTIVE
-- **Soutien au photovoltaïque** — échéance/statut actuel : ACTIVE
-- **Soutien au réemploi, à la réparation et/ou la réutilisation** — échéance/statut actuel : ACTIVE
-- **Soutien au solaire thermique** — échéance/statut actuel : ACTIVE
-- **Soutien au tourisme de savoir-faire** — échéance/statut actuel : ACTIVE
-- **Soutien au tourisme patrimonial** — échéance/statut actuel : ACTIVE
-- **Soutien automatique à l'édition en vidéo physique** — échéance/statut actuel : ACTIVE
-- **Soutien automatique à l'exploitation** — échéance/statut actuel : ACTIVE
-- **Soutien automatique à la distribution** — échéance/statut actuel : ACTIVE
-- **Soutien automatique à la production de long métrage** — échéance/statut actuel : ACTIVE
-- **Soutien aux audits et réhabilitation d’installations solaires thermiques collectives** — échéance/statut actuel : ACTIVE
-- **Soutien aux éditeurs indépendants** — échéance/statut actuel : ACTIVE
-- **Soutien aux festivals et aux manifestations dans les secteurs de l’économie culturelle et de la création numérique** — échéance/statut actuel : ACTIVE
-- **Soutien aux gîtes d'étape** — échéance/statut actuel : ACTIVE
-- **Soutien aux hébergements collectifs** — échéance/statut actuel : ACTIVE
-- **Soutien aux hébergements de tourisme social** — échéance/statut actuel : ACTIVE
-- **Soutien aux hébergements de type "hostels"** — échéance/statut actuel : ACTIVE
 - **Soutien aux investissements performance industrielle** — échéance/statut actuel : ACTIVE
-- **Soutien aux missions d'AMO bois et biosourcés** — échéance/statut actuel : ACTIVE
-- **Soutien aux nouveaux modèles économiques** — échéance/statut actuel : ACTIVE
-- **Soutien aux professionnels des métiers d’art et aux salons de promotion à vocation régionale** — échéance/statut actuel : ACTIVE
 - **Soutien aux projets collaboratifs d'innovation** — échéance/statut actuel : ACTIVE
 - **Soutien aux projets innovants** — échéance/statut actuel : ACTIVE
-- **Soutien aux réseaux de chaleur et de froid** — échéance/statut actuel : ACTIVE
 - **Soutien aux revues régionales, patrimoniales et historiques** — échéance/statut actuel : ACTIVE
-- **Soutien aux solutions de production et préparation de la matière en vue d'utilisation ou de fabrication de matières premières recyclées** — échéance/statut actuel : ACTIVE
-- **Soutien régional aux aux investissements matériels des entreprises de l’ESS** — échéance/statut actuel : ACTIVE
-- **Spectacle vivant : aide sélective** — échéance/statut actuel : 2026-10-26
-- **Spectacle vivant : soutien automatique** — échéance/statut actuel : ACTIVE
-- **START’UP - Aide à la création/reprise d'entreprises** — échéance/statut actuel : ACTIVE
-- **Subvention Investissement Outre-mer** — échéance/statut actuel : ACTIVE
-- **Subvention Prévention des risques ergonomiques** — échéance/statut actuel : ACTIVE
-- **Subvention Prévention TPE - Amiante** — échéance/statut actuel : ACTIVE
-- **Subvention Prévention TPE - Caisse sécurisée** — échéance/statut actuel : 2027-11-15
-- **Subvention Prévention TPE - Captage cabine de peinture** — échéance/statut actuel : ACTIVE
-- **Subvention Prévention TPE - Captage fumées de diesel** — échéance/statut actuel : ACTIVE
-- **Subvention Prévention TPE - Captage fumées de soudage** — échéance/statut actuel : ACTIVE
-- **Subvention Prévention TPE - Captage prothésistes dentaires** — échéance/statut actuel : ACTIVE
-- **Subvention Prévention TPE - Captage réseau haute dépression** — échéance/statut actuel : ACTIVE
-- **Subvention Prévention TPE - Captage zone de préparation** — échéance/statut actuel : ACTIVE
-- **Subvention Prévention TPE - Construction de Maisons Individuelles : Prévenir les chutes de hauteur** — échéance/statut actuel : ACTIVE
-- **Subvention Prévention TPE - Conteneur + sûr** — échéance/statut actuel : ACTIVE
-- **Subvention Prévention TPE - Culture de prévention** — échéance/statut actuel : ACTIVE
-- **Subvention Prévention TPE - Locaux + sûrs** — échéance/statut actuel : 2028-10-15
 - **Subvention Prévention TPE - Locaux + sûrs** — échéance/statut actuel : 2028-10-15
 - **Subvention Prévention TPE - Locaux + sûrs** — échéance/statut actuel : 2028-10-15
 - **Subvention Prévention TPE - Métiers de bouche** — échéance/statut actuel : ACTIVE
 - **Subvention Prévention TPE - Métiers de bouche** — échéance/statut actuel : 2028-11-30
-- **Subvention Prévention TPE - Métiers de bouche** — échéance/statut actuel : ACTIVE
-- **Subvention Prévention TPE - Poussières de farine** — échéance/statut actuel : ACTIVE
-- **Subvention Prévention TPE - Prévention Chutes** — échéance/statut actuel : ACTIVE
-- **Subvention Prévention TPE - Risques Chimiques Equipements** — échéance/statut actuel : ACTIVE
-- **Subvention Prévention TPE - TOP BTP** — échéance/statut actuel : ACTIVE
 - **Sud Développement** — échéance/statut actuel : ACTIVE
 - **Sud Investissement** — échéance/statut actuel : ACTIVE
-- **Sud saisonniers** — échéance/statut actuel : ACTIVE
+- **Sud Prévention TPE-PME** — échéance/statut actuel : ACTIVE
 - **Tarifs réduits d'accise sur l'électricité pour les aéronefs** — échéance/statut actuel : ACTIVE
-- **Ticket modérateur - Aide aux projets export** — échéance/statut actuel : ACTIVE
 - **TP'up** — échéance/statut actuel : ACTIVE
 - **Vidéomusique : aide avant réalisation** — échéance/statut actuel : 2026-10-13
-- **VTE France – Volontariat Territorial en Entreprise** — échéance/statut actuel : ACTIVE
-- **www.ademe.fr** — échéance/statut actuel : ACTIVE
 - **www.economie.gouv.fr** — échéance/statut actuel : 2026-10-31
 
 ## Aides devenues closes / obsolètes
-- **Désolé, cette offre n'est plus disponible.** — STALE — https://www.bpifrance.fr/catalogue-offres/accelerateur-croissance-bretagne
-- **Aide aux campings de tourisme indépendants - Communes littorales** — ACTIVE — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/campings-de-tourisme-independants
-- **Aide à la connaissance - Recherche et développement** — ACTIVE — https://www.ademe.fr/aides-financieres-lademe
-- **Aide à la production audiovisuelle et nouveaux médias fiction prise de vue réelle** — ACTIVE — https://www.grandest.fr/vos-aides-regionales/aide-a-production-audiovisuelle-nouveaux-medias-fiction-prise-de-vue-reelle/
-- **Aide à la reprise d'entreprise** — ACTIVE — https://data.aides-entreprises.fr/stock
-- **Aide à la réalisation - Décision (études de diagnostic et d’accompagnement de projets)** — ACTIVE — https://www.ademe.fr/aides-financieres-lademe
-- **Aide à la réalisation - Mise en oeuvre des projets environnementaux (investissements)** — ACTIVE — https://www.ademe.fr/aides-financieres-lademe
-- **Document officiel** — ARCHIVE — https://www.europe-en-france.gouv.fr/sites/default/files/sa.58995_rdi_-_prolongation_0.pdf
-- **Aide au codéveloppement et à la coproduction d’œuvres cinématographiques et audiovisuelles franco-italiennes** — STALE — https://www.cnc.fr/professionnels/aides-et-financements/multi-sectoriel/aide-au-codeveloppement-et-a-la-coproduction-doeuvres-cinematographiques-et-audiovisuelles-francoitaliennes_1380304
-- **Concours Créatrices d'avenir** — ACTIVE — https://www.creatricesdavenir.com/concours
-- **Dispositif DEDIHCATED** — ACTIVE — https://data.aides-entreprises.fr/stock
-- **Fonds de Secours pour l’Outre-Mer (FSOM)** — ACTIVE — https://data.aides-entreprises.fr/stock
-- **Fonds partenarial économie de proximité** — ACTIVE — https://data.aides-entreprises.fr/stock
-- **Fonds régional d'aide au jeu vidéo** — ACTIVE — https://www.pictanovo.com/financer-un-projet/
-- **Fonds régional d'aide aux nouveaux médias et expériences interactives** — ACTIVE — https://www.pictanovo.com/financer-un-projet/
-- **Fonds régional d'aide à la fiction cinématographique et audiovisuelle - Long métrage, court métrage, animation, série et unitaire** — ACTIVE — https://www.pictanovo.com/financer-un-projet/
-- **Fonds Régional d'Innovation (FRI) - Normandie** — ACTIVE — https://data.aides-entreprises.fr/stock
-- **Fonds régional de soutien économique à la production pour la filière cinématographique et audiovisuelle** — ACTIVE — https://www.pictanovo.com/financer-un-projet/
-- **Fonds régional documentaire audiovisuel et cinématographique** — ACTIVE — https://www.pictanovo.com/financer-un-projet/
-- **Fonds régional programme éditorial d’aide à l’écriture et au développement** — ACTIVE — https://www.pictanovo.com/financer-un-projet/
-- **Fonds Régional Tourisme de Savoir-Faire - Audit** — ACTIVE — https://data.aides-entreprises.fr/stock
-- **Fonds Régional Tourisme de Savoir-Faire - Réalisation** — ACTIVE — https://data.aides-entreprises.fr/stock
-- **Fonds régional vidéaste "Hauts-de-France Talent"** — ACTIVE — https://www.pictanovo.com/financer-un-projet/
-- **France 2030 - Appel à projets "Projets d'innovation"** — ACTIVE — http://france2030.bourgognefranchecomte.fr/Projets-d-Innovation
-- **Modules Transformants Biodiversité** — ACTIVE — https://www.grandest.fr/vos-aides-regionales/modules-transformants-biodiversite/
-- **Plan d'Amplification RSE (PARSE)** — ACTIVE — https://www.defimode.org/nos-aides/transformation-digitale-rse/
-- **Prêt transitions Bretagne** — ACTIVE — https://data.aides-entreprises.fr/stock
-- **Solaire thermique - Aides à l'investissement** — ACTIVE — https://www.bourgognefranchecomte.fr/node/685
-- **Soutien à l’investissement pour la création, l’équipement et la réhabilitation des salles de cinéma** — ACTIVE — https://www.maregionsud.fr/vos-aides/detail/soutien-a-linvestissement-pour-la-creation-lequipement-et-la-rehabilitation-des-salles-de-cinema
-- **Subvention Prévention TPE - Boulangerie Pâtisserie** — ACTIVE — https://data.aides-entreprises.fr/stock
-- **Subvention Prévention TPE - Réduction de l'exposition au gaz radon** — ACTIVE — https://www.carsat-bretagne.fr/home/entreprises/prevenir-les-risques-professionn/financer-des-actions/aides-entreprises-de-1-49-salari.html
-- **Subvention Prévention TPE - UV solaires - Chaleur** — ACTIVE — https://data.aides-entreprises.fr/stock
+- **Document officiel** — ACTIVE — https://medias.amf.asso.fr/upload/files/CNT_infographie.pdf
+- **Document officiel** — ARCHIVE — https://www.paysdelaloire.fr/sites/default/files/2026-07/A5-flyer-Campus-a2pas-WEB.pdf
+- **Document officiel** — ARCHIVE — https://www.europe-guadeloupe.fr/wp-content/uploads/2024/10/AAP-FEDER-FSE-2021-2027-octobre-2024.pdf
+- **FEDER- FSE+ REGION GUADELOUPE** — ACTIVE — https://www.europe-guadeloupe.fr/financement/feder-fse-region-guadeloupe_accompagnement-creation-reprise/
 
 > Toute information sans preuve publique reste « NON DOCUMENTÉ — À VÉRIFIER ».
