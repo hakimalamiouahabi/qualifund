@@ -1,19 +1,19 @@
 {
   "summary": {
-    "generatedAt": "2026-09-28T14:12:36.068Z",
+    "generatedAt": "2026-09-28T15:27:11.640Z",
     "version": "12.2.0",
     "total": 145,
     "probed": 145,
-    "conclusive": 141,
-    "ok": 137,
-    "failed": 8,
+    "conclusive": 140,
+    "ok": 136,
+    "failed": 9,
     "protected": 14,
     "unprobed": 0,
     "timeouts": 0,
-    "networkErrors": 4,
+    "networkErrors": 5,
     "ingestion": {
       "total": 111,
-      "ok": 106
+      "ok": 105
     },
     "controls": {
       "total": 34,
@@ -37,8 +37,8 @@
       "httpStatus": 403,
       "finalUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 2159,
-      "checkedAt": "2026-09-28T14:12:03.693Z",
+      "durationMs": 2142,
+      "checkedAt": "2026-09-28T15:26:39.799Z",
       "note": "Source protégée/anti-bot/quota : collecteur navigateur ou stratégie spécialisée requise."
     },
     {
@@ -55,8 +55,8 @@
       "httpStatus": 200,
       "finalUrl": "https://data.ademe.fr/datasets/les-aides-financieres-de-l'ademe",
       "contentType": "text/html; charset=utf-8",
-      "durationMs": 1871,
-      "checkedAt": "2026-09-28T14:12:07.069Z",
+      "durationMs": 1711,
+      "checkedAt": "2026-09-28T15:26:43.164Z",
       "note": null
     },
     {
@@ -73,8 +73,8 @@
       "httpStatus": 200,
       "finalUrl": "https://data.aides-entreprises.fr/stock",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 1039,
-      "checkedAt": "2026-09-28T14:12:02.412Z",
+      "durationMs": 815,
+      "checkedAt": "2026-09-28T15:26:38.310Z",
       "note": null
     },
     {
@@ -91,8 +91,8 @@
       "httpStatus": 401,
       "finalUrl": "https://aides-territoires.beta.gouv.fr/api/aids/",
       "contentType": "application/json",
-      "durationMs": 1878,
-      "checkedAt": "2026-09-28T14:12:03.418Z",
+      "durationMs": 1635,
+      "checkedAt": "2026-09-28T15:26:39.298Z",
       "note": "Source protégée/anti-bot/quota : collecteur navigateur ou stratégie spécialisée requise."
     },
     {
@@ -109,8 +109,8 @@
       "httpStatus": 200,
       "finalUrl": "https://anr.fr/fr/appels/",
       "contentType": "text/html; charset=utf-8",
-      "durationMs": 1677,
-      "checkedAt": "2026-09-28T14:12:03.213Z",
+      "durationMs": 1587,
+      "checkedAt": "2026-09-28T15:26:39.247Z",
       "note": null
     },
     {
@@ -127,8 +127,8 @@
       "httpStatus": 200,
       "finalUrl": "https://anr.fr/france-2030/appels/",
       "contentType": "text/html; charset=utf-8",
-      "durationMs": 2600,
-      "checkedAt": "2026-09-28T14:12:07.445Z",
+      "durationMs": 6895,
+      "checkedAt": "2026-09-28T15:26:47.935Z",
       "note": null
     },
     {
@@ -145,8 +145,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.auvergnerhonealpes.fr/shield?u=%2Faides&rf=",
       "contentType": "text/html",
-      "durationMs": 3926,
-      "checkedAt": "2026-09-28T14:12:05.469Z",
+      "durationMs": 4033,
+      "checkedAt": "2026-09-28T15:26:41.700Z",
       "note": null
     },
     {
@@ -163,8 +163,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.europe-en-france.gouv.fr/fr/programmes-europeens-2021-2027/programme-auvergne-rhone-alpes-territoires-rhone-saone-massif",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 2106,
-      "checkedAt": "2026-09-28T14:12:07.575Z",
+      "durationMs": 1708,
+      "checkedAt": "2026-09-28T15:26:43.408Z",
       "note": null
     },
     {
@@ -181,8 +181,8 @@
       "httpStatus": 200,
       "finalUrl": "https://france2030.auvergnerhonealpes.fr/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 5223,
-      "checkedAt": "2026-09-28T14:12:10.594Z",
+      "durationMs": 5048,
+      "checkedAt": "2026-09-28T15:26:46.581Z",
       "note": null
     },
     {
@@ -199,8 +199,8 @@
       "httpStatus": 403,
       "finalUrl": "https://edelib.auvergnerhonealpes.fr/",
       "contentType": "text/html; charset=iso-8859-1",
-      "durationMs": 2988,
-      "checkedAt": "2026-09-28T14:12:09.053Z",
+      "durationMs": 3105,
+      "checkedAt": "2026-09-28T15:26:45.226Z",
       "note": "Source protégée/anti-bot/quota : collecteur navigateur ou stratégie spécialisée requise."
     },
     {
@@ -217,8 +217,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.banquedesterritoires.fr/france-2030/appels-projets-en-cours",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 1735,
-      "checkedAt": "2026-09-28T14:12:03.277Z",
+      "durationMs": 1518,
+      "checkedAt": "2026-09-28T15:26:39.184Z",
       "note": null
     },
     {
@@ -235,8 +235,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.bourgognefranchecomte.fr/guide-des-aides",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 2367,
-      "checkedAt": "2026-09-28T14:12:03.910Z",
+      "durationMs": 2504,
+      "checkedAt": "2026-09-28T15:26:40.171Z",
       "note": null
     },
     {
@@ -253,8 +253,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.europe-bfc.eu/nos-aides",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 2245,
-      "checkedAt": "2026-09-28T14:12:08.546Z",
+      "durationMs": 2335,
+      "checkedAt": "2026-09-28T15:26:45.181Z",
       "note": null
     },
     {
@@ -271,8 +271,8 @@
       "httpStatus": 200,
       "finalUrl": "https://france2030.bourgognefranchecomte.fr/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 5036,
-      "checkedAt": "2026-09-28T14:12:11.225Z",
+      "durationMs": 4856,
+      "checkedAt": "2026-09-28T15:26:47.335Z",
       "note": null
     },
     {
@@ -287,10 +287,10 @@
       "ok": true,
       "probeState": "OK",
       "httpStatus": 200,
-      "finalUrl": "https://subventions.bourgognefranchecomte.fr/sub/tiers/authentification/?cid=414372",
+      "finalUrl": "https://subventions.bourgognefranchecomte.fr/sub/tiers/authentification/?cid=421117",
       "contentType": "text/html",
-      "durationMs": 5115,
-      "checkedAt": "2026-09-28T14:12:11.253Z",
+      "durationMs": 4396,
+      "checkedAt": "2026-09-28T15:26:46.835Z",
       "note": null
     },
     {
@@ -307,8 +307,8 @@
       "httpStatus": 403,
       "finalUrl": "https://www.bpifrance.fr/nos-appels-a-projets-concours",
       "contentType": "text/html",
-      "durationMs": 2333,
-      "checkedAt": "2026-09-28T14:12:03.868Z",
+      "durationMs": 2705,
+      "checkedAt": "2026-09-28T15:26:40.364Z",
       "note": "Source protégée/anti-bot/quota : collecteur navigateur ou stratégie spécialisée requise."
     },
     {
@@ -325,8 +325,8 @@
       "httpStatus": 200,
       "finalUrl": "https://data.bretagne.bzh/api/explore/v2.1/",
       "contentType": "application/json; charset=utf-8",
-      "durationMs": 2409,
-      "checkedAt": "2026-09-28T14:12:03.953Z",
+      "durationMs": 2441,
+      "checkedAt": "2026-09-28T15:26:40.109Z",
       "note": null
     },
     {
@@ -343,8 +343,8 @@
       "httpStatus": 403,
       "finalUrl": "https://europe.bzh/aides/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 2437,
-      "checkedAt": "2026-09-28T14:12:08.759Z",
+      "durationMs": 1947,
+      "checkedAt": "2026-09-28T15:26:44.795Z",
       "note": "Source protégée/anti-bot/quota : collecteur navigateur ou stratégie spécialisée requise."
     },
     {
@@ -361,8 +361,8 @@
       "httpStatus": 200,
       "finalUrl": "https://inno-avenir.bretagne.bzh/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 4987,
-      "checkedAt": "2026-09-28T14:12:11.819Z",
+      "durationMs": 4966,
+      "checkedAt": "2026-09-28T15:26:47.835Z",
       "note": null
     },
     {
@@ -379,8 +379,8 @@
       "httpStatus": 200,
       "finalUrl": "https://data.bretagne.bzh/api/explore/v2.1/",
       "contentType": "application/json; charset=utf-8",
-      "durationMs": 1615,
-      "checkedAt": "2026-09-28T14:12:08.528Z",
+      "durationMs": 1559,
+      "checkedAt": "2026-09-28T15:26:44.624Z",
       "note": null
     },
     {
@@ -397,8 +397,8 @@
       "httpStatus": 404,
       "finalUrl": "https://data.corsica/data-fair/api/v1/catalog",
       "contentType": "text/html; charset=utf-8",
-      "durationMs": 2119,
-      "checkedAt": "2026-09-28T14:12:04.531Z",
+      "durationMs": 2106,
+      "checkedAt": "2026-09-28T15:26:40.416Z",
       "note": null
     },
     {
@@ -415,8 +415,8 @@
       "httpStatus": 200,
       "finalUrl": "https://europa.corsica/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 1627,
-      "checkedAt": "2026-09-28T14:12:09.202Z",
+      "durationMs": 803,
+      "checkedAt": "2026-09-28T15:26:45.400Z",
       "note": null
     },
     {
@@ -433,8 +433,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.odarc.corsica/LE-PLAN-STRATEGIQUE-NATIONAL-PSN-2022-2027_a269.html",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 1638,
-      "checkedAt": "2026-09-28T14:12:09.955Z",
+      "durationMs": 1561,
+      "checkedAt": "2026-09-28T15:26:46.159Z",
       "note": null
     },
     {
@@ -451,8 +451,8 @@
       "httpStatus": 410,
       "finalUrl": "https://data.corsica/api/explore/v2.1/",
       "contentType": "text/plain; charset=utf-8",
-      "durationMs": 3055,
-      "checkedAt": "2026-09-28T14:12:11.397Z",
+      "durationMs": 2816,
+      "checkedAt": "2026-09-28T15:26:47.440Z",
       "note": null
     },
     {
@@ -469,8 +469,8 @@
       "httpStatus": 200,
       "finalUrl": "https://data.centrevaldeloire.fr/api/explore/v2.1/",
       "contentType": "application/json; charset=utf-8",
-      "durationMs": 2821,
-      "checkedAt": "2026-09-28T14:12:04.365Z",
+      "durationMs": 2752,
+      "checkedAt": "2026-09-28T15:26:40.420Z",
       "note": null
     },
     {
@@ -487,8 +487,8 @@
       "httpStatus": null,
       "finalUrl": "https://nosaidesenligneregion.centrevaldeloire.fr/",
       "contentType": null,
-      "durationMs": 1701,
-      "checkedAt": "2026-09-28T14:12:08.768Z",
+      "durationMs": 1619,
+      "checkedAt": "2026-09-28T15:26:44.783Z",
       "error": "fetch failed"
     },
     {
@@ -505,8 +505,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.europeocentre-valdeloire.eu/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 1830,
-      "checkedAt": "2026-09-28T14:12:09.275Z",
+      "durationMs": 1729,
+      "checkedAt": "2026-09-28T15:26:45.137Z",
       "note": null
     },
     {
@@ -523,8 +523,8 @@
       "httpStatus": 200,
       "finalUrl": "https://innovationavenir.centrevaldeloire.fr/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 5107,
-      "checkedAt": "2026-09-28T14:12:12.176Z",
+      "durationMs": 5082,
+      "checkedAt": "2026-09-28T15:26:48.406Z",
       "note": null
     },
     {
@@ -541,8 +541,8 @@
       "httpStatus": 200,
       "finalUrl": "https://data.centrevaldeloire.fr/api/explore/v2.1/",
       "contentType": "application/json; charset=utf-8",
-      "durationMs": 1426,
-      "checkedAt": "2026-09-28T14:12:08.880Z",
+      "durationMs": 1464,
+      "checkedAt": "2026-09-28T15:26:45.275Z",
       "note": null
     },
     {
@@ -559,8 +559,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.entreprises.gouv.fr/espace-entreprises/appels-a-projets-et-appels-a-manifestation-d-interet",
       "contentType": "text/html; charset=utf-8",
-      "durationMs": 2520,
-      "checkedAt": "2026-09-28T14:12:04.063Z",
+      "durationMs": 2356,
+      "checkedAt": "2026-09-28T15:26:40.023Z",
       "note": null
     },
     {
@@ -577,8 +577,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.europe-en-france.gouv.fr/fr/programmes-europeens-2021-2027",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 1118,
-      "checkedAt": "2026-09-28T14:12:02.655Z",
+      "durationMs": 1141,
+      "checkedAt": "2026-09-28T15:26:38.801Z",
       "note": null
     },
     {
@@ -595,8 +595,8 @@
       "httpStatus": 403,
       "finalUrl": "https://www.info.gouv.fr/grand-dossier/france-2030",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 2895,
-      "checkedAt": "2026-09-28T14:12:04.434Z",
+      "durationMs": 2866,
+      "checkedAt": "2026-09-28T15:26:40.528Z",
       "note": "Source protégée/anti-bot/quota : collecteur navigateur ou stratégie spécialisée requise."
     },
     {
@@ -613,8 +613,8 @@
       "httpStatus": 403,
       "finalUrl": "https://www.info.gouv.fr/grand-dossier/france-2030/appels-a-candidatures",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 3440,
-      "checkedAt": "2026-09-28T14:12:08.342Z",
+      "durationMs": 3521,
+      "checkedAt": "2026-09-28T15:26:44.597Z",
       "note": "Source protégée/anti-bot/quota : collecteur navigateur ou stratégie spécialisée requise."
     },
     {
@@ -631,8 +631,8 @@
       "httpStatus": 403,
       "finalUrl": "https://www.info.gouv.fr/grand-dossier/france-2030/laureats",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 3396,
-      "checkedAt": "2026-09-28T14:12:08.317Z",
+      "durationMs": 3478,
+      "checkedAt": "2026-09-28T15:26:44.598Z",
       "note": "Source protégée/anti-bot/quota : collecteur navigateur ou stratégie spécialisée requise."
     },
     {
@@ -649,8 +649,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.franceagrimer.fr/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 1946,
-      "checkedAt": "2026-09-28T14:12:03.485Z",
+      "durationMs": 2332,
+      "checkedAt": "2026-09-28T15:26:39.995Z",
       "note": null
     },
     {
@@ -665,10 +665,10 @@
       "ok": true,
       "probeState": "OK",
       "httpStatus": 200,
-      "finalUrl": "https://www.grandest.fr/vos-aides-regionales/",
+      "finalUrl": "https://www.grandest.fr/aides/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 3483,
-      "checkedAt": "2026-09-28T14:12:06.138Z",
+      "durationMs": 4523,
+      "checkedAt": "2026-09-28T15:26:43.324Z",
       "note": null
     },
     {
@@ -685,8 +685,8 @@
       "httpStatus": 200,
       "finalUrl": "https://beeurope.grandest.fr/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 1724,
-      "checkedAt": "2026-09-28T14:12:10.252Z",
+      "durationMs": 1501,
+      "checkedAt": "2026-09-28T15:26:46.180Z",
       "note": null
     },
     {
@@ -703,8 +703,8 @@
       "httpStatus": 200,
       "finalUrl": "https://innovationavenir.grandest.fr/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 1850,
-      "checkedAt": "2026-09-28T14:12:10.396Z",
+      "durationMs": 1960,
+      "checkedAt": "2026-09-28T15:26:46.743Z",
       "note": null
     },
     {
@@ -721,8 +721,8 @@
       "httpStatus": null,
       "finalUrl": "https://aides.regionguadeloupe.fr/-Toutes-les-aides-",
       "contentType": null,
-      "durationMs": 3199,
-      "checkedAt": "2026-09-28T14:12:07.067Z",
+      "durationMs": 2825,
+      "checkedAt": "2026-09-28T15:26:42.848Z",
       "error": "fetch failed"
     },
     {
@@ -739,8 +739,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.europe-guadeloupe.fr/jai-un-projet/les-appels-a-projets/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 1540,
-      "checkedAt": "2026-09-28T14:12:10.308Z",
+      "durationMs": 1340,
+      "checkedAt": "2026-09-28T15:26:46.477Z",
       "note": null
     },
     {
@@ -757,8 +757,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.europe-guadeloupe.fr/les-financements-europeens/feader/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 1490,
-      "checkedAt": "2026-09-28T14:12:10.543Z",
+      "durationMs": 1397,
+      "checkedAt": "2026-09-28T15:26:46.623Z",
       "note": null
     },
     {
@@ -775,8 +775,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.europe-guadeloupe.fr/financement/feder-fse-region-guadeloupe_competitivite-entreprise/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 1439,
-      "checkedAt": "2026-09-28T14:12:10.319Z",
+      "durationMs": 1306,
+      "checkedAt": "2026-09-28T15:26:46.487Z",
       "note": null
     },
     {
@@ -793,8 +793,8 @@
       "httpStatus": 200,
       "finalUrl": "https://france2030.regionguadeloupe.fr/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 4617,
-      "checkedAt": "2026-09-28T14:12:13.376Z",
+      "durationMs": 4869,
+      "checkedAt": "2026-09-28T15:26:49.664Z",
       "note": null
     },
     {
@@ -811,8 +811,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.ctguyane.fr/vous-etes-porteur-de-projet/ami-aap/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 2279,
-      "checkedAt": "2026-09-28T14:12:06.189Z",
+      "durationMs": 2012,
+      "checkedAt": "2026-09-28T15:26:42.121Z",
       "note": null
     },
     {
@@ -826,11 +826,11 @@
       "role": "INGESTION",
       "ok": true,
       "probeState": "OK",
-      "httpStatus": 200,
+      "httpStatus": 202,
       "finalUrl": "https://www.europe-guyane.fr/",
-      "contentType": "text/html; charset=UTF-8",
-      "durationMs": 2437,
-      "checkedAt": "2026-09-28T14:12:11.530Z",
+      "contentType": "text/html",
+      "durationMs": 2089,
+      "checkedAt": "2026-09-28T15:26:47.364Z",
       "note": null
     },
     {
@@ -844,11 +844,11 @@
       "role": "INGESTION",
       "ok": true,
       "probeState": "OK",
-      "httpStatus": 200,
+      "httpStatus": 202,
       "finalUrl": "https://www.europe-guyane.fr/programme_mode_depot/aap/",
-      "contentType": "text/html; charset=UTF-8",
-      "durationMs": 2215,
-      "checkedAt": "2026-09-28T14:12:11.417Z",
+      "contentType": "text/html",
+      "durationMs": 1985,
+      "checkedAt": "2026-09-28T15:26:47.385Z",
       "note": null
     },
     {
@@ -862,11 +862,11 @@
       "role": "INGESTION",
       "ok": true,
       "probeState": "OK",
-      "httpStatus": 200,
+      "httpStatus": 202,
       "finalUrl": "https://www.europe-guyane.fr/programmes/feader/",
-      "contentType": "text/html; charset=UTF-8",
-      "durationMs": 2016,
-      "checkedAt": "2026-09-28T14:12:11.971Z",
+      "contentType": "text/html",
+      "durationMs": 1818,
+      "checkedAt": "2026-09-28T15:26:47.998Z",
       "note": null
     },
     {
@@ -880,11 +880,11 @@
       "role": "INGESTION",
       "ok": true,
       "probeState": "OK",
-      "httpStatus": 200,
+      "httpStatus": 202,
       "finalUrl": "https://www.europe-guyane.fr/programmes/feder/",
-      "contentType": "text/html; charset=UTF-8",
-      "durationMs": 2709,
-      "checkedAt": "2026-09-28T14:12:11.984Z",
+      "contentType": "text/html",
+      "durationMs": 1860,
+      "checkedAt": "2026-09-28T15:26:48.019Z",
       "note": null
     },
     {
@@ -901,8 +901,8 @@
       "httpStatus": 200,
       "finalUrl": "https://france2030regionalise.ctguyane.fr/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 4896,
-      "checkedAt": "2026-09-28T14:12:15.148Z",
+      "durationMs": 4846,
+      "checkedAt": "2026-09-28T15:26:51.323Z",
       "note": null
     },
     {
@@ -919,8 +919,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.data.gouv.fr/organizations/collectivite-territoriale-de-guyane/datasets",
       "contentType": "text/html;charset=utf-8",
-      "durationMs": 2072,
-      "checkedAt": "2026-09-28T14:12:12.380Z",
+      "durationMs": 2277,
+      "checkedAt": "2026-09-28T15:26:48.764Z",
       "note": null
     },
     {
@@ -937,8 +937,8 @@
       "httpStatus": 200,
       "finalUrl": "https://guide-aides.hautsdefrance.fr/",
       "contentType": "text/html; charset=utf-8",
-      "durationMs": 1632,
-      "checkedAt": "2026-09-28T14:12:04.845Z",
+      "durationMs": 1936,
+      "checkedAt": "2026-09-28T15:26:41.120Z",
       "note": null
     },
     {
@@ -955,8 +955,8 @@
       "httpStatus": 200,
       "finalUrl": "https://ressources.local-trust.com/forbidden.html",
       "contentType": "text/html",
-      "durationMs": 4298,
-      "checkedAt": "2026-09-28T14:12:14.617Z",
+      "durationMs": 3745,
+      "checkedAt": "2026-09-28T15:26:50.326Z",
       "note": null
     },
     {
@@ -973,8 +973,8 @@
       "httpStatus": 200,
       "finalUrl": "https://europe-en-hautsdefrance.eu/",
       "contentType": "text/html; charset=utf-8",
-      "durationMs": 2190,
-      "checkedAt": "2026-09-28T14:12:12.784Z",
+      "durationMs": 2258,
+      "checkedAt": "2026-09-28T15:26:49.093Z",
       "note": null
     },
     {
@@ -991,8 +991,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.europe-en-france.gouv.fr/fr/programmes-europeens-2021-2027/programme-hauts-france-feder-fse-ftj-2021-2027",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 1701,
-      "checkedAt": "2026-09-28T14:12:12.926Z",
+      "durationMs": 1341,
+      "checkedAt": "2026-09-28T15:26:48.676Z",
       "note": null
     },
     {
@@ -1009,8 +1009,8 @@
       "httpStatus": 200,
       "finalUrl": "https://inno-avenir.hautsdefrance.fr/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 3791,
-      "checkedAt": "2026-09-28T14:12:14.334Z",
+      "durationMs": 2332,
+      "checkedAt": "2026-09-28T15:26:49.075Z",
       "note": null
     },
     {
@@ -1027,8 +1027,8 @@
       "httpStatus": 200,
       "finalUrl": "https://hauts-de-france.dreets.gouv.fr/Calendrier-des-appels-a-projets-FSE-et-FTJ",
       "contentType": "text/html; charset=utf-8",
-      "durationMs": 1828,
-      "checkedAt": "2026-09-28T14:12:13.081Z",
+      "durationMs": 1414,
+      "checkedAt": "2026-09-28T15:26:48.778Z",
       "note": null
     },
     {
@@ -1045,8 +1045,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.hautsdefrance-id.fr/appels-a-projets/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 4341,
-      "checkedAt": "2026-09-28T14:12:14.737Z",
+      "durationMs": 1938,
+      "checkedAt": "2026-09-28T15:26:48.561Z",
       "note": null
     },
     {
@@ -1063,8 +1063,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.data.gouv.fr/organizations/region-hauts-de-france/datasets",
       "contentType": "text/html;charset=utf-8",
-      "durationMs": 2423,
-      "checkedAt": "2026-09-28T14:12:13.820Z",
+      "durationMs": 2302,
+      "checkedAt": "2026-09-28T15:26:49.687Z",
       "note": null
     },
     {
@@ -1081,8 +1081,8 @@
       "httpStatus": 200,
       "finalUrl": "https://data.iledefrance.fr/api/explore/v2.1/",
       "contentType": "application/json; charset=utf-8",
-      "durationMs": 1644,
-      "checkedAt": "2026-09-28T14:12:04.921Z",
+      "durationMs": 1829,
+      "checkedAt": "2026-09-28T15:26:41.076Z",
       "note": null
     },
     {
@@ -1099,8 +1099,8 @@
       "httpStatus": 404,
       "finalUrl": "https://www.iledefrance.fr/actes/",
       "contentType": "text/html; charset=iso-8859-1",
-      "durationMs": 2791,
-      "checkedAt": "2026-09-28T14:12:14.967Z",
+      "durationMs": 2251,
+      "checkedAt": "2026-09-28T15:26:50.657Z",
       "note": null
     },
     {
@@ -1117,8 +1117,8 @@
       "httpStatus": 200,
       "finalUrl": "https://mesdemarches.iledefrance.fr/aides/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 3442,
-      "checkedAt": "2026-09-28T14:12:14.859Z",
+      "durationMs": 3153,
+      "checkedAt": "2026-09-28T15:26:50.593Z",
       "note": null
     },
     {
@@ -1135,8 +1135,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.europeidf.fr/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 2160,
-      "checkedAt": "2026-09-28T14:12:13.979Z",
+      "durationMs": 1923,
+      "checkedAt": "2026-09-28T15:26:49.858Z",
       "note": null
     },
     {
@@ -1153,8 +1153,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.europeidf.fr/jai-un-projet/appels-a-projets",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 1988,
-      "checkedAt": "2026-09-28T14:12:13.959Z",
+      "durationMs": 1853,
+      "checkedAt": "2026-09-28T15:26:49.851Z",
       "note": null
     },
     {
@@ -1171,8 +1171,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.europeidf.fr/ressources-documentaires",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 2239,
-      "checkedAt": "2026-09-28T14:12:14.223Z",
+      "durationMs": 1873,
+      "checkedAt": "2026-09-28T15:26:49.892Z",
       "note": null
     },
     {
@@ -1189,8 +1189,8 @@
       "httpStatus": 200,
       "finalUrl": "https://leaderpia.iledefrance.fr/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 5677,
-      "checkedAt": "2026-09-28T14:12:17.207Z",
+      "durationMs": 4902,
+      "checkedAt": "2026-09-28T15:26:52.737Z",
       "note": null
     },
     {
@@ -1207,8 +1207,8 @@
       "httpStatus": 200,
       "finalUrl": "https://mesaidespubliques.infogreffe.fr/aides/projets/financement-innovation/etat",
       "contentType": "text/html",
-      "durationMs": 2923,
-      "checkedAt": "2026-09-28T14:12:07.454Z",
+      "durationMs": 3283,
+      "checkedAt": "2026-09-28T15:26:43.811Z",
       "note": null
     },
     {
@@ -1225,8 +1225,8 @@
       "httpStatus": 200,
       "finalUrl": "https://les-aides.fr/",
       "contentType": "text/html;charset=UTF-8",
-      "durationMs": 4659,
-      "checkedAt": "2026-09-28T14:12:09.093Z",
+      "durationMs": 4259,
+      "checkedAt": "2026-09-28T15:26:44.679Z",
       "note": null
     },
     {
@@ -1243,8 +1243,8 @@
       "httpStatus": 404,
       "finalUrl": "https://www.collectivitedemartinique.mq/les-aides-aux-entreprises/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 2348,
-      "checkedAt": "2026-09-28T14:12:06.301Z",
+      "durationMs": 2698,
+      "checkedAt": "2026-09-28T15:26:42.869Z",
       "note": null
     },
     {
@@ -1261,8 +1261,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.europe-martinique.com/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 1456,
-      "checkedAt": "2026-09-28T14:12:15.435Z",
+      "durationMs": 1107,
+      "checkedAt": "2026-09-28T15:26:50.794Z",
       "note": null
     },
     {
@@ -1279,8 +1279,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.europe-martinique.com/appel-a-projets/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 1270,
-      "checkedAt": "2026-09-28T14:12:15.493Z",
+      "durationMs": 942,
+      "checkedAt": "2026-09-28T15:26:50.793Z",
       "note": null
     },
     {
@@ -1297,8 +1297,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.europe-martinique.com/porteurs-de-projets/liste-beneficiaires/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 677,
-      "checkedAt": "2026-09-28T14:12:15.464Z",
+      "durationMs": 899,
+      "checkedAt": "2026-09-28T15:26:51.021Z",
       "note": null
     },
     {
@@ -1315,8 +1315,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.europe-martinique.com/leurope-sengage-en-martinique/programmes-europeens/feader/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 834,
-      "checkedAt": "2026-09-28T14:12:15.451Z",
+      "durationMs": 1108,
+      "checkedAt": "2026-09-28T15:26:51.017Z",
       "note": null
     },
     {
@@ -1333,8 +1333,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.europe-martinique.com/leurope-sengage-en-martinique/programmes-europeens/feder/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 1136,
-      "checkedAt": "2026-09-28T14:12:15.470Z",
+      "durationMs": 948,
+      "checkedAt": "2026-09-28T15:26:50.806Z",
       "note": null
     },
     {
@@ -1351,8 +1351,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.europe-martinique.com/fiches-domo-feder-2021-2027/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 960,
-      "checkedAt": "2026-09-28T14:12:15.462Z",
+      "durationMs": 1146,
+      "checkedAt": "2026-09-28T15:26:51.038Z",
       "note": null
     },
     {
@@ -1369,8 +1369,8 @@
       "httpStatus": 200,
       "finalUrl": "https://france2030regionalise-pref.collectivitedemartinique.mq/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 3945,
-      "checkedAt": "2026-09-28T14:12:18.682Z",
+      "durationMs": 4551,
+      "checkedAt": "2026-09-28T15:26:54.469Z",
       "note": null
     },
     {
@@ -1387,8 +1387,8 @@
       "httpStatus": 200,
       "finalUrl": "https://mandature21-28.collectivitedemartinique.mq/des-outils-daccompagnement-a-la-reprise-et-a-la-creation-dactivite/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 1348,
-      "checkedAt": "2026-09-28T14:12:16.172Z",
+      "durationMs": 1332,
+      "checkedAt": "2026-09-28T15:26:51.459Z",
       "note": null
     },
     {
@@ -1405,8 +1405,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.europe-en-france.gouv.fr/fr/programmes-europeens-2021-2027/programme-martinique-feder-fse-2021-2027",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 582,
-      "checkedAt": "2026-09-28T14:12:15.424Z",
+      "durationMs": 917,
+      "checkedAt": "2026-09-28T15:26:51.046Z",
       "note": null
     },
     {
@@ -1423,8 +1423,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.mayotte.fr/services-en-ligne/demarches-et-aides/aides-aux-entreprises",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 2467,
-      "checkedAt": "2026-09-28T14:12:06.832Z",
+      "durationMs": 2649,
+      "checkedAt": "2026-09-28T15:26:43.065Z",
       "note": null
     },
     {
@@ -1436,14 +1436,14 @@
       "priority": 0,
       "strategy": "catalog-html",
       "role": "INGESTION",
-      "ok": true,
-      "probeState": "OK",
-      "httpStatus": 200,
+      "ok": false,
+      "probeState": "NETWORK_ERROR",
+      "httpStatus": null,
       "finalUrl": "https://www.mayotte.fr/services-en-ligne/opportunites/appels-a-projets",
-      "contentType": "text/html; charset=UTF-8",
-      "durationMs": 726,
-      "checkedAt": "2026-09-28T14:12:15.570Z",
-      "note": null
+      "contentType": null,
+      "durationMs": 20808,
+      "checkedAt": "2026-09-28T15:27:11.134Z",
+      "error": "fetch failed"
     },
     {
       "id": "mayotte_adim",
@@ -1459,8 +1459,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.adim-mayotte.fr/page/aides-aux-entreprises",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 1538,
-      "checkedAt": "2026-09-28T14:12:16.392Z",
+      "durationMs": 1608,
+      "checkedAt": "2026-09-28T15:26:51.988Z",
       "note": null
     },
     {
@@ -1477,8 +1477,8 @@
       "httpStatus": 200,
       "finalUrl": "https://europe-a-mayotte.yt/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 1185,
-      "checkedAt": "2026-09-28T14:12:16.152Z",
+      "durationMs": 1112,
+      "checkedAt": "2026-09-28T15:26:51.705Z",
       "note": null
     },
     {
@@ -1495,8 +1495,8 @@
       "httpStatus": 200,
       "finalUrl": "https://europe-a-mayotte.yt/je-decouvre-leurope-a-mayotte/je-consulte-les-appels-a-projet/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 1007,
-      "checkedAt": "2026-09-28T14:12:16.143Z",
+      "durationMs": 1059,
+      "checkedAt": "2026-09-28T15:26:51.716Z",
       "note": null
     },
     {
@@ -1513,8 +1513,8 @@
       "httpStatus": null,
       "finalUrl": "https://daaf.mayotte.agriculture.gouv.fr/programmation-2023-2027-r177.html",
       "contentType": null,
-      "durationMs": 20628,
-      "checkedAt": "2026-09-28T14:12:36.063Z",
+      "durationMs": 20828,
+      "checkedAt": "2026-09-28T15:27:11.634Z",
       "error": "fetch failed"
     },
     {
@@ -1531,8 +1531,8 @@
       "httpStatus": null,
       "finalUrl": "https://www.mayotte.gouv.fr/Actions-de-l-Etat/Europe/Les-fiches-actions-des-programmes-FEDER-et-FSE-2021-2027",
       "contentType": null,
-      "durationMs": 1424,
-      "checkedAt": "2026-09-28T14:12:16.848Z",
+      "durationMs": 1712,
+      "checkedAt": "2026-09-28T15:26:52.506Z",
       "error": "fetch failed"
     },
     {
@@ -1549,8 +1549,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.europe-en-france.gouv.fr/fr/programmes-europeens-2021-2027/programme-mayotte-feder-2021-2027",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 665,
-      "checkedAt": "2026-09-28T14:12:15.813Z",
+      "durationMs": 947,
+      "checkedAt": "2026-09-28T15:26:51.740Z",
       "note": null
     },
     {
@@ -1567,8 +1567,8 @@
       "httpStatus": 200,
       "finalUrl": "https://france2030.mayotte.fr/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 4068,
-      "checkedAt": "2026-09-28T14:12:18.927Z",
+      "durationMs": 4387,
+      "checkedAt": "2026-09-28T15:26:54.804Z",
       "note": null
     },
     {
@@ -1585,8 +1585,8 @@
       "httpStatus": 200,
       "finalUrl": "https://les-aides.nouvelle-aquitaine.fr/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 3495,
-      "checkedAt": "2026-09-28T14:12:06.913Z",
+      "durationMs": 3300,
+      "checkedAt": "2026-09-28T15:26:42.846Z",
       "note": null
     },
     {
@@ -1603,8 +1603,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.normandie.fr/aides-regionales",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 1597,
-      "checkedAt": "2026-09-28T14:12:04.901Z",
+      "durationMs": 1742,
+      "checkedAt": "2026-09-28T15:26:41.040Z",
       "note": null
     },
     {
@@ -1621,8 +1621,8 @@
       "httpStatus": 200,
       "finalUrl": "https://adnormandie.fr/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 1039,
-      "checkedAt": "2026-09-28T14:12:16.926Z",
+      "durationMs": 810,
+      "checkedAt": "2026-09-28T15:26:52.515Z",
       "note": null
     },
     {
@@ -1639,8 +1639,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.normandie.fr/accompagner-les-entreprises",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 436,
-      "checkedAt": "2026-09-28T14:12:15.887Z",
+      "durationMs": 471,
+      "checkedAt": "2026-09-28T15:26:51.488Z",
       "note": null
     },
     {
@@ -1657,8 +1657,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.europe-en-normandie.eu/deposer-ma-demande-daide",
       "contentType": "text/html; charset=utf-8",
-      "durationMs": 898,
-      "checkedAt": "2026-09-28T14:12:16.362Z",
+      "durationMs": 1114,
+      "checkedAt": "2026-09-28T15:26:52.152Z",
       "note": null
     },
     {
@@ -1675,8 +1675,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.europe-en-normandie.eu/ressources",
       "contentType": "text/html; charset=utf-8",
-      "durationMs": 1056,
-      "checkedAt": "2026-09-28T14:12:16.549Z",
+      "durationMs": 817,
+      "checkedAt": "2026-09-28T15:26:52.140Z",
       "note": null
     },
     {
@@ -1693,8 +1693,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.europe-en-normandie.eu/suivi-des-programmations",
       "contentType": "text/html; charset=utf-8",
-      "durationMs": 758,
-      "checkedAt": "2026-09-28T14:12:16.328Z",
+      "durationMs": 1032,
+      "checkedAt": "2026-09-28T15:26:52.491Z",
       "note": null
     },
     {
@@ -1711,8 +1711,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.europe-en-normandie.eu/fonds-europeen-agricole-pour-le-developpement-rural-feader",
       "contentType": "text/html; charset=utf-8",
-      "durationMs": 1071,
-      "checkedAt": "2026-09-28T14:12:16.541Z",
+      "durationMs": 828,
+      "checkedAt": "2026-09-28T15:26:51.874Z",
       "note": null
     },
     {
@@ -1729,8 +1729,8 @@
       "httpStatus": 200,
       "finalUrl": "https://innov-avenir.normandie.fr/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 1153,
-      "checkedAt": "2026-09-28T14:12:16.615Z",
+      "durationMs": 1373,
+      "checkedAt": "2026-09-28T15:26:52.394Z",
       "note": null
     },
     {
@@ -1747,8 +1747,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.data.gouv.fr/organizations/region-normandie/datasets",
       "contentType": "text/html;charset=utf-8",
-      "durationMs": 1808,
-      "checkedAt": "2026-09-28T14:12:17.621Z",
+      "durationMs": 606,
+      "checkedAt": "2026-09-28T15:26:52.094Z",
       "note": null
     },
     {
@@ -1765,8 +1765,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.europe-en-nouvelle-aquitaine.eu/fr",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 1522,
-      "checkedAt": "2026-09-28T14:12:18.071Z",
+      "durationMs": 1143,
+      "checkedAt": "2026-09-28T15:26:53.537Z",
       "note": null
     },
     {
@@ -1783,8 +1783,8 @@
       "httpStatus": 200,
       "finalUrl": "https://entreprises.nouvelle-aquitaine.fr/les-aides",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 2120,
-      "checkedAt": "2026-09-28T14:12:18.263Z",
+      "durationMs": 1844,
+      "checkedAt": "2026-09-28T15:26:53.560Z",
       "note": null
     },
     {
@@ -1801,8 +1801,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.europe-en-nouvelle-aquitaine.eu/fr",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 1713,
-      "checkedAt": "2026-09-28T14:12:18.075Z",
+      "durationMs": 1381,
+      "checkedAt": "2026-09-28T15:26:53.475Z",
       "note": null
     },
     {
@@ -1819,8 +1819,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.europe-en-nouvelle-aquitaine.eu/fr/appels-a-projets.html",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 1367,
-      "checkedAt": "2026-09-28T14:12:17.539Z",
+      "durationMs": 979,
+      "checkedAt": "2026-09-28T15:26:52.853Z",
       "note": null
     },
     {
@@ -1837,8 +1837,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.europe-en-nouvelle-aquitaine.eu/fr/fonds-europeen/le-fonds-europeen-agricole-pour-le-developpement-rural-feader.html",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 1969,
-      "checkedAt": "2026-09-28T14:12:18.297Z",
+      "durationMs": 1454,
+      "checkedAt": "2026-09-28T15:26:53.442Z",
       "note": null
     },
     {
@@ -1855,8 +1855,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.france2030-en-nouvelle-aquitaine.fr/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 4123,
-      "checkedAt": "2026-09-28T14:12:20.275Z",
+      "durationMs": 3915,
+      "checkedAt": "2026-09-28T15:26:55.655Z",
       "note": null
     },
     {
@@ -1873,8 +1873,8 @@
       "httpStatus": 403,
       "finalUrl": "https://www.prefectures-regions.gouv.fr/nouvelle-aquitaine/Actualites/France-2030-regionalise-ouverture-de-trois-appels-a-projets-dedies-a-la-Nouvelle-Aquitaine",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 1758,
-      "checkedAt": "2026-09-28T14:12:18.150Z",
+      "durationMs": 1475,
+      "checkedAt": "2026-09-28T15:26:53.615Z",
       "note": "Source protégée/anti-bot/quota : collecteur navigateur ou stratégie spécialisée requise."
     },
     {
@@ -1891,8 +1891,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.data.gouv.fr/organizations/region-nouvelle-aquitaine/datasets",
       "contentType": "text/html;charset=utf-8",
-      "durationMs": 1253,
-      "checkedAt": "2026-09-28T14:12:17.794Z",
+      "durationMs": 820,
+      "checkedAt": "2026-09-28T15:26:52.972Z",
       "note": null
     },
     {
@@ -1909,8 +1909,8 @@
       "httpStatus": 200,
       "finalUrl": "https://data.laregion.fr/api/explore/v2.1/",
       "contentType": "application/json; charset=utf-8",
-      "durationMs": 1713,
-      "checkedAt": "2026-09-28T14:12:05.198Z",
+      "durationMs": 1654,
+      "checkedAt": "2026-09-28T15:26:41.453Z",
       "note": null
     },
     {
@@ -1927,8 +1927,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.laregion.fr/Contrat-Innovation",
       "contentType": "text/html; charset=utf-8",
-      "durationMs": 1294,
-      "checkedAt": "2026-09-28T14:12:19.365Z",
+      "durationMs": 1097,
+      "checkedAt": "2026-09-28T15:26:54.539Z",
       "note": null
     },
     {
@@ -1945,8 +1945,8 @@
       "httpStatus": 200,
       "finalUrl": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie%40occitanie/",
       "contentType": "text/html; charset=utf-8",
-      "durationMs": 1778,
-      "checkedAt": "2026-09-28T14:12:18.393Z",
+      "durationMs": 885,
+      "checkedAt": "2026-09-28T15:26:53.376Z",
       "note": null
     },
     {
@@ -1963,8 +1963,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.europe-en-occitanie.eu/Soutien-investissements-entreprises-agro-FEADER23-27",
       "contentType": "text/html; charset=utf-8",
-      "durationMs": 1860,
-      "checkedAt": "2026-09-28T14:12:19.067Z",
+      "durationMs": 1402,
+      "checkedAt": "2026-09-28T15:26:54.139Z",
       "note": null
     },
     {
@@ -1981,8 +1981,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.laregion.fr/Les-aides-et-appels-a-projets",
       "contentType": "text/html; charset=utf-8",
-      "durationMs": 2430,
-      "checkedAt": "2026-09-28T14:12:19.356Z",
+      "durationMs": 2370,
+      "checkedAt": "2026-09-28T15:26:54.885Z",
       "note": null
     },
     {
@@ -1999,8 +1999,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.laregion.fr/foster",
       "contentType": "text/html; charset=utf-8",
-      "durationMs": 1715,
-      "checkedAt": "2026-09-28T14:12:19.509Z",
+      "durationMs": 1316,
+      "checkedAt": "2026-09-28T15:26:54.692Z",
       "note": null
     },
     {
@@ -2017,8 +2017,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.laregion.fr/Appel-a-projets-collaboratifs-I-Demo-Regionalise",
       "contentType": "text/html; charset=utf-8",
-      "durationMs": 1208,
-      "checkedAt": "2026-09-28T14:12:18.829Z",
+      "durationMs": 932,
+      "checkedAt": "2026-09-28T15:26:53.904Z",
       "note": null
     },
     {
@@ -2035,8 +2035,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.laregion.fr/Appel-a-projets-France-2030-regionalise-Projets-d-innovation",
       "contentType": "text/html; charset=utf-8",
-      "durationMs": 1257,
-      "checkedAt": "2026-09-28T14:12:18.796Z",
+      "durationMs": 1153,
+      "checkedAt": "2026-09-28T15:26:54.006Z",
       "note": null
     },
     {
@@ -2053,8 +2053,8 @@
       "httpStatus": 403,
       "finalUrl": "https://www.prefectures-regions.gouv.fr/occitanie/Region-et-institutions/L-action-de-l-Etat/Economie-emploi-solidarites-et-finances-publiques/France-2030-en-Occitanie/France-2030-en-region-Occitanie2",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 804,
-      "checkedAt": "2026-09-28T14:12:18.954Z",
+      "durationMs": 896,
+      "checkedAt": "2026-09-28T15:26:54.433Z",
       "note": "Source protégée/anti-bot/quota : collecteur navigateur ou stratégie spécialisée requise."
     },
     {
@@ -2071,8 +2071,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.laregion.fr/Les-aides-et-appels-a-projets",
       "contentType": "text/html; charset=utf-8",
-      "durationMs": 2081,
-      "checkedAt": "2026-09-28T14:12:18.929Z",
+      "durationMs": 1252,
+      "checkedAt": "2026-09-28T15:26:53.758Z",
       "note": null
     },
     {
@@ -2089,8 +2089,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.laregion.fr/Pass-Transformation-Ecologique",
       "contentType": "text/html; charset=utf-8",
-      "durationMs": 1311,
-      "checkedAt": "2026-09-28T14:12:19.386Z",
+      "durationMs": 1017,
+      "checkedAt": "2026-09-28T15:26:54.492Z",
       "note": null
     },
     {
@@ -2107,8 +2107,8 @@
       "httpStatus": 200,
       "finalUrl": "https://ofb.gouv.fr/financements",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 1763,
-      "checkedAt": "2026-09-28T14:12:03.304Z",
+      "durationMs": 1881,
+      "checkedAt": "2026-09-28T15:26:39.546Z",
       "note": null
     },
     {
@@ -2125,8 +2125,8 @@
       "httpStatus": 200,
       "finalUrl": "https://entreprises.maregionsud.fr/aides-et-appels-a-projet",
       "contentType": "text/html; charset=utf-8",
-      "durationMs": 2318,
-      "checkedAt": "2026-09-28T14:12:06.065Z",
+      "durationMs": 2484,
+      "checkedAt": "2026-09-28T15:26:42.479Z",
       "note": null
     },
     {
@@ -2143,8 +2143,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.maregionsud.fr/vos-aides/flux-json",
       "contentType": "text/html; charset=utf-8",
-      "durationMs": 1172,
-      "checkedAt": "2026-09-28T14:12:20.101Z",
+      "durationMs": 1124,
+      "checkedAt": "2026-09-28T15:26:55.475Z",
       "note": null
     },
     {
@@ -2161,8 +2161,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.maregionsud.fr/vos-aides",
       "contentType": "text/html; charset=utf-8",
-      "durationMs": 1019,
-      "checkedAt": "2026-09-28T14:12:19.946Z",
+      "durationMs": 989,
+      "checkedAt": "2026-09-28T15:26:55.334Z",
       "note": null
     },
     {
@@ -2179,8 +2179,8 @@
       "httpStatus": 200,
       "finalUrl": "https://europe.maregionsud.fr/calendrier",
       "contentType": "text/html; charset=utf-8",
-      "durationMs": 1456,
-      "checkedAt": "2026-09-28T14:12:20.523Z",
+      "durationMs": 1271,
+      "checkedAt": "2026-09-28T15:26:55.763Z",
       "note": null
     },
     {
@@ -2197,8 +2197,8 @@
       "httpStatus": 200,
       "finalUrl": "https://europe.maregionsud.fr/programmes/programmes-europeens/detail/programme-regional-feader-2023-2027",
       "contentType": "text/html; charset=utf-8",
-      "durationMs": 1330,
-      "checkedAt": "2026-09-28T14:12:20.474Z",
+      "durationMs": 1205,
+      "checkedAt": "2026-09-28T15:26:55.744Z",
       "note": null
     },
     {
@@ -2215,8 +2215,8 @@
       "httpStatus": 200,
       "finalUrl": "https://europe.maregionsud.fr/actualites/detail/pret-feder-sud-innovation",
       "contentType": "text/html; charset=utf-8",
-      "durationMs": 1297,
-      "checkedAt": "2026-09-28T14:12:20.662Z",
+      "durationMs": 1070,
+      "checkedAt": "2026-09-28T15:26:55.955Z",
       "note": null
     },
     {
@@ -2233,8 +2233,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.europe-en-france.gouv.fr/fr/programmes-europeens-2021-2027/programme-provence-alpes-cote-azur-massif-alpes-feder-fse-ftj-2021",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 1348,
-      "checkedAt": "2026-09-28T14:12:20.510Z",
+      "durationMs": 1235,
+      "checkedAt": "2026-09-28T15:26:55.927Z",
       "note": null
     },
     {
@@ -2251,8 +2251,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.maregionsud.fr/vos-aides/detail/pia4-regionalise-accompagnement-et-transformation-des-filieres",
       "contentType": "text/html; charset=utf-8",
-      "durationMs": 1365,
-      "checkedAt": "2026-09-28T14:12:20.395Z",
+      "durationMs": 1323,
+      "checkedAt": "2026-09-28T15:26:55.788Z",
       "note": null
     },
     {
@@ -2269,8 +2269,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.maregionsud.fr/vos-aides/detail/pia4-regionalise-projets-collaboratives-de-recherche-developpement-i-demo-regionalise",
       "contentType": "text/html; charset=utf-8",
-      "durationMs": 1368,
-      "checkedAt": "2026-09-28T14:12:20.404Z",
+      "durationMs": 1504,
+      "checkedAt": "2026-09-28T15:26:55.973Z",
       "note": null
     },
     {
@@ -2287,8 +2287,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.maregionsud.fr/vos-aides/detail/pia4-regionalise-projets-dinnovation",
       "contentType": "text/html; charset=utf-8",
-      "durationMs": 1417,
-      "checkedAt": "2026-09-28T14:12:20.371Z",
+      "durationMs": 1311,
+      "checkedAt": "2026-09-28T15:26:55.744Z",
       "note": null
     },
     {
@@ -2305,8 +2305,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.data.gouv.fr/organizations/region-provence-alpes-cote-dazur/datasets",
       "contentType": "text/html;charset=utf-8",
-      "durationMs": 1970,
-      "checkedAt": "2026-09-28T14:12:21.326Z",
+      "durationMs": 946,
+      "checkedAt": "2026-09-28T15:26:55.750Z",
       "note": null
     },
     {
@@ -2323,8 +2323,8 @@
       "httpStatus": 200,
       "finalUrl": "https://data.paysdelaloire.fr/api/explore/v2.1/",
       "contentType": "application/json; charset=utf-8",
-      "durationMs": 1678,
-      "checkedAt": "2026-09-28T14:12:05.371Z",
+      "durationMs": 1716,
+      "checkedAt": "2026-09-28T15:26:41.533Z",
       "note": null
     },
     {
@@ -2341,8 +2341,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.paysdelaloire.fr/mon-conseil-regional/les-missions/europe/solliciter-les-fonds-europeens/feader",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 354,
-      "checkedAt": "2026-09-28T14:12:19.036Z",
+      "durationMs": 4224,
+      "checkedAt": "2026-09-28T15:26:58.128Z",
       "note": null
     },
     {
@@ -2359,8 +2359,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.paysdelaloire.fr/mon-conseil-regional/les-missions-regionales/europe/solliciter-les-fonds-europeens/feder-economie-developpement-solidaire-et-durable-des-territoires",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 397,
-      "checkedAt": "2026-09-28T14:12:18.790Z",
+      "durationMs": 461,
+      "checkedAt": "2026-09-28T15:26:54.219Z",
       "note": null
     },
     {
@@ -2377,8 +2377,8 @@
       "httpStatus": 200,
       "finalUrl": "https://pia.paysdelaloire.fr/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 3644,
-      "checkedAt": "2026-09-28T14:12:21.941Z",
+      "durationMs": 3908,
+      "checkedAt": "2026-09-28T15:26:57.523Z",
       "note": null
     },
     {
@@ -2395,8 +2395,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.paysdelaloire.fr/mon-conseil-regional/les-missions-regionales/europe/solliciter-les-fonds-europeens/fse-creation-dentreprise-orientation-formation-sante",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 347,
-      "checkedAt": "2026-09-28T14:12:19.030Z",
+      "durationMs": 459,
+      "checkedAt": "2026-09-28T15:26:54.465Z",
       "note": null
     },
     {
@@ -2413,8 +2413,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.paysdelaloire.fr/mon-conseil-regional/les-missions-regionales/europe/solliciter-les-fonds-europeens/ftj-compenser-les-impacts-de-la-transition-vers-la-neutralite-carbone",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 354,
-      "checkedAt": "2026-09-28T14:12:19.144Z",
+      "durationMs": 206,
+      "checkedAt": "2026-09-28T15:26:54.345Z",
       "note": null
     },
     {
@@ -2431,8 +2431,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.paysdelaloire.fr/economie-et-innovation/innover/accelerer-mon-innovation",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 366,
-      "checkedAt": "2026-09-28T14:12:19.162Z",
+      "durationMs": 194,
+      "checkedAt": "2026-09-28T15:26:54.351Z",
       "note": null
     },
     {
@@ -2449,8 +2449,8 @@
       "httpStatus": 200,
       "finalUrl": "https://data.paysdelaloire.fr/pages/home/",
       "contentType": "text/html; charset=utf-8",
-      "durationMs": 1730,
-      "checkedAt": "2026-09-28T14:12:20.559Z",
+      "durationMs": 1712,
+      "checkedAt": "2026-09-28T15:26:55.931Z",
       "note": null
     },
     {
@@ -2467,8 +2467,8 @@
       "httpStatus": 200,
       "finalUrl": "https://data.paysdelaloire.fr/api/explore/v2.1/",
       "contentType": "application/json; charset=utf-8",
-      "durationMs": 420,
-      "checkedAt": "2026-09-28T14:12:18.683Z",
+      "durationMs": 597,
+      "checkedAt": "2026-09-28T15:26:54.157Z",
       "note": null
     },
     {
@@ -2485,8 +2485,8 @@
       "httpStatus": 200,
       "finalUrl": "https://data.regionreunion.com/api/explore/v2.1/",
       "contentType": "application/json; charset=utf-8",
-      "durationMs": 2259,
-      "checkedAt": "2026-09-28T14:12:06.322Z",
+      "durationMs": 2075,
+      "checkedAt": "2026-09-28T15:26:42.439Z",
       "note": null
     },
     {
@@ -2503,8 +2503,8 @@
       "httpStatus": 403,
       "finalUrl": "https://www.regionreunion.com/aides-services/appels-a-projets/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 2444,
-      "checkedAt": "2026-09-28T14:12:14.824Z",
+      "durationMs": 1348,
+      "checkedAt": "2026-09-28T15:26:49.909Z",
       "note": "Source protégée/anti-bot/quota : collecteur navigateur ou stratégie spécialisée requise."
     },
     {
@@ -2521,8 +2521,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.data.gouv.fr/organizations/region-reunion-2/datasets",
       "contentType": "text/html;charset=utf-8",
-      "durationMs": 1177,
-      "checkedAt": "2026-09-28T14:12:15.136Z",
+      "durationMs": 753,
+      "checkedAt": "2026-09-28T15:26:50.417Z",
       "note": null
     },
     {
@@ -2539,8 +2539,8 @@
       "httpStatus": 403,
       "finalUrl": "https://www.regionreunion.com/aides-services/?mot_secteur=Fonds+Europ%C3%A9ens",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 1763,
-      "checkedAt": "2026-09-28T14:12:14.844Z",
+      "durationMs": 1344,
+      "checkedAt": "2026-09-28T15:26:50.122Z",
       "note": "Source protégée/anti-bot/quota : collecteur navigateur ou stratégie spécialisée requise."
     },
     {
@@ -2557,8 +2557,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.regionreunion.com/IMG/pdf/comperm.250823.pdf",
       "contentType": "application/pdf",
-      "durationMs": 1126,
-      "checkedAt": "2026-09-28T14:12:14.502Z",
+      "durationMs": 843,
+      "checkedAt": "2026-09-28T15:26:49.918Z",
       "note": null
     },
     {
@@ -2575,8 +2575,8 @@
       "httpStatus": 403,
       "finalUrl": "https://www.regionreunion.com/actualite/toute-l-actualite/article/votre-projet-feder-2021-2027",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 1916,
-      "checkedAt": "2026-09-28T14:12:14.842Z",
+      "durationMs": 1365,
+      "checkedAt": "2026-09-28T15:26:50.129Z",
       "note": "Source protégée/anti-bot/quota : collecteur navigateur ou stratégie spécialisée requise."
     },
     {
@@ -2593,8 +2593,8 @@
       "httpStatus": 403,
       "finalUrl": "https://france2030.regionreunion.com/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 2070,
-      "checkedAt": "2026-09-28T14:12:14.854Z",
+      "durationMs": 1451,
+      "checkedAt": "2026-09-28T15:26:50.127Z",
       "note": "Source protégée/anti-bot/quota : collecteur navigateur ou stratégie spécialisée requise."
     },
     {
@@ -2611,8 +2611,8 @@
       "httpStatus": 200,
       "finalUrl": "https://data.regionreunion.com/api/explore/v2.1/",
       "contentType": "application/json; charset=utf-8",
-      "durationMs": 967,
-      "checkedAt": "2026-09-28T14:12:14.787Z",
+      "durationMs": 1287,
+      "checkedAt": "2026-09-28T15:26:50.380Z",
       "note": null
     },
     {
@@ -2629,8 +2629,8 @@
       "httpStatus": 200,
       "finalUrl": "https://www.data.gouv.fr/api/1/datasets/?q=Catalogue%20des%20dispositifs%20d%27aides%20%C3%A0%20la%20transition%20%C3%A9cologique%20pour%20les%20entreprises",
       "contentType": "application/json",
-      "durationMs": 2209,
-      "checkedAt": "2026-09-28T14:12:03.747Z",
+      "durationMs": 2156,
+      "checkedAt": "2026-09-28T15:26:39.817Z",
       "note": null
     }
   ]

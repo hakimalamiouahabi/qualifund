@@ -10,9 +10,9 @@
     "discovered": 2458,
     "imported": 2458,
     "message": "Stock officiel: 2458 lignes ; 2458 retenues ; exclusions {\"inactive\":0}",
-    "durationMs": 25840,
-    "checkedAt": "2026-09-28T14:21:56.278Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:56.278Z",
+    "durationMs": 97608,
+    "checkedAt": "2026-09-28T15:38:14.732Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:14.732Z",
     "consecutiveFailures": 0
   },
   {
@@ -23,12 +23,12 @@
     "lifecycleSafe": true,
     "emptyIngestion": false,
     "suspiciousVolume": false,
-    "discovered": 79,
-    "imported": 79,
-    "message": "79 pages candidates, 79 fiches extraites",
-    "durationMs": 89346,
-    "checkedAt": "2026-09-28T14:21:56.292Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:56.292Z",
+    "discovered": 201,
+    "imported": 201,
+    "message": "201 pages candidates, 201 fiches extraites",
+    "durationMs": 147807,
+    "checkedAt": "2026-09-28T15:38:14.791Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:14.791Z",
     "consecutiveFailures": 0
   },
   {
@@ -42,9 +42,9 @@
     "discovered": 34,
     "imported": 34,
     "message": "34 pages candidates, 34 fiches extraites",
-    "durationMs": 6115,
-    "checkedAt": "2026-09-28T14:21:56.296Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:56.296Z",
+    "durationMs": 7590,
+    "checkedAt": "2026-09-28T15:38:14.797Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:14.797Z",
     "consecutiveFailures": 0
   },
   {
@@ -58,9 +58,9 @@
     "discovered": 24,
     "imported": 24,
     "message": "24 pages candidates, 24 fiches extraites",
-    "durationMs": 4486,
-    "checkedAt": "2026-09-28T14:21:56.298Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:56.298Z",
+    "durationMs": 5105,
+    "checkedAt": "2026-09-28T15:38:14.800Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:14.800Z",
     "consecutiveFailures": 0
   },
   {
@@ -74,9 +74,9 @@
     "discovered": 25,
     "imported": 25,
     "message": "25 pages candidates, 25 fiches extraites",
-    "durationMs": 12524,
-    "checkedAt": "2026-09-28T14:21:56.301Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:56.301Z",
+    "durationMs": 11965,
+    "checkedAt": "2026-09-28T15:38:14.805Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:14.805Z",
     "consecutiveFailures": 0
   },
   {
@@ -90,9 +90,9 @@
     "discovered": 223,
     "imported": 40,
     "message": "1 datasets pertinents, 1 ressources, 40 fiches",
-    "durationMs": 5427,
-    "checkedAt": "2026-09-28T14:21:56.302Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:56.302Z",
+    "durationMs": 7314,
+    "checkedAt": "2026-09-28T15:38:14.807Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:14.807Z",
     "consecutiveFailures": 0
   },
   {
@@ -106,10 +106,10 @@
     "discovered": 0,
     "imported": 0,
     "message": "scan d’ingestion vide — dernière version valide conservée. 0 pages candidates, 0 fiches extraites",
-    "durationMs": 7790,
-    "checkedAt": "2026-09-28T14:21:56.302Z",
+    "durationMs": 8509,
+    "checkedAt": "2026-09-28T15:38:14.807Z",
     "lastSuccessfulAt": null,
-    "consecutiveFailures": 2
+    "consecutiveFailures": 3
   },
   {
     "id": "franceagrimer",
@@ -122,9 +122,9 @@
     "discovered": 30,
     "imported": 30,
     "message": "30 pages candidates, 30 fiches extraites",
-    "durationMs": 3178,
-    "checkedAt": "2026-09-28T14:21:56.309Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:56.309Z",
+    "durationMs": 7949,
+    "checkedAt": "2026-09-28T15:38:14.864Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:14.864Z",
     "consecutiveFailures": 0
   },
   {
@@ -138,10 +138,10 @@
     "discovered": 0,
     "imported": 0,
     "message": "HTTP 401 — dernière version valide conservée.",
-    "durationMs": 6699,
-    "checkedAt": "2026-09-28T14:21:56.309Z",
+    "durationMs": 6538,
+    "checkedAt": "2026-09-28T15:38:14.864Z",
     "lastSuccessfulAt": null,
-    "consecutiveFailures": 2
+    "consecutiveFailures": 3
   },
   {
     "id": "ofb_financements",
@@ -154,9 +154,9 @@
     "discovered": 22,
     "imported": 22,
     "message": "22 pages candidates, 22 fiches extraites",
-    "durationMs": 11323,
-    "checkedAt": "2026-09-28T14:21:56.311Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:56.311Z",
+    "durationMs": 7277,
+    "checkedAt": "2026-09-28T15:38:14.868Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:14.868Z",
     "consecutiveFailures": 0
   },
   {
@@ -170,9 +170,9 @@
     "discovered": 22,
     "imported": 21,
     "message": "22 pages candidates, 21 fiches extraites",
-    "durationMs": 1010,
-    "checkedAt": "2026-09-28T14:21:56.313Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:56.313Z",
+    "durationMs": 2111,
+    "checkedAt": "2026-09-28T15:38:14.871Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:14.871Z",
     "consecutiveFailures": 0
   },
   {
@@ -186,9 +186,9 @@
     "discovered": 65,
     "imported": 65,
     "message": "65 pages candidates, 65 fiches extraites",
-    "durationMs": 23018,
-    "checkedAt": "2026-09-28T14:21:56.325Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:56.325Z",
+    "durationMs": 7770,
+    "checkedAt": "2026-09-28T15:38:14.884Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:14.884Z",
     "consecutiveFailures": 0
   },
   {
@@ -200,11 +200,11 @@
     "emptyIngestion": false,
     "suspiciousVolume": false,
     "discovered": 160,
-    "imported": 8,
-    "message": "OpenData 0 • Web 8",
-    "durationMs": 75335,
-    "checkedAt": "2026-09-28T14:21:56.326Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:56.326Z",
+    "imported": 10,
+    "message": "OpenData 0 • Web 10",
+    "durationMs": 76145,
+    "checkedAt": "2026-09-28T15:38:14.887Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:14.887Z",
     "consecutiveFailures": 0
   },
   {
@@ -218,9 +218,9 @@
     "discovered": 160,
     "imported": 160,
     "message": "OpenData 0 • Web 160",
-    "durationMs": 29864,
-    "checkedAt": "2026-09-28T14:21:56.370Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:56.370Z",
+    "durationMs": 46185,
+    "checkedAt": "2026-09-28T15:38:14.959Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:14.959Z",
     "consecutiveFailures": 0
   },
   {
@@ -234,10 +234,10 @@
     "discovered": 68,
     "imported": 0,
     "message": "scan d’ingestion vide — dernière version valide conservée. OpenData 0 • Web 0",
-    "durationMs": 12678,
-    "checkedAt": "2026-09-28T14:21:56.370Z",
+    "durationMs": 11757,
+    "checkedAt": "2026-09-28T15:38:14.959Z",
     "lastSuccessfulAt": null,
-    "consecutiveFailures": 2
+    "consecutiveFailures": 3
   },
   {
     "id": "cvl",
@@ -250,10 +250,10 @@
     "discovered": 0,
     "imported": 0,
     "message": "timeout cvl 160000ms — dernière version valide conservée.",
-    "durationMs": 160000,
-    "checkedAt": "2026-09-28T14:21:56.370Z",
+    "durationMs": 160013,
+    "checkedAt": "2026-09-28T15:38:14.959Z",
     "lastSuccessfulAt": null,
-    "consecutiveFailures": 2
+    "consecutiveFailures": 3
   },
   {
     "id": "corse",
@@ -266,10 +266,10 @@
     "discovered": 0,
     "imported": 0,
     "message": "scan d’ingestion vide — dernière version valide conservée. OpenData 0 • Web 0",
-    "durationMs": 3335,
-    "checkedAt": "2026-09-28T14:21:56.370Z",
+    "durationMs": 4003,
+    "checkedAt": "2026-09-28T15:38:14.959Z",
     "lastSuccessfulAt": null,
-    "consecutiveFailures": 2
+    "consecutiveFailures": 3
   },
   {
     "id": "grand_est",
@@ -279,12 +279,12 @@
     "lifecycleSafe": true,
     "emptyIngestion": false,
     "suspiciousVolume": false,
-    "discovered": 4,
-    "imported": 3,
-    "message": "OpenData 0 • Web 3",
-    "durationMs": 3828,
-    "checkedAt": "2026-09-28T14:21:56.371Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:56.371Z",
+    "discovered": 28,
+    "imported": 28,
+    "message": "OpenData 0 • Web 28",
+    "durationMs": 14309,
+    "checkedAt": "2026-09-28T15:38:14.965Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:14.965Z",
     "consecutiveFailures": 0
   },
   {
@@ -298,26 +298,26 @@
     "discovered": 213,
     "imported": 213,
     "message": "213 pages candidates, 213 fiches extraites",
-    "durationMs": 8257,
-    "checkedAt": "2026-09-28T14:21:56.584Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:56.584Z",
+    "durationMs": 11666,
+    "checkedAt": "2026-09-28T15:38:15.208Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.209Z",
     "consecutiveFailures": 0
   },
   {
     "id": "idf",
     "name": "Région Île-de-France — aides et appels à projets",
     "scope": "Île-de-France",
-    "success": true,
-    "lifecycleSafe": true,
+    "success": false,
+    "lifecycleSafe": false,
     "emptyIngestion": false,
     "suspiciousVolume": false,
-    "discovered": 507,
-    "imported": 181,
-    "message": "OpenData 21 • Web 160",
-    "durationMs": 88151,
-    "checkedAt": "2026-09-28T14:21:56.655Z",
+    "discovered": 0,
+    "imported": 0,
+    "message": "timeout idf 240000ms — dernière version valide conservée.",
+    "durationMs": 240000,
+    "checkedAt": "2026-09-28T15:38:15.209Z",
     "lastSuccessfulAt": "2026-09-28T14:21:56.655Z",
-    "consecutiveFailures": 0
+    "consecutiveFailures": 1
   },
   {
     "id": "normandie",
@@ -330,10 +330,10 @@
     "discovered": 0,
     "imported": 0,
     "message": "volume suspect (0 < 10) ; scan d’ingestion vide — dernière version valide conservée. 0 pages candidates, 0 fiches extraites",
-    "durationMs": 5165,
-    "checkedAt": "2026-09-28T14:21:56.655Z",
+    "durationMs": 5385,
+    "checkedAt": "2026-09-28T15:38:15.209Z",
     "lastSuccessfulAt": null,
-    "consecutiveFailures": 2
+    "consecutiveFailures": 3
   },
   {
     "id": "naquitaine",
@@ -346,9 +346,9 @@
     "discovered": 23,
     "imported": 23,
     "message": "23 pages candidates, 23 fiches extraites",
-    "durationMs": 23514,
-    "checkedAt": "2026-09-28T14:21:56.674Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:56.674Z",
+    "durationMs": 21773,
+    "checkedAt": "2026-09-28T15:38:15.236Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.236Z",
     "consecutiveFailures": 0
   },
   {
@@ -362,9 +362,9 @@
     "discovered": 226,
     "imported": 36,
     "message": "OpenDataSoft aides-et-appels-a-projets-de-la-region-occitanie: 226 lignes, 36 fiches financières",
-    "durationMs": 1178,
-    "checkedAt": "2026-09-28T14:21:56.674Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:56.674Z",
+    "durationMs": 1982,
+    "checkedAt": "2026-09-28T15:38:15.241Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.241Z",
     "consecutiveFailures": 0
   },
   {
@@ -378,9 +378,9 @@
     "discovered": 340,
     "imported": 180,
     "message": "OpenData 20 • Web 160",
-    "durationMs": 26051,
-    "checkedAt": "2026-09-28T14:21:56.886Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:56.886Z",
+    "durationMs": 44103,
+    "checkedAt": "2026-09-28T15:38:15.532Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.532Z",
     "consecutiveFailures": 0
   },
   {
@@ -394,9 +394,9 @@
     "discovered": 105,
     "imported": 105,
     "message": "105 pages candidates, 105 fiches extraites",
-    "durationMs": 21489,
-    "checkedAt": "2026-09-28T14:21:56.960Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:56.960Z",
+    "durationMs": 25666,
+    "checkedAt": "2026-09-28T15:38:15.647Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.647Z",
     "consecutiveFailures": 0
   },
   {
@@ -411,9 +411,9 @@
     "imported": 0,
     "message": "timeout guadeloupe 160000ms — dernière version valide conservée.",
     "durationMs": 160001,
-    "checkedAt": "2026-09-28T14:21:56.960Z",
+    "checkedAt": "2026-09-28T15:38:15.648Z",
     "lastSuccessfulAt": "2026-09-28T10:16:46.391Z",
-    "consecutiveFailures": 1
+    "consecutiveFailures": 2
   },
   {
     "id": "guyane",
@@ -426,9 +426,9 @@
     "discovered": 12,
     "imported": 10,
     "message": "12 pages candidates, 10 fiches extraites",
-    "durationMs": 79105,
-    "checkedAt": "2026-09-28T14:21:56.974Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:56.974Z",
+    "durationMs": 79200,
+    "checkedAt": "2026-09-28T15:38:15.662Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.662Z",
     "consecutiveFailures": 0
   },
   {
@@ -442,10 +442,10 @@
     "discovered": 3,
     "imported": 3,
     "message": "volume suspect (3 < 5) — dernière version valide conservée. 3 pages candidates, 3 fiches extraites",
-    "durationMs": 17375,
-    "checkedAt": "2026-09-28T14:21:56.978Z",
+    "durationMs": 22099,
+    "checkedAt": "2026-09-28T15:38:15.666Z",
     "lastSuccessfulAt": null,
-    "consecutiveFailures": 2
+    "consecutiveFailures": 3
   },
   {
     "id": "reunion",
@@ -458,26 +458,26 @@
     "discovered": 0,
     "imported": 0,
     "message": "volume suspect (0 < 15) ; scan d’ingestion vide — dernière version valide conservée. 0 pages candidates, 0 fiches extraites",
-    "durationMs": 4951,
-    "checkedAt": "2026-09-28T14:21:56.978Z",
+    "durationMs": 5174,
+    "checkedAt": "2026-09-28T15:38:15.666Z",
     "lastSuccessfulAt": null,
-    "consecutiveFailures": 2
+    "consecutiveFailures": 3
   },
   {
     "id": "mayotte",
     "name": "Département-Région de Mayotte — aides aux entreprises",
     "scope": "Mayotte",
-    "success": true,
-    "lifecycleSafe": true,
+    "success": false,
+    "lifecycleSafe": false,
     "emptyIngestion": false,
     "suspiciousVolume": false,
-    "discovered": 29,
-    "imported": 28,
-    "message": "29 pages candidates, 28 fiches extraites",
-    "durationMs": 24725,
-    "checkedAt": "2026-09-28T14:21:56.980Z",
+    "discovered": 0,
+    "imported": 0,
+    "message": "page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://www.mayotte.fr/services-en-ligne/demarches-et-aides/aides-aux-entreprises\", waiting until \"domcontentloaded\"\n — dernière version valide conservée.",
+    "durationMs": 78386,
+    "checkedAt": "2026-09-28T15:38:15.666Z",
     "lastSuccessfulAt": "2026-09-28T14:21:56.980Z",
-    "consecutiveFailures": 0
+    "consecutiveFailures": 1
   },
   {
     "id": "les_aides",
@@ -490,9 +490,9 @@
     "discovered": 0,
     "imported": 0,
     "message": "Source de contrôle accessible — aucune ingestion massive",
-    "durationMs": 1143,
-    "checkedAt": "2026-09-28T14:21:56.980Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:56.980Z",
+    "durationMs": 1200,
+    "checkedAt": "2026-09-28T15:38:15.666Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.666Z",
     "consecutiveFailures": 0
   },
   {
@@ -506,9 +506,9 @@
     "discovered": 0,
     "imported": 0,
     "message": "Source de contrôle accessible — aucune ingestion massive",
-    "durationMs": 2823,
-    "checkedAt": "2026-09-28T14:21:56.980Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:56.980Z",
+    "durationMs": 2888,
+    "checkedAt": "2026-09-28T15:38:15.666Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.666Z",
     "consecutiveFailures": 0
   },
   {
@@ -522,9 +522,9 @@
     "discovered": 18,
     "imported": 18,
     "message": "18 pages candidates, 18 fiches extraites",
-    "durationMs": 7868,
-    "checkedAt": "2026-09-28T14:21:56.981Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:56.981Z",
+    "durationMs": 8928,
+    "checkedAt": "2026-09-28T15:38:15.669Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.669Z",
     "consecutiveFailures": 0
   },
   {
@@ -538,10 +538,10 @@
     "discovered": 0,
     "imported": 0,
     "message": "volume suspect (0 < 3) ; scan d’ingestion vide — dernière version valide conservée. 0 pages candidates, 0 fiches extraites",
-    "durationMs": 7535,
-    "checkedAt": "2026-09-28T14:21:56.981Z",
+    "durationMs": 7962,
+    "checkedAt": "2026-09-28T15:38:15.669Z",
     "lastSuccessfulAt": null,
-    "consecutiveFailures": 2
+    "consecutiveFailures": 3
   },
   {
     "id": "france2030_laureats",
@@ -554,9 +554,9 @@
     "discovered": 0,
     "imported": 0,
     "message": "Source de contrôle inaccessible: HTTP 403",
-    "durationMs": 1737,
-    "checkedAt": "2026-09-28T14:21:56.981Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:56.981Z",
+    "durationMs": 1648,
+    "checkedAt": "2026-09-28T15:38:15.669Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.669Z",
     "consecutiveFailures": 0
   },
   {
@@ -570,9 +570,9 @@
     "discovered": 0,
     "imported": 0,
     "message": "Source de contrôle accessible — aucune ingestion massive",
-    "durationMs": 874,
-    "checkedAt": "2026-09-28T14:21:56.981Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:56.981Z",
+    "durationMs": 832,
+    "checkedAt": "2026-09-28T15:38:15.669Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.669Z",
     "consecutiveFailures": 0
   },
   {
@@ -586,9 +586,9 @@
     "discovered": 2,
     "imported": 2,
     "message": "2 pages candidates, 2 fiches extraites",
-    "durationMs": 6977,
-    "checkedAt": "2026-09-28T14:21:56.982Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:56.982Z",
+    "durationMs": 7914,
+    "checkedAt": "2026-09-28T15:38:15.673Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.673Z",
     "consecutiveFailures": 0
   },
   {
@@ -602,9 +602,9 @@
     "discovered": 5,
     "imported": 5,
     "message": "5 pages candidates, 5 fiches extraites",
-    "durationMs": 8908,
-    "checkedAt": "2026-09-28T14:21:56.983Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:56.983Z",
+    "durationMs": 9157,
+    "checkedAt": "2026-09-28T15:38:15.676Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.676Z",
     "consecutiveFailures": 0
   },
   {
@@ -618,9 +618,9 @@
     "discovered": 0,
     "imported": 0,
     "message": "Source de contrôle inaccessible: HTTP 403",
-    "durationMs": 2823,
-    "checkedAt": "2026-09-28T14:21:56.983Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:56.983Z",
+    "durationMs": 1534,
+    "checkedAt": "2026-09-28T15:38:15.676Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.676Z",
     "consecutiveFailures": 0
   },
   {
@@ -634,10 +634,10 @@
     "discovered": 0,
     "imported": 0,
     "message": "volume suspect (0 < 1) ; scan d’ingestion vide — dernière version valide conservée. 0 pages candidates, 0 fiches extraites",
-    "durationMs": 2523,
-    "checkedAt": "2026-09-28T14:21:56.983Z",
+    "durationMs": 3293,
+    "checkedAt": "2026-09-28T15:38:15.676Z",
     "lastSuccessfulAt": null,
-    "consecutiveFailures": 2
+    "consecutiveFailures": 3
   },
   {
     "id": "bfc_france2030",
@@ -650,9 +650,9 @@
     "discovered": 2,
     "imported": 2,
     "message": "2 pages candidates, 2 fiches extraites",
-    "durationMs": 8605,
-    "checkedAt": "2026-09-28T14:21:56.984Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:56.984Z",
+    "durationMs": 7630,
+    "checkedAt": "2026-09-28T15:38:15.678Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.678Z",
     "consecutiveFailures": 0
   },
   {
@@ -666,9 +666,9 @@
     "discovered": 87,
     "imported": 85,
     "message": "87 pages candidates, 85 fiches extraites",
-    "durationMs": 9270,
-    "checkedAt": "2026-09-28T14:21:56.996Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:56.996Z",
+    "durationMs": 8368,
+    "checkedAt": "2026-09-28T15:38:15.693Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.693Z",
     "consecutiveFailures": 0
   },
   {
@@ -682,10 +682,10 @@
     "discovered": 0,
     "imported": 0,
     "message": "volume suspect (0 < 3) ; scan d’ingestion vide — dernière version valide conservée. 0 pages candidates, 0 fiches extraites",
-    "durationMs": 5376,
-    "checkedAt": "2026-09-28T14:21:56.996Z",
+    "durationMs": 6038,
+    "checkedAt": "2026-09-28T15:38:15.693Z",
     "lastSuccessfulAt": null,
-    "consecutiveFailures": 2
+    "consecutiveFailures": 3
   },
   {
     "id": "bretagne_france2030",
@@ -698,9 +698,9 @@
     "discovered": 2,
     "imported": 2,
     "message": "2 pages candidates, 2 fiches extraites",
-    "durationMs": 7878,
-    "checkedAt": "2026-09-28T14:21:56.997Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:56.997Z",
+    "durationMs": 8027,
+    "checkedAt": "2026-09-28T15:38:15.695Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.695Z",
     "consecutiveFailures": 0
   },
   {
@@ -714,9 +714,9 @@
     "discovered": 0,
     "imported": 0,
     "message": "Source de contrôle accessible — aucune ingestion massive",
-    "durationMs": 629,
-    "checkedAt": "2026-09-28T14:21:56.997Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:56.997Z",
+    "durationMs": 624,
+    "checkedAt": "2026-09-28T15:38:15.695Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.695Z",
     "consecutiveFailures": 0
   },
   {
@@ -730,9 +730,9 @@
     "discovered": 0,
     "imported": 0,
     "message": "Source de contrôle inaccessible: fetch failed",
-    "durationMs": 1098,
-    "checkedAt": "2026-09-28T14:21:56.997Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:56.997Z",
+    "durationMs": 1162,
+    "checkedAt": "2026-09-28T15:38:15.695Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.695Z",
     "consecutiveFailures": 0
   },
   {
@@ -746,10 +746,10 @@
     "discovered": 1,
     "imported": 1,
     "message": "volume suspect (1 < 2) — dernière version valide conservée. 1 pages candidates, 1 fiches extraites",
-    "durationMs": 6970,
-    "checkedAt": "2026-09-28T14:21:56.997Z",
+    "durationMs": 7187,
+    "checkedAt": "2026-09-28T15:38:15.695Z",
     "lastSuccessfulAt": null,
-    "consecutiveFailures": 2
+    "consecutiveFailures": 3
   },
   {
     "id": "cvl_europe",
@@ -762,9 +762,9 @@
     "discovered": 9,
     "imported": 7,
     "message": "9 pages candidates, 7 fiches extraites",
-    "durationMs": 1850,
-    "checkedAt": "2026-09-28T14:21:56.997Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:56.997Z",
+    "durationMs": 13536,
+    "checkedAt": "2026-09-28T15:38:15.697Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.697Z",
     "consecutiveFailures": 0
   },
   {
@@ -778,9 +778,9 @@
     "discovered": 0,
     "imported": 0,
     "message": "Source de contrôle accessible — aucune ingestion massive",
-    "durationMs": 408,
-    "checkedAt": "2026-09-28T14:21:56.998Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:56.998Z",
+    "durationMs": 772,
+    "checkedAt": "2026-09-28T15:38:15.697Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.697Z",
     "consecutiveFailures": 0
   },
   {
@@ -794,9 +794,9 @@
     "discovered": 3,
     "imported": 3,
     "message": "3 pages candidates, 3 fiches extraites",
-    "durationMs": 31927,
-    "checkedAt": "2026-09-28T14:21:56.998Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:56.998Z",
+    "durationMs": 29990,
+    "checkedAt": "2026-09-28T15:38:15.698Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.698Z",
     "consecutiveFailures": 0
   },
   {
@@ -810,9 +810,9 @@
     "discovered": 3,
     "imported": 3,
     "message": "3 pages candidates, 3 fiches extraites",
-    "durationMs": 1340,
-    "checkedAt": "2026-09-28T14:21:56.999Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:56.999Z",
+    "durationMs": 1781,
+    "checkedAt": "2026-09-28T15:38:15.701Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.701Z",
     "consecutiveFailures": 0
   },
   {
@@ -826,9 +826,9 @@
     "discovered": 0,
     "imported": 0,
     "message": "Source de contrôle inaccessible: HTTP 410",
-    "durationMs": 2165,
-    "checkedAt": "2026-09-28T14:21:56.999Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:56.999Z",
+    "durationMs": 2144,
+    "checkedAt": "2026-09-28T15:38:15.701Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.701Z",
     "consecutiveFailures": 0
   },
   {
@@ -842,9 +842,9 @@
     "discovered": 12,
     "imported": 5,
     "message": "12 pages candidates, 5 fiches extraites",
-    "durationMs": 26849,
-    "checkedAt": "2026-09-28T14:21:57.000Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.000Z",
+    "durationMs": 25778,
+    "checkedAt": "2026-09-28T15:38:15.703Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.703Z",
     "consecutiveFailures": 0
   },
   {
@@ -858,10 +858,10 @@
     "discovered": 1,
     "imported": 1,
     "message": "volume suspect (1 < 2) — dernière version valide conservée. 1 pages candidates, 1 fiches extraites",
-    "durationMs": 24782,
-    "checkedAt": "2026-09-28T14:21:57.000Z",
+    "durationMs": 6893,
+    "checkedAt": "2026-09-28T15:38:15.703Z",
     "lastSuccessfulAt": null,
-    "consecutiveFailures": 2
+    "consecutiveFailures": 3
   },
   {
     "id": "guadeloupe_france2030",
@@ -874,10 +874,10 @@
     "discovered": 0,
     "imported": 0,
     "message": "volume suspect (0 < 3) ; scan d’ingestion vide — dernière version valide conservée. 0 pages candidates, 0 fiches extraites",
-    "durationMs": 11220,
-    "checkedAt": "2026-09-28T14:21:57.000Z",
+    "durationMs": 20215,
+    "checkedAt": "2026-09-28T15:38:15.703Z",
     "lastSuccessfulAt": null,
-    "consecutiveFailures": 2
+    "consecutiveFailures": 3
   },
   {
     "id": "guadeloupe_europe",
@@ -890,9 +890,9 @@
     "discovered": 19,
     "imported": 17,
     "message": "19 pages candidates, 17 fiches extraites",
-    "durationMs": 3295,
-    "checkedAt": "2026-09-28T14:21:57.005Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.005Z",
+    "durationMs": 20031,
+    "checkedAt": "2026-09-28T15:38:15.711Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.711Z",
     "consecutiveFailures": 0
   },
   {
@@ -906,9 +906,9 @@
     "discovered": 13,
     "imported": 10,
     "message": "13 pages candidates, 10 fiches extraites",
-    "durationMs": 13250,
-    "checkedAt": "2026-09-28T14:21:57.006Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.006Z",
+    "durationMs": 14993,
+    "checkedAt": "2026-09-28T15:38:15.713Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.713Z",
     "consecutiveFailures": 0
   },
   {
@@ -922,74 +922,74 @@
     "discovered": 20,
     "imported": 11,
     "message": "20 pages candidates, 11 fiches extraites",
-    "durationMs": 16927,
-    "checkedAt": "2026-09-28T14:21:57.007Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.007Z",
+    "durationMs": 13932,
+    "checkedAt": "2026-09-28T15:38:15.715Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.715Z",
     "consecutiveFailures": 0
   },
   {
     "id": "guyane_europe",
     "name": "Europe Guyane — fonds européens",
     "scope": "Guyane",
-    "success": true,
-    "lifecycleSafe": true,
-    "emptyIngestion": false,
+    "success": false,
+    "lifecycleSafe": false,
+    "emptyIngestion": true,
     "suspiciousVolume": false,
     "discovered": 103,
-    "imported": 103,
-    "message": "103 pages candidates, 103 fiches extraites",
-    "durationMs": 11592,
-    "checkedAt": "2026-09-28T14:21:57.026Z",
+    "imported": 0,
+    "message": "scan d’ingestion vide — dernière version valide conservée. 103 pages candidates, 0 fiches extraites",
+    "durationMs": 13874,
+    "checkedAt": "2026-09-28T15:38:15.715Z",
     "lastSuccessfulAt": "2026-09-28T14:21:57.026Z",
-    "consecutiveFailures": 0
+    "consecutiveFailures": 1
   },
   {
     "id": "guyane_europe_aap",
     "name": "Europe Guyane — appels à projets",
     "scope": "Guyane",
-    "success": true,
-    "lifecycleSafe": true,
-    "emptyIngestion": false,
-    "suspiciousVolume": false,
-    "discovered": 172,
-    "imported": 148,
-    "message": "172 pages candidates, 148 fiches extraites",
-    "durationMs": 61382,
-    "checkedAt": "2026-09-28T14:21:57.093Z",
+    "success": false,
+    "lifecycleSafe": false,
+    "emptyIngestion": true,
+    "suspiciousVolume": true,
+    "discovered": 0,
+    "imported": 0,
+    "message": "volume suspect (0 < 2) ; scan d’ingestion vide — dernière version valide conservée. 0 pages candidates, 0 fiches extraites",
+    "durationMs": 9139,
+    "checkedAt": "2026-09-28T15:38:15.715Z",
     "lastSuccessfulAt": "2026-09-28T14:21:57.093Z",
-    "consecutiveFailures": 0
+    "consecutiveFailures": 1
   },
   {
     "id": "guyane_feder",
     "name": "Guyane — FEDER 2021-2027",
     "scope": "Guyane",
-    "success": true,
-    "lifecycleSafe": true,
-    "emptyIngestion": false,
-    "suspiciousVolume": false,
-    "discovered": 100,
-    "imported": 100,
-    "message": "100 pages candidates, 100 fiches extraites",
-    "durationMs": 27289,
-    "checkedAt": "2026-09-28T14:21:57.108Z",
+    "success": false,
+    "lifecycleSafe": false,
+    "emptyIngestion": true,
+    "suspiciousVolume": true,
+    "discovered": 0,
+    "imported": 0,
+    "message": "volume suspect (0 < 1) ; scan d’ingestion vide — dernière version valide conservée. 0 pages candidates, 0 fiches extraites",
+    "durationMs": 684,
+    "checkedAt": "2026-09-28T15:38:15.715Z",
     "lastSuccessfulAt": "2026-09-28T14:21:57.108Z",
-    "consecutiveFailures": 0
+    "consecutiveFailures": 1
   },
   {
     "id": "guyane_feader",
     "name": "Guyane — FEADER / PSN 2023-2027",
     "scope": "Guyane",
-    "success": true,
-    "lifecycleSafe": true,
-    "emptyIngestion": false,
-    "suspiciousVolume": false,
-    "discovered": 101,
-    "imported": 101,
-    "message": "101 pages candidates, 101 fiches extraites",
-    "durationMs": 33743,
-    "checkedAt": "2026-09-28T14:21:57.130Z",
+    "success": false,
+    "lifecycleSafe": false,
+    "emptyIngestion": true,
+    "suspiciousVolume": true,
+    "discovered": 0,
+    "imported": 0,
+    "message": "volume suspect (0 < 1) ; scan d’ingestion vide — dernière version valide conservée. 0 pages candidates, 0 fiches extraites",
+    "durationMs": 498,
+    "checkedAt": "2026-09-28T15:38:15.715Z",
     "lastSuccessfulAt": "2026-09-28T14:21:57.130Z",
-    "consecutiveFailures": 0
+    "consecutiveFailures": 1
   },
   {
     "id": "guyane_france2030",
@@ -1002,10 +1002,10 @@
     "discovered": 1,
     "imported": 1,
     "message": "volume suspect (1 < 2) — dernière version valide conservée. 1 pages candidates, 1 fiches extraites",
-    "durationMs": 9070,
-    "checkedAt": "2026-09-28T14:21:57.131Z",
+    "durationMs": 7719,
+    "checkedAt": "2026-09-28T15:38:15.715Z",
     "lastSuccessfulAt": null,
-    "consecutiveFailures": 2
+    "consecutiveFailures": 3
   },
   {
     "id": "guyane_opendata",
@@ -1018,9 +1018,9 @@
     "discovered": 0,
     "imported": 0,
     "message": "Source de contrôle accessible — aucune ingestion massive",
-    "durationMs": 10114,
-    "checkedAt": "2026-09-28T14:21:57.131Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.131Z",
+    "durationMs": 745,
+    "checkedAt": "2026-09-28T15:38:15.715Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.715Z",
     "consecutiveFailures": 0
   },
   {
@@ -1034,9 +1034,9 @@
     "discovered": 0,
     "imported": 0,
     "message": "Source de contrôle accessible — aucune ingestion massive",
-    "durationMs": 10904,
-    "checkedAt": "2026-09-28T14:21:57.131Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.131Z",
+    "durationMs": 1440,
+    "checkedAt": "2026-09-28T15:38:15.715Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.715Z",
     "consecutiveFailures": 0
   },
   {
@@ -1050,9 +1050,9 @@
     "discovered": 13,
     "imported": 13,
     "message": "13 pages candidates, 13 fiches extraites",
-    "durationMs": 26027,
-    "checkedAt": "2026-09-28T14:21:57.132Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.132Z",
+    "durationMs": 5648,
+    "checkedAt": "2026-09-28T15:38:15.717Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.717Z",
     "consecutiveFailures": 0
   },
   {
@@ -1066,10 +1066,10 @@
     "discovered": 1,
     "imported": 1,
     "message": "volume suspect (1 < 2) — dernière version valide conservée. 1 pages candidates, 1 fiches extraites",
-    "durationMs": 22780,
-    "checkedAt": "2026-09-28T14:21:57.132Z",
+    "durationMs": 4565,
+    "checkedAt": "2026-09-28T15:38:15.717Z",
     "lastSuccessfulAt": null,
-    "consecutiveFailures": 2
+    "consecutiveFailures": 3
   },
   {
     "id": "hdf_europe",
@@ -1082,9 +1082,9 @@
     "discovered": 135,
     "imported": 135,
     "message": "135 pages candidates, 135 fiches extraites",
-    "durationMs": 29772,
-    "checkedAt": "2026-09-28T14:21:57.174Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.174Z",
+    "durationMs": 11884,
+    "checkedAt": "2026-09-28T15:38:15.766Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.766Z",
     "consecutiveFailures": 0
   },
   {
@@ -1098,9 +1098,9 @@
     "discovered": 8,
     "imported": 8,
     "message": "8 pages candidates, 8 fiches extraites",
-    "durationMs": 11165,
-    "checkedAt": "2026-09-28T14:21:57.176Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.176Z",
+    "durationMs": 3102,
+    "checkedAt": "2026-09-28T15:38:15.769Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.769Z",
     "consecutiveFailures": 0
   },
   {
@@ -1114,9 +1114,9 @@
     "discovered": 18,
     "imported": 17,
     "message": "18 pages candidates, 17 fiches extraites",
-    "durationMs": 7897,
-    "checkedAt": "2026-09-28T14:21:57.177Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.177Z",
+    "durationMs": 7069,
+    "checkedAt": "2026-09-28T15:38:15.771Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.771Z",
     "consecutiveFailures": 0
   },
   {
@@ -1130,9 +1130,9 @@
     "discovered": 0,
     "imported": 0,
     "message": "Source de contrôle accessible — aucune ingestion massive",
-    "durationMs": 1303,
-    "checkedAt": "2026-09-28T14:21:57.177Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.177Z",
+    "durationMs": 1131,
+    "checkedAt": "2026-09-28T15:38:15.771Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.771Z",
     "consecutiveFailures": 0
   },
   {
@@ -1146,9 +1146,9 @@
     "discovered": 0,
     "imported": 0,
     "message": "Source de contrôle accessible — aucune ingestion massive",
-    "durationMs": 2727,
-    "checkedAt": "2026-09-28T14:21:57.177Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.177Z",
+    "durationMs": 1892,
+    "checkedAt": "2026-09-28T15:38:15.771Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.771Z",
     "consecutiveFailures": 0
   },
   {
@@ -1162,9 +1162,9 @@
     "discovered": 4,
     "imported": 4,
     "message": "4 pages candidates, 4 fiches extraites",
-    "durationMs": 5507,
-    "checkedAt": "2026-09-28T14:21:57.178Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.178Z",
+    "durationMs": 8256,
+    "checkedAt": "2026-09-28T15:38:15.772Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.772Z",
     "consecutiveFailures": 0
   },
   {
@@ -1178,9 +1178,9 @@
     "discovered": 20,
     "imported": 20,
     "message": "20 pages candidates, 20 fiches extraites",
-    "durationMs": 2076,
-    "checkedAt": "2026-09-28T14:21:57.180Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.180Z",
+    "durationMs": 1518,
+    "checkedAt": "2026-09-28T15:38:15.776Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.776Z",
     "consecutiveFailures": 0
   },
   {
@@ -1194,9 +1194,9 @@
     "discovered": 19,
     "imported": 19,
     "message": "19 pages candidates, 19 fiches extraites",
-    "durationMs": 1127,
-    "checkedAt": "2026-09-28T14:21:57.181Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.181Z",
+    "durationMs": 987,
+    "checkedAt": "2026-09-28T15:38:15.779Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.779Z",
     "consecutiveFailures": 0
   },
   {
@@ -1210,9 +1210,9 @@
     "discovered": 0,
     "imported": 0,
     "message": "Source de contrôle accessible — aucune ingestion massive",
-    "durationMs": 180,
-    "checkedAt": "2026-09-28T14:21:57.181Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.181Z",
+    "durationMs": 300,
+    "checkedAt": "2026-09-28T15:38:15.779Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.779Z",
     "consecutiveFailures": 0
   },
   {
@@ -1225,10 +1225,10 @@
     "suspiciousVolume": false,
     "discovered": 0,
     "imported": 0,
-    "message": "Source de contrôle inaccessible: HTTP 404",
-    "durationMs": 1850,
-    "checkedAt": "2026-09-28T14:21:57.181Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.181Z",
+    "message": "Source de contrôle inaccessible: This operation was aborted",
+    "durationMs": 30700,
+    "checkedAt": "2026-09-28T15:38:15.779Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.779Z",
     "consecutiveFailures": 0
   },
   {
@@ -1242,10 +1242,10 @@
     "discovered": 0,
     "imported": 0,
     "message": "volume suspect (0 < 5) ; scan d’ingestion vide — dernière version valide conservée. 0 pages candidates, 0 fiches extraites",
-    "durationMs": 5033,
-    "checkedAt": "2026-09-28T14:21:57.181Z",
+    "durationMs": 4720,
+    "checkedAt": "2026-09-28T15:38:15.779Z",
     "lastSuccessfulAt": null,
-    "consecutiveFailures": 2
+    "consecutiveFailures": 3
   },
   {
     "id": "reunion_france2030",
@@ -1258,10 +1258,10 @@
     "discovered": 0,
     "imported": 0,
     "message": "volume suspect (0 < 2) ; scan d’ingestion vide — dernière version valide conservée. 0 pages candidates, 0 fiches extraites",
-    "durationMs": 5428,
-    "checkedAt": "2026-09-28T14:21:57.181Z",
+    "durationMs": 4747,
+    "checkedAt": "2026-09-28T15:38:15.779Z",
     "lastSuccessfulAt": null,
-    "consecutiveFailures": 2
+    "consecutiveFailures": 3
   },
   {
     "id": "reunion_feder",
@@ -1274,10 +1274,10 @@
     "discovered": 0,
     "imported": 0,
     "message": "volume suspect (0 < 2) ; scan d’ingestion vide — dernière version valide conservée. 0 pages candidates, 0 fiches extraites",
-    "durationMs": 7143,
-    "checkedAt": "2026-09-28T14:21:57.181Z",
+    "durationMs": 8007,
+    "checkedAt": "2026-09-28T15:38:15.779Z",
     "lastSuccessfulAt": null,
-    "consecutiveFailures": 2
+    "consecutiveFailures": 3
   },
   {
     "id": "reunion_europe_filter",
@@ -1290,10 +1290,10 @@
     "discovered": 0,
     "imported": 0,
     "message": "volume suspect (0 < 4) ; scan d’ingestion vide — dernière version valide conservée. 0 pages candidates, 0 fiches extraites",
-    "durationMs": 7065,
-    "checkedAt": "2026-09-28T14:21:57.181Z",
+    "durationMs": 8162,
+    "checkedAt": "2026-09-28T15:38:15.779Z",
     "lastSuccessfulAt": null,
-    "consecutiveFailures": 2
+    "consecutiveFailures": 3
   },
   {
     "id": "reunion_feader",
@@ -1306,10 +1306,10 @@
     "discovered": 0,
     "imported": 0,
     "message": "volume suspect (0 < 1) ; scan d’ingestion vide — dernière version valide conservée. 0 pages candidates, 0 fiches extraites",
-    "durationMs": 4196,
-    "checkedAt": "2026-09-28T14:21:57.181Z",
+    "durationMs": 4515,
+    "checkedAt": "2026-09-28T15:38:15.779Z",
     "lastSuccessfulAt": null,
-    "consecutiveFailures": 2
+    "consecutiveFailures": 3
   },
   {
     "id": "reunion_opendata",
@@ -1322,9 +1322,9 @@
     "discovered": 0,
     "imported": 0,
     "message": "Source de contrôle accessible — aucune ingestion massive",
-    "durationMs": 3088,
-    "checkedAt": "2026-09-28T14:21:57.181Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.181Z",
+    "durationMs": 554,
+    "checkedAt": "2026-09-28T15:38:15.779Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.779Z",
     "consecutiveFailures": 0
   },
   {
@@ -1338,9 +1338,9 @@
     "discovered": 0,
     "imported": 0,
     "message": "Source de contrôle accessible — aucune ingestion massive",
-    "durationMs": 533,
-    "checkedAt": "2026-09-28T14:21:57.181Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.181Z",
+    "durationMs": 1057,
+    "checkedAt": "2026-09-28T15:38:15.779Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.779Z",
     "consecutiveFailures": 0
   },
   {
@@ -1354,9 +1354,9 @@
     "discovered": 18,
     "imported": 17,
     "message": "18 pages candidates, 17 fiches extraites",
-    "durationMs": 11348,
-    "checkedAt": "2026-09-28T14:21:57.189Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.189Z",
+    "durationMs": 5807,
+    "checkedAt": "2026-09-28T15:38:15.796Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.796Z",
     "consecutiveFailures": 0
   },
   {
@@ -1370,9 +1370,9 @@
     "discovered": 21,
     "imported": 19,
     "message": "21 pages candidates, 19 fiches extraites",
-    "durationMs": 14052,
-    "checkedAt": "2026-09-28T14:21:57.198Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.198Z",
+    "durationMs": 6007,
+    "checkedAt": "2026-09-28T15:38:15.807Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.807Z",
     "consecutiveFailures": 0
   },
   {
@@ -1386,9 +1386,9 @@
     "discovered": 22,
     "imported": 14,
     "message": "22 pages candidates, 14 fiches extraites",
-    "durationMs": 10847,
-    "checkedAt": "2026-09-28T14:21:57.209Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.209Z",
+    "durationMs": 9171,
+    "checkedAt": "2026-09-28T15:38:15.823Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.823Z",
     "consecutiveFailures": 0
   },
   {
@@ -1402,9 +1402,9 @@
     "discovered": 29,
     "imported": 12,
     "message": "29 pages candidates, 12 fiches extraites",
-    "durationMs": 12722,
-    "checkedAt": "2026-09-28T14:21:57.216Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.216Z",
+    "durationMs": 11186,
+    "checkedAt": "2026-09-28T15:38:15.829Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.829Z",
     "consecutiveFailures": 0
   },
   {
@@ -1418,9 +1418,9 @@
     "discovered": 15,
     "imported": 14,
     "message": "15 pages candidates, 14 fiches extraites",
-    "durationMs": 7955,
-    "checkedAt": "2026-09-28T14:21:57.221Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.221Z",
+    "durationMs": 13768,
+    "checkedAt": "2026-09-28T15:38:15.837Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.837Z",
     "consecutiveFailures": 0
   },
   {
@@ -1434,10 +1434,10 @@
     "discovered": 1,
     "imported": 1,
     "message": "volume suspect (1 < 3) — dernière version valide conservée. 1 pages candidates, 1 fiches extraites",
-    "durationMs": 8548,
-    "checkedAt": "2026-09-28T14:21:57.221Z",
+    "durationMs": 8694,
+    "checkedAt": "2026-09-28T15:38:15.837Z",
     "lastSuccessfulAt": null,
-    "consecutiveFailures": 2
+    "consecutiveFailures": 3
   },
   {
     "id": "martinique_europe_beneficiaires",
@@ -1450,9 +1450,9 @@
     "discovered": 0,
     "imported": 0,
     "message": "Source de contrôle accessible — aucune ingestion massive",
-    "durationMs": 1523,
-    "checkedAt": "2026-09-28T14:21:57.221Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.221Z",
+    "durationMs": 980,
+    "checkedAt": "2026-09-28T15:38:15.837Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.837Z",
     "consecutiveFailures": 0
   },
   {
@@ -1466,9 +1466,9 @@
     "discovered": 0,
     "imported": 0,
     "message": "Source de contrôle accessible — aucune ingestion massive",
-    "durationMs": 1925,
-    "checkedAt": "2026-09-28T14:21:57.221Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.221Z",
+    "durationMs": 6987,
+    "checkedAt": "2026-09-28T15:38:15.837Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.837Z",
     "consecutiveFailures": 0
   },
   {
@@ -1482,26 +1482,26 @@
     "discovered": 0,
     "imported": 0,
     "message": "Source de contrôle accessible — aucune ingestion massive",
-    "durationMs": 554,
-    "checkedAt": "2026-09-28T14:21:57.221Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.221Z",
+    "durationMs": 732,
+    "checkedAt": "2026-09-28T15:38:15.837Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.837Z",
     "consecutiveFailures": 0
   },
   {
     "id": "mayotte_aap",
     "name": "Département-Région de Mayotte — appels à projets / AMI",
     "scope": "Mayotte",
-    "success": true,
-    "lifecycleSafe": true,
+    "success": false,
+    "lifecycleSafe": false,
     "emptyIngestion": false,
     "suspiciousVolume": false,
-    "discovered": 9,
-    "imported": 8,
-    "message": "9 pages candidates, 8 fiches extraites",
-    "durationMs": 3399,
-    "checkedAt": "2026-09-28T14:21:57.223Z",
+    "discovered": 0,
+    "imported": 0,
+    "message": "page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://www.mayotte.fr/services-en-ligne/opportunites/appels-a-projets\", waiting until \"domcontentloaded\"\n — dernière version valide conservée.",
+    "durationMs": 90973,
+    "checkedAt": "2026-09-28T15:38:15.837Z",
     "lastSuccessfulAt": "2026-09-28T14:21:57.223Z",
-    "consecutiveFailures": 0
+    "consecutiveFailures": 1
   },
   {
     "id": "mayotte_adim",
@@ -1514,9 +1514,9 @@
     "discovered": 7,
     "imported": 6,
     "message": "7 pages candidates, 6 fiches extraites",
-    "durationMs": 2878,
-    "checkedAt": "2026-09-28T14:21:57.224Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.224Z",
+    "durationMs": 2829,
+    "checkedAt": "2026-09-28T15:38:15.838Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.838Z",
     "consecutiveFailures": 0
   },
   {
@@ -1530,10 +1530,10 @@
     "discovered": 1,
     "imported": 1,
     "message": "volume suspect (1 < 3) — dernière version valide conservée. 1 pages candidates, 1 fiches extraites",
-    "durationMs": 14927,
-    "checkedAt": "2026-09-28T14:21:57.224Z",
+    "durationMs": 12839,
+    "checkedAt": "2026-09-28T15:38:15.838Z",
     "lastSuccessfulAt": null,
-    "consecutiveFailures": 2
+    "consecutiveFailures": 3
   },
   {
     "id": "mayotte_europe",
@@ -1546,9 +1546,9 @@
     "discovered": 7,
     "imported": 4,
     "message": "7 pages candidates, 4 fiches extraites",
-    "durationMs": 14152,
-    "checkedAt": "2026-09-28T14:21:57.225Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.225Z",
+    "durationMs": 8189,
+    "checkedAt": "2026-09-28T15:38:15.839Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.839Z",
     "consecutiveFailures": 0
   },
   {
@@ -1562,9 +1562,9 @@
     "discovered": 10,
     "imported": 4,
     "message": "10 pages candidates, 4 fiches extraites",
-    "durationMs": 18667,
-    "checkedAt": "2026-09-28T14:21:57.225Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.225Z",
+    "durationMs": 20614,
+    "checkedAt": "2026-09-28T15:38:15.840Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.840Z",
     "consecutiveFailures": 0
   },
   {
@@ -1578,9 +1578,9 @@
     "discovered": 0,
     "imported": 0,
     "message": "Source de contrôle accessible — aucune ingestion massive",
-    "durationMs": 611,
-    "checkedAt": "2026-09-28T14:21:57.225Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.225Z",
+    "durationMs": 2253,
+    "checkedAt": "2026-09-28T15:38:15.840Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.840Z",
     "consecutiveFailures": 0
   },
   {
@@ -1594,10 +1594,10 @@
     "discovered": 0,
     "imported": 0,
     "message": "page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.mayotte.gouv.fr/Actions-de-l-Etat/Europe/Les-fiches-actions-des-programmes-FEDER-et-FSE-2021-2027\nCall log:\n  - navigating to \"https://www.mayotte.gouv.fr/Actions-de-l-Etat/Europe/Les-fiches-actions-des-programmes-FEDER-et-FSE-2021-2027\", waiting until \"domcontentloaded\"\n — dernière version valide conservée.",
-    "durationMs": 18276,
-    "checkedAt": "2026-09-28T14:21:57.225Z",
+    "durationMs": 13400,
+    "checkedAt": "2026-09-28T15:38:15.840Z",
     "lastSuccessfulAt": null,
-    "consecutiveFailures": 2
+    "consecutiveFailures": 3
   },
   {
     "id": "mayotte_feader",
@@ -1610,10 +1610,10 @@
     "discovered": 0,
     "imported": 0,
     "message": "page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://daaf.mayotte.agriculture.gouv.fr/programmation-2023-2027-r177.html\", waiting until \"domcontentloaded\"\n — dernière version valide conservée.",
-    "durationMs": 86926,
-    "checkedAt": "2026-09-28T14:21:57.225Z",
+    "durationMs": 85928,
+    "checkedAt": "2026-09-28T15:38:15.840Z",
     "lastSuccessfulAt": null,
-    "consecutiveFailures": 2
+    "consecutiveFailures": 3
   },
   {
     "id": "normandie_entreprises",
@@ -1626,10 +1626,10 @@
     "discovered": 0,
     "imported": 0,
     "message": "volume suspect (0 < 5) ; scan d’ingestion vide — dernière version valide conservée. 0 pages candidates, 0 fiches extraites",
-    "durationMs": 6794,
-    "checkedAt": "2026-09-28T14:21:57.225Z",
+    "durationMs": 4635,
+    "checkedAt": "2026-09-28T15:38:15.840Z",
     "lastSuccessfulAt": null,
-    "consecutiveFailures": 2
+    "consecutiveFailures": 3
   },
   {
     "id": "normandie_france2030",
@@ -1642,10 +1642,10 @@
     "discovered": 1,
     "imported": 1,
     "message": "volume suspect (1 < 3) — dernière version valide conservée. 1 pages candidates, 1 fiches extraites",
-    "durationMs": 3268,
-    "checkedAt": "2026-09-28T14:21:57.226Z",
+    "durationMs": 3747,
+    "checkedAt": "2026-09-28T15:38:15.840Z",
     "lastSuccessfulAt": null,
-    "consecutiveFailures": 2
+    "consecutiveFailures": 3
   },
   {
     "id": "normandie_europe",
@@ -1658,10 +1658,10 @@
     "discovered": 0,
     "imported": 0,
     "message": "volume suspect (0 < 3) ; scan d’ingestion vide — dernière version valide conservée. 0 pages candidates, 0 fiches extraites",
-    "durationMs": 5103,
-    "checkedAt": "2026-09-28T14:21:57.226Z",
+    "durationMs": 4815,
+    "checkedAt": "2026-09-28T15:38:15.840Z",
     "lastSuccessfulAt": null,
-    "consecutiveFailures": 2
+    "consecutiveFailures": 3
   },
   {
     "id": "normandie_feader",
@@ -1674,10 +1674,10 @@
     "discovered": 0,
     "imported": 0,
     "message": "volume suspect (0 < 3) ; scan d’ingestion vide — dernière version valide conservée. 0 pages candidates, 0 fiches extraites",
-    "durationMs": 4833,
-    "checkedAt": "2026-09-28T14:21:57.226Z",
+    "durationMs": 4621,
+    "checkedAt": "2026-09-28T15:38:15.840Z",
     "lastSuccessfulAt": null,
-    "consecutiveFailures": 2
+    "consecutiveFailures": 3
   },
   {
     "id": "normandie_europe_ressources",
@@ -1690,10 +1690,10 @@
     "discovered": 0,
     "imported": 0,
     "message": "volume suspect (0 < 5) ; scan d’ingestion vide — dernière version valide conservée. 0 pages candidates, 0 fiches extraites",
-    "durationMs": 4813,
-    "checkedAt": "2026-09-28T14:21:57.226Z",
+    "durationMs": 4568,
+    "checkedAt": "2026-09-28T15:38:15.840Z",
     "lastSuccessfulAt": null,
-    "consecutiveFailures": 2
+    "consecutiveFailures": 3
   },
   {
     "id": "normandie_europe_suivi",
@@ -1706,9 +1706,9 @@
     "discovered": 0,
     "imported": 0,
     "message": "Source de contrôle inaccessible: HTTP 403",
-    "durationMs": 781,
-    "checkedAt": "2026-09-28T14:21:57.226Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.226Z",
+    "durationMs": 728,
+    "checkedAt": "2026-09-28T15:38:15.840Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.840Z",
     "consecutiveFailures": 0
   },
   {
@@ -1722,9 +1722,9 @@
     "discovered": 0,
     "imported": 0,
     "message": "Source de contrôle accessible — aucune ingestion massive",
-    "durationMs": 2478,
-    "checkedAt": "2026-09-28T14:21:57.226Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.226Z",
+    "durationMs": 828,
+    "checkedAt": "2026-09-28T15:38:15.840Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.840Z",
     "consecutiveFailures": 0
   },
   {
@@ -1738,9 +1738,9 @@
     "discovered": 0,
     "imported": 0,
     "message": "Source de contrôle accessible — aucune ingestion massive",
-    "durationMs": 955,
-    "checkedAt": "2026-09-28T14:21:57.226Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.226Z",
+    "durationMs": 2031,
+    "checkedAt": "2026-09-28T15:38:15.840Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.840Z",
     "consecutiveFailures": 0
   },
   {
@@ -1754,9 +1754,9 @@
     "discovered": 203,
     "imported": 203,
     "message": "203 pages candidates, 203 fiches extraites",
-    "durationMs": 48691,
-    "checkedAt": "2026-09-28T14:21:57.293Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.293Z",
+    "durationMs": 56936,
+    "checkedAt": "2026-09-28T15:38:15.936Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.936Z",
     "consecutiveFailures": 0
   },
   {
@@ -1770,10 +1770,10 @@
     "discovered": 0,
     "imported": 0,
     "message": "volume suspect (0 < 3) ; scan d’ingestion vide — dernière version valide conservée. 0 pages candidates, 0 fiches extraites",
-    "durationMs": 6346,
-    "checkedAt": "2026-09-28T14:21:57.293Z",
+    "durationMs": 6743,
+    "checkedAt": "2026-09-28T15:38:15.936Z",
     "lastSuccessfulAt": null,
-    "consecutiveFailures": 2
+    "consecutiveFailures": 3
   },
   {
     "id": "nouvelle_aquitaine_europe_aap",
@@ -1786,9 +1786,9 @@
     "discovered": 9,
     "imported": 9,
     "message": "9 pages candidates, 9 fiches extraites",
-    "durationMs": 1936,
-    "checkedAt": "2026-09-28T14:21:57.294Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.294Z",
+    "durationMs": 1780,
+    "checkedAt": "2026-09-28T15:38:15.939Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.939Z",
     "consecutiveFailures": 0
   },
   {
@@ -1802,9 +1802,9 @@
     "discovered": 5,
     "imported": 4,
     "message": "5 pages candidates, 4 fiches extraites",
-    "durationMs": 5130,
-    "checkedAt": "2026-09-28T14:21:57.295Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.295Z",
+    "durationMs": 5411,
+    "checkedAt": "2026-09-28T15:38:15.940Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.940Z",
     "consecutiveFailures": 0
   },
   {
@@ -1818,10 +1818,10 @@
     "discovered": 2,
     "imported": 2,
     "message": "volume suspect (2 < 4) — dernière version valide conservée. 2 pages candidates, 2 fiches extraites",
-    "durationMs": 842,
-    "checkedAt": "2026-09-28T14:21:57.295Z",
+    "durationMs": 1828,
+    "checkedAt": "2026-09-28T15:38:15.941Z",
     "lastSuccessfulAt": null,
-    "consecutiveFailures": 2
+    "consecutiveFailures": 3
   },
   {
     "id": "nouvelle_aquitaine_france2030_pref",
@@ -1834,9 +1834,9 @@
     "discovered": 0,
     "imported": 0,
     "message": "Source de contrôle inaccessible: HTTP 403",
-    "durationMs": 1581,
-    "checkedAt": "2026-09-28T14:21:57.295Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.295Z",
+    "durationMs": 1538,
+    "checkedAt": "2026-09-28T15:38:15.941Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.941Z",
     "consecutiveFailures": 0
   },
   {
@@ -1850,9 +1850,9 @@
     "discovered": 0,
     "imported": 0,
     "message": "Source de contrôle accessible — aucune ingestion massive",
-    "durationMs": 536,
-    "checkedAt": "2026-09-28T14:21:57.295Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.295Z",
+    "durationMs": 953,
+    "checkedAt": "2026-09-28T15:38:15.941Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.941Z",
     "consecutiveFailures": 0
   },
   {
@@ -1866,9 +1866,9 @@
     "discovered": 0,
     "imported": 0,
     "message": "Source de contrôle accessible — aucune ingestion massive",
-    "durationMs": 294,
-    "checkedAt": "2026-09-28T14:21:57.295Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.295Z",
+    "durationMs": 399,
+    "checkedAt": "2026-09-28T15:38:15.941Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.941Z",
     "consecutiveFailures": 0
   },
   {
@@ -1882,9 +1882,9 @@
     "discovered": 0,
     "imported": 0,
     "message": "Source de contrôle accessible — aucune ingestion massive",
-    "durationMs": 1265,
-    "checkedAt": "2026-09-28T14:21:57.295Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.295Z",
+    "durationMs": 1451,
+    "checkedAt": "2026-09-28T15:38:15.941Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:15.941Z",
     "consecutiveFailures": 0
   },
   {
@@ -1898,9 +1898,9 @@
     "discovered": 229,
     "imported": 228,
     "message": "229 pages candidates, 228 fiches extraites",
-    "durationMs": 87015,
-    "checkedAt": "2026-09-28T14:21:57.416Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.416Z",
+    "durationMs": 100152,
+    "checkedAt": "2026-09-28T15:38:16.093Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:16.093Z",
     "consecutiveFailures": 0
   },
   {
@@ -1914,9 +1914,9 @@
     "discovered": 230,
     "imported": 229,
     "message": "230 pages candidates, 229 fiches extraites",
-    "durationMs": 105320,
-    "checkedAt": "2026-09-28T14:21:57.535Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.535Z",
+    "durationMs": 104141,
+    "checkedAt": "2026-09-28T15:38:16.246Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:16.246Z",
     "consecutiveFailures": 0
   },
   {
@@ -1930,9 +1930,9 @@
     "discovered": 9,
     "imported": 5,
     "message": "9 pages candidates, 5 fiches extraites",
-    "durationMs": 25228,
-    "checkedAt": "2026-09-28T14:21:57.536Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.536Z",
+    "durationMs": 27564,
+    "checkedAt": "2026-09-28T15:38:16.248Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:16.248Z",
     "consecutiveFailures": 0
   },
   {
@@ -1946,9 +1946,9 @@
     "discovered": 5,
     "imported": 4,
     "message": "5 pages candidates, 4 fiches extraites",
-    "durationMs": 6943,
-    "checkedAt": "2026-09-28T14:21:57.536Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.536Z",
+    "durationMs": 2333,
+    "checkedAt": "2026-09-28T15:38:16.250Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:16.250Z",
     "consecutiveFailures": 0
   },
   {
@@ -1962,9 +1962,9 @@
     "discovered": 4,
     "imported": 4,
     "message": "4 pages candidates, 4 fiches extraites",
-    "durationMs": 2300,
-    "checkedAt": "2026-09-28T14:21:57.537Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.537Z",
+    "durationMs": 8888,
+    "checkedAt": "2026-09-28T15:38:16.251Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:16.251Z",
     "consecutiveFailures": 0
   },
   {
@@ -1978,9 +1978,9 @@
     "discovered": 1,
     "imported": 1,
     "message": "Page officielle analysée: FOSTER Région Occitanie — Prêt innovation à taux 0%",
-    "durationMs": 892,
-    "checkedAt": "2026-09-28T14:21:57.538Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.538Z",
+    "durationMs": 1636,
+    "checkedAt": "2026-09-28T15:38:16.252Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:16.252Z",
     "consecutiveFailures": 0
   },
   {
@@ -1994,9 +1994,9 @@
     "discovered": 4,
     "imported": 4,
     "message": "4 pages candidates, 4 fiches extraites",
-    "durationMs": 2503,
-    "checkedAt": "2026-09-28T14:21:57.539Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.539Z",
+    "durationMs": 2427,
+    "checkedAt": "2026-09-28T15:38:16.254Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:16.254Z",
     "consecutiveFailures": 0
   },
   {
@@ -2010,9 +2010,9 @@
     "discovered": 4,
     "imported": 4,
     "message": "4 pages candidates, 4 fiches extraites",
-    "durationMs": 2051,
-    "checkedAt": "2026-09-28T14:21:57.539Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.539Z",
+    "durationMs": 8688,
+    "checkedAt": "2026-09-28T15:38:16.256Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:16.256Z",
     "consecutiveFailures": 0
   },
   {
@@ -2026,9 +2026,9 @@
     "discovered": 0,
     "imported": 0,
     "message": "Source de contrôle inaccessible: HTTP 403",
-    "durationMs": 1180,
-    "checkedAt": "2026-09-28T14:21:57.540Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.540Z",
+    "durationMs": 1329,
+    "checkedAt": "2026-09-28T15:38:16.256Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:16.256Z",
     "consecutiveFailures": 0
   },
   {
@@ -2042,9 +2042,9 @@
     "discovered": 0,
     "imported": 0,
     "message": "Source de contrôle accessible — aucune ingestion massive",
-    "durationMs": 935,
-    "checkedAt": "2026-09-28T14:21:57.540Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.540Z",
+    "durationMs": 1059,
+    "checkedAt": "2026-09-28T15:38:16.256Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:16.256Z",
     "consecutiveFailures": 0
   },
   {
@@ -2058,10 +2058,10 @@
     "discovered": 2,
     "imported": 2,
     "message": "volume suspect (2 < 3) — dernière version valide conservée. 2 pages candidates, 2 fiches extraites",
-    "durationMs": 11983,
-    "checkedAt": "2026-09-28T14:21:57.540Z",
+    "durationMs": 11717,
+    "checkedAt": "2026-09-28T15:38:16.257Z",
     "lastSuccessfulAt": null,
-    "consecutiveFailures": 2
+    "consecutiveFailures": 3
   },
   {
     "id": "pdl_feder",
@@ -2074,9 +2074,9 @@
     "discovered": 38,
     "imported": 28,
     "message": "38 pages candidates, 28 fiches extraites",
-    "durationMs": 7883,
-    "checkedAt": "2026-09-28T14:21:57.546Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.546Z",
+    "durationMs": 8308,
+    "checkedAt": "2026-09-28T15:38:16.265Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:16.265Z",
     "consecutiveFailures": 0
   },
   {
@@ -2090,9 +2090,9 @@
     "discovered": 39,
     "imported": 37,
     "message": "39 pages candidates, 37 fiches extraites",
-    "durationMs": 20147,
-    "checkedAt": "2026-09-28T14:21:57.557Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.557Z",
+    "durationMs": 19304,
+    "checkedAt": "2026-09-28T15:38:16.280Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:16.280Z",
     "consecutiveFailures": 0
   },
   {
@@ -2106,9 +2106,9 @@
     "discovered": 36,
     "imported": 27,
     "message": "36 pages candidates, 27 fiches extraites",
-    "durationMs": 14245,
-    "checkedAt": "2026-09-28T14:21:57.562Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.562Z",
+    "durationMs": 12660,
+    "checkedAt": "2026-09-28T15:38:16.290Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:16.290Z",
     "consecutiveFailures": 0
   },
   {
@@ -2120,28 +2120,28 @@
     "emptyIngestion": false,
     "suspiciousVolume": false,
     "discovered": 38,
-    "imported": 38,
-    "message": "38 pages candidates, 38 fiches extraites",
-    "durationMs": 40697,
-    "checkedAt": "2026-09-28T14:21:57.567Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.567Z",
+    "imported": 30,
+    "message": "38 pages candidates, 30 fiches extraites",
+    "durationMs": 13733,
+    "checkedAt": "2026-09-28T15:38:16.299Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:16.299Z",
     "consecutiveFailures": 0
   },
   {
     "id": "pdl_innovation",
     "name": "Pays de la Loire Innovation — Région / Bpifrance",
     "scope": "Pays de la Loire",
-    "success": true,
-    "lifecycleSafe": true,
-    "emptyIngestion": false,
+    "success": false,
+    "lifecycleSafe": false,
+    "emptyIngestion": true,
     "suspiciousVolume": false,
-    "discovered": 23,
-    "imported": 23,
-    "message": "23 pages candidates, 23 fiches extraites",
-    "durationMs": 23175,
-    "checkedAt": "2026-09-28T14:21:57.572Z",
+    "discovered": 98,
+    "imported": 0,
+    "message": "scan d’ingestion vide — dernière version valide conservée. 98 pages candidates, 0 fiches extraites",
+    "durationMs": 69893,
+    "checkedAt": "2026-09-28T15:38:16.299Z",
     "lastSuccessfulAt": "2026-09-28T14:21:57.572Z",
-    "consecutiveFailures": 0
+    "consecutiveFailures": 1
   },
   {
     "id": "pdl_open_data_portal",
@@ -2154,9 +2154,9 @@
     "discovered": 0,
     "imported": 0,
     "message": "Source de contrôle accessible — aucune ingestion massive",
-    "durationMs": 1187,
-    "checkedAt": "2026-09-28T14:21:57.572Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.572Z",
+    "durationMs": 1325,
+    "checkedAt": "2026-09-28T15:38:16.299Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:16.299Z",
     "consecutiveFailures": 0
   },
   {
@@ -2170,9 +2170,9 @@
     "discovered": 280,
     "imported": 280,
     "message": "280 pages candidates, 280 fiches extraites",
-    "durationMs": 34775,
-    "checkedAt": "2026-09-28T14:21:57.642Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.642Z",
+    "durationMs": 25391,
+    "checkedAt": "2026-09-28T15:38:16.387Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:16.387Z",
     "consecutiveFailures": 0
   },
   {
@@ -2186,9 +2186,9 @@
     "discovered": 0,
     "imported": 0,
     "message": "Source de contrôle accessible — aucune ingestion massive",
-    "durationMs": 1745,
-    "checkedAt": "2026-09-28T14:21:57.642Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.642Z",
+    "durationMs": 1098,
+    "checkedAt": "2026-09-28T15:38:16.387Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:16.387Z",
     "consecutiveFailures": 0
   },
   {
@@ -2202,9 +2202,9 @@
     "discovered": 13,
     "imported": 13,
     "message": "13 pages candidates, 13 fiches extraites",
-    "durationMs": 5621,
-    "checkedAt": "2026-09-28T14:21:57.643Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.643Z",
+    "durationMs": 2803,
+    "checkedAt": "2026-09-28T15:38:16.390Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:16.390Z",
     "consecutiveFailures": 0
   },
   {
@@ -2218,9 +2218,9 @@
     "discovered": 13,
     "imported": 13,
     "message": "13 pages candidates, 13 fiches extraites",
-    "durationMs": 3646,
-    "checkedAt": "2026-09-28T14:21:57.645Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.645Z",
+    "durationMs": 1702,
+    "checkedAt": "2026-09-28T15:38:16.395Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:16.395Z",
     "consecutiveFailures": 0
   },
   {
@@ -2234,9 +2234,9 @@
     "discovered": 13,
     "imported": 13,
     "message": "13 pages candidates, 13 fiches extraites",
-    "durationMs": 4798,
-    "checkedAt": "2026-09-28T14:21:57.646Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.646Z",
+    "durationMs": 1246,
+    "checkedAt": "2026-09-28T15:38:16.398Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:16.398Z",
     "consecutiveFailures": 0
   },
   {
@@ -2250,9 +2250,9 @@
     "discovered": 9,
     "imported": 9,
     "message": "9 pages candidates, 9 fiches extraites",
-    "durationMs": 3282,
-    "checkedAt": "2026-09-28T14:21:57.647Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.647Z",
+    "durationMs": 1841,
+    "checkedAt": "2026-09-28T15:38:16.401Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:16.401Z",
     "consecutiveFailures": 0
   },
   {
@@ -2266,9 +2266,9 @@
     "discovered": 28,
     "imported": 28,
     "message": "28 pages candidates, 28 fiches extraites",
-    "durationMs": 3362,
-    "checkedAt": "2026-09-28T14:21:57.650Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.650Z",
+    "durationMs": 1099,
+    "checkedAt": "2026-09-28T15:38:16.408Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:16.408Z",
     "consecutiveFailures": 0
   },
   {
@@ -2282,9 +2282,9 @@
     "discovered": 0,
     "imported": 0,
     "message": "Source de contrôle accessible — aucune ingestion massive",
-    "durationMs": 807,
-    "checkedAt": "2026-09-28T14:21:57.650Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.650Z",
+    "durationMs": 1006,
+    "checkedAt": "2026-09-28T15:38:16.408Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:16.408Z",
     "consecutiveFailures": 0
   },
   {
@@ -2298,9 +2298,9 @@
     "discovered": 0,
     "imported": 0,
     "message": "Source de contrôle accessible — aucune ingestion massive",
-    "durationMs": 1315,
-    "checkedAt": "2026-09-28T14:21:57.650Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.650Z",
+    "durationMs": 765,
+    "checkedAt": "2026-09-28T15:38:16.408Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:16.408Z",
     "consecutiveFailures": 0
   },
   {
@@ -2314,9 +2314,9 @@
     "discovered": 1,
     "imported": 1,
     "message": "Page officielle analysée: Prêt FEDER Sud Innovation — financement à taux zéro",
-    "durationMs": 152,
-    "checkedAt": "2026-09-28T14:21:57.652Z",
-    "lastSuccessfulAt": "2026-09-28T14:21:57.652Z",
+    "durationMs": 191,
+    "checkedAt": "2026-09-28T15:38:16.410Z",
+    "lastSuccessfulAt": "2026-09-28T15:38:16.410Z",
     "consecutiveFailures": 0
   }
 ]

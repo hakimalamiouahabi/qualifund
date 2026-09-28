@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-09-28T14:30:08.555Z",
+  "generatedAt": "2026-09-28T15:47:28.344Z",
   "version": "12.2.0",
-  "activeFiches": 2187,
-  "verifiedFiches": 5,
+  "activeFiches": 2173,
+  "verifiedFiches": 4,
   "criticalFields": [
     "objective",
     "beneficiaries",
@@ -14,32 +14,32 @@
     "selectionCriteria"
   ],
   "missingEvidenceABByField": {
-    "objective": 2128,
-    "beneficiaries": 2172,
-    "financialTerms": 2168,
-    "projectsExpected": 2181,
-    "eligibleExpenses": 2179,
-    "calendar": 2175,
-    "prerequisites": 2163,
-    "selectionCriteria": 2173
+    "objective": 2108,
+    "beneficiaries": 2152,
+    "financialTerms": 2155,
+    "projectsExpected": 2168,
+    "eligibleExpenses": 2164,
+    "calendar": 2163,
+    "prerequisites": 2151,
+    "selectionCriteria": 2161
   },
   "qaFlags": {
-    "MISSING_DEADLINE": 1774,
-    "MISSING_ELIGIBLE_EXPENSES": 182,
-    "MISSING_PREREQUISITES": 900,
-    "MISSING_SELECTION_CRITERIA": 2173,
-    "MISSING_CDC": 1979,
-    "MISSING_DISBURSEMENT_TERMS": 2174,
+    "MISSING_DEADLINE": 1753,
+    "MISSING_ELIGIBLE_EXPENSES": 166,
+    "MISSING_PREREQUISITES": 887,
+    "MISSING_SELECTION_CRITERIA": 2161,
+    "MISSING_CDC": 1963,
+    "MISSING_DISBURSEMENT_TERMS": 2162,
     "MISSING_OBJECTIVE": 28,
-    "MISSING_BENEFICIARIES": 106,
-    "MISSING_COMPANY_CATEGORY": 145,
-    "MISSING_FINANCIAL_TERMS": 129,
+    "MISSING_BENEFICIARIES": 105,
+    "MISSING_COMPANY_CATEGORY": 136,
+    "MISSING_FINANCIAL_TERMS": 134,
     "MISSING_REPAYMENT_TERMS": 387
   },
-  "permanentUnverified": 4,
+  "permanentUnverified": 8,
   "advancesMissingRepayment": 387,
-  "missingCriticalDocs": 1974,
-  "remediationQueueCount": 2183,
+  "missingCriticalDocs": 1958,
+  "remediationQueueCount": 2170,
   "topPriority": [
     {
       "id": "naquitaine_aHR0cHM6Ly93d3cubm91dmVsbGUt",
@@ -2664,90 +2664,6 @@
       "hasCriticalDoc": false
     },
     {
-      "id": "idf_ods_300",
-      "title": "AMI Questions d'Intérêt Majeur (QIM)",
-      "sourceId": "idf",
-      "severity": 92,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_ELIGIBLE_EXPENSES",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_COMPANY_CATEGORY",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/313",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "idf_ods_225",
-      "title": "AMI Retour de la Nature en Ville - soutien aux études de renaturation et de création d'espaces verts",
-      "sourceId": "idf",
-      "severity": 92,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_ELIGIBLE_EXPENSES",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_COMPANY_CATEGORY",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/669",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "idf_ods_292",
-      "title": "AMI solutions digitales à destination des collectivités pour le développement des commerces",
-      "sourceId": "idf",
-      "severity": 92,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_ELIGIBLE_EXPENSES",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_COMPANY_CATEGORY",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/358",
-      "hasCriticalDoc": false
-    },
-    {
       "id": "pdl_ods_31",
       "title": "AMI Tourisme de Savoir-Faire",
       "sourceId": "pdl",
@@ -2776,62 +2692,6 @@
       "hasCriticalDoc": false
     },
     {
-      "id": "idf_ods_27",
-      "title": "APPEL A MANIFESTATION D’INTERET - Activité économique de surf sur l'île de loisirs de Vaires-Torcy",
-      "sourceId": "idf",
-      "severity": 92,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_ELIGIBLE_EXPENSES",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_COMPANY_CATEGORY",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/279",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "idf_ods_0",
-      "title": "Appel à manifestation d'intérêt - Valorisation du site de La Boissière-École",
-      "sourceId": "idf",
-      "severity": 92,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_ELIGIBLE_EXPENSES",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_COMPANY_CATEGORY",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/614",
-      "hasCriticalDoc": false
-    },
-    {
       "id": "pdl_ods_153",
       "title": "Appel à manifestation d'intérêt Ingénierie territoriale",
       "sourceId": "pdl",
@@ -2857,62 +2717,6 @@
         "MISSING_DISBURSEMENT_TERMS"
       ],
       "officialPage": "https://www.demarches-simplifiees.fr/commencer/ami-edition-2025-soutien-a-l-elaboration-d-actions",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "idf_ods_220",
-      "title": "Appel à manifestation d'intérêt pour intégrer l'espace partenaires du site de la Région Oriane.info",
-      "sourceId": "idf",
-      "severity": 92,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_ELIGIBLE_EXPENSES",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_COMPANY_CATEGORY",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/524",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "idf_ods_273",
-      "title": "Appel à projets \" Île-de-France BTP circulaire\"",
-      "sourceId": "idf",
-      "severity": 92,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_ELIGIBLE_EXPENSES",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_COMPANY_CATEGORY",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/804",
       "hasCriticalDoc": false
     },
     {
@@ -2972,62 +2776,6 @@
       "hasCriticalDoc": false
     },
     {
-      "id": "idf_ods_200",
-      "title": "Appel à projets « Culture dans les villages d'Île-de-France »",
-      "sourceId": "idf",
-      "severity": 92,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_ELIGIBLE_EXPENSES",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_COMPANY_CATEGORY",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/834",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "idf_ods_82",
-      "title": "Appel à projets « Île-de-France zéro plastique »",
-      "sourceId": "idf",
-      "severity": 92,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_ELIGIBLE_EXPENSES",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_COMPANY_CATEGORY",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/697",
-      "hasCriticalDoc": false
-    },
-    {
       "id": "pdl_ods_15",
       "title": "Appel à projets Aquaculture - Pêche",
       "sourceId": "pdl",
@@ -3053,90 +2801,6 @@
         "MISSING_DISBURSEMENT_TERMS"
       ],
       "officialPage": "ftp://ftpdata.paysdelaloire.fr/Documents_aides/Subvention_DossierdecandidatureAAPPecheAqua20252026VF_e64ef7eb_PAPIER_INDIVIDUEL.docx",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "idf_ods_13",
-      "title": "Appel à projets École-Entreprise : partenariats associatifs",
-      "sourceId": "idf",
-      "severity": 92,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_ELIGIBLE_EXPENSES",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_COMPANY_CATEGORY",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/808",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "idf_ods_171",
-      "title": "Appel à projets Ingénierie et Formations professionnelles (IFP Île-de-France)",
-      "sourceId": "idf",
-      "severity": 92,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_ELIGIBLE_EXPENSES",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_COMPANY_CATEGORY",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/305",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "idf_ods_124",
-      "title": "Appel à projets pour l'orientation des Franciliens tout au long de la vie",
-      "sourceId": "idf",
-      "severity": 92,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_ELIGIBLE_EXPENSES",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_COMPANY_CATEGORY",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/722",
       "hasCriticalDoc": false
     },
     {
@@ -3196,118 +2860,6 @@
       "hasCriticalDoc": false
     },
     {
-      "id": "idf_ods_215",
-      "title": "FEADER - Investissements agricoles - Adaptation au changement climatique et Transition AAP 2026",
-      "sourceId": "idf",
-      "severity": 92,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_ELIGIBLE_EXPENSES",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_COMPANY_CATEGORY",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/832",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "idf_ods_314",
-      "title": "FEADER - Soutien aux investissements agricoles - Diversification AAP 2026",
-      "sourceId": "idf",
-      "severity": 92,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_ELIGIBLE_EXPENSES",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_COMPANY_CATEGORY",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/830",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "idf_ods_122",
-      "title": "FEADER - Soutien aux investissements agricoles - Modernisation des exploitations AAP 2026",
-      "sourceId": "idf",
-      "severity": 92,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_ELIGIBLE_EXPENSES",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_COMPANY_CATEGORY",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/831",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "idf_ods_23",
-      "title": "FEADER - Soutien aux investissements agricoles environnementaux non productifs AAP 2026",
-      "sourceId": "idf",
-      "severity": 92,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_ELIGIBLE_EXPENSES",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_COMPANY_CATEGORY",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/833",
-      "hasCriticalDoc": false
-    },
-    {
       "id": "pdl_ods_138",
       "title": "FEADER : Appel à projets PCAE Élevage",
       "sourceId": "pdl",
@@ -3361,34 +2913,6 @@
         "MISSING_DISBURSEMENT_TERMS"
       ],
       "officialPage": "https://les-aides.paysdelaloire.fr/aides/#/prod/connecte/F_PDL73010204/depot/simple",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "idf_ods_174",
-      "title": "Fonds régional pour les talents émergents (FoRTE) - Subvention aux structures (2026)",
-      "sourceId": "idf",
-      "severity": 92,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_ELIGIBLE_EXPENSES",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_COMPANY_CATEGORY",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/412",
       "hasCriticalDoc": false
     },
     {
@@ -3609,60 +3133,6 @@
       "hasCriticalDoc": false
     },
     {
-      "id": "idf_ods_96",
-      "title": "AMI accompagnement à la modernisation et transition écologique des PME et ETI industrielles",
-      "sourceId": "idf",
-      "severity": 91,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_ELIGIBLE_EXPENSES",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/616",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "idf_ods_74",
-      "title": "AMI Fonds de capital investissement ciblant les structures de la Femtech",
-      "sourceId": "idf",
-      "severity": 91,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_ELIGIBLE_EXPENSES",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/812",
-      "hasCriticalDoc": false
-    },
-    {
       "id": "pdl_ods_93",
       "title": "AMI Industrie du Futur",
       "sourceId": "pdl",
@@ -3690,33 +3160,6 @@
       "hasCriticalDoc": false
     },
     {
-      "id": "idf_ods_224",
-      "title": "AMI pour la sélection d'un fonds ciblant les structures de l'ESS et à impact en phase d'amorçage",
-      "sourceId": "idf",
-      "severity": 91,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_ELIGIBLE_EXPENSES",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/627",
-      "hasCriticalDoc": false
-    },
-    {
       "id": "ae_8100",
       "title": "Amorçage Start-up",
       "sourceId": "aides_entreprises",
@@ -3741,33 +3184,6 @@
         "MISSING_REPAYMENT_TERMS"
       ],
       "officialPage": "https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/amorcage-start",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "idf_ods_246",
-      "title": "Appel à projets collaboratifs - Innovation de Rupture et Résilience Industrielle (IRRI)",
-      "sourceId": "idf",
-      "severity": 91,
-      "verification": "A_REVERIFIER",
-      "missingEvidence": [
-        "objective",
-        "beneficiaries",
-        "financialTerms",
-        "projectsExpected",
-        "eligibleExpenses",
-        "calendar",
-        "prerequisites",
-        "selectionCriteria"
-      ],
-      "qaFlags": [
-        "MISSING_DEADLINE",
-        "MISSING_ELIGIBLE_EXPENSES",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/851",
       "hasCriticalDoc": false
     },
     {
@@ -6976,6 +6392,552 @@
         "MISSING_CDC",
         "MISSING_DISBURSEMENT_TERMS",
         "MISSING_REPAYMENT_TERMS"
+      ],
+      "officialPage": "https://data.aides-entreprises.fr/stock",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "ae_12300",
+      "title": "Aide à l'ingénierie des matériaux",
+      "sourceId": "aides_entreprises",
+      "severity": 90,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://www.grandest.fr/vos-aides-regionales/module-industrie-5-0-ingenierie-materiaux/",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "ae_9016",
+      "title": "Aide à l'innovation",
+      "sourceId": "aides_entreprises",
+      "severity": 90,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_DISBURSEMENT_TERMS",
+        "MISSING_REPAYMENT_TERMS"
+      ],
+      "officialPage": "https://data.aides-entreprises.fr/stock",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "ae_8203",
+      "title": "Aide à l'innovation \"Inno Conseil\"",
+      "sourceId": "aides_entreprises",
+      "severity": 90,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://www.bretagne.bzh/aides/fiches/inno-conseil-2/",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "ae_8202",
+      "title": "Aide à l'innovation \"Inno R&D collaborative\"",
+      "sourceId": "aides_entreprises",
+      "severity": 90,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://www.bretagne.bzh/aides/fiches/inno-recherche-developpement/",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "ae_11394",
+      "title": "Aide à l'innovation durable par le design",
+      "sourceId": "aides_entreprises",
+      "severity": 90,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://les-aides.nouvelle-aquitaine.fr/culture/innover-durablement-par-le-design?Profil=Entreprise&page=1",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "ae_8056",
+      "title": "Aide à l'innovation et à la R&D dans l'agroalimentaire",
+      "sourceId": "aides_entreprises",
+      "severity": 90,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/aide-linnovation-et-la-rd-dans-lagroalimentaire",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "ae_12720",
+      "title": "Aide à l’Insertion par l’Activité Économique (IAE)",
+      "sourceId": "aides_entreprises",
+      "severity": 90,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://aides.regionguadeloupe.fr/Aide-a-l-Insertion-par-l-Activite-Economique-IAE",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "ae_12453",
+      "title": "Aide à l'installation de commerces en centre-ville",
+      "sourceId": "aides_entreprises",
+      "severity": 90,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://data.aides-entreprises.fr/stock",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "ae_12729",
+      "title": "Aide à l'installation des jeunes de moins de 40 ans dans les secteurs de l’économie bleue",
+      "sourceId": "aides_entreprises",
+      "severity": 90,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://aides.regionguadeloupe.fr/Installation-des-jeunes-de-moins-de-40-ans-dans-les-secteurs-de-l-economie",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "ae_12668",
+      "title": "Aide à l’installation, au développement et à la reprise d’une affaire",
+      "sourceId": "aides_entreprises",
+      "severity": 90,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://www.pau.fr/vie-quotidienne/commerce-economie-emploi/commerce/aide-linstallation-au-developpement-la-reprise",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "ae_12299",
+      "title": "Aide à l'intégration des solutions biosourcées",
+      "sourceId": "aides_entreprises",
+      "severity": 90,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://www.grandest.fr/vos-aides-regionales/module-industrie-5-0-solutions-biosourcees/",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "ae_12801",
+      "title": "Aide à l'investissement - Commerce et artisanat",
+      "sourceId": "aides_entreprises",
+      "severity": 90,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://data.aides-entreprises.fr/stock",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "ae_12820",
+      "title": "Aide à l'investissement des entreprises artisanales et commerciales",
+      "sourceId": "aides_entreprises",
+      "severity": 90,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://data.aides-entreprises.fr/stock",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "ae_11310",
+      "title": "Aide à l'investissement des entreprises de l'économie sociale et solidaire",
+      "sourceId": "aides_entreprises",
+      "severity": 90,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://guide-aides.hautsdefrance.fr/dispositif987",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "ae_9778",
+      "title": "Aide à l'investissement des PME",
+      "sourceId": "aides_entreprises",
+      "severity": 90,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://data.aides-entreprises.fr/stock",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "ae_12659",
+      "title": "Aide à l'investissement des TPE",
+      "sourceId": "aides_entreprises",
+      "severity": 90,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://data.aides-entreprises.fr/stock",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "ae_9876",
+      "title": "Aide à l’investissement du mobilier productif",
+      "sourceId": "aides_entreprises",
+      "severity": 90,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://data.aides-entreprises.fr/stock",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "ae_2612",
+      "title": "Aide à l'investissement en faveur du recyclage et du réemploi des déchets",
+      "sourceId": "aides_entreprises",
+      "severity": 90,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://les-aides.nouvelle-aquitaine.fr/transition-energetique-et-ecologique/investissement-en-faveur-du-recyclage-et-du-reemploi-des-dechets",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "ae_8923",
+      "title": "Aide à l'investissement en faveur du recyclage et du réemploi des déchets - nouvelles activités",
+      "sourceId": "aides_entreprises",
+      "severity": 90,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://data.aides-entreprises.fr/stock",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "ae_11013",
+      "title": "Aide à l'investissement en méthanisation",
+      "sourceId": "aides_entreprises",
+      "severity": 90,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://www.maregionsud.fr/vos-aides/detail/aides-a-linvestissement-en-methanisation",
+      "hasCriticalDoc": false
+    },
+    {
+      "id": "ae_10829",
+      "title": "Aide à l'investissement immobilier hors hébergements touristiques",
+      "sourceId": "aides_entreprises",
+      "severity": 90,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "objective",
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_DEADLINE",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_DISBURSEMENT_TERMS"
       ],
       "officialPage": "https://data.aides-entreprises.fr/stock",
       "hasCriticalDoc": false

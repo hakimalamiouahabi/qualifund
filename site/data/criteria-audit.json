@@ -1,320 +1,320 @@
 {
-  "generatedAt": "2026-09-28T14:30:03.163Z",
-  "corpusGeneratedAt": "2026-09-28T14:28:24.620Z",
+  "generatedAt": "2026-09-28T15:47:20.789Z",
+  "corpusGeneratedAt": "2026-09-28T15:45:43.468Z",
   "sourceCount": 145,
-  "sourcesSucceeded": 111,
-  "sourcesFailed": 34,
+  "sourcesSucceeded": 103,
+  "sourcesFailed": 42,
   "overall": {
     "total": 2202,
-    "verified": 11,
-    "active": 2185,
+    "verified": 12,
+    "active": 2170,
     "fields": {
       "beneficiaries": {
-        "present": 2092,
-        "officialProof": 25
+        "present": 2094,
+        "officialProof": 45
       },
       "eligibleExpenses": {
-        "present": 2014,
-        "officialProof": 17
+        "present": 2019,
+        "officialProof": 21
       },
       "prerequisites": {
-        "present": 1297,
-        "officialProof": 34
+        "present": 1300,
+        "officialProof": 36
       },
       "selectionCriteria": {
-        "present": 27,
-        "officialProof": 27
-      },
-      "financialTerms": {
-        "present": 2066,
+        "present": 30,
         "officialProof": 30
       },
+      "financialTerms": {
+        "present": 2052,
+        "officialProof": 32
+      },
       "calendar": {
-        "present": 428,
-        "officialProof": 24
+        "present": 449,
+        "officialProof": 25
       }
     }
   },
   "aapAmi": {
     "total": 161,
-    "verified": 1,
-    "active": 155,
+    "verified": 2,
+    "active": 142,
     "fields": {
       "beneficiaries": {
-        "present": 143,
-        "officialProof": 5
+        "present": 144,
+        "officialProof": 24
       },
       "eligibleExpenses": {
-        "present": 88,
-        "officialProof": 5
+        "present": 92,
+        "officialProof": 9
       },
       "prerequisites": {
-        "present": 72,
-        "officialProof": 6
+        "present": 73,
+        "officialProof": 7
       },
       "selectionCriteria": {
-        "present": 7,
-        "officialProof": 7
+        "present": 10,
+        "officialProof": 10
       },
       "financialTerms": {
-        "present": 116,
-        "officialProof": 7
+        "present": 104,
+        "officialProof": 9
       },
       "calendar": {
-        "present": 74,
-        "officialProof": 6
+        "present": 94,
+        "officialProof": 7
       }
     }
   },
   "byInstrument": {
     "SUBVENTION": {
-      "total": 1631,
-      "verified": 11,
-      "active": 1616,
+      "total": 1633,
+      "verified": 12,
+      "active": 1602,
       "fields": {
         "beneficiaries": {
-          "present": 1569,
-          "officialProof": 21
+          "present": 1571,
+          "officialProof": 41
         },
         "eligibleExpenses": {
-          "present": 1509,
-          "officialProof": 17
+          "present": 1514,
+          "officialProof": 21
         },
         "prerequisites": {
-          "present": 933,
-          "officialProof": 32
+          "present": 936,
+          "officialProof": 34
         },
         "selectionCriteria": {
-          "present": 23,
-          "officialProof": 23
+          "present": 26,
+          "officialProof": 26
         },
         "financialTerms": {
-          "present": 1538,
-          "officialProof": 24
+          "present": 1525,
+          "officialProof": 26
         },
         "calendar": {
-          "present": 397,
-          "officialProof": 22
+          "present": 419,
+          "officialProof": 23
         }
       }
     },
     "AVANCE_REMBOURSABLE": {
-      "total": 174,
-      "verified": 7,
-      "active": 170,
+      "total": 176,
+      "verified": 8,
+      "active": 168,
       "fields": {
         "beneficiaries": {
-          "present": 172,
-          "officialProof": 10
+          "present": 174,
+          "officialProof": 12
         },
         "eligibleExpenses": {
-          "present": 172,
-          "officialProof": 10
+          "present": 173,
+          "officialProof": 11
         },
         "prerequisites": {
-          "present": 138,
-          "officialProof": 11
+          "present": 140,
+          "officialProof": 13
         },
         "selectionCriteria": {
-          "present": 11,
-          "officialProof": 11
+          "present": 13,
+          "officialProof": 13
         },
         "financialTerms": {
           "present": 168,
-          "officialProof": 12
+          "officialProof": 14
         },
         "calendar": {
-          "present": 38,
-          "officialProof": 11
+          "present": 40,
+          "officialProof": 13
         }
       }
     },
     "PRET_TAUX_ZERO": {
-      "total": 299,
-      "verified": 8,
-      "active": 292,
+      "total": 301,
+      "verified": 9,
+      "active": 291,
       "fields": {
         "beneficiaries": {
-          "present": 291,
-          "officialProof": 13
-        },
-        "eligibleExpenses": {
-          "present": 287,
-          "officialProof": 11
-        },
-        "prerequisites": {
-          "present": 257,
-          "officialProof": 12
-        },
-        "selectionCriteria": {
-          "present": 14,
-          "officialProof": 14
-        },
-        "financialTerms": {
-          "present": 294,
+          "present": 293,
           "officialProof": 15
         },
+        "eligibleExpenses": {
+          "present": 289,
+          "officialProof": 13
+        },
+        "prerequisites": {
+          "present": 260,
+          "officialProof": 15
+        },
+        "selectionCriteria": {
+          "present": 16,
+          "officialProof": 16
+        },
+        "financialTerms": {
+          "present": 295,
+          "officialProof": 17
+        },
         "calendar": {
-          "present": 12,
-          "officialProof": 12
+          "present": 14,
+          "officialProof": 14
         }
       }
     }
   },
   "byCompanyCategory": {
     "STARTUP": {
-      "total": 93,
-      "verified": 6,
-      "active": 88,
+      "total": 94,
+      "verified": 7,
+      "active": 84,
       "fields": {
         "beneficiaries": {
-          "present": 87,
-          "officialProof": 12
-        },
-        "eligibleExpenses": {
-          "present": 83,
-          "officialProof": 10
-        },
-        "prerequisites": {
-          "present": 50,
-          "officialProof": 12
-        },
-        "selectionCriteria": {
-          "present": 15,
-          "officialProof": 15
-        },
-        "financialTerms": {
           "present": 89,
           "officialProof": 16
         },
-        "calendar": {
-          "present": 22,
-          "officialProof": 12
-        }
-      }
-    },
-    "PME": {
-      "total": 2048,
-      "verified": 11,
-      "active": 2034,
-      "fields": {
-        "beneficiaries": {
-          "present": 2022,
-          "officialProof": 21
-        },
         "eligibleExpenses": {
-          "present": 1999,
-          "officialProof": 16
-        },
-        "prerequisites": {
-          "present": 1245,
-          "officialProof": 32
-        },
-        "selectionCriteria": {
-          "present": 24,
-          "officialProof": 24
-        },
-        "financialTerms": {
-          "present": 2015,
-          "officialProof": 27
-        },
-        "calendar": {
-          "present": 414,
-          "officialProof": 21
-        }
-      }
-    },
-    "ETI": {
-      "total": 579,
-      "verified": 9,
-      "active": 569,
-      "fields": {
-        "beneficiaries": {
-          "present": 558,
-          "officialProof": 16
-        },
-        "eligibleExpenses": {
-          "present": 549,
+          "present": 85,
           "officialProof": 12
         },
         "prerequisites": {
-          "present": 303,
-          "officialProof": 25
+          "present": 53,
+          "officialProof": 15
         },
         "selectionCriteria": {
           "present": 17,
           "officialProof": 17
         },
         "financialTerms": {
-          "present": 552,
-          "officialProof": 19
+          "present": 88,
+          "officialProof": 18
         },
         "calendar": {
-          "present": 169,
+          "present": 26,
           "officialProof": 14
         }
       }
     },
-    "GE": {
-      "total": 568,
-      "verified": 8,
-      "active": 560,
+    "PME": {
+      "total": 2051,
+      "verified": 12,
+      "active": 2030,
       "fields": {
         "beneficiaries": {
-          "present": 555,
-          "officialProof": 16
+          "present": 2025,
+          "officialProof": 27
         },
         "eligibleExpenses": {
-          "present": 549,
-          "officialProof": 13
+          "present": 2002,
+          "officialProof": 18
         },
         "prerequisites": {
-          "present": 303,
-          "officialProof": 25
+          "present": 1249,
+          "officialProof": 35
         },
         "selectionCriteria": {
-          "present": 17,
-          "officialProof": 17
+          "present": 27,
+          "officialProof": 27
         },
         "financialTerms": {
-          "present": 550,
-          "officialProof": 19
+          "present": 2014,
+          "officialProof": 29
         },
         "calendar": {
-          "present": 169,
+          "present": 420,
+          "officialProof": 23
+        }
+      }
+    },
+    "ETI": {
+      "total": 581,
+      "verified": 10,
+      "active": 567,
+      "fields": {
+        "beneficiaries": {
+          "present": 561,
+          "officialProof": 20
+        },
+        "eligibleExpenses": {
+          "present": 552,
+          "officialProof": 14
+        },
+        "prerequisites": {
+          "present": 307,
+          "officialProof": 28
+        },
+        "selectionCriteria": {
+          "present": 19,
+          "officialProof": 19
+        },
+        "financialTerms": {
+          "present": 552,
+          "officialProof": 21
+        },
+        "calendar": {
+          "present": 172,
+          "officialProof": 16
+        }
+      }
+    },
+    "GE": {
+      "total": 571,
+      "verified": 9,
+      "active": 559,
+      "fields": {
+        "beneficiaries": {
+          "present": 559,
+          "officialProof": 19
+        },
+        "eligibleExpenses": {
+          "present": 552,
           "officialProof": 15
+        },
+        "prerequisites": {
+          "present": 307,
+          "officialProof": 28
+        },
+        "selectionCriteria": {
+          "present": 19,
+          "officialProof": 19
+        },
+        "financialTerms": {
+          "present": 552,
+          "officialProof": 21
+        },
+        "calendar": {
+          "present": 172,
+          "officialProof": 17
         }
       }
     }
   },
   "unknownCompanyCategory": {
-    "total": 146,
+    "total": 145,
     "verified": 0,
-    "active": 145,
+    "active": 135,
     "fields": {
       "beneficiaries": {
-        "present": 64,
-        "officialProof": 4
+        "present": 63,
+        "officialProof": 18
       },
       "eligibleExpenses": {
-        "present": 10,
-        "officialProof": 1
+        "present": 12,
+        "officialProof": 3
       },
       "prerequisites": {
-        "present": 50,
-        "officialProof": 2
+        "present": 49,
+        "officialProof": 1
       },
       "selectionCriteria": {
         "present": 3,
         "officialProof": 3
       },
       "financialTerms": {
-        "present": 46,
+        "present": 33,
         "officialProof": 3
       },
       "calendar": {
-        "present": 11,
-        "officialProof": 3
+        "present": 27,
+        "officialProof": 2
       }
     }
   },
@@ -695,6 +695,13 @@
       "title": "Aide à l'accès à l'emploi",
       "sourceId": "aides_entreprises",
       "officialPage": "https://www.province-nord.nc/demarches/dispositif-aide-emploi-province-nord",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ae_11624",
+      "title": "Aide à l'accès internet haut débit en zone rurale",
+      "sourceId": "aides_entreprises",
+      "officialPage": "https://www.francenum.gouv.fr/guides-et-conseils/pilotage-de-lentreprise/telecommunications-et-reseaux/entreprises-en-zone-rurale",
       "selectionTextPresent": false
     },
     {
@@ -2753,13 +2760,6 @@
       "title": "Aide à la modernisation et la transformation de l’entreprise après reprise",
       "sourceId": "aides_entreprises",
       "officialPage": "https://www.grand-saint-emilionnais.fr/wp-content/uploads/2024/02/DISPOSITIF_MODERNISATION_REPRISE_TAMPONNE.pdf",
-      "selectionTextPresent": false
-    },
-    {
-      "id": "grand_est_aHR0cHM6Ly93d3cuZ3JhbmRlc3Qu",
-      "title": "Aide à la navigation",
-      "sourceId": "grand_est",
-      "officialPage": "https://www.grandest.fr/aide-et-accessibilite/",
       "selectionTextPresent": false
     },
     {
@@ -6067,13 +6067,6 @@
       "selectionTextPresent": false
     },
     {
-      "id": "idf_ods_224",
-      "title": "AMI pour la sélection d'un fonds ciblant les structures de l'ESS et à impact en phase d'amorçage",
-      "sourceId": "idf",
-      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/627",
-      "selectionTextPresent": false
-    },
-    {
       "id": "idf_ods_300",
       "title": "AMI Questions d'Intérêt Majeur (QIM)",
       "sourceId": "idf",
@@ -6085,13 +6078,6 @@
       "title": "AMI Retour de la Nature en Ville - soutien aux études de renaturation et de création d'espaces verts",
       "sourceId": "idf",
       "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/669",
-      "selectionTextPresent": false
-    },
-    {
-      "id": "idf_ods_292",
-      "title": "AMI solutions digitales à destination des collectivités pour le développement des commerces",
-      "sourceId": "idf",
-      "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/358",
       "selectionTextPresent": false
     },
     {
@@ -10509,13 +10495,6 @@
       "title": "Les aides aux communes",
       "sourceId": "mayotte",
       "officialPage": "https://www.mayotte.fr/le-departement/territoire-et-collectivites/aides-aux-communes",
-      "selectionTextPresent": false
-    },
-    {
-      "id": "occitanie_france2030_idemo_aHR0cHM6Ly93d3cubGFyZWdpb24u",
-      "title": "Les aides et appels à projets",
-      "sourceId": "occitanie_france2030_idemo",
-      "officialPage": "https://www.laregion.fr/Les-aides-et-appels-a-projets",
       "selectionTextPresent": false
     },
     {
