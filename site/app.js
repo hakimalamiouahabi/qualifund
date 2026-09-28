@@ -2,11 +2,16 @@
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const arr=v=>Array.isArray(v)?v:(v==null||v===''?[]:[v]);
 const uniq=a=>[...new Set(a.filter(Boolean))];
-const esc=v=>String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
-const norm=s=>String(s??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[’']/g,"'").replace(/[^a-z0-9%€+\- /]/g,' ').replace(/\s+/g,' ').trim();
+const esc=v=>decodeEntities(v).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+const entityDecoder=document.createElement('textarea');
+function decodeEntities(value){
+  const text=String(value??'');if(!/&(?:#\d+|#x[\da-f]+|[a-z]+);/i.test(text))return text;
+  entityDecoder.innerHTML=text.replace(/</g,'&lt;').replace(/>/g,'&gt;');return entityDecoder.value;
+}
+const norm=s=>decodeEntities(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[’']/g,"'").replace(/[^a-z0-9%€+\- /]/g,' ').replace(/\s+/g,' ').trim();
 const fmtDate=v=>{if(!v)return'—';const d=new Date(v+'T00:00:00');return isNaN(d)?v:d.toLocaleDateString('fr-FR')};
 const money=v=>v==null?'—':new Intl.NumberFormat('fr-FR',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(v);
-const missing=()=>'<span class="missing">NON DOCUMENTÉ — À VÉRIFIER</span>';
+const missing=()=>'<span class="missing">À préciser</span>';
 const aidTypeLabel=t=>({SUBVENTION:'Subvention',AVANCE_REMBOURSABLE:'Avance remboursable',PRET_TAUX_ZERO:'Prêt à taux zéro',PRET:'Prêt',BONIFICATION_INTERET:"Bonification d’intérêt",GARANTIE:'Garantie',ALLEGEMENT_FISCAL:'Allègement fiscal',PARTICIPATION_CAPITAL:'Participation au capital',APPEL_A_PROJET:'Appel à projets',ACCOMPAGNEMENT_GRATUIT:'Accompagnement gratuit',CREDIT_BAIL:'Crédit-bail',AUTRE:'Autre dispositif'}[t]||t);
 const CONFIG=window.LEYTON_RADAR_CONFIG||{minRelevance:80};
 const REGIONS=['Auvergne-Rhône-Alpes','Bourgogne-Franche-Comté','Bretagne','Centre-Val de Loire','Corse','Grand Est','Hauts-de-France','Île-de-France','Normandie','Nouvelle-Aquitaine','Occitanie','Pays de la Loire','Provence-Alpes-Côte d’Azur','Guadeloupe','Guyane','Martinique','La Réunion','Mayotte'];
@@ -91,9 +96,10 @@ function toast(msg){const t=$('#toast');t.innerHTML=msg;t.classList.remove('hidd
 function permanentVerified(a){return Boolean(a.permanent&&arr(a.verification?.fieldEvidence).some(e=>e.field==='calendar'&&['A','B'].includes(e.sourceTier)))}
 function nextDeadline(a){if(a.permanent)return permanentVerified(a)?{ok:true,date:null,reason:'PERMANENT'}:{ok:false,date:null,reason:'PERMANENT_UNVERIFIED'};const ds=uniq([...arr(a.deadlines).map(x=>typeof x==='string'?x:x?.date),a.finalClosingDate,a.closingDate].filter(Boolean)).sort();for(const d of ds)if(daysUntil(d)>=1)return{ok:true,date:d,reason:'DEADLINE'};return{ok:false,date:ds.find(d=>daysUntil(d)>=0)||ds.at(-1)||null,reason:ds.length?'J1':'DATE_MISSING'}}
 function usableAid(a){
-  if(!a||['ARCHIVE','STALE'].includes(a.lifecycleStatus))return false;
+  if(!a||['ARCHIVE','STALE','CLOSED','CLOS','EXPIRED'].includes(a.lifecycleStatus))return false;
   const t=norm(a.title||'');
   if(!t||t.length<4)return false;
+  if(/^(appels a projets et concours(?: bpifrance)?|contact et aide|accueil|nos aides|toutes nos aides)$/.test(t))return false;
   if(/desole.*offre.*plus disponible|offre.*plus disponible|document officiel|page introuvable|page non trouvee|erreur 404|404 not found|access denied|forbidden|service indisponible|site en maintenance/.test(t))return false;
   const nd=nextDeadline(a);
   if(nd.reason==='J1'&&nd.date&&daysUntil(nd.date)<1)return false;
@@ -104,8 +110,8 @@ function officialUrl(a){
   return candidates.find(u=>/^https?:\/\//i.test(String(u||''))&&!/data\.aides-entreprises\.fr\/stock\/?(?:$|[?#])/i.test(String(u)))||null;
 }
 
-async function loadAll(){const j=await api('./data/library.json');state.lib=j.aaps||[];state.meta=j.meta||{};for(const[k,p]of[['coverage','./data/coverage.json'],['changes','./data/changes.json']])try{state[k]=await api(p)}catch{};try{state.sources=(await api('./data/sources.json')).sources||[]}catch{};try{state.readiness=await api('./data/production-readiness.json')}catch{};await loadClientLibrary();render();const deep=new URLSearchParams(location.search).get('aid');if(deep&&state.lib.some(a=>a.id===deep))openAid(deep)}
-function route(r){state.route=r;$$('.nav[data-route]').forEach(x=>x.classList.toggle('active',x.dataset.route===r));$('#sidebar')?.classList.remove('open');render()}
+async function loadAll(){const j=await api('./data/library.json');state.lib=(j.aaps||[]).map(a=>{const b={...a};for(const k of ['title','objective','beneficiaries','eligibleExpenses','excludedExpenses','prerequisites','selectionCriteria','programme','operator'])if(typeof b[k]==='string')b[k]=decodeEntities(b[k]);return b});state.meta=j.meta||{};for(const[k,p]of[['coverage','./data/coverage.json'],['changes','./data/changes.json']])try{state[k]=await api(p)}catch{};try{state.sources=(await api('./data/sources.json')).sources||[]}catch{};try{state.readiness=await api('./data/production-readiness.json')}catch{};await loadClientLibrary();render();const deep=new URLSearchParams(location.search).get('aid');if(deep&&state.lib.some(a=>a.id===deep))openAid(deep)}
+function route(r){clearTimeout(window.__libSearchTimer);state.route=r;$$('.nav[data-route]').forEach(x=>x.classList.toggle('active',x.dataset.route===r));$('#sidebar')?.classList.remove('open');render()}
 $$('.nav[data-route]').forEach(b=>b.onclick=()=>route(b.dataset.route));
 $('#today').textContent=new Date().toLocaleDateString('fr-FR');
 $('#modalClose').onclick=()=>$('#modal').classList.add('hidden');
@@ -122,9 +128,9 @@ function counts(){const active=state.lib.filter(a=>!['ARCHIVE','STALE'].includes
 function render(){({home,study,library,watch,sources,production}[state.route]||home)()}
 function home(){
   const corpus=state.lib.filter(usableAid),aap=corpus.filter(x=>String(x.kind).includes('AAP')).length;
-  const regions=uniq(corpus.flatMap(x=>arr(x.regions)).filter(x=>x&&x!=='Toutes les Régions')).length;
-  $('#app').innerHTML=`<section class="hero executive-hero"><div class="eyebrow">Financements publics · France</div><h1>Cartographier. Qualifier. Décider.</h1><p>Un référentiel national et régional pour identifier les financements mobilisables, vérifier les conditions d’accès et prioriser les dispositifs au regard du projet, des dépenses, du calendrier et des critères de sélection.</p><div class="hero-actions"><button class="btn primary" id="newStudy">Analyser un projet</button><button class="btn" id="goLibrary">Explorer la bibliothèque</button></div></section>
-  <div class="grid g4 executive-metrics" style="margin-top:18px"><div class="metric"><b>${corpus.length}</b><span>dispositifs actifs</span></div><div class="metric"><b>${aap}</b><span>AAP / AMI</span></div><div class="metric"><b>${state.sources.length||state.meta.sourceCount||'—'}</b><span>sources officielles référencées</span></div><div class="metric"><b>${regions}</b><span>régions couvertes</span></div></div>
+  const regions=uniq(corpus.flatMap(x=>arr(x.regions)).filter(x=>REGIONS.includes(x))).length;
+  $('#app').innerHTML=`<section class="hero executive-hero"><div class="eyebrow">Financements publics · France</div><h1>Les financements publics au service de vos projets</h1><p>Un référentiel national et régional pour identifier les financements mobilisables, vérifier les conditions d’accès et prioriser les dispositifs au regard du projet, des dépenses, du calendrier et des critères de sélection.</p><div class="hero-actions"><button class="btn primary" id="newStudy">Analyser un projet</button><button class="btn" id="goLibrary">Explorer la bibliothèque</button></div></section>
+  <div class="grid g4 executive-metrics" style="margin-top:18px"><div class="metric"><b>${corpus.length}</b><span>dispositifs référencés</span></div><div class="metric"><b>${aap}</b><span>AAP / AMI</span></div><div class="metric"><b>${state.sources.length||state.meta.sourceCount||'—'}</b><span>sources officielles référencées</span></div><div class="metric"><b>${regions}</b><span>régions couvertes</span></div></div>
   <div class="grid g2" style="margin-top:16px"><div class="card"><h3>Dernière actualisation</h3><p><b>${state.meta.generatedAt?new Date(state.meta.generatedAt).toLocaleString('fr-FR'):'Bibliothèque publiée'}</b></p><p class="mini">Les données sont consolidées depuis les sources officielles nationales et régionales.</p><button class="btn small" id="goWatch">Voir les nouveaux dispositifs</button></div><div class="card"><h3>Lecture consultant</h3><div class="criteria"><div class="criterion"><span>1. Éligibilité</span><strong>Bénéficiaire, territoire, calendrier, budget, exclusions</strong></div><div class="criterion"><span>2. Adéquation projet</span><strong>Objectifs, dépenses, maturité, impacts, critères de sélection</strong></div><div class="criterion"><span>3. Décision</span><strong>Dispositifs prioritaires, points à sécuriser, source officielle</strong></div></div></div></div>`;
   $('#newStudy').onclick=()=>{state.studyStep=1;route('study')};$('#goLibrary').onclick=()=>route('library');$('#goWatch').onclick=()=>route('watch');
 }
@@ -132,7 +138,7 @@ function field(id,label,value,type='text',hint=''){return`<div class="field-wrap
 function area(id,label,value,hint=''){return`<div class="field-wrap"><label class="field" for="${id}">${esc(label)}</label><textarea id="${id}" class="input">${esc(value||'')}</textarea>${hint?`<div class="mini">${esc(hint)}</div>`:''}</div>`}
 function select(id,label,opts,val){return`<div class="field-wrap"><label class="field" for="${id}">${esc(label)}</label><select id="${id}" class="input">${opts.map(x=>`<option ${x===val?'selected':''}>${esc(x)}</option>`).join('')}</select></div>`}
 function stepper(){return`<div class="wizard">${['Entreprise','Projet','Budget & calendrier','Cartographie'].map((x,i)=>`<span class="step ${state.studyStep===i+1?'active':state.studyStep>i+1?'done':''}">${i+1}. ${x}</span>`).join('')}</div>`}
-function study(){const p=state.project;let body='';if(state.studyStep===1)body=`<div class="grid g2"><div class="card"><h3>Identité entreprise</h3><div class="grid g2"><div>${field('qSiren','SIREN / SIRET',p.siren,'text','Recherche dans l’API publique Annuaire des Entreprises.')}</div><div style="align-self:end"><button class="btn dark" id="lookupSiren">Rechercher le SIREN</button></div></div>${field('qCompany','Raison sociale',p.company)}<div class="grid g2"><div>${select('qCategory','Catégorie',['À préciser','PME','ETI','GE'],p.category)}</div><div>${select('qStartup','Start-up',['Non','Oui'],p.startup?'Oui':'Non')}</div></div>${field('qLegalForm','Forme juridique',p.legalForm)}${field('qCreationDate','Date de création',p.creationDate,'date')}</div><div class="card"><h3>Profil économique</h3>${select('qRegion','Région du projet',['À préciser',...REGIONS],p.region)}${field('qProjectSite','Site / implantation du projet',p.projectSite)}${field('qSector','Secteur / activité réelle',p.sector)}${field('qNaf','Code NAF / APE',p.naf)}<div class="grid g2"><div>${field('qEmployees','Effectif',p.employees,'number')}</div><div>${field('qTurnover','CA annuel (€)',p.turnover,'number')}</div></div>${field('qBalance','Total bilan (€)',p.balanceSheet,'number')}${select('qGroup','Situation groupe',['Autonome','Filiale / groupe','À vérifier'],p.group)}</div></div>`;if(state.studyStep===2)body=`<div class="grid g2"><div class="card"><h3>Projet</h3>${field('qName','Nom du projet',p.name)}<label class="field">Typologies</label><div class="tagset">${TYPES.map(t=>`<label class="pill"><input class="qType" type="checkbox" value="${esc(t)}" ${arr(p.types).includes(t)?'checked':''}> ${esc(t)}</label>`).join('')}</div>${area('qSummary','Description détaillée du projet',p.summary,'Champ central du rapprochement : décrire les objectifs, travaux, livrables, verrous, nouveauté et résultats attendus.')}${select('qMaturity','Maturité',MATURITY,p.maturity)}</div><div class="card"><h3>Travaux & impacts</h3>${area('qPartners','Partenaires / consortium',p.partners)}${area('qImpacts','Impacts attendus',p.impacts)}${field('qJobs','Emplois créés / maintenus',p.jobs)}${area('qEnvironment','Impacts environnementaux / énergie / carbone',p.environment)}${area('qDigital','Volet numérique / IA / cyber / robotisation',p.digital)}</div></div>`;if(state.studyStep===3)body=`<div class="grid g2"><div class="card"><h3>Budget & dépenses</h3>${field('qBudget','Budget total du projet (€)',p.budget,'number')}${area('qExpenses','Dépenses / lots de coûts',p.expenses,'Préciser personnel, équipements, sous-traitance, études, bâtiment, logiciels, etc.')}${area('qFinancing','Plan de financement',p.financing,'Fonds propres, dette, autres financements, reste à financer.')}${area('qOtherAids','Autres aides publiques demandées / obtenues',p.otherAids)}</div><div class="card"><h3>Calendrier</h3><div class="grid g2"><div>${field('qStart','Démarrage prévu',p.startDate,'date')}</div><div>${field('qEnd','Fin prévue',p.endDate,'date')}</div></div><div class="callout warn"><b>Effet incitatif :</b> le moteur signale les dispositifs exigeant un dépôt avant démarrage, mais la preuve réglementaire reste prioritaire.</div><div class="study-summary"><b>Lecture de la cartographie :</b><p>Les incompatibilités certaines sont écartées. Les autres dispositifs sont classés selon l’adéquation au projet et les critères publiés, avec les points à confirmer clairement signalés.</p></div></div></div>`;if(state.studyStep===4)body=`<div class="card"><h3>Analyse du projet</h3><p>Le moteur applique d’abord les règles d’éligibilité disponibles, puis utilise une grille d’analyse adaptée à la famille du financeur : Bpifrance / France 2030, ADEME, FEDER ou dispositif régional.</p><div class="grid g3"><div class="metric"><b>1</b><span>Éligibilité</span><small>bénéficiaire, territoire, calendrier, budget, exclusions, effet incitatif</small></div><div class="metric"><b>2</b><span>Adéquation</span><small>objectifs, projets attendus, dépenses, maturité, impacts, critères de sélection</small></div><div class="metric"><b>3</b><span>Décision</span><small>classement, points à confirmer, modalités financières et source officielle</small></div></div><div class="callout"><b>Principe :</b> une information manquante n’est pas assimilée à une non-éligibilité. En l’absence de description détaillée, l’analyse s’appuie sur l’activité, le code NAF et les thématiques renseignées.</div><details class="method-card"><summary>Voir la méthode d’analyse</summary><div class="method-grid"><div><b>Contrôles bloquants</b><p>Taille, territoire, échéance, assiette budgétaire lorsqu’elle est publiée, exclusions explicites, consortium ou conditions obligatoires lorsqu’elles sont structurées.</p></div><div><b>Grille adaptée au financeur</b><p>Bpifrance / France 2030 : innovation, maturité, retombées, marché et capacité d’exécution. ADEME : performance environnementale, opérations et dépenses éligibles, maturité et incitativité. FEDER : priorité du programme, territoire, actions et dépenses, indicateurs et capacité de portage.</p></div><div><b>Données projet utilisées</b><p>Description, activité, NAF, typologie, maturité, dépenses, impacts, partenaires, emploi, environnement, numérique et financement. Les éléments indisponibles sont neutralisés.</p></div><div><b>Traçabilité</b><p>Chaque résultat explique les critères concordants et les points restant à vérifier. La source officielle reste accessible directement depuis la fiche.</p></div></div></details><button class="btn primary" id="runStudy">Lancer la cartographie & faisabilité</button></div><div id="studyResults"></div>`;$('#app').innerHTML=`<div class="page-head"><div><div class="eyebrow">Cartographie & faisabilité</div><h1>Entreprise + projet → financements pertinents</h1><p class="sub">Renseignez l’entreprise et le projet : FUNDING RADAR filtre les incompatibilités puis rapproche le projet des critères publiés de chaque dispositif.</p></div></div>${stepper()}${body}<div class="form-actions"><button class="btn" id="prevStep" ${state.studyStep===1?'disabled':''}>← Précédent</button><button class="btn primary" id="nextStep" ${state.studyStep===4?'disabled':''}>Suivant →</button></div>`;bindStudy()}
+function study(){const p=state.project;let body='';if(state.studyStep===1)body=`<div class="grid g2"><div class="card"><h3>Identité entreprise</h3><div class="grid g2"><div>${field('qSiren','SIREN / SIRET',p.siren,'text','Recherche dans l’API publique Annuaire des Entreprises.')}</div><div style="align-self:end"><button class="btn dark" id="lookupSiren">Rechercher le SIREN</button></div></div>${field('qCompany','Raison sociale',p.company)}<div class="grid g2"><div>${select('qCategory','Catégorie',['À préciser','PME','ETI','GE'],p.category)}</div><div>${select('qStartup','Start-up',['Non','Oui'],p.startup?'Oui':'Non')}</div></div>${field('qLegalForm','Forme juridique',p.legalForm)}${field('qCreationDate','Date de création',p.creationDate,'date')}</div><div class="card"><h3>Profil économique</h3>${select('qRegion','Région du projet',['À préciser',...REGIONS],p.region)}${field('qProjectSite','Site / implantation du projet',p.projectSite)}${field('qSector','Secteur / activité réelle',p.sector)}${field('qNaf','Code NAF / APE',p.naf)}<div class="grid g2"><div>${field('qEmployees','Effectif',p.employees,'number')}</div><div>${field('qTurnover','CA annuel (€)',p.turnover,'number')}</div></div>${field('qBalance','Total bilan (€)',p.balanceSheet,'number')}${select('qGroup','Situation groupe',['Autonome','Filiale / groupe','À vérifier'],p.group)}</div></div>`;if(state.studyStep===2)body=`<div class="grid g2"><div class="card"><h3>Projet</h3>${field('qName','Nom du projet',p.name)}<label class="field">Typologies</label><div class="tagset">${TYPES.map(t=>`<label class="pill"><input class="qType" type="checkbox" value="${esc(t)}" ${arr(p.types).includes(t)?'checked':''}> ${esc(t)}</label>`).join('')}</div>${area('qSummary','Description du projet — facultative',p.summary,'Si le projet est défini, précisez objectifs, travaux, livrables et résultats attendus. Sinon, la recherche utilise votre activité, votre code NAF et vos thématiques.')}${select('qMaturity','Maturité',MATURITY,p.maturity)}</div><div class="card"><h3>Travaux & impacts</h3>${area('qPartners','Partenaires / consortium',p.partners)}${area('qImpacts','Impacts attendus',p.impacts)}${field('qJobs','Emplois créés / maintenus',p.jobs)}${area('qEnvironment','Impacts environnementaux / énergie / carbone',p.environment)}${area('qDigital','Volet numérique / IA / cyber / robotisation',p.digital)}</div></div>`;if(state.studyStep===3)body=`<div class="grid g2"><div class="card"><h3>Budget & dépenses</h3>${field('qBudget','Budget total du projet (€)',p.budget,'number')}${area('qExpenses','Dépenses / lots de coûts',p.expenses,'Préciser personnel, équipements, sous-traitance, études, bâtiment, logiciels, etc.')}${area('qFinancing','Plan de financement',p.financing,'Fonds propres, dette, autres financements, reste à financer.')}${area('qOtherAids','Autres aides publiques demandées / obtenues',p.otherAids)}</div><div class="card"><h3>Calendrier</h3><div class="grid g2"><div>${field('qStart','Démarrage prévu',p.startDate,'date')}</div><div>${field('qEnd','Fin prévue',p.endDate,'date')}</div></div><div class="callout warn"><b>Effet incitatif :</b> le moteur signale les dispositifs exigeant un dépôt avant démarrage, mais la preuve réglementaire reste prioritaire.</div><div class="study-summary"><b>Lecture de la cartographie :</b><p>Les incompatibilités certaines sont écartées. Les autres dispositifs sont classés selon l’adéquation au projet et les critères publiés, avec les points à confirmer clairement signalés.</p></div></div></div>`;if(state.studyStep===4)body=`<div class="card"><h3>Analyse du projet</h3><p>L’analyse distingue les conditions documentées, les incompatibilités identifiées et les informations à compléter. Les correspondances servent à orienter l’instruction, sans conclure à l’attribution d’un financement.</p><div class="grid g3"><div class="metric"><b>1</b><span>Éligibilité</span><small>bénéficiaire, territoire, calendrier, budget, exclusions, effet incitatif</small></div><div class="metric"><b>2</b><span>Adéquation</span><small>objectifs, projets attendus, dépenses, maturité, impacts, critères de sélection</small></div><div class="metric"><b>3</b><span>Décision</span><small>classement, points à confirmer, modalités financières et source officielle</small></div></div><div class="callout"><b>Principe :</b> une information manquante n’est pas assimilée à une non-éligibilité. En l’absence de description détaillée, l’analyse s’appuie sur l’activité, le code NAF et les thématiques renseignées.</div><details class="method-card"><summary>Voir la méthode d’analyse</summary><div class="method-grid"><div><b>Contrôles bloquants</b><p>Taille, territoire, échéance, assiette budgétaire lorsqu’elle est publiée, exclusions explicites, consortium ou conditions obligatoires lorsqu’elles sont structurées.</p></div><div><b>Points d’instruction par financeur</b><p>Bpifrance / France 2030 : innovation, maturité, retombées, marché et capacité d’exécution. ADEME : performance environnementale, opérations et dépenses éligibles, maturité et incitativité. FEDER : priorité du programme, territoire, actions et dépenses, indicateurs et capacité de portage.</p></div><div><b>Données projet utilisées</b><p>Description, activité, NAF, typologie, maturité, dépenses, impacts, partenaires, emploi, environnement, numérique et financement. Les éléments indisponibles sont neutralisés.</p></div><div><b>Traçabilité</b><p>Chaque résultat explique les critères concordants et les points restant à vérifier. La source officielle reste accessible directement depuis la fiche.</p></div></div></details><button class="btn primary" id="runStudy">Lancer la cartographie & faisabilité</button></div><div id="studyResults"></div>`;$('#app').innerHTML=`<div class="page-head"><div><div class="eyebrow">Cartographie & faisabilité</div><h1>Identifiez les financements à instruire</h1><p class="sub">Commencez par l’activité, le code NAF ou une thématique. Les informations sur le projet permettent ensuite de préciser les conditions d’accès et les points à instruire.</p></div></div>${stepper()}${body}<div class="form-actions"><button class="btn" id="prevStep" ${state.studyStep===1?'disabled':''}>← Précédent</button><button class="btn primary" id="nextStep" ${state.studyStep===4?'disabled':''}>Suivant →</button></div>`;bindStudy()}
 function bindStudy(){const prev=$('#prevStep'),next=$('#nextStep');if(prev)prev.onclick=()=>{saveVisible();state.studyStep--;study()};if(next)next.onclick=()=>{saveVisible();state.studyStep++;study()};if($('#lookupSiren'))$('#lookupSiren').onclick=lookupSiren;if($('#runStudy'))$('#runStudy').onclick=()=>{saveVisible();runFeasibility()}}
 function saveVisible(){const p={...state.project};const read=(id,key=id)=>{const el=$('#'+id);if(el)p[key]=el.value};for(const [id,key] of [['qSiren','siren'],['qCompany','company'],['qLegalForm','legalForm'],['qCreationDate','creationDate'],['qRegion','region'],['qProjectSite','projectSite'],['qSector','sector'],['qNaf','naf'],['qEmployees','employees'],['qTurnover','turnover'],['qBalance','balanceSheet'],['qGroup','group'],['qName','name'],['qSummary','summary'],['qMaturity','maturity'],['qPartners','partners'],['qImpacts','impacts'],['qJobs','jobs'],['qEnvironment','environment'],['qDigital','digital'],['qBudget','budget'],['qExpenses','expenses'],['qFinancing','financing'],['qOtherAids','otherAids'],['qStart','startDate'],['qEnd','endDate']])read(id,key);if($('#qCategory'))p.category=$('#qCategory').value;if($('#qStartup'))p.startup=$('#qStartup').value==='Oui';if($$('.qType').length)p.types=$$('.qType:checked').map(x=>x.value);state.project=p;localStorage.setItem(STORAGE,JSON.stringify(p))}
 async function lookupSiren(){saveVisible();const raw=String(state.project.siren||'').replace(/\D/g,'');if(raw.length!==9&&raw.length!==14){toast('SIREN attendu : 9 chiffres ; SIRET : 14 chiffres.');return}const q=raw.length===14?raw.slice(0,9):raw;try{toast('Recherche entreprise en cours…');let x=null;if(CONFIG.companyEndpoint){try{const sr=await fetch(`${CONFIG.companyEndpoint}?siren=${encodeURIComponent(q)}`);if(sr.ok){const sj=await sr.json();x=sj.official?{nom_complet:sj.official.company,activite_principale:sj.official.naf,nature_juridique:sj.official.legalForm,date_creation:sj.official.creationDate,tranche_effectif_salarie:sj.official.employees,libelle_activite_principale:sj.official.sector}:null}}catch{}}if(!x){const url=`${CONFIG.sirenApi||'https://recherche-entreprises.api.gouv.fr/search'}?q=${encodeURIComponent(q)}&per_page=1`;const r=await fetch(url,{headers:{Accept:'application/json'}});if(!r.ok)throw new Error('HTTP '+r.status);const j=await r.json();x=j.results?.[0]}if(!x)throw new Error('Entreprise non trouvée');state.project={...state.project,company:x.nom_complet||x.nom_raison_sociale||state.project.company,naf:x.activite_principale||state.project.naf,legalForm:x.nature_juridique||state.project.legalForm,creationDate:x.date_creation||state.project.creationDate,employees:x.tranche_effectif_salarie||state.project.employees,sector:x.libelle_activite_principale||state.project.sector};localStorage.setItem(STORAGE,JSON.stringify(state.project));study();toast('Entreprise enrichie depuis une source publique officielle.') }catch(e){toast(`Recherche SIREN indisponible : ${esc(e.message)}. Saisie manuelle conservée.`)}}
@@ -151,24 +157,25 @@ function eligibility(a,p){
   const evidence=field=>arr(a.verification?.fieldEvidence).find(e=>e.field===field&&/^https?:/.test(e.sourceUrl||'')&&String(e.evidenceText||'').trim());
   const add=(label,status,detail,field,hard=false)=>{
     const ev=field?evidence(field):null;
+    if(status==='NON CONFORME'&&!hard)status='À VÉRIFIER';
     criteria.push({label,status,detail,sourceUrl:ev?.sourceUrl||null,sourceTier:ev?.sourceTier||null,hard});
     if(hard&&status==='NON CONFORME')block.push(detail||label);
   };
   const types=arr(a.aidTypes),cats=arr(a.companyCategories),regions=arr(a.regions);
   const targetInstruments=['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO'];
   const hasTargetInstrument=types.some(x=>targetInstruments.includes(x));
-  add('Instrument',hasTargetInstrument?'CONFORME':'NON CONFORME',types.length?types.map(aidTypeLabel).join(', '):'Instrument non documenté','financialTerms',types.length>0);
+  add('Instrument',!types.length?'À VÉRIFIER':hasTargetInstrument?'CONFORME':'NON CONFORME',types.length?types.map(aidTypeLabel).join(', '):'Instrument non documenté','financialTerms',types.length>0);
 
-  add('Statut','CONFORME','Dispositif actif dans la bibliothèque publiée','calendar',true);
+  add('Statut','À VÉRIFIER','Le référencement dans la base ne confirme pas à lui seul l’ouverture du dispositif.','calendar');
 
   const projectCat=p.startup?`STARTUP / ${p.category}`:p.category;
   if(cats.length&&p.category&&p.category!=='À préciser'){
     const match=cats.includes(p.category)||(p.startup&&cats.includes('STARTUP'));
-    add('Taille entreprise',match?'CONFORME':'NON CONFORME',`Bénéficiaires déclarés : ${cats.join(', ')} · profil projet : ${projectCat}`,'beneficiaries',true);
-  }else add('Taille entreprise','À VÉRIFIER',cats.length?`Bénéficiaires déclarés : ${cats.join(', ')}`:'Taille d’entreprise non documentée','beneficiaries');
+    add('Taille entreprise',match?'CONFORME':'NON CONFORME',`Catégories référencées : ${cats.join(', ')} · profil projet : ${projectCat}`,'beneficiaries',Boolean(a.eligibilityRules?.companyCategoriesExhaustive));
+  }else add('Taille entreprise','À VÉRIFIER',cats.length?`Catégories référencées : ${cats.join(', ')}`:'Taille d’entreprise non documentée','beneficiaries');
 
   if(a.scope==='NATIONAL')add('Territoire','CONFORME','Portée nationale','beneficiaries',true);
-  else if(a.scope==='REGIONAL'&&p.region&&p.region!=='À préciser'){
+  else if(a.scope==='REGIONAL'&&regions.length&&p.region&&p.region!=='À préciser'){
     const match=regions.includes(p.region)||regions.includes('Toutes les Régions');
     add('Territoire',match?'CONFORME':'NON CONFORME',`Territoires du dispositif : ${regions.join(', ')||'non documentés'} · région du projet : ${p.region}`,'beneficiaries',true);
   }else add('Territoire','À VÉRIFIER',`Territoires du dispositif : ${regions.join(', ')||'non documentés'}`,'beneficiaries');
@@ -181,14 +188,14 @@ function eligibility(a,p){
   const budget=Number(p.budget||0),min=(a.minimumProjectCost!=null&&a.minimumProjectCost!==''&&Number.isFinite(Number(a.minimumProjectCost)))?Number(a.minimumProjectCost):null,max=(a.maximumProjectCost!=null&&a.maximumProjectCost!==''&&Number.isFinite(Number(a.maximumProjectCost)))?Number(a.maximumProjectCost):null;
   if(budget>0&&(min!=null||max!=null)){
     const mismatch=(min!=null&&budget<min)||(max!=null&&budget>max);
-    add('Budget',mismatch?'NON CONFORME':'CONFORME',`Budget projet : ${money(budget)} · assiette connue : ${min!=null?'min '+money(min):'min non documenté'} / ${max!=null?'max '+money(max):'max non documenté'}`,'financialTerms',true);
+    add('Budget',mismatch?'NON CONFORME':'CONFORME',`Budget projet : ${money(budget)} · assiette connue : ${min!=null?'min '+money(min):'min non documenté'} / ${max!=null?'max '+money(max):'max non documenté'}`,'financialTerms',a.eligibilityRules?.budgetBasis==='TOTAL_PROJECT');
   }else add('Budget','À VÉRIFIER',`Budget projet : ${budget>0?money(budget):'non renseigné'} · assiette : ${min!=null?'min '+money(min):'min non documenté'} / ${max!=null?'max '+money(max):'max non documenté'}`,'financialTerms');
 
   const explicit=explicitExclusion(a,p);
-  if(explicit)add('Secteur','NON CONFORME',explicit,'beneficiaries',true);
+  if(explicit)add('Secteur','À VÉRIFIER',explicit,'beneficiaries');
   else {
     const specialized=specializedMismatch(a,p);
-    add('Secteur',specialized?'À VÉRIFIER':'CONFORME',specialized||'Aucune exclusion sectorielle explicite détectée dans les données structurées','beneficiaries');
+    add('Secteur','À VÉRIFIER',specialized||'Aucune exclusion sectorielle explicite détectée dans les données structurées','beneficiaries');
   }
 
   add('Dépenses éligibles','À VÉRIFIER',a.eligibleExpenses?'Les postes seront rapprochés des dépenses publiées':'Dépenses éligibles non documentées','eligibleExpenses');
@@ -202,7 +209,7 @@ function eligibility(a,p){
     }else add('Effet incitatif','À VÉRIFIER','Le texte du dispositif impose un dépôt avant démarrage ; renseigner ou vérifier la date de début du projet.','prerequisites');
   }
 
-  const consortiumRequired=/(consortium|partenariat obligatoire|projet collaboratif|au moins deux partenaires|minimum de deux partenaires|entreprises partenaires)/.test(ruleText);
+  const consortiumRequired=/(partenariat obligatoire|consortium obligatoire|doit etre porte.{0,40}consortium|au moins deux partenaires|minimum de deux partenaires)/.test(ruleText);
   if(consortiumRequired){
     const partnerText=norm(p.partners||'');
     const explicitSolo=/(aucun partenaire|sans partenaire|projet seul|porte seul|entreprise seule)/.test(partnerText);
@@ -212,7 +219,7 @@ function eligibility(a,p){
   add('Pré-requis','À VÉRIFIER',a.prerequisites?'Les pré-requis seront rapprochés du profil, de la maturité et du montage du projet':'Pré-requis non documentés','prerequisites');
   add('Critères de sélection','À VÉRIFIER',a.selectionCriteria?'Les critères seront rapprochés des impacts, travaux, partenaires et maturité':'Critères de sélection non documentés','selectionCriteria');
 
-  const confirmed=criteria.filter(x=>x.hard).length>0&&criteria.filter(x=>x.hard).every(x=>x.status==='CONFORME');
+  const confirmed=criteria.length>0&&criteria.every(x=>x.status==='CONFORME');
   return{eligible:block.length===0,status:block.length?'NON CONFORME':confirmed?'CONFORME':'À VÉRIFIER',criteria,next:nd,blocking:block};
 }
 function relevance(a,p){if(window.LEYTON_SCORING?.relevance)return window.LEYTON_SCORING.relevance(a,p);throw new Error('Moteur de pertinence partagé indisponible.')}
@@ -257,7 +264,7 @@ async function runFeasibility(){
 
   scored.sort((x,y)=>y.relevance.score-x.relevance.score||y.relevance.documentedWeight-x.relevance.documentedWeight);
   const strongFloor=80,leadFloor=65,potentialFloor=50;
-  const priorities=scored.filter(x=>x.relevance.score>=strongFloor).slice(0,10);
+  const priorities=scored.filter(x=>x.elig.status==='CONFORME'&&x.relevance.score>=strongFloor&&x.relevance.basis==='description projet').slice(0,10);
   const priorityIds=new Set(priorities.map(x=>x.a.id));
   const leads=scored.filter(x=>!priorityIds.has(x.a.id)&&x.relevance.score>=leadFloor).slice(0,10);
   const leadIds=new Set(leads.map(x=>x.a.id));
@@ -265,7 +272,7 @@ async function runFeasibility(){
   const shownIds=new Set([...priorities,...leads,...potentials].map(x=>x.a.id));
   const bestBelow=scored.filter(x=>!shownIds.has(x.a.id)).slice(0,5);
   const duration=Math.round(performance.now()-started);
-  const checks=scored.reduce((n,x)=>n+(x.relevance.checks||x.relevance.dims?.length||9),0)+corpus.length*7;
+  const checks=[...scored,...rejected].reduce((n,x)=>n+x.elig.criteria.length,0);
   state.lastResults=[...priorities,...leads,...potentials,...(!priorities.length&&!leads.length&&!potentials.length?bestBelow:[])];
 
   root.innerHTML=`<div class="section-title"><h2>Cartographie des dispositifs pertinents</h2></div>
@@ -275,10 +282,9 @@ async function runFeasibility(){
     <div class="metric"><b>${leads.length}</b><span>à approfondir</span><small>adéquation significative</small></div>
     <div class="metric"><b>${potentials.length}</b><span>pistes complémentaires</span><small>à qualifier</small></div>
   </div>
-  <div class="analysis-audit"><b>${checks.toLocaleString('fr-FR')} contrôles exécutés</b> sur ${corpus.length.toLocaleString('fr-FR')} dispositifs en ${duration.toLocaleString('fr-FR')} ms · ${rejected.length.toLocaleString('fr-FR')} incompatibilités bloquantes écartées · ${scored.length.toLocaleString('fr-FR')} dispositifs scorés.</div></div>
+  <div class="analysis-audit"><b>${scored.length.toLocaleString('fr-FR')} dispositifs sans incompatibilité identifiée</b> · ${rejected.length.toLocaleString('fr-FR')} dispositifs écartés. Les correspondances textuelles orientent la recherche ; les conditions non vérifiées restent à instruire.</div></div>
 
-  <div class="section-title"><h3>Dispositifs prioritaires</h3></div>
-  ${priorities.length?priorities.map((x,i)=>resultCard(x,i+1,'PRIORITAIRE')).join(''):'<div class="callout">Aucun dispositif ne ressort comme prioritaire avec les informations actuellement disponibles. Les meilleures correspondances restent visibles ci-dessous.</div>'}
+  ${priorities.length?`<div class="section-title"><h3>Dispositifs prioritaires</h3></div>${priorities.map((x,i)=>resultCard(x,i+1,'PRIORITAIRE')).join('')}`:''}
   <div class="section-title"><h3>À approfondir</h3></div>
   ${leads.length?leads.map((x,i)=>resultCard(x,i+1,'À APPROFONDIR')).join(''):'<div class="callout">Aucune correspondance supplémentaire de niveau intermédiaire.</div>'}
   ${potentials.length?`<div class="section-title"><h3>Correspondances potentielles</h3></div>${potentials.map((x,i)=>resultCard(x,i+1,'POTENTIEL')).join('')}`:''}
@@ -305,21 +311,23 @@ function financialHtml(a){
   const rate=(a.aidRate?.min!=null||a.aidRate?.max!=null)?`${a.aidRate?.min??'—'} % à ${a.aidRate?.max??'—'} %`:'—';
   return `<p><b>Type :</b> ${esc(types)}<br><b>Assiette projet :</b> ${esc(base)}<br><b>Montant d’aide :</b> ${esc(amount)}<br><b>Taux :</b> ${esc(rate)}</p>${sizeFinance(a)}`;
 }
+function criterionBadge(status){return `<span class="pill ${status==='CONFORME'?'ok':status==='NON CONFORME'?'block':'warn'}">${esc(status==='À VÉRIFIER'?'Conditions à confirmer':status)}</span>`}
+function listText(value){const values=arr(value).filter(v=>v!=null&&String(v).trim());return values.length?values.map(v=>`<p>${esc(typeof v==='object'?(v.label||v.text||JSON.stringify(v)):v)}</p>`).join(''):missing()}
 function resultCard(r,rank,kind='À APPROFONDIR'){
   const a=r.a,url=officialUrl(a),deadlines=uniq(arr(a.deadlines).map(x=>typeof x==='string'?x:x?.date).filter(Boolean));
   const close=a.finalClosingDate||a.closingDate||null;
   const deepHref=`?aid=${encodeURIComponent(a.id)}`;
-  const scoreAudit=arr(r.relevance?.dims).map(d=>`<div class="score-line"><span><b>${esc(d.label)}</b><small>${esc(d.detail||'')}</small>${arr(d.matched).length?`<small>Correspondances : ${esc(arr(d.matched).join(', '))}</small>`:''}</span><strong>${d.documented===false?'N/D':`${d.score}/${d.max}`}</strong></div>`).join('');
+  const scoreAudit=arr(r.relevance?.dims).map(d=>`<div class="score-line"><span><b>${esc(d.label)}</b><small>${esc(d.detail||'')}</small>${arr(d.matched).length?`<small>Correspondances : ${esc(arr(d.matched).join(', '))}</small>`:''}</span><strong>${d.documented===false?'À renseigner':d.ratio>=65?'Correspondance':d.ratio>0?'Partielle':'Non établie'}</strong></div>`).join('');
   return `<article class="result-card aid-result-block">
     <div class="row between aid-result-head">
       <div><span class="rank">#${rank}</span>
         ${url?`<a class="aid-title-link" href="${esc(url)}" target="_blank" rel="noopener">${esc(a.title)} ↗</a>`:`<span class="aid-title-link no-link">${esc(a.title)}</span>`}
         <div class="mini">${esc(arr(a.funder).join(', ')||'Financeur à documenter')}</div>
       </div>
-      <div class="score">${r.relevance.score}<small>/100 · indice d’adéquation</small></div>
+      <div class="assessment-label">${r.relevance.basis==='description projet'?'Analyse du projet':'Prospection par activité'}</div>
     </div>
     <div class="row aid-result-badges">
-      <span class="pill ${r.relevance.score>=80?'ok':'info'}">${esc(kind)}</span><span class="pill">${esc(r.relevance.profileLabel||'Grille générale')}</span>
+      <span class="pill info">${esc(kind)}</span><span class="pill">${esc(r.relevance.profileLabel||'Grille générale')}</span>
       ${criterionBadge(r.elig.status)}
 
     </div>
@@ -333,7 +341,7 @@ function resultCard(r,rank,kind='À APPROFONDIR'){
       <section><h4>Pré-requis</h4>${listText(a.prerequisites)}</section>
       <section class="span-2 eligibility-note"><h4>Éligibilité — commentaire</h4><p>${esc(eligibilityComment(r))}</p></section>
     </div>
-    <details class="score-audit"><summary>Lire l’analyse détaillée</summary><div class="mini" style="margin:8px 0">Grille : ${esc(r.relevance.profileLabel||'Grille générale')} · base projet : ${esc(r.relevance.basis||'données disponibles')} · couverture des critères documentés : ${r.relevance.documentedWeight??'—'} / 100.</div>${scoreAudit}</details>
+    <details class="score-audit"><summary>Lire l’analyse détaillée</summary><div class="mini" style="margin:8px 0">Base : ${esc(r.relevance.basis||'données disponibles')}. Rapprochement indicatif, sans barème officiel du financeur. Les données absentes ne constituent pas une incompatibilité.</div>${scoreAudit}</details>
     <div class="row end aid-result-actions">
       <a class="btn small open-result" data-id="${esc(a.id)}" href="${esc(deepHref)}">Voir la fiche complète</a>
       ${url?`<a class="btn primary small" href="${esc(url)}" target="_blank" rel="noopener">Ouvrir la source officielle ↗</a>`:''}
@@ -396,16 +404,27 @@ function exportLibraryCsv(rows){
   }
   const blob=new Blob(['\ufeff'+lines.join('\r\n')],{type:'text/csv;charset=utf-8'});
   const href=URL.createObjectURL(blob),a=document.createElement('a');
-  a.href=href;a.download=`FUNDING_RADAR_bibliotheque_${today()}.csv`;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(href),1000);
+  a.href=href;a.download=`Leyton_Veilles_AS_bibliotheque_${today()}.csv`;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(href),1000);
 }
-function library(){
+const searchCache=new WeakMap();
+function searchText(a){
+  if(searchCache.has(a))return searchCache.get(a);
+  const raw=norm([a.title,a.objective,a.beneficiaries,...arr(a.themes),...arr(a.projectsExpected),...arr(a.funder),a.programme,a.operator,...arr(a.sourceAliases)].join(' '));
+  const text=raw.replace(/\bbpi france\b/g,'bpifrance')+(/bpifrance/.test(raw)?' bpi':'');
+  searchCache.set(a,text);return text;
+}
+function matchesSearch(a,q){
+  const text=searchText(a);
+  const terms=norm(q).replace(/\bbpi france\b/g,'bpifrance').split(' ').filter(x=>x.length>1&&!['de','du','des','aux','les','le','la','en','et'].includes(x));
+  return terms.every(t=>text.includes(t)||t.length>4&&t.endsWith('s')&&text.includes(t.slice(0,-1)));
+}
+function library(resultsOnly=false){
   const q=window.__q||'',region=window.__reg||'',kind=window.__kind||'',theme=window.__theme||'',instrument=window.__instrument||'',time=window.__time||'',selectedCategories=window.__categories||[];
   const activeLib=state.lib.filter(usableAid);
   const themes=uniq(activeLib.flatMap(a=>arr(a.themes))).sort((a,b)=>a.localeCompare(b,'fr'));
   const instruments=uniq(activeLib.flatMap(a=>arr(a.aidTypes))).sort((a,b)=>aidTypeLabel(a).localeCompare(aidTypeLabel(b),'fr'));
   const list=activeLib.filter(a=>{
-    const txt=norm([a.title,a.objective,a.beneficiaries,...arr(a.themes),...arr(a.projectsExpected),...arr(a.funder),a.programme,a.operator].join(' '));
-    if(q&&!txt.includes(norm(q)))return false;
+    if(q&&!matchesSearch(a,q))return false;
     if(region&&!arr(a.regions).includes(region)&&!arr(a.regions).includes('Toutes les Régions'))return false;
     if(kind&&a.kind!==kind)return false;
     if(theme&&!arr(a.themes).includes(theme))return false;
@@ -414,45 +433,50 @@ function library(){
     if(time==='nodate'&&nextDeadline(a).reason!=='DATE_MISSING')return false;
     if(selectedCategories.length&&!selectedCategories.some(c=>arr(a.companyCategories).includes(c)))return false;
     return true;
-  }).sort((a,b)=>(nextDeadline(a).date||'9999').localeCompare(nextDeadline(b).date||'9999'));
+  }).sort((a,b)=>{const rank=x=>q?norm(q).split(' ').filter(t=>t.length>2&&norm(x.title).includes(t)).length:0;return rank(b)-rank(a)||(nextDeadline(a).date||'9999').localeCompare(nextDeadline(b).date||'9999')});
   window.__lastLibraryList=list;
-  $('#app').innerHTML=`<div class="page-head"><div><div class="eyebrow">Bibliothèque des aides et appels à projets</div><h1>Aides et appels à projets</h1><p class="sub">Bénéficiaires, thématiques, portée, modalités financières, projets attendus, dépenses, clôtures, relèves, prérequis et accès direct à la source officielle.</p></div><div class="row end"><span class="badge info">${list.length} résultat(s)</span><button class="btn primary" id="exportLibraryCsv">Exporter CSV</button></div></div>
-  <div class="filters six"><input class="input" id="libQ" placeholder="Rechercher un dispositif, une thématique, un financeur…" value="${esc(q)}"><select id="libRegion"><option value="">Toutes régions</option>${REGIONS.map(r=>`<option ${r===region?'selected':''}>${esc(r)}</option>`).join('')}</select><select id="libTheme" aria-label="Thématique"><option value="">Toutes thématiques</option>${themes.map(t=>`<option value="${esc(t)}" ${t===theme?'selected':''}>${esc(t)}</option>`).join('')}</select><select id="libInstrument" aria-label="Instrument"><option value="">Tous instruments</option>${instruments.map(t=>`<option value="${esc(t)}" ${t===instrument?'selected':''}>${esc(aidTypeLabel(t))}</option>`).join('')}</select><select id="libKind"><option value="">Tous les dispositifs</option><option ${kind==='AAP / AMI'?'selected':''}>AAP / AMI</option><option ${kind==='AIDE'?'selected':''}>AIDE</option></select><select id="libTime"><option value="">Toutes dates</option><option value="j1" ${time==='j1'?'selected':''}>Ouvert / ≥ J+1</option><option value="nodate" ${time==='nodate'?'selected':''}>Date non publiée</option></select><button class="btn" id="libRefresh">Rafraîchir</button></div>
+  const pageSize=50,page=Math.max(0,Math.min(window.__libPage||0,Math.ceil(list.length/pageSize)-1));window.__libPage=page;
+  const view=list.slice(page*pageSize,(page+1)*pageSize);
+  const markup=`<div class="page-head"><div><div class="eyebrow">Bibliothèque des aides et appels à projets</div><h1>Aides et appels à projets</h1><p class="sub">Bénéficiaires, thématiques, portée, modalités financières, projets attendus, dépenses, clôtures, relèves, prérequis et accès direct à la source officielle.</p></div><div class="row end"><span class="badge info" id="libraryCount" aria-live="polite">${list.length} résultat(s)</span><button class="btn primary" id="exportLibraryCsv">Exporter CSV</button></div></div>
+  <div class="filters six"><input class="input" id="libQ" aria-label="Rechercher dans les aides" placeholder="Rechercher un dispositif, une thématique, un financeur…" value="${esc(q)}"><select id="libRegion"><option value="">Toutes régions</option>${REGIONS.map(r=>`<option ${r===region?'selected':''}>${esc(r)}</option>`).join('')}</select><select id="libTheme" aria-label="Thématique"><option value="">Toutes thématiques</option>${themes.map(t=>`<option value="${esc(t)}" ${t===theme?'selected':''}>${esc(t)}</option>`).join('')}</select><select id="libInstrument" aria-label="Instrument"><option value="">Tous instruments</option>${instruments.map(t=>`<option value="${esc(t)}" ${t===instrument?'selected':''}>${esc(aidTypeLabel(t))}</option>`).join('')}</select><select id="libKind"><option value="">Tous les dispositifs</option><option ${kind==='AAP / AMI'?'selected':''}>AAP / AMI</option><option ${kind==='AIDE'?'selected':''}>AIDE</option></select><select id="libTime"><option value="">Toutes dates</option><option value="j1" ${time==='j1'?'selected':''}>Ouvert / ≥ J+1</option><option value="nodate" ${time==='nodate'?'selected':''}>Date non publiée</option></select><button class="btn" id="libRefresh">Rafraîchir</button></div>
   <div role="group" aria-label="Taille d’entreprise" class="library-size-filter"><span class="mini">Taille d’entreprise :</span>${['PME','ETI','GE','STARTUP'].map(c=>`<label class="pill"><input type="checkbox" class="libCategory" value="${c}" ${selectedCategories.includes(c)?'checked':''}> ${c==='STARTUP'?'Startup':c}</label>`).join('')}</div>
-  <div class="table-wrap"><table><thead><tr><th>Aide / AAP</th><th>Portée</th><th>Instrument</th><th>Entreprise</th><th>Échéance</th><th>Documents</th></tr></thead><tbody>${list.map(a=>{const nd=nextDeadline(a),url=officialUrl(a);return`<tr><td>${url?`<a href="${esc(url)}" target="_blank" rel="noopener" class="link"><b>${esc(a.title)} ↗</b></a>`:`<b>${esc(a.title)}</b>`}<div class="mini">${esc(arr(a.funder).join(', ')||'Financeur à préciser')}</div><a class="link-button open-aid" data-id="${esc(a.id)}" href="?aid=${encodeURIComponent(a.id)}">Voir la fiche</a></td><td>${a.scope==='NATIONAL'?'<span class="pill">National</span>':`<span class="pill">${esc(arr(a.regions).join(', ')||'Régional')}</span>`}</td><td>${arr(a.aidTypes).map(x=>`<span class="pill ok">${esc(aidTypeLabel(x))}</span>`).join('')}</td><td>${esc(arr(a.companyCategories).join(', ')||'—')}</td><td>${a.permanent?'Permanent':nd.date?`${fmtDate(nd.date)} <span class="mini">J+${Math.max(0,daysUntil(nd.date))}</span>`:missing()}</td><td>${arr(a.cdcLinks).length?`<span class="badge ok">${arr(a.cdcLinks).length} doc.</span>`:'—'}</td></tr>`}).join('')}</tbody></table></div>`;
-
+  <div id="libraryResults"><div class="table-wrap"><table><thead><tr><th>Aide / AAP</th><th>Portée</th><th>Instrument</th><th>Entreprise</th><th>Échéance</th><th>Documents</th></tr></thead><tbody>${view.map(a=>{const nd=nextDeadline(a),url=officialUrl(a);return`<tr><td>${url?`<a href="${esc(url)}" target="_blank" rel="noopener" class="link"><b>${esc(a.title)} ↗</b></a>`:`<b>${esc(a.title)}</b>`}<div class="mini">${esc(arr(a.funder).join(', ')||'Financeur à préciser')}</div><a class="link-button open-aid" data-id="${esc(a.id)}" href="?aid=${encodeURIComponent(a.id)}">Voir la fiche</a></td><td>${a.scope==='NATIONAL'?'<span class="pill">National</span>':`<span class="pill">${esc(arr(a.regions).join(', ')||'Régional')}</span>`}</td><td>${arr(a.aidTypes).map(x=>`<span class="pill ok">${esc(aidTypeLabel(x))}</span>`).join('')}</td><td>${esc(arr(a.companyCategories).join(', ')||'—')}</td><td>${a.permanent?'Permanent':nd.date?`${fmtDate(nd.date)} <span class="mini">J+${Math.max(0,daysUntil(nd.date))}</span>`:missing()}</td><td>${arr(a.cdcLinks).length?`<span class="badge ok">${arr(a.cdcLinks).length} doc.</span>`:'—'}</td></tr>`}).join('')}</tbody></table></div>${!list.length?'<div class="empty">Aucun dispositif ne correspond à ces filtres.</div>':''}<div class="row between pagination"><button class="btn" id="libPrev" ${page===0?'disabled':''}>Précédent</button><span>Page ${page+1} / ${Math.max(1,Math.ceil(list.length/pageSize))} · ${list.length} résultats</span><button class="btn" id="libNext" ${(page+1)*pageSize>=list.length?'disabled':''}>Suivant</button></div></div>`;
+  if(resultsOnly&&$('#libraryResults')){
+    const template=document.createElement('template');template.innerHTML=markup;
+    $('#libraryResults').replaceWith(template.content.querySelector('#libraryResults'));
+    $('#libraryCount').textContent=list.length+' résultat(s)';
+  }else $('#app').innerHTML=markup;
+  $('#libPrev').onclick=()=>{window.__libPage=page-1;library(true)};
+  $('#libNext').onclick=()=>{window.__libPage=page+1;library(true)};
   const qInput=$('#libQ');
-  qInput.oninput=e=>{
-    window.__q=e.target.value;
-    const caret=e.target.selectionStart??e.target.value.length;
+  const scheduleSearch=()=>{
+    window.__q=qInput.value;window.__libPage=0;
     clearTimeout(window.__libSearchTimer);
-    window.__libSearchTimer=setTimeout(()=>{
-      library();
-      const next=$('#libQ');
-      if(next){next.focus();const p=Math.min(caret,next.value.length);next.setSelectionRange?.(p,p)}
-    },260);
+    window.__libSearchTimer=setTimeout(()=>{if(state.route==='library')library(true)},180);
   };
-  $('#libRegion').onchange=e=>{window.__reg=e.target.value;library()};
-  $('#libKind').onchange=e=>{window.__kind=e.target.value;library()};
-  $('#libTheme').onchange=e=>{window.__theme=e.target.value;library()};
-  $('#libInstrument').onchange=e=>{window.__instrument=e.target.value;library()};
-  $('#libTime').onchange=e=>{window.__time=e.target.value;library()};
-  $$('.libCategory').forEach(x=>x.onchange=()=>{window.__categories=$$('.libCategory:checked').map(y=>y.value);library()});
+  qInput.oninput=e=>{if(!e.isComposing)scheduleSearch()};
+  qInput.oncompositionend=scheduleSearch;
+  $('#libRegion').onchange=e=>{window.__reg=e.target.value;window.__libPage=0;library()};
+  $('#libKind').onchange=e=>{window.__kind=e.target.value;window.__libPage=0;library()};
+  $('#libTheme').onchange=e=>{window.__theme=e.target.value;window.__libPage=0;library()};
+  $('#libInstrument').onchange=e=>{window.__instrument=e.target.value;window.__libPage=0;library()};
+  $('#libTime').onchange=e=>{window.__time=e.target.value;window.__libPage=0;library()};
+  $$('.libCategory').forEach(x=>x.onchange=()=>{window.__categories=$$('.libCategory:checked').map(y=>y.value);window.__libPage=0;library()});
   $('#libRefresh').onclick=loadAll;
   $('#exportLibraryCsv').onclick=()=>exportLibraryCsv(window.__lastLibraryList||list);
   $$('.open-aid').forEach(x=>x.onclick=e=>{e.preventDefault();openAid(x.dataset.id)});
 }
 function watch(){
-  const ch=state.changes.slice().reverse();
+  const ch=state.changes.slice().sort((a,b)=>String(b.at||'').localeCompare(String(a.at||'')));
   const creations=ch.filter(x=>x.type==='CREATION');
   const businessFields=new Set(['closingDate','finalClosingDate','deadlines','aidRate','aidAmount','aidTypes','eligibleExpenses','prerequisites','selectionCriteria','beneficiaries','themes','minimumProjectCost','maximumProjectCost']);
   const updates=ch.filter(x=>x.type==='MODIFICATION'&&arr(x.fields).some(f=>businessFields.has(f)));
   const closures=ch.filter(x=>/SORTIE|CLOS|ARCHIVE/.test(x.type));
   const findAid=x=>state.lib.find(a=>a.id===x.id)||state.lib.find(a=>norm(a.title)===norm(x.title||''));
-  const item=(x,label)=>{const a=findAid(x),url=a?officialUrl(a):null;return`<div class="watch-item"><div><span class="pill ${label==='Nouveau'?'ok':label==='Clôture'?'warn':'info'}">${label}</span> <b>${esc(x.title||a?.title||x.id)}</b>${arr(x.fields).length?`<div class="mini">Mise à jour : ${esc(arr(x.fields).join(', '))}</div>`:''}</div><div class="row">${a?`<a class="btn small open-aid" data-id="${esc(a.id)}" href="?aid=${encodeURIComponent(a.id)}">Voir la fiche</a>`:''}${url?`<a class="btn small" target="_blank" rel="noopener" href="${esc(url)}">Source officielle ↗</a>`:''}</div></div>`};
-  $('#app').innerHTML=`<div class="page-head"><div><div class="eyebrow">Veille des financements</div><h1>Nouveaux AAP & aides</h1><p class="sub">Les nouveaux dispositifs intégrés dans la bibliothèque et les évolutions qui modifient réellement la possibilité de financement : échéance, bénéficiaires, montant, taux, dépenses ou critères.</p></div><button class="btn primary" id="watchCollect">Actualiser la bibliothèque</button></div>
+  const item=(x,label)=>{const a=findAid(x),url=a?officialUrl(a):null;return`<div class="watch-item"><div><span class="pill ${label==='Nouveau'?'ok':label==='Clôture'?'warn':'info'}">${label}</span> <b>${esc(x.title||a?.title||x.id)}</b><div class="mini">${x.at?esc(new Date(x.at).toLocaleString('fr-FR')):'Date d’intégration non renseignée'}</div>${arr(x.fields).length?`<div class="mini">Mise à jour : ${esc(arr(x.fields).join(', '))}</div>`:''}</div><div class="row">${a?`<a class="btn small open-aid" data-id="${esc(a.id)}" href="?aid=${encodeURIComponent(a.id)}">Voir la fiche</a>`:''}${url?`<a class="btn small" target="_blank" rel="noopener" href="${esc(url)}">Source officielle ↗</a>`:''}</div></div>`};
+  $('#app').innerHTML=`<div class="page-head"><div><div class="eyebrow">Veille des financements</div><h1>Nouveaux AAP & aides</h1><p class="sub">Suivez les aides et appels à projets ajoutés à la base. La date d’intégration est distincte de la date de publication par le financeur. Les modifications et clôtures sont présentées séparément.</p></div><button class="btn primary" id="watchCollect">Actualiser la bibliothèque</button></div>
   <div class="grid g3"><div class="metric"><b>${creations.length}</b><span>nouveaux dispositifs intégrés</span></div><div class="metric"><b>${updates.length}</b><span>mises à jour utiles</span></div><div class="metric"><b>${closures.length}</b><span>sorties / clôtures</span></div></div>
-  <div class="card watch-card" style="margin-top:16px"><h3>Derniers dispositifs intégrés</h3>${creations.length?creations.slice(0,40).map(x=>item(x,'Nouveau')).join(''):'<div class="empty">Aucun nouveau dispositif depuis la dernière actualisation.</div>'}</div>
+  <div class="card watch-card" style="margin-top:16px"><h3>Derniers dispositifs intégrés</h3>${creations.length?creations.slice(0,40).map(x=>item(x,'Nouveau')).join(''):'<div class="empty">Aucune nouvelle intégration enregistrée dans le journal disponible.</div>'}</div>
   ${updates.length?`<div class="card watch-card" style="margin-top:16px"><h3>Évolutions à prendre en compte</h3>${updates.slice(0,30).map(x=>item(x,'Mise à jour')).join('')}</div>`:''}
   ${closures.length?`<div class="card watch-card" style="margin-top:16px"><h3>Dispositifs sortis ou clôturés</h3>${closures.slice(0,20).map(x=>item(x,'Clôture')).join('')}</div>`:''}`;
   $('#watchCollect').onclick=requestCollection;
@@ -465,7 +489,7 @@ function sources(){
   const rows=arr(state.sources);
   const national=rows.filter(s=>s.scope==='France').length;
   const regional=rows.length-national;
-  $('#app').innerHTML=`<div class="page-head"><div><div class="eyebrow">Référentiel officiel</div><h1>Sources publiques</h1><p class="sub">Chaque source référencée est accessible directement. Les contrôles techniques de collecte restent gérés en arrière-plan et ne modifient pas la qualification métier d’un dispositif.</p></div><button class="btn" id="sourcesRefresh">Rafraîchir</button></div>
+  $('#app').innerHTML=`<div class="page-head"><div><div class="eyebrow">Référentiel officiel</div><h1>Sources publiques</h1><p class="sub">Chaque source référencée est accessible directement. Les fiches reprennent les informations disponibles ; la date et le règlement propres au dispositif restent déterminants.</p></div><button class="btn" id="sourcesRefresh">Rafraîchir</button></div>
   <div class="grid g3"><div class="metric"><b>${rows.length||state.meta.sourceCount||'—'}</b><span>sources officielles référencées</span></div><div class="metric"><b>${national}</b><span>sources nationales</span></div><div class="metric"><b>${regional}</b><span>sources régionales</span></div></div>
   <div class="table-wrap sources-table" style="margin-top:14px"><table><thead><tr><th>Source officielle</th><th>Périmètre</th><th>Accès</th><th>Dernière synchronisation</th></tr></thead><tbody>${rows.map(s=>{const cv=coverageById.get(s.id);return`<tr><td><a class="link source-name" href="${esc(s.url)}" target="_blank" rel="noopener"><b>${esc(s.name)}</b> ↗</a></td><td>${esc(s.scope==='France'?'National':s.scope)}</td><td><span class="badge ok">Source officielle</span></td><td>${cv?.checkedAt?new Date(cv.checkedAt).toLocaleString('fr-FR'):'—'}</td></tr>`}).join('')}</tbody></table></div>`;
   $('#sourcesRefresh').onclick=loadAll;
@@ -475,3 +499,4 @@ function production(){const r=state.readiness;const gates=r?.gates||[];$('#app')
 async function requestCollection(){if(CONFIG.refreshEndpoint){const token=window.prompt('Code administrateur (non enregistré)');if(!token)return;try{toast('Demande de collecte envoyée…');const r=await fetch(CONFIG.refreshEndpoint,{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+token},body:JSON.stringify({action:'full-refresh'})});const j=await r.json().catch(()=>({}));if(!r.ok)throw new Error(j.error||('HTTP '+r.status));toast('Collecte demandée. Le rapport sera mis à jour après le cycle.')}catch(e){toast(`Impossible de déclencher la collecte : ${esc(e.message)}`)}}else if(hostedProduction()){await loadAll();toast('Bibliothèque officielle publiée rechargée. La collecte complète reste exécutée côté serveur.')}else{clientLiveRefresh({full:true,silent:false}).catch(()=>{})}}
 document.addEventListener('click',e=>{const t=e.target.closest('.open-result,.open-aid');if(t){e.preventDefault();openAid(t.dataset.id)}});
 loadAll().then(()=>{scheduleClientDailyRefresh();return maybeAutoClientRefresh()}).catch(e=>{$('#app').innerHTML=`<div class="callout warn"><b>Bibliothèque publiée indisponible.</b><br>${esc(e.message)}<br>La dernière version embarquée reste accessible si elle est présente.</div>`});
+

@@ -24,6 +24,21 @@ await fs.cp(SITE,DIST,{
 
 const library=JSON.parse(await fs.readFile(path.join(SITE,'data','library.json'),'utf8'));
 const records=Array.isArray(library.aaps)?library.aaps:[];
+// Exact URL / ID de-duplication; a supplementary reference never overwrites a collected record.
+const curated=JSON.parse(await fs.readFile(path.join(SITE,'data','curated-aids.json'),'utf8'));
+const canonical=u=>String(u||'').replace(/\/$/,'');
+for(const aid of curated.aaps||[]){
+  if(!records.some(a=>a.id===aid.id||canonical(a.officialPage)===canonical(aid.officialPage)))records.push(aid);
+}
+// Preserve the integration event separately from the funder's publication date.
+const changesPath=path.join(DIST,'data','changes.json');
+const changes=JSON.parse(await fs.readFile(changesPath,'utf8'));
+for(const aid of curated.aaps||[]){
+  if(aid.integratedAt&&!changes.some(x=>x.id===aid.id&&x.type==='CREATION')){
+    changes.push({type:'CREATION',id:aid.id,title:aid.title,fields:[],at:aid.integratedAt});
+  }
+}
+await fs.writeFile(changesPath,JSON.stringify(changes),'utf8');
 const parts=[];
 let current=[],bytes=2;
 
@@ -84,3 +99,4 @@ console.log(JSON.stringify({
   largestPart:Math.max(0,...await Promise.all(partFiles.map(async f=>(await fs.stat(path.join(DIST,'data',f))).size))),
   excluded:[...excluded]
 },null,2));
+

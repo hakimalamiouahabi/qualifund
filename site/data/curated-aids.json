@@ -1,0 +1,61 @@
+{
+  "reviewedAt": "2026-09-28",
+  "aaps": [
+    {
+      "id": "official_bpifrance_developpement_innovation",
+      "sourceId": "bpifrance",
+      "title": "Aide pour le développement de l’innovation",
+      "sourceAliases": [
+        "ADI",
+        "Bpifrance"
+      ],
+      "kind": "AIDE",
+      "funder": [
+        "Bpifrance"
+      ],
+      "operator": "Bpifrance",
+      "scope": "NATIONAL",
+      "regions": [
+        "Toutes les Régions"
+      ],
+      "objective": "Accompagner les projets de recherche industrielle et de développement expérimental avant leur lancement industriel et commercial.",
+      "beneficiaries": "PME et entreprises de moins de 2 000 salariés ; conditions détaillées à vérifier dans l’offre officielle.",
+      "companyCategories": [
+        "PME",
+        "ETI"
+      ],
+      "aidTypes": [
+        "SUBVENTION",
+        "AVANCE_REMBOURSABLE"
+      ],
+      "themes": [
+        "R&D / Innovation"
+      ],
+      "projectsExpected": [
+        "Recherche industrielle",
+        "Développement expérimental"
+      ],
+      "officialPage": "https://www.bpifrance.fr/catalogue-offres/aide-pour-le-developpement-de-linnovation",
+      "sourceLinks": [
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/aide-pour-le-developpement-de-linnovation",
+          "label": "Offre officielle Bpifrance"
+        }
+      ],
+      "lifecycleStatus": "ACTIVE",
+      "permanent": false,
+      "closingDate": null,
+      "verification": {
+        "status": "A_REVERIFIER",
+        "lastChecked": "2026-09-28",
+        "fieldEvidence": []
+      },
+      "attentionPoints": [
+        "Montant, assiette, intensité, conditions financières et disponibilité à confirmer dans l’offre officielle."
+      ],
+      "prerequisites": null,
+      "selectionCriteria": null,
+      "integratedAt": "2026-09-28T22:15:24Z"
+    }
+  ]
+}

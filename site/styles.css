@@ -228,3 +228,70 @@ td{font-size:12.5px!important;padding:10px 11px}
   .brand-left{min-width:auto}
   .top-actions #sidebarToggle{display:none}
 }
+
+
+/* Lisibilité de la version direction : contrôles >= 16 px, notes >= 14 px. */
+html{font-size:16px}
+body{font-size:16px;line-height:1.55}
+.topbar{height:auto;min-height:100px;display:grid;grid-template-columns:180px minmax(250px,1fr) auto;gap:20px;padding:18px 24px}
+.brandmark{font-size:36px!important;letter-spacing:2px!important;line-height:1.2}
+.brand-left{min-width:0}
+.app-identity{position:static!important;transform:none!important;display:block!important;text-align:center}
+.app-identity b{font-size:23px!important;line-height:1.25}
+.app-identity span{font-size:14px!important}
+.top-actions{gap:8px;flex-wrap:wrap;justify-content:flex-end;max-width:400px}
+.top-actions #today,.top-actions #engineBadge{display:none}
+.top-actions .btn{font-size:14px!important;padding:9px 12px}
+.layout{grid-template-columns:270px minmax(0,1fr)}
+.sidebar{top:100px;height:calc(100vh - 100px);padding:20px 14px}
+.scope b,.scope span{font-size:14px!important;line-height:1.55}
+.nav{font-size:16px!important;padding:12px!important;line-height:1.5}
+main{padding:28px;min-width:0}
+.hero h1{font-size:clamp(30px,3vw,42px)!important;line-height:1.15}
+.hero p,.sub,.card p,.sheet-box p{font-size:17px!important;line-height:1.65}
+.page-head h1{font-size:32px!important;line-height:1.2}
+.card h3{font-size:21px}
+.input,select,textarea{font-size:16px!important;line-height:1.5;padding:12px!important;min-height:48px}
+.field,.step,.btn{font-size:16px!important}
+.mini,.metric small,.eyebrow,.btn.small,.badge,.pill,th,.link-button,.proof,.sheet-box h4,.method-grid p,.score-line,.analysis-audit,.callout{font-size:14px!important;line-height:1.6}
+.metric span,td{font-size:16px!important;line-height:1.55}
+.metric b{font-size:32px!important}
+.filters,.filters.six{grid-template-columns:repeat(3,minmax(0,1fr))}
+.filters #libQ{grid-column:span 2}
+.aid-title-link{font-size:21px!important;line-height:1.4}
+.assessment-label{font-size:14px;font-weight:700;color:var(--muted)}
+.pagination{padding:20px 0}
+.watch-item{align-items:flex-start}
+@media(max-width:1200px){
+ .topbar{grid-template-columns:160px minmax(220px,1fr);gap:12px}
+ .top-actions{grid-column:1/-1;max-width:none;justify-content:center}
+ .layout{grid-template-columns:245px minmax(0,1fr)}
+ .sidebar{top:148px;height:calc(100vh - 148px)}
+ main{padding:20px}
+ .g4{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:1050px){
+ .topbar{grid-template-columns:44px 145px minmax(0,1fr);padding:12px}
+ .brandmark{font-size:29px!important}
+ .app-identity b{font-size:19px!important}
+ .layout{display:block}
+ .sidebar{position:fixed;top:0;bottom:0;height:100vh;width:min(310px,85vw);z-index:40}
+ .sidebar.open{display:flex}
+ .filters,.filters.six{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:650px){
+ .topbar{grid-template-columns:36px 115px minmax(0,1fr);gap:8px}
+ .brandmark{font-size:25px!important}
+ .app-identity b{font-size:16px!important;overflow-wrap:anywhere}
+ .app-identity span{font-size:14px!important}
+ .g2,.g3,.g4,.filters,.filters.six{grid-template-columns:1fr}
+ .filters #libQ{grid-column:auto}
+ main{padding:16px}
+ .hero{padding:24px}
+ .hero h1{font-size:30px!important}
+ .page-head{flex-direction:column}
+ .aid-result-head,.watch-item{flex-direction:column}
+}
+.criterion{font-size:15px!important;line-height:1.6;gap:16px;align-items:flex-start}
+.criterion strong{font-size:15px!important;text-align:left}
+@media(max-width:650px){.topbar{grid-template-columns:36px 130px minmax(0,1fr)}.brandmark{font-size:22px!important}.app-identity b{font-size:15px!important}.criterion{flex-direction:column;gap:4px}}

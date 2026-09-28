@@ -61,7 +61,7 @@
   }
   function conceptSet(text){
     const n=norm(text),out=[];
-    for(const[k,ws]of Object.entries(CONCEPTS))if(ws.some(w=>n.includes(norm(w))))out.push(k);
+    for(const[k,ws]of Object.entries(CONCEPTS))if(ws.some(w=>new RegExp('(?:^|[^a-z0-9])'+norm(w).replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'(?:$|[^a-z0-9])').test(n)))out.push(k);
     return out;
   }
   function overlapDetails(aText,pText){
@@ -83,22 +83,17 @@
   }
 
   function detectFamily(a){
-    const t=norm([a.sourceId,a.title,a.programme,a.operator,...arr(a.funder),...arr(a.sourceAliases)].join(' '));
+    const t=norm([a.sourceId,a.programme,a.operator,...arr(a.funder),...arr(a.sourceAliases)].join(' '));
     if(/ademe|agir pour la transition/.test(t))return'ADEME';
     if(/feder|fse\+?|ftj|europe en france|fonds europeen|programme regional 2021 2027/.test(t))return'FEDER';
-    if(/bpifrance|france 2030|pia ?4|pia4|i demo|projets d innovation/.test(t))return'BPIFRANCE_FRANCE2030';
+    if(/bpifrance|france 2030|pia ?4|pia4/.test(t))return'BPIFRANCE_FRANCE2030';
     if(a.scope==='REGIONAL')return'REGIONAL';
     return'GENERAL';
   }
-  const WEIGHTS={
-    GENERAL:{strategic:18,expected:15,expenses:15,selection:12,beneficiary:10,maturity:8,impacts:10,finance:7,access:5},
-    BPIFRANCE_FRANCE2030:{strategic:18,expected:13,expenses:10,selection:14,beneficiary:8,maturity:12,impacts:15,finance:6,access:4},
-    ADEME:{strategic:14,expected:10,expenses:18,selection:14,beneficiary:7,maturity:8,impacts:20,finance:5,access:4},
-    FEDER:{strategic:20,expected:12,expenses:15,selection:12,beneficiary:8,maturity:6,impacts:10,finance:8,access:9},
-    REGIONAL:{strategic:18,expected:14,expenses:14,selection:12,beneficiary:10,maturity:8,impacts:10,finance:7,access:7}
-  };
+  // Internal retrieval dimensions; never an official funder selection scale.
+  const RETRIEVAL_DIMENSIONS={strategic:1,expected:1,expenses:1,selection:1,beneficiary:1,maturity:1,impacts:1,finance:1,access:1};
   const PROFILE_LABEL={
-    GENERAL:'Grille générale',
+    GENERAL:'Tous financeurs',
     BPIFRANCE_FRANCE2030:'Bpifrance / France 2030',
     ADEME:'ADEME',
     FEDER:'FEDER / fonds européens',
@@ -110,7 +105,7 @@
     const anchor=[p.name,p.summary,p.sector,p.naf,naf,...arr(p.types),p.digital,p.environment].join(' ');
     return{
       anchor,
-      expenses:[p.expenses,p.summary,p.sector,naf].join(' '),
+      expenses:String(p.expenses||''),
       impacts:[p.impacts,p.jobs,p.environment,p.digital,p.summary,p.name].join(' '),
       capacity:[p.partners,p.financing,p.group,p.employees,p.turnover,p.balanceSheet,p.summary].join(' '),
       maturity:[p.maturity,...arr(p.types),p.summary,p.name].join(' '),
@@ -183,10 +178,21 @@
   }
 
   function relevance(a,p){
-    const family=detectFamily(a),w=WEIGHTS[family]||WEIGHTS.GENERAL,ctx=projectContext(p),dims=[];
+    const family=detectFamily(a),w=RETRIEVAL_DIMENSIONS,ctx=projectContext(p),dims=[];
+    const present=v=>String(v??'').trim()!==''&&v!=='À préciser'&&v!=='À vérifier';
+    const available={
+      strategic:[p.summary,p.name,p.sector,p.naf,...arr(p.types),p.digital,p.environment].some(present),
+      expected:present(p.summary)||arr(p.types).length>0,
+      expenses:present(p.expenses),selection:present(p.summary),
+      beneficiary:present(p.category)||present(p.sector),maturity:present(p.maturity),
+      impacts:[p.impacts,p.environment,p.jobs].some(present),finance:Number(p.budget)>0,
+      access:present(p.region)
+    };
     const add=(key,label,ratio,detail,matched=[],documented=true)=>{
+      documented=Boolean(documented&&available[key]);
+      if(!available[key])detail='Information projet non renseignée — à instruire';
       const max=w[key],safe=Math.max(0,Math.min(1,ratio));
-      dims.push({key,label,max,score:documented?Math.round(max*safe):0,ratio:documented?Math.round(100*safe):null,detail,matched:arr(matched).slice(0,12),documented});
+      dims.push({key,label,max,score:documented?max*safe:0,ratio:documented?Math.round(100*safe):null,detail,matched:arr(matched).slice(0,12),documented});
     };
 
     const strategicText=[a.title,a.objective,...arr(a.themes),a.programme].filter(Boolean).join(' ');
@@ -228,15 +234,16 @@
     const documentedWeight=dims.filter(d=>d.documented).reduce((s,d)=>s+d.max,0);
     const earned=dims.filter(d=>d.documented).reduce((s,d)=>s+d.score,0);
     const normalized=documentedWeight?100*earned/documentedWeight:0;
-    const coverageFactor=.72+.28*(documentedWeight/100);
+    const coverageFactor=1;
     const score=Math.round(Math.min(100,normalized*coverageFactor));
     return{
       score,dims,checks:dims.length,documentedWeight,
       coverageFactor:Math.round(coverageFactor*100),
       family,profileLabel:PROFILE_LABEL[family]||PROFILE_LABEL.GENERAL,
-      basis:String(p.summary||'').trim().length>=40?'description projet':'activité / NAF / thématiques'
+      basis:String(p.summary||'').trim()?'description projet':'activité / NAF / thématiques'
     };
   }
 
   root.LEYTON_SCORING={relevance,tokens,norm,conceptSet,overlapDetails,detectFamily,nafText,projectContext,version:'12.5.0'};
 })(typeof globalThis!=='undefined'?globalThis:this);
+
