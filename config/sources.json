@@ -1,5 +1,5 @@
 {
-  "version": "12.4.0",
+  "version": "12.5.0",
   "sources": [
     {
       "id": "aides_entreprises",
@@ -56,6 +56,21 @@
       "edgeFallback": true,
       "minExpected": 5,
       "browserFallback": true
+    },
+    {
+      "id": "bpifrance_adi",
+      "name": "Bpifrance — Aide pour le développement de l’innovation",
+      "scope": "France",
+      "type": "web",
+      "strategy": "official-page",
+      "url": "https://www.bpifrance.fr/catalogue-offres/soutien-a-linnovation/aide-pour-le-developpement-de-linnovation",
+      "official": true,
+      "priority": 0,
+      "browserFallback": true,
+      "titleOverride": "Aide pour le développement de l’innovation",
+      "kindOverride": "AIDE",
+      "funder": "Bpifrance",
+      "notes": "Aide nationale Bpifrance de RDI : avance récupérable ou Prêt Innovation R&D ; source officielle ajoutée explicitement au référentiel."
     },
     {
       "id": "anr",
@@ -472,13 +487,14 @@
       "id": "france2030_appels",
       "name": "France 2030 — appels à candidatures",
       "scope": "France",
-      "type": "control",
-      "strategy": "control-only",
+      "type": "web",
+      "strategy": "catalog-html",
       "url": "https://www.info.gouv.fr/grand-dossier/france-2030/appels-a-candidatures",
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "notes": "Liste officielle conservée comme contrôle car son contenu est rendu dynamiquement et peut être vide côté automate. L’ingestion des appels est assurée par les opérateurs officiels France 2030."
+      "notes": "Liste officielle France 2030 : tentative de collecte directe avec repli navigateur ; les opérateurs officiels restent également suivis individuellement.",
+      "minExpected": 1
     },
     {
       "id": "france2030_laureats",
@@ -1359,13 +1375,14 @@
       "id": "nouvelle_aquitaine_france2030",
       "name": "Nouvelle-Aquitaine — France 2030 régionalisé",
       "scope": "Nouvelle-Aquitaine",
-      "type": "control",
-      "strategy": "control-only",
+      "type": "web",
+      "strategy": "catalog-html",
       "url": "https://www.france2030-en-nouvelle-aquitaine.fr/",
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
+      "notes": "Catalogue officiel France 2030 régionalisé Nouvelle-Aquitaine : Projets d’innovation, Projets de filières et I-Démo régionalisé.",
+      "minExpected": 3
     },
     {
       "id": "nouvelle_aquitaine_europe_aap",
