@@ -13,7 +13,10 @@ const context={
   explicitExclusion:()=>null,
   specializedMismatch:()=>null,
   fmtDate:x=>x,
-  money:x=>String(x)
+  money:x=>String(x),
+  aidTypeLabel:x=>x,
+  norm:s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase(),
+  today:()=>new Date().toISOString().slice(0,10)
 };
 vm.createContext(context);
 vm.runInContext(match[0].replace(/\nfunction relevance$/,''),context);
