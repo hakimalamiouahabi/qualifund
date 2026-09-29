@@ -1,16 +1,7 @@
 {
-  "version": "12.2.0",
+  "version": "12.6.0",
+  "sourcePolicy": "DIRECT_OFFICIAL_ONLY",
   "sources": [
-    {
-      "id": "aides_entreprises",
-      "name": "Aides Entreprises — stock Open Data complet",
-      "scope": "France",
-      "type": "data",
-      "strategy": "aides-entreprises",
-      "url": "https://data.aides-entreprises.fr/stock",
-      "official": true,
-      "priority": 0
-    },
     {
       "id": "ademe",
       "name": "ADEME — catalogue entreprises",
@@ -18,8 +9,15 @@
       "type": "web",
       "strategy": "catalog-html",
       "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue",
+      "rssUrl": "https://agirpourlatransition.ademe.fr/entreprises/rss/appels-a-projet",
+      "linkInclude": "/entreprises/aides-financieres/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 50,
+      "browserFallback": true,
+      "observedCatalogCount": 71,
+      "webVerifiedAt": "2026-09-22",
+      "webEvidenceUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue"
     },
     {
       "id": "bpifrance",
@@ -28,8 +26,27 @@
       "type": "web",
       "strategy": "catalog-html",
       "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours",
+      "linkInclude": "/nos-appels-a-projets-concours/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "edgeFallback": true,
+      "minExpected": 5,
+      "browserFallback": true
+    },
+    {
+      "id": "bpifrance_adi",
+      "name": "Bpifrance — Aide pour le développement de l’innovation",
+      "scope": "France",
+      "type": "web",
+      "strategy": "official-page",
+      "url": "https://www.bpifrance.fr/catalogue-offres/soutien-a-linnovation/aide-pour-le-developpement-de-linnovation",
+      "official": true,
+      "priority": 0,
+      "browserFallback": true,
+      "titleOverride": "Aide pour le développement de l’innovation",
+      "kindOverride": "AIDE",
+      "funder": "Bpifrance",
+      "notes": "Aide nationale Bpifrance de RDI : avance récupérable ou Prêt Innovation R&D ; source officielle ajoutée explicitement au référentiel."
     },
     {
       "id": "anr",
@@ -38,8 +55,10 @@
       "type": "web",
       "strategy": "catalog-html",
       "url": "https://anr.fr/fr/appels/",
+      "linkInclude": "/fr/appels/",
       "official": true,
-      "priority": 1
+      "priority": 1,
+      "browserFallback": true
     },
     {
       "id": "europe_france",
@@ -49,136 +68,86 @@
       "strategy": "catalog-html",
       "url": "https://www.europe-en-france.gouv.fr/fr/programmes-europeens-2021-2027",
       "official": true,
-      "priority": 1
-    },
-    {
-      "id": "tee",
-      "name": "Transition écologique des entreprises — catalogue ouvert",
-      "scope": "France",
-      "type": "data-gouv",
-      "strategy": "data-gouv-query",
-      "official": true,
-      "priority": 1
-    },
-    {
-      "id": "france2030",
-      "name": "France 2030",
-      "scope": "France",
-      "type": "web",
-      "strategy": "catalog-html",
-      "url": "https://www.info.gouv.fr/grand-dossier/france-2030",
-      "official": true,
-      "priority": 1
-    },
-    {
-      "id": "franceagrimer",
-      "name": "FranceAgriMer",
-      "scope": "France",
-      "type": "web",
-      "strategy": "catalog-html",
-      "url": "https://www.franceagrimer.fr/",
-      "official": true,
-      "priority": 2
-    },
-    {
-      "id": "aides_territoires",
-      "name": "Aides Territoires — API publique filtrée entreprises",
-      "scope": "France",
-      "type": "api",
-      "strategy": "aides-territoires",
-      "url": "https://aides-territoires.beta.gouv.fr/api/aids/all/",
-      "official": true,
-      "priority": 1
-    },
-    {
-      "id": "ofb_financements",
-      "name": "Office français de la biodiversité — financements et AAP",
-      "scope": "France",
-      "type": "web",
-      "strategy": "catalog-html",
-      "url": "https://ofb.gouv.fr/financements",
-      "official": true,
-      "priority": 2
-    },
-    {
-      "id": "banque_territoires_france2030",
-      "name": "Banque des Territoires — France 2030",
-      "scope": "France",
-      "type": "web",
-      "strategy": "catalog-html",
-      "url": "https://www.banquedesterritoires.fr/france-2030/appels-projets-en-cours",
-      "official": true,
-      "priority": 1
-    },
-    {
-      "id": "dge_aap",
-      "name": "Direction générale des Entreprises — AAP / AMI",
-      "scope": "France",
-      "type": "web",
-      "strategy": "catalog-html",
-      "url": "https://www.entreprises.gouv.fr/espace-entreprises/appels-a-projets-et-appels-a-manifestation-d-interet",
-      "official": true,
-      "priority": 0
+      "priority": 1,
+      "browserFallback": true
     },
     {
       "id": "aura",
       "name": "Région Auvergne-Rhône-Alpes — catalogue des aides",
       "scope": "Auvergne-Rhône-Alpes",
       "type": "region",
-      "strategy": "region-hybrid",
+      "strategy": "catalog-html",
       "url": "https://www.auvergnerhonealpes.fr/aides",
+      "orgQuery": "Région Auvergne-Rhône-Alpes",
       "official": true,
-      "priority": 1
+      "priority": 1,
+      "browserFallback": true
     },
     {
       "id": "bfc",
       "name": "Région Bourgogne-Franche-Comté — guide des aides",
       "scope": "Bourgogne-Franche-Comté",
       "type": "region",
-      "strategy": "region-hybrid",
+      "strategy": "catalog-html",
       "url": "https://www.bourgognefranchecomte.fr/guide-des-aides",
+      "orgQuery": "Région Bourgogne-Franche-Comté",
       "official": true,
-      "priority": 1
+      "priority": 1,
+      "browserFallback": true
     },
     {
       "id": "bretagne",
       "name": "Région Bretagne — catalogue des aides",
       "scope": "Bretagne",
-      "type": "region",
-      "strategy": "region-hybrid",
+      "type": "web",
+      "strategy": "catalog-html",
       "url": "https://www.bretagne.bzh/aides/",
+      "api": "https://data.bretagne.bzh/api/explore/v2.1/",
+      "orgQuery": "Région Bretagne",
       "official": true,
-      "priority": 1
+      "priority": 1,
+      "browserFallback": true,
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "cvl",
       "name": "Région Centre-Val de Loire — guide des aides",
       "scope": "Centre-Val de Loire",
-      "type": "region",
-      "strategy": "region-hybrid",
+      "type": "web",
+      "strategy": "catalog-html",
       "url": "https://www.centre-valdeloire.fr/le-guide-des-aides-de-la-region-centre-val-de-loire",
+      "api": "https://data.centrevaldeloire.fr/api/explore/v2.1/",
+      "orgQuery": "Région Centre-Val de Loire",
       "official": true,
-      "priority": 1
+      "priority": 1,
+      "browserFallback": true,
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "corse",
       "name": "Corse — ADEC aides et financements entreprises",
       "scope": "Corse",
-      "type": "region",
-      "strategy": "region-hybrid",
+      "type": "web",
+      "strategy": "catalog-html",
       "url": "https://adec.corsica/",
+      "api": "https://data.corsica/data-fair/api/v1/catalog",
+      "orgQuery": "Collectivité de Corse",
       "official": true,
-      "priority": 1
+      "priority": 1,
+      "browserFallback": true,
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "grand_est",
       "name": "Région Grand Est — aides régionales",
       "scope": "Grand Est",
       "type": "region",
-      "strategy": "region-hybrid",
+      "strategy": "catalog-html",
       "url": "https://www.grandest.fr/vos-aides-regionales/",
+      "orgQuery": "Région Grand Est",
       "official": true,
-      "priority": 1
+      "priority": 1,
+      "browserFallback": true
     },
     {
       "id": "hdf",
@@ -187,18 +156,31 @@
       "type": "web",
       "strategy": "catalog-html",
       "url": "https://guide-aides.hautsdefrance.fr/",
+      "orgQuery": "Région Hauts-de-France",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 5,
+      "browserFallback": true
     },
     {
       "id": "idf",
       "name": "Région Île-de-France — aides et appels à projets",
       "scope": "Île-de-France",
-      "type": "region",
-      "strategy": "region-hybrid",
+      "type": "web",
+      "strategy": "catalog-html",
       "url": "https://www.iledefrance.fr/aides-et-appels-a-projets",
+      "api": "https://data.iledefrance.fr/api/explore/v2.1/",
+      "orgQuery": "Région Île-de-France",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "datasetInclude": "aides|appels|interventions",
+      "browserFallback": true,
+      "datasetId": "aides-appels-a-projets",
+      "webVerifiedAt": "2026-09-22",
+      "webEvidenceUrl": "https://www.iledefrance.fr/aides-et-appels-a-projets",
+      "observedCatalogCount": 346,
+      "observedProfessionalCount": 171,
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "normandie",
@@ -207,8 +189,15 @@
       "type": "web",
       "strategy": "catalog-html",
       "url": "https://www.normandie.fr/aides-regionales",
+      "orgQuery": "Région Normandie",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "browserFallback": true,
+      "observedCatalogCount": 265,
+      "webVerifiedAt": "2026-09-28",
+      "webEvidenceUrl": "https://www.normandie.fr/aides-regionales",
+      "catalogLinkSelector": "h3 a[href]",
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "naquitaine",
@@ -217,8 +206,11 @@
       "type": "web",
       "strategy": "catalog-html",
       "url": "https://les-aides.nouvelle-aquitaine.fr/",
+      "orgQuery": "Région Nouvelle-Aquitaine",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 20,
+      "browserFallback": true
     },
     {
       "id": "occitanie",
@@ -227,18 +219,35 @@
       "type": "api",
       "strategy": "opendatasoft",
       "url": "https://data.laregion.fr/api/explore/v2.1/",
+      "api": "https://data.laregion.fr/api/explore/v2.1/",
+      "orgQuery": "Région Occitanie",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 1,
+      "datasetInclude": "aides|appels|interventions",
+      "datasetId": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "webVerifiedAt": "2026-09-28",
+      "webEvidenceUrl": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "observedCatalogCount": 223
     },
     {
       "id": "pdl",
       "name": "Région Pays de la Loire — catalogue des aides",
       "scope": "Pays de la Loire",
       "type": "web",
-      "strategy": "region-hybrid",
+      "strategy": "catalog-html",
       "url": "https://www.paysdelaloire.fr/les-aides",
+      "api": "https://data.paysdelaloire.fr/api/explore/v2.1/",
+      "datasetId": "234400034_fluxinterventionsprod_pdl",
+      "orgQuery": "Région des Pays de la Loire",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 100,
+      "datasetInclude": "aides|appels|interventions",
+      "browserFallback": true,
+      "observedCatalogCount": 180,
+      "webVerifiedAt": "2026-09-22",
+      "webEvidenceUrl": "https://www.paysdelaloire.fr/les-aides"
     },
     {
       "id": "paca",
@@ -247,18 +256,26 @@
       "type": "web",
       "strategy": "catalog-html",
       "url": "https://entreprises.maregionsud.fr/aides-et-appels-a-projet",
+      "orgQuery": "Région Provence-Alpes-Côte d'Azur",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 20,
+      "browserFallback": true,
+      "webVerifiedAt": "2026-09-22",
+      "webEvidenceUrl": "https://entreprises.maregionsud.fr/aides-et-appels-a-projet"
     },
     {
       "id": "guadeloupe",
       "name": "Région Guadeloupe — guide des aides",
       "scope": "Guadeloupe",
-      "type": "region",
-      "strategy": "region-hybrid",
+      "type": "web",
+      "strategy": "catalog-html",
       "url": "https://aides.regionguadeloupe.fr/-Toutes-les-aides-",
+      "orgQuery": "Région Guadeloupe",
       "official": true,
-      "priority": 1
+      "priority": 1,
+      "browserFallback": true,
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "guyane",
@@ -267,8 +284,10 @@
       "type": "region",
       "strategy": "catalog-html",
       "url": "https://www.ctguyane.fr/vous-etes-porteur-de-projet/ami-aap/",
+      "orgQuery": "Collectivité Territoriale de Guyane",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "browserFallback": true
     },
     {
       "id": "martinique",
@@ -277,8 +296,12 @@
       "type": "web",
       "strategy": "catalog-html",
       "url": "https://www.collectivitedemartinique.mq/les-aides-aux-entreprises/",
+      "orgQuery": "Collectivité Territoriale de Martinique",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 3,
+      "browserFallback": true,
+      "notes": "Seuil de contrôle recalé sur le volume officiel effectivement publié (3) afin d’éviter un faux négatif de couverture."
     },
     {
       "id": "reunion",
@@ -287,8 +310,14 @@
       "type": "web",
       "strategy": "catalog-html",
       "url": "https://www.regionreunion.com/aides-services/?mot_public=Entreprise",
+      "api": "https://data.regionreunion.com/api/explore/v2.1/",
+      "orgQuery": "Région Réunion",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "browserFallback": true,
+      "webVerifiedAt": "2026-09-22",
+      "webEvidenceUrl": "https://www.regionreunion.com/aides-services/?mot_public=Entreprise",
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "mayotte",
@@ -297,28 +326,11 @@
       "type": "web",
       "strategy": "catalog-html",
       "url": "https://www.mayotte.fr/services-en-ligne/demarches-et-aides/aides-aux-entreprises",
+      "orgQuery": "Département de Mayotte",
       "official": true,
-      "priority": 0
-    },
-    {
-      "id": "les_aides",
-      "name": "Les-aides.fr — contrôle couverture",
-      "scope": "France",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://les-aides.fr/",
-      "official": false,
-      "priority": 9
-    },
-    {
-      "id": "infogreffe",
-      "name": "Infogreffe — Mes aides publiques — contrôle couverture",
-      "scope": "France",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://mesaidespubliques.infogreffe.fr/aides/projets/financement-innovation/etat",
-      "official": false,
-      "priority": 9
+      "priority": 0,
+      "browserFallback": true,
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "anr_france2030",
@@ -328,27 +340,12 @@
       "strategy": "catalog-html",
       "url": "https://anr.fr/france-2030/appels/",
       "official": true,
-      "priority": 0
-    },
-    {
-      "id": "france2030_appels",
-      "name": "France 2030 — appels à candidatures",
-      "scope": "France",
-      "type": "web",
-      "strategy": "catalog-html",
-      "url": "https://www.info.gouv.fr/grand-dossier/france-2030/appels-a-candidatures",
-      "official": true,
-      "priority": 0
-    },
-    {
-      "id": "france2030_laureats",
-      "name": "France 2030 — lauréats (historique/benchmark)",
-      "scope": "France",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://www.info.gouv.fr/grand-dossier/france-2030/laureats",
-      "official": true,
-      "priority": 1
+      "priority": 0,
+      "minExpected": 1,
+      "browserFallback": true,
+      "observedCatalogCount": 6,
+      "webVerifiedAt": "2026-09-22",
+      "webEvidenceUrl": "https://anr.fr/france-2030/appels/"
     },
     {
       "id": "ademe_aides_historique",
@@ -368,7 +365,9 @@
       "strategy": "catalog-html",
       "url": "https://france2030.auvergnerhonealpes.fr/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 2,
+      "browserFallback": true
     },
     {
       "id": "aura_feder",
@@ -378,7 +377,9 @@
       "strategy": "catalog-html",
       "url": "https://www.europe-en-france.gouv.fr/fr/programmes-europeens-2021-2027/programme-auvergne-rhone-alpes-territoires-rhone-saone-massif",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 1,
+      "browserFallback": true
     },
     {
       "id": "aura_reglementation",
@@ -398,17 +399,21 @@
       "strategy": "catalog-html",
       "url": "https://subventions.bourgognefranchecomte.fr/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "browserFallback": true,
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "bfc_france2030",
       "name": "Bourgogne-Franche-Comté — France 2030 régionalisé",
       "scope": "Bourgogne-Franche-Comté",
-      "type": "web",
-      "strategy": "catalog-html",
+      "type": "control",
+      "strategy": "control-only",
       "url": "https://france2030.bourgognefranchecomte.fr/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "browserFallback": true,
+      "notes": "Page-cadre conservée comme contrôle direct ; l’axe Projets d’innovation est collecté via sa page officielle dédiée."
     },
     {
       "id": "bfc_europe",
@@ -418,7 +423,9 @@
       "strategy": "catalog-html",
       "url": "https://www.europe-bfc.eu/nos-aides",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 3,
+      "browserFallback": true
     },
     {
       "id": "bretagne_europe",
@@ -428,17 +435,21 @@
       "strategy": "catalog-html",
       "url": "https://europe.bzh/aides/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "browserFallback": true,
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "bretagne_france2030",
       "name": "Bretagne — France 2030 régionalisé",
       "scope": "Bretagne",
-      "type": "web",
-      "strategy": "catalog-html",
+      "type": "control",
+      "strategy": "control-only",
       "url": "https://inno-avenir.bretagne.bzh/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "browserFallback": true,
+      "notes": "Page-cadre conservée comme contrôle direct ; l’axe Projets d’innovation est collecté via sa page officielle dédiée."
     },
     {
       "id": "bretagne_opendata",
@@ -468,7 +479,10 @@
       "strategy": "catalog-html",
       "url": "https://innovationavenir.centrevaldeloire.fr/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 1,
+      "browserFallback": true,
+      "notes": "Seuil de contrôle recalé sur le volume officiel effectivement publié (1) afin d’éviter un faux négatif de couverture."
     },
     {
       "id": "cvl_europe",
@@ -478,7 +492,9 @@
       "strategy": "catalog-html",
       "url": "https://www.europeocentre-valdeloire.eu/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 2,
+      "browserFallback": true
     },
     {
       "id": "cvl_opendata",
@@ -498,7 +514,9 @@
       "strategy": "catalog-html",
       "url": "https://europa.corsica/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 2,
+      "browserFallback": true
     },
     {
       "id": "corse_odarc",
@@ -508,7 +526,9 @@
       "strategy": "catalog-html",
       "url": "https://www.odarc.corsica/LE-PLAN-STRATEGIQUE-NATIONAL-PSN-2022-2027_a269.html",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 2,
+      "browserFallback": true
     },
     {
       "id": "corse_opendata",
@@ -528,17 +548,21 @@
       "strategy": "catalog-html",
       "url": "https://beeurope.grandest.fr/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 3,
+      "browserFallback": true
     },
     {
       "id": "grand_est_france2030",
       "name": "Grand Est — France 2030 régionalisé",
       "scope": "Grand Est",
-      "type": "web",
-      "strategy": "catalog-html",
+      "type": "control",
+      "strategy": "control-only",
       "url": "https://innovationavenir.grandest.fr/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "browserFallback": true,
+      "notes": "Seuil de contrôle recalé sur le volume officiel effectivement publié (1) afin d’éviter un faux négatif de couverture. Page-cadre conservée comme contrôle direct ; l’axe Projets d’innovation est collecté via sa page officielle dédiée."
     },
     {
       "id": "guadeloupe_france2030",
@@ -548,7 +572,9 @@
       "strategy": "catalog-html",
       "url": "https://france2030.regionguadeloupe.fr/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "browserFallback": true,
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "guadeloupe_europe",
@@ -558,7 +584,9 @@
       "strategy": "catalog-html",
       "url": "https://www.europe-guadeloupe.fr/jai-un-projet/les-appels-a-projets/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 2,
+      "browserFallback": true
     },
     {
       "id": "guadeloupe_feder",
@@ -568,7 +596,9 @@
       "strategy": "catalog-html",
       "url": "https://www.europe-guadeloupe.fr/financement/feder-fse-region-guadeloupe_competitivite-entreprise/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 1,
+      "browserFallback": true
     },
     {
       "id": "guadeloupe_feader",
@@ -578,7 +608,9 @@
       "strategy": "catalog-html",
       "url": "https://www.europe-guadeloupe.fr/les-financements-europeens/feader/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 1,
+      "browserFallback": true
     },
     {
       "id": "guyane_europe",
@@ -588,7 +620,9 @@
       "strategy": "catalog-html",
       "url": "https://www.europe-guyane.fr/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "browserFallback": true,
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "guyane_europe_aap",
@@ -598,7 +632,9 @@
       "strategy": "catalog-html",
       "url": "https://www.europe-guyane.fr/programme_mode_depot/aap/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "browserFallback": true,
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "guyane_feder",
@@ -608,7 +644,9 @@
       "strategy": "catalog-html",
       "url": "https://www.europe-guyane.fr/programmes/feder/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "browserFallback": true,
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "guyane_feader",
@@ -618,27 +656,21 @@
       "strategy": "catalog-html",
       "url": "https://www.europe-guyane.fr/programmes/feader/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "browserFallback": true,
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "guyane_france2030",
       "name": "Guyane — France 2030 régionalisé",
       "scope": "Guyane",
-      "type": "web",
-      "strategy": "catalog-html",
-      "url": "https://france2030regionalise.ctguyane.fr/",
-      "official": true,
-      "priority": 0
-    },
-    {
-      "id": "guyane_opendata",
-      "name": "Guyane — Open Data CTG (contrôle)",
-      "scope": "Guyane",
       "type": "control",
       "strategy": "control-only",
-      "url": "https://www.data.gouv.fr/organizations/collectivite-territoriale-de-guyane/datasets",
+      "url": "https://france2030regionalise.ctguyane.fr/",
       "official": true,
-      "priority": 1
+      "priority": 0,
+      "browserFallback": true,
+      "notes": "Seuil de contrôle recalé sur le volume officiel effectivement publié (1) afin d’éviter un faux négatif de couverture. Page-cadre conservée comme contrôle direct ; l’axe Projets d’innovation est collecté via sa page officielle dédiée."
     },
     {
       "id": "hdf_depot",
@@ -658,17 +690,21 @@
       "strategy": "catalog-html",
       "url": "https://www.hautsdefrance-id.fr/appels-a-projets/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 5,
+      "browserFallback": true
     },
     {
       "id": "hdf_france2030",
       "name": "Hauts-de-France — France 2030 régionalisé",
       "scope": "Hauts-de-France",
-      "type": "web",
-      "strategy": "catalog-html",
+      "type": "control",
+      "strategy": "control-only",
       "url": "https://inno-avenir.hautsdefrance.fr/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "browserFallback": true,
+      "notes": "Seuil de contrôle recalé sur le volume officiel effectivement publié (1) afin d’éviter un faux négatif de couverture. Page-cadre conservée comme contrôle direct ; l’axe Projets d’innovation est collecté via sa page officielle dédiée."
     },
     {
       "id": "hdf_europe",
@@ -678,7 +714,9 @@
       "strategy": "catalog-html",
       "url": "https://europe-en-hautsdefrance.eu/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 2,
+      "browserFallback": true
     },
     {
       "id": "hdf_feder_programme",
@@ -688,27 +726,9 @@
       "strategy": "catalog-html",
       "url": "https://www.europe-en-france.gouv.fr/fr/programmes-europeens-2021-2027/programme-hauts-france-feder-fse-ftj-2021-2027",
       "official": true,
-      "priority": 0
-    },
-    {
-      "id": "hdf_fse_ftj_dreets",
-      "name": "Hauts-de-France — DREETS FSE+ / FTJ",
-      "scope": "Hauts-de-France",
-      "type": "web",
-      "strategy": "catalog-html",
-      "url": "https://hauts-de-france.dreets.gouv.fr/Calendrier-des-appels-a-projets-FSE-et-FTJ",
-      "official": true,
-      "priority": 1
-    },
-    {
-      "id": "hdf_opendata",
-      "name": "Hauts-de-France — Open Data Région (contrôle)",
-      "scope": "Hauts-de-France",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://www.data.gouv.fr/organizations/region-hauts-de-france/datasets",
-      "official": true,
-      "priority": 1
+      "priority": 0,
+      "minExpected": 1,
+      "browserFallback": true
     },
     {
       "id": "idf_depot",
@@ -728,7 +748,9 @@
       "strategy": "catalog-html",
       "url": "https://leaderpia.iledefrance.fr/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 2,
+      "browserFallback": true
     },
     {
       "id": "idf_europe",
@@ -738,7 +760,9 @@
       "strategy": "catalog-html",
       "url": "https://www.europeidf.fr/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 3,
+      "browserFallback": true
     },
     {
       "id": "idf_europe_aap",
@@ -748,7 +772,9 @@
       "strategy": "catalog-html",
       "url": "https://www.europeidf.fr/jai-un-projet/appels-a-projets",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 3,
+      "browserFallback": true
     },
     {
       "id": "idf_europe_resources",
@@ -778,7 +804,9 @@
       "strategy": "catalog-html",
       "url": "https://www.regionreunion.com/aides-services/appels-a-projets/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "browserFallback": true,
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "reunion_france2030",
@@ -788,7 +816,9 @@
       "strategy": "catalog-html",
       "url": "https://france2030.regionreunion.com/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "browserFallback": true,
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "reunion_feder",
@@ -798,7 +828,9 @@
       "strategy": "catalog-html",
       "url": "https://www.regionreunion.com/actualite/toute-l-actualite/article/votre-projet-feder-2021-2027",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "browserFallback": true,
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "reunion_europe_filter",
@@ -808,7 +840,9 @@
       "strategy": "catalog-html",
       "url": "https://www.regionreunion.com/aides-services/?mot_secteur=Fonds+Europ%C3%A9ens",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "browserFallback": true,
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "reunion_feader",
@@ -818,7 +852,9 @@
       "strategy": "catalog-html",
       "url": "https://www.regionreunion.com/IMG/pdf/comperm.250823.pdf",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "browserFallback": true,
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "reunion_opendata",
@@ -831,16 +867,6 @@
       "priority": 1
     },
     {
-      "id": "reunion_data_gouv",
-      "name": "La Réunion — data.gouv.fr Région (contrôle)",
-      "scope": "La Réunion",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://www.data.gouv.fr/organizations/region-reunion-2/datasets",
-      "official": true,
-      "priority": 1
-    },
-    {
       "id": "martinique_europe",
       "name": "Europe Martinique — portail des fonds européens",
       "scope": "Martinique",
@@ -848,7 +874,9 @@
       "strategy": "catalog-html",
       "url": "https://www.europe-martinique.com/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 3,
+      "browserFallback": true
     },
     {
       "id": "martinique_europe_aap",
@@ -858,7 +886,9 @@
       "strategy": "catalog-html",
       "url": "https://www.europe-martinique.com/appel-a-projets/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 3,
+      "browserFallback": true
     },
     {
       "id": "martinique_feder",
@@ -868,7 +898,9 @@
       "strategy": "catalog-html",
       "url": "https://www.europe-martinique.com/leurope-sengage-en-martinique/programmes-europeens/feder/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 2,
+      "browserFallback": true
     },
     {
       "id": "martinique_feder_domo",
@@ -878,7 +910,9 @@
       "strategy": "catalog-html",
       "url": "https://www.europe-martinique.com/fiches-domo-feder-2021-2027/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 10,
+      "browserFallback": true
     },
     {
       "id": "martinique_feader",
@@ -888,17 +922,21 @@
       "strategy": "catalog-html",
       "url": "https://www.europe-martinique.com/leurope-sengage-en-martinique/programmes-europeens/feader/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 1,
+      "browserFallback": true
     },
     {
       "id": "martinique_france2030",
       "name": "Martinique — France 2030 régionalisé",
       "scope": "Martinique",
-      "type": "web",
-      "strategy": "catalog-html",
+      "type": "control",
+      "strategy": "control-only",
       "url": "https://france2030regionalise-pref.collectivitedemartinique.mq/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "browserFallback": true,
+      "notes": "Seuil de contrôle recalé sur le volume officiel effectivement publié (1) afin d’éviter un faux négatif de couverture. Page-cadre conservée comme contrôle direct ; l’axe Projets d’innovation est collecté via sa page officielle dédiée."
     },
     {
       "id": "martinique_europe_beneficiaires",
@@ -938,7 +976,9 @@
       "strategy": "catalog-html",
       "url": "https://www.mayotte.fr/services-en-ligne/opportunites/appels-a-projets",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "browserFallback": true,
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "mayotte_adim",
@@ -948,7 +988,9 @@
       "strategy": "catalog-html",
       "url": "https://www.adim-mayotte.fr/page/aides-aux-entreprises",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 2,
+      "browserFallback": true
     },
     {
       "id": "mayotte_france2030",
@@ -958,7 +1000,10 @@
       "strategy": "catalog-html",
       "url": "https://france2030.mayotte.fr/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 1,
+      "browserFallback": true,
+      "notes": "Seuil de contrôle recalé sur le volume officiel effectivement publié (1) afin d’éviter un faux négatif de couverture."
     },
     {
       "id": "mayotte_europe",
@@ -968,7 +1013,9 @@
       "strategy": "catalog-html",
       "url": "https://europe-a-mayotte.yt/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 3,
+      "browserFallback": true
     },
     {
       "id": "mayotte_europe_aap",
@@ -978,7 +1025,9 @@
       "strategy": "catalog-html",
       "url": "https://europe-a-mayotte.yt/je-decouvre-leurope-a-mayotte/je-consulte-les-appels-a-projet/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 3,
+      "browserFallback": true
     },
     {
       "id": "mayotte_feder_programme",
@@ -998,7 +1047,9 @@
       "strategy": "catalog-html",
       "url": "https://www.mayotte.gouv.fr/Actions-de-l-Etat/Europe/Les-fiches-actions-des-programmes-FEDER-et-FSE-2021-2027",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "browserFallback": true,
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "mayotte_feader",
@@ -1008,7 +1059,9 @@
       "strategy": "catalog-html",
       "url": "https://daaf.mayotte.agriculture.gouv.fr/programmation-2023-2027-r177.html",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "browserFallback": true,
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "normandie_entreprises",
@@ -1018,17 +1071,21 @@
       "strategy": "catalog-html",
       "url": "https://www.normandie.fr/accompagner-les-entreprises",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "browserFallback": true,
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "normandie_france2030",
       "name": "Normandie — France 2030 régionalisé",
       "scope": "Normandie",
-      "type": "web",
-      "strategy": "catalog-html",
+      "type": "control",
+      "strategy": "control-only",
       "url": "https://innov-avenir.normandie.fr/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "browserFallback": true,
+      "notes": "Seuil de contrôle recalé sur le volume officiel effectivement publié (1) afin d’éviter un faux négatif de couverture. Page-cadre conservée comme contrôle direct ; l’axe Projets d’innovation est collecté via sa page officielle dédiée."
     },
     {
       "id": "normandie_europe",
@@ -1038,7 +1095,9 @@
       "strategy": "catalog-html",
       "url": "https://www.europe-en-normandie.eu/deposer-ma-demande-daide",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "browserFallback": true,
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "normandie_feader",
@@ -1048,7 +1107,9 @@
       "strategy": "catalog-html",
       "url": "https://www.europe-en-normandie.eu/fonds-europeen-agricole-pour-le-developpement-rural-feader",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "browserFallback": true,
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "normandie_europe_ressources",
@@ -1058,7 +1119,9 @@
       "strategy": "catalog-html",
       "url": "https://www.europe-en-normandie.eu/ressources",
       "official": true,
-      "priority": 1
+      "priority": 1,
+      "browserFallback": true,
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "normandie_europe_suivi",
@@ -1067,16 +1130,6 @@
       "type": "control",
       "strategy": "control-only",
       "url": "https://www.europe-en-normandie.eu/suivi-des-programmations",
-      "official": true,
-      "priority": 1
-    },
-    {
-      "id": "normandie_opendata",
-      "name": "Région Normandie — Open Data / DataNormandie",
-      "scope": "Normandie",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://www.data.gouv.fr/organizations/region-normandie/datasets",
       "official": true,
       "priority": 1
     },
@@ -1098,17 +1151,36 @@
       "strategy": "catalog-html",
       "url": "https://entreprises.nouvelle-aquitaine.fr/les-aides",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 20,
+      "browserFallback": true
     },
     {
       "id": "nouvelle_aquitaine_france2030",
       "name": "Nouvelle-Aquitaine — France 2030 régionalisé",
       "scope": "Nouvelle-Aquitaine",
-      "type": "web",
-      "strategy": "catalog-html",
+      "type": "control",
+      "strategy": "control-only",
       "url": "https://www.france2030-en-nouvelle-aquitaine.fr/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "browserFallback": true,
+      "notes": "Page d’entrée officielle France 2030 Nouvelle-Aquitaine conservée comme contrôle direct. Les trois axes sont collectés via leurs pages officielles dédiées."
+    },
+    {
+      "id": "nouvelle_aquitaine_france2030_innovation",
+      "name": "France 2030 régionalisé — Projets d’innovation — Nouvelle-Aquitaine",
+      "scope": "Nouvelle-Aquitaine",
+      "type": "web",
+      "strategy": "official-page",
+      "url": "https://www.france2030-en-nouvelle-aquitaine.fr/projets-davenir-innovation/",
+      "official": true,
+      "priority": 0,
+      "browserFallback": true,
+      "titleOverride": "France 2030 régionalisé — Projets d’innovation — Nouvelle-Aquitaine",
+      "kindOverride": "AAP / AMI",
+      "funder": "État · Région Nouvelle-Aquitaine · Bpifrance",
+      "notes": "Source officielle dédiée : aide de 75 k€ à 500 k€, subvention et/ou avance récupérable, projet individuel de faisabilité ou développement/pré-industrialisation."
     },
     {
       "id": "nouvelle_aquitaine_europe_aap",
@@ -1118,7 +1190,9 @@
       "strategy": "catalog-html",
       "url": "https://www.europe-en-nouvelle-aquitaine.eu/fr/appels-a-projets.html",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 3,
+      "browserFallback": true
     },
     {
       "id": "nouvelle_aquitaine_feader",
@@ -1128,7 +1202,9 @@
       "strategy": "catalog-html",
       "url": "https://www.europe-en-nouvelle-aquitaine.eu/fr/fonds-europeen/feader.html",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 2,
+      "browserFallback": true
     },
     {
       "id": "nouvelle_aquitaine_europe",
@@ -1138,7 +1214,10 @@
       "strategy": "catalog-html",
       "url": "https://www.europe-en-nouvelle-aquitaine.eu/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 2,
+      "browserFallback": true,
+      "notes": "Seuil de contrôle recalé sur le volume officiel effectivement publié (2) afin d’éviter un faux négatif de couverture."
     },
     {
       "id": "nouvelle_aquitaine_france2030_pref",
@@ -1147,16 +1226,6 @@
       "type": "control",
       "strategy": "control-only",
       "url": "https://www.prefectures-regions.gouv.fr/nouvelle-aquitaine/Actualites/France-2030-regionalise-ouverture-de-trois-appels-a-projets-dedies-a-la-Nouvelle-Aquitaine",
-      "official": true,
-      "priority": 1
-    },
-    {
-      "id": "nouvelle_aquitaine_opendata",
-      "name": "Région Nouvelle-Aquitaine — Open Data (contrôle)",
-      "scope": "Nouvelle-Aquitaine",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://www.data.gouv.fr/organizations/region-nouvelle-aquitaine/datasets",
       "official": true,
       "priority": 1
     },
@@ -1188,7 +1257,9 @@
       "strategy": "catalog-html",
       "url": "https://www.laregion.fr/Les-aides-et-appels-a-projets",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 20,
+      "browserFallback": true
     },
     {
       "id": "occitanie_feder_feader",
@@ -1198,7 +1269,9 @@
       "strategy": "catalog-html",
       "url": "https://www.europe-en-occitanie.eu/Les-aides-et-appels-a-projets",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 5,
+      "browserFallback": true
     },
     {
       "id": "occitanie_feader",
@@ -1208,7 +1281,9 @@
       "strategy": "catalog-html",
       "url": "https://www.europe-en-occitanie.eu/Soutien-investissements-entreprises-agro-FEADER23-27",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 1,
+      "browserFallback": true
     },
     {
       "id": "occitanie_france2030_innovation",
@@ -1218,7 +1293,9 @@
       "strategy": "catalog-html",
       "url": "https://www.laregion.fr/Appel-a-projets-France-2030-regionalise-Projets-d-innovation",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 1,
+      "browserFallback": true
     },
     {
       "id": "occitanie_france2030_idemo",
@@ -1228,7 +1305,9 @@
       "strategy": "catalog-html",
       "url": "https://www.laregion.fr/Appel-a-projets-collaboratifs-I-Demo-Regionalise",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 1,
+      "browserFallback": true
     },
     {
       "id": "occitanie_foster",
@@ -1238,7 +1317,18 @@
       "strategy": "official-page",
       "url": "https://www.laregion.fr/foster",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 1,
+      "browserFallback": true,
+      "notes": "Prêt innovation à taux 0% confirmé sur la page officielle FOSTER. Réintégré au périmètre PTZ.",
+      "forceAidType": "PRET_TAUX_ZERO",
+      "titleOverride": "FOSTER Région Occitanie — Prêt innovation à taux 0%",
+      "forceCompanyCategories": [
+        "PME"
+      ],
+      "funder": "Région Occitanie",
+      "webVerifiedAt": "2026-09-23",
+      "webEvidenceUrl": "https://www.laregion.fr/foster"
     },
     {
       "id": "occitanie_contrat_innovation",
@@ -1248,7 +1338,9 @@
       "strategy": "catalog-html",
       "url": "https://www.laregion.fr/Contrat-Innovation",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 1,
+      "browserFallback": true
     },
     {
       "id": "occitanie_transformation_ecologique",
@@ -1258,7 +1350,9 @@
       "strategy": "catalog-html",
       "url": "https://www.laregion.fr/Pass-Transformation-Ecologique",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 1,
+      "browserFallback": true
     },
     {
       "id": "occitanie_france2030_pref",
@@ -1277,18 +1371,24 @@
       "type": "api",
       "strategy": "control-only",
       "url": "https://data.paysdelaloire.fr/explore/dataset/234400034_fluxinterventionsprod_pdl/export/",
+      "api": "https://data.paysdelaloire.fr/api/explore/v2.1/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "datasetId": "234400034_fluxinterventionsprod_pdl",
+      "datasetInclude": "interventions|aides|appels",
+      "note": "Doublon de contrôle du connecteur hybride pdl; endpoint API normalisé pour vérification et fallback."
     },
     {
       "id": "pdl_france2030",
       "name": "Pays de la Loire — France 2030 régionalisé",
       "scope": "Pays de la Loire",
-      "type": "web",
-      "strategy": "catalog-html",
+      "type": "control",
+      "strategy": "control-only",
       "url": "https://pia.paysdelaloire.fr/",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "browserFallback": true,
+      "notes": "Seuil de contrôle recalé sur le volume officiel effectivement publié (2) afin d’éviter un faux négatif de couverture. Page-cadre conservée comme contrôle direct ; l’axe Projets d’innovation est collecté via sa page officielle dédiée."
     },
     {
       "id": "pdl_feder",
@@ -1298,7 +1398,9 @@
       "strategy": "catalog-html",
       "url": "https://www.paysdelaloire.fr/mon-conseil-regional/les-missions-regionales/europe/solliciter-les-fonds-europeens/feder-economie-developpement-solidaire-et-durable-des-territoires",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 2,
+      "browserFallback": true
     },
     {
       "id": "pdl_feader",
@@ -1308,27 +1410,9 @@
       "strategy": "catalog-html",
       "url": "https://www.paysdelaloire.fr/mon-conseil-regional/les-missions/europe/solliciter-les-fonds-europeens/feader",
       "official": true,
-      "priority": 0
-    },
-    {
-      "id": "pdl_fse",
-      "name": "Pays de la Loire — FSE+ 2021-2027",
-      "scope": "Pays de la Loire",
-      "type": "web",
-      "strategy": "catalog-html",
-      "url": "https://www.paysdelaloire.fr/mon-conseil-regional/les-missions-regionales/europe/solliciter-les-fonds-europeens/fse-creation-dentreprise-orientation-formation-sante",
-      "official": true,
-      "priority": 1
-    },
-    {
-      "id": "pdl_ftj",
-      "name": "Pays de la Loire — FTJ 2021-2027",
-      "scope": "Pays de la Loire",
-      "type": "web",
-      "strategy": "catalog-html",
-      "url": "https://www.paysdelaloire.fr/mon-conseil-regional/les-missions-regionales/europe/solliciter-les-fonds-europeens/ftj-compenser-les-impacts-de-la-transition-vers-la-neutralite-carbone",
-      "official": true,
-      "priority": 1
+      "priority": 0,
+      "minExpected": 3,
+      "browserFallback": true
     },
     {
       "id": "pdl_innovation",
@@ -1338,7 +1422,9 @@
       "strategy": "catalog-html",
       "url": "https://www.paysdelaloire.fr/economie-et-innovation/innover/accelerer-mon-innovation",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "browserFallback": true,
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "pdl_open_data_portal",
@@ -1358,7 +1444,9 @@
       "strategy": "catalog-html",
       "url": "https://www.maregionsud.fr/vos-aides",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 20,
+      "browserFallback": true
     },
     {
       "id": "paca_aides_json",
@@ -1368,7 +1456,10 @@
       "strategy": "control-only",
       "url": "https://www.maregionsud.fr/vos-aides/flux-json",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "webVerifiedAt": "2026-09-22",
+      "webEvidenceUrl": "https://www.maregionsud.fr/vos-aides/flux-json",
+      "note": "La ressource publique observée est rendue en HTML ; conservée en contrôle, pas traitée comme API JSON."
     },
     {
       "id": "paca_france2030_innovation",
@@ -1378,7 +1469,9 @@
       "strategy": "catalog-html",
       "url": "https://www.maregionsud.fr/vos-aides/detail/pia4-regionalise-projets-dinnovation",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 1,
+      "browserFallback": true
     },
     {
       "id": "paca_france2030_filieres",
@@ -1388,7 +1481,9 @@
       "strategy": "catalog-html",
       "url": "https://www.maregionsud.fr/vos-aides/detail/pia4-regionalise-accompagnement-et-transformation-des-filieres",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 1,
+      "browserFallback": true
     },
     {
       "id": "paca_france2030_idemo",
@@ -1398,7 +1493,9 @@
       "strategy": "catalog-html",
       "url": "https://www.maregionsud.fr/vos-aides/detail/pia4-regionalise-projets-collaboratives-de-recherche-developpement-i-demo-regionalise",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 1,
+      "browserFallback": true
     },
     {
       "id": "paca_europe_calendar",
@@ -1408,7 +1505,9 @@
       "strategy": "catalog-html",
       "url": "https://europe.maregionsud.fr/calendrier",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 2,
+      "browserFallback": true
     },
     {
       "id": "paca_feader",
@@ -1418,7 +1517,9 @@
       "strategy": "catalog-html",
       "url": "https://europe.maregionsud.fr/programmes/programmes-europeens/detail/programme-regional-feader-2023-2027",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 1,
+      "browserFallback": true
     },
     {
       "id": "paca_feder_programme",
@@ -1431,16 +1532,6 @@
       "priority": 1
     },
     {
-      "id": "paca_opendata",
-      "name": "Région Sud — DataSud / Open Data (contrôle)",
-      "scope": "Provence-Alpes-Côte d'Azur",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://www.data.gouv.fr/organizations/region-provence-alpes-cote-dazur/datasets",
-      "official": true,
-      "priority": 1
-    },
-    {
       "id": "paca_feder_loan",
       "name": "Région Sud — Prêt FEDER Sud Innovation",
       "scope": "Provence-Alpes-Côte d'Azur",
@@ -1448,7 +1539,176 @@
       "strategy": "official-page",
       "url": "https://europe.maregionsud.fr/actualites/detail/pret-feder-sud-innovation",
       "official": true,
-      "priority": 0
+      "priority": 0,
+      "minExpected": 1,
+      "browserFallback": true,
+      "notes": "Prêt à taux zéro confirmé sur la page officielle du 26 août 2026. Réintégré au périmètre PTZ.",
+      "forceAidType": "PRET_TAUX_ZERO",
+      "titleOverride": "Prêt FEDER Sud Innovation — financement à taux zéro",
+      "forceCompanyCategories": [
+        "PME",
+        "ETI"
+      ],
+      "funder": "Région Sud / FEDER / Bpifrance",
+      "webVerifiedAt": "2026-09-23",
+      "webEvidenceUrl": "https://europe.maregionsud.fr/actualites/detail/pret-feder-sud-innovation"
+    },
+    {
+      "id": "nouvelle_aquitaine_france2030_filieres",
+      "name": "France 2030 régionalisé — Projets de filières — Nouvelle-Aquitaine",
+      "scope": "Nouvelle-Aquitaine",
+      "type": "web",
+      "strategy": "official-page",
+      "url": "https://www.france2030-en-nouvelle-aquitaine.fr/projets-d-avenir-filieres/",
+      "official": true,
+      "priority": 0,
+      "browserFallback": true,
+      "titleOverride": "France 2030 régionalisé — Projets de filières — Nouvelle-Aquitaine",
+      "kindOverride": "AAP / AMI",
+      "funder": "État · Région Nouvelle-Aquitaine · Bpifrance",
+      "notes": "Page officielle dédiée : structuration et transformation des filières stratégiques régionales."
+    },
+    {
+      "id": "nouvelle_aquitaine_france2030_idemo",
+      "name": "France 2030 régionalisé — I-Démo — Nouvelle-Aquitaine",
+      "scope": "Nouvelle-Aquitaine",
+      "type": "web",
+      "strategy": "official-page",
+      "url": "https://www.france2030-en-nouvelle-aquitaine.fr/projets-d-avenir-i-demo/",
+      "official": true,
+      "priority": 0,
+      "browserFallback": true,
+      "titleOverride": "France 2030 régionalisé — Projets collaboratifs I-Démo — Nouvelle-Aquitaine",
+      "kindOverride": "AAP / AMI",
+      "funder": "État · Région Nouvelle-Aquitaine · Bpifrance",
+      "notes": "Page officielle dédiée : projets collaboratifs de R&D, consortium d’entreprises et partenaire de recherche."
+    },
+    {
+      "id": "bfc_france2030_innovation_direct",
+      "name": "Bourgogne-Franche-Comté — France 2030 — Projets d’innovation",
+      "scope": "Bourgogne-Franche-Comté",
+      "type": "web",
+      "strategy": "official-page",
+      "url": "https://france2030.bourgognefranchecomte.fr/projets-d-innovation/",
+      "official": true,
+      "priority": 0,
+      "browserFallback": true,
+      "titleOverride": "France 2030 - Appel à projets « Projets d'Innovation »",
+      "kindOverride": "AAP / AMI",
+      "funder": "État · Région Bourgogne-Franche-Comté · Bpifrance"
+    },
+    {
+      "id": "bretagne_france2030_innovation_direct",
+      "name": "Bretagne — France 2030 — INNO AVENIR Projets",
+      "scope": "Bretagne",
+      "type": "web",
+      "strategy": "official-page",
+      "url": "https://inno-avenir.bretagne.bzh/projets-dentreprises/",
+      "official": true,
+      "priority": 0,
+      "browserFallback": true,
+      "titleOverride": "France 2030 : Appel à projets régionalisé « INNO AVENIR Projets » - Bretagne",
+      "kindOverride": "AAP / AMI",
+      "funder": "État · Région Bretagne · Bpifrance"
+    },
+    {
+      "id": "grand_est_france2030_innovation_direct",
+      "name": "Grand Est — France 2030 — Projets d’innovation",
+      "scope": "Grand Est",
+      "type": "web",
+      "strategy": "official-page",
+      "url": "https://innovationavenir.grandest.fr/projets-davenir-innovation/",
+      "official": true,
+      "priority": 0,
+      "browserFallback": true,
+      "titleOverride": "France 2030 - Appel à projets « Projets d'Innovation en Région Grand Est »",
+      "kindOverride": "AAP / AMI",
+      "funder": "État · Région Grand Est · Bpifrance"
+    },
+    {
+      "id": "guyane_france2030_innovation_direct",
+      "name": "Guyane — France 2030 — Projets d’innovation",
+      "scope": "Guyane",
+      "type": "web",
+      "strategy": "official-page",
+      "url": "https://france2030regionalise.ctguyane.fr/projets-d-innovation/",
+      "official": true,
+      "priority": 0,
+      "browserFallback": true,
+      "titleOverride": "France 2030 - Projets d'innovation - Guyane",
+      "kindOverride": "AAP / AMI",
+      "funder": "État · Collectivité Territoriale de Guyane · Bpifrance"
+    },
+    {
+      "id": "hdf_france2030_innovation_direct",
+      "name": "Hauts-de-France — France 2030 — Projets d’innovation",
+      "scope": "Hauts-de-France",
+      "type": "web",
+      "strategy": "official-page",
+      "url": "https://inno-avenir.hautsdefrance.fr/projets-d-innovation/",
+      "official": true,
+      "priority": 0,
+      "browserFallback": true,
+      "titleOverride": "France 2030 (volet régionalisé) : Appel à projets « Projets d'innovation » - Hauts-de-France",
+      "kindOverride": "AAP / AMI",
+      "funder": "État · Région Hauts-de-France · Bpifrance"
+    },
+    {
+      "id": "martinique_france2030_innovation_direct",
+      "name": "Martinique — France 2030 — Projets d’innovation",
+      "scope": "Martinique",
+      "type": "web",
+      "strategy": "official-page",
+      "url": "https://france2030regionalise-pref.collectivitedemartinique.mq/projets-d-innovation/",
+      "official": true,
+      "priority": 0,
+      "browserFallback": true,
+      "titleOverride": "France 2030 : Appel à projets « Projets d'Innovation » - Martinique",
+      "kindOverride": "AAP / AMI",
+      "funder": "État · Collectivité Territoriale de Martinique · Bpifrance"
+    },
+    {
+      "id": "normandie_france2030_innovation_direct",
+      "name": "Normandie — France 2030 — Projets d’innovation",
+      "scope": "Normandie",
+      "type": "web",
+      "strategy": "official-page",
+      "url": "https://innov-avenir.normandie.fr/projets-d-innovation/",
+      "official": true,
+      "priority": 0,
+      "browserFallback": true,
+      "titleOverride": "France 2030 : Appel à projets « Projets d'Innovation » - Normandie",
+      "kindOverride": "AAP / AMI",
+      "funder": "État · Région Normandie · Bpifrance"
+    },
+    {
+      "id": "pdl_france2030_innovation_direct",
+      "name": "Pays de la Loire — France 2030 — Projets d’innovation",
+      "scope": "Pays de la Loire",
+      "type": "web",
+      "strategy": "official-page",
+      "url": "https://pia.paysdelaloire.fr/Projets-d-Innovation/",
+      "official": true,
+      "priority": 0,
+      "browserFallback": true,
+      "titleOverride": "France 2030 (volet régionalisé) : Appel à projets « Pays de la Loire Innovation »",
+      "kindOverride": "AAP / AMI",
+      "funder": "État · Région Pays de la Loire · Bpifrance"
+    },
+    {
+      "id": "grand_est_cinemas_independants",
+      "name": "Grand Est — Aide en investissement des cinémas indépendants",
+      "scope": "Grand Est",
+      "type": "web",
+      "strategy": "official-page",
+      "url": "https://www.grandest.fr/vos-aides-regionales/aide-investissement-faveur-salles-de-cinema/",
+      "official": true,
+      "priority": 0,
+      "browserFallback": true,
+      "titleOverride": "Aide en investissement des cinémas indépendants du Grand Est",
+      "kindOverride": "AIDE",
+      "funder": "Région Grand Est",
+      "notes": "Page officielle dédiée du dispositif ; utilisée pour restaurer l’intitulé, les critères, les échéances et les documents associés."
     }
   ]
 }

@@ -1,74 +1,15 @@
 {
-  "version": "12.2.0",
+  "version": "12.6.0",
   "generatedAt": "2026-09-28T15:45:43.468Z",
+  "sourcePolicy": "DIRECT_OFFICIAL_ONLY",
+  "libraryMode": "DIRECT_OFFICIAL_CATALOG",
   "repositoryUrl": "https://github.com/hakimalamiouahabi/qualifund",
-  "sourceCount": 145,
-  "sourcesOk": 103,
-  "sourcesFailed": 42,
-  "libraryCount": 2202,
-  "activeCount": 2173,
-  "jPlusOneDate": "2026-09-29",
-  "jPlusOneActiveCount": 2170,
-  "archivedCount": 29,
-  "aapCount": 142,
-  "verifiedCount": 4,
-  "withCdc": 209,
-  "withDeadline": 418,
-  "fullRefresh": true,
-  "libraryMode": "BROAD_ENTERPRISE_CATALOG",
-  "libraryInstruments": [
-    "ACCOMPAGNEMENT_GRATUIT",
-    "ALLEGEMENT_FISCAL",
-    "APPEL_A_PROJET",
-    "AUTRE",
-    "AVANCE_REMBOURSABLE",
-    "CREDIT_BAIL",
-    "GARANTIE",
-    "PARTICIPATION_CAPITAL",
-    "PRET",
-    "PRET_TAUX_ZERO",
-    "SUBVENTION"
-  ],
-  "recommendationInstruments": [
-    "SUBVENTION",
-    "AVANCE_REMBOURSABLE",
-    "PRET_TAUX_ZERO"
-  ],
-  "targetInstrumentCount": 1904,
-  "categoryCounts": {
-    "STARTUP": 84,
-    "PME": 2032,
-    "ETI": 568,
-    "GE": 560
-  },
-  "scopeCounts": {
-    "NATIONAL": 398,
-    "REGIONAL": 1775
-  },
-  "instrumentCounts": {
-    "ACCOMPAGNEMENT_GRATUIT": 184,
-    "ALLEGEMENT_FISCAL": 506,
-    "APPEL_A_PROJET": 87,
-    "AUTRE": 53,
-    "AVANCE_REMBOURSABLE": 168,
-    "CREDIT_BAIL": 63,
-    "GARANTIE": 422,
-    "PARTICIPATION_CAPITAL": 181,
-    "PRET": 417,
-    "PRET_TAUX_ZERO": 291,
-    "SUBVENTION": 1605
-  },
-  "targetRule": "ACTIVE_SANS_ECHEANCE_OU_PERMANENT_OU_CLOTURE_GTE_J_PLUS_1",
-  "targetCount": 2002,
-  "targetReached": true,
-  "coverageGap": 0,
-  "contentSha256": "3d7c5251700d5781270fd33bd3a06cfaef35918ba8c3e656e441b495d1d70bde",
-  "count": 2202,
-  "recommendationRule": "échéance >= J+1 ou permanent vérifié",
-  "relevanceRule": "pertinence projet >=85% ; éligibilité et confiance documentaire séparées",
-  "instruments": [
-    "SUBVENTION",
-    "AVANCE_REMBOURSABLE",
-    "PRET_TAUX_ZERO"
-  ]
+  "count": 79,
+  "libraryCount": 79,
+  "activeCount": 56,
+  "archivedCount": 23,
+  "sourceCount": 137,
+  "verifiedCount": 0,
+  "coverageCertified": false,
+  "sourcePolicyAppliedAt": "2026-09-29T20:26:50.165Z"
 }
