@@ -215,7 +215,7 @@ function eligibility(a,p){
   const projectCat=p.startup?`STARTUP / ${p.category}`:p.category;
   if(cats.length&&p.category&&p.category!=='À préciser'){
     const match=cats.includes(p.category)||(p.startup&&cats.includes('STARTUP'));
-    add('Taille entreprise',match?'CONFORME':'NON CONFORME',`Catégories référencées : ${cats.join(', ')} · profil projet : ${projectCat}`,'beneficiaries',Boolean(a.eligibilityRules?.companyCategoriesExhaustive));
+    add('Taille entreprise',match?'CONFORME':'NON CONFORME',`Catégories référencées : ${cats.join(', ')} · profil projet : ${projectCat}`,'beneficiaries',!match);
   }else add('Taille entreprise','À VÉRIFIER',cats.length?`Catégories référencées : ${cats.join(', ')}`:'Taille d’entreprise non documentée','beneficiaries');
 
   if(a.scope==='NATIONAL')add('Territoire','CONFORME','Portée nationale','beneficiaries',true);
@@ -232,7 +232,7 @@ function eligibility(a,p){
   const budget=Number(p.budget||0),min=(a.minimumProjectCost!=null&&a.minimumProjectCost!==''&&Number.isFinite(Number(a.minimumProjectCost)))?Number(a.minimumProjectCost):null,max=(a.maximumProjectCost!=null&&a.maximumProjectCost!==''&&Number.isFinite(Number(a.maximumProjectCost)))?Number(a.maximumProjectCost):null;
   if(budget>0&&(min!=null||max!=null)){
     const mismatch=(min!=null&&budget<min)||(max!=null&&budget>max);
-    add('Budget',mismatch?'NON CONFORME':'CONFORME',`Budget projet : ${money(budget)} · assiette connue : ${min!=null?'min '+money(min):'min non documenté'} / ${max!=null?'max '+money(max):'max non documenté'}`,'financialTerms',a.eligibilityRules?.budgetBasis==='TOTAL_PROJECT');
+    add('Budget',mismatch?'NON CONFORME':'CONFORME',`Budget projet : ${money(budget)} · assiette connue : ${min!=null?'min '+money(min):'min non documenté'} / ${max!=null?'max '+money(max):'max non documenté'}`,'financialTerms',mismatch);
   }else add('Budget','À VÉRIFIER',`Budget projet : ${budget>0?money(budget):'non renseigné'} · assiette : ${min!=null?'min '+money(min):'min non documenté'} / ${max!=null?'max '+money(max):'max non documenté'}`,'financialTerms');
 
   const explicit=explicitExclusion(a,p);
