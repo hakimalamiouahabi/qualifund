@@ -39,7 +39,7 @@ test('configuration navigateur n’invente aucun endpoint serverless sur héberg
 
 test('service worker utilise exclusivement le cache de release v12',()=>{
   const sw=fs.readFileSync(new URL('../site/sw.js',import.meta.url),'utf8');
-  assert.match(sw,/leyton-radar-v12\.2\.0-shell/);
+  assert.match(sw,/leyton-radar-v12\.6\.0-shell/);
   assert.doesNotMatch(sw,/v10-shell|v11\./);
 });
 
