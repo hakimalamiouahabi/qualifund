@@ -13,11 +13,13 @@
       "linkInclude": "/entreprises/aides-financieres/",
       "official": true,
       "priority": 0,
-      "minExpected": 50,
+      "minExpected": 60,
       "browserFallback": true,
       "observedCatalogCount": 71,
       "webVerifiedAt": "2026-09-22",
-      "webEvidenceUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue"
+      "webEvidenceUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue",
+      "minImported": 50,
+      "minImportRatio": 0.5
     },
     {
       "id": "bpifrance",
@@ -30,8 +32,10 @@
       "official": true,
       "priority": 0,
       "edgeFallback": true,
-      "minExpected": 5,
-      "browserFallback": true
+      "minExpected": 20,
+      "browserFallback": true,
+      "minImported": 15,
+      "minImportRatio": 0.6
     },
     {
       "id": "bpifrance_adi",
@@ -58,7 +62,10 @@
       "linkInclude": "/fr/appels/",
       "official": true,
       "priority": 1,
-      "browserFallback": true
+      "browserFallback": true,
+      "minExpected": 20,
+      "minImported": 15,
+      "minImportRatio": 0.6
     },
     {
       "id": "europe_france",
@@ -166,8 +173,8 @@
       "id": "idf",
       "name": "Région Île-de-France — aides et appels à projets",
       "scope": "Île-de-France",
-      "type": "web",
-      "strategy": "catalog-html",
+      "type": "api",
+      "strategy": "opendatasoft",
       "url": "https://www.iledefrance.fr/aides-et-appels-a-projets",
       "api": "https://data.iledefrance.fr/api/explore/v2.1/",
       "orgQuery": "Région Île-de-France",
@@ -180,7 +187,10 @@
       "webEvidenceUrl": "https://www.iledefrance.fr/aides-et-appels-a-projets",
       "observedCatalogCount": 346,
       "observedProfessionalCount": 171,
-      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
+      "notes": "Collecte directe via l'Open Data officiel Île-de-France ; les URL descriptives pointent vers les fiches officielles régionales.",
+      "minExpected": 300,
+      "minImported": 150,
+      "minImportRatio": 0.4
     },
     {
       "id": "normandie",
@@ -197,7 +207,10 @@
       "webVerifiedAt": "2026-09-28",
       "webEvidenceUrl": "https://www.normandie.fr/aides-regionales",
       "catalogLinkSelector": "h3 a[href]",
-      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers.",
+      "minExpected": 200,
+      "minImported": 100,
+      "minImportRatio": 0.5
     },
     {
       "id": "naquitaine",
@@ -223,12 +236,14 @@
       "orgQuery": "Région Occitanie",
       "official": true,
       "priority": 0,
-      "minExpected": 1,
+      "minExpected": 200,
       "datasetInclude": "aides|appels|interventions",
       "datasetId": "aides-et-appels-a-projets-de-la-region-occitanie",
       "webVerifiedAt": "2026-09-28",
       "webEvidenceUrl": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
-      "observedCatalogCount": 223
+      "observedCatalogCount": 223,
+      "minImported": 180,
+      "minImportRatio": 0.8
     },
     {
       "id": "pdl",
@@ -242,12 +257,14 @@
       "orgQuery": "Région des Pays de la Loire",
       "official": true,
       "priority": 0,
-      "minExpected": 100,
+      "minExpected": 150,
       "datasetInclude": "aides|appels|interventions",
       "browserFallback": true,
       "observedCatalogCount": 180,
       "webVerifiedAt": "2026-09-22",
-      "webEvidenceUrl": "https://www.paysdelaloire.fr/les-aides"
+      "webEvidenceUrl": "https://www.paysdelaloire.fr/les-aides",
+      "minImported": 100,
+      "minImportRatio": 0.4
     },
     {
       "id": "paca",
