@@ -23,7 +23,7 @@ test('IA ne correspond pas à une sous-chaîne dans social',()=>assert.equal(con
 test('recherche mots indépendants, accents, pluriels et alias BPI',()=>assert.equal(context.matchesSearch({title:'Aide pour le développement de l’innovation',funder:['Bpifrance']},'bpi innovation développement'),true));
 test('une fiche territoriale innovation n’est pas attribuée à Bpifrance',()=>assert.equal(context.LEYTON_SCORING.detectFamily({title:'Aide aux projets d’innovation',funder:['CC des Montagnes du Giffre'],scope:'REGIONAL'}),'REGIONAL'));
 test('catégories non exhaustives ne suffisent pas à exclure',()=>assert.equal(context.eligibility({...aid,companyCategories:['PME']},{...project,category:'ETI'}).eligible,true));
-test('une contradiction territoriale explicite reste bloquante',()=>assert.equal(context.eligibility({...aid,regions:['Bretagne']},project).eligible,false));
+test('une contradiction territoriale sans preuve officielle reste à vérifier',()=>{const r=context.eligibility({...aid,regions:['Bretagne']},project);assert.equal(r.eligible,true);assert.equal(r.criteria.find(x=>x.label==='Territoire').status,'À VÉRIFIER')});
 test('les cartes de résultats sont rendues sans fonction manquante',()=>{
  const result={a:aid,elig:context.eligibility(aid,project),relevance:context.LEYTON_SCORING.relevance(aid,project)};
  assert.match(context.resultCard(result,1),/Conditions à confirmer/);
