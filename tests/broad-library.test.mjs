@@ -33,5 +33,5 @@ test('interface bibliothèque expose taille région thème et instrument',()=>{
 
 test('moteur de recommandation reste strict SUB AR PTZ',()=>{
   const app=fs.readFileSync(new URL('../site/app.js',import.meta.url),'utf8');
-  assert.match(app,/\['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO'\]\.includes\(x\)/);
+  assert.match(app,/const targetInstruments=\['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO'\]/);
 });
