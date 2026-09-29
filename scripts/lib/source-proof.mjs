@@ -6,6 +6,7 @@ export function isGenericCatalogPage(url=''){
     const h=u.hostname.toLowerCase();
     const p=u.pathname.replace(/\/+$/,'');
     if(h==='data.aides-entreprises.fr' && (p==='/stock'||p==='/documentation'||p.startsWith('/files'))) return true;
+    if(/accessibilite|accessibility|declaration-accessibilite|rgaa|mentions-legales|politique-confidentialite|cookies/i.test(p)) return true;
     return false;
   }catch{return true}
 }
