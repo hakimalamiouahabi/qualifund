@@ -21,6 +21,30 @@ import { isActiveAtJPlusOne, jPlusOneDate } from './lib/jplus1.mjs';
 const KNOWN_AID_TYPES=new Set(['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO','PRET','BONIFICATION_INTERET','GARANTIE','ALLEGEMENT_FISCAL','PARTICIPATION_CAPITAL','APPEL_A_PROJET','ACCOMPAGNEMENT_GRATUIT','CREDIT_BAIL','AUTRE']);
 function sanitizeAidTypes(xs=[]){const vals=arr(xs).filter(x=>typeof x==='string'&&x);const known=vals.filter(x=>KNOWN_AID_TYPES.has(x));return uniq(known.length?known:['AUTRE']);}
 function unusableAidTitle(v=''){const t=String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[’']/g,"'").replace(/\s+/g,' ').trim();return !t||t.length<4||/(desole.*offre.*plus disponible|offre.*plus disponible|document officiel|page introuvable|page non trouvee|erreur 404|404 not found|access denied|forbidden|service indisponible|site en maintenance)/i.test(t);}
+function repairTitleSpacing(text=''){
+  let s=String(text||'').replace(/\s+/g,' ').trim();
+  for(let i=0;i<3;i++)s=s.replace(/\b([A-ZÀ-ÖØ-Ý]{2,})\s+([ÉÈÊËÀÂÄÎÏÔÖÙÛÜÇ])\s+([A-ZÀ-ÖØ-Ý]{2,})\b/g,'$1$2$3');
+  return s;
+}
+function repairAidTitle(a){
+  if(!a||!unusableAidTitle(a.title))return a;
+  const candidates=[
+    ...arr(a.sourceAliases).map(x=>typeof x==='string'?x:x?.label),
+    ...arr(a.cdcLinks).map(x=>typeof x==='string'?x:x?.label),
+    ...arr(a.regulationLinks).map(x=>typeof x==='string'?x:x?.label),
+    ...arr(a.sourceLinks).map(x=>typeof x==='string'?null:x?.label)
+  ].filter(Boolean).map(repairTitleSpacing)
+   .map(x=>x.replace(/^(?:r[eè]glement|cahier des charges|cdc|dossier de candidature|annexe)\s*[-–—:]\s*/i,'').trim())
+   .filter(x=>x.length>=12&&x.length<=190&&!unusableAidTitle(x));
+  let title=candidates[0]||null;
+  if(!title){
+    const src=repairTitleSpacing(a.objective||'').replace(/^\d+\s+(?=[A-ZÀ-ÖØ-Ý])/,'');
+    const cut=src.split(/\b(?:Délibération|Direction de|Règlement|REGLEMENT|ARTICLE\s+\d+|Art\.\s*\d+)/)[0].trim();
+    const upper=(cut.match(/[A-ZÀ-ÖØ-Ý]/g)||[]).length,letters=(cut.match(/[A-Za-zÀ-ÖØ-öø-ÿ]/g)||[]).length;
+    if(cut.length>=15&&cut.length<=190&&letters>=12&&upper/letters>.6)title=cut;
+  }
+  return title?{...a,title}:a;
+}
 function directOfficialUrl(a){
   const candidates=[a?.officialPage,...arr(a?.sourceLinks).map(x=>typeof x==='string'?x:x?.url),...arr(a?.formLinks).map(x=>typeof x==='string'?x:x?.url)];
   for(const raw of candidates){
@@ -98,7 +122,7 @@ candidates.sort((a,b)=>{
 const enrichLimit=Math.max(0,Number(process.env.QUALIFUND_ENRICH_LIMIT||process.env.LEYTON_RADAR_ENRICH_LIMIT||(FULL?180:80)));
 const batch=candidates.slice(0,enrichLimit);
 log(`Enrichissement officiel borné: ${batch.length}/${candidates.length} (limite ${enrichLimit})`);const enriched=new Map();let cursor=0;const workers=Array.from({length:6},async()=>{while(true){const i=cursor++;if(i>=batch.length)return;const a=batch[i];try{const e=await withTimeout(enrichAid(a,{log}),120000,`enrich ${a.id}`);e.verification={...(e.verification||{}),lastChecked:nowIso()};enriched.set(canonicalKey(e),e)}catch(err){log(`Enrichissement ignoré ${a.title}: ${err.message}`)}}});await Promise.all(workers);for(const[k,a]of enriched)current.set(k,a);
-aids=dedupe([...current.values()])
+aids=dedupe([...current.values()]).map(repairAidTitle)
   // Bibliothèque large : on conserve toutes les natures d'aides destinées aux entreprises.
   // Les pages d'erreur et titres génériques ne sont jamais exposés comme dispositifs.
   .filter(a=>!unusableAidTitle(a.title))
