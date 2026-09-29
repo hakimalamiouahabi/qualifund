@@ -36,7 +36,7 @@ import { fromAidesEntreprises } from '../scripts/lib/records.mjs';
 test('preuves Aides Entreprises pointent vers le stock Open Data public et non vers API protégée',()=>{
   const raw={id_aid:42,status:1,aid_nom:'Aide test',aid_objet:'Objet',aid_benef:'PME',aid_operations_el:'Dépenses',aid_conditions:'Conditions',aid_montant:'50 %',date_fin:'2026-12-31',cache_indexation:{natures:[{id_typ:3,typ_libelle:'Subvention'}],profils:[{id_tut:4}],territoires:[{ter_libelle:'FRANCE'}],financeurs:[],projets:[]},complements:{source:[],reglement:[],formulaire:[]}};
   const a=fromAidesEntreprises(raw);
-  assert.equal(a.officialPage,'https://data.aides-entreprises.fr/stock');
+  assert.equal(a.officialPage,null);
   assert.ok(a.verification.fieldEvidence.every(e=>e.sourceUrl==='https://data.aides-entreprises.fr/stock'));
   assert.ok(a.verification.fieldEvidence.every(e=>/Open Data/.test(e.locator)));
 });
