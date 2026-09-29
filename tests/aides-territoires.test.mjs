@@ -18,8 +18,12 @@ test('Aides Territoires conserve l’ingénierie dans la bibliothèque exhaustiv
   assert.ok(a);assert.ok(a.aidTypes.includes('ACCOMPAGNEMENT_GRATUIT'));
 });
 
-test('registre bascule Aides Territoires en ingestion avec plancher prudent',()=>{
-  const cfg=JSON.parse(fs.readFileSync(new URL('../config/sources.json',import.meta.url),'utf8'));const s=cfg.sources.find(x=>x.id==='aides_territoires');assert.equal(s.strategy,'aides-territoires');assert.ok(s.minExpected>=2500);
+test('registre conserve Aides Territoires comme contrôle tant que l’API requiert une authentification',()=>{
+  const cfg=JSON.parse(fs.readFileSync(new URL('../config/sources.json',import.meta.url),'utf8'));
+  const s=cfg.sources.find(x=>x.id==='aides_territoires');
+  assert.equal(s.strategy,'control-only');
+  assert.equal(s.type,'control');
+  assert.match(s.notes||'',/401|authentification/i);
 });
 
 
