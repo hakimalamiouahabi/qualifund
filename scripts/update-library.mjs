@@ -75,7 +75,7 @@ const sourceWorkers=Array.from({length:sourceWorkerCount},async()=>{
     log(`[collecte ${i+1}/${cfg.sources.length}] ${source.name}`);
     try{
       const r=await withTimeout(collect(source),source.priority===0?240000:160000,source.id);
-      sourceRuns[i]={source,old,r,assessment:assessCollection(source,r),durationMs:Date.now()-started,error:null};
+      sourceRuns[i]={source,old,r,durationMs:Date.now()-started,error:null};
     }catch(error){
       sourceRuns[i]={source,old,r:null,assessment:null,durationMs:Date.now()-started,error};
     }
@@ -85,16 +85,17 @@ await Promise.all(sourceWorkers);
 
 // La fusion reste séquentielle et déterministe : même ordre que le registre maître.
 for(let i=0;i<sourceRuns.length;i++){
-  const run=sourceRuns[i],{source,old,r,assessment,durationMs,error}=run;
+  const run=sourceRuns[i],{source,old,r,durationMs,error}=run;
   log(`[fusion ${i+1}/${cfg.sources.length}] ${source.name}`);
   if(error){
     log(`ANOMALIE ${source.id}: ${error.message}`);
     coverage.push({id:source.id,name:source.name,scope:source.scope,success:false,lifecycleSafe:false,emptyIngestion:false,suspiciousVolume:false,discovered:0,imported:0,message:`${error.message} — dernière version valide conservée.`,durationMs,checkedAt:nowIso(),lastSuccessfulAt:old?.lastSuccessfulAt||null,consecutiveFailures:(old?.consecutiveFailures||0)+1});
     continue;
   }
+  const directAids=(r.aids||[]).filter(a0=>a0?.title&&isDirectAid(a0,cfg));
+  const assessment=assessCollection(source,{...r,aids:directAids});
   const seen=new Set();
-  for(const a0 of r.aids||[]){
-    if(!a0?.title||!isDirectAid(a0,cfg))continue;
+  for(const a0 of directAids){
     const a={...a0,lastSeenAt:nowIso(),sourceId:a0.sourceId||source.id,lifecycleStatus:a0.lifecycleStatus||'ACTIVE'};
     const k=canonicalKey(a);seen.add(k);cycleSeenKeys.add(k);
     const merged=current.has(k)?mergeAid(current.get(k),a):a;
@@ -108,7 +109,7 @@ for(let i=0;i<sourceRuns.length;i++){
     }
   }
   const caution=assessment.reasons.length?`${assessment.reasons.join(' ; ')} — dernière version valide conservée. `:'';
-  coverage.push({id:source.id,name:source.name,scope:source.scope,success:assessment.success,lifecycleSafe:assessment.lifecycleSafe,emptyIngestion:assessment.emptyIngestion,suspiciousVolume:assessment.suspiciousVolume,discovered:assessment.discovered,imported:assessment.imported,message:caution+(r.message||'OK'),durationMs,checkedAt:nowIso(),lastSuccessfulAt:assessment.success?nowIso():(old?.lastSuccessfulAt||null),consecutiveFailures:assessment.success?0:(old?.consecutiveFailures||0)+1});
+  coverage.push({id:source.id,name:source.name,scope:source.scope,success:assessment.success,lifecycleSafe:assessment.lifecycleSafe,emptyIngestion:assessment.emptyIngestion,suspiciousVolume:assessment.suspiciousVolume,lowImportedCount:assessment.lowImportedCount,lowImportRatio:assessment.lowImportRatio,importRatio:assessment.importRatio,discovered:assessment.discovered,imported:assessment.imported,message:caution+(r.message||'OK'),durationMs,checkedAt:nowIso(),lastSuccessfulAt:assessment.success?nowIso():(old?.lastSuccessfulAt||null),consecutiveFailures:assessment.success?0:(old?.consecutiveFailures||0)+1});
 }
 let aids=[...current.values()];
 let candidates=aids.filter(a=>a.officialPage&&/^https?:/i.test(a.officialPage)&&a.lifecycleStatus!=='ARCHIVE');
