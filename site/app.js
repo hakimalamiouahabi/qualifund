@@ -171,14 +171,15 @@ function eligibility(a,p){
   const evidence=field=>arr(a.verification?.fieldEvidence).find(e=>e.field===field&&/^https?:/.test(e.sourceUrl||'')&&String(e.evidenceText||'').trim());
   const add=(label,status,detail,field,hard=false)=>{
     const ev=field?evidence(field):null;
-    if(status==='NON CONFORME'&&!hard)status='À VÉRIFIER';
-    criteria.push({label,status,detail,sourceUrl:ev?.sourceUrl||null,sourceTier:ev?.sourceTier||null,hard});
-    if(hard&&status==='NON CONFORME')block.push(detail||label);
+    const provenHard=Boolean(hard&&(!field||['A','B'].includes(ev?.sourceTier)));
+    if(status==='NON CONFORME'&&!provenHard)status='À VÉRIFIER';
+    criteria.push({label,status,detail,sourceUrl:ev?.sourceUrl||null,sourceTier:ev?.sourceTier||null,hard:provenHard});
+    if(provenHard&&status==='NON CONFORME')block.push(detail||label);
   };
   const types=arr(a.aidTypes),cats=arr(a.companyCategories),regions=arr(a.regions);
   const targetInstruments=['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO'];
   const hasTargetInstrument=types.some(x=>targetInstruments.includes(x));
-  add('Instrument',!types.length?'À VÉRIFIER':hasTargetInstrument?'CONFORME':'NON CONFORME',types.length?types.map(aidTypeLabel).join(', '):'Instrument non documenté','financialTerms',types.length>0);
+  add('Instrument',!types.length?'À VÉRIFIER':hasTargetInstrument?'CONFORME':'NON CONFORME',types.length?types.map(aidTypeLabel).join(', '):'Instrument non documenté',null,types.length>0);
 
   add('Statut','À VÉRIFIER','Le référencement dans la base ne confirme pas à lui seul l’ouverture du dispositif.','calendar');
 
