@@ -18,12 +18,10 @@ test('Aides Territoires conserve l’ingénierie dans la bibliothèque exhaustiv
   assert.ok(a);assert.ok(a.aidTypes.includes('ACCOMPAGNEMENT_GRATUIT'));
 });
 
-test('registre conserve Aides Territoires comme contrôle tant que l’API requiert une authentification',()=>{
+test('registre exclut le catalogue tiers Aides Territoires',()=>{
   const cfg=JSON.parse(fs.readFileSync(new URL('../config/sources.json',import.meta.url),'utf8'));
   const s=cfg.sources.find(x=>x.id==='aides_territoires');
-  assert.equal(s.strategy,'control-only');
-  assert.equal(s.type,'control');
-  assert.match(s.notes||'',/401|authentification/i);
+  assert.equal(s,undefined);
 });
 
 
@@ -31,3 +29,4 @@ test('Aides Territoires distingue prêt à taux zéro et prêt classique',()=>{
   const a=fromAidesTerritoires({...base,id:124,name:'Prêt innovation à taux zéro',description:'Financement sans intérêt',aid_types:['Prêt'],loan_amount:'100 000 €'});
   assert.ok(a);assert.deepEqual(a.aidTypes,['PRET_TAUX_ZERO']);
 });
+

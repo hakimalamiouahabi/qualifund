@@ -21,7 +21,7 @@ test('les natures officielles larges sont reconnues',()=>{
 test('la publication ne préfiltre plus la bibliothèque sur SUB AR PTZ',()=>{
   const src=fs.readFileSync(new URL('../scripts/update-library.mjs',import.meta.url),'utf8');
   assert.doesNotMatch(src,/dedupe\(\[\.\.\.current\.values\(\)\]\)\.filter\(a=>arr\(a\.aidTypes\)/);
-  assert.match(src,/BROAD_ENTERPRISE_CATALOG/);
+  assert.match(src,/DIRECT_OFFICIAL_CATALOG/);
 });
 
 test('interface bibliothèque expose taille région thème et instrument',()=>{
@@ -35,3 +35,4 @@ test('moteur de recommandation reste strict SUB AR PTZ',()=>{
   const app=fs.readFileSync(new URL('../site/app.js',import.meta.url),'utf8');
   assert.match(app,/const targetInstruments=\['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO'\]/);
 });
+

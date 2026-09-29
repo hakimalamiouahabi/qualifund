@@ -47,6 +47,21 @@ jobs:
         with:
           node-version: '22'
           package-manager-cache: false
+      - name: Purger et persister les anciennes sources avant toute collecte
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/purge-indirect-sources.mjs
+          git config user.name "qualifund-bot"
+          git config user.email "qualifund-bot@users.noreply.github.com"
+          git add -A site/data site/bibliotheque
+          if git ls-files --error-unmatch LEYTON-RADAR-v12.2.0-AUTONOME-LIVE.html >/dev/null 2>&1; then
+            git add -u -- LEYTON-RADAR-v12.2.0-AUTONOME-LIVE.html
+          fi
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(data): purge definitive des sources tierces [skip ci]"
+            git push origin HEAD:main
+          fi
       - name: Installer les dépendances de façon reproductible
         shell: bash
         run: |
@@ -74,7 +89,7 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Auditer le registre maître
         run: npm run audit:sources
-      - name: Préflight santé des 145 sources
+      - name: Préflight santé des sources directes
         run: npm run preflight:sources
       - name: Sauvegarder la bibliothèque précédente
         run: |
@@ -212,3 +227,4 @@ jobs:
         uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
         with:
           artifact_name: github-pages-verified
+

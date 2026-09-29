@@ -1,3 +1,5 @@
+import { purgeIndirectSources } from './purge-indirect-sources.mjs';
+await purgeIndirectSources();
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -25,7 +27,7 @@ await fs.cp(SITE,DIST,{
 const library=JSON.parse(await fs.readFile(path.join(SITE,'data','library.json'),'utf8'));
 const records=Array.isArray(library.aaps)?library.aaps:[];
 // Exact URL / ID de-duplication; a supplementary reference never overwrites a collected record.
-const curated=JSON.parse(await fs.readFile(path.join(SITE,'data','curated-aids.json'),'utf8'));
+const curated={aaps:[]}; // Only records admitted by the direct-source policy are published.
 const canonical=u=>String(u||'').replace(/\/$/,'');
 for(const aid of curated.aaps||[]){
   if(!records.some(a=>a.id===aid.id||canonical(a.officialPage)===canonical(aid.officialPage)))records.push(aid);
@@ -53,7 +55,7 @@ for(const record of records){
   current.push(record);
   bytes+=size;
 }
-if(current.length)parts.push(current);
+if(current.length||!parts.length)parts.push(current);
 
 const partDir=path.join(DIST,'data','library-parts');
 await fs.mkdir(partDir,{recursive:true});
@@ -99,4 +101,5 @@ console.log(JSON.stringify({
   largestPart:Math.max(0,...await Promise.all(partFiles.map(async f=>(await fs.stat(path.join(DIST,'data',f))).size))),
   excluded:[...excluded]
 },null,2));
+
 

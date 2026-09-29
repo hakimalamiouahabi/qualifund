@@ -2,31 +2,6 @@
   "version": "12.6.0",
   "sources": [
     {
-      "id": "aides_entreprises",
-      "name": "Aides Entreprises — stock Open Data complet",
-      "scope": "France",
-      "type": "data",
-      "strategy": "aides-entreprises",
-      "url": "https://data.aides-entreprises.fr/stock",
-      "official": true,
-      "priority": 0,
-      "minExpected": 1500,
-      "stockUrl": "https://data.aides-entreprises.fr/files/aides.json",
-      "healthUrl": "https://data.aides-entreprises.fr/stock",
-      "webVerifiedAt": "2026-09-22",
-      "webEvidenceUrl": "https://data.aides-entreprises.fr/stock",
-      "stockObservedJsonSize": "51.96 Mo",
-      "stockObservedUpdatedAt": "2026-09-22",
-      "documentationUrl": "https://data.aides-entreprises.fr/documentation",
-      "apiAuthRequired": true,
-      "pmeProfileObservedCount": 2415,
-      "etiGeProfileObservedCount": 626,
-      "profileCountsOverlap": true,
-      "stockObservedAt": "2026-09-22",
-      "stockCsvUrl": "https://data.aides-entreprises.fr/files/aides.csv",
-      "stockJsonUrl": "https://data.aides-entreprises.fr/files/aides.json"
-    },
-    {
       "id": "ademe",
       "name": "ADEME — catalogue entreprises",
       "scope": "France",
@@ -96,103 +71,11 @@
       "browserFallback": true
     },
     {
-      "id": "tee",
-      "name": "Transition écologique des entreprises — catalogue ouvert",
-      "scope": "France",
-      "type": "data-gouv",
-      "strategy": "data-gouv-query",
-      "query": "Catalogue des dispositifs d'aides à la transition écologique pour les entreprises",
-      "official": true,
-      "priority": 1,
-      "minExpected": 20,
-      "healthUrl": "https://www.data.gouv.fr/api/1/datasets/?q=Catalogue%20des%20dispositifs%20d%27aides%20%C3%A0%20la%20transition%20%C3%A9cologique%20pour%20les%20entreprises"
-    },
-    {
-      "id": "france2030",
-      "name": "France 2030",
-      "scope": "France",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://www.info.gouv.fr/grand-dossier/france-2030",
-      "official": true,
-      "priority": 1,
-      "browserFallback": true,
-      "notes": "Page-cadre officielle conservée comme contrôle. Les dispositifs France 2030 sont ingérés via les opérateurs officiels déjà configurés : Bpifrance, ANR, Banque des Territoires et ADEME selon le dispositif."
-    },
-    {
-      "id": "franceagrimer",
-      "name": "FranceAgriMer",
-      "scope": "France",
-      "type": "web",
-      "strategy": "catalog-html",
-      "url": "https://www.franceagrimer.fr/",
-      "official": true,
-      "priority": 2,
-      "browserFallback": true
-    },
-    {
-      "id": "aides_territoires",
-      "name": "Aides Territoires — API publique filtrée entreprises",
-      "scope": "France",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://aides-territoires.beta.gouv.fr/",
-      "official": true,
-      "priority": 1,
-      "healthUrl": "https://aides-territoires.beta.gouv.fr/",
-      "webVerifiedAt": "2026-09-22",
-      "webEvidenceUrl": "https://www.data.gouv.fr/dataservices/api-aides-territoires",
-      "notes": "Contrôle de disponibilité uniquement : l’endpoint API observé renvoie HTTP 401 lors des collectes automatisées. Le catalogue entreprises est couvert par le stock Open Data Aides Entreprises, sans dépendance à une API authentifiée.",
-      "browserFallback": true
-    },
-    {
-      "id": "ofb_financements",
-      "name": "Office français de la biodiversité — financements et AAP",
-      "scope": "France",
-      "type": "web",
-      "strategy": "catalog-html",
-      "url": "https://ofb.gouv.fr/financements",
-      "linkInclude": "/financements/",
-      "official": true,
-      "priority": 2,
-      "edgeFallback": true,
-      "browserFallback": true
-    },
-    {
-      "id": "banque_territoires_france2030",
-      "name": "Banque des Territoires — France 2030",
-      "scope": "France",
-      "type": "web",
-      "strategy": "catalog-html",
-      "url": "https://www.banquedesterritoires.fr/france-2030/appels-projets-en-cours",
-      "official": true,
-      "priority": 1,
-      "edgeFallback": true,
-      "browserFallback": true
-    },
-    {
-      "id": "dge_aap",
-      "name": "Direction générale des Entreprises — AAP / AMI",
-      "scope": "France",
-      "type": "web",
-      "strategy": "catalog-html",
-      "url": "https://www.entreprises.gouv.fr/espace-entreprises/appels-a-projets-et-appels-a-manifestation-d-interet",
-      "linkInclude": "/espace-entreprises/appels-a-projets-et-appels-a-manifestation-d-interet/",
-      "official": true,
-      "priority": 0,
-      "edgeFallback": true,
-      "minExpected": 40,
-      "browserFallback": true,
-      "observedCatalogCount": 64,
-      "webVerifiedAt": "2026-09-22",
-      "webEvidenceUrl": "https://www.entreprises.gouv.fr/espace-entreprises/appels-a-projets-et-appels-a-manifestation-d-interet"
-    },
-    {
       "id": "aura",
       "name": "Région Auvergne-Rhône-Alpes — catalogue des aides",
       "scope": "Auvergne-Rhône-Alpes",
       "type": "region",
-      "strategy": "region-hybrid",
+      "strategy": "catalog-html",
       "url": "https://www.auvergnerhonealpes.fr/aides",
       "orgQuery": "Région Auvergne-Rhône-Alpes",
       "official": true,
@@ -204,7 +87,7 @@
       "name": "Région Bourgogne-Franche-Comté — guide des aides",
       "scope": "Bourgogne-Franche-Comté",
       "type": "region",
-      "strategy": "region-hybrid",
+      "strategy": "catalog-html",
       "url": "https://www.bourgognefranchecomte.fr/guide-des-aides",
       "orgQuery": "Région Bourgogne-Franche-Comté",
       "official": true,
@@ -215,50 +98,50 @@
       "id": "bretagne",
       "name": "Région Bretagne — catalogue des aides",
       "scope": "Bretagne",
-      "type": "control",
-      "strategy": "control-only",
+      "type": "web",
+      "strategy": "catalog-html",
       "url": "https://www.bretagne.bzh/aides/",
       "api": "https://data.bretagne.bzh/api/explore/v2.1/",
       "orgQuery": "Région Bretagne",
       "official": true,
       "priority": 1,
       "browserFallback": true,
-      "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "cvl",
       "name": "Région Centre-Val de Loire — guide des aides",
       "scope": "Centre-Val de Loire",
-      "type": "control",
-      "strategy": "control-only",
+      "type": "web",
+      "strategy": "catalog-html",
       "url": "https://www.centre-valdeloire.fr/le-guide-des-aides-de-la-region-centre-val-de-loire",
       "api": "https://data.centrevaldeloire.fr/api/explore/v2.1/",
       "orgQuery": "Région Centre-Val de Loire",
       "official": true,
       "priority": 1,
       "browserFallback": true,
-      "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "corse",
       "name": "Corse — ADEC aides et financements entreprises",
       "scope": "Corse",
-      "type": "control",
-      "strategy": "control-only",
+      "type": "web",
+      "strategy": "catalog-html",
       "url": "https://adec.corsica/",
       "api": "https://data.corsica/data-fair/api/v1/catalog",
       "orgQuery": "Collectivité de Corse",
       "official": true,
       "priority": 1,
       "browserFallback": true,
-      "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "grand_est",
       "name": "Région Grand Est — aides régionales",
       "scope": "Grand Est",
       "type": "region",
-      "strategy": "region-hybrid",
+      "strategy": "catalog-html",
       "url": "https://www.grandest.fr/vos-aides-regionales/",
       "orgQuery": "Région Grand Est",
       "official": true,
@@ -282,8 +165,8 @@
       "id": "idf",
       "name": "Région Île-de-France — aides et appels à projets",
       "scope": "Île-de-France",
-      "type": "control",
-      "strategy": "control-only",
+      "type": "web",
+      "strategy": "catalog-html",
       "url": "https://www.iledefrance.fr/aides-et-appels-a-projets",
       "api": "https://data.iledefrance.fr/api/explore/v2.1/",
       "orgQuery": "Région Île-de-France",
@@ -296,14 +179,14 @@
       "webEvidenceUrl": "https://www.iledefrance.fr/aides-et-appels-a-projets",
       "observedCatalogCount": 346,
       "observedProfessionalCount": 171,
-      "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "normandie",
       "name": "Région Normandie — aides régionales et européennes",
       "scope": "Normandie",
-      "type": "control",
-      "strategy": "control-only",
+      "type": "web",
+      "strategy": "catalog-html",
       "url": "https://www.normandie.fr/aides-regionales",
       "orgQuery": "Région Normandie",
       "official": true,
@@ -313,7 +196,7 @@
       "webVerifiedAt": "2026-09-28",
       "webEvidenceUrl": "https://www.normandie.fr/aides-regionales",
       "catalogLinkSelector": "h3 a[href]",
-      "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "naquitaine",
@@ -351,7 +234,7 @@
       "name": "Région Pays de la Loire — catalogue des aides",
       "scope": "Pays de la Loire",
       "type": "web",
-      "strategy": "region-hybrid",
+      "strategy": "catalog-html",
       "url": "https://www.paysdelaloire.fr/les-aides",
       "api": "https://data.paysdelaloire.fr/api/explore/v2.1/",
       "datasetId": "234400034_fluxinterventionsprod_pdl",
@@ -384,14 +267,14 @@
       "id": "guadeloupe",
       "name": "Région Guadeloupe — guide des aides",
       "scope": "Guadeloupe",
-      "type": "control",
-      "strategy": "control-only",
+      "type": "web",
+      "strategy": "catalog-html",
       "url": "https://aides.regionguadeloupe.fr/-Toutes-les-aides-",
       "orgQuery": "Région Guadeloupe",
       "official": true,
       "priority": 1,
       "browserFallback": true,
-      "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "guyane",
@@ -423,8 +306,8 @@
       "id": "reunion",
       "name": "Région Réunion — Aides & Services entreprises",
       "scope": "La Réunion",
-      "type": "control",
-      "strategy": "control-only",
+      "type": "web",
+      "strategy": "catalog-html",
       "url": "https://www.regionreunion.com/aides-services/?mot_public=Entreprise",
       "api": "https://data.regionreunion.com/api/explore/v2.1/",
       "orgQuery": "Région Réunion",
@@ -433,20 +316,20 @@
       "browserFallback": true,
       "webVerifiedAt": "2026-09-22",
       "webEvidenceUrl": "https://www.regionreunion.com/aides-services/?mot_public=Entreprise",
-      "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "mayotte",
       "name": "Département-Région de Mayotte — aides aux entreprises",
       "scope": "Mayotte",
-      "type": "control",
-      "strategy": "control-only",
+      "type": "web",
+      "strategy": "catalog-html",
       "url": "https://www.mayotte.fr/services-en-ligne/demarches-et-aides/aides-aux-entreprises",
       "orgQuery": "Département de Mayotte",
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "anr_france2030",
@@ -462,28 +345,6 @@
       "observedCatalogCount": 6,
       "webVerifiedAt": "2026-09-22",
       "webEvidenceUrl": "https://anr.fr/france-2030/appels/"
-    },
-    {
-      "id": "france2030_appels",
-      "name": "France 2030 — appels à candidatures",
-      "scope": "France",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://www.info.gouv.fr/grand-dossier/france-2030/appels-a-candidatures",
-      "official": true,
-      "priority": 0,
-      "browserFallback": true,
-      "notes": "Liste officielle France 2030 conservée comme source de contrôle directe. L’ingestion des dispositifs est assurée par les opérateurs officiels suivis individuellement (Bpifrance, ADEME, ANR, Banque des Territoires et déclinaisons régionales)."
-    },
-    {
-      "id": "france2030_laureats",
-      "name": "France 2030 — lauréats (historique/benchmark)",
-      "scope": "France",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://www.info.gouv.fr/grand-dossier/france-2030/laureats",
-      "official": true,
-      "priority": 1
     },
     {
       "id": "ademe_aides_historique",
@@ -533,13 +394,13 @@
       "id": "bfc_subventions",
       "name": "Bourgogne-Franche-Comté — portail subventions/règlements",
       "scope": "Bourgogne-Franche-Comté",
-      "type": "control",
-      "strategy": "control-only",
+      "type": "web",
+      "strategy": "catalog-html",
       "url": "https://subventions.bourgognefranchecomte.fr/",
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "bfc_france2030",
@@ -569,13 +430,13 @@
       "id": "bretagne_europe",
       "name": "Bretagne — FEDER/FEADER/FEAMPA",
       "scope": "Bretagne",
-      "type": "control",
-      "strategy": "control-only",
+      "type": "web",
+      "strategy": "catalog-html",
       "url": "https://europe.bzh/aides/",
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "bretagne_france2030",
@@ -706,13 +567,13 @@
       "id": "guadeloupe_france2030",
       "name": "Guadeloupe — France 2030 régionalisé",
       "scope": "Guadeloupe",
-      "type": "control",
-      "strategy": "control-only",
+      "type": "web",
+      "strategy": "catalog-html",
       "url": "https://france2030.regionguadeloupe.fr/",
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "guadeloupe_europe",
@@ -754,49 +615,49 @@
       "id": "guyane_europe",
       "name": "Europe Guyane — fonds européens",
       "scope": "Guyane",
-      "type": "control",
-      "strategy": "control-only",
+      "type": "web",
+      "strategy": "catalog-html",
       "url": "https://www.europe-guyane.fr/",
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "guyane_europe_aap",
       "name": "Europe Guyane — appels à projets",
       "scope": "Guyane",
-      "type": "control",
-      "strategy": "control-only",
+      "type": "web",
+      "strategy": "catalog-html",
       "url": "https://www.europe-guyane.fr/programme_mode_depot/aap/",
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "guyane_feder",
       "name": "Guyane — FEDER 2021-2027",
       "scope": "Guyane",
-      "type": "control",
-      "strategy": "control-only",
+      "type": "web",
+      "strategy": "catalog-html",
       "url": "https://www.europe-guyane.fr/programmes/feder/",
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "guyane_feader",
       "name": "Guyane — FEADER / PSN 2023-2027",
       "scope": "Guyane",
-      "type": "control",
-      "strategy": "control-only",
+      "type": "web",
+      "strategy": "catalog-html",
       "url": "https://www.europe-guyane.fr/programmes/feader/",
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "guyane_france2030",
@@ -809,16 +670,6 @@
       "priority": 0,
       "browserFallback": true,
       "notes": "Seuil de contrôle recalé sur le volume officiel effectivement publié (1) afin d’éviter un faux négatif de couverture. Page-cadre conservée comme contrôle direct ; l’axe Projets d’innovation est collecté via sa page officielle dédiée."
-    },
-    {
-      "id": "guyane_opendata",
-      "name": "Guyane — Open Data CTG (contrôle)",
-      "scope": "Guyane",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://www.data.gouv.fr/organizations/collectivite-territoriale-de-guyane/datasets",
-      "official": true,
-      "priority": 1
     },
     {
       "id": "hdf_depot",
@@ -877,28 +728,6 @@
       "priority": 0,
       "minExpected": 1,
       "browserFallback": true
-    },
-    {
-      "id": "hdf_fse_ftj_dreets",
-      "name": "Hauts-de-France — DREETS FSE+ / FTJ",
-      "scope": "Hauts-de-France",
-      "type": "web",
-      "strategy": "catalog-html",
-      "url": "https://hauts-de-france.dreets.gouv.fr/Calendrier-des-appels-a-projets-FSE-et-FTJ",
-      "official": true,
-      "priority": 1,
-      "minExpected": 1,
-      "browserFallback": true
-    },
-    {
-      "id": "hdf_opendata",
-      "name": "Hauts-de-France — Open Data Région (contrôle)",
-      "scope": "Hauts-de-France",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://www.data.gouv.fr/organizations/region-hauts-de-france/datasets",
-      "official": true,
-      "priority": 1
     },
     {
       "id": "idf_depot",
@@ -970,61 +799,61 @@
       "id": "reunion_aap",
       "name": "Région Réunion — appels à projets",
       "scope": "La Réunion",
-      "type": "control",
-      "strategy": "control-only",
+      "type": "web",
+      "strategy": "catalog-html",
       "url": "https://www.regionreunion.com/aides-services/appels-a-projets/",
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "reunion_france2030",
       "name": "La Réunion — France 2030 régionalisé",
       "scope": "La Réunion",
-      "type": "control",
-      "strategy": "control-only",
+      "type": "web",
+      "strategy": "catalog-html",
       "url": "https://france2030.regionreunion.com/",
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "reunion_feder",
       "name": "La Réunion — FEDER/FSE+ 2021-2027",
       "scope": "La Réunion",
-      "type": "control",
-      "strategy": "control-only",
+      "type": "web",
+      "strategy": "catalog-html",
       "url": "https://www.regionreunion.com/actualite/toute-l-actualite/article/votre-projet-feder-2021-2027",
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "reunion_europe_filter",
       "name": "La Réunion — Aides & Services Fonds européens",
       "scope": "La Réunion",
-      "type": "control",
-      "strategy": "control-only",
+      "type": "web",
+      "strategy": "catalog-html",
       "url": "https://www.regionreunion.com/aides-services/?mot_secteur=Fonds+Europ%C3%A9ens",
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "reunion_feader",
       "name": "La Réunion — FEADER 2023-2027",
       "scope": "La Réunion",
-      "type": "control",
-      "strategy": "control-only",
+      "type": "web",
+      "strategy": "catalog-html",
       "url": "https://www.regionreunion.com/IMG/pdf/comperm.250823.pdf",
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "reunion_opendata",
@@ -1033,16 +862,6 @@
       "type": "api",
       "strategy": "control-only",
       "url": "https://data.regionreunion.com/api/explore/v2.1/",
-      "official": true,
-      "priority": 1
-    },
-    {
-      "id": "reunion_data_gouv",
-      "name": "La Réunion — data.gouv.fr Région (contrôle)",
-      "scope": "La Réunion",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://www.data.gouv.fr/organizations/region-reunion-2/datasets",
       "official": true,
       "priority": 1
     },
@@ -1152,13 +971,13 @@
       "id": "mayotte_aap",
       "name": "Département-Région de Mayotte — appels à projets / AMI",
       "scope": "Mayotte",
-      "type": "control",
-      "strategy": "control-only",
+      "type": "web",
+      "strategy": "catalog-html",
       "url": "https://www.mayotte.fr/services-en-ligne/opportunites/appels-a-projets",
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "mayotte_adim",
@@ -1223,37 +1042,37 @@
       "id": "mayotte_feder_actions",
       "name": "Préfecture de Mayotte — fiches actions FEDER/FSE+ 2021-2027",
       "scope": "Mayotte",
-      "type": "control",
-      "strategy": "control-only",
+      "type": "web",
+      "strategy": "catalog-html",
       "url": "https://www.mayotte.gouv.fr/Actions-de-l-Etat/Europe/Les-fiches-actions-des-programmes-FEDER-et-FSE-2021-2027",
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "mayotte_feader",
       "name": "DAAF Mayotte — FEADER / PSN 2023-2027",
       "scope": "Mayotte",
-      "type": "control",
-      "strategy": "control-only",
+      "type": "web",
+      "strategy": "catalog-html",
       "url": "https://daaf.mayotte.agriculture.gouv.fr/programmation-2023-2027-r177.html",
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "normandie_entreprises",
       "name": "Région Normandie — accompagner les entreprises",
       "scope": "Normandie",
-      "type": "control",
-      "strategy": "control-only",
+      "type": "web",
+      "strategy": "catalog-html",
       "url": "https://www.normandie.fr/accompagner-les-entreprises",
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "normandie_france2030",
@@ -1271,37 +1090,37 @@
       "id": "normandie_europe",
       "name": "Europe en Normandie — FEDER/FSE+/FTJ/FEADER",
       "scope": "Normandie",
-      "type": "control",
-      "strategy": "control-only",
+      "type": "web",
+      "strategy": "catalog-html",
       "url": "https://www.europe-en-normandie.eu/deposer-ma-demande-daide",
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "normandie_feader",
       "name": "Normandie — FEADER 2023-2027",
       "scope": "Normandie",
-      "type": "control",
-      "strategy": "control-only",
+      "type": "web",
+      "strategy": "catalog-html",
       "url": "https://www.europe-en-normandie.eu/fonds-europeen-agricole-pour-le-developpement-rural-feader",
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "normandie_europe_ressources",
       "name": "Europe en Normandie — ressources / DOMO / CdC",
       "scope": "Normandie",
-      "type": "control",
-      "strategy": "control-only",
+      "type": "web",
+      "strategy": "catalog-html",
       "url": "https://www.europe-en-normandie.eu/ressources",
       "official": true,
       "priority": 1,
       "browserFallback": true,
-      "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "normandie_europe_suivi",
@@ -1310,16 +1129,6 @@
       "type": "control",
       "strategy": "control-only",
       "url": "https://www.europe-en-normandie.eu/suivi-des-programmations",
-      "official": true,
-      "priority": 1
-    },
-    {
-      "id": "normandie_opendata",
-      "name": "Région Normandie — Open Data / DataNormandie",
-      "scope": "Normandie",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://www.data.gouv.fr/organizations/region-normandie/datasets",
       "official": true,
       "priority": 1
     },
@@ -1416,16 +1225,6 @@
       "type": "control",
       "strategy": "control-only",
       "url": "https://www.prefectures-regions.gouv.fr/nouvelle-aquitaine/Actualites/France-2030-regionalise-ouverture-de-trois-appels-a-projets-dedies-a-la-Nouvelle-Aquitaine",
-      "official": true,
-      "priority": 1
-    },
-    {
-      "id": "nouvelle_aquitaine_opendata",
-      "name": "Région Nouvelle-Aquitaine — Open Data (contrôle)",
-      "scope": "Nouvelle-Aquitaine",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://www.data.gouv.fr/organizations/region-nouvelle-aquitaine/datasets",
       "official": true,
       "priority": 1
     },
@@ -1615,40 +1414,16 @@
       "browserFallback": true
     },
     {
-      "id": "pdl_fse",
-      "name": "Pays de la Loire — FSE+ 2021-2027",
-      "scope": "Pays de la Loire",
-      "type": "web",
-      "strategy": "catalog-html",
-      "url": "https://www.paysdelaloire.fr/mon-conseil-regional/les-missions-regionales/europe/solliciter-les-fonds-europeens/fse-creation-dentreprise-orientation-formation-sante",
-      "official": true,
-      "priority": 1,
-      "minExpected": 1,
-      "browserFallback": true
-    },
-    {
-      "id": "pdl_ftj",
-      "name": "Pays de la Loire — FTJ 2021-2027",
-      "scope": "Pays de la Loire",
-      "type": "web",
-      "strategy": "catalog-html",
-      "url": "https://www.paysdelaloire.fr/mon-conseil-regional/les-missions-regionales/europe/solliciter-les-fonds-europeens/ftj-compenser-les-impacts-de-la-transition-vers-la-neutralite-carbone",
-      "official": true,
-      "priority": 1,
-      "minExpected": 1,
-      "browserFallback": true
-    },
-    {
       "id": "pdl_innovation",
       "name": "Pays de la Loire Innovation — Région / Bpifrance",
       "scope": "Pays de la Loire",
-      "type": "control",
-      "strategy": "control-only",
+      "type": "web",
+      "strategy": "catalog-html",
       "url": "https://www.paysdelaloire.fr/economie-et-innovation/innover/accelerer-mon-innovation",
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "notes": "Source officielle conservée comme contrôle direct car son rendu automatisé est instable ou non exploitable. La couverture du catalogue reste assurée par le stock Open Data Aides Entreprises et, lorsqu’elles existent, les autres sources officielles stables du même territoire."
+      "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
       "id": "pdl_open_data_portal",
@@ -1752,16 +1527,6 @@
       "type": "control",
       "strategy": "control-only",
       "url": "https://www.europe-en-france.gouv.fr/fr/programmes-europeens-2021-2027/programme-provence-alpes-cote-azur-massif-alpes-feder-fse-ftj-2021",
-      "official": true,
-      "priority": 1
-    },
-    {
-      "id": "paca_opendata",
-      "name": "Région Sud — DataSud / Open Data (contrôle)",
-      "scope": "Provence-Alpes-Côte d'Azur",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://www.data.gouv.fr/organizations/region-provence-alpes-cote-dazur/datasets",
       "official": true,
       "priority": 1
     },
@@ -1944,5 +1709,35 @@
       "funder": "Région Grand Est",
       "notes": "Page officielle dédiée du dispositif ; utilisée pour restaurer l’intitulé, les critères, les échéances et les documents associés."
     }
+  ],
+  "sourcePolicy": "DIRECT_OFFICIAL_ONLY",
+  "allowedFamilies": [
+    "BPIFRANCE",
+    "ADEME",
+    "ANR",
+    "REGIONS",
+    "FEDER",
+    "FEADER"
+  ],
+  "excludedSources": [
+    "aides_entreprises",
+    "tee",
+    "france2030",
+    "franceagrimer",
+    "aides_territoires",
+    "ofb_financements",
+    "banque_territoires_france2030",
+    "dge_aap",
+    "france2030_appels",
+    "france2030_laureats",
+    "guyane_opendata",
+    "hdf_fse_ftj_dreets",
+    "hdf_opendata",
+    "reunion_data_gouv",
+    "normandie_opendata",
+    "nouvelle_aquitaine_opendata",
+    "pdl_fse",
+    "pdl_ftj",
+    "paca_opendata"
   ]
 }

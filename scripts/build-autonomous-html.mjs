@@ -1,3 +1,5 @@
+import { purgeIndirectSources } from './purge-indirect-sources.mjs';
+await purgeIndirectSources();
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -23,3 +25,4 @@ html=html.replace('<meta name="description" content="Cartographie, étude de fai
 const out=path.join(ROOT,'LEYTON-RADAR-v12.2.0-AUTONOME-LIVE.html');
 await fs.writeFile(out,html,'utf8');
 console.log(JSON.stringify({out,bytes:Buffer.byteLength(html),records:library.aaps?.length||0,version:library.meta?.version},null,2));
+

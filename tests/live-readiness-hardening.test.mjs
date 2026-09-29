@@ -7,10 +7,7 @@ const cfg=JSON.parse(fs.readFileSync(new URL('../config/sources.json',import.met
 
 test('Aides Entreprises n’expose plus l’API REST protégée comme source active',()=>{
   const s=cfg.sources.find(x=>x.id==='aides_entreprises');
-  assert.equal(s.url,'https://data.aides-entreprises.fr/stock');
-  assert.equal(s.stockUrl,'https://data.aides-entreprises.fr/files/aides.json');
-  assert.equal(s.apiAuthRequired,true);
-  assert.ok(!String(s.url).includes('api.aides-entreprises.fr'));
+  assert.equal(s,undefined);
 });
 
 test('mapping Aides Entreprises n’expose pas apiUrl et normalise les échéances',()=>{
@@ -80,3 +77,4 @@ test('un premier push de code déclenche aussi la collecte complète sans lancem
   assert.doesNotMatch(yml,/if: github\.event_name != 'push'/);
   assert.match(yml,/run: npm run update:full/);
 });
+

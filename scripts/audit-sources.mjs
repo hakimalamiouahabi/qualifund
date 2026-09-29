@@ -1,3 +1,4 @@
+import { assertDirectSources } from './lib/direct-sources.mjs';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -13,7 +14,7 @@ for(const s of cfg.sources||[]){
   for(const [k,v] of Object.entries({url:s.url,api:s.api})) if(v && !/^https:\/\//i.test(v)) problems.push(`${s.id}: ${k} non HTTPS (${v})`);
 }
 const sources=cfg.sources||[];
-if(sources.length<140) problems.push(`Couverture insuffisante: ${sources.length} sources (<140)`);
+assertDirectSources(cfg);
 const scopes=new Set(sources.map(s=>s.scope));
 for(const r of expectedRegions) if(!scopes.has(r)) problems.push(`Région absente du registre: ${r}`);
 if(!scopes.has('France')) problems.push('Portée nationale absente du registre');
@@ -23,3 +24,4 @@ const regional=sources.length-national;
 const reviewedRegions=expectedRegions.filter(r=>scopes.has(r)).length;
 console.log(JSON.stringify({version:cfg.version,total:sources.length,official,national,regional,reviewedRegions,expectedRegions:expectedRegions.length,problems},null,2));
 if(problems.length) process.exit(1);
+

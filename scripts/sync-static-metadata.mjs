@@ -1,3 +1,5 @@
+import { purgeIndirectSources } from './purge-indirect-sources.mjs';
+await purgeIndirectSources();
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -51,3 +53,4 @@ const sw=`const CACHE='leyton-radar-v${version}-shell';const SHELL=['./','./inde
 await fs.writeFile(path.join(ROOT,'site','sw.js'),sw,'utf8');
 
 console.log(JSON.stringify({version,libraryCount:actualCount,sourceCount:cfg.sources.length,generatedAt:meta.generatedAt},null,2));
+

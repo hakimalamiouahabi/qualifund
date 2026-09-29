@@ -1,22 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-
-test('HTML autonome v12.6 conserve refresh live, import stock technique et planification 02:00',()=>{
-  const app=fs.readFileSync(new URL('../site/app.js',import.meta.url),'utf8');
-  const html=fs.readFileSync(new URL('../site/index.html',import.meta.url),'utf8');
-  assert.match(app,/refreshAidesTerritoiresClient/);
-  assert.match(app,/refreshAidesEntreprisesClient/);
-  assert.match(app,/importOfficialStockFile/);
-  assert.match(app,/scheduleClientDailyRefresh/);
-  assert.match(app,/timeZone:'Europe\/Paris'/);
-  assert.match(app,/PRET_TAUX_ZERO/);
-  assert.match(html,/id="importStockInput"/);
-  assert.match(html,/Actualiser les données/);
-});
-
-test('persistance navigateur dégradée ne fait pas échouer une mise à jour live',()=>{
-  const app=fs.readFileSync(new URL('../site/app.js',import.meta.url),'utf8');
-  assert.match(app,/clientPersistence='session-only'/);
-  assert.match(app,/Persistance IndexedDB indisponible/);
+test('aucun import stock ni rafraîchissement tiers dans le navigateur',()=>{
+ const app=fs.readFileSync(new URL('../site/app.js',import.meta.url),'utf8');
+ const html=fs.readFileSync(new URL('../site/index.html',import.meta.url),'utf8');
+ for(const name of ['refreshAidesTerritoiresClient','refreshAidesEntreprisesClient','importOfficialStockFile'])assert.ok(!app.includes(name));
+ assert.doesNotMatch(html,/importStockInput/);
+ assert.match(app,/DIRECT_OFFICIAL_ONLY/);
+ assert.match(app,/async function loadClientLibrary\(\)\{return false\}/);
 });

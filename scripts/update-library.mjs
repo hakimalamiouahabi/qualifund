@@ -1,13 +1,12 @@
+import { filterDirectLibrary, isDirectAid, assertDirectSources } from './lib/direct-sources.mjs';
+import { purgeIndirectSources } from './purge-indirect-sources.mjs';
+await purgeIndirectSources();
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { collectAidesEntreprises } from './connectors/aides-entreprises.mjs';
 import { collectWebCatalog } from './connectors/web-catalog.mjs';
-import { collectDataGouv } from './connectors/data-gouv.mjs';
-import { collectRegionHybrid } from './connectors/region-hybrid.mjs';
 import { collectControl } from './connectors/control.mjs';
 import { collectOpenDataSoft } from './connectors/opendatasoft.mjs';
-import { collectAidesTerritoires } from './connectors/aides-territoires.mjs';
 import { collectOfficialPage } from './connectors/official-page.mjs';
 import { enrichAid } from './lib/enrich.mjs';
 import { mergeAid } from './lib/merge.mjs';
@@ -62,7 +61,8 @@ function directOfficialUrl(a){
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'),SITE=path.join(ROOT,'site'),DATA=path.join(SITE,'data'),FULL=process.argv.includes('--full')||(process.env.LEYTON_RADAR_FULL_REFRESH==='1'||process.env.QUALIFUND_FULL_REFRESH==='1');const log=(...x)=>console.log(new Date().toISOString(),...x);
 const previous=await readJson(path.join(DATA,'library.json'),{meta:{},aaps:[]}),previousCoverage=await readJson(path.join(DATA,'coverage.json'),[]),prevCov=new Map(previousCoverage.map(x=>[x.id,x])),prevMap=new Map((previous.aaps||[]).map(a=>[canonicalKey(a),a])),cfg=await readJson(path.join(ROOT,'config','sources.json'),{sources:[]}),coverage=[],changes=[],current=new Map(prevMap),cycleSeenKeys=new Set();
 function withTimeout(p,ms,label){return Promise.race([p,new Promise((_,rej)=>setTimeout(()=>rej(new Error(`timeout ${label} ${ms}ms`)),ms))])}
-async function collect(source){const ctx={log};switch(source.strategy){case'aides-entreprises':return collectAidesEntreprises(source,ctx);case'catalog-html':return collectWebCatalog({...source,browserFallback:true},ctx);case'data-gouv-query':return collectDataGouv(source,ctx);case'region-hybrid':return collectRegionHybrid(source,ctx);case'opendatasoft':return collectOpenDataSoft(source,ctx);case'aides-territoires':return collectAidesTerritoires(source,ctx);case'official-page':return collectOfficialPage(source,ctx);case'control-only':return collectControl(source,ctx);default:return collectWebCatalog({...source,browserFallback:true},ctx)}}
+async function collect(source){const ctx={log};switch(source.strategy){case'catalog-html':return collectWebCatalog({...source,browserFallback:true},ctx);case'opendatasoft':return collectOpenDataSoft(source,ctx);case'official-page':return collectOfficialPage(source,ctx);case'control-only':return collectControl(source,ctx);default:throw new Error('Stratégie de collecte non autorisée: '+source.strategy)}}
+assertDirectSources(cfg);
 const sourceRuns=new Array(cfg.sources.length);
 let sourceCursor=0;
 const sourceWorkerCount=Math.max(1,Math.min(8,Number(process.env.QUALIFUND_SOURCE_WORKERS||4)));
@@ -94,7 +94,7 @@ for(let i=0;i<sourceRuns.length;i++){
   }
   const seen=new Set();
   for(const a0 of r.aids||[]){
-    if(!a0?.title)continue;
+    if(!a0?.title||!isDirectAid(a0,cfg))continue;
     const a={...a0,lastSeenAt:nowIso(),sourceId:a0.sourceId||source.id,lifecycleStatus:a0.lifecycleStatus||'ACTIVE'};
     const k=canonicalKey(a);seen.add(k);cycleSeenKeys.add(k);
     const merged=current.has(k)?mergeAid(current.get(k),a):a;
@@ -121,15 +121,15 @@ candidates.sort((a,b)=>{
 });
 const enrichLimit=Math.max(0,Number(process.env.QUALIFUND_ENRICH_LIMIT||process.env.LEYTON_RADAR_ENRICH_LIMIT||(FULL?180:80)));
 const batch=candidates.slice(0,enrichLimit);
-log(`Enrichissement officiel borné: ${batch.length}/${candidates.length} (limite ${enrichLimit})`);const enriched=new Map();let cursor=0;const workers=Array.from({length:6},async()=>{while(true){const i=cursor++;if(i>=batch.length)return;const a=batch[i];try{const e=await withTimeout(enrichAid(a,{log}),120000,`enrich ${a.id}`);e.verification={...(e.verification||{}),lastChecked:nowIso()};enriched.set(canonicalKey(e),e)}catch(err){log(`Enrichissement ignoré ${a.title}: ${err.message}`)}}});await Promise.all(workers);for(const[k,a]of enriched)current.set(k,a);
-aids=dedupe([...current.values()]).map(repairAidTitle)
+log(`Enrichissement officiel borné: ${batch.length}/${candidates.length} (limite ${enrichLimit})`);const enriched=new Map();let cursor=0;const workers=Array.from({length:6},async()=>{while(true){const i=cursor++;if(i>=batch.length)return;const a=batch[i];try{const e=await withTimeout(enrichAid(a,{log}),120000,`enrich ${a.id}`);enriched.set(canonicalKey(e),e)}catch(err){log(`Enrichissement ignoré ${a.title}: ${err.message}`)}}});await Promise.all(workers);for(const[k,a]of enriched)current.set(k,a);
+aids=dedupe(filterDirectLibrary([...current.values()],cfg)).map(repairAidTitle)
   // Bibliothèque large : on conserve toutes les natures d'aides destinées aux entreprises.
   // Les pages d'erreur et titres génériques ne sont jamais exposés comme dispositifs.
   .filter(a=>!unusableAidTitle(a.title))
   .filter(a=>!arr(a.companyCategories).length||arr(a.companyCategories).some(x=>['STARTUP','PME','ETI','GE'].includes(x)))
   .filter(a=>['NATIONAL','REGIONAL'].includes(a.scope))
   .map(a=>({...a,themes:uniq(a.themes||[]),aidTypes:sanitizeAidTypes(a.aidTypes)}));
-const now=new Date();for(const a of aids){const final=a.finalClosingDate||a.closingDate;if(!a.permanent&&final&&new Date(final+'T23:59:59')<now&&a.lifecycleStatus!=='STALE')a.lifecycleStatus='ARCHIVE';else if(!a.lifecycleStatus)a.lifecycleStatus='ACTIVE';a.qaFlags=qaAid(a);a.verification={...(a.verification||{}),status:verificationStatus(a),lastChecked:a.verification?.lastChecked||nowIso(),completeness:completenessScore(a),confidence:confidenceScore(a),coverage:evidenceCoverage(a)};a.attentionPoints=uniq([...(a.attentionPoints||[]),...a.qaFlags.map(f=>({MISSING_DEADLINE:'Date/relèves non documentées.',MISSING_CDC:'Cahier des charges / règlement non rattaché.',MISSING_ELIGIBLE_EXPENSES:'Dépenses éligibles non documentées.',MISSING_PREREQUISITES:'Pré-requis non documentés.',MISSING_AID_TYPE:'Type d’aide à vérifier.',MISSING_BENEFICIARIES:'Bénéficiaires à vérifier.',MISSING_FINANCIAL_TERMS:'Modalités financières à vérifier.'}[f])).filter(Boolean)]);a.contentHash=sha256(JSON.stringify({...a,contentHash:undefined,verification:{...a.verification,lastChecked:undefined},lastSeenAt:undefined}))}aids.sort((a,b)=>String(a.title).localeCompare(String(b.title),'fr'));
+const now=new Date();for(const a of aids){const final=a.finalClosingDate||a.closingDate;if(!a.permanent&&final&&new Date(final+'T23:59:59')<now&&a.lifecycleStatus!=='STALE')a.lifecycleStatus='ARCHIVE';else if(!a.lifecycleStatus)a.lifecycleStatus='ACTIVE';a.qaFlags=qaAid(a);a.verification={...(a.verification||{}),status:verificationStatus(a),lastChecked:a.verification?.lastChecked||null,completeness:completenessScore(a),confidence:confidenceScore(a),coverage:evidenceCoverage(a)};a.attentionPoints=uniq([...(a.attentionPoints||[]),...a.qaFlags.map(f=>({MISSING_DEADLINE:'Date/relèves non documentées.',MISSING_CDC:'Cahier des charges / règlement non rattaché.',MISSING_ELIGIBLE_EXPENSES:'Dépenses éligibles non documentées.',MISSING_PREREQUISITES:'Pré-requis non documentés.',MISSING_AID_TYPE:'Type d’aide à vérifier.',MISSING_BENEFICIARIES:'Bénéficiaires à vérifier.',MISSING_FINANCIAL_TERMS:'Modalités financières à vérifier.'}[f])).filter(Boolean)]);a.contentHash=sha256(JSON.stringify({...a,contentHash:undefined,verification:{...a.verification,lastChecked:undefined},lastSeenAt:undefined}))}aids.sort((a,b)=>String(a.title).localeCompare(String(b.title),'fr'));
 const oldBy=new Map((previous.aaps||[]).map(a=>[canonicalKey(a),a])),newBy=new Map(aids.map(a=>[canonicalKey(a),a]));for(const[k,a]of newBy){const old=oldBy.get(k);if(!old)changes.push({type:'CREATION',id:a.id,title:a.title,at:nowIso()});else if(old.contentHash&&a.contentHash!==old.contentHash){const fields=['objective','themes','beneficiaries','aidTypes','aidSplit','aidRate','aidAmount','minimumProjectCost','maximumProjectCost','eligibleExpenses','excludedExpenses','prerequisites','selectionCriteria','deadlines','closingDate','finalClosingDate','disbursementTerms','repaymentTerms','stateAidRules','cdcLinks'];const changed=fields.filter(f=>JSON.stringify(old[f]??null)!==JSON.stringify(a[f]??null));changes.push({type:'MODIFICATION',id:a.id,title:a.title,fields:changed,at:nowIso()})}}for(const[k,a]of oldBy)if(!newBy.has(k))changes.push({type:'SORTIE_PERIMETRE',id:a.id,title:a.title,at:nowIso()});
 const active=aids.filter(a=>a.lifecycleStatus!=='ARCHIVE');
 const activeJPlusOne=active.filter(a=>isActiveAtJPlusOne(a));
@@ -141,9 +141,9 @@ const instrumentCounts=Object.fromEntries(libraryInstruments.map(t=>[t,active.fi
 const targetInstrumentCount=active.filter(a=>arr(a.aidTypes).some(x=>recommendationInstruments.includes(x))).length;
 const directLinkCount=active.filter(a=>directOfficialUrl(a)).length;
 const missingDirectLinks=active.filter(a=>!directOfficialUrl(a)).map(a=>({id:a.id,title:a.title,funder:arr(a.funder),scope:a.scope,regions:arr(a.regions),sourceId:a.sourceId}));
-const targetCount=2002;
-const manifest={version:cfg.version||'unknown',generatedAt:nowIso(),repositoryUrl:process.env.GITHUB_REPOSITORY?`https://github.com/${process.env.GITHUB_REPOSITORY}`:previous.meta?.repositoryUrl||null,sourceCount:cfg.sources.length,sourcesOk:coverage.filter(x=>x.success).length,sourcesFailed:coverage.filter(x=>!x.success).length,libraryCount:aids.length,activeCount:active.length,jPlusOneDate:jPlusOneDate(),jPlusOneActiveCount:activeJPlusOne.length,archivedCount:aids.length-active.length,aapCount:activeJPlusOne.filter(x=>String(x.kind).includes('AAP')).length,verifiedCount:activeJPlusOne.filter(x=>x.verification?.status==='VERIFIE').length,withCdc:activeJPlusOne.filter(x=>arr(x.cdcLinks).length).length,withDeadline:activeJPlusOne.filter(x=>x.permanent||x.closingDate||x.finalClosingDate||arr(x.deadlines).length).length,fullRefresh:FULL,libraryMode:'BROAD_ENTERPRISE_CATALOG',libraryInstruments,recommendationInstruments,targetInstrumentCount,directLinkCount,missingDirectLinkCount:missingDirectLinks.length,categoryCounts,scopeCounts,instrumentCounts,targetRule:'ACTIVE_SANS_ECHEANCE_OU_PERMANENT_OU_CLOTURE_GTE_J_PLUS_1',targetCount,targetReached:activeJPlusOne.length>=targetCount,coverageGap:Math.max(0,targetCount-activeJPlusOne.length),contentSha256:sha256(JSON.stringify(aids.map(x=>x.contentHash)))};
-const prevCount=Number(previous.meta?.libraryCount||previous.aaps?.length||0);if(aids.length<250)throw new Error(`QA GATE: bibliothèque trop petite (${aids.length})`);if(prevCount>400&&aids.length<prevCount*0.55)throw new Error(`QA GATE: baisse anormale ${prevCount} -> ${aids.length}`);if(!coverage.length)throw new Error('QA GATE: aucun connecteur exécuté');
+const targetCount=null;
+const manifest={version:cfg.version||'unknown',generatedAt:nowIso(),repositoryUrl:process.env.GITHUB_REPOSITORY?`https://github.com/${process.env.GITHUB_REPOSITORY}`:previous.meta?.repositoryUrl||null,sourceCount:cfg.sources.length,sourcesOk:coverage.filter(x=>x.success).length,sourcesFailed:coverage.filter(x=>!x.success).length,libraryCount:aids.length,activeCount:active.length,jPlusOneDate:jPlusOneDate(),jPlusOneActiveCount:activeJPlusOne.length,archivedCount:aids.length-active.length,aapCount:activeJPlusOne.filter(x=>String(x.kind).includes('AAP')).length,verifiedCount:activeJPlusOne.filter(x=>x.verification?.status==='VERIFIE').length,withCdc:activeJPlusOne.filter(x=>arr(x.cdcLinks).length).length,withDeadline:activeJPlusOne.filter(x=>x.permanent||x.closingDate||x.finalClosingDate||arr(x.deadlines).length).length,fullRefresh:FULL,libraryMode:'DIRECT_OFFICIAL_CATALOG',sourcePolicy:'DIRECT_OFFICIAL_ONLY',libraryInstruments,recommendationInstruments,targetInstrumentCount,directLinkCount,missingDirectLinkCount:missingDirectLinks.length,categoryCounts,scopeCounts,instrumentCounts,targetRule:'ACTIVE_SANS_ECHEANCE_OU_PERMANENT_OU_CLOTURE_GTE_J_PLUS_1',targetCount,targetReached:null,coverageGap:null,contentSha256:sha256(JSON.stringify(aids.map(x=>x.contentHash)))};
+const prevCount=Number(previous.meta?.libraryCount||previous.aaps?.length||0);if(!aids.length)throw new Error('QA GATE: aucune fiche directe collectée');if(prevCount>400&&aids.length<prevCount*0.55)throw new Error(`QA GATE: baisse anormale ${prevCount} -> ${aids.length}`);if(!coverage.length)throw new Error('QA GATE: aucun connecteur exécuté');
 if((previous.aaps||[]).length)await writeJsonAtomic(path.join(DATA,'library.previous.json'),previous);
 await writeJsonAtomic(path.join(DATA,'library.json'),{meta:manifest,aaps:aids});await writeJsonAtomic(path.join(DATA,'link-audit.json'),{generatedAt:manifest.generatedAt,total:active.length,directLinkCount,missingDirectLinkCount:missingDirectLinks.length,missing:missingDirectLinks});await writeJsonAtomic(path.join(DATA,'coverage.json'),coverage);const oldChanges=await readJson(path.join(DATA,'changes.json'),[]);await writeJsonAtomic(path.join(DATA,'changes.json'),[...oldChanges,...changes].slice(-1200));await writeJsonAtomic(path.join(DATA,'manifest.json'),manifest);await writeJsonAtomic(path.join(DATA,'sources.json'),{version:cfg.version||'unknown',sources:cfg.sources.map(({id,name,scope,type,strategy,url,official,priority,coveredBy,notes})=>({id,name,scope,type,strategy,url,official,priority,coveredBy:arr(coveredBy),notes:notes||null}))});
 const PUBLIC_DIR=path.join(ROOT,'site','bibliotheque');await fs.mkdir(PUBLIC_DIR,{recursive:true});
@@ -164,3 +164,4 @@ await writeJsonAtomic(path.join(PUBLIC_DIR,'radar-library.json'),{meta:manifest,
 await fs.writeFile(path.join(PUBLIC_DIR,'qualifund-library.csv'),csvRows.join('\n'),'utf8');
 await writeJsonAtomic(path.join(PUBLIC_DIR,'qualifund-library.json'),{meta:manifest,aaps:aids});
 await writeJsonAtomic(path.join(PUBLIC_DIR,'status.json'),{...manifest,recommendationRule:'fiche ACTIVE sans échéance publiée, ou permanente, ou clôture >= J+1 ; STALE et ARCHIVE exclues',relevanceRule:'classement multi-critères des dispositifs ; éligibilité réglementaire et adéquation projet présentées séparément ; aucune probabilité d’obtention',libraryInstruments,recommendationInstruments});log('Terminé',manifest);await closeBrowser();
+

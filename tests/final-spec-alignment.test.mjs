@@ -8,7 +8,7 @@ const read=p=>fs.readFileSync(path.join(ROOT,p),'utf8');
 
 test('bibliothèque exhaustive large et recommandation strictement SUB/AR/PTZ',()=>{
   const upd=read('scripts/update-library.mjs');
-  assert.match(upd,/BROAD_ENTERPRISE_CATALOG/);
+  assert.match(upd,/DIRECT_OFFICIAL_CATALOG/);
   for(const token of ['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO','PRET','GARANTIE','ALLEGEMENT_FISCAL'])assert.ok(upd.includes(token),token);
   assert.match(upd,/recommendationInstruments=\['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO'\]/);
   const cfg=JSON.parse(read('config/sources.json'));
@@ -51,3 +51,4 @@ test('API : SIREN exact et token refresh comparé en temps constant',()=>{
 test('J+1 : une permanence non prouvée est refusée',()=>{
   const cal=read('scripts/lib/calendar.mjs');assert.match(cal,/PERMANENT_UNVERIFIED/);assert.match(cal,/sourceTier/);
 });
+

@@ -41,7 +41,8 @@ for(const a of lib.aaps||[]){
   if(errors.length){bad++;console.error(a.id,a.title,errors)}
 }
 if(bad) throw new Error(`${bad} fiche(s) invalides`);
-if((lib.aaps||[]).length<250) throw new Error('Bibliothèque insuffisante');
+if(!(lib.aaps||[]).length) throw new Error('Aucune fiche directe disponible');
 if(cov.length&&cov.filter(x=>x.success).length===0) throw new Error('Aucune source saine');
 const cycleLabel=cov.length?`${cov.filter(x=>x.success).length}/${cov.length} sources saines`:'cycle sources non exécuté';
 console.log(`OK ${(lib.aaps||[]).length} fiches, ${cycleLabel} — moteur ${engine}`);
+

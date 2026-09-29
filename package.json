@@ -17,7 +17,7 @@
     "production:gates": "node scripts/production-gates.mjs",
     "audit:ingestion": "node scripts/audit-ingestion.mjs",
     "sync:metadata": "node scripts/sync-static-metadata.mjs",
-    "migrate:provenance": "node scripts/normalize-bootstrap-provenance.mjs",
+    "migrate:provenance": "node scripts/purge-indirect-sources.mjs",
     "uat": "node scripts/uat-relevance.mjs",
     "smoke:live": "node scripts/live-smoke.mjs",
     "release:verify": "npm run sync:metadata && npm run build:index && npm run audit:sources && npm run audit:ingestion && npm test && npm run validate && npm run uat && npm run qa && npm run remediation && npm run production:gates",
@@ -25,7 +25,8 @@
     "certify:local": "npm run release:verify",
     "certify:production": "node scripts/certify-production.mjs",
     "audit:criteria": "node scripts/audit-criteria.mjs",
-    "build:cloudflare": "node scripts/build-cloudflare-pages.mjs"
+    "build:cloudflare": "node scripts/build-cloudflare-pages.mjs",
+    "purge:indirect": "node scripts/purge-indirect-sources.mjs"
   },
   "dependencies": {
     "ajv": "8.17.1",

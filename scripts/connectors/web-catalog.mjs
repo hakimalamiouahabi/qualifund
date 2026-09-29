@@ -1,3 +1,4 @@
+import { directPageId } from '../lib/direct-sources.mjs';
 import * as cheerio from 'cheerio';
 import { XMLParser } from 'fast-xml-parser';
 import { fetchText, fetchBuffer } from '../lib/http.mjs';
@@ -27,7 +28,7 @@ async function extractOne(source,l){
   const label=cleanTitle(l.label||'');
   if(unusableTitle(a.title)&&!unusableTitle(label))a.title=label;
   if(unusableTitle(a.title))return null;
-  a.id=`${source.id}_${Buffer.from(l.url).toString('base64url').slice(0,28)}`;
+  a.id=directPageId(source.id,canonicalUrl(l.url));
   a.canonicalId=a.id;
   a.sourceId=source.id;
   a.kind=/appel|aap|ami/i.test(`${l.label} ${a.title}`)?'AAP / AMI':'AIDE';
@@ -37,3 +38,4 @@ async function extractOne(source,l){
   return a;
 }
 export async function collectWebCatalog(source,{log=console.log,maxItems=1200}={}){const links=[],pageQueue=[source.url],pageSeen=new Set();while(pageQueue.length&&pageSeen.size<60){const pageUrl=pageQueue.shift();if(pageSeen.has(pageUrl))continue;pageSeen.add(pageUrl);const html=await getHtml(source,pageUrl),$=cheerio.load(html);if(source.catalogLinkSelector){$(source.catalogLinkSelector).each((_,a)=>{const u=safeUrl($(a).attr('href'),pageUrl),label=cleanTitle($(a).text());if(u&&u.startsWith('http')&&u!==pageUrl)links.push({url:u,label})})}$('a[href]').each((_,a)=>{const u=safeUrl($(a).attr('href'),pageUrl),label=cleanTitle($(a).text());if(!u||!u.startsWith('http'))return;if(relevantLink(source,label,u)&&u!==pageUrl)links.push({url:u,label});const sameOrigin=new URL(u).origin===new URL(source.url).origin,pag=isPaginationLink(label,u);if(sameOrigin&&pag&&!pageSeen.has(u))pageQueue.push(u)})}if(links.length<Math.max(5,source.minExpected||0)){const sm=await sitemapLinks(source);links.push(...sm);if(sm.length)log(`[${source.id}] sitemap +${sm.length}`);const rss=await rssLinks(source);links.push(...rss);if(rss.length)log(`[${source.id}] RSS officiel +${rss.length}`)}const unique=[],seen=new Set();for(const l of links){const key=canonicalUrl(l.url);if(!key||seen.has(key))continue;seen.add(key);unique.push(l);if(unique.length>=maxItems)break}log(`[${source.id}] ${unique.length} pages candidates`);const aids=[];let cursor=0;const workers=Array.from({length:8},async()=>{while(true){const i=cursor++;if(i>=unique.length)return;const l=unique[i];try{const a=await extractOne(source,l);if(a)aids.push(a)}catch(e){log(`[${source.id}] page ignorée ${l.url}: ${e.message}`)}}});await Promise.all(workers);return{aids,discovered:unique.length,message:`${unique.length} pages candidates, ${aids.length} fiches extraites`}}
+
