@@ -79,7 +79,7 @@ function clientDirectUrl(raw=''){
   try{
     const u=new URL(raw),host=u.hostname.toLowerCase(),p=(u.pathname||'/').toLowerCase().replace(/\/+$/,'')||'/';
     if(/data\.aides-entreprises\.fr$/.test(host)&&(/^\/stock$/.test(p)||/^\/files\/aides\.json$/.test(p)))return null;
-    if(['/','/catalogue','/aides','/les-aides','/vos-aides','/appels','/fr/appels'].includes(p))return null;
+    if(['/','/catalogue','/aides','/les-aides','/vos-aides','/appels','/fr/appels'].includes(p)||/accessibilite|accessibility|declaration-accessibilite|rgaa|mentions-legales|politique-confidentialite|cookies/.test(p))return null;
     return u.href;
   }catch{return null}
 }
@@ -436,43 +436,93 @@ function resultCard(r,rank,kind='À APPROFONDIR'){
   </article>`;
 }
 function evidenceLine(a,field){
-  const ev=arr(a.verification?.fieldEvidence).filter(x=>x.field===field&&/^https?:/.test(x.sourceUrl||''))[0];
+  const ev=arr(a.verification?.fieldEvidence).filter(x=>x.field===field&&clientDirectUrl(x.sourceUrl||''))[0];
   if(!ev)return'';
-  return`<div class="proof">${ev.locator?esc(ev.locator)+' · ':''}<a class="link" target="_blank" rel="noopener" href="${esc(ev.sourceUrl)}">Source officielle ↗</a>${ev.evidenceText?`<br>${esc(ev.evidenceText)}`:''}</div>`;
+  const txt=repairDisplayText(ev.evidenceText||'');
+  return`<div class="proof">${ev.locator?esc(ev.locator)+' · ':''}<a class="link" target="_blank" rel="noopener" href="${esc(ev.sourceUrl)}">Preuve source ↗</a>${txt?`<br>${esc(txt)}`:''}</div>`;
 }
-function docsHtml(a){const d=uniq(arr(a.cdcLinks).map(x=>typeof x==='string'?x:x?.url)).filter(Boolean);if(!d.length)return missing();return d.map((url,i)=>`<a class="btn small" target="_blank" rel="noopener" href="${esc(url)}">${i===0?'CdC / règlement':'Annexe '+(i+1)} ↗</a>`).join(' ')}
-function sizeFinance(a){const rows=arr(a.aidAmount?.byCompanySize).length?arr(a.aidAmount.byCompanySize):arr(a.aidRate?.byCompanySize);if(!rows.length)return missing();return`<table class="smalltable"><thead><tr><th>Taille</th><th>Taux</th><th>Montant</th></tr></thead><tbody>${rows.map(x=>`<tr><td>${esc(x.category)}</td><td>${x.rateMin!=null||x.rateMax!=null||x.min!=null||x.max!=null?`${x.rateMin??x.min??'—'}–${x.rateMax??x.max??'—'} %`:'—'}</td><td>${x.amountMin!=null||x.amountMax!=null?`${money(x.amountMin)} – ${money(x.amountMax)}`:'—'}</td></tr>`).join('')}</tbody></table>`}
-function box(title,content,evidence=''){return`<div class="sheet-box"><h4>${esc(title)}</h4>${content}${evidence}</div>`}
+function uniqueLinks(items=[]){
+  const out=[],seen=new Set();
+  for(const x of arr(items)){
+    const url=typeof x==='string'?x:x?.url,label=typeof x==='string'?'':x?.label||'';
+    if(!/^https?:/i.test(String(url||''))||seen.has(url))continue;
+    seen.add(url);out.push({url,label});
+  }
+  return out;
+}
+function cdcLinksFor(a){
+  return uniqueLinks([...arr(a.cdcLinks),...arr(a.regulationLinks)])
+    .filter(x=>/cahier|cdc|r[eè]glement|modalit|annexe|faq|grille|notice|pdf/i.test(`${x.label} ${x.url}`)||/\.pdf(?:$|\?)/i.test(x.url));
+}
+function applicationLinksFor(a){
+  return uniqueLinks([...arr(a.formLinks),...arr(a.sourceLinks)])
+    .filter(x=>/candid|d[eé]p[oô]t|deposer|déposer|formulaire|demande en ligne|application|t[eé]l[eé]service/i.test(`${x.label} ${x.url}`));
+}
+function docButtons(a){
+  const docs=cdcLinksFor(a),forms=applicationLinksFor(a);
+  return`<div class="doc-actions">
+    ${docs.length?docs.map((x,i)=>`<a class="doc-link" target="_blank" rel="noopener" href="${esc(x.url)}"><span>CdC${i?' / annexe':''}</span><b>${esc(x.label||'Ouvrir le document')} ↗</b></a>`).join(''):'<div class="doc-link disabled"><span>CdC</span><b>Non rattaché à la fiche</b></div>'}
+    ${forms.length?forms.map((x,i)=>`<a class="doc-link" target="_blank" rel="noopener" href="${esc(x.url)}"><span>Dossier de candidature${i?' '+(i+1):''}</span><b>${esc(x.label||'Ouvrir le dossier')} ↗</b></a>`).join(''):'<div class="doc-link disabled"><span>Dossier de candidature</span><b>Lien non publié dans la fiche</b></div>'}
+  </div>`;
+}
+function missingOrCdc(a,label='Information non publiée dans la fiche'){
+  const d=cdcLinksFor(a)[0];
+  return d?`<p class="field-missing">${esc(label)} · <a class="link" href="${esc(d.url)}" target="_blank" rel="noopener">Voir le CdC ↗</a></p>`:`<p class="field-missing">${esc(label)}</p>`;
+}
+function cleanFieldValue(value){
+  if(Array.isArray(value))return value.map(repairDisplayText).filter(Boolean);
+  if(value&&typeof value==='object')return value;
+  return repairDisplayText(value||'');
+}
+function fieldHtml(a,value,field){
+  const clean=cleanFieldValue(value);
+  const empty=Array.isArray(clean)?!clean.length:!clean||(typeof clean==='object'&&!Object.keys(clean).length);
+  if(empty)return missingOrCdc(a);
+  return listText(clean)+evidenceLine(a,field);
+}
+function sizeFinance(a){
+  const rows=arr(a.aidAmount?.byCompanySize).length?arr(a.aidAmount.byCompanySize):arr(a.aidRate?.byCompanySize);
+  if(!rows.length)return missingOrCdc(a,'Taux par taille non publié dans la fiche');
+  return`<table class="smalltable"><thead><tr><th>Taille</th><th>Taux</th><th>Montant</th></tr></thead><tbody>${rows.map(x=>`<tr><td>${esc(x.category)}</td><td>${x.rateMin!=null||x.rateMax!=null||x.min!=null||x.max!=null?`${x.rateMin??x.min??'—'}–${x.rateMax??x.max??'—'} %`:'—'}</td><td>${x.amountMin!=null||x.amountMax!=null?`${money(x.amountMin)} – ${money(x.amountMax)}`:'—'}</td></tr>`).join('')}</tbody></table>`;
+}
+function box(title,content,wide=false){return`<section class="sheet-box ${wide?'wide':''}"><h4>${esc(title)}</h4>${content}</section>`}
 function openAid(id){
   const a=state.lib.find(x=>x.id===id);if(!a)return;
-  const nd=nextDeadline(a),url=officialUrl(a);
-  const sourceLinks=uniq([url,...arr(a.sourceLinks).map(s=>typeof s==='string'?s:s?.url)].filter(Boolean));
-  $('#modalContent').innerHTML=`<div class="sheet-title"><div class="eyebrow">FICHE DISPOSITIF · ${esc(a.kind||'AIDE')}</div><h2>${esc(a.title)}</h2><div class="row">${arr(a.aidTypes).map(x=>`<span class="pill ok">${esc(aidTypeLabel(x))}</span>`).join('')}${a.scope?`<span class="pill">${a.scope==='NATIONAL'?'National':'Régional'}</span>`:''}</div></div>
-  <div class="sheet-grid">
-  ${box('Objectif',listText(a.objective),evidenceLine(a,'objective'))}
-  ${box('Thématiques visées',listText(a.themes))}
-  ${box('Bénéficiaires',listText(a.beneficiaries),evidenceLine(a,'beneficiaries'))}
-  ${box('Portée / région',`<p><b>${a.scope==='NATIONAL'?'National':'Régional'}</b><br>${esc(arr(a.regions).join(', ')||'—')}</p>`)}
-  ${box('Financeur / opérateur',`<p>${esc(arr(a.funder).join(', ')||'—')}<br>${esc(a.operator||a.programme||'—')}</p>`)}
-  ${box('Type d’aide',listText(arr(a.aidTypes).map(aidTypeLabel)),evidenceLine(a,'financialTerms'))}
-  ${box('Répartition SUB / AR',listText(a.aidSplit||a.subArSplit))}
-  ${box('Assiette projet',`<p><b>Min :</b> ${a.minimumProjectCost!=null?money(a.minimumProjectCost):'—'}<br><b>Max :</b> ${a.maximumProjectCost!=null?money(a.maximumProjectCost):'—'}</p>`)}
-  ${box('Montant d’aide',a.aidAmount?.min!=null||a.aidAmount?.max!=null?`<p>${money(a.aidAmount?.min)} à ${money(a.aidAmount?.max)}</p>`:missing(),evidenceLine(a,'financialTerms'))}
-  ${box('Taux d’aide',a.aidRate?.min!=null||a.aidRate?.max!=null?`<p>${a.aidRate?.min??'—'} % à ${a.aidRate?.max??'—'} %</p>`:missing(),evidenceLine(a,'financialTerms'))}
-  ${box('Taux / montants par taille',sizeFinance(a))}
-  ${box('Projets attendus',listText(a.projectsExpected),evidenceLine(a,'projectsExpected'))}
-  ${box('Dépenses éligibles',listText(a.eligibleExpenses),evidenceLine(a,'eligibleExpenses'))}
-  ${box('Dépenses exclues',listText(a.excludedExpenses),evidenceLine(a,'excludedExpenses'))}
-  ${box('Pré-requis',listText(a.prerequisites),evidenceLine(a,'prerequisites'))}
-  ${box('Critères de sélection',listText(a.selectionCriteria),evidenceLine(a,'selectionCriteria'))}
-  ${box('Calendrier',`<p><b>Ouverture :</b> ${fmtDate(a.openingDate)}<br><b>Relèves :</b> ${arr(a.deadlines).length?arr(a.deadlines).map(x=>fmtDate(typeof x==='string'?x:x?.date)).join(' · '):'—'}<br><b>Clôture finale :</b> ${fmtDate(a.finalClosingDate||a.closingDate)}<br><b>Prochaine accessible :</b> ${a.permanent?'Permanent':fmtDate(nd.date)}</p>`,evidenceLine(a,'calendar'))}
-  ${box('Modalités de versement',listText(a.disbursementTerms||a.paymentTerms))}
-  ${box('Remboursement AR',listText(a.repaymentTerms))}
-  ${box('Aides d’État / cumul',listText(a.stateAidRules||a.cumulationRules))}
-  <div class="sheet-box wide"><h4>Points de vigilance</h4>${arr(a.attentionPoints).length?arr(a.attentionPoints).map(x=>`<div class="attention">${esc(x)}</div>`).join(''):missing()}</div>
-  <div class="sheet-box wide"><h4>CdC / règlement / annexes</h4><div class="row">${docsHtml(a)}</div></div>
-  <div class="sheet-box wide"><h4>Sources officielles</h4>${sourceLinks.length?sourceLinks.map((s,i)=>`<p><a class="link" href="${esc(s)}" target="_blank" rel="noopener">${i===0?'Page officielle':'Source complémentaire'} ↗</a></p>`).join(''):missing()}<p class="mini">Dernière mise à jour source : ${esc(a.sourceUpdatedAt||a.verification?.lastChecked||'—')}</p></div>
-  </div><div class="row end" style="margin-top:16px"><button class="btn" onclick="window.print()">Imprimer / PDF</button>${url?`<a class="btn primary" target="_blank" rel="noopener" href="${esc(url)}">Ouvrir la source officielle ↗</a>`:''}</div>`;
+  const dm=libraryDateMeta(a),url=officialUrl(a),title=displayAidTitle(a);
+  const sourceLinks=uniqueLinks([...(url?[{url,label:'Page officielle du dispositif'}]:[]),...arr(a.sourceLinks)]).filter(x=>clientDirectUrl(x.url));
+  const amount=(a.aidAmount?.min!=null||a.aidAmount?.max!=null)?`<p>${money(a.aidAmount?.min)} à ${money(a.aidAmount?.max)}</p>${evidenceLine(a,'financialTerms')}`:missingOrCdc(a,'Montant d’aide non publié dans la fiche');
+  const rate=(a.aidRate?.min!=null||a.aidRate?.max!=null)?`<p>${a.aidRate?.min??'—'} % à ${a.aidRate?.max??'—'} %</p>${evidenceLine(a,'financialTerms')}`:missingOrCdc(a,'Taux d’aide non publié dans la fiche');
+  const assiette=(a.minimumProjectCost!=null||a.maximumProjectCost!=null)?`<p><b>Minimum :</b> ${a.minimumProjectCost!=null?money(a.minimumProjectCost):'non publié'}<br><b>Maximum :</b> ${a.maximumProjectCost!=null?money(a.maximumProjectCost):'non publié'}</p>${evidenceLine(a,'financialTerms')}`:missingOrCdc(a,'Assiette minimale / maximale non publiée dans la fiche');
+  const calendar=`<p><b>Ouverture :</b> ${a.openingDate?fmtDate(a.openingDate):'non publiée'}<br><b>Relèves :</b> ${arr(a.deadlines).length?arr(a.deadlines).map(x=>fmtDate(typeof x==='string'?x:x?.date)).join(' · '):'non publiées'}<br><b>Clôture :</b> ${a.permanent?'Permanent':(a.finalClosingDate||a.closingDate)?fmtDate(a.finalClosingDate||a.closingDate):'non publiée'}${dm.state==='recent-closed'?' · clôturé depuis moins de 60 jours':''}</p>${evidenceLine(a,'calendar')}`;
+
+  $('#modalContent').innerHTML=`<div class="sheet-title premium-sheet-title"><div class="eyebrow">Fiche dispositif · ${esc(a.kind||'Aide')}</div><h2>${esc(title)}</h2><div class="row sheet-tags">${guichetLabels(a).map(x=>`<span class="pill">${esc(x)}</span>`).join('')}${arr(a.aidTypes).filter(x=>x!=='AUTRE').map(x=>`<span class="pill ok">${esc(aidTypeLabel(x))}</span>`).join('')}${a.scope?`<span class="pill">${a.scope==='NATIONAL'?'National':'Régional'}</span>`:''}${dm.state==='recent-closed'?'<span class="pill warn">Clôturé ≤ 60 jours</span>':''}</div></div>
+  <div class="sheet-grid premium-sheet">
+    ${box('Objectif',fieldHtml(a,a.objective,'objective'))}
+    ${box('Projets attendus',fieldHtml(a,a.projectsExpected,'projectsExpected'))}
+    ${box('Bénéficiaires',fieldHtml(a,a.beneficiaries,'beneficiaries'))}
+    ${box('Taille d’entreprise',arr(a.companyCategories).length?listText(a.companyCategories):missingOrCdc(a,'Taille d’entreprise non explicitée'))}
+    ${box('Thématiques visées',arr(a.themes).length?listText(a.themes):missingOrCdc(a,'Thématiques non structurées dans la fiche'))}
+    ${box('Portée / territoire',`<p><b>${a.scope==='NATIONAL'?'National':'Régional'}</b><br>${esc(arr(a.regions).join(', ')||'Territoire non publié')}</p>`)}
+    ${box('Financeur / opérateur',`<p><b>${esc(arr(a.funder).join(', ')||'Financeur non publié')}</b>${a.operator||a.programme?`<br>${esc(a.operator||a.programme)}`:''}</p>`)}
+    ${box('Type de financement',arr(a.aidTypes).length?listText(arr(a.aidTypes).filter(x=>x!=='AUTRE').map(aidTypeLabel)):missingOrCdc(a,'Type de financement non explicité'))}
+    ${box('Assiette du projet',assiette)}
+    ${box('Montant de l’aide',amount)}
+    ${box('Taux d’aide',rate)}
+    ${box('Taux / montants par taille',sizeFinance(a))}
+    ${box('Dépenses éligibles',fieldHtml(a,a.eligibleExpenses,'eligibleExpenses'))}
+    ${box('Dépenses exclues',fieldHtml(a,a.excludedExpenses,'excludedExpenses'))}
+    ${box('Pré-requis / conditions d’éligibilité',fieldHtml(a,a.prerequisites,'prerequisites'))}
+    ${box('Critères de sélection',fieldHtml(a,a.selectionCriteria,'selectionCriteria'))}
+    ${box('Calendrier',calendar)}
+    ${box('Modalités de candidature',fieldHtml(a,a.applicationProcess,'applicationProcess'))}
+    ${box('Modalités de versement',fieldHtml(a,a.disbursementTerms||a.paymentTerms,'disbursementTerms'))}
+    ${box('Remboursement / avance remboursable',fieldHtml(a,a.repaymentTerms,'repaymentTerms'))}
+    ${box('Régime d’aides / cumul',fieldHtml(a,a.stateAidRules||a.cumulationRules,'stateAidRules'))}
+    ${box('Contact',fieldHtml(a,a.contact,'contact'))}
+    ${box('Documents & candidature',docButtons(a),true)}
+    ${box('Sources officielles',sourceLinks.length?sourceLinks.map(x=>`<p><a class="source-card-link" href="${esc(x.url)}" target="_blank" rel="noopener"><span>${esc(x.label||'Source officielle')}</span><b>Ouvrir ↗</b></a></p>`).join(''):missingOrCdc(a,'Page officielle directe non rattachée'),true)}
+  </div>
+  <div class="sheet-footer"><span class="mini">Dernière mise à jour source : ${esc(a.sourceUpdatedAt||a.verification?.lastChecked||'—')}</span><div class="row"><button class="btn" onclick="window.print()">Imprimer / PDF</button>${url?`<a class="btn primary" target="_blank" rel="noopener" href="${esc(url)}">Source officielle ↗</a>`:''}</div></div>`;
   $('#modal').classList.remove('hidden');
 }
 function csvCell(v){return '"'+String(v??'').replaceAll('"','""').replace(/\r?\n/g,' ')+'"'}
