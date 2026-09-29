@@ -15,19 +15,24 @@ test('bibliothèque exhaustive large et recommandation strictement SUB/AR/PTZ',(
   for(const id of ['occitanie_foster','paca_feder_loan']){const s=cfg.sources.find(x=>x.id===id);assert.equal(s?.strategy,'official-page');assert.equal(s?.forceAidType,'PRET_TAUX_ZERO');}
 });
 
-test('scoring final = 25/15/20/15/10/10/5 = 100',()=>{
+test('moteur v12.6 combine critères documentaires et BM25F sans simuler un barème financeur',()=>{
   const code=read('site/scoring-core.js');const ctx={globalThis:{}};vm.runInNewContext(code,ctx);const scorer=ctx.globalThis.LEYTON_SCORING;
-  const aid={title:'Innovation digitale',objective:'Innovation digitale',themes:['innovation'],projectsExpected:['prototype'],eligibleExpenses:'logiciel prototype',selectionCriteria:'innovation impact',prerequisites:'PME',aidRate:{max:50},scope:'NATIONAL',permanent:false,deadlines:['2099-12-31']};
+  const aid={id:'a1',title:'Innovation digitale',objective:'Innovation digitale',themes:['innovation'],projectsExpected:['prototype'],eligibleExpenses:'logiciel prototype',selectionCriteria:'innovation impact',prerequisites:'PME',aidRate:{max:50},scope:'NATIONAL',permanent:false,deadlines:['2099-12-31']};
   const p={name:'Innovation digitale',summary:'prototype logiciel innovation',sector:'industrie',expenses:'logiciel prototype',impacts:'impact innovation',environment:'',digital:'digital',partners:'',types:['R&D / Innovation'],maturity:'Prototype',budget:100000,region:'Île-de-France'};
-  const r=scorer.relevance(aid,p);assert.deepEqual(Array.from(r.dims,d=>d.max),[25,15,20,15,10,10,5]);assert.equal(r.dims.reduce((n,d)=>n+d.max,0),100);assert.equal(scorer.version,'12.2.0');
+  const r=scorer.relevance(aid,p);
+  assert.equal(r.dims.length,9);
+  assert.ok(r.dims.every(d=>d.max===1));
+  assert.equal(typeof scorer.bm25fRank,'function');
+  assert.equal(scorer.version,'12.6.0');
 });
 
-test('restitution finale : 8 priorités vérifiées + 6 pistes',()=>{
+test('restitution finale : priorités, approfondissement et fusion de rangs',()=>{
   const app=read('site/app.js');
-  assert.match(app,/status==='VERIFIE'.*slice\(0,8\)/);
-  assert.match(app,/slice\(0,6\)/);
-  assert.match(app,/Pourquoi je la retiens/);
-  assert.match(app,/À sécuriser/);
+  assert.match(app,/Reciprocal Rank Fusion \(RRF\)/);
+  assert.match(app,/slice\(0,10\)/);
+  assert.match(app,/slice\(0,12\)/);
+  assert.match(app,/Prioritaires à instruire/);
+  assert.match(app,/À approfondir/);
 });
 
 test('workflow : SHA pinning, corpus publié et cron Europe\/Paris',()=>{
