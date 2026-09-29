@@ -1928,6 +1928,21 @@
       "titleOverride": "France 2030 (volet régionalisé) : Appel à projets « Pays de la Loire Innovation »",
       "kindOverride": "AAP / AMI",
       "funder": "État · Région Pays de la Loire · Bpifrance"
+    },
+    {
+      "id": "grand_est_cinemas_independants",
+      "name": "Grand Est — Aide en investissement des cinémas indépendants",
+      "scope": "Grand Est",
+      "type": "web",
+      "strategy": "official-page",
+      "url": "https://www.grandest.fr/vos-aides-regionales/aide-investissement-faveur-salles-de-cinema/",
+      "official": true,
+      "priority": 0,
+      "browserFallback": true,
+      "titleOverride": "Aide en investissement des cinémas indépendants du Grand Est",
+      "kindOverride": "AIDE",
+      "funder": "Région Grand Est",
+      "notes": "Page officielle dédiée du dispositif ; utilisée pour restaurer l’intitulé, les critères, les échéances et les documents associés."
     }
   ]
 }
