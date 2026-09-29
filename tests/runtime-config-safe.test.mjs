@@ -12,5 +12,5 @@ test('runtime config n’invente aucun endpoint serverless selon le hostname',()
 
 test('service worker porte la version 12',()=>{
   const s=fs.readFileSync(new URL('../site/sw.js',import.meta.url),'utf8');
-  assert.match(s,/leyton-radar-v12\.2\.0-shell/);
+  assert.match(s,/leyton-radar-v12\.6\.0-shell/);
 });
