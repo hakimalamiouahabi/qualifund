@@ -505,29 +505,59 @@ function matchesSearch(a,q){
   const terms=norm(q).replace(/\bbpi france\b/g,'bpifrance').split(' ').filter(x=>x.length>1&&!['de','du','des','aux','les','le','la','en','et'].includes(x));
   return terms.every(t=>text.includes(t)||t.length>4&&t.endsWith('s')&&text.includes(t.slice(0,-1)));
 }
+function libraryDateMeta(a){
+  if(a.permanent)return{label:'Permanent',days:null,state:'open'};
+  const dates=uniq([...arr(a.deadlines).map(x=>typeof x==='string'?x:x?.date),a.finalClosingDate,a.closingDate].filter(Boolean)).sort();
+  const future=dates.find(d=>daysUntil(d)>=1);
+  if(future)return{label:fmtDate(future),days:daysUntil(future),state:'open'};
+  const last=dates.at(-1)||null;
+  if(last&&daysUntil(last)>=-60)return{label:fmtDate(last),days:daysUntil(last),state:'recent-closed'};
+  return{label:last?fmtDate(last):'Date non publiée',days:last?daysUntil(last):null,state:last?'closed':'unknown'};
+}
 function library(resultsOnly=false){
-  const q=window.__q||'',region=window.__reg||'',kind=window.__kind||'',theme=window.__theme||'',instrument=window.__instrument||'',time=window.__time||'',selectedCategories=window.__categories||[];
-  const activeLib=state.lib.filter(usableAid);
-  const themes=uniq(activeLib.flatMap(a=>arr(a.themes))).sort((a,b)=>a.localeCompare(b,'fr'));
-  const instruments=uniq(activeLib.flatMap(a=>arr(a.aidTypes))).sort((a,b)=>aidTypeLabel(a).localeCompare(aidTypeLabel(b),'fr'));
-  const list=activeLib.filter(a=>{
+  const q=window.__q||'',region=window.__reg||'',kind=window.__kind||'',theme=window.__theme||'',instrument=window.__instrument||'',time=window.__time||'',guichet=window.__guichet||'',selectedCategories=window.__categories||[];
+  const catalog=state.lib.filter(libraryAid);
+  const themes=uniq(catalog.flatMap(a=>arr(a.themes))).sort((a,b)=>a.localeCompare(b,'fr'));
+  const instruments=uniq(catalog.flatMap(a=>arr(a.aidTypes))).sort((a,b)=>aidTypeLabel(a).localeCompare(aidTypeLabel(b),'fr'));
+  const guichets=uniq(catalog.flatMap(guichetLabels)).sort((a,b)=>a.localeCompare(b,'fr'));
+  const list=catalog.filter(a=>{
+    const dm=libraryDateMeta(a);
     if(q&&!matchesSearch(a,q))return false;
     if(region&&!arr(a.regions).includes(region)&&!arr(a.regions).includes('Toutes les Régions'))return false;
     if(kind&&a.kind!==kind)return false;
     if(theme&&!arr(a.themes).includes(theme))return false;
     if(instrument&&!arr(a.aidTypes).includes(instrument))return false;
-    if(time==='j1'&&!nextDeadline(a).ok)return false;
-    if(time==='nodate'&&nextDeadline(a).reason!=='DATE_MISSING')return false;
+    if(guichet&&!guichetLabels(a).includes(guichet))return false;
+    if(time==='open'&&dm.state!=='open')return false;
+    if(time==='recent'&&dm.state!=='recent-closed')return false;
+    if(time==='nodate'&&dm.state!=='unknown')return false;
     if(selectedCategories.length&&!selectedCategories.some(c=>arr(a.companyCategories).includes(c)))return false;
     return true;
-  }).sort((a,b)=>{const rank=x=>q?norm(q).split(' ').filter(t=>t.length>2&&norm(x.title).includes(t)).length:0;return rank(b)-rank(a)||(nextDeadline(a).date||'9999').localeCompare(nextDeadline(b).date||'9999')});
+  }).sort((a,b)=>{
+    const titleRank=x=>q?norm(q).split(' ').filter(t=>t.length>2&&norm(displayAidTitle(x)).includes(t)).length:0;
+    const ra=titleRank(a),rb=titleRank(b);if(ra!==rb)return rb-ra;
+    const da=libraryDateMeta(a),db=libraryDateMeta(b);
+    const stateRank={open:0,unknown:1,'recent-closed':2,closed:3};
+    if(stateRank[da.state]!==stateRank[db.state])return stateRank[da.state]-stateRank[db.state];
+    const ad=a.finalClosingDate||a.closingDate||'9999',bd=b.finalClosingDate||b.closingDate||'9999';
+    return ad.localeCompare(bd);
+  });
   window.__lastLibraryList=list;
-  const pageSize=50,page=Math.max(0,Math.min(window.__libPage||0,Math.ceil(list.length/pageSize)-1));window.__libPage=page;
+  const pageSize=50,page=Math.max(0,Math.min(window.__libPage||0,Math.max(0,Math.ceil(list.length/pageSize)-1)));window.__libPage=page;
   const view=list.slice(page*pageSize,(page+1)*pageSize);
-  const markup=`<div class="page-head"><div><div class="eyebrow">Bibliothèque des aides et appels à projets</div><h1>Aides et appels à projets</h1><p class="sub">Bénéficiaires, thématiques, portée, modalités financières, projets attendus, dépenses, clôtures, relèves, prérequis et accès direct à la source officielle.</p></div><div class="row end"><span class="badge info" id="libraryCount" aria-live="polite">${list.length} résultat(s)</span><button class="btn primary" id="exportLibraryCsv">Exporter CSV</button></div></div>
-  <div class="filters six"><input class="input" id="libQ" aria-label="Rechercher dans les aides" placeholder="Rechercher un dispositif, une thématique, un financeur…" value="${esc(q)}"><select id="libRegion"><option value="">Toutes régions</option>${REGIONS.map(r=>`<option ${r===region?'selected':''}>${esc(r)}</option>`).join('')}</select><select id="libTheme" aria-label="Thématique"><option value="">Toutes thématiques</option>${themes.map(t=>`<option value="${esc(t)}" ${t===theme?'selected':''}>${esc(t)}</option>`).join('')}</select><select id="libInstrument" aria-label="Instrument"><option value="">Tous instruments</option>${instruments.map(t=>`<option value="${esc(t)}" ${t===instrument?'selected':''}>${esc(aidTypeLabel(t))}</option>`).join('')}</select><select id="libKind"><option value="">Tous les dispositifs</option><option ${kind==='AAP / AMI'?'selected':''}>AAP / AMI</option><option ${kind==='AIDE'?'selected':''}>AIDE</option></select><select id="libTime"><option value="">Toutes dates</option><option value="j1" ${time==='j1'?'selected':''}>Ouvert / ≥ J+1</option><option value="nodate" ${time==='nodate'?'selected':''}>Date non publiée</option></select><button class="btn" id="libRefresh">Rafraîchir</button></div>
-  <div role="group" aria-label="Taille d’entreprise" class="library-size-filter"><span class="mini">Taille d’entreprise :</span>${['PME','ETI','GE','STARTUP'].map(c=>`<label class="pill"><input type="checkbox" class="libCategory" value="${c}" ${selectedCategories.includes(c)?'checked':''}> ${c==='STARTUP'?'Startup':c}</label>`).join('')}</div>
-  <div id="libraryResults"><div class="table-wrap"><table><thead><tr><th>Aide / AAP</th><th>Portée</th><th>Instrument</th><th>Entreprise</th><th>Échéance</th><th>Documents</th></tr></thead><tbody>${view.map(a=>{const nd=nextDeadline(a),url=officialUrl(a);return`<tr><td>${url?`<a href="${esc(url)}" target="_blank" rel="noopener" class="link"><b>${esc(a.title)} ↗</b></a>`:`<b>${esc(displayAidTitle(a))}</b>`}<div class="mini">${esc(arr(a.funder).join(', ')||'Financeur à préciser')}</div><a class="link-button open-aid" data-id="${esc(a.id)}" href="?aid=${encodeURIComponent(a.id)}">Voir la fiche</a></td><td>${a.scope==='NATIONAL'?'<span class="pill">National</span>':`<span class="pill">${esc(arr(a.regions).join(', ')||'Régional')}</span>`}</td><td>${arr(a.aidTypes).map(x=>`<span class="pill ok">${esc(aidTypeLabel(x))}</span>`).join('')}</td><td>${esc(arr(a.companyCategories).join(', ')||'—')}</td><td>${a.permanent?'Permanent':nd.date?`${fmtDate(nd.date)} <span class="mini">J+${Math.max(0,daysUntil(nd.date))}</span>`:missing()}</td><td>${arr(a.cdcLinks).length?`<span class="badge ok">${arr(a.cdcLinks).length} doc.</span>`:'—'}</td></tr>`}).join('')}</tbody></table></div>${!list.length?'<div class="empty">Aucun dispositif ne correspond à ces filtres.</div>':''}<div class="row between pagination"><button class="btn" id="libPrev" ${page===0?'disabled':''}>Précédent</button><span>Page ${page+1} / ${Math.max(1,Math.ceil(list.length/pageSize))} · ${list.length} résultats</span><button class="btn" id="libNext" ${(page+1)*pageSize>=list.length?'disabled':''}>Suivant</button></div></div>`;
+  const markup=`<div class="page-head library-head"><div><div class="eyebrow">Bibliothèque des aides & appels à projets</div><h1>Référentiel des financements publics</h1><p class="sub">Dispositifs ouverts, permanents et clôturés depuis moins de 60 jours. Filtrez par région, thématique, instrument, guichet et bénéficiaire.</p></div><div class="row end"><span class="badge info" id="libraryCount" aria-live="polite">${list.length} résultat(s)</span><button class="btn primary" id="exportLibraryCsv">Exporter CSV</button></div></div>
+  <div class="filters funding-filters">
+    <input class="input search-main" id="libQ" aria-label="Rechercher dans les aides" placeholder="Rechercher un dispositif, une thématique, un financeur…" value="${esc(q)}">
+    <select id="libGuichet" aria-label="Guichet"><option value="">Tous les guichets</option>${guichets.map(g=>`<option value="${esc(g)}" ${g===guichet?'selected':''}>${esc(g)}</option>`).join('')}</select>
+    <select id="libRegion"><option value="">Toutes régions</option>${REGIONS.map(r=>`<option ${r===region?'selected':''}>${esc(r)}</option>`).join('')}</select>
+    <select id="libTheme" aria-label="Thématique"><option value="">Toutes thématiques</option>${themes.map(t=>`<option value="${esc(t)}" ${t===theme?'selected':''}>${esc(t)}</option>`).join('')}</select>
+    <select id="libInstrument" aria-label="Instrument"><option value="">Tous instruments</option>${instruments.map(t=>`<option value="${esc(t)}" ${t===instrument?'selected':''}>${esc(aidTypeLabel(t))}</option>`).join('')}</select>
+    <select id="libKind"><option value="">Tous les dispositifs</option><option ${kind==='AAP / AMI'?'selected':''}>AAP / AMI</option><option ${kind==='AIDE'?'selected':''}>AIDE</option></select>
+    <select id="libTime"><option value="">Ouverts + J-60</option><option value="open" ${time==='open'?'selected':''}>Ouverts / permanents</option><option value="recent" ${time==='recent'?'selected':''}>Clôturés depuis ≤ 60 jours</option><option value="nodate" ${time==='nodate'?'selected':''}>Date non publiée</option></select>
+    <button class="btn" id="libRefresh">Rafraîchir</button>
+  </div>
+  <div role="group" aria-label="Taille d’entreprise" class="library-size-filter"><span class="mini">Taille d’entreprise</span>${['PME','ETI','GE','STARTUP'].map(c=>`<label class="pill"><input type="checkbox" class="libCategory" value="${c}" ${selectedCategories.includes(c)?'checked':''}> ${c==='STARTUP'?'Startup':c}</label>`).join('')}</div>
+  <div id="libraryResults"><div class="table-wrap library-table"><table><thead><tr><th>Dispositif</th><th>Guichet</th><th>Portée</th><th>Instrument</th><th>Entreprise</th><th>Échéance</th><th>Documents</th></tr></thead><tbody>${view.map(a=>{const dm=libraryDateMeta(a),url=officialUrl(a),title=displayAidTitle(a),gu=guichetLabels(a);return`<tr class="${dm.state==='recent-closed'?'recent-closed-row':''}"><td>${url?`<a href="${esc(url)}" target="_blank" rel="noopener" class="link aid-name"><b>${esc(title)} ↗</b></a>`:`<b class="aid-name">${esc(title)}</b>`}<div class="mini">${esc(arr(a.funder).join(', ')||'Financeur non précisé')}</div><a class="link-button open-aid" data-id="${esc(a.id)}" href="?aid=${encodeURIComponent(a.id)}">Voir la fiche</a></td><td>${gu.map(g=>`<span class="pill">${esc(g)}</span>`).join(' ')||'—'}</td><td>${a.scope==='NATIONAL'?'<span class="pill">National</span>':`<span class="pill">${esc(arr(a.regions).join(', ')||'Régional')}</span>`}</td><td>${arr(a.aidTypes).map(x=>`<span class="pill ok">${esc(aidTypeLabel(x))}</span>`).join(' ')||'—'}</td><td>${esc(arr(a.companyCategories).join(', ')||'—')}</td><td>${dm.state==='recent-closed'?'<span class="badge warn">Clôturé</span> ':''}${esc(dm.label)}${dm.days!=null?` <span class="mini">${dm.days>=0?'J+':'J'}${dm.days}</span>`:''}</td><td>${arr(a.cdcLinks).length?`<span class="badge ok">${arr(a.cdcLinks).length} CdC</span>`:''}${arr(a.formLinks).length?` <span class="badge info">${arr(a.formLinks).length} dossier</span>`:(!arr(a.cdcLinks).length?'—':'')}</td></tr>`}).join('')}</tbody></table></div>${!list.length?'<div class="empty">Aucun dispositif ne correspond à ces filtres.</div>':''}<div class="row between pagination"><button class="btn" id="libPrev" ${page===0?'disabled':''}>Précédent</button><span>Page ${page+1} / ${Math.max(1,Math.ceil(list.length/pageSize))} · ${list.length} résultats</span><button class="btn" id="libNext" ${(page+1)*pageSize>=list.length?'disabled':''}>Suivant</button></div></div>`;
   if(resultsOnly&&$('#libraryResults')){
     const template=document.createElement('template');template.innerHTML=markup;
     $('#libraryResults').replaceWith(template.content.querySelector('#libraryResults'));
@@ -536,13 +566,9 @@ function library(resultsOnly=false){
   $('#libPrev').onclick=()=>{window.__libPage=page-1;library(true)};
   $('#libNext').onclick=()=>{window.__libPage=page+1;library(true)};
   const qInput=$('#libQ');
-  const scheduleSearch=()=>{
-    window.__q=qInput.value;window.__libPage=0;
-    clearTimeout(window.__libSearchTimer);
-    window.__libSearchTimer=setTimeout(()=>{if(state.route==='library')library(true)},180);
-  };
-  qInput.oninput=e=>{if(!e.isComposing)scheduleSearch()};
-  qInput.oncompositionend=scheduleSearch;
+  const scheduleSearch=()=>{window.__q=qInput.value;window.__libPage=0;clearTimeout(window.__libSearchTimer);window.__libSearchTimer=setTimeout(()=>{if(state.route==='library')library(true)},180)};
+  qInput.oninput=e=>{if(!e.isComposing)scheduleSearch()};qInput.oncompositionend=scheduleSearch;
+  $('#libGuichet').onchange=e=>{window.__guichet=e.target.value;window.__libPage=0;library()};
   $('#libRegion').onchange=e=>{window.__reg=e.target.value;window.__libPage=0;library()};
   $('#libKind').onchange=e=>{window.__kind=e.target.value;window.__libPage=0;library()};
   $('#libTheme').onchange=e=>{window.__theme=e.target.value;window.__libPage=0;library()};
