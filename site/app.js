@@ -527,12 +527,12 @@ function openAid(id){
 }
 function csvCell(v){return '"'+String(v??'').replaceAll('"','""').replace(/\r?\n/g,' ')+'"'}
 function exportLibraryCsv(rows){
-  const header=['Nom AAP / aide','Financeurs','Bénéficiaires / taille','Thématiques visées','Portée','Régions','Type aide','Assiette min','Assiette max','Montant aide min','Montant aide max','Taux min','Taux max','Taux / montants par taille','Projets attendus','Dépenses éligibles','Pré-requis','Critères de sélection','Relèves','Date de clôture','Lien officiel'];
+  const header=['Nom AAP / aide','Guichet','Financeurs','Bénéficiaires / taille','Thématiques visées','Portée','Régions','Type aide','Assiette min','Assiette max','Montant aide min','Montant aide max','Taux min','Taux max','Taux / montants par taille','Projets attendus','Dépenses éligibles','Pré-requis','Critères de sélection','Relèves','Date de clôture','Lien officiel'];
   const lines=[header.map(csvCell).join(';')];
   for(const a of rows){
     const bySize=arr(a.aidAmount?.byCompanySize).concat(arr(a.aidRate?.byCompanySize)).map(x=>`${x.category||''}: taux ${x.rateMin??x.min??'—'}-${x.rateMax??x.max??'—'}%; montant ${x.amountMin??'—'}-${x.amountMax??'—'}`).join(' | ');
     lines.push([
-      a.title,arr(a.funder).join(' | '),[arr(a.companyCategories).join(' / '),a.beneficiaries].filter(Boolean).join(' — '),arr(a.themes).join(' | '),
+      displayAidTitle(a),guichetLabels(a).join(' | '),arr(a.funder).join(' | '),[arr(a.companyCategories).join(' / '),a.beneficiaries].filter(Boolean).join(' — '),arr(a.themes).join(' | '),
       a.scope==='NATIONAL'?'National':'Régional',arr(a.regions).join(' | '),arr(a.aidTypes).map(aidTypeLabel).join(' | '),
       a.minimumProjectCost??'',a.maximumProjectCost??'',a.aidAmount?.min??'',a.aidAmount?.max??'',a.aidRate?.min??'',a.aidRate?.max??'',bySize,
       arr(a.projectsExpected).join(' | '),a.eligibleExpenses||'',a.prerequisites||'',a.selectionCriteria||'',
@@ -541,7 +541,7 @@ function exportLibraryCsv(rows){
   }
   const blob=new Blob(['\ufeff'+lines.join('\r\n')],{type:'text/csv;charset=utf-8'});
   const href=URL.createObjectURL(blob),a=document.createElement('a');
-  a.href=href;a.download=`Leyton_Veilles_AS_bibliotheque_${today()}.csv`;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(href),1000);
+  a.href=href;a.download=`Funding_Radar_bibliotheque_${today()}.csv`;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(href),1000);
 }
 const searchCache=new WeakMap();
 function searchText(a){
