@@ -14,10 +14,15 @@ const aliases={
   url:['url descriptif','url_descriptif','url','lien','link','source','page','url de l aide','url de l\'aide']
 };
 function pick(row,names){const entries=Object.entries(row||{});for(const a of names){const na=norm(a);const hit=entries.find(([k])=>norm(k)===na||norm(k).includes(na));if(hit&&String(hit[1]??'').trim())return hit[1]}return null}
+function openDataText(value=''){
+  const raw=String(value??'');
+  if(/<\/?[a-z][^>]*>/i.test(raw))return htmlToText(raw);
+  return raw.replace(/&nbsp;/gi,' ').replace(/&amp;/gi,'&').replace(/&quot;/gi,'"').replace(/&#39;/g,"'").replace(/\s+/g,' ').trim();
+}
 
 export function rowToOpenDataSoftAid(row,source,idx){
-  const title=htmlToText(pick(row,aliases.title)||'');if(!title)return null;
-  const objective=htmlToText(pick(row,aliases.objective)||''),benef=htmlToText(pick(row,aliases.beneficiaries)||''),expenses=htmlToText(pick(row,aliases.expenses)||''),conditions=htmlToText(pick(row,aliases.conditions)||''),amount=htmlToText(pick(row,aliases.amount)||''),aidTypeText=htmlToText(pick(row,aliases.aidType)||''),deadlineRaw=String(pick(row,aliases.deadline)||'');
+  const title=openDataText(pick(row,aliases.title)||'');if(!title)return null;
+  const objective=openDataText(pick(row,aliases.objective)||''),benef=openDataText(pick(row,aliases.beneficiaries)||''),expenses=openDataText(pick(row,aliases.expenses)||''),conditions=openDataText(pick(row,aliases.conditions)||''),amount=openDataText(pick(row,aliases.amount)||''),aidTypeText=openDataText(pick(row,aliases.aidType)||''),deadlineRaw=String(pick(row,aliases.deadline)||'');
   const directRaw=pick(row,aliases.url),recordId=String(row?.recordid||row?.id||'').trim(),base=baseApi(source),idBase=source.datasetId||source.id;
   const recordApiUrl=recordId&&base.includes('/api/explore/v2.1')?`${base}/catalog/datasets/${encodeURIComponent(idBase)}/records/${encodeURIComponent(recordId)}`:null;
   const url=safeUrl(directRaw||recordApiUrl||source.webEvidenceUrl||source.url,source.url)||source.url;
