@@ -104,22 +104,73 @@ function scheduleClientDailyRefresh(){if(hostedProduction()||CONFIG.refreshEndpo
 function toast(msg){const t=$('#toast');t.innerHTML=msg;t.classList.remove('hidden');clearTimeout(window.__toastTimer);window.__toastTimer=setTimeout(()=>t.classList.add('hidden'),4200)}
 function permanentVerified(a){return Boolean(a.permanent&&arr(a.verification?.fieldEvidence).some(e=>e.field==='calendar'&&['A','B'].includes(e.sourceTier)))}
 function nextDeadline(a){if(a.permanent)return permanentVerified(a)?{ok:true,date:null,reason:'PERMANENT'}:{ok:false,date:null,reason:'PERMANENT_UNVERIFIED'};const ds=uniq([...arr(a.deadlines).map(x=>typeof x==='string'?x:x?.date),a.finalClosingDate,a.closingDate].filter(Boolean)).sort();for(const d of ds)if(daysUntil(d)>=1)return{ok:true,date:d,reason:'DEADLINE'};return{ok:false,date:ds.find(d=>daysUntil(d)>=0)||ds.at(-1)||null,reason:ds.length?'J1':'DATE_MISSING'}}
+function isGenericAidTitle(v=''){
+  const t=norm(v);
+  return !t||t.length<4||/^(document officiel|reglement|cahier des charges|annexe|formulaire|dossier de candidature)$/.test(t)||/desole.*offre.*plus disponible|offre.*plus disponible|page introuvable|page non trouvee|erreur 404|404 not found|access denied|forbidden|service indisponible|site en maintenance/.test(t);
+}
+function repairDisplayText(v=''){
+  let s=String(v||'').replace(/\s+/g,' ').trim();
+  for(let i=0;i<3;i++)s=s.replace(/\b([A-ZÀ-ÖØ-Ý]{2,})\s+([ÉÈÊËÀÂÄÎÏÔÖÙÛÜÇ])\s+([A-ZÀ-ÖØ-Ý]{2,})\b/g,'$1$2$3');
+  const markers=['Cette page vise à vous guider dans l’utilisation du site',"Cette page vise à vous guider dans l'utilisation du site",'Pour connaître le niveau d’accessibilité de ce site',"Pour connaître le niveau d'accessibilité de ce site",'L’initiative internationale pour l’accessibilité du Web',"L'initiative internationale pour l'accessibilité du Web"];
+  let cut=s.length;for(const m of markers){const i=s.toLowerCase().indexOf(m.toLowerCase());if(i>=0)cut=Math.min(cut,i)}
+  return s.slice(0,cut).trim();
+}
+function derivedAidTitle(a){
+  const current=repairDisplayText(a?.title||'');
+  if(!isGenericAidTitle(current))return current;
+  const candidates=[
+    ...arr(a?.sourceAliases).map(x=>typeof x==='string'?x:x?.label),
+    ...arr(a?.cdcLinks).map(x=>typeof x==='string'?null:x?.label),
+    ...arr(a?.regulationLinks).map(x=>typeof x==='string'?null:x?.label),
+    ...arr(a?.sourceLinks).map(x=>typeof x==='string'?null:x?.label)
+  ].filter(Boolean).map(repairDisplayText).map(x=>x.replace(/^(?:r[eè]glement|cahier des charges|cdc|dossier de candidature|annexe)\s*[-–—:]\s*/i,'').trim()).filter(x=>x.length>=12&&!isGenericAidTitle(x));
+  if(candidates.length)return candidates[0];
+  const src=repairDisplayText(a?.objective||'').replace(/^\d+\s+(?=[A-ZÀ-ÖØ-Ý])/,'');
+  const cut=src.split(/\b(?:Délibération|Direction de|Règlement|REGLEMENT|ARTICLE\s+\d+|Art\.\s*\d+)/)[0].trim();
+  const upper=(cut.match(/[A-ZÀ-ÖØ-Ý]/g)||[]).length,letters=(cut.match(/[A-Za-zÀ-ÖØ-öø-ÿ]/g)||[]).length;
+  if(cut.length>=15&&cut.length<=190&&letters>=12&&upper/letters>.55)return cut;
+  return current||'Intitulé à rattacher à la source officielle';
+}
 function usableAid(a){
   if(!a||['ARCHIVE','STALE','CLOSED','CLOS','EXPIRED'].includes(a.lifecycleStatus))return false;
-  const t=norm(a.title||'');
+  const t=norm(derivedAidTitle(a));
   if(!t||t.length<4)return false;
   if(/^(appels a projets et concours(?: bpifrance)?|contact et aide|accueil|nos aides|toutes nos aides)$/.test(t))return false;
-  if(/desole.*offre.*plus disponible|offre.*plus disponible|document officiel|page introuvable|page non trouvee|erreur 404|404 not found|access denied|forbidden|service indisponible|site en maintenance/.test(t))return false;
   const nd=nextDeadline(a);
   if(nd.reason==='J1'&&nd.date&&daysUntil(nd.date)<1)return false;
   return true;
+}
+function libraryAid(a){
+  if(!a||['STALE','CLOSED','CLOS','EXPIRED'].includes(a.lifecycleStatus))return false;
+  if(isGenericAidTitle(derivedAidTitle(a))||/^(appels a projets et concours(?: bpifrance)?|contact et aide|accueil|nos aides|toutes nos aides)$/.test(norm(derivedAidTitle(a))))return false;
+  if(a.lifecycleStatus==='ARCHIVE'){
+    const d=a.finalClosingDate||a.closingDate||arr(a.deadlines).map(x=>typeof x==='string'?x:x?.date).filter(Boolean).sort().at(-1);
+    return Boolean(d&&daysUntil(d)>=-60);
+  }
+  return true;
+}
+function guichetLabels(a){
+  const t=norm([...arr(a?.funder),a?.operator,a?.programme,a?.sourceId].filter(Boolean).join(' ')),out=[];
+  const add=x=>{if(x&&!out.includes(x))out.push(x)};
+  if(/bpifrance|bpi france/.test(t))add('Bpifrance');
+  if(/ademe|transition ecologique/.test(t))add('ADEME');
+  if(/agence nationale de la recherche|\banr\b/.test(t))add('ANR');
+  if(/feder|fonds europeen de developpement regional|europe en france/.test(t))add('FEDER');
+  if(/feader|fonds europeen agricole/.test(t))add('FEADER');
+  if(/franceagrimer/.test(t))add('FranceAgriMer');
+  if(/banque des territoires|caisse des depots/.test(t))add('Banque des Territoires');
+  if(/office francais de la biodiversite|\bofb\b/.test(t))add('OFB');
+  if(/region|conseil regional|collectivite territoriale/.test(t))add('Régions');
+  if(/ministere|etat /.test(t))add('État / Ministères');
+  if(!out.length&&arr(a?.funder).length)add(arr(a.funder)[0]);
+  return out;
 }
 function officialUrl(a){
   const candidates=[a?.officialPage,...arr(a?.sourceLinks).map(x=>typeof x==='string'?x:x?.url),...arr(a?.formLinks).map(x=>typeof x==='string'?x:x?.url)];
   return candidates.map(clientDirectUrl).find(Boolean)||null;
 }
 function displayAidTitle(a){
-  const title=String(a?.title||'').trim(),funders=arr(a?.funder).filter(Boolean);
+  const title=derivedAidTitle(a),funders=arr(a?.funder).filter(Boolean);
   const ambiguous=/^aide (?:aux|pour les?) projets? d['’]?innovation$/i.test(title);
   return ambiguous&&funders.length?title+' — '+funders[0]:title;
 }
