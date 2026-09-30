@@ -21,6 +21,10 @@ const DEFAULT_PROJECT={company:'',siren:'',category:'À préciser',startup:false
 const STORAGE='leyton-as-project-v12.6';
 const LEGACY_STORAGES=['funding-radar-project-v12.5','qualifund-project-v12.4','leyton-radar-project-v12.3','leyton-radar-project-v12.2','leyton-radar-project-v12.1','leyton-radar-project-v12'];
 const LIVE_DB='funding-direct-sources-v1',LIVE_STORE='kv',LIVE_LIBRARY_KEY='library',LIVE_REFRESH_KEY='last-refresh';
+const PUBLIC_UNLOCKED_SOURCE_IDS=new Set(['bpifrance_aap','bpifrance_aides','bpifrance_rebond_industriel','ademe']);
+const PUBLIC_UNLOCKED_GUICHETS=['Bpifrance','ADEME'];
+function sourceAliasId(x){return typeof x==='string'?x:(x?.id||x?.sourceId||null)}
+function publicAidUnlocked(a){return [a?.sourceId,...arr(a?.sourceAliases).map(sourceAliasId)].filter(Boolean).some(id=>PUBLIC_UNLOCKED_SOURCE_IDS.has(id))}
 function loadProjectState(){
   try{
     const current=localStorage.getItem(STORAGE);
@@ -159,7 +163,7 @@ function displayAidTitle(a){
   return ambiguous&&funders.length?title+' — '+funders[0]:title;
 }
 
-async function loadAll(){const j=await api('./data/library.json');state.lib=(j.meta?.sourcePolicy==='DIRECT_OFFICIAL_ONLY'?j.aaps||[]:[]).filter(a=>!/(?:aides[-_]entreprises|aides[-_]territoires)/i.test(JSON.stringify(a))).map(a=>{const b={...a};for(const k of ['title','objective','beneficiaries','eligibleExpenses','excludedExpenses','prerequisites','selectionCriteria','programme','operator'])if(typeof b[k]==='string')b[k]=decodeEntities(b[k]);return b});state.meta=j.meta||{};for(const[k,p]of[['coverage','./data/coverage.json'],['changes','./data/changes.json'],['certification','./data/active-source-certification.json'],['bpifranceCertification','./data/bpifrance-certification.json'],['dailyReport','./bibliotheque/rapports/latest.json']])try{state[k]=await api(p)}catch{};try{state.sources=(await api('./data/sources.json')).sources||[]}catch{};try{state.readiness=await api('./data/production-readiness.json')}catch{};await loadClientLibrary();render();const deep=new URLSearchParams(location.search).get('aid');if(deep&&state.lib.some(a=>a.id===deep))openAid(deep)}
+async function loadAll(){const j=await api('./data/library.json');state.lib=(j.meta?.sourcePolicy==='DIRECT_OFFICIAL_ONLY'?j.aaps||[]:[]).filter(a=>!/(?:aides[-_]entreprises|aides[-_]territoires)/i.test(JSON.stringify(a))).map(a=>{const b={...a};for(const k of ['title','objective','beneficiaries','eligibleExpenses','excludedExpenses','prerequisites','selectionCriteria','programme','operator'])if(typeof b[k]==='string')b[k]=decodeEntities(b[k]);return b});state.meta=j.meta||{};for(const[k,p]of[['coverage','./data/coverage.json'],['changes','./data/changes.json'],['certification','./data/active-source-certification.json'],['bpifranceCertification','./data/bpifrance-certification.json'],['dailyReport','./bibliotheque/rapports/latest.json']])try{state[k]=await api(p)}catch{};try{state.sources=((await api('./data/sources.json')).sources||[]).filter(s=>PUBLIC_UNLOCKED_SOURCE_IDS.has(s.id))}catch{};state.coverage=arr(state.coverage).filter(x=>PUBLIC_UNLOCKED_SOURCE_IDS.has(x?.id));const visibleIds=new Set(state.lib.map(a=>a.id));state.changes=arr(state.changes).filter(x=>visibleIds.has(x?.id));try{state.readiness=await api('./data/production-readiness.json')}catch{};await loadClientLibrary();render();const deep=new URLSearchParams(location.search).get('aid');if(deep&&state.lib.some(a=>a.id===deep))openAid(deep)}
 function route(r){clearTimeout(window.__libSearchTimer);state.route=r;$$('.nav[data-route]').forEach(x=>x.classList.toggle('active',x.dataset.route===r));$('#sidebar')?.classList.remove('open');render()}
 document.querySelectorAll('.nav[data-route]').forEach(b=>b.onclick=()=>route(b.dataset.route));
 const globalSearch=$('#globalSearch');
@@ -662,7 +666,7 @@ function library(resultsOnly=false){
   const catalog=state.lib.filter(libraryAid);
   const themes=uniq(catalog.flatMap(a=>arr(a.themes))).sort((a,b)=>a.localeCompare(b,'fr'));
   const instruments=uniq(catalog.flatMap(a=>arr(a.aidTypes))).sort((a,b)=>aidTypeLabel(a).localeCompare(aidTypeLabel(b),'fr'));
-  const guichets=uniq(catalog.flatMap(guichetLabels)).sort((a,b)=>a.localeCompare(b,'fr'));
+  const guichets=PUBLIC_UNLOCKED_GUICHETS.filter(g=>catalog.some(a=>guichetLabels(a).includes(g)));
   const list=catalog.filter(a=>{
     const dm=libraryDateMeta(a);
     if(q&&!matchesSearch(a,q))return false;
@@ -695,7 +699,7 @@ function library(resultsOnly=false){
   const markup=`<div class="page-head library-head"><div><div class="eyebrow">Bibliothèque des aides & appels à projets</div><h1>Référentiel des financements publics</h1><p class="sub">Dispositifs ouverts, permanents et clôturés depuis moins de 60 jours. Filtrez par région, thématique, instrument, guichet et bénéficiaire.</p></div><div class="row end"><span class="badge info" id="libraryCount" aria-live="polite">${list.length} résultat(s)</span><button class="btn primary" id="exportLibraryCsv">Exporter CSV</button></div></div>
   <div class="filters funding-filters">
     <input class="input search-main" id="libQ" aria-label="Rechercher dans les aides" placeholder="Rechercher un dispositif, une thématique, un financeur…" value="${esc(q)}">
-    <select id="libGuichet" aria-label="Guichet"><option value="">Tous les guichets</option>${guichets.map(g=>`<option value="${esc(g)}" ${g===guichet?'selected':''}>${esc(g)}</option>`).join('')}</select>
+    <select id="libGuichet" aria-label="Guichet"><option value="">Bpifrance + ADEME</option>${guichets.map(g=>`<option value="${esc(g)}" ${g===guichet?'selected':''}>${esc(g)}</option>`).join('')}</select>
     <select id="libRegion"><option value="">Toutes régions</option>${REGIONS.map(r=>`<option ${r===region?'selected':''}>${esc(r)}</option>`).join('')}</select>
     <select id="libTheme" aria-label="Thématique"><option value="">Toutes thématiques</option>${themes.map(t=>`<option value="${esc(t)}" ${t===theme?'selected':''}>${esc(t)}</option>`).join('')}</select>
     <select id="libInstrument" aria-label="Instrument"><option value="">Tous instruments</option>${instruments.map(t=>`<option value="${esc(t)}" ${t===instrument?'selected':''}>${esc(aidTypeLabel(t))}</option>`).join('')}</select>
