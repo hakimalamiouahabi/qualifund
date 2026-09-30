@@ -16,22 +16,6 @@
     "consecutiveFailures": 0
   },
   {
-    "id": "bpifrance",
-    "name": "Bpifrance — AAP, concours et France 2030",
-    "scope": "France",
-    "success": true,
-    "lifecycleSafe": true,
-    "emptyIngestion": false,
-    "suspiciousVolume": false,
-    "discovered": 34,
-    "imported": 34,
-    "message": "34 pages candidates, 34 fiches extraites",
-    "durationMs": 7590,
-    "checkedAt": "2026-09-28T15:38:14.797Z",
-    "lastSuccessfulAt": "2026-09-28T15:38:14.797Z",
-    "consecutiveFailures": 0
-  },
-  {
     "id": "anr",
     "name": "ANR — appels",
     "scope": "France",
