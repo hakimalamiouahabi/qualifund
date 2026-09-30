@@ -42,12 +42,23 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
+      - name: Lire le verrou de collecte
+        id: lock
+        shell: bash
+        run: |
+          node - <<'NODE' >> "$GITHUB_OUTPUT"
+          const fs=require('fs');
+          const j=JSON.parse(fs.readFileSync('config/collection-lock.json','utf8'));
+          console.log('locked='+(j.locked?'true':'false'));
+          console.log('name='+(j.name||'ALL'));
+          NODE
       - name: Node 22
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: '22'
           package-manager-cache: false
       - name: Purger et persister les anciennes sources avant toute collecte
+        if: ${{ steps.lock.outputs.locked != 'true' }}
         shell: bash
         run: |
           set -euo pipefail
@@ -99,6 +110,9 @@ jobs:
         env:
           QUALIFUND_FULL_REFRESH: '1'
         run: npm run update:full
+      - name: Certifier le guichet Bpifrance verrouillé
+        if: ${{ steps.lock.outputs.locked == 'true' && steps.lock.outputs.name == 'Bpifrance' }}
+        run: npm run certify:bpifrance
       - name: Rapport quotidien des changements
         run: node scripts/generate-daily-report.mjs /tmp/qualifund/library-before.json site/data/library.json site/bibliotheque/rapports
       - name: Synchroniser les artefacts publics
@@ -120,8 +134,10 @@ jobs:
       - name: QA
         run: npm run qa >> "$GITHUB_STEP_SUMMARY"
       - name: Rapport de remédiation preuves
+        if: ${{ steps.lock.outputs.locked != 'true' }}
         run: npm run remediation >> "$GITHUB_STEP_SUMMARY"
       - name: Pré-readiness avant déploiement
+        if: ${{ steps.lock.outputs.locked != 'true' }}
         run: npm run production:gates >> "$GITHUB_STEP_SUMMARY"
       - name: Commit des données générées
         id: commit_data
@@ -173,6 +189,16 @@ jobs:
         with:
           fetch-depth: 0
           ref: ${{ needs.build.outputs.data_sha }}
+      - name: Lire le verrou de collecte publié
+        id: lock
+        shell: bash
+        run: |
+          node - <<'NODE' >> "$GITHUB_OUTPUT"
+          const fs=require('fs');
+          const j=JSON.parse(fs.readFileSync('config/collection-lock.json','utf8'));
+          console.log('locked='+(j.locked?'true':'false'));
+          console.log('name='+(j.name||'ALL'));
+          NODE
       - name: Node 22
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
@@ -184,7 +210,11 @@ jobs:
         run: node scripts/live-smoke.mjs --strict-company --strict-public
       - name: Recette UAT finale
         run: npm run uat
+      - name: Revalider Bpifrance sur le corpus publié
+        if: ${{ steps.lock.outputs.locked == 'true' && steps.lock.outputs.name == 'Bpifrance' }}
+        run: npm run certify:bpifrance
       - name: Calculer la readiness finale sur le SHA publié
+        if: ${{ steps.lock.outputs.locked != 'true' }}
         env:
           RADAR_PUBLIC_URL: ${{ needs.deploy.outputs.page_url }}
         run: npm run production:gates >> "$GITHUB_STEP_SUMMARY"
@@ -203,6 +233,7 @@ jobs:
           fi
           echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
       - name: Certification production stricte
+        if: ${{ steps.lock.outputs.locked != 'true' }}
         run: npm run certify:production
       - name: Reconfigurer Pages pour l'artefact vérifié
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
