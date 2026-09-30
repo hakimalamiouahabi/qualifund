@@ -647,7 +647,7 @@ function matchesSearch(a,q){
   return terms.every(t=>text.includes(t)||t.length>4&&t.endsWith('s')&&text.includes(t.slice(0,-1)));
 }
 function libraryDateMeta(a){
-  if(a.permanent)return{label:'Permanent',days:null,state:'open'};
+  if(a.permanent)return permanentVerified(a)?{label:'Permanent',days:null,state:'open'}:{label:'Permanent à vérifier',days:null,state:'unknown'};
   const dates=uniq([...arr(a.deadlines).map(x=>typeof x==='string'?x:x?.date),a.finalClosingDate,a.closingDate].filter(Boolean)).sort();
   const future=dates.find(d=>daysUntil(d)>=1);
   if(future)return{label:fmtDate(future),days:daysUntil(future),state:'open'};
