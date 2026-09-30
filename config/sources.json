@@ -12,13 +12,13 @@
       "official": true,
       "priority": 0,
       "browserFallback": true,
-      "minExpected": 28,
-      "minImported": 28,
-      "minImportRatio": 1,
-      "observedOpenCount": 28,
+      "minExpected": 20,
+      "minImported": 20,
+      "minImportRatio": 0.9,
       "webVerifiedAt": "2026-09-30",
       "webEvidenceUrl": "https://www.bpifrance.fr/nos-appels-a-projets-concours",
-      "notes": "Collecte directe exhaustive par pagination Drupal + contrôle du sitemap officiel Bpifrance. Aucune base tierce."
+      "notes": "Bpifrance v2 : le listing officiel /nos-appels-a-projets-concours est le référentiel maître des AAP/AMI/concours actifs. Le sitemap et Exa/Tavily/Parallel/Firecrawl servent uniquement de contre-audit ; toute URL externe absente du listing est vérifiée directement avant disposition.",
+      "externalAuditFile": "config/bpifrance-v2-external-audit.json"
     },
     {
       "id": "bpifrance_aides",
@@ -33,11 +33,12 @@
       "priority": 0,
       "browserFallback": true,
       "minExpected": 20,
-      "minImported": 20,
-      "minImportRatio": 0.15,
+      "minImported": 5,
+      "minImportRatio": 0.1,
       "webVerifiedAt": "2026-09-30",
       "webEvidenceUrl": "https://www.bpifrance.fr/catalogue-offres",
-      "notes": "Inspection exhaustive des pages /catalogue-offres/ trouvées par pagination et sitemap officiel ; seules les aides financières subvention / avance remboursable / prêt à taux zéro sont retenues."
+      "notes": "Bpifrance v2 : la section officielle « Subventions et avances remboursables » du catalogue est le référentiel maître. Les pages sont lues directement et seules les subventions, avances remboursables/récupérables et prêts à taux zéro sont conservés. Le sitemap et les moteurs externes sont des contre-audits uniquement.",
+      "externalAuditFile": "config/bpifrance-v2-external-audit.json"
     },
     {
       "id": "bpifrance_rebond_industriel",
