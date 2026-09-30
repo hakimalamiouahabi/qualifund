@@ -77,7 +77,7 @@ test('le verrou ADEME v2 exige le contre-audit et les preuves métier',()=>{
   assert.match(lock.certification.externalAuditFile,/ademe-v2-external-audit\.json$/);
 });
 
-test('le manifeste multi-moteurs ADEME v2 n'est pas vide',()=>{
+test("le manifeste multi-moteurs ADEME v2 n'est pas vide",()=>{
   const audit=JSON.parse(fs.readFileSync(new URL('../config/ademe-v2-external-audit.json',import.meta.url),'utf8'));
   assert.ok(audit.candidateCount>0);
   assert.ok(audit.candidates.length===audit.candidateCount);
