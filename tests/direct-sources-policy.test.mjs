@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
-import { assertDirectSources, filterDirectLibrary, directPageId } from '../scripts/lib/direct-sources.mjs';
+import { assertDirectSources, filterDirectLibrary, directPageId, sanitizeAidLinks } from '../scripts/lib/direct-sources.mjs';
 import { purgeIndirectSources } from '../scripts/purge-indirect-sources.mjs';
 const cfg={version:'test',sourcePolicy:'DIRECT_OFFICIAL_ONLY',sourceSelectionPolicy:'GUICHET_OR_REGION_OFFICIAL_ONLY',sources:[{id:'bpifrance',official:true,strategy:'catalog-html',url:'https://www.bpifrance.fr/nos-appels-a-projets-concours'}]};
 const valid={id:'bpi1',sourceId:'bpifrance',title:'AAP',officialPage:'https://www.bpifrance.fr/nos-appels-a-projets-concours/aap-1',lifecycleStatus:'ACTIVE'};
@@ -39,4 +39,38 @@ test('les agrégateurs nationaux généralistes sont exclus mais une page régio
  for(const url of bad) assert.throws(()=>assertDirectSources({...cfg,sources:[...cfg.sources,{id:'bad',official:true,strategy:'catalog-html',url}]}),url);
  const regional={id:'martinique-feder',official:true,strategy:'official-page',url:'https://www.europe-en-france.gouv.fr/fr/programmes-europeens-2021-2027/programme-martinique-feder-fse-2021-2027'};
  assert.doesNotThrow(()=>assertDirectSources({...cfg,sources:[...cfg.sources,regional]}));
+});
+
+
+test('les liens imbriqués agrégateurs et les doublons sont purgés sans supprimer la fiche officielle',()=>{
+ const localCfg={...cfg,excludedSources:['old_control']};
+ const row={...valid,
+   sourceLinks:[
+     {label:'officiel',url:'https://www.bpifrance.fr/nos-appels-a-projets-concours/aap-1'},
+     {label:'doublon',url:'https://www.bpifrance.fr/nos-appels-a-projets-concours/aap-1?utm_source=x'},
+     {label:'interdit',url:'https://www.aides-entreprises.fr/aide/test'}
+   ],
+   cdcLinks:[
+     {label:'CdC',url:'https://media.bpifrance.fr/test.pdf'},
+     {label:'CdC doublon',url:'https://media.bpifrance.fr/test.pdf?utm_source=x'}
+   ],
+   sourceAliases:['old_control','bpifrance']
+ };
+ const out=sanitizeAidLinks(row,localCfg);
+ assert.equal(out.officialPage,valid.officialPage);
+ assert.equal(out.sourceLinks.length,1);
+ assert.equal(out.cdcLinks.length,1);
+ assert.deepEqual(out.sourceAliases,['bpifrance']);
+ assert.doesNotMatch(JSON.stringify(out),/aides-entreprises\.fr|old_control/);
+});
+
+test('une fiche STALE est supprimée de la bibliothèque directe',()=>{
+ assert.deepEqual(filterDirectLibrary([{...valid,lifecycleStatus:'STALE'}],cfg),[]);
+});
+
+test('les URL de sources dupliquées sont interdites dans le registre',()=>{
+ assert.throws(()=>assertDirectSources({...cfg,sources:[
+  ...cfg.sources,
+  {id:'dup',official:true,strategy:'control-only',url:cfg.sources[0].url}
+ ]}),/Source dupliquée/);
 });
