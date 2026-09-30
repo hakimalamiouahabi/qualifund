@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "locked": true,
   "mode": "GUICHET",
   "name": "ADEME",
@@ -45,7 +45,9 @@
       "OPEN",
       "OPEN_UNDATED",
       "PERMANENT"
-    ]
+    ],
+    "allowOfficialRssFallback": true,
+    "requirePortalMembership": true
   },
-  "notes": "Verrou ADEME v3 : le catalogue officiel Entreprises est le référentiel maître des dispositifs actifs. La classification AIDE / AAP vient exclusivement des cartes du catalogue. RSS et moteurs externes sont des contrôles de découverte, jamais des sources d'ingestion. Bpifrance reste gelé jusqu'au PASS ADEME v3."
+  "notes": "Verrou ADEME v4 : catalogue Entreprises en priorité ; si le rendu HTML bloque le runner, reconstruction déterministe de l'inventaire actif depuis le RSS officiel ADEME et les échéances de dépôt. Le portail ADEME est une preuve de présence, pas une preuve automatique du financeur/opérateur. Bpifrance reste gelé jusqu'au PASS ADEME."
 }

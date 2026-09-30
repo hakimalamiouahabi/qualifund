@@ -95,14 +95,15 @@
       "priority": 0,
       "minExpected": 60,
       "browserFallback": true,
-      "observedCatalogCount": 69,
       "webVerifiedAt": "2026-09-30",
       "webEvidenceUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue",
       "minImported": 1,
       "minImportRatio": 0,
-      "notes": "ADEME v3 : le catalogue officiel Entreprises est le référentiel maître de tous les dispositifs actifs. La classification AIDE / AAP est reprise directement de chaque carte du catalogue. RSS, Exa, Tavily, Parallel Search et Firecrawl servent uniquement de contrôles de découverte et ne créent jamais de fiche.",
+      "notes": "ADEME v4 : le catalogue officiel Entreprises reste la référence fonctionnelle. Si son HTML bloque l'automatisation, l'inventaire actif est reconstruit exclusivement depuis le flux RSS officiel ADEME en conservant les entrées dont la période de dépôt est ouverte. La classification AAP/AIDE est issue de la structure officielle des URLs et contrôlée sur la fiche directe quand elle est lisible. Exa, Tavily, Parallel Search et Firecrawl restent des contre-audits uniquement.",
       "externalAuditFile": "config/ademe-v2-external-audit.json",
-      "closedCatalogueUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue-aides-closes"
+      "closedCatalogueUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue-aides-closes",
+      "inventoryFallback": "rss-active-deadlines",
+      "rssRole": "official-active-inventory-fallback"
     },
     {
       "id": "anr",
