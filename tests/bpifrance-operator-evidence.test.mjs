@@ -28,13 +28,8 @@ test('Rebond Industriel est une source Bpifrance directe admissible',()=>{
   assert.equal(isDirectAid(aid,cfg),true);
 });
 
-test('les pages France 2030 directes déjà documentées conservent l’opérateur Bpifrance',()=>{
-  for(const id of [
-    'bfc_france2030_innovation_direct',
-    'bretagne_france2030_innovation_direct',
-    'pdl_france2030_innovation_direct',
-    'nouvelle_aquitaine_france2030_innovation',
-    'nouvelle_aquitaine_france2030_filieres',
-    'nouvelle_aquitaine_france2030_idemo'
-  ]) assert.equal(cfg.sources.find(s=>s.id===id)?.operator,'Bpifrance',id);
+test('les dispositifs régionaux France 2030 ne sont pas assimilés au verrou national Bpifrance',()=>{
+  const lock=JSON.parse(fs.readFileSync(new URL('../config/collection-lock.json',import.meta.url),'utf8'));
+  assert.ok(!lock.allowedSourceIds.includes('bpifrance_projets_international'));
+  assert.ok(!cfg.sources.some(s=>s.id==='bpifrance_projets_international'));
 });
