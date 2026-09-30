@@ -1,9 +1,9 @@
 {
-  "name": "qualifund",
+  "name": "funding-radar",
   "version": "12.6.0",
   "private": true,
   "type": "module",
-  "description": "Leyton_Veilles A&S — cartographie et qualification des financements publics",
+  "description": "FUNDING RADAR | Leyton — collecte directe, qualification et veille des financements publics",
   "scripts": {
     "update": "node scripts/update-library.mjs",
     "update:full": "node scripts/update-library.mjs --full",
@@ -17,7 +17,6 @@
     "production:gates": "node scripts/production-gates.mjs",
     "audit:ingestion": "node scripts/audit-ingestion.mjs",
     "sync:metadata": "node scripts/sync-static-metadata.mjs",
-    "migrate:provenance": "node scripts/purge-indirect-sources.mjs",
     "uat": "node scripts/uat-relevance.mjs",
     "smoke:live": "node scripts/live-smoke.mjs",
     "release:verify": "npm run sync:metadata && npm run build:index && npm run audit:sources && npm run audit:ingestion && npm test && npm run validate && npm run uat && npm run qa && npm run remediation && npm run production:gates",
@@ -27,7 +26,7 @@
     "audit:criteria": "node scripts/audit-criteria.mjs",
     "build:cloudflare": "node scripts/build-cloudflare-pages.mjs",
     "purge:indirect": "node scripts/purge-indirect-sources.mjs",
-    "certify:bpifrance": "node scripts/certify-bpifrance.mjs"
+    "certify:active": "node scripts/certify-active-source.mjs"
   },
   "dependencies": {
     "ajv": "8.17.1",
