@@ -96,15 +96,17 @@ export function sanitizeAidLinks(a,cfg){
   const excluded=excludedSourceIds(cfg);
   const out={...a};
 
-  out.sourceLinks=sanitizeLinkArray(a.sourceLinks,{removeGenericSourcePages:true,cfg});
-  out.cdcLinks=sanitizeLinkArray(a.cdcLinks,{cfg});
-  out.regulationLinks=sanitizeLinkArray(a.regulationLinks,{cfg});
-  out.formLinks=sanitizeLinkArray(a.formLinks,{cfg});
+  if(Array.isArray(a.sourceLinks))out.sourceLinks=sanitizeLinkArray(a.sourceLinks,{removeGenericSourcePages:true,cfg});
+  if(Array.isArray(a.cdcLinks))out.cdcLinks=sanitizeLinkArray(a.cdcLinks,{cfg});
+  if(Array.isArray(a.regulationLinks))out.regulationLinks=sanitizeLinkArray(a.regulationLinks,{cfg});
+  if(Array.isArray(a.formLinks))out.formLinks=sanitizeLinkArray(a.formLinks,{cfg});
 
   if(Array.isArray(a.sourceAliases))out.sourceAliases=a.sourceAliases.filter(x=>x&&!excluded.has(String(x))&&!forbiddenMarker.test(String(x)));
 
-  const evidence=(a.verification?.fieldEvidence||[]).filter(e=>!e?.sourceUrl||(!isForbiddenAggregatorUrl(e.sourceUrl)&&/^https:\/\//i.test(e.sourceUrl)));
-  if(a.verification)out.verification={...a.verification,fieldEvidence:evidence};
+  if(Array.isArray(a.verification?.fieldEvidence)){
+    const evidence=a.verification.fieldEvidence.filter(e=>!e?.sourceUrl||(!isForbiddenAggregatorUrl(e.sourceUrl)&&/^https:\/\//i.test(e.sourceUrl)));
+    out.verification={...a.verification,fieldEvidence:evidence};
+  }
 
   const official=normalizedUrl(a.officialPage||'');
   const generic=sourceUrlSet(cfg,{genericOnly:true}).has(official);
@@ -134,4 +136,14 @@ export function isDirectAid(a,cfg){
   }catch{return false}
 }
 
-export const filterDirectLibrary=(records,cfg)=>(records||[]).map(a=>sanitizeAidLinks(a,cfg)).filter(a=>isDirectAid(a,cfg));
+export function filterDirectLibrary(records,cfg){
+  const out=[],seen=new Set();
+  for(const raw of records||[]){
+    const clean=sanitizeAidLinks(raw,cfg);
+    if(!isDirectAid(clean,cfg))continue;
+    const key=clean.id||normalizedUrl(clean.officialPage);
+    if(!key||seen.has(key))continue;
+    seen.add(key);out.push(clean);
+  }
+  return out;
+}
