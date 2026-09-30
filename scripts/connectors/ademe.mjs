@@ -249,10 +249,10 @@ async function externalAuditLinks(source,{log=console.log}={}){
     const {readFile}=await import('node:fs/promises');
     const audit=JSON.parse(await readFile(file,'utf8'));
     const links=uniqueLinks((audit.candidates||[]).map(x=>({url:x.url,label:x.title||''})));
-    log(\`[\${source.id}] contre-audit multi-moteurs: \${links.length} URL(s) candidate(s)\`);
+    log(`[${source.id}] contre-audit multi-moteurs: ${links.length} URL(s) candidate(s)`);
     return links;
   }catch(e){
-    log(\`[\${source.id}] contre-audit externe indisponible: \${e.message}\`);
+    log(`[${source.id}] contre-audit externe indisponible: ${e.message}`);
     return[];
   }
 }
