@@ -85,22 +85,22 @@
     },
     {
       "id": "ademe",
-      "name": "ADEME — catalogue entreprises",
+      "name": "ADEME — aides financières et appels à projets entreprises",
       "scope": "France",
       "type": "web",
-      "strategy": "catalog-html",
+      "strategy": "ademe-official",
       "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue",
       "rssUrl": "https://agirpourlatransition.ademe.fr/entreprises/rss/appels-a-projet",
-      "linkInclude": "/entreprises/aides-financieres/",
       "official": true,
       "priority": 0,
       "minExpected": 60,
       "browserFallback": true,
       "observedCatalogCount": 71,
-      "webVerifiedAt": "2026-09-22",
+      "webVerifiedAt": "2026-09-30",
       "webEvidenceUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue",
-      "minImported": 50,
-      "minImportRatio": 0.5
+      "minImported": 60,
+      "minImportRatio": 0.95,
+      "notes": "Collecte directe sans LLM depuis le catalogue officiel ADEME et le flux RSS officiel des appels à projets. Aucune base tierce, aucune API payante."
     },
     {
       "id": "anr",
@@ -402,16 +402,6 @@
       "observedCatalogCount": 6,
       "webVerifiedAt": "2026-09-22",
       "webEvidenceUrl": "https://anr.fr/france-2030/appels/"
-    },
-    {
-      "id": "ademe_aides_historique",
-      "name": "ADEME — aides financières engagées (historique)",
-      "scope": "France",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://data.ademe.fr/datasets/les-aides-financieres-de-l'ademe",
-      "official": true,
-      "priority": 1
     },
     {
       "id": "aura_france2030",
