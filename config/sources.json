@@ -430,16 +430,6 @@
       "browserFallback": true
     },
     {
-      "id": "aura_reglementation",
-      "name": "Auvergne-Rhône-Alpes — eDélibérations",
-      "scope": "Auvergne-Rhône-Alpes",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://edelib.auvergnerhonealpes.fr/",
-      "official": true,
-      "priority": 1
-    },
-    {
       "id": "bfc_subventions",
       "name": "Bourgogne-Franche-Comté — portail subventions/règlements",
       "scope": "Bourgogne-Franche-Comté",
@@ -500,26 +490,6 @@
       "notes": "Page-cadre conservée comme contrôle direct ; l’axe Projets d’innovation est collecté via sa page officielle dédiée."
     },
     {
-      "id": "bretagne_opendata",
-      "name": "Bretagne — Open Data / Explore API",
-      "scope": "Bretagne",
-      "type": "api",
-      "strategy": "control-only",
-      "url": "https://data.bretagne.bzh/api/explore/v2.1/",
-      "official": true,
-      "priority": 1
-    },
-    {
-      "id": "cvl_depot",
-      "name": "Centre-Val de Loire — Nos Aides en Ligne",
-      "scope": "Centre-Val de Loire",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://nosaidesenligneregion.centrevaldeloire.fr/",
-      "official": true,
-      "priority": 1
-    },
-    {
       "id": "cvl_france2030",
       "name": "Centre-Val de Loire — France 2030 régionalisé",
       "scope": "Centre-Val de Loire",
@@ -545,16 +515,6 @@
       "browserFallback": true
     },
     {
-      "id": "cvl_opendata",
-      "name": "Centre-Val de Loire — Open Data / Explore API",
-      "scope": "Centre-Val de Loire",
-      "type": "api",
-      "strategy": "control-only",
-      "url": "https://data.centrevaldeloire.fr/api/explore/v2.1/",
-      "official": true,
-      "priority": 1
-    },
-    {
       "id": "corse_europa",
       "name": "Corse — FEDER/FSE+/FEADER",
       "scope": "Corse",
@@ -577,16 +537,6 @@
       "priority": 0,
       "minExpected": 2,
       "browserFallback": true
-    },
-    {
-      "id": "corse_opendata",
-      "name": "Corse — Data Corsica / Explore API",
-      "scope": "Corse",
-      "type": "api",
-      "strategy": "control-only",
-      "url": "https://www.data.corsica/api/explore/v2.1/",
-      "official": true,
-      "priority": 1
     },
     {
       "id": "grand_est_europe",
@@ -721,16 +671,6 @@
       "notes": "Seuil de contrôle recalé sur le volume officiel effectivement publié (1) afin d’éviter un faux négatif de couverture. Page-cadre conservée comme contrôle direct ; l’axe Projets d’innovation est collecté via sa page officielle dédiée."
     },
     {
-      "id": "hdf_depot",
-      "name": "Hauts-de-France — plateforme de dépôt des aides",
-      "scope": "Hauts-de-France",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://aides.hautsdefrance.fr/",
-      "official": true,
-      "priority": 1
-    },
-    {
       "id": "hdf_hdfid_aap",
       "name": "Hauts-de-France Innovation Développement — appels à projets",
       "scope": "Hauts-de-France",
@@ -779,16 +719,6 @@
       "browserFallback": true
     },
     {
-      "id": "idf_depot",
-      "name": "Île-de-France — Mes démarches / dépôt",
-      "scope": "Île-de-France",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://mesdemarches.iledefrance.fr/",
-      "official": true,
-      "priority": 1
-    },
-    {
       "id": "idf_france2030",
       "name": "Île-de-France — France 2030 régionalisé",
       "scope": "Île-de-France",
@@ -823,26 +753,6 @@
       "priority": 0,
       "minExpected": 3,
       "browserFallback": true
-    },
-    {
-      "id": "idf_europe_resources",
-      "name": "Île-de-France — ressources réglementaires FEDER/FSE+/FEADER",
-      "scope": "Île-de-France",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://www.europeidf.fr/ressources-documentaires",
-      "official": true,
-      "priority": 1
-    },
-    {
-      "id": "idf_actes",
-      "name": "Région Île-de-France — actes et délibérations",
-      "scope": "Île-de-France",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://www.iledefrance.fr/actes",
-      "official": true,
-      "priority": 1
     },
     {
       "id": "reunion_aap",
@@ -903,16 +813,6 @@
       "priority": 0,
       "browserFallback": true,
       "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
-    },
-    {
-      "id": "reunion_opendata",
-      "name": "La Réunion — Open Data / Explore API",
-      "scope": "La Réunion",
-      "type": "api",
-      "strategy": "control-only",
-      "url": "https://data.regionreunion.com/api/explore/v2.1/",
-      "official": true,
-      "priority": 1
     },
     {
       "id": "martinique_europe",
@@ -985,16 +885,6 @@
       "priority": 0,
       "browserFallback": true,
       "notes": "Seuil de contrôle recalé sur le volume officiel effectivement publié (1) afin d’éviter un faux négatif de couverture. Page-cadre conservée comme contrôle direct ; l’axe Projets d’innovation est collecté via sa page officielle dédiée."
-    },
-    {
-      "id": "martinique_europe_beneficiaires",
-      "name": "Martinique — bénéficiaires FEDER/FSE+/FEAMPA (benchmark)",
-      "scope": "Martinique",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://www.europe-martinique.com/porteurs-de-projets/liste-beneficiaires/",
-      "official": true,
-      "priority": 1
     },
     {
       "id": "martinique_instruments_ctm",
@@ -1172,26 +1062,6 @@
       "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
     },
     {
-      "id": "normandie_europe_suivi",
-      "name": "Europe en Normandie — bénéficiaires / suivi programmation",
-      "scope": "Normandie",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://www.europe-en-normandie.eu/suivi-des-programmations",
-      "official": true,
-      "priority": 1
-    },
-    {
-      "id": "normandie_adn",
-      "name": "AD Normandie — développement économique / innovation",
-      "scope": "Normandie",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://adnormandie.fr/",
-      "official": true,
-      "priority": 1
-    },
-    {
       "id": "nouvelle_aquitaine_entreprises",
       "name": "Nouvelle-Aquitaine — portail entreprises / aides",
       "scope": "Nouvelle-Aquitaine",
@@ -1277,26 +1147,6 @@
       "url": "https://www.prefectures-regions.gouv.fr/nouvelle-aquitaine/Actualites/France-2030-regionalise-ouverture-de-trois-appels-a-projets-dedies-a-la-Nouvelle-Aquitaine",
       "official": true,
       "priority": 1
-    },
-    {
-      "id": "nouvelle_aquitaine_beneficiaires_europe",
-      "name": "Nouvelle-Aquitaine — projets/bénéficiaires européens (benchmark)",
-      "scope": "Nouvelle-Aquitaine",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://www.europe-en-nouvelle-aquitaine.eu/",
-      "official": true,
-      "priority": 1
-    },
-    {
-      "id": "occitanie_dataset_aides",
-      "name": "Occitanie — dataset officiel aides et appels à projets",
-      "scope": "Occitanie",
-      "type": "api",
-      "strategy": "control-only",
-      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie%40occitanie/",
-      "official": true,
-      "priority": 0
     },
     {
       "id": "occitanie_site_aides",
@@ -1414,20 +1264,6 @@
       "priority": 1
     },
     {
-      "id": "pdl_opendata_interventions",
-      "name": "Pays de la Loire — Open Data interventions régionales (aides/AAP/AMI/prêts)",
-      "scope": "Pays de la Loire",
-      "type": "api",
-      "strategy": "control-only",
-      "url": "https://data.paysdelaloire.fr/explore/dataset/234400034_fluxinterventionsprod_pdl/export/",
-      "api": "https://data.paysdelaloire.fr/api/explore/v2.1/",
-      "official": true,
-      "priority": 0,
-      "datasetId": "234400034_fluxinterventionsprod_pdl",
-      "datasetInclude": "interventions|aides|appels",
-      "note": "Doublon de contrôle du connecteur hybride pdl; endpoint API normalisé pour vérification et fallback."
-    },
-    {
       "id": "pdl_france2030",
       "name": "Pays de la Loire — France 2030 régionalisé",
       "scope": "Pays de la Loire",
@@ -1474,16 +1310,6 @@
       "priority": 0,
       "browserFallback": true,
       "notes": "Collecte directe requise ; aucune couverture par un catalogue tiers."
-    },
-    {
-      "id": "pdl_open_data_portal",
-      "name": "Pays de la Loire — portail Open Data",
-      "scope": "Pays de la Loire",
-      "type": "api",
-      "strategy": "control-only",
-      "url": "https://data.paysdelaloire.fr/",
-      "official": true,
-      "priority": 1
     },
     {
       "id": "paca_aides_master",
@@ -1780,33 +1606,50 @@
     "FEADER"
   ],
   "excludedSources": [
+    "aide_sociale",
     "aides_entreprises",
-    "tee",
-    "france2030",
-    "franceagrimer",
+    "aides_gouv",
     "aides_territoires",
-    "ofb_financements",
+    "aura_reglementation",
     "banque_territoires_france2030",
+    "bretagne_opendata",
+    "corse_opendata",
+    "cvl_depot",
+    "cvl_opendata",
     "dge_aap",
+    "europe_france",
+    "france2030",
     "france2030_appels",
     "france2030_laureats",
+    "france_services",
+    "franceagrimer",
     "guyane_opendata",
+    "hdf_depot",
     "hdf_fse_ftj_dreets",
     "hdf_opendata",
-    "reunion_data_gouv",
+    "idf_actes",
+    "idf_depot",
+    "idf_europe_resources",
+    "les_aides",
+    "martinique_europe_beneficiaires",
+    "mes_aides",
+    "normandie_adn",
+    "normandie_europe_suivi",
     "normandie_opendata",
+    "nouvelle_aquitaine_beneficiaires_europe",
     "nouvelle_aquitaine_opendata",
+    "occitanie_dataset_aides",
+    "ofb_financements",
+    "paca_opendata",
     "pdl_fse",
     "pdl_ftj",
-    "paca_opendata",
-    "europe_france",
+    "pdl_open_data_portal",
+    "pdl_opendata_interventions",
+    "reunion_data_gouv",
+    "reunion_opendata",
     "service_public",
-    "mes_aides",
-    "aides_gouv",
-    "les_aides",
-    "aide_sociale",
     "solidarites",
-    "france_services"
+    "tee"
   ],
   "sourceSelectionPolicy": "GUICHET_OR_REGION_OFFICIAL_ONLY",
   "excludedAggregatorDomains": [
@@ -1821,5 +1664,5 @@
     "aides-territoires.beta.gouv.fr",
     "data.gouv.fr"
   ],
-  "notesSourceSelection": "Conserver uniquement les sources publiques officielles rattachées à un guichet/financeur identifié (Bpifrance, ADEME, ANR) ou à une région/fonds régional spécifique. Les portails nationaux généralistes ou agrégateurs multi-aides ne sont pas des sources d'ingestion."
+  "notesSourceSelection": "Conserver uniquement les sources publiques officielles directement rattachées à un guichet/financeur identifié ou à une région/fonds régional spécifique. Les agrégateurs nationaux multi-aides, portails de dépôt, pages de bénéficiaires, pages d'actes, portails Open Data génériques redondants et doublons de sources sont exclus du registre d'ingestion et de contrôle."
 }

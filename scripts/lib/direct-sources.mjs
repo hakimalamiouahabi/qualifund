@@ -20,6 +20,16 @@ function normalizedPath(u){
   return (u.pathname||'/').replace(/\/+$/,'')||'/';
 }
 
+function normalizedUrl(raw=''){
+  try{
+    const u=new URL(raw);
+    u.hash='';
+    for(const k of [...u.searchParams.keys()])if(/^utm_|^pk_|^fbclid$/i.test(k))u.searchParams.delete(k);
+    u.pathname=u.pathname.replace(/\/+$/,'')||'/';
+    return u.href.replace(/\/$/,'');
+  }catch{return ''}
+}
+
 export function isForbiddenAggregatorUrl(raw){
   if(!/^https?:\/\//i.test(String(raw||'')))return false;
   try{
@@ -39,16 +49,80 @@ function containsForbiddenAggregator(value){
   return false;
 }
 
+function sourceUrlSet(cfg,{genericOnly=false}={}){
+  return new Set((cfg.sources||[])
+    .filter(s=>!genericOnly||s.strategy!=='official-page')
+    .map(s=>normalizedUrl(s.url)).filter(Boolean));
+}
+
+function excludedSourceIds(cfg){
+  return new Set((cfg.excludedSources||[]).map(String));
+}
+
 export function assertDirectSources(cfg){
   if(cfg.sourcePolicy!=='DIRECT_OFFICIAL_ONLY')throw new Error('Politique de sources directes manquante');
   if(cfg.sourceSelectionPolicy!=='GUICHET_OR_REGION_OFFICIAL_ONLY')throw new Error('Politique guichet/région spécifique manquante');
+  const seen=new Map();
   for(const s of cfg.sources||[]){
     if(!s.official||!s.url||containsForbiddenAggregator(s)||!['catalog-html','official-page','opendatasoft','control-only','bpifrance-aap','bpifrance-aides','ademe-official'].includes(s.strategy))throw new Error('Source interdite: '+s.id);
+    const u=normalizedUrl(s.url);
+    if(seen.has(u))throw new Error('Source dupliquée: '+seen.get(u)+' / '+s.id+' -> '+u);
+    seen.set(u,s.id);
   }
+}
+
+function cleanLinkItem(item){
+  if(typeof item==='string')return {url:item};
+  if(item&&typeof item==='object')return {...item};
+  return null;
+}
+
+function sanitizeLinkArray(value,{removeGenericSourcePages=false,cfg}={}){
+  const sourceUrls=removeGenericSourcePages?sourceUrlSet(cfg,{genericOnly:true}):new Set();
+  const out=[],seen=new Set();
+  for(const raw of Array.isArray(value)?value:[]){
+    const item=cleanLinkItem(raw);
+    if(!item?.url||!/^https:\/\//i.test(item.url)||isForbiddenAggregatorUrl(item.url))continue;
+    const key=normalizedUrl(item.url);
+    if(!key||seen.has(key)||sourceUrls.has(key))continue;
+    seen.add(key);
+    out.push(typeof raw==='string'?item.url:{...item,url:key});
+  }
+  return out;
+}
+
+export function sanitizeAidLinks(a,cfg){
+  if(!a||typeof a!=='object')return a;
+  const excluded=excludedSourceIds(cfg);
+  const out={...a};
+
+  if(Array.isArray(a.sourceLinks))out.sourceLinks=sanitizeLinkArray(a.sourceLinks,{removeGenericSourcePages:true,cfg});
+  if(Array.isArray(a.cdcLinks))out.cdcLinks=sanitizeLinkArray(a.cdcLinks,{cfg});
+  if(Array.isArray(a.regulationLinks))out.regulationLinks=sanitizeLinkArray(a.regulationLinks,{cfg});
+  if(Array.isArray(a.formLinks))out.formLinks=sanitizeLinkArray(a.formLinks,{cfg});
+
+  if(Array.isArray(a.sourceAliases))out.sourceAliases=a.sourceAliases.filter(x=>x&&!excluded.has(String(x))&&!forbiddenMarker.test(String(x)));
+
+  if(Array.isArray(a.verification?.fieldEvidence)){
+    const evidence=a.verification.fieldEvidence.filter(e=>!e?.sourceUrl||(!isForbiddenAggregatorUrl(e.sourceUrl)&&/^https:\/\//i.test(e.sourceUrl)));
+    out.verification={...a.verification,fieldEvidence:evidence};
+  }
+
+  const official=normalizedUrl(a.officialPage||'');
+  const generic=sourceUrlSet(cfg,{genericOnly:true}).has(official);
+  if(!official||isForbiddenAggregatorUrl(official)||generic){
+    const links=Array.isArray(out.sourceLinks)?out.sourceLinks:[];
+    const replacement=links.find(x=>typeof x==='object'&&x.url&&!/\.pdf(?:$|\?)/i.test(x.url))?.url
+      || links.find(x=>typeof x==='string'&&!/\.pdf(?:$|\?)/i.test(x)) || '';
+    out.officialPage=replacement||'';
+  }else out.officialPage=official;
+
+  return out;
 }
 
 export function isDirectAid(a,cfg){
   if(!a||containsForbiddenAggregator(a)||/^ae_|^qf_ae_/.test(a.id||''))return false;
+  if(a.lifecycleStatus==='STALE')return false;
   const source=(cfg.sources||[]).find(s=>s.id===a.sourceId);
   if(!source||source.strategy==='control-only'||containsForbiddenAggregator(source))return false;
   try{
@@ -63,4 +137,14 @@ export function isDirectAid(a,cfg){
   }catch{return false}
 }
 
-export const filterDirectLibrary=(records,cfg)=>(records||[]).filter(a=>isDirectAid(a,cfg));
+export function filterDirectLibrary(records,cfg){
+  const out=[],seen=new Set();
+  for(const raw of records||[]){
+    const clean=sanitizeAidLinks(raw,cfg);
+    if(!isDirectAid(clean,cfg))continue;
+    const key=clean.id||normalizedUrl(clean.officialPage);
+    if(!key||seen.has(key))continue;
+    seen.add(key);out.push(clean);
+  }
+  return out;
+}

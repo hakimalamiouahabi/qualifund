@@ -25,10 +25,11 @@ test('mapping OpenDataSoft conserve un AAP régional même si nature financière
 
 
 
-test('sources de contrôle PDL et Région Sud ont une description technique cohérente',()=>{
-  const pdl=cfg.sources.find(x=>x.id==='pdl_opendata_interventions');
+test('PDL conserve son API officielle sur la source principale et Région Sud son contrôle spécifique',()=>{
+  const pdl=cfg.sources.find(x=>x.id==='pdl');
   assert.equal(pdl.api,'https://data.paysdelaloire.fr/api/explore/v2.1/');
   assert.equal(pdl.datasetId,'234400034_fluxinterventionsprod_pdl');
+  assert.equal(cfg.sources.some(x=>x.id==='pdl_opendata_interventions'),false);
   const sud=cfg.sources.find(x=>x.id==='paca_aides_json');
   assert.equal(sud.type,'web');
   assert.equal(sud.strategy,'control-only');
