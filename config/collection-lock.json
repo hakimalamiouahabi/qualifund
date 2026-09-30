@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "locked": true,
   "mode": "GUICHET",
   "name": "ADEME",
@@ -10,7 +10,7 @@
   "preserveUnselectedCoverage": true,
   "freezeUnselectedLifecycle": true,
   "enrichSelectedOnly": true,
-  "next": "Auvergne-Rhône-Alpes",
+  "next": "Bpifrance v2",
   "certification": {
     "primarySourceIds": [
       "ademe"
@@ -31,7 +31,19 @@
     "requireDirectOfficialUrl": true,
     "forbidGenericTitles": true,
     "requireCatalogueDiscovery": true,
-    "requireRssDiscovery": true
+    "requireRssDiscovery": true,
+    "requireExternalAuditDiscovery": true,
+    "externalAuditFile": "config/ademe-v2-external-audit.json",
+    "externalAuditMaxAgeHours": 48,
+    "requireGuichetEvidence": true,
+    "requireCurrentStatusEvidence": true,
+    "requireEnterpriseScope": true,
+    "allowedSourceStates": [
+      "OPEN",
+      "OPEN_UNDATED",
+      "PERMANENT",
+      "RECENTLY_CLOSED"
+    ]
   },
-  "notes": "Verrou ADEME : Bpifrance certifié reste figé. Aucun autre guichet ni région n’est recollecté ou muté tant que la certification ADEME n’est pas PASS."
+  "notes": "Verrou ADEME v2 : reconstruction stricte depuis les pages officielles. Les moteurs externes servent uniquement de contre-audit de découverte ; aucune donnée n'est acceptée sans preuve directe ADEME. Bpifrance reste gelé jusqu'au PASS ADEME v2."
 }
