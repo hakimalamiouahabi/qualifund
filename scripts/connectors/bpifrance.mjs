@@ -1,4 +1,5 @@
 import * as cheerio from 'cheerio';
+import { XMLParser } from 'fast-xml-parser';
 import { fetchText } from '../lib/http.mjs';
 import { browserHtml } from '../lib/browser.mjs';
 import { extractFromHtml } from '../lib/extract.mjs';
@@ -32,18 +33,29 @@ function linksWithPrefix(html,base,prefix){
   return uniqueLinks(out);
 }
 function pageSignature(links=[]){return links.map(x=>x.url).sort().join('|')}
+async function sitemapUrls(source,{log=console.log,maxSitemaps=80,maxUrls=50000}={}){
+  const start=source.sitemapUrl||new URL('/sitemap.xml',source.url).href;
+  const queue=[start],seenMaps=new Set(),urls=[];
+  while(queue.length&&seenMaps.size<maxSitemaps&&urls.length<maxUrls){
+    const mapUrl=queue.shift();if(seenMaps.has(mapUrl))continue;seenMaps.add(mapUrl);
+    try{
+      const xml=(await fetchText(mapUrl,{timeoutMs:25000,retries:2})).text;
+      const locs=[...xml.matchAll(/<loc>([^<]+)<\/loc>/gi)].map(m=>m[1].replace(/&amp;/g,'&').trim()).filter(Boolean);
+      const child=/<sitemapindex\b/i.test(xml);
+      if(child){for(const u of locs)if(!seenMaps.has(u))queue.push(u)}
+      else urls.push(...locs);
+    }catch(e){log(`[${source.id}] sitemap ignoré ${mapUrl}: ${e.message}`)}
+  }
+  return [...new Set(urls)].slice(0,maxUrls);
+}
 
-export async function discoverBpifranceCurrentAaps(source,{log=console.log,maxPages=50}={}){
-  const prefix='/nos-appels-a-projets-concours';
+async function pagedPrefixLinks(source,prefix,{log=console.log,maxPages=80}={}){
   const all=[];let previous='',empty=0;
   for(let page=0;page<maxPages;page++){
     const url=source.url+(source.url.includes('?')?'&':'?')+'page='+page;
-    const html=await getHtml(url);
-    const links=linksWithPrefix(html,url,prefix);
-    const sig=pageSignature(links);
+    const html=await getHtml(url),links=linksWithPrefix(html,url,prefix),sig=pageSignature(links);
     if(!links.length){empty++;if(empty>=2)break;continue}
-    empty=0;
-    all.push(...links);
+    empty=0;all.push(...links);
     if(sig&&sig===previous&&page>1)break;
     previous=sig;
     const $=cheerio.load(html);
@@ -53,8 +65,17 @@ export async function discoverBpifranceCurrentAaps(source,{log=console.log,maxPa
     });
     if(!hasNext&&page>0)break;
   }
-  const out=uniqueLinks(all);
-  log(`[${source.id}] ${out.length} AAP/AMI/concours uniques actuellement publiés`);
+  return uniqueLinks(all);
+}
+
+export async function discoverBpifranceCurrentAaps(source,{log=console.log,maxPages=50}={}){
+  const prefix='/nos-appels-a-projets-concours';
+  const listing=await pagedPrefixLinks(source,prefix,{log,maxPages});
+  const sitemap=(await sitemapUrls(source,{log})).filter(u=>{
+    try{const x=new URL(u);return x.hostname.endsWith('bpifrance.fr')&&x.pathname.startsWith(prefix+'/')}catch{return false}
+  }).map(url=>({url,label:''}));
+  const out=uniqueLinks([...listing,...sitemap]);
+  log(`[${source.id}] ${out.length} AAP/AMI/concours uniques publiés (listing + sitemap officiel)`);
   return out;
 }
 
@@ -85,22 +106,15 @@ function sectionLinks(html,base,sectionLabel){
 }
 
 export async function discoverBpifranceCatalogueAids(source,{log=console.log}={}){
+  const prefix='/catalogue-offres';
   const html=await getHtml(source.url);
-  let links=sectionLinks(html,source.url,source.catalogueSection||'Subventions et avances remboursables');
-  if(links.length<10){
-    const $=cheerio.load(html);
-    const candidates=[];
-    $('a[href]').each((_,a)=>{
-      const url=safeUrl($(a).attr('href'),source.url),label=cleanTitle($(a).text());
-      if(!url)return;
-      const u=new URL(url);
-      if(u.origin!==new URL(source.url).origin||!u.pathname.startsWith('/catalogue-offres/')||u.pathname==='/catalogue-offres/')return;
-      const s=norm(label+' '+u.pathname);
-      if(/aide|subvention|avance innovation|bourse french tech|pret a taux zero|ptzi|pi rd|innovation rd|concours innovation|france 2030 regionalise|eureka|eurostars|innowwide|horizon europe|french tech tremplin/.test(s))candidates.push({url,label});
-    });
-    links=uniqueLinks(candidates);
-  }
-  log(`[${source.id}] ${links.length} aides Bpifrance détectées dans le catalogue officiel`);
+  const section=sectionLinks(html,source.url,source.catalogueSection||'Subventions et avances remboursables');
+  const paged=await pagedPrefixLinks(source,prefix,{log,maxPages:100});
+  const sitemap=(await sitemapUrls(source,{log})).filter(u=>{
+    try{const x=new URL(u);return x.hostname.endsWith('bpifrance.fr')&&x.pathname.startsWith(prefix+'/')}catch{return false}
+  }).map(url=>({url,label:''}));
+  const links=uniqueLinks([...section,...paged,...sitemap]);
+  log(`[${source.id}] ${links.length} pages du catalogue officiel Bpifrance candidates avant qualification financière`);
   return links;
 }
 
@@ -121,12 +135,12 @@ async function extractOne(source,link,kind){
   return a;
 }
 
-async function extractMany(source,links,kind,{log=console.log,workers=8}={}){
+async function extractMany(source,links,kind,{log=console.log,workers=8,predicate=null}={}){
   const aids=[];let cursor=0;
   const pool=Array.from({length:workers},async()=>{
     while(true){
       const i=cursor++;if(i>=links.length)return;
-      try{const a=await extractOne(source,links[i],kind);if(a)aids.push(a)}
+      try{const a=await extractOne(source,links[i],kind);if(a&&(!predicate||predicate(a)))aids.push(a)}
       catch(e){log(`[${source.id}] page ignorée ${links[i].url}: ${e.message}`)}
     }
   });
@@ -142,6 +156,7 @@ export async function collectBpifranceAaps(source,{log=console.log}={}){
 
 export async function collectBpifranceAids(source,{log=console.log}={}){
   const links=await discoverBpifranceCatalogueAids(source,{log});
-  const aids=await extractMany(source,links,'AIDE',{log});
-  return {aids,discovered:links.length,message:`Bpifrance aides: ${links.length} publiées, ${aids.length} extraites`};
+  const target=new Set(['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO']);
+  const aids=await extractMany(source,links,'AIDE',{log,predicate:a=>a.aidTypes?.some(t=>target.has(t))});
+  return {aids,discovered:links.length,message:`Bpifrance catalogue: ${links.length} pages officielles inspectées, ${aids.length} aides financières retenues (subvention / avance remboursable / prêt à taux zéro)`};
 }
