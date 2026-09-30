@@ -1,6 +1,6 @@
 # LEYTON RADAR — Production Readiness v12.6.0
 
-Généré : 2026-09-30T11:35:49.783Z
+Généré : 2026-09-30T11:44:31.450Z
 
 - **Gate 1 — Dépôt GitHub et versionnement** : PASS — hakimalamiouahabi/qualifund
 - **Gate 2 — URL permanente** : BLOCKED — Déploiement permanent non confirmé.

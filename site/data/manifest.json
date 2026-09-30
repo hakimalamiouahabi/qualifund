@@ -1,6 +1,6 @@
 {
   "version": "12.6.0",
-  "generatedAt": "2026-09-30T11:32:14.177Z",
+  "generatedAt": "2026-09-30T11:40:58.585Z",
   "repositoryUrl": "https://github.com/hakimalamiouahabi/qualifund",
   "sourceCount": 138,
   "sourcesOk": 109,
@@ -64,7 +64,7 @@
   "targetCount": null,
   "targetReached": null,
   "coverageGap": null,
-  "contentSha256": "d1fb7793ed9ff8f434dd9c9ee81fde6ee04f8ae1656d8b19bc270709e458d0ea",
+  "contentSha256": "3ed60507ee081f32c7f9189d361b81c0aca20398f93b6e3a0a61bb817d43c5f2",
   "count": 2732,
   "coverageCertified": false
 }
