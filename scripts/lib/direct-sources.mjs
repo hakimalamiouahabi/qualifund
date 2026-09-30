@@ -49,8 +49,10 @@ function containsForbiddenAggregator(value){
   return false;
 }
 
-function sourceUrlSet(cfg){
-  return new Set((cfg.sources||[]).map(s=>normalizedUrl(s.url)).filter(Boolean));
+function sourceUrlSet(cfg,{genericOnly=false}={}){
+  return new Set((cfg.sources||[])
+    .filter(s=>!genericOnly||s.strategy!=='official-page')
+    .map(s=>normalizedUrl(s.url)).filter(Boolean));
 }
 
 function excludedSourceIds(cfg){
@@ -76,7 +78,7 @@ function cleanLinkItem(item){
 }
 
 function sanitizeLinkArray(value,{removeGenericSourcePages=false,cfg}={}){
-  const sourceUrls=removeGenericSourcePages?sourceUrlSet(cfg):new Set();
+  const sourceUrls=removeGenericSourcePages?sourceUrlSet(cfg,{genericOnly:true}):new Set();
   const out=[],seen=new Set();
   for(const raw of Array.isArray(value)?value:[]){
     const item=cleanLinkItem(raw);
@@ -105,7 +107,7 @@ export function sanitizeAidLinks(a,cfg){
   if(a.verification)out.verification={...a.verification,fieldEvidence:evidence};
 
   const official=normalizedUrl(a.officialPage||'');
-  const generic=sourceUrlSet(cfg).has(official);
+  const generic=sourceUrlSet(cfg,{genericOnly:true}).has(official);
   if(!official||isForbiddenAggregatorUrl(official)||generic){
     const replacement=out.sourceLinks.find(x=>typeof x==='object'&&x.url&&!/\.pdf(?:$|\?)/i.test(x.url))?.url
       || out.sourceLinks.find(x=>typeof x==='string'&&!/\.pdf(?:$|\?)/i.test(x)) || '';
