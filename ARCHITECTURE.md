@@ -1,29 +1,35 @@
-# Architecture finale Qualifund v8
+# Architecture FUNDING RADAR
 
 ```text
-Sources officielles / Open Data
+Guichet / région verrouillé
         ↓
-Connecteurs isolés + retry + timeout
+Sources officielles directes
+(HTML / RSS / API publique / Open Data / PDF)
         ↓
-API / HTML / Playwright / PDF
+Collecteur dédié ou connecteur officiel
         ↓
-Extraction structurée + preuves A/B/C/D
+Extraction structurée + preuves par champ
         ↓
-Déduplication inter-sources + versionnement
+Normalisation + déduplication
         ↓
-QA / garde-fous / source health
+Audit exhaustif des pages découvertes
         ↓
-site/data/library.json
+Certification bloquante
         ↓
-GitHub Pages HTTPS
+Bibliothèque centrale
         ↓
-Qualification senior locale dans le navigateur
+Interface FUNDING RADAR
 ```
 
-### Principes de résilience
-- une panne source ne bloque jamais le cycle ;
-- scan suspect = conservation de la dernière version valide ;
-- disparition uniquement après scan jugé sain ;
-- QA gate avant publication ;
-- Git history + journal de changements ;
-- le navigateur n’interroge jamais directement les financeurs.
+## Principe de verrouillage
+
+Un seul guichet ou une seule région peut être actif à la fois. La bibliothèque des autres sources est reprise à l’identique. Le pipeline calcule une empreinte SHA-256 des fiches non sélectionnées avant et après le cycle et échoue si elles changent.
+
+## Résilience
+
+- aucune suppression silencieuse lors d’un scan dégradé ;
+- chaque URL découverte doit être importée, explicitement exclue ou déclarée en erreur ;
+- les pages génériques, accessibilité, mentions légales et agrégateurs ne peuvent pas devenir des fiches dispositif ;
+- les titres génériques (« Document officiel ») sont refusés ;
+- les documents officiels enrichissent les champs mais ne remplacent pas la page canonique du dispositif ;
+- un guichet n’est déclaré terminé qu’après certification `PASS`.
