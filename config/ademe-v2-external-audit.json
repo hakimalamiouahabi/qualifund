@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-30T19:30:00+02:00",
+  "purpose": "Contre-audit de découverte uniquement. Aucune fiche n'est importée depuis ces moteurs : chaque URL candidate doit être relue directement sur le domaine officiel ADEME avant intégration.",
+  "sourceOfTruth": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue",
+  "engines": [
+    "Exa",
+    "Tavily",
+    "Parallel Search",
+    "Firecrawl"
+  ],
+  "policy": {
+    "discoveryOnly": true,
+    "requireDirectOfficialVerification": true,
+    "allowedHost": "agirpourlatransition.ademe.fr",
+    "requiredPathPrefix": "/entreprises/aides-financieres/catalogue/"
+  },
+  "candidateCount": 0,
+  "corroboratedCount": 0,
+  "candidates": []
+}
