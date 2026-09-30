@@ -149,7 +149,7 @@ async function catalogueLinks(source,{log=console.log,maxPages=100}={}){
     try{loaded=await getHtml(pageUrl)}
     catch(e){
       discoveryErrors.push({url:pageUrl,reason:e.message});
-      log(\`[\${source.id}] catalogue inaccessible \${pageUrl}: \${e.message}\`);
+      log(`[${source.id}] catalogue inaccessible ${pageUrl}: ${e.message}`);
       continue;
     }
     let parsed=parseAdemeCatalogueHtml(loaded.html,loaded.finalUrl||pageUrl);
@@ -163,7 +163,7 @@ async function catalogueLinks(source,{log=console.log,maxPages=100}={}){
         const browserParsed=parseAdemeCatalogueHtml(rendered.html,rendered.url||pageUrl);
         if(browserParsed.aids.length||browserParsed.pages.length||browserParsed.totalCount!=null){
           parsed=browserParsed;
-          log(\`[\${source.id}] catalogue rendu navigateur \${pageUrl}: \${browserParsed.aids.length} fiche(s)\`);
+          log(`[${source.id}] catalogue rendu navigateur ${pageUrl}: ${browserParsed.aids.length} fiche(s)`);
         }
       }catch(e){
         // Une page vide après la dernière page est normale. La complétude est contrôlée
@@ -188,7 +188,7 @@ async function catalogueLinks(source,{log=console.log,maxPages=100}={}){
   const aapCount=links.filter(x=>x.catalogueKind==='AAP / AMI').length;
   const aidCount=links.filter(x=>x.catalogueKind==='AIDE').length;
   const unclassified=links.filter(x=>!x.catalogueKind);
-  log(\`[\${source.id}] catalogue maître ADEME: \${links.length}/\${expectedTotal??'?'} URL(s), dont \${aapCount} AAP et \${aidCount} aides\`);
+  log(`[${source.id}] catalogue maître ADEME: ${links.length}/${expectedTotal??'?'} URL(s), dont ${aapCount} AAP et ${aidCount} aides`);
   return{links,expectedTotal,pagesScanned,aapCount,aidCount,unclassified,discoveryErrors};
 }
 
@@ -392,7 +392,7 @@ async function extractOne(source,link){
   a.regions=territory.regions.length?territory.regions:['Toutes les Régions'];
   a.sourceLinks=[{label:'Page officielle ADEME',url:requested},...(a.sourceLinks||[]).filter(x=>x?.url&&canonicalUrl(x.url)!==requested)];
   const checkedAt=new Date().toISOString();
-  const membershipEvidence=link.catalogueEvidence||(\`Présent dans le catalogue officiel ADEME Entreprises — \${link.catalogueKind}\`);
+  const membershipEvidence=link.catalogueEvidence||(`Présent dans le catalogue officiel ADEME Entreprises — ${link.catalogueKind}`);
   const extra=[
     {field:'catalogueMembership',sourceUrl:source.url,sourceTier:'B',locator:'catalogue-card',evidenceText:membershipEvidence.slice(0,850),checkedAt},
     {field:'guichet',sourceUrl:source.url,sourceTier:'B',locator:'catalogue-master',evidenceText:'Catalogue officiel des aides financières de l’ADEME pour les entreprises',checkedAt},
@@ -437,7 +437,7 @@ export async function discoverAdeme(source,{log=console.log}={}){
   const master=new Set(catalogue.map(x=>canonicalUrl(x.url)));
   const rssOutsideCatalogue=rss.filter(x=>!master.has(canonicalUrl(x.url)));
   const externalOutsideCatalogue=externalAudit.filter(x=>!master.has(canonicalUrl(x.url)));
-  log(\`[\${source.id}] ADEME catalogue maître: \${catalogue.length} fiche(s), dont \${catalogueData.aapCount} AAP. Contrôles: \${rssOutsideCatalogue.length} RSS hors catalogue, \${externalOutsideCatalogue.length} candidats externes hors catalogue.\`);
+  log(`[${source.id}] ADEME catalogue maître: ${catalogue.length} fiche(s), dont ${catalogueData.aapCount} AAP. Contrôles: ${rssOutsideCatalogue.length} RSS hors catalogue, ${externalOutsideCatalogue.length} candidats externes hors catalogue.`);
   return{links:catalogue,rss,catalogueData,externalAudit,rssOutsideCatalogue,externalOutsideCatalogue};
 }
 
@@ -472,6 +472,6 @@ export async function collectAdeme(source,{log=console.log}={}){
         externalOutsideCatalogue:externalOutsideCatalogue.map(x=>({url:x.url,label:x.label||''}))
       }
     },
-    message:\`ADEME catalogue maître: \${links.length} dispositif(s), \${catalogueData.aapCount} AAP, \${catalogueData.aidCount} aides, \${out.aids.length} fiche(s) extraites, \${out.excluded.length} exclusion(s), \${out.errors.length} erreur(s)\`
+    message:`ADEME catalogue maître: ${links.length} dispositif(s), ${catalogueData.aapCount} AAP, ${catalogueData.aidCount} aides, ${out.aids.length} fiche(s) extraites, ${out.excluded.length} exclusion(s), ${out.errors.length} erreur(s)`
   };
 }
