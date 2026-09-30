@@ -520,12 +520,6 @@
   },
   {
     "type": "CREATION",
-    "id": "europe_france_a8b7c933dfed3326254875345b49317f2e85697c614c83a150ffa05a0a30da12",
-    "title": "Fiches programmes régionaux et nationaux FEDER-FSE+ FTJ 2021-2027",
-    "at": "2026-09-30T08:52:18.897Z"
-  },
-  {
-    "type": "CREATION",
     "id": "idf_france2030_b925371e4db28499391fcfaaa5b64da6d7b0254b2dba574b8db92c803e005bdd",
     "title": "Filières Agricoles & Forestières France 2030 – France 2030 – Île-de-France",
     "at": "2026-09-30T08:52:18.897Z"
@@ -678,12 +672,6 @@
     "type": "CREATION",
     "id": "paca_aides_master_9b3ac6b7fec9eb13e6df8d44ee1a1d1219a8c337ded38b3a1fac8f3dd4bb1146",
     "title": "Fond SDIS",
-    "at": "2026-09-30T08:52:18.897Z"
-  },
-  {
-    "type": "CREATION",
-    "id": "europe_france_f7dd3c8d8b2e72c0323a5502c2a9ec390460a4b376a37bc85d079c6271360ac2",
-    "title": "FOND SOCIAL EUROPEEN+ (FSE+) – Dialogue structuré avec des personnes ayant vécu l&apos;expérience de la pauvreté – 2026",
     "at": "2026-09-30T08:52:18.897Z"
   },
   {
@@ -868,12 +856,6 @@
   },
   {
     "type": "CREATION",
-    "id": "europe_france_731f603344ea687466f4fc293e8bf2afbec79d12bca9c006f7080cfb5fbf0a7c",
-    "title": "Fonds européen de développement régional",
-    "at": "2026-09-30T08:52:18.897Z"
-  },
-  {
-    "type": "CREATION",
     "id": "martinique_europe_ab75fae88d028ebe212850b6a67897ea513bb4fa7df8973ebc353ccbbea5fd7e",
     "title": "Fonds Européen de Développement Régional - Europe Martinique",
     "at": "2026-09-30T08:52:18.897Z"
@@ -1041,12 +1023,6 @@
     "type": "CREATION",
     "id": "martinique_europe_1d19ca556963f4e2e8ce307f05e6c07304dd0779587b704370594ea2da469b1f",
     "title": "Fonds Social Européen - FSE Etat / FSE Inclusion (CTM) - Europe Martinique",
-    "at": "2026-09-30T08:52:18.897Z"
-  },
-  {
-    "type": "CREATION",
-    "id": "europe_france_7ba4db22ae77b7e3fa5b6b80258db2fb065ad6c4ac7b910a72e63fc446569825",
-    "title": "Fonds social européen +",
     "at": "2026-09-30T08:52:18.897Z"
   },
   {
@@ -1539,13 +1515,6 @@
     "at": "2026-09-30T08:52:18.898Z"
   },
   {
-    "type": "MODIFICATION",
-    "id": "guyane_aHR0cHM6Ly93d3cuY3RndXlhbmUu",
-    "title": "guyane_europe",
-    "fields": [],
-    "at": "2026-09-30T08:52:18.898Z"
-  },
-  {
     "type": "CREATION",
     "id": "hdf_9da74a4b5473cb2c97c5a3b77ef3e86e81b489e3b54dc7a38c7262f8e14b8da9",
     "title": "HAUTS CŒUR DE MÉMOIRE",
@@ -1621,24 +1590,6 @@
     "type": "CREATION",
     "id": "bpifrance_aides_0b05e156c5601bf09c58c7770edd6f317e3d152b7e37266462ebbd46661cbe41",
     "title": "Horizon Europe",
-    "at": "2026-09-30T08:52:18.898Z"
-  },
-  {
-    "type": "CREATION",
-    "id": "europe_france_7b7ba1e83fc2743f8f23fc71e9dcede2ffa4e97b51b113292b6a9ab09d4dd207",
-    "title": "HORIZON EUROPE – Défis EIC Pathfinder 2026 – 2026",
-    "at": "2026-09-30T08:52:18.898Z"
-  },
-  {
-    "type": "CREATION",
-    "id": "europe_france_04c36f9cf8e826289888123b81e78004fb5a6533a2e2cc56f69614e19ada3155",
-    "title": "HORIZON EUROPE – MSCA Choisir l&apos;Europe pour la Science 2027 – 2027",
-    "at": "2026-09-30T08:52:18.898Z"
-  },
-  {
-    "type": "CREATION",
-    "id": "europe_france_73fe97ec87d3c0726f81b2e8b5d1815a0aafc099fd6dc679b9085bb634799cf4",
-    "title": "HORIZON EUROPE – MSCA Échanges de personnel 2027 – 2027",
     "at": "2026-09-30T08:52:18.898Z"
   },
   {
@@ -2203,12 +2154,6 @@
     "type": "CREATION",
     "id": "idf_ods_28",
     "title": "JOP 2024 - Soutien aux Célébrations",
-    "at": "2026-09-30T08:52:18.898Z"
-  },
-  {
-    "type": "CREATION",
-    "id": "naquitaine_e4d7741adb536ec5419fbebbcb89bdd38bfb4eb80c232a22136ae1321a8e5f57",
-    "title": "Julie TEJEDOR : 05.16.01.40.28",
     "at": "2026-09-30T08:52:18.898Z"
   },
   {
@@ -3105,18 +3050,6 @@
   },
   {
     "type": "CREATION",
-    "id": "europe_france_5b9fd473230e7dd932b4c3dcb183327a4f632a3d3355c177541b5e9120348ef4",
-    "title": "MIE - Capacités de réparation des câbles sous-marins - 2026",
-    "at": "2026-09-30T08:52:18.900Z"
-  },
-  {
-    "type": "CREATION",
-    "id": "europe_france_68e58af2837553ed504e0f4fe76b97d9136bb5e365121aceecd0b51448636f2b",
-    "title": "MIE - MIE 2 Transport - Facilité pour les infrastructures dédiées aux carburants alternatifs - Enveloppe générale - 2026",
-    "at": "2026-09-30T08:52:18.900Z"
-  },
-  {
-    "type": "CREATION",
     "id": "idf_ods_143",
     "title": "Mieux protéger les victimes",
     "at": "2026-09-30T08:52:18.900Z"
@@ -3365,13 +3298,6 @@
     "type": "CREATION",
     "id": "hdf_europe_d65cdf26aa508752d0a5dc087c883d496d652434a56c3683f3054c12598d1aae",
     "title": "Nouvel AAP Interreg ENO",
-    "at": "2026-09-30T08:52:18.900Z"
-  },
-  {
-    "type": "MODIFICATION",
-    "id": "naquitaine_aHR0cHM6Ly9sZXMtYWlkZXMubm91",
-    "title": "nouvelle_aquitaine_entreprises",
-    "fields": [],
     "at": "2026-09-30T08:52:18.900Z"
   },
   {
@@ -4175,18 +4101,6 @@
     "type": "CREATION",
     "id": "paca_aides_master_6decbbb7e568e47f9b2d9e384f6ddb041fd3e2e6d72f36bcfef35d2582447f60",
     "title": "Points d'arrêts du réseau de transports ZOU!",
-    "at": "2026-09-30T08:52:18.906Z"
-  },
-  {
-    "type": "CREATION",
-    "id": "hdf_845458388af10c649045b41ecd1198ccfcfc31f6dff6367c03b864edc0c045c3",
-    "title": "Politique d'Aides aux Communes et aux Territoires (ACTes) FONDS D'APPUI AUX PROJETS LOCAUX DES COMMUNES RURALES DES HAUTS-DE-FRANCE (FAPL)",
-    "at": "2026-09-30T08:52:18.906Z"
-  },
-  {
-    "type": "CREATION",
-    "id": "hdf_10230a61e3499941554a342d393cfa0e81acf814e9c9ea402e4f236a399ff01e",
-    "title": "Politique d'Aides aux Communes et aux Territoires (ACTes) FONDS DE SOUTIEN AUX PROJETS STRUCTURANTS (FSPS)",
     "at": "2026-09-30T08:52:18.906Z"
   },
   {
@@ -5369,12 +5283,6 @@
   },
   {
     "type": "CREATION",
-    "id": "europe_france_4b2f25475bead3c46d7d1b1f7b2f88e749ebb669eaa163a3005e5fb7c9db3d39",
-    "title": "Retrouvez le détail des programmes FEDER FSE+ FTJ par région.",
-    "at": "2026-09-30T08:52:18.906Z"
-  },
-  {
-    "type": "CREATION",
     "id": "occitanie_ods_88",
     "title": "Revenu Écologique Jeunes",
     "at": "2026-09-30T08:52:18.906Z"
@@ -5521,12 +5429,6 @@
     "type": "CREATION",
     "id": "paca_d8ded976f2b59b0d797efd89461a171e6031028f32e72baa35f4a131dee15766",
     "title": "Sites touristiques exemplaires",
-    "at": "2026-09-30T08:52:18.906Z"
-  },
-  {
-    "type": "CREATION",
-    "id": "europe_france_9ae918658138ab2933b89d1029393cc2120718ef9afbca341c4004698f1d766e",
-    "title": "SOCPL – Information, consultation et participation des représentants des entreprises – 2026",
     "at": "2026-09-30T08:52:18.906Z"
   },
   {
@@ -7035,12 +6937,6 @@
     "type": "CREATION",
     "id": "guadeloupe_europe_d0c76d1e283df2b9352d5421641541f9208ddae03b707ca98655b3e522f2c6c5",
     "title": "Trouver un financement",
-    "at": "2026-09-30T08:52:18.906Z"
-  },
-  {
-    "type": "CREATION",
-    "id": "europe_france_0b33f44575ec58a750e235e922c9fe2f444ef65fd21512d7a601a91f1db81df2",
-    "title": "Trouver une aide pour financer son projet",
     "at": "2026-09-30T08:52:18.906Z"
   },
   {

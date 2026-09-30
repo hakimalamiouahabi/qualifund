@@ -76,25 +76,6 @@
     "consecutiveFailures": 0
   },
   {
-    "id": "europe_france",
-    "name": "Europe en France — FEDER/FSE+/FTJ",
-    "scope": "France",
-    "success": true,
-    "lifecycleSafe": true,
-    "emptyIngestion": false,
-    "suspiciousVolume": false,
-    "lowImportedCount": false,
-    "lowImportRatio": false,
-    "importRatio": 0.72,
-    "discovered": 25,
-    "imported": 18,
-    "message": "25 pages candidates, 25 fiches extraites",
-    "durationMs": 11988,
-    "checkedAt": "2026-09-30T08:49:20.021Z",
-    "lastSuccessfulAt": "2026-09-30T08:49:20.021Z",
-    "consecutiveFailures": 0
-  },
-  {
     "id": "aura",
     "name": "Région Auvergne-Rhône-Alpes — catalogue des aides",
     "scope": "Auvergne-Rhône-Alpes",
