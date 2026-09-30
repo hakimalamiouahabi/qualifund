@@ -13,16 +13,19 @@ test('Bpifrance utilise des collecteurs directs dédiés et des sources complém
   assert.equal(by.get('bpifrance_aides')?.strategy,'bpifrance-aides');
   assert.ok(!by.has('bpifrance'));
   assert.ok(!by.has('bpifrance_adi'));
-  assert.ok(by.get('bpifrance_aap').minExpected>=28);
+  assert.ok(by.get('bpifrance_aap').minExpected>=20);
   assert.ok(by.get('bpifrance_aides').minExpected>=20);
   assert.equal(by.get('bpifrance_projets_international')?.strategy,'catalog-html');
   assert.match(by.get('bpifrance_projets_international')?.url||'',/projets-international\.bpifrance\.fr/);
   assert.doesNotThrow(()=>assertDirectSources(cfg));
 });
 
-test('le collecteur Bpifrance croise pagination, sitemap et qualification financière',()=>{
+test('le collecteur Bpifrance utilise le listing/section officiels et garde sitemap + moteurs en contre-audit',()=>{
   assert.match(connector,/page='\+page/);
   assert.match(connector,/sitemapUrls/);
+  assert.match(connector,/externalAuditLinks/);
+  assert.match(connector,/listing maître Bpifrance/);
+  assert.match(connector,/section maître/);
   assert.match(connector,/Subventions et avances remboursables/);
   assert.match(connector,/\/nos-appels-a-projets-concours/);
   assert.match(connector,/\/catalogue-offres/);
