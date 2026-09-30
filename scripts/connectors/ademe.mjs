@@ -393,32 +393,54 @@ function directKindFromText(text=''){
 
 async function getDetailHtml(url){
   try{
-    const r=await fetchText(url,{timeoutMs:12000,retries:1,headers:{
-      'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/140 Safari/537.36',
-      'accept-language':'fr-FR,fr;q=0.9,en;q=0.7'
-    }});
-    const body=String(r.text||'');
-    if(body.length>=1200)return{html:body,finalUrl:r.url||url,via:'http'};
-  }catch{}
-  try{
-    const r=await browserHtml(url,{timeoutMs:45000});
+    const r=await getHtml(url);
     const body=String(r.html||'');
-    if(body.length>=1200)return{html:body,finalUrl:r.url||url,via:'browser'};
-  }catch{}
-  return null;
+    if(body.length<1200)return null;
+    return{html:body,finalUrl:r.finalUrl||url,via:r.via||'http'};
+  }catch{return null}
 }
 
-async function disposeExternalCandidates(source,candidates,{log=console.log,workers=8}={}){
+async function disposeExternalCandidates(source,candidates,{rss=[],log=console.log,workers=6}={}){
   const disposition={active:[],target:[],inactive:[],outOfScope:[],unknown:[]};
+  const rssByUrl=new Map((rss||[]).map(x=>[canonicalUrl(x.url),x]));
+  const pending=[];
+
+  for(const link of candidates){
+    const url=canonicalUrl(link.url);
+    const rssItem=rssByUrl.get(url);
+    if(!rssItem){pending.push(link);continue}
+
+    const kind=rssItem.catalogueKind||ademeKindFromOfficialUrl(url);
+    const date=rssItem.rssClosingDate||null;
+    if(rssItem.rssActive){
+      const evidence={url,label:cleanTitle(link.label||rssItem.label||''),kind,status:'OPEN',date};
+      (kind==='AAP / AMI'?disposition.active:disposition.target).push({...evidence,reason:'RSS_OFFICIEL_ACTIF_HORS_INVENTAIRE'});
+      continue;
+    }
+    if(date){
+      const delta=isoDaysFromToday(date);
+      disposition.inactive.push({
+        url,
+        label:cleanTitle(link.label||rssItem.label||''),
+        kind,
+        status:delta!=null&&delta>=-60?'RECENTLY_CLOSED':'CLOSED_OLD',
+        date,
+        reason:'RSS_OFFICIEL_ECHEANCE_EXPIREE'
+      });
+      continue;
+    }
+    pending.push(link);
+  }
+
   let cursor=0;
   const pool=Array.from({length:workers},async()=>{
     while(true){
-      const i=cursor++; if(i>=candidates.length)return;
-      const link=candidates[i],url=canonicalUrl(link.url);
+      const i=cursor++;if(i>=pending.length)return;
+      const link=pending[i],url=canonicalUrl(link.url);
       try{
         const loaded=await getDetailHtml(url);
         if(!loaded){
-          disposition.unknown.push({url,label:link.label||'',reason:'FICHE_DIRECTE_NON_LUEE'});
+          disposition.unknown.push({url,label:link.label||'',reason:'FICHE_OFFICIELLE_NON_LUEE'});
           continue;
         }
         const resolved=canonicalUrl(loaded.finalUrl||url);
@@ -431,8 +453,9 @@ async function disposeExternalCandidates(source,candidates,{log=console.log,work
         const status=ademeStatusProof(parsed,text);
         const enterprise=beneficiaryEvidence(parsed,text);
         const nonEnterprise=nonEnterpriseBeneficiaryEvidence(parsed,text);
-        const kind=directKindFromText(text)||kindFromUrl(url);
-        const evidence={url,label:cleanTitle(link.label||parsed?.title||''),kind,status:status.state,date:status.date||null};
+        const kind=directKindFromText(text)||ademeKindFromOfficialUrl(url);
+        const evidence={url,label:cleanTitle(link.label||parsed?.title||''),kind,status:status.state,date:status.date||null,via:loaded.via};
+
         if(['CLOSED_OLD','RECENTLY_CLOSED'].includes(status.state)){
           disposition.inactive.push({...evidence,reason:'STATUT_OFFICIEL_INACTIF'});
         }else if(nonEnterprise&&!enterprise){
@@ -443,7 +466,7 @@ async function disposeExternalCandidates(source,candidates,{log=console.log,work
           disposition.unknown.push({...evidence,reason:'STATUT_OU_CIBLE_INDETERMINE'});
         }
       }catch(e){
-        disposition.unknown.push({url,label:link.label||'',reason:'ERREUR_VERIFICATION_DIRECTE',error:e.message});
+        disposition.unknown.push({url,label:link.label||'',reason:'ERREUR_VERIFICATION_DIRECTE',error:String(e?.message||e)});
       }
     }
   });
@@ -672,7 +695,7 @@ export async function discoverAdeme(source,{log=console.log}={}){
   const master=new Set(catalogue.map(x=>canonicalUrl(x.url)));
   const rssOutsideCatalogue=rssActive.filter(x=>!master.has(canonicalUrl(x.url)));
   const externalOutsideCatalogue=externalAudit.filter(x=>!master.has(canonicalUrl(x.url)));
-  const externalDisposition=await disposeExternalCandidates(source,externalOutsideCatalogue,{log});
+  const externalDisposition=await disposeExternalCandidates(source,externalOutsideCatalogue,{rss,log});
   log(`[${source.id}] ADEME inventaire officiel ${inventoryMode}: ${catalogue.length} fiche(s), dont ${catalogueData.aapCount} AAP et ${catalogueData.aidCount} aides. Contrôles: ${rssOutsideCatalogue.length} RSS actifs hors inventaire, ${externalOutsideCatalogue.length} candidats externes hors inventaire.`);
   return{links:catalogue,rss,catalogueData,externalAudit,rssOutsideCatalogue,externalOutsideCatalogue,externalDisposition,inventoryMode};
 }
@@ -710,11 +733,11 @@ export async function collectAdeme(source,{log=console.log}={}){
         externalOutsideCatalogue:externalOutsideCatalogue.length,
         detailWarnings:out.detailWarnings.length
       },
+      externalDisposition,
       controlGaps:{
         rssOutsideCatalogue:rssOutsideCatalogue.map(x=>({url:x.url,label:x.label||''})),
         externalOutsideCatalogue:externalOutsideCatalogue.map(x=>({url:x.url,label:x.label||''}))
-      },
-      externalDisposition
+      }
     },
     message:`ADEME ${inventoryMode}: ${links.length} dispositif(s) actifs, ${catalogueData.aapCount} AAP, ${catalogueData.aidCount} aides, ${out.aids.length} fiche(s) importée(s), ${out.excluded.length} exclusion(s), ${out.errors.length} erreur(s), ${out.detailWarnings.length} fiche(s) non enrichie(s)`
   };
