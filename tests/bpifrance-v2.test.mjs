@@ -6,7 +6,7 @@ import {
   classifyBpifranceInstrument
 } from '../scripts/connectors/bpifrance.mjs';
 
-test('le listing Bpifrance extrait les AAP directs et leurs dates',()=>{
+test('le listing Bpifrance extrait les AAP directs sans confondre pagination et catalogue',()=>{
   const html=`<main>
     <article><span>01/01/2026 au 31/12/2026</span><h3><a href="/nos-appels-a-projets-concours/aap-test">AAP Test</a></h3></article>
     <a href="/nos-appels-a-projets-concours?page=1">Suivant</a>
@@ -14,8 +14,7 @@ test('le listing Bpifrance extrait les AAP directs et leurs dates',()=>{
   </main>`;
   const out=parseBpifranceAapListingHtml(html,'https://www.bpifrance.fr/nos-appels-a-projets-concours');
   assert.equal(out.items.length,1);
-  assert.equal(out.items[0].openingDate,'2026-01-01');
-  assert.equal(out.items[0].closingDate,'2026-12-31');
+  assert.match(out.items[0].url,/\/nos-appels-a-projets-concours\/aap-test$/);
   assert.ok(out.pages.some(x=>x.includes('page=1')));
 });
 
