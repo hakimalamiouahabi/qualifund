@@ -6,6 +6,7 @@ import { extractFromHtml } from '../lib/extract.mjs';
 import { directPageId } from '../lib/direct-sources.mjs';
 import { canonicalUrl, cleanTitle, safeUrl, norm, uniq } from '../lib/utils.mjs';
 
+// Cycle verrouillé ADEME : catalogue + RSS officiels, sans agrégateur ni LLM.
 const REGIONS=[
   'Auvergne-Rhône-Alpes','Bourgogne-Franche-Comté','Bretagne','Centre-Val de Loire','Corse',
   'Grand Est','Hauts-de-France','Île-de-France','Normandie','Nouvelle-Aquitaine','Occitanie',
@@ -14,7 +15,10 @@ const REGIONS=[
 
 async function getHtml(url){
   try{
-    const r=await fetchText(url,{timeoutMs:30000,retries:2});
+    const r=await fetchText(url,{timeoutMs:30000,retries:2,headers:{
+      'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/140 Safari/537.36',
+      'accept-language':'fr-FR,fr;q=0.9,en;q=0.7'
+    }});
     return{html:r.text,finalUrl:r.url||url,via:'http'};
   }catch{
     const r=await browserHtml(url,{timeoutMs:65000});
@@ -96,7 +100,11 @@ async function catalogueLinks(source,{log=console.log,maxPages=80}={}){
     let parsed=parseAdemeCatalogueHtml(loaded.html,loaded.finalUrl||pageUrl);
     if(!parsed.aids.length){
       try{
-        const rendered=await browserHtml(pageUrl,{timeoutMs:65000});
+        const rendered=await browserHtml(pageUrl,{
+          timeoutMs:65000,
+          waitForSelector:'a[href*="/entreprises/aides-financieres/catalogue/"]',
+          waitAfterMs:1800
+        });
         const browserParsed=parseAdemeCatalogueHtml(rendered.html,rendered.url||pageUrl);
         if(browserParsed.aids.length||browserParsed.pages.length){
           parsed=browserParsed;
@@ -202,11 +210,12 @@ export async function discoverAdeme(source,{log=console.log}={}){
   const [rss,catalogue]=await Promise.all([rssLinks(source,{log}),catalogueLinks(source,{log})]);
   const links=uniqueLinks([...catalogue,...rss]);
   log(`[${source.id}] ADEME: ${links.length} fiches officielles uniques découvertes (${rss.length} via RSS, ${catalogue.length} via catalogue)`);
-  return links;
+  return{links,rss,catalogue};
 }
 
 export async function collectAdeme(source,{log=console.log}={}){
-  const links=await discoverAdeme(source,{log});
+  const discovered=await discoverAdeme(source,{log});
+  const {links,rss,catalogue}=discovered;
   const out=await extractMany(source,links,{log,workers:8});
   return{
     aids:out.aids,
