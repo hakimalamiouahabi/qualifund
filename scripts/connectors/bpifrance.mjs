@@ -57,7 +57,9 @@ function listingMeta($,anchor){
     if(!node.length)break;
     const raw=cleanTitle(node.text()||'');
     if(!raw||raw.length>2500)continue;
-    const dates=detectDates(raw);
+    const slashDates=[...raw.matchAll(/\b(0?[1-9]|[12]\\d|3[01])\/(0?[1-9]|1[0-2])\/(20\\d{2})\b/g)]
+      .map(m=>`${m[3]}-${String(Number(m[2])).padStart(2,'0')}-${String(Number(m[1])).padStart(2,'0')}`);
+    const dates=slashDates.length?slashDates:detectDates(raw);
     if(dates.length>=2){
       return{
         openingDate:dates[0],
