@@ -336,7 +336,9 @@ function isoDaysFromToday(d,now=new Date()){
 
 export function ademeStatusProof(a,text='',now=new Date()){
   const closed=evidence(text,[
-    /(?:appel\s+[àa]\s+projets?|appel\s+d['’]offres?|dispositif|aide)[^.;]{0,100}(?:maintenant\s+clos|est\s+clos|est\s+cl[oô]tur[eé]|n['’]est\s+plus\s+ouvert)/i,
+    /(?:appel\s+[àa]\s+projets?|appel\s+d['’]offres?|dispositif|aide)[^.;]{0,120}(?:maintenant\s+clos|est\s+clos|est\s+cl[oô]tur[eé]|n['’]est\s+plus\s+ouvert)/i,
+    /\bappel\s+[àa]\s+projets?\s+(?:est\s+)?(?:maintenant\s+)?clos\b/i,
+    /\bappel\s+[àa]\s+projets?\s+clos\b/i,
     /(?:candidatures?|d[eé]p[oô]ts?)[^.;]{0,80}(?:sont\s+clos|sont\s+ferm[eé]s)/i
   ]);
   const open=evidence(text,[
@@ -391,13 +393,31 @@ function directKindFromText(text=''){
   return null;
 }
 
+function hasUsefulAidDetail(html=''){
+  const text=pageText(html);
+  if(text.length<500)return false;
+  return /(?:appel\s+[àa]\s+projets?|aide|dispositif)[^.;]{0,140}(?:clos|cl[oô]tur[eé]|ouvert|en\s+cours)|d[eé]lai\s+de\s+d[eé]p[oô]t|heure\s+de\s+cl[oô]ture|b[eé]n[eé]ficiaires?|[êe]tes-vous\s+concern[eé]s?/i.test(text);
+}
+
 async function getDetailHtml(url){
   try{
-    const r=await getHtml(url);
+    const r=await fetchText(url,{timeoutMs:15000,retries:1,headers:{
+      'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/140 Safari/537.36',
+      'accept-language':'fr-FR,fr;q=0.9,en;q=0.7'
+    }});
+    const body=String(r.text||'');
+    if(body.length>=1200&&hasUsefulAidDetail(body)){
+      return{html:body,finalUrl:r.url||url,via:'http'};
+    }
+  }catch{}
+  try{
+    const r=await browserHtml(url,{timeoutMs:65000});
     const body=String(r.html||'');
-    if(body.length<1200)return null;
-    return{html:body,finalUrl:r.finalUrl||url,via:r.via||'http'};
-  }catch{return null}
+    if(body.length>=1200&&hasUsefulAidDetail(body)){
+      return{html:body,finalUrl:r.url||url,via:'browser'};
+    }
+  }catch{}
+  return null;
 }
 
 async function disposeExternalCandidates(source,candidates,{rss=[],log=console.log,workers=6}={}){
