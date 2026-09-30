@@ -69,13 +69,13 @@ test('un catalogue HTML complet reste prioritaire sur le fallback RSS',()=>{
   assert.equal(selected.catalogue.length,60);
 });
 
-test('ADEME est le seul guichet actif du verrou courant',()=>{
-  const lock=JSON.parse(fs.readFileSync(new URL('../config/collection-lock.json',import.meta.url),'utf8'));
-  assert.equal(lock.locked,true);
-  assert.equal(lock.name,'ADEME');
-  assert.equal(lock.version,5);
-  assert.deepEqual(lock.allowedSourceIds,['ademe']);
-  assert.equal(lock.certification.allowOfficialRssFallback,true);
+test('ADEME conserve son certificat PASS après changement de guichet',()=>{
+  const cert=JSON.parse(fs.readFileSync(new URL('../site/data/ademe-certification.json',import.meta.url),'utf8'));
+  assert.equal(cert.status,'PASS');
+  assert.equal(cert.lock?.name,'ADEME');
+  assert.equal(cert.bySource?.ademe?.rssActive,70);
+  assert.equal(cert.bySource?.ademe?.catalogueAap,18);
+  assert.equal(cert.bySource?.ademe?.catalogueAid,52);
 });
 
 test('le catalogue Entreprises reste la référence ADEME et le RSS officiel est son fallback actif',()=>{
@@ -116,14 +116,13 @@ test('un titre contenant aide ne suffit jamais à classifier une carte sans stat
   assert.equal(out.unclassifiedCount,1);
 });
 
-test('la certification ADEME exige complétude, classification, appartenance et RSS officiel',()=>{
-  const lock=JSON.parse(fs.readFileSync(new URL('../config/collection-lock.json',import.meta.url),'utf8'));
-  assert.equal(lock.certification.requireCatalogueDiscovery,true);
-  assert.equal(lock.certification.requireCatalogueCompleteness,true);
-  assert.equal(lock.certification.requireCatalogueClassification,true);
-  assert.equal(lock.certification.requireCatalogueMasterMembership,true);
-  assert.equal(lock.certification.requireRssDiscovery,true);
-  assert.equal(lock.certification.requireExternalAuditDiscovery,true);
+test('le certificat ADEME archivé conserve les preuves de complétude',()=>{
+  const cert=JSON.parse(fs.readFileSync(new URL('../site/data/ademe-certification.json',import.meta.url),'utf8'));
+  assert.equal(cert.status,'PASS');
+  assert.equal(cert.libraryRecords,70);
+  assert.equal(cert.bySource?.ademe?.catalogue,70);
+  assert.equal(cert.bySource?.ademe?.catalogueUnclassified,0);
+  assert.equal(cert.problems?.length,0);
 });
 
 test("le contre-audit multi-moteurs reste un contrôle et n'est pas vide",()=>{
