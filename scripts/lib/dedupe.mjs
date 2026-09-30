@@ -60,7 +60,8 @@ export function dedupe(aids){
   const groups=[],groupSources=[],aliasMap=new Map();
   for(const a0 of aids){
     const a={...a0};
-    const aliases=[urlAlias(a),titleAlias(a)].filter(Boolean);
+    const directUrlAlias=urlAlias(a);
+    const aliases=directUrlAlias?[directUrlAlias]:[titleAlias(a)];
     let idx=aliases.map(k=>aliasMap.get(k)).find(v=>v!=null);
     if(idx==null){
       idx=groups.length;

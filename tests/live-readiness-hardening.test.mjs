@@ -45,7 +45,7 @@ test('exemple d’environnement documente le token admin requis',()=>{
 
 test('documentation opérationnelle est alignée sur le cycle quotidien 02:00',()=>{
   const ops=fs.readFileSync(new URL('../OPERATIONS.md',import.meta.url),'utf8');
-  assert.match(ops,/Chaque jour à 02:00 Europe\/Paris/);
+  assert.match(ops,/chaque jour à 02:00 Europe\/Paris/i);
   assert.doesNotMatch(ops,/Toutes les 6 h/);
 });
 

@@ -13,8 +13,13 @@ const REGIONS=[
 ];
 
 async function getHtml(url){
-  try{return (await fetchText(url,{timeoutMs:30000,retries:2})).text}
-  catch{return (await browserHtml(url,{timeoutMs:65000})).html}
+  try{
+    const r=await fetchText(url,{timeoutMs:30000,retries:2});
+    return{html:r.text,finalUrl:r.url||url,via:'http'};
+  }catch{
+    const r=await browserHtml(url,{timeoutMs:65000});
+    return{html:r.html,finalUrl:r.url||url,via:'browser'};
+  }
 }
 
 function isAidUrl(raw){
@@ -62,7 +67,7 @@ async function rssLinks(source,{log=console.log}={}){
   }
 }
 
-function pageLinks(html,base){
+export function parseAdemeCatalogueHtml(html,base){
   const $=cheerio.load(html),aids=[],pages=[];
   $('a[href]').each((_,a)=>{
     const url=safeUrl($(a).attr('href'),base);
@@ -85,10 +90,23 @@ async function catalogueLinks(source,{log=console.log,maxPages=80}={}){
     const pageUrl=queue.shift();
     if(seenPages.has(pageUrl))continue;
     seenPages.add(pageUrl);
-    let html;
-    try{html=await getHtml(pageUrl)}
+    let loaded;
+    try{loaded=await getHtml(pageUrl)}
     catch(e){log(`[${source.id}] catalogue ignoré ${pageUrl}: ${e.message}`);continue}
-    const {aids,pages}=pageLinks(html,pageUrl);
+    let parsed=parseAdemeCatalogueHtml(loaded.html,loaded.finalUrl||pageUrl);
+    if(!parsed.aids.length){
+      try{
+        const rendered=await browserHtml(pageUrl,{timeoutMs:65000});
+        const browserParsed=parseAdemeCatalogueHtml(rendered.html,rendered.url||pageUrl);
+        if(browserParsed.aids.length||browserParsed.pages.length){
+          parsed=browserParsed;
+          log(`[${source.id}] catalogue rendu navigateur ${pageUrl}: ${browserParsed.aids.length} fiche(s)`);
+        }
+      }catch(e){
+        log(`[${source.id}] rendu navigateur catalogue indisponible ${pageUrl}: ${e.message}`);
+      }
+    }
+    const {aids,pages}=parsed;
     found.push(...aids);
     for(const u of pages)if(!seenPages.has(u))queue.push(u);
     if(seenPages.size===1&&!pages.length){
@@ -127,34 +145,49 @@ function inferRegions(a){
 }
 
 async function extractOne(source,link){
-  const html=await getHtml(link.url);
-  const a=extractFromHtml(html,{url:link.url,sourceTier:'B',scope:'NATIONAL',region:null});
+  const loaded=await getHtml(link.url);
+  const requested=canonicalUrl(link.url),resolved=canonicalUrl(loaded.finalUrl||link.url);
+  if(!isAidUrl(resolved)){
+    return{aid:null,excluded:{url:link.url,label:link.label||'',reason:'REDIRECTION_HORS_FICHE',resolvedUrl:resolved||loaded.finalUrl||''}};
+  }
+  if(requested!==resolved){
+    return{aid:null,excluded:{url:link.url,label:link.label||'',reason:'REDIRECTION_VERS_AUTRE_FICHE',resolvedUrl:resolved}};
+  }
+  const a=extractFromHtml(loaded.html,{url:requested,sourceTier:'B',scope:'NATIONAL',region:null});
+  const rawTitle=cleanTitle(a.title||'');
+  if(/(?:désolé.*offre.*plus disponible|desole.*offre.*plus disponible|page introuvable|page non trouvée|erreur 404|404 not found|access denied|forbidden|service indisponible)/i.test(rawTitle)){
+    return{aid:null,excluded:{url:link.url,label:link.label||'',reason:'FICHE_INDISPONIBLE',resolvedUrl:resolved}};
+  }
   const label=cleanTitle(link.label||'');
-  if((!a.title||a.title.length<4)&&label)a.title=label;
-  if(!a.title||a.title.length<4)return null;
+  if(label&&label.length>=4)a.title=label;
+  if(!a.title||a.title.length<4){
+    return{aid:null,excluded:{url:link.url,label:link.label||'',reason:'TITRE_ABSENT',resolvedUrl:resolved}};
+  }
   const regions=inferRegions(a);
-  a.id=directPageId(source.id,canonicalUrl(link.url));
+  a.id=directPageId(source.id,requested);
   a.canonicalId=a.id;
   a.sourceId=source.id;
-  a.sourceRecordId=canonicalUrl(link.url);
-  a.kind=/\/aap\//i.test(link.url)||/\b(?:aap|ami|appel a projets?|appel à projets?|appel a manifestation|appel à manifestation|appel d'offres)\b/i.test(a.title)?'AAP / AMI':'AIDE';
+  a.sourceRecordId=requested;
+  a.kind=/\/aap\//i.test(requested)||/\b(?:aap|ami|appel a projets?|appel à projets?|appel a manifestation|appel à manifestation|appel d'offres)\b/i.test(a.title)?'AAP / AMI':'AIDE';
   a.funder=['ADEME'];
   a.operator='ADEME';
   a.scope=regions.length?'REGIONAL':'NATIONAL';
   a.regions=regions.length?regions:['Toutes les Régions'];
-  a.sourceLinks=[{label:'Page officielle ADEME',url:link.url},...(a.sourceLinks||[]).filter(x=>x?.url&&canonicalUrl(x.url)!==canonicalUrl(link.url))];
-  return a;
+  a.sourceLinks=[{label:'Page officielle ADEME',url:requested},...(a.sourceLinks||[]).filter(x=>x?.url&&canonicalUrl(x.url)!==requested)];
+  return{aid:a,excluded:null};
 }
 
 async function extractMany(source,links,{log=console.log,workers=8}={}){
-  const aids=[],errors=[];let cursor=0;
+  const aids=[],errors=[],excluded=[];let cursor=0;
   const pool=Array.from({length:workers},async()=>{
     while(true){
       const i=cursor++;if(i>=links.length)return;
       const link=links[i];
       try{
-        const a=await extractOne(source,link);
-        if(a)aids.push(a);else errors.push({url:link.url,label:link.label||'',reason:'EXTRACTION_VIDE'});
+        const item=await extractOne(source,link);
+        if(item?.aid)aids.push(item.aid);
+        else if(item?.excluded)excluded.push(item.excluded);
+        else errors.push({url:link.url,label:link.label||'',reason:'EXTRACTION_VIDE'});
       }catch(e){
         errors.push({url:link.url,label:link.label||'',reason:String(e?.message||e)});
         log(`[${source.id}] fiche ignorée ${link.url}: ${e.message}`);
@@ -162,7 +195,7 @@ async function extractMany(source,links,{log=console.log,workers=8}={}){
     }
   });
   await Promise.all(pool);
-  return{aids,errors};
+  return{aids,errors,excluded};
 }
 
 export async function discoverAdeme(source,{log=console.log}={}){
@@ -181,10 +214,11 @@ export async function collectAdeme(source,{log=console.log}={}){
     audit:{
       discovered:links.length,
       imported:out.aids.length,
-      excluded:[],
+      excluded:out.excluded,
       errors:out.errors,
-      accounted:out.aids.length+out.errors.length
+      accounted:out.aids.length+out.excluded.length+out.errors.length,
+      channels:{rss:rss.length,catalogue:catalogue.length}
     },
-    message:`ADEME officiel: ${links.length} fiches découvertes, ${out.aids.length} extraites, ${out.errors.length} erreurs`
+    message:`ADEME officiel: ${links.length} fiches découvertes, ${out.aids.length} extraites, ${out.excluded.length} exclusions expliquées, ${out.errors.length} erreurs`
   };
 }

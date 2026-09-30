@@ -14,11 +14,15 @@ const coverage=JSON.parse(await fs.readFile(path.join(DATA,'coverage.json'),'utf
 const lib=JSON.parse(await fs.readFile(path.join(DATA,'library.json'),'utf8'));
 const manifest=JSON.parse(await fs.readFile(path.join(DATA,'manifest.json'),'utf8'));
 const allowed=new Set(lock.allowedSourceIds||[]);
+const primary=new Set(lock.certification?.primarySourceIds||lock.allowedSourceIds||[]);
 const cert=lock.certification||{};
 const problems=[];
-const generic=/^(document officiel|r[eè]glement|cahier des charges|annexe|formulaire|dossier de candidature|accueil|aides?|catalogue)$/i;
+const generic=/^(document officiel|r[eè]glement|cahier des charges|annexe|formulaire|dossier de candidature|accueil|aides?|aides financières|catalogue|agir pour la transition)$/i;
 const byId=new Map(coverage.map(x=>[x.id,x]));
 const lockedCfg=(cfg.sources||[]).filter(s=>allowed.has(s.id));
+const records=(lib.aaps||[]).filter(a=>primary.has(a?.sourceId));
+const sourceRecordCounts=new Map();
+for(const a of records)sourceRecordCounts.set(a.sourceId,(sourceRecordCounts.get(a.sourceId)||0)+1);
 
 if(lockedCfg.length!==allowed.size)problems.push('Le verrou référence une source absente du registre.');
 
@@ -27,24 +31,24 @@ for(const s of lockedCfg){
   if(!row){problems.push(`${s.id}: aucune preuve de collecte`);continue}
   if(!row.success)problems.push(`${s.id}: collecte non validée — ${row.message||'sans message'}`);
   if(Number(row.imported||0)<Number(s.minImported||0))problems.push(`${s.id}: imports ${row.imported||0} < minimum ${s.minImported}`);
-  if(cert.requireAuditAccounting&&row.audit){
+  if(cert.requireAuditAccounting&&!row.audit){
+    problems.push(`${s.id}: audit comptable de collecte absent`);
+  }else if(cert.requireAuditAccounting){
     const discovered=Number(row.audit.discovered??row.discovered??0);
-    const accounted=Number(row.audit.accounted??0);
+    const imported=Number(row.audit.imported??row.imported??0);
+    const excluded=Number(row.audit.excluded?.length||0);
+    const errors=Number(row.audit.errors?.length||0);
+    const accounted=Number(row.audit.accounted??(imported+excluded+errors));
     if(discovered!==accounted)problems.push(`${s.id}: ${discovered-accounted} page(s) découverte(s) non expliquée(s)`);
+    const retained=Number(sourceRecordCounts.get(s.id)||0);
+    if(imported!==retained)problems.push(`${s.id}: ${imported} fiche(s) importée(s) mais ${retained} fiche(s) conservée(s) dans la bibliothèque`);
   }
+  if(cert.requireCatalogueDiscovery&&Number(row.audit?.channels?.catalogue||0)<=0)problems.push(`${s.id}: aucune fiche découverte via le catalogue officiel`);
+  if(cert.requireRssDiscovery&&Number(row.audit?.channels?.rss||0)<=0)problems.push(`${s.id}: aucune fiche découverte via le RSS officiel`);
   if(cert.requireZeroExtractionErrors&&Number(row.audit?.errors?.length||0)>0)problems.push(`${s.id}: ${row.audit.errors.length} erreur(s) d’extraction`);
 }
 
 const hosts=new Set((cert.allowedHosts||[]).map(x=>String(x).toLowerCase()));
-const primary=new Set(cert.primarySourceIds||lock.allowedSourceIds||[]);
-const belongs=a=>{
-  if(primary.has(a?.sourceId))return true;
-  const funders=[...(Array.isArray(a?.funder)?a.funder:[]),a?.operator].filter(Boolean).map(x=>String(x).toLowerCase());
-  if(funders.some(x=>x.includes(String(lock.name||'').toLowerCase())))return true;
-  try{return hosts.has(new URL(a?.officialPage||'').hostname.toLowerCase())}catch{return false}
-};
-const records=(lib.aaps||[]).filter(belongs);
-
 for(const a of records){
   const title=String(a.title||'').replace(/\s+/g,' ').trim();
   if(cert.forbidGenericTitles&&(!title||generic.test(title)))problems.push(`${a.id}: intitulé générique ou absent`);
@@ -67,7 +71,6 @@ for(const a of records){
 }
 const duplicates=[...urlCounts].filter(([,n])=>n>1);
 if(duplicates.length)problems.push(`${duplicates.length} URL(s) officielles dupliquée(s)`);
-
 if(lock.preserveUnselectedSources&&!manifest?.collectionLock?.frozenUnselectedSha)problems.push('La preuve de gel des autres guichets/régions est absente.');
 
 const slug=String(lock.name||'source').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
@@ -81,7 +84,10 @@ const report={
   bySource:Object.fromEntries(lockedCfg.map(s=>[s.id,{
     discovered:Number(byId.get(s.id)?.discovered||0),
     imported:Number(byId.get(s.id)?.imported||0),
+    retained:Number(sourceRecordCounts.get(s.id)||0),
     success:Boolean(byId.get(s.id)?.success),
+    rss:Number(byId.get(s.id)?.audit?.channels?.rss||0),
+    catalogue:Number(byId.get(s.id)?.audit?.channels?.catalogue||0),
     errors:Number(byId.get(s.id)?.audit?.errors?.length||0),
     excluded:Number(byId.get(s.id)?.audit?.excluded?.length||0)
   }])),

@@ -1,2 +1,9 @@
 import test from 'node:test';import assert from 'node:assert/strict';import {dedupe} from '../scripts/lib/dedupe.mjs';test('déduplication par URL officielle',()=>{const a={id:'a',title:'France 2030 - Appel à projets Test',scope:'NATIONAL',regions:['Toutes les Régions'],officialPage:'https://x.fr/test',aidTypes:['SUBVENTION'],companyCategories:['PME'],verification:{sourceTier:'C',fieldEvidence:[]}};const b={id:'b',title:'Appel à projets Test',scope:'NATIONAL',regions:['Toutes les Régions'],officialPage:'https://x.fr/test?utm_source=z',aidTypes:['SUBVENTION'],companyCategories:['PME'],verification:{sourceTier:'B',fieldEvidence:[{field:'objective'}]}};assert.equal(dedupe([a,b]).length,1)});
 test('deux aides distinctes sans page individuelle restent séparées',()=>{const base={scope:'REGIONAL',regions:['Bretagne'],officialPage:'https://data.aides-entreprises.fr/stock',sourceId:'aides_entreprises',sourceLinks:[],aidTypes:['SUBVENTION'],companyCategories:['PME'],verification:{sourceTier:'C',fieldEvidence:[]}};const a={...base,id:'ae_101',sourceRecordId:'101',title:'Aide investissement Bretagne'};const b={...base,id:'ae_102',sourceRecordId:'102',title:'Aide recrutement Bretagne'};assert.equal(dedupe([a,b]).length,2)});
+
+test('deux URL officielles individuelles différentes ne fusionnent jamais sur un titre identique',()=>{
+  const base={title:'Aide officielle',scope:'NATIONAL',regions:['Toutes les Régions'],aidTypes:['SUBVENTION'],companyCategories:['PME'],verification:{sourceTier:'B',fieldEvidence:[]}};
+  const a={...base,id:'a',sourceId:'ademe',officialPage:'https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/a'};
+  const b={...base,id:'b',sourceId:'ademe',officialPage:'https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/b'};
+  assert.equal(dedupe([a,b]).length,2);
+});

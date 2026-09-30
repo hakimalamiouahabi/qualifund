@@ -133,7 +133,7 @@ candidates.sort((a,b)=>{
   if(at!==bt)return at-bt;
   return completenessScore(b)-completenessScore(a);
 });
-const enrichLimit=Math.max(0,Number(process.env.QUALIFUND_ENRICH_LIMIT||process.env.LEYTON_RADAR_ENRICH_LIMIT||(FULL?180:80)));
+const enrichLimit=collectionLock.locked?candidates.length:Math.max(0,Number(process.env.QUALIFUND_ENRICH_LIMIT||process.env.LEYTON_RADAR_ENRICH_LIMIT||(FULL?180:80)));
 const batch=candidates.slice(0,enrichLimit);
 log(`Enrichissement officiel borné: ${batch.length}/${candidates.length} (limite ${enrichLimit})`);const enriched=new Map();let cursor=0;const workers=Array.from({length:6},async()=>{while(true){const i=cursor++;if(i>=batch.length)return;const a=batch[i];try{const e=await withTimeout(enrichAid(a,{log}),120000,`enrich ${a.id}`);enriched.set(canonicalKey(e),e)}catch(err){log(`Enrichissement ignoré ${a.title}: ${err.message}`)}}});await Promise.all(workers);for(const[k,a]of enriched)current.set(k,a);
 const processedSelected=dedupe(filterDirectLibrary([...current.values()].filter(a=>aidIsInActiveLock(a)),cfg)).map(repairAidTitle)

@@ -29,7 +29,9 @@
     "requireAuditAccounting": true,
     "requireZeroExtractionErrors": true,
     "requireDirectOfficialUrl": true,
-    "forbidGenericTitles": true
+    "forbidGenericTitles": true,
+    "requireCatalogueDiscovery": true,
+    "requireRssDiscovery": true
   },
   "notes": "Verrou ADEME : Bpifrance certifié reste figé. Aucun autre guichet ni région n’est recollecté ou muté tant que la certification ADEME n’est pas PASS."
 }
