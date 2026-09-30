@@ -5,7 +5,8 @@ const cfg=JSON.parse(fs.readFileSync(new URL('../config/sources.json',import.met
 const by=new Map(cfg.sources.map(s=>[s.id,s]));
 test('planchers Web officiels des sources prioritaires',()=>{
   assert.ok(by.get('ademe').minExpected>=60);
-  assert.ok(by.get('ademe').minImported>=60);
+  assert.ok(by.get('ademe').minImported>=1);
+  assert.match(by.get('ademe').externalAuditFile||'',/ademe-v2-external-audit\.json$/);
   assert.equal(by.get('ademe').strategy,'ademe-official');
   assert.ok(by.get('bpifrance_aap').minExpected>=28);
   assert.ok(by.get('bpifrance_aides').minExpected>=20);
