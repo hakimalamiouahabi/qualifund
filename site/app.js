@@ -130,9 +130,11 @@ function libraryAid(a){
   return true;
 }
 function guichetLabels(a){
+  const provenance=norm([a?.sourceId,...arr(a?.sourceAliases)].filter(Boolean).join(' '));
   const t=norm([...arr(a?.funder),a?.operator,a?.programme,a?.sourceId].filter(Boolean).join(' ')),out=[];
   const add=x=>{if(x&&!out.includes(x))out.push(x)};
-  if(/bpifrance|bpi france/.test(t))add('Bpifrance');
+  let bpiHost=false;try{bpiHost=/bpifrance\.fr$/i.test(new URL(a?.officialPage||'').hostname)}catch{}
+  if(/\bbpifrance(?:_|\b)/.test(provenance)||(bpiHost&&/bpifrance|bpi france/.test(t)))add('Bpifrance');
   if(/ademe|transition ecologique/.test(t))add('ADEME');
   if(/agence nationale de la recherche|\banr\b/.test(t))add('ANR');
   if(/feder|fonds europeen de developpement regional|europe en france/.test(t))add('FEDER');

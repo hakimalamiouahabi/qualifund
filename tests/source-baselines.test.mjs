@@ -6,7 +6,8 @@ const by=new Map(cfg.sources.map(s=>[s.id,s]));
 test('planchers Web officiels des sources prioritaires',()=>{
   assert.ok(by.get('ademe').minExpected>=60);
   assert.ok(by.get('ademe').minImported>=50);
-  assert.ok(by.get('bpifrance').minExpected>=20);
+  assert.ok(by.get('bpifrance_aap').minExpected>=28);
+  assert.ok(by.get('bpifrance_aides').minExpected>=20);
   assert.ok(!by.has('dge_aap')); // Hors du périmètre demandé
   assert.ok(by.get('pdl').minExpected>=150);
   assert.ok(['aides-et-appels-a-projets-de-la-region-occitanie','aides-et-appels-a-projets-de-la-region-occitanie@occitanie'].includes(by.get('occitanie').datasetId));

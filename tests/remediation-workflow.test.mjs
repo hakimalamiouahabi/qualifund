@@ -8,5 +8,5 @@ test('la release génère une file de remédiation avant le calcul final des gat
   const yml=fs.readFileSync(new URL('../.github/workflows/update-and-deploy.yml',import.meta.url),'utf8');
   assert.match(yml,/npm run remediation/);
   assert.ok(yml.indexOf('npm run remediation')<yml.indexOf('npm run production:gates'));
-  assert.match(yml,/git add package-lock\.json site\/data site\/bibliotheque PRODUCTION_READINESS\.md REMEDIATION_REPORT\.md/);
+  assert.match(yml,/git add package-lock\.json site\/data site\/bibliotheque site\/runtime-config\.js site\/sw\.js PRODUCTION_READINESS\.md REMEDIATION_REPORT\.md/);
 });
