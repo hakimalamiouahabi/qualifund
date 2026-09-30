@@ -91,6 +91,7 @@ function catalogueCardMeta($,anchor,base){
     const raw=cleanTitle(node.text()||'');
     const n=norm(raw);
     if(!raw||raw.length>1800)continue;
+    if(!/ouvert jusqu['’]au/i.test(raw))continue;
     const aapPos=n.indexOf('appel a projet');
     const aidePos=n.indexOf('aide');
     let catalogueKind=null;
@@ -364,7 +365,7 @@ async function extractOne(source,link){
   // Le catalogue Entreprises actif est le référentiel maître. La présence de la carte
   // constitue la preuve ADEME + entreprise + actif ; la fiche directe enrichit les critères.
   const directStatus=ademeStatusProof(a,text);
-  if(directStatus.state==='STATUS_CONFLICT'){
+  if(['STATUS_CONFLICT','CLOSED_OLD','RECENTLY_CLOSED'].includes(directStatus.state)){
     return{aid:null,excluded:{url:link.url,label:a.title,reason:'CONFLIT_STATUT_CATALOGUE_FICHE',resolvedUrl:resolved,status:directStatus.state,date:directStatus.date}};
   }
   const territory=inferRegionsFromEvidence(text);
@@ -380,6 +381,7 @@ async function extractOne(source,link){
   a.enterpriseEligible=true;
   a.catalogueVerified=true;
   a.catalogueKind=link.catalogueKind;
+  a.catalogueStatus=link.catalogueStatus||'OPEN';
   a.sourceState='OPEN';
   if(closing){
     a.finalClosingDate=closing;
