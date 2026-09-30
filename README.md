@@ -19,9 +19,12 @@ Les autres guichets sont cryptographiquement gelés pendant le cycle actif.
 
 ## État du chantier
 
-- **Bpifrance : certifié et figé** au 30/09/2026.
-- **ADEME : cycle actif**.
-- Régions, FEDER/FEADER, ANR : non modifiés tant que le verrou ADEME n’est pas certifié.
+- **ADEME : certifié** au 30/09/2026 selon le référentiel officiel entreprises.
+- **Bpifrance v2 : certifié** au 30/09/2026 selon les référentiels maîtres officiels et le contre-audit multi-moteurs.
+- **Prochain cycle : Auvergne-Rhône-Alpes**, puis les autres régions une à une.
+- FEDER/FEADER et ANR restent gelés jusqu’à leur cycle dédié.
+
+Dernière synchronisation de déploiement : 30/09/2026.
 
 ## Politique source
 
