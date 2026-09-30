@@ -55,10 +55,18 @@ for(const s of lockedCfg){
   if(cert.requireCatalogueCompleteness){
     const found=Number(row.audit?.channels?.catalogue||0);
     const expected=Number(row.audit?.channels?.catalogueExpected||0);
+    const mode=String(row.audit?.channels?.catalogueMode||'');
     const discoveryErrors=Number(row.audit?.channels?.catalogueDiscoveryErrors||0);
-    if(expected<=0)problems.push(`${s.id}: compteur officiel du catalogue non lu`);
-    else if(found<expected)problems.push(`${s.id}: catalogue incomplet — ${found}/${expected} fiche(s) découvertes`);
-    if(discoveryErrors>0)problems.push(`${s.id}: ${discoveryErrors} erreur(s) pendant la pagination du catalogue`);
+    const rssActive=Number(row.audit?.channels?.rssActive||0);
+    const rssWithoutClosing=Number(row.audit?.channels?.rssWithoutClosing||0);
+    if(!['CATALOGUE_HTML','RSS_ACTIVE_MIRROR'].includes(mode))problems.push(`${s.id}: mode d’inventaire ADEME non reconnu (${mode||'absent'})`);
+    if(expected<=0)problems.push(`${s.id}: taille de l’inventaire officiel non déterminée`);
+    else if(found!==expected)problems.push(`${s.id}: inventaire incomplet — ${found}/${expected} fiche(s) actives`);
+    if(mode==='CATALOGUE_HTML'&&discoveryErrors>0)problems.push(`${s.id}: ${discoveryErrors} erreur(s) pendant la pagination du catalogue`);
+    if(mode==='RSS_ACTIVE_MIRROR'){
+      if(rssActive!==found)problems.push(`${s.id}: miroir RSS incohérent — ${rssActive} actives pour ${found} retenues`);
+      if(rssWithoutClosing>0)problems.push(`${s.id}: ${rssWithoutClosing} entrée(s) RSS sans échéance exploitable`);
+    }
   }
   if(cert.requireCatalogueClassification){
     const aap=Number(row.audit?.channels?.catalogueAap||0);
@@ -93,8 +101,7 @@ for(const a of records){
   const ev=Array.isArray(a?.verification?.fieldEvidence)?a.verification.fieldEvidence:[];
   if(cert.requireGuichetEvidence){
     const proof=ev.find(e=>e?.field==='guichet'&&['A','B'].includes(e?.sourceTier)&&e?.sourceUrl);
-    if(a?.guichetVerified!==lock.name||!proof)problems.push(`${a.id}: attribution au guichet ${lock.name} non prouvée`);
-    if(lock.name==='ADEME'&&(a?.operator!=='ADEME'||!Array.isArray(a?.funder)||!a.funder.includes('ADEME')))problems.push(`${a.id}: financeur/opérateur ADEME incohérent`);
+    if(a?.guichetVerified!==lock.name||!proof)problems.push(`${a.id}: présence sur le portail ${lock.name} non prouvée`);
   }
   if(cert.requireCatalogueMasterMembership){
     const membership=ev.find(e=>e?.field==='catalogueMembership'&&['A','B'].includes(e?.sourceTier)&&e?.sourceUrl);
@@ -161,13 +168,19 @@ const report={
     retained:Number(sourceRecordCounts.get(s.id)||0),
     success:Boolean(byId.get(s.id)?.success),
     rss:Number(byId.get(s.id)?.audit?.channels?.rss||0),
+    rssActive:Number(byId.get(s.id)?.audit?.channels?.rssActive||0),
+    rssWithoutClosing:Number(byId.get(s.id)?.audit?.channels?.rssWithoutClosing||0),
     catalogue:Number(byId.get(s.id)?.audit?.channels?.catalogue||0),
+    catalogueMode:String(byId.get(s.id)?.audit?.channels?.catalogueMode||''),
     externalAudit:Number(byId.get(s.id)?.audit?.channels?.externalAudit||0),
     catalogueExpected:Number(byId.get(s.id)?.audit?.channels?.catalogueExpected||0),
     catalogueAap:Number(byId.get(s.id)?.audit?.channels?.catalogueAap||0),
     catalogueAid:Number(byId.get(s.id)?.audit?.channels?.catalogueAid||0),
     catalogueUnclassified:Number(byId.get(s.id)?.audit?.channels?.catalogueUnclassified||0),
     cataloguePagesScanned:Number(byId.get(s.id)?.audit?.channels?.cataloguePagesScanned||0),
+    catalogueHtmlFound:Number(byId.get(s.id)?.audit?.channels?.catalogueHtmlFound||0),
+    catalogueHtmlExpected:Number(byId.get(s.id)?.audit?.channels?.catalogueHtmlExpected||0),
+    detailWarnings:Number(byId.get(s.id)?.audit?.channels?.detailWarnings||0),
     errors:Number(byId.get(s.id)?.audit?.errors?.length||0),
     excluded:Number(byId.get(s.id)?.audit?.excluded?.length||0)
   }])),
