@@ -1,36 +1,35 @@
 {
   "version": "12.6.0",
-  "generatedAt": "2026-09-30T11:40:58.585Z",
+  "generatedAt": "2026-09-30T18:57:23.563Z",
   "repositoryUrl": "https://github.com/hakimalamiouahabi/qualifund",
-  "sourceCount": 138,
-  "sourcesOk": 109,
-  "sourcesFailed": 29,
-  "activeCollectionSourceCount": 4,
+  "sourceCount": 120,
+  "sourcesOk": 92,
+  "sourcesFailed": 28,
+  "activeCollectionSourceCount": 1,
   "collectionLock": {
     "locked": true,
     "mode": "GUICHET",
-    "name": "Bpifrance",
+    "name": "ADEME",
     "allowedSourceIds": [
-      "bpifrance_aap",
-      "bpifrance_aides",
-      "bpifrance_rebond_industriel",
-      "bpifrance_projets_international"
+      "ademe"
     ],
-    "next": "ADEME"
+    "next": "Bpifrance v2",
+    "frozenUnselectedSha": "83ac55ac5206dbe7ab8d1f63bcf77900b6a92df361fd82ba261d3abcb64fea84"
   },
-  "libraryCount": 2732,
-  "activeCount": 2298,
+  "libraryCount": 2792,
+  "activeCount": 2358,
   "jPlusOneDate": "2026-10-01",
-  "jPlusOneActiveCount": 2275,
+  "jPlusOneActiveCount": 2344,
   "archivedCount": 434,
-  "aapCount": 455,
+  "aapCount": 473,
   "verifiedCount": 1,
   "withCdc": 889,
-  "withDeadline": 467,
+  "withDeadline": 537,
   "fullRefresh": true,
   "libraryMode": "DIRECT_OFFICIAL_CATALOG",
   "sourcePolicy": "DIRECT_OFFICIAL_ONLY",
   "libraryInstruments": [
+    "APPEL_A_PROJET",
     "AUTRE",
     "AVANCE_REMBOURSABLE",
     "PRET_TAUX_ZERO",
@@ -42,7 +41,7 @@
     "PRET_TAUX_ZERO"
   ],
   "targetInstrumentCount": 828,
-  "directLinkCount": 2296,
+  "directLinkCount": 2365,
   "missingDirectLinkCount": 2,
   "categoryCounts": {
     "STARTUP": 157,
@@ -51,11 +50,12 @@
     "GE": 121
   },
   "scopeCounts": {
-    "NATIONAL": 301,
+    "NATIONAL": 370,
     "REGIONAL": 1997
   },
   "instrumentCounts": {
-    "AUTRE": 1512,
+    "APPEL_A_PROJET": 18,
+    "AUTRE": 1563,
     "AVANCE_REMBOURSABLE": 58,
     "PRET_TAUX_ZERO": 39,
     "SUBVENTION": 794
@@ -64,8 +64,8 @@
   "targetCount": null,
   "targetReached": null,
   "coverageGap": null,
-  "contentSha256": "3ed60507ee081f32c7f9189d361b81c0aca20398f93b6e3a0a61bb817d43c5f2",
-  "count": 2732,
+  "contentSha256": "04f5b4d4f4fe10d2215726e67dd81ccf28bad88f14c70e2c3c5098ec16c140fa",
+  "count": 2792,
   "coverageCertified": false,
   "recommendationRule": "échéance >= J+1 ou permanent vérifié",
   "relevanceRule": "pertinence projet >=85% ; éligibilité et confiance documentaire séparées",

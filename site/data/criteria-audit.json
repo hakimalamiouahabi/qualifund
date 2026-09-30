@@ -1,296 +1,296 @@
 {
-  "generatedAt": "2026-09-30T11:44:28.445Z",
-  "corpusGeneratedAt": "2026-09-30T11:40:58.585Z",
-  "sourceCount": 138,
-  "sourcesSucceeded": 109,
-  "sourcesFailed": 29,
+  "generatedAt": "2026-09-30T19:00:18.714Z",
+  "corpusGeneratedAt": "2026-09-30T18:57:23.563Z",
+  "sourceCount": 120,
+  "sourcesSucceeded": 92,
+  "sourcesFailed": 28,
   "overall": {
-    "total": 2732,
-    "verified": 6,
-    "active": 2289,
+    "total": 2792,
+    "verified": 2,
+    "active": 2358,
     "fields": {
       "beneficiaries": {
-        "present": 1454,
-        "officialProof": 929
+        "present": 1446,
+        "officialProof": 921
       },
       "eligibleExpenses": {
-        "present": 76,
-        "officialProof": 75
+        "present": 69,
+        "officialProof": 68
       },
       "prerequisites": {
-        "present": 571,
-        "officialProof": 571
+        "present": 562,
+        "officialProof": 562
       },
       "selectionCriteria": {
-        "present": 359,
-        "officialProof": 359
+        "present": 350,
+        "officialProof": 350
       },
       "financialTerms": {
-        "present": 1081,
-        "officialProof": 407
+        "present": 1075,
+        "officialProof": 398
       },
       "calendar": {
-        "present": 924,
-        "officialProof": 532
+        "present": 985,
+        "officialProof": 523
       }
     }
   },
   "aapAmi": {
-    "total": 841,
+    "total": 857,
     "verified": 1,
-    "active": 464,
+    "active": 482,
     "fields": {
       "beneficiaries": {
-        "present": 241,
-        "officialProof": 207
+        "present": 239,
+        "officialProof": 205
       },
       "eligibleExpenses": {
-        "present": 25,
-        "officialProof": 25
+        "present": 23,
+        "officialProof": 23
       },
       "prerequisites": {
-        "present": 211,
-        "officialProof": 211
+        "present": 209,
+        "officialProof": 209
       },
       "selectionCriteria": {
-        "present": 146,
-        "officialProof": 146
+        "present": 144,
+        "officialProof": 144
       },
       "financialTerms": {
-        "present": 216,
-        "officialProof": 95
+        "present": 214,
+        "officialProof": 93
       },
       "calendar": {
-        "present": 529,
-        "officialProof": 250
+        "present": 545,
+        "officialProof": 248
       }
     }
   },
   "byInstrument": {
     "SUBVENTION": {
-      "total": 964,
-      "verified": 6,
+      "total": 955,
+      "verified": 2,
       "active": 785,
       "fields": {
         "beneficiaries": {
-          "present": 587,
-          "officialProof": 520
+          "present": 579,
+          "officialProof": 512
         },
         "eligibleExpenses": {
-          "present": 70,
-          "officialProof": 70
+          "present": 63,
+          "officialProof": 63
         },
         "prerequisites": {
-          "present": 339,
-          "officialProof": 339
+          "present": 330,
+          "officialProof": 330
         },
         "selectionCriteria": {
-          "present": 217,
-          "officialProof": 217
+          "present": 208,
+          "officialProof": 208
         },
         "financialTerms": {
-          "present": 494,
-          "officialProof": 284
+          "present": 488,
+          "officialProof": 275
         },
         "calendar": {
-          "present": 517,
-          "officialProof": 289
+          "present": 508,
+          "officialProof": 280
         }
       }
     },
     "AVANCE_REMBOURSABLE": {
-      "total": 77,
-      "verified": 3,
+      "total": 72,
+      "verified": 1,
       "active": 53,
       "fields": {
         "beneficiaries": {
-          "present": 16,
-          "officialProof": 15
-        },
-        "eligibleExpenses": {
-          "present": 10,
+          "present": 11,
           "officialProof": 10
         },
+        "eligibleExpenses": {
+          "present": 6,
+          "officialProof": 6
+        },
         "prerequisites": {
-          "present": 20,
-          "officialProof": 20
+          "present": 15,
+          "officialProof": 15
         },
         "selectionCriteria": {
-          "present": 26,
-          "officialProof": 26
+          "present": 21,
+          "officialProof": 21
         },
         "financialTerms": {
-          "present": 72,
-          "officialProof": 33
+          "present": 69,
+          "officialProof": 28
         },
         "calendar": {
-          "present": 49,
-          "officialProof": 36
+          "present": 44,
+          "officialProof": 31
         }
       }
     },
     "PRET_TAUX_ZERO": {
-      "total": 43,
-      "verified": 4,
+      "total": 36,
+      "verified": 0,
       "active": 32,
       "fields": {
         "beneficiaries": {
-          "present": 35,
-          "officialProof": 32
+          "present": 28,
+          "officialProof": 25
         },
         "eligibleExpenses": {
-          "present": 12,
-          "officialProof": 11
+          "present": 6,
+          "officialProof": 5
         },
         "prerequisites": {
-          "present": 22,
-          "officialProof": 22
+          "present": 15,
+          "officialProof": 15
         },
         "selectionCriteria": {
-          "present": 18,
-          "officialProof": 18
+          "present": 11,
+          "officialProof": 11
         },
         "financialTerms": {
-          "present": 26,
-          "officialProof": 21
+          "present": 22,
+          "officialProof": 14
         },
         "calendar": {
-          "present": 16,
-          "officialProof": 19
+          "present": 9,
+          "officialProof": 12
         }
       }
     }
   },
   "byCompanyCategory": {
     "STARTUP": {
-      "total": 270,
-      "verified": 3,
+      "total": 264,
+      "verified": 1,
       "active": 151,
       "fields": {
         "beneficiaries": {
-          "present": 44,
-          "officialProof": 37
+          "present": 38,
+          "officialProof": 31
         },
         "eligibleExpenses": {
-          "present": 9,
-          "officialProof": 9
+          "present": 4,
+          "officialProof": 4
         },
         "prerequisites": {
-          "present": 47,
-          "officialProof": 47
-        },
-        "selectionCriteria": {
-          "present": 45,
-          "officialProof": 45
-        },
-        "financialTerms": {
-          "present": 58,
+          "present": 41,
           "officialProof": 41
         },
+        "selectionCriteria": {
+          "present": 39,
+          "officialProof": 39
+        },
+        "financialTerms": {
+          "present": 54,
+          "officialProof": 35
+        },
         "calendar": {
-          "present": 138,
-          "officialProof": 82
+          "present": 132,
+          "officialProof": 76
         }
       }
     },
     "PME": {
-      "total": 619,
-      "verified": 6,
+      "total": 610,
+      "verified": 2,
       "active": 448,
       "fields": {
         "beneficiaries": {
-          "present": 189,
-          "officialProof": 138
+          "present": 181,
+          "officialProof": 130
         },
         "eligibleExpenses": {
-          "present": 24,
-          "officialProof": 23
+          "present": 17,
+          "officialProof": 16
         },
         "prerequisites": {
-          "present": 122,
-          "officialProof": 122
+          "present": 113,
+          "officialProof": 113
         },
         "selectionCriteria": {
-          "present": 125,
-          "officialProof": 125
+          "present": 116,
+          "officialProof": 116
         },
         "financialTerms": {
-          "present": 294,
-          "officialProof": 177
+          "present": 288,
+          "officialProof": 168
         },
         "calendar": {
-          "present": 282,
-          "officialProof": 163
+          "present": 273,
+          "officialProof": 154
         }
       }
     },
     "ETI": {
-      "total": 263,
-      "verified": 4,
+      "total": 257,
+      "verified": 1,
       "active": 167,
       "fields": {
         "beneficiaries": {
-          "present": 52,
-          "officialProof": 46
+          "present": 46,
+          "officialProof": 40
         },
         "eligibleExpenses": {
-          "present": 13,
-          "officialProof": 12
+          "present": 8,
+          "officialProof": 7
         },
         "prerequisites": {
-          "present": 70,
-          "officialProof": 70
+          "present": 64,
+          "officialProof": 64
         },
         "selectionCriteria": {
-          "present": 61,
-          "officialProof": 61
+          "present": 55,
+          "officialProof": 55
         },
         "financialTerms": {
-          "present": 139,
-          "officialProof": 109
+          "present": 136,
+          "officialProof": 103
         },
         "calendar": {
-          "present": 141,
-          "officialProof": 83
+          "present": 135,
+          "officialProof": 77
         }
       }
     },
     "GE": {
-      "total": 162,
-      "verified": 4,
+      "total": 155,
+      "verified": 1,
       "active": 114,
       "fields": {
         "beneficiaries": {
-          "present": 40,
-          "officialProof": 38
+          "present": 33,
+          "officialProof": 31
         },
         "eligibleExpenses": {
-          "present": 13,
-          "officialProof": 13
+          "present": 7,
+          "officialProof": 7
         },
         "prerequisites": {
+          "present": 22,
+          "officialProof": 22
+        },
+        "selectionCriteria": {
           "present": 29,
           "officialProof": 29
         },
-        "selectionCriteria": {
-          "present": 36,
-          "officialProof": 36
-        },
         "financialTerms": {
-          "present": 56,
-          "officialProof": 35
+          "present": 52,
+          "officialProof": 28
         },
         "calendar": {
-          "present": 64,
-          "officialProof": 42
+          "present": 57,
+          "officialProof": 35
         }
       }
     }
   },
   "unknownCompanyCategory": {
-    "total": 1925,
+    "total": 1994,
     "verified": 0,
-    "active": 1713,
+    "active": 1782,
     "fields": {
       "beneficiaries": {
         "present": 1235,
@@ -313,7 +313,7 @@
         "officialProof": 221
       },
       "calendar": {
-        "present": 575,
+        "present": 645,
         "officialProof": 336
       }
     }
@@ -323,7 +323,7 @@
       "id": "guadeloupe_feader_ee31612bf4a59acc61b41dd323fcabb84105a587016e5c491ce106f623ea6bbd",
       "title": "- Les financements européens - Europe Guadeloupe",
       "sourceId": "guadeloupe_feader",
-      "officialPage": "https://www.europe-guadeloupe.fr/les-financements-europeens/",
+      "officialPage": "https://www.europe-guadeloupe.fr/les-financements-europeens",
       "selectionTextPresent": false
     },
     {
@@ -596,7 +596,7 @@
       "id": "martinique_europe_0c27762468c6b51a716b72426bf87be5680f33059c2aaafee2037c985039d8ba",
       "title": "119 Million €",
       "sourceId": "martinique_europe",
-      "officialPage": "https://www.europe-martinique.com/fonds-social-europeen-2/",
+      "officialPage": "https://www.europe-martinique.com/fonds-social-europeen-2",
       "selectionTextPresent": false
     },
     {
@@ -688,6 +688,13 @@
       "title": "A quelles autres aides puis-je prétendre ?",
       "sourceId": "bfc",
       "officialPage": "https://www.bourgognefranchecomte.fr/quelles-autres-aides-puis-je-pretendre",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_8c8a291c0a1e03c28352de9331a8e469db6bf5220a547f249de9d1e414a69c66",
+      "title": "AACT-AIR – Aide à l’action des collectivités territoriales en faveur de la qualité de l’air",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/aact-air-aide-laction-des-collectivites-territoriales-en-faveur-de-la-qualite-de-lair",
       "selectionTextPresent": false
     },
     {
@@ -1048,6 +1055,13 @@
       "selectionTextPresent": false
     },
     {
+      "id": "ademe_70dbf42c2ff2a29e70e2b6cd80dd3862ba164201902ed994e0526e8cfaab86e9",
+      "title": "Acquisition de données Géologiques vers des Industries Bas Carbone (AGIBaC)",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/acquisition-de-donnees-geologiques-vers-des-industries-bas-carbone-agibac",
+      "selectionTextPresent": false
+    },
+    {
       "id": "paca_aides_master_078b94d39b0ed67a3754bbe300240fda65c8b92fdbc216ecab6369d4b93f50fd",
       "title": "Acquisition de fonds de livres",
       "sourceId": "paca_aides_master",
@@ -1156,7 +1170,7 @@
       "id": "anr_d3dd47f0868bf58c1118df155391d4495f7564d2b0c036f773c44a02e0f32831",
       "title": "Actualités de France 2030",
       "sourceId": "anr",
-      "officialPage": "https://anr.fr/fr/france-2030/actualites-de-france-2030/",
+      "officialPage": "https://anr.fr/fr/france-2030/actualites-de-france-2030",
       "selectionTextPresent": false
     },
     {
@@ -1178,13 +1192,6 @@
       "title": "Adhésion CUMA",
       "sourceId": "pdl",
       "officialPage": "https://www.paysdelaloire.fr/les-aides/adhesion-cuma",
-      "selectionTextPresent": false
-    },
-    {
-      "id": "ademe_c82221811ed8498d794b347968a609629dab9d9aac13030b01f1f0cfd7ec9671",
-      "title": "agirpourlatransition.ademe.fr",
-      "sourceId": "ademe",
-      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/fonds-vert-territoires-dindustrie-en-transition-ecologique-0",
       "selectionTextPresent": false
     },
     {
@@ -1338,7 +1345,7 @@
       "id": "grand_est_ca5349307bb513931b0f2ae6344d94e1db7d00f8dd2596ccb7e21665785324bf",
       "title": "Aide à l’équipement d’hébergements pour femmes victimes de violences et achat de packs de téléphones avec cartes prépayées",
       "sourceId": "grand_est",
-      "officialPage": "https://www.grandest.fr/appel-a-projet/hebergement-femmes-victimes-violences/",
+      "officialPage": "https://www.grandest.fr/appel-a-projet/hebergement-femmes-victimes-violences",
       "selectionTextPresent": false
     },
     {
@@ -1475,6 +1482,13 @@
       "selectionTextPresent": false
     },
     {
+      "id": "ademe_6b8156486b6e56c87e22d55a7b085d10bc833a9a982b4f4d1e4535c7377923bd",
+      "title": "Aide à la création et au fonctionnement des observatoires territoriaux",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/aide-la-creation-et-au-fonctionnement-des-observatoires-territoriaux",
+      "selectionTextPresent": false
+    },
+    {
       "id": "bfc_49396d8ca7462a4602aafbfc559dd754384a736f7acec25d87377ba4706e1b7e",
       "title": "Aide à la création et la gestion d’une réserve naturelle régionale",
       "sourceId": "bfc",
@@ -1485,7 +1499,7 @@
       "id": "grand_est_fe268a3ec69e9feff81a60be7740a3fa329626e6b93f4b2934ef90a51ab73119",
       "title": "Aide à la création littéraire",
       "sourceId": "grand_est",
-      "officialPage": "https://www.grandest.fr/vos-aides-regionales/creation-litteraire/",
+      "officialPage": "https://www.grandest.fr/vos-aides-regionales/creation-litteraire",
       "selectionTextPresent": false
     },
     {
@@ -1604,7 +1618,7 @@
       "id": "grand_est_f9173973f3ef60fab4b985abf98d1a3434bd969ebe90880d65ac1be54272f2db",
       "title": "Aide à la navigation",
       "sourceId": "grand_est",
-      "officialPage": "https://www.grandest.fr/aide-et-accessibilite/",
+      "officialPage": "https://www.grandest.fr/aide-et-accessibilite",
       "selectionTextPresent": false
     },
     {
@@ -1688,7 +1702,7 @@
       "id": "grand_est_7b916e062f854d95fbfc23c694fbbba83e843b48b7371c344071d19b559ca19f",
       "title": "Aide à la recherche et à la création – Arts Visuels",
       "sourceId": "grand_est",
-      "officialPage": "https://www.grandest.fr/vos-aides-regionales/aide-a-recherche-a-creation-arts-visuels/",
+      "officialPage": "https://www.grandest.fr/vos-aides-regionales/aide-a-recherche-a-creation-arts-visuels",
       "selectionTextPresent": false
     },
     {
@@ -2199,7 +2213,7 @@
       "id": "grand_est_f70f574b5786ee8888ed1c9261b97d8b3e7a40baca1a07fe14d07b4ab3be9239",
       "title": "Aide aux lieux et projets annuels culturels dans le domaine du spectacle vivant",
       "sourceId": "grand_est",
-      "officialPage": "https://www.grandest.fr/vos-aides-regionales/aide-aux-lieux-projets-annuels-structurants/",
+      "officialPage": "https://www.grandest.fr/vos-aides-regionales/aide-aux-lieux-projets-annuels-structurants",
       "selectionTextPresent": false
     },
     {
@@ -2430,7 +2444,7 @@
       "id": "grand_est_0918170c970838469a4a5a2c4989df4af98029bd8ed97500ae7d9a8cc646c693",
       "title": "Aide en investissement des cinémas indépendants du Grand Est",
       "sourceId": "grand_est",
-      "officialPage": "https://www.grandest.fr/vos-aides-regionales/aide-investissement-faveur-salles-de-cinema/",
+      "officialPage": "https://www.grandest.fr/vos-aides-regionales/aide-investissement-faveur-salles-de-cinema",
       "selectionTextPresent": false
     },
     {
@@ -2651,6 +2665,20 @@
       "selectionTextPresent": false
     },
     {
+      "id": "ademe_1f91ec87aa5c7152836f30820397b2def1a2476ceb3473a3c27579d7cf46f784",
+      "title": "Aides au changement de comportement",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/aides-au-changement-de-comportement",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_13ebd98f6d4417a273a2e6cef41c7b7c850182abc37b90770e951127f423d9f9",
+      "title": "Aides au réemploi des emballages",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/aides-au-reemploi-des-emballages",
+      "selectionTextPresent": false
+    },
+    {
       "id": "bfc_abcd5b475d7d8d0ee97cdf0245bcd4b9d5c5c2dc877895fbf94f3d9d111d02c9",
       "title": "Aides aux actions de sensibilisation des arts visuels",
       "sourceId": "bfc",
@@ -2703,7 +2731,7 @@
       "id": "guyane_3ccf335a2d5feb1e4d6f29dcfa8cd2ce5dc3a21637b0b27f5cb46221fd89170b",
       "title": "Aides Culturelles de la Collectivité Territoriale de Guyane - Collectivité Territoriale de Guyane",
       "sourceId": "guyane",
-      "officialPage": "https://www.ctguyane.fr/aides-culturelles-de-la-collectivite-territoriale-de-guyane/",
+      "officialPage": "https://www.ctguyane.fr/aides-culturelles-de-la-collectivite-territoriale-de-guyane",
       "selectionTextPresent": false
     },
     {
@@ -2805,6 +2833,13 @@
       "selectionTextPresent": false
     },
     {
+      "id": "ademe_680e808fe8a95e6ed29b31f7974bcc5c40fdb528c41cecca4f1553d43f09e457",
+      "title": "Amélioration de la qualité de l’air dans les territoires en PPA ou dans ceux concernés par des dépassements actuels ou prévisionnels 2030",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/amelioration-de-la-qualite-de-lair-dans-les-territoires-en-ppa-ou-dans-ceux-concernes-par-des-depassements-actuels-ou-previsionnels-2030",
+      "selectionTextPresent": false
+    },
+    {
       "id": "idf_ods_136",
       "title": "Amélioration de la ventilation des lieux accueillant des publics fragiles.",
       "sourceId": "idf",
@@ -2871,7 +2906,7 @@
       "id": "hdf_hdfid_aap_42c0cc1ab5024191a5a6b9e5d4b04cba21530bf51f82410222ba4b3deb85054e",
       "title": "AMI « Structurer une filière santé écoresponsable »",
       "sourceId": "hdf_hdfid_aap",
-      "officialPage": "https://www.hautsdefrance-id.fr/appels-a-projets/ami-structurer-une-filiere-sante-ecoresponsable/",
+      "officialPage": "https://www.hautsdefrance-id.fr/appels-a-projets/ami-structurer-une-filiere-sante-ecoresponsable",
       "selectionTextPresent": false
     },
     {
@@ -2885,21 +2920,21 @@
       "id": "hdf_hdfid_aap_f900030b31e553a28052f11aeb71fafb54976359bef82de76955d7a1d5b728f5",
       "title": "AMI Bioéconomie Hauts-de-France",
       "sourceId": "hdf_hdfid_aap",
-      "officialPage": "https://www.hautsdefrance-id.fr/appels-a-projets/ami-bioeconomie-region/",
+      "officialPage": "https://www.hautsdefrance-id.fr/appels-a-projets/ami-bioeconomie-region",
       "selectionTextPresent": false
     },
     {
       "id": "hdf_hdfid_aap_72f920c4e7a93be4253f67ec47ecf08960a70c1f37e50eba7c679997cc0c14e3",
       "title": "AMI Cycle de vie des batteries | Hauts-de-France",
       "sourceId": "hdf_hdfid_aap",
-      "officialPage": "https://www.hautsdefrance-id.fr/appels-a-projets/ami-cycle-de-vie-des-batteries/",
+      "officialPage": "https://www.hautsdefrance-id.fr/appels-a-projets/ami-cycle-de-vie-des-batteries",
       "selectionTextPresent": false
     },
     {
       "id": "hdf_hdfid_aap_b3c612f617625ff9235d4bc9902a4f5a94ac7e77e085093b1c72223ac79b4d91",
       "title": "AMI Décarbonation industrielle : H2, CO₂ et stockage",
       "sourceId": "hdf_hdfid_aap",
-      "officialPage": "https://www.hautsdefrance-id.fr/appels-a-projets/decarbonation-process-industriels-ami/",
+      "officialPage": "https://www.hautsdefrance-id.fr/appels-a-projets/decarbonation-process-industriels-ami",
       "selectionTextPresent": false
     },
     {
@@ -2920,7 +2955,14 @@
       "id": "hdf_hdfid_aap_24d660dcf7631373f6a3c69479f1cc999da1c2839eb5e63f2c843dcd31a8a3eb",
       "title": "AMI HealthIA : IA & Santé en Hauts-de-France",
       "sourceId": "hdf_hdfid_aap",
-      "officialPage": "https://www.hautsdefrance-id.fr/appels-a-projets/ami-ia-en-sante/",
+      "officialPage": "https://www.hautsdefrance-id.fr/appels-a-projets/ami-ia-en-sante",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_1dc26899bf6a8255c6c378eb9b177a03a060d8cfd37eaad7648ee68d0f72cb3b",
+      "title": "AMI Low-tech 2026",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/ami-low-tech-2026",
       "selectionTextPresent": false
     },
     {
@@ -2948,14 +2990,14 @@
       "id": "hdf_hdfid_aap_ed218e2a8eba84ee66ded45244538aa2586d438bf6335df66dcfa621f760edda",
       "title": "AMI Technologies du vivant, Biotech et Medtech",
       "sourceId": "hdf_hdfid_aap",
-      "officialPage": "https://www.hautsdefrance-id.fr/appels-a-projets/ami-technologies-du-vivant-biotech-et-medtech/",
+      "officialPage": "https://www.hautsdefrance-id.fr/appels-a-projets/ami-technologies-du-vivant-biotech-et-medtech",
       "selectionTextPresent": false
     },
     {
       "id": "grand_est_fbdd01f15fda9e1e1676213dfb09951d117195e55c6169196d836e274632293f",
       "title": "AMI Territoires pilotes – Urbanisme Favorable à la Santé",
       "sourceId": "grand_est",
-      "officialPage": "https://www.grandest.fr/appel-a-projet/ami-territoires-pilotes/",
+      "officialPage": "https://www.grandest.fr/appel-a-projet/ami-territoires-pilotes",
       "selectionTextPresent": false
     },
     {
@@ -3816,7 +3858,7 @@
       "id": "martinique_europe_51287b2dcce08da731c50b6d4f888d6083b7c5f519924e5666b272b94994398a",
       "title": "Appel à projets : accompagner l’assistance et l’autonomie à domicile - Europe Martinique",
       "sourceId": "martinique_europe",
-      "officialPage": "https://www.europe-martinique.com/appel-a-projets-accompagner-lassistance-et-lautonomie-a-domicile/",
+      "officialPage": "https://www.europe-martinique.com/appel-a-projets-accompagner-lassistance-et-lautonomie-a-domicile",
       "selectionTextPresent": false
     },
     {
@@ -3879,7 +3921,7 @@
       "id": "hdf_hdfid_aap_134b36a68bc4560f0a1434bd13091fcf459a38c03b2b12cbba8a59d7ae85b79c",
       "title": "Appel à Projets : FWF Crossroads - HDFID",
       "sourceId": "hdf_hdfid_aap",
-      "officialPage": "https://www.hautsdefrance-id.fr/appels-a-projets/fwf-crossroads/",
+      "officialPage": "https://www.hautsdefrance-id.fr/appels-a-projets/fwf-crossroads",
       "selectionTextPresent": false
     },
     {
@@ -3963,7 +4005,7 @@
       "id": "hdf_hdfid_aap_a66b4e718fd26f0b9c33d5281727ea28b21b090cd82ca5671c79ccf5cb7709ed",
       "title": "Appel à projets : Transition numérique de la Culture et appropriation de l’intelligence artificielle - HDFID",
       "sourceId": "hdf_hdfid_aap",
-      "officialPage": "https://www.hautsdefrance-id.fr/appels-a-projets/appel-a-projets-transition-numerique-de-la-culture-et-appropriation-de-lintelligence-artificielle/",
+      "officialPage": "https://www.hautsdefrance-id.fr/appels-a-projets/appel-a-projets-transition-numerique-de-la-culture-et-appropriation-de-lintelligence-artificielle",
       "selectionTextPresent": false
     },
     {
@@ -4919,6 +4961,13 @@
       "selectionTextPresent": false
     },
     {
+      "id": "ademe_c48cc10ec1a72e5e359f8db8c1a07464e1eeb40a7bf61095bb9eb7f034c219f7",
+      "title": "AQACIA 2026 – Particules, ozone, produits phytopharmaceutiques et pollutions sectorielles",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/aqacia-2026-particules-ozone-produits-phytopharmaceutiques-et-pollutions-sectorielles",
+      "selectionTextPresent": false
+    },
+    {
       "id": "occitanie_ods_78",
       "title": "Art contemporain - Aide à la production : Œuvres d’art et livres d’artistes",
       "sourceId": "occitanie",
@@ -4954,6 +5003,13 @@
       "selectionTextPresent": false
     },
     {
+      "id": "ademe_494b9f9bd2703c0139a63aa120cb33c3b55c4628450a2a744894d6053d984c97",
+      "title": "Audit et réhabilitation d'installations solaires thermiques collectives",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/audit-et-rehabilitation-dinstallations-solaires-thermiques-collectives",
+      "selectionTextPresent": false
+    },
+    {
       "id": "paca_683e7e97ca6e65639f898fc9489fdc2b3143e44ed7291b1e76c8154d3eb3e81a",
       "title": "Autorisation d'occupation à la journée des zones de gares pour association et entreprises",
       "sourceId": "paca",
@@ -4964,7 +5020,7 @@
       "id": "guadeloupe_europe_8a78a2b4ce20154550abdcec8eeb4c9bd070868e4c137ce8c71ec51591e97102",
       "title": "Autres programmes européens",
       "sourceId": "guadeloupe_europe",
-      "officialPage": "https://www.europe-guadeloupe.fr/les-financements-europeens/autres-programmes-europeens/",
+      "officialPage": "https://www.europe-guadeloupe.fr/les-financements-europeens/autres-programmes-europeens",
       "selectionTextPresent": false
     },
     {
@@ -5153,7 +5209,7 @@
       "id": "grand_est_80266e1ac33f6057bf3c99fa698b32356101b1c4d32147903dd7a8113337e84e",
       "title": "Bourse du secteur sanitaire et social",
       "sourceId": "grand_est",
-      "officialPage": "https://www.grandest.fr/vos-aides-regionales/bourse-secteur-sanitaire-social/",
+      "officialPage": "https://www.grandest.fr/vos-aides-regionales/bourse-secteur-sanitaire-social",
       "selectionTextPresent": false
     },
     {
@@ -5370,7 +5426,7 @@
       "id": "guyane_9338e4f6529b2ff1dccee7750f13ffe6e751be620ec4150c64295d22c3e060aa",
       "title": "Campagne de subvention Sport, jeunesse et Vie associative - Collectivité Territoriale de Guyane",
       "sourceId": "guyane",
-      "officialPage": "https://www.ctguyane.fr/subvention-sport-jeunesse-asso/",
+      "officialPage": "https://www.ctguyane.fr/subvention-sport-jeunesse-asso",
       "selectionTextPresent": false
     },
     {
@@ -5762,7 +5818,7 @@
       "id": "martinique_europe_8d63415dd1752ed5a51313224790996dac2dc82cb4a181ab3c980bdd575042ef",
       "title": "Catégorie : Appel à projet en cours",
       "sourceId": "martinique_europe",
-      "officialPage": "https://www.europe-martinique.com/category/appel-a-projet-encours/",
+      "officialPage": "https://www.europe-martinique.com/category/appel-a-projet-encours",
       "selectionTextPresent": false
     },
     {
@@ -5958,7 +6014,7 @@
       "id": "anr_620ca7a7cb11a088c4b7b9619243f14070a452f22ade18bdfd90d887d40fd655",
       "title": "Choose France for Science - Appel à manifestation d’intérêt - 2025",
       "sourceId": "anr",
-      "officialPage": "https://anr.fr/fr/france-2030/france2030/call/choose-france-for-science-appel-a-manifestation-dinteret-2025/",
+      "officialPage": "https://anr.fr/fr/france-2030/france2030/call/choose-france-for-science-appel-a-manifestation-dinteret-2025",
       "selectionTextPresent": false
     },
     {
@@ -6063,7 +6119,7 @@
       "id": "cvl_europe_c2334aba9a059cc2d9c31d1c6f755ecb5f1326e061da3403788fddffa034c719",
       "title": "Comprendre les financements européens",
       "sourceId": "cvl_europe",
-      "officialPage": "https://www.europeocentre-valdeloire.eu/comprendre-les-financements-europeens/",
+      "officialPage": "https://www.europeocentre-valdeloire.eu/comprendre-les-financements-europeens",
       "selectionTextPresent": false
     },
     {
@@ -6368,6 +6424,13 @@
       "selectionTextPresent": false
     },
     {
+      "id": "ademe_43c25362e43ca0a32ee7512e342761d39a97f2851c558148d6de4a26d382d7bb",
+      "title": "Contrat Chaleur Renouvelable",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/contrat-chaleur-renouvelable",
+      "selectionTextPresent": false
+    },
+    {
       "id": "idf_ods_282",
       "title": "Contrat d'aménagement régional (CAR)",
       "sourceId": "idf",
@@ -6539,7 +6602,7 @@
       "id": "guyane_b23bc549c36bac7d8a77e8807eceaf9df64b4de2a60e94d5ee57a761b00f20de",
       "title": "Coopération : la CTG lance l’appel à projet Biodiversité et cultures",
       "sourceId": "guyane",
-      "officialPage": "https://www.ctguyane.fr/ctg-apo-biodiversite-cultures/",
+      "officialPage": "https://www.ctguyane.fr/ctg-apo-biodiversite-cultures",
       "selectionTextPresent": false
     },
     {
@@ -6613,6 +6676,13 @@
       "selectionTextPresent": false
     },
     {
+      "id": "ademe_65482feb3c9bf96e0c1ac787d10be3c87898bb5bbf7f842d6cdaf2115b4f083a",
+      "title": "Création, extension ou modernisation d’un centre de tri de déchets d’activité économique et déchèteries pour professionnels",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/creation-extension-ou-modernisation-dun-centre-de-tri-de-dechets-dactivite-economique-et-decheteries-pour-professionnels",
+      "selectionTextPresent": false
+    },
+    {
       "id": "paca_3f147b1239c889972943db8e4143bf0dcbc870abb3e21239e0f3fff18029bd70",
       "title": "Création, rénovation ou extension de fermes apicoles",
       "sourceId": "paca",
@@ -6665,7 +6735,7 @@
       "id": "martinique_5c07530c6927750b4dba11ca4d9b0c0923c2ecf6db1f2a79459a4475755f5ac9",
       "title": "CTM, Mes aides en ligne – Collectivité Territoriale de Martinique",
       "sourceId": "martinique",
-      "officialPage": "https://www.collectivitedemartinique.mq/2026/07/29/ctm-mes-aides-en-ligne-2/",
+      "officialPage": "https://www.collectivitedemartinique.mq/2026/07/29/ctm-mes-aides-en-ligne-2",
       "selectionTextPresent": false
     },
     {
@@ -6708,6 +6778,20 @@
       "title": "Deauville Green Awards 2020",
       "sourceId": "bpifrance_aap",
       "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/deauville-green-awards-2020",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_4bcc8e980a10675fc0b69624bf6d551654c130b782a868a611081bd5bc103905",
+      "title": "DECARB FLASH 2025-2027",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/decarb-flash-2025-2027",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_d1a653cad878dafd0cde571ad3a6b445a60f73ed34d6920ab733493ced00fcce",
+      "title": "Decarb Flash Artisan",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/decarb-flash-artisan",
       "selectionTextPresent": false
     },
     {
@@ -6774,6 +6858,13 @@
       "selectionTextPresent": false
     },
     {
+      "id": "ademe_6613b3fc9af3350d119843ff57c6e06ce62a7356559e9faa7cc7a7198b092826",
+      "title": "DÉTER - DÉcarboner le TERtiaire",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/deter-decarboner-le-tertiaire",
+      "selectionTextPresent": false
+    },
+    {
       "id": "occitanie_site_aides_4668323d38e701b1985aac265c0b1b0dd159336497858ee28accfc58dde98311",
       "title": "Deuxième appel à projets de l’Aire Fonctionnelle Littoral Est - POCTEFA",
       "sourceId": "occitanie_site_aides",
@@ -6792,6 +6883,20 @@
       "title": "Développement d'unités de méthanisation (études)",
       "sourceId": "idf",
       "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/80",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_b560455b7e6f876f5dccdd74f3ec69d2945ce4bcc163f1f9ecc54556bb5ccdf6",
+      "title": "Développement de briques technologiques et démonstrateurs - Réalisations de premières industrielles associant l'offre et la demande (DEMIBaC)",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/developpement-de-briques-technologiques-et-demonstrateurs-realisations-de-premieres-industrielles-associant-loffre-et-la-demande-demibac",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_91d48a13944f2049d277528f42910ad0af150b70ba80e80499d3427c49f96eab",
+      "title": "Développement de briques technologiques et services par des PME pour la décarbonation de l’industrie (IBaC PME)",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/developpement-de-briques-technologiques-et-services-par-des-pme-pour-la-decarbonation-de-lindustrie-ibac-pme",
       "selectionTextPresent": false
     },
     {
@@ -7002,6 +7107,13 @@
       "title": "Diag Stratégie Propriété Intellectuelle",
       "sourceId": "bpifrance_aides",
       "officialPage": "https://www.bpifrance.fr/catalogue-offres/diag-strategie-propriete-intellectuelle",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_2ad5c5e68cdd9a5128f64be826a01b2f3b3c18bb989bdd4fd2a6f71b3973bb09",
+      "title": "Diagnostic énergétique et étude d'opportunité multi-EnR pour les serres",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/diagnostic-energetique-et-etude-dopportunite-multi-enr-pour-les-serres",
       "selectionTextPresent": false
     },
     {
@@ -7442,7 +7554,7 @@
       "id": "martinique_6859d2d266a5cd981714ef274027c986af57a450f708202ded509a6db8d35ef0",
       "title": "Dispositifs d’Aides – Collectivité Territoriale de Martinique",
       "sourceId": "martinique",
-      "officialPage": "https://www.collectivitedemartinique.mq/dispositifs-daides/",
+      "officialPage": "https://www.collectivitedemartinique.mq/dispositifs-daides",
       "selectionTextPresent": false
     },
     {
@@ -7691,6 +7803,13 @@
       "selectionTextPresent": false
     },
     {
+      "id": "ademe_c25746780d4fc5d08263cf71eeac960cfd169ea1b9508f5bd0756823c10ef0b8",
+      "title": "Émergence et consolidation d'une économie circulaire en Outre-mer et Corse",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
+      "selectionTextPresent": false
+    },
+    {
       "id": "hdf_europe_5f8d61689aca6b9f37ab2036f3a3dfce2aacbd44bd559c7293869bedb1749922",
       "title": "Emploi: Europe en Hauts-de-France",
       "sourceId": "hdf_europe",
@@ -7702,6 +7821,13 @@
       "title": "En route pour l'emploi (Parc auto à 1 € par jour)",
       "sourceId": "hdf",
       "officialPage": "https://guide-aides.hautsdefrance.fr/dispositif632",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_b0326313e4f848ff92b99e97abca534127525bf83234aaf05dcc6d9ad46877b2",
+      "title": "Engins de chantier électriques 2026 – Programme CEE E-Trans",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/engins-de-chantier-electriques-2026-programme-cee-e-trans",
       "selectionTextPresent": false
     },
     {
@@ -7722,7 +7848,7 @@
       "id": "grand_est_98a3fb4b82c8d82bb8bd4ea6d6a20faf44c644cec76568d00fc02566c1104c7a",
       "title": "Entreprenariat des jeunes (18-29 ans)",
       "sourceId": "grand_est",
-      "officialPage": "https://www.grandest.fr/vos-aides-regionales/entreprenariat-des-jeunes/",
+      "officialPage": "https://www.grandest.fr/vos-aides-regionales/entreprenariat-des-jeunes",
       "selectionTextPresent": false
     },
     {
@@ -7779,6 +7905,13 @@
       "title": "Équipement des centres de formation paramédicale et maïeutique",
       "sourceId": "idf",
       "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/78",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_6c7e408db130206201b445d6aac17bbfe249ea1b397c6e8878b6991557c34ecd",
+      "title": "Équipements pour l’approvisionnement de chaufferies bois du Fonds chaleur et/ou Plan de relance et/ou France 2030",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/equipements-pour-lapprovisionnement-de-chaufferies-bois-du-fonds-chaleur-etou-plan-de-relance-etou-france-2030",
       "selectionTextPresent": false
     },
     {
@@ -7845,10 +7978,38 @@
       "selectionTextPresent": false
     },
     {
+      "id": "ademe_80e598917a965f4fcb3a91b94b2325f5f4400029866c12aca95cf722391d268a",
+      "title": "Étude d'aide à la décision pour les projets de géothermie de surface, d'aérothermie ou de thalassothermie",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etude-daide-la-decision-pour-les-projets-de-geothermie-de-surface-daerothermie-ou-de-thalassothermie",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_269efaed6ae386522217398a1f8be92659287d1941f1395d210ecab83e4457f1",
+      "title": "Étude d'aide à la décision pour les projets de géothermie profonde",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etude-daide-la-decision-pour-les-projets-de-geothermie-profonde",
+      "selectionTextPresent": false
+    },
+    {
       "id": "pdl_a77fb1a64e4d70651688b18f1f29bb29d20098101a1f8e8b6213ca32cde2a6f5",
       "title": "Etude d'installation en agriculture",
       "sourceId": "pdl",
       "officialPage": "https://www.paysdelaloire.fr/les-aides/etude-dinstallation-en-agriculture",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_9b5dc219b7ccedd3c08d2e5e7fec152ac314399ee1b71bb656e366ce5ff773dd",
+      "title": "Étude d'opportunité multi-EnR&R",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etude-dopportunite-multi-enrr",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_33a2601c831fc79c036c0b800cff2c2ace8b814496e30e05f8deaa842b3df740",
+      "title": "Étude de faisabilité d'installation solaire thermique",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etude-de-faisabilite-dinstallation-solaire-thermique",
       "selectionTextPresent": false
     },
     {
@@ -7887,10 +8048,94 @@
       "selectionTextPresent": false
     },
     {
+      "id": "ademe_e8fc5039dc6ec54192adbf616948575d8866c16968a0b91459f761adec9fa96a",
+      "title": "Études d’écoconception des produits et des services",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-decoconception-des-produits-et-des-services",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_13f26679edcc74e5c08ebb3f53cb549184ef268ab49212f7b09aa9723ba8528f",
+      "title": "Études de diagnostic et d'accompagnement de projet d’une installation de méthanisation",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-de-diagnostic-et-daccompagnement-de-projet-dune-installation-de-methanisation",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_f5d2203f453dd823f9c6577853951a9807602ee348e8c479d34db9ffa4c4ae29",
+      "title": "Études de faisabilité de performance énergétique ou de décarbonation d'entreprises industrielles",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-de-faisabilite-de-performance-energetique-ou-de-decarbonation-dentreprises-industrielles",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_b971cca8c4cc0e459f9e72cdc54aa79724a28470df23a62beb77e7880f50a245",
+      "title": "Études de faisabilité de projet de production d'électricité renouvelable en outre-mer et Corse",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-de-faisabilite-de-projet-de-production-delectricite-renouvelable-en-outre-mer-et-corse",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_5bd5763b7bda7442b3e83e3dde610dec3269dcfc1a43a2ed1a3b7df4fed0c95d",
+      "title": "Études de faisabilité pour l'installation de récupération de chaleur fatale",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-de-faisabilite-pour-linstallation-de-recuperation-de-chaleur-fatale",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_3b7a04bc2b910b2b041fc3e68e30c35b0a287a25bfe7ca2eae5cc873ad4b8885",
+      "title": "Études des projets de chaufferie biomasse",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-des-projets-de-chaufferie-biomasse",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_c253a846fdb7bddb063d9e4cd76a175bb8a856656bc272f651cabbb12990e14a",
+      "title": "Études et investissements structurants pour la gestion des déchets en Outre-mer et Corse",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_1cff0564d4098ca82d9267c20df145ed0d235abb34b07fa79445f053f8049f3b",
+      "title": "Études et travaux de dépollution d’une friche – Fonds vert",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-et-travaux-de-depollution-dune-friche-fonds-vert",
+      "selectionTextPresent": false
+    },
+    {
       "id": "paca_89b0ff62591a9f6b2dd07ddbaf48f267bf9edc4b34ceeed01f9f254fc033993d",
       "title": "Etudes et travaux pour des projets de Bois Energie",
       "sourceId": "paca",
       "officialPage": "https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/etudes-et-travaux-pour-des-projets-de-bois-energie",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_48b68be4a7633f6136792eb0967d360f59f8d33b20482aa1d4263051dd31121d",
+      "title": "Études pour la création, l'extension ou la modernisation de centres de tri des déchets d’activités économiques et de déchèteries pour professionnels",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-pour-la-creation-lextension-ou-la-modernisation-de-centres-de-tri-des-dechets-dactivites-economiques-et-de-decheteries-pour-professionnels",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_befb384ca7e842b239252f98fbbe2d4187d11da79fde5af5b69c539468581ce4",
+      "title": "Études pour la gestion des biodéchets par des acteurs économiques",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-pour-la-gestion-des-biodechets-par-des-acteurs-economiques",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_4a52b2ea23c3612fd658a611b6beabe63c76ddbadbd1e349a66207bb6a8c831e",
+      "title": "Études pour une installation hydroélectrique",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-pour-une-installation-hydroelectrique",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_552b8782c4b803189fff4fceb0e3c57431c0c79dd344f0f3cfdf9eb548e6592f",
+      "title": "Études sur les réseaux de chaleur ou de froid alimentés par des EnR et/ou EnR&R",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-sur-les-reseaux-de-chaleur-ou-de-froid-alimentes-par-des-enr-etou-enrr",
       "selectionTextPresent": false
     },
     {
@@ -7985,6 +8230,20 @@
       "selectionTextPresent": false
     },
     {
+      "id": "ademe_6f1832d42d2c0d9a68737f84150bc7f2d233659f1f1d632da39cb64f8ead1f3b",
+      "title": "Extension et création de réseaux de chaleur ou de froid",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/extension-et-creation-de-reseaux-de-chaleur-ou-de-froid",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_6c3442eaf96661198e2924237d8f1369e8a188fa171396f82c70c78878b42555",
+      "title": "Extrême défi - Textile responsable",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/extreme-defi-textile-responsable",
+      "selectionTextPresent": false
+    },
+    {
       "id": "idf_ods_56",
       "title": "Fabriques arts visuels",
       "sourceId": "idf",
@@ -8013,6 +8272,13 @@
       "selectionTextPresent": false
     },
     {
+      "id": "ademe_8cfcb67831f4037a0cb4ac8b57e9178dd04fda455959ef46607396cab94c1d94",
+      "title": "Favoriser le développement de Zones Industrielles Bas Carbone (ZIBaC) Phase 2 : accompagnement",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/favoriser-le-developpement-de-zones-industrielles-bas-carbone-zibac-phase-2-accompagnement",
+      "selectionTextPresent": false
+    },
+    {
       "id": "aura_fd783aa5ae9488dae4ebebcd0e26e764ec13826c0a89dc33e868ff41d80b6d9a",
       "title": "Favoriser le développement des projets européens \"Amorçage Europe\"",
       "sourceId": "aura",
@@ -8030,7 +8296,7 @@
       "id": "martinique_europe_aap_8b2d698772de9a6e3e9b87b4bd7dcb072e12b025db25c2c42c55793d214043c7",
       "title": "FEADER",
       "sourceId": "martinique_europe_aap",
-      "officialPage": "https://www.europe-martinique.com/glossaire/feader/",
+      "officialPage": "https://www.europe-martinique.com/glossaire/feader",
       "selectionTextPresent": false
     },
     {
@@ -8303,21 +8569,21 @@
       "id": "martinique_europe_268e4c6c834deef0615b40c995f8d5d3cfee8a174956ea9a3291ee57a0f993ad",
       "title": "FEADER : deux dispositifs ouverts au dépôt sur EURO-PAC - Europe Martinique",
       "sourceId": "martinique_europe",
-      "officialPage": "https://www.europe-martinique.com/feader-deux-dispositifs-ouverts-au-depot-sur-euro-pac/",
+      "officialPage": "https://www.europe-martinique.com/feader-deux-dispositifs-ouverts-au-depot-sur-euro-pac",
       "selectionTextPresent": false
     },
     {
       "id": "grand_est_europe_a86cabbac506bdae041f7320d5b8eb8bd501c6d7ed06c346bbc626533c7033e5",
       "title": "FEADER 2023-2027",
       "sourceId": "grand_est_europe",
-      "officialPage": "https://beeurope.grandest.fr/decouvrir/feader-2023-2027/",
+      "officialPage": "https://beeurope.grandest.fr/decouvrir/feader-2023-2027",
       "selectionTextPresent": false
     },
     {
       "id": "martinique_europe_81b3fbfca891f5a5db15c1e7aae410fd6db394fa1aea5d9f34a9cc806c806307",
       "title": "FEADER Martinique 23-27",
       "sourceId": "martinique_europe",
-      "officialPage": "https://www.europe-martinique.com/feader-23-27/",
+      "officialPage": "https://www.europe-martinique.com/feader-23-27",
       "selectionTextPresent": false
     },
     {
@@ -8520,7 +8786,7 @@
       "id": "guadeloupe_europe_2aa919753437c0193e682d3cccdb1baec0d3db2ab59924d5a6453b5efb015472",
       "title": "FEAMPA",
       "sourceId": "guadeloupe_europe",
-      "officialPage": "https://www.europe-guadeloupe.fr/les-financements-europeens/feampa/",
+      "officialPage": "https://www.europe-guadeloupe.fr/les-financements-europeens/feampa",
       "selectionTextPresent": false
     },
     {
@@ -8604,14 +8870,14 @@
       "id": "guadeloupe_europe_ee3d197dbfec538cce07dcce68d2a10e0ad188bac4400bbad8334b21b4e80869",
       "title": "FEDER",
       "sourceId": "guadeloupe_europe",
-      "officialPage": "https://www.europe-guadeloupe.fr/les-financements-europeens/feder/",
+      "officialPage": "https://www.europe-guadeloupe.fr/les-financements-europeens/feder",
       "selectionTextPresent": false
     },
     {
       "id": "martinique_europe_aap_7a60f37bb46f6fcb0c31c969a1e18f2f16f44f593752d9d7d7426c2403da4fd8",
       "title": "FEDER",
       "sourceId": "martinique_europe_aap",
-      "officialPage": "https://www.europe-martinique.com/glossaire/feder/",
+      "officialPage": "https://www.europe-martinique.com/glossaire/feder",
       "selectionTextPresent": false
     },
     {
@@ -9269,14 +9535,14 @@
       "id": "martinique_europe_a6f63ca20b957795c4086e0685d1abae25ab2c9d11bb4a43de33468ef128b94d",
       "title": "FICHES DOMO FSE+ 2021-2027",
       "sourceId": "martinique_europe",
-      "officialPage": "https://www.europe-martinique.com/fiches-domo-fse-2021-2027/",
+      "officialPage": "https://www.europe-martinique.com/fiches-domo-fse-2021-2027",
       "selectionTextPresent": false
     },
     {
       "id": "idf_france2030_b925371e4db28499391fcfaaa5b64da6d7b0254b2dba574b8db92c803e005bdd",
       "title": "Filières Agricoles & Forestières France 2030 – France 2030 – Île-de-France",
       "sourceId": "idf_france2030",
-      "officialPage": "https://leaderpia.iledefrance.fr/filieres-agricoles-forestieres-france-2030/",
+      "officialPage": "https://leaderpia.iledefrance.fr/filieres-agricoles-forestieres-france-2030",
       "selectionTextPresent": false
     },
     {
@@ -9297,7 +9563,7 @@
       "id": "hdf_hdfid_aap_27c58df8dcf450f1ccb2ac026df176e727d22eb006097d584aba7f1fc9dd78a0",
       "title": "Financement d'une innovation et stratégie financière - HDFID",
       "sourceId": "hdf_hdfid_aap",
-      "officialPage": "https://www.hautsdefrance-id.fr/accompagnements/financement-innovation/",
+      "officialPage": "https://www.hautsdefrance-id.fr/accompagnements/financement-innovation",
       "selectionTextPresent": false
     },
     {
@@ -9444,7 +9710,7 @@
       "id": "grand_est_europe_998798b132cdf78935d8b4999c5247eef86bbb113aed02e5f2d6a1e88a369798",
       "title": "Foire aux Questions (FAQ) sur les obligations de communication des bénéficiaires d’une aide FEDER / FSE + / FTJ",
       "sourceId": "grand_est_europe",
-      "officialPage": "https://beeurope.grandest.fr/foire-aux-questions-faq-sur-les-obligations-de-communication-des-beneficiaires-dune-aide-feder-fse-ftj/",
+      "officialPage": "https://beeurope.grandest.fr/foire-aux-questions-faq-sur-les-obligations-de-communication-des-beneficiaires-dune-aide-feder-fse-ftj",
       "selectionTextPresent": false
     },
     {
@@ -9609,6 +9875,13 @@
       "selectionTextPresent": false
     },
     {
+      "id": "ademe_994f1fbdc924f032c21d4d14de54a9406f60a333b2712467b2215c6a70822d75",
+      "title": "Fonds Économie Circulaire - ORMAT 2026 (Objectif Recyclage MATières)",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/fonds-economie-circulaire-ormat-2026-objectif-recyclage-matieres",
+      "selectionTextPresent": false
+    },
+    {
       "id": "hdf_c946409d152d0feafc2108be57ead2f40269b6aa3a3650789550d20bf24037c5",
       "title": "Fonds entrepreneurial territorial de transformation - FE2T",
       "sourceId": "hdf",
@@ -9641,6 +9914,13 @@
       "title": "Fonds Île-de-France Décarbonation",
       "sourceId": "idf",
       "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/790",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_58970fd417057887da031dfff747cee0d8779d6a6c12fbd8fad9efceec0184d1",
+      "title": "Fonds local pour l’adaptation en Guadeloupe (FLAG) 2.0",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/fonds-local-pour-ladaptation-en-guadeloupe-flag-20",
       "selectionTextPresent": false
     },
     {
@@ -9784,6 +10064,13 @@
       "selectionTextPresent": false
     },
     {
+      "id": "ademe_c82221811ed8498d794b347968a609629dab9d9aac13030b01f1f0cfd7ec9671",
+      "title": "Fonds vert – Territoires d’industrie en transition écologique",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/fonds-vert-territoires-dindustrie-en-transition-ecologique-0",
+      "selectionTextPresent": false
+    },
+    {
       "id": "bpifrance_aap_1e4e3836be4555f5c7e34b7042cd92e1986da426adc2fcb615e5b05a12b728bb",
       "title": "Food Use Tech 2019 : Speed-dating startups / investisseurs",
       "sourceId": "bpifrance_aap",
@@ -9906,28 +10193,28 @@
       "id": "anr_ac14b70a11fcc80e6c86351e0394efc631cf80fe111cfe98dd0e21d9b1311364",
       "title": "France 2030 - PEPR Climat TRACCS \"Transformer la modélisation du climat pour les services climatiques\" - Appel à projets - 2026",
       "sourceId": "anr",
-      "officialPage": "https://anr.fr/fr/france-2030/france2030/call/france-2030-pepr-climat-traccs-transformer-la-modelisation-du-climat-pour-les-services-climatique/",
+      "officialPage": "https://anr.fr/fr/france-2030/france2030/call/france-2030-pepr-climat-traccs-transformer-la-modelisation-du-climat-pour-les-services-climatique",
       "selectionTextPresent": false
     },
     {
       "id": "anr_75fb77a452e637aca6e3ba60c24d75cd51b0b93a8a495b9b6580e5d7f8c1fc86",
       "title": "France 2030 - PEPR GFM \"Grands Fonds Marins\" - Appel à projets - 2026",
       "sourceId": "anr",
-      "officialPage": "https://anr.fr/fr/france-2030/france2030/call/france-2030-pepr-gfm-grands-fonds-marins-appel-a-projets-2026/",
+      "officialPage": "https://anr.fr/fr/france-2030/france2030/call/france-2030-pepr-gfm-grands-fonds-marins-appel-a-projets-2026",
       "selectionTextPresent": false
     },
     {
       "id": "anr_977df88d71f45629f6e2594318559b796753157f63f38ea68005909404bf6750",
       "title": "France 2030 - PEPR MOBIDEC : \"Digitalisation et décarbonation des mobilités\" - Appel à projets – 2026",
       "sourceId": "anr",
-      "officialPage": "https://anr.fr/fr/france-2030/france2030/call/france-2030-pepr-mobidec-digitalisation-et-decarbonation-des-mobilites-appel-a-projets-202/",
+      "officialPage": "https://anr.fr/fr/france-2030/france2030/call/france-2030-pepr-mobidec-digitalisation-et-decarbonation-des-mobilites-appel-a-projets-202",
       "selectionTextPresent": false
     },
     {
       "id": "anr_a4855f7ef8ac546c0470b7504742617be37bfc89ae11d0c23510dff56e292087",
       "title": "France 2030 - PEPR PROPSY – \"Psychiatrie de précision\" - Appel à projets - 2026",
       "sourceId": "anr",
-      "officialPage": "https://anr.fr/fr/france-2030/france2030/call/france-2030-pepr-propsy-psychiatrie-de-precision-appel-a-projets-2026/",
+      "officialPage": "https://anr.fr/fr/france-2030/france2030/call/france-2030-pepr-propsy-psychiatrie-de-precision-appel-a-projets-2026",
       "selectionTextPresent": false
     },
     {
@@ -9948,7 +10235,7 @@
       "id": "bpifrance_rebond_industriel_official",
       "title": "France 2030 — Rebond Industriel — soutien à l’investissement industriel",
       "sourceId": "bpifrance_rebond_industriel",
-      "officialPage": "https://rebond-industriel.bpifrance.fr/",
+      "officialPage": "https://rebond-industriel.bpifrance.fr",
       "selectionTextPresent": false
     },
     {
@@ -9962,7 +10249,7 @@
       "id": "anr_5a850ecc3eaf72c400a48d40614a6e0a976fb5b18540427f665b4226a6b31704",
       "title": "France 2030 : PPR Science pour l’Education - Appel à projets – 2025",
       "sourceId": "anr",
-      "officialPage": "https://anr.fr/fr/france-2030/france2030/call/france-2030-ppr-science-pour-leducation-appel-a-projets-2025/",
+      "officialPage": "https://anr.fr/fr/france-2030/france2030/call/france-2030-ppr-science-pour-leducation-appel-a-projets-2025",
       "selectionTextPresent": false
     },
     {
@@ -10032,7 +10319,7 @@
       "id": "guadeloupe_europe_29a7072e0b3f459d72edeee9bdb82f6e3d8292a2bcbc35144b851e67035ed9c9",
       "title": "FSE+",
       "sourceId": "guadeloupe_europe",
-      "officialPage": "https://www.europe-guadeloupe.fr/les-financements-europeens/fse/",
+      "officialPage": "https://www.europe-guadeloupe.fr/les-financements-europeens/fse",
       "selectionTextPresent": false
     },
     {
@@ -10046,14 +10333,14 @@
       "id": "martinique_europe_7992f863cb9ac1f605eecb839a889f94be493539fd0b0e0b7adc451dc2d69a12",
       "title": "FSE+ : ouverture de l’appel à projets « FOS – Lutte contre la privation matérielle » - Europe Martinique",
       "sourceId": "martinique_europe",
-      "officialPage": "https://www.europe-martinique.com/fse-ouverture-de-lappel-a-projets-fos-lutte-contre-la-privation-materielle/",
+      "officialPage": "https://www.europe-martinique.com/fse-ouverture-de-lappel-a-projets-fos-lutte-contre-la-privation-materielle",
       "selectionTextPresent": false
     },
     {
       "id": "martinique_europe_ca842adc76fb110186bcef68bc68c0d0f6e1076c47afac7588e9e8638b9b73c2",
       "title": "FSE+ : un nouvel appel à projets pour favoriser l’inclusion des jeunes par la création artistique - Europe Martinique",
       "sourceId": "martinique_europe",
-      "officialPage": "https://www.europe-martinique.com/fse-un-nouvel-appel-a-projets-pour-favoriser-linclusion-des-jeunes-par-la-creation-artistique/",
+      "officialPage": "https://www.europe-martinique.com/fse-un-nouvel-appel-a-projets-pour-favoriser-linclusion-des-jeunes-par-la-creation-artistique",
       "selectionTextPresent": false
     },
     {
@@ -10123,7 +10410,7 @@
       "id": "guadeloupe_europe_741c67034859f5dda1bf28ddc2b7b0b3930ae2cc3f467fa026d56ff152a926fe",
       "title": "GAL Nord Grande Terre – Aide au démarrage d’entreprises",
       "sourceId": "guadeloupe_europe",
-      "officialPage": "https://www.europe-guadeloupe.fr/appels_a_projet/gal-nord-grande-terre-aide-au-demarrage-dentreprises/",
+      "officialPage": "https://www.europe-guadeloupe.fr/appels_a_projet/gal-nord-grande-terre-aide-au-demarrage-dentreprises",
       "selectionTextPresent": false
     },
     {
@@ -10183,10 +10470,17 @@
       "selectionTextPresent": false
     },
     {
+      "id": "ademe_87bc09dbff8fae82e1443f3a80bc698352b526b1a0027334fec4d2aa85b98a6b",
+      "title": "Gestion des biodéchets des acteurs économiques",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/gestion-des-biodechets-des-acteurs-economiques",
+      "selectionTextPresent": false
+    },
+    {
       "id": "bfc_aHR0cHM6Ly9zdWJ2ZW50aW9ucy5i",
       "title": "Gestion des subventions et des aides individuelles",
       "sourceId": "bfc",
-      "officialPage": "https://subventions.bourgognefranchecomte.fr/sub/tiers/aides/details/?sigle=FB-ACOL",
+      "officialPage": "https://subventions.bourgognefranchecomte.fr/sub/tiers/aides/details?sigle=FB-ACOL",
       "selectionTextPresent": false
     },
     {
@@ -10228,7 +10522,7 @@
       "id": "idf_france2030_d4c5d04058b29871495822ded20f7d8cb20451f41bb7c047cd2e9ecba1728561",
       "title": "GLI Filières France 2030 – France 2030 – Île-de-France",
       "sourceId": "idf_france2030",
-      "officialPage": "https://leaderpia.iledefrance.fr/gli-filieres-france-2030/",
+      "officialPage": "https://leaderpia.iledefrance.fr/gli-filieres-france-2030",
       "selectionTextPresent": false
     },
     {
@@ -10270,14 +10564,14 @@
       "id": "grand_est_c32740601c3ed7058931cbc7937a8bdaacd439228c8b85eb4d012aba97cca6d0",
       "title": "Grand Est Innovation Sociale en Ruralité",
       "sourceId": "grand_est",
-      "officialPage": "https://www.grandest.fr/vos-aides-regionales/grand-est-innovation-sociale-en-ruralite/",
+      "officialPage": "https://www.grandest.fr/vos-aides-regionales/grand-est-innovation-sociale-en-ruralite",
       "selectionTextPresent": false
     },
     {
       "id": "grand_est_447a041a7c79a5f52041af09eff3a5a2d9a0937f1fb064382b18c0d7b461d746",
       "title": "Grand Est Start-Up",
       "sourceId": "grand_est",
-      "officialPage": "https://www.grandest.fr/vos-aides-regionales/grand-est-start-up/",
+      "officialPage": "https://www.grandest.fr/vos-aides-regionales/grand-est-start-up",
       "selectionTextPresent": false
     },
     {
@@ -10452,7 +10746,7 @@
       "id": "cvl_europe_0bde4f3cf6313ff7383fcd858d9c519b0cb263202c2f5a507020aa7952a312dd",
       "title": "Identifier votre financement",
       "sourceId": "cvl_europe",
-      "officialPage": "https://www.europeocentre-valdeloire.eu/identifier-votre-financement/",
+      "officialPage": "https://www.europeocentre-valdeloire.eu/identifier-votre-financement",
       "selectionTextPresent": false
     },
     {
@@ -10537,6 +10831,13 @@
       "title": "Indemnités de stage et remboursement frais de transport en masso-kinésithérapie et ergothérapie",
       "sourceId": "idf",
       "officialPage": "https://www.iledefrance.fr/aides-et-appels-a-projets/813",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_86bc49446d91a9b5275ad03235f4e8a9b5ea79c120478220fdacca947bf08b59",
+      "title": "Infrastructures de données et équipements numériques résilients et durables",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/infrastructures-de-donnees-et-equipements-numeriques-resilients-et-durables",
       "selectionTextPresent": false
     },
     {
@@ -10687,6 +10988,48 @@
       "selectionTextPresent": false
     },
     {
+      "id": "ademe_e0b30d98c8aec43b5f2a3a910d9bf5944ff9fd6c244d2d7c394c3b590db54c48",
+      "title": "Installation de pompes à chaleur solaire pour la production d’eau chaude",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/installation-de-pompes-chaleur-solaire-pour-la-production-deau-chaude",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_8def0ece9f00877c3fbc13d11491ff5c4b4a1087c02b33977bd43f2d0be1be22",
+      "title": "Installation de production d'eau chaude solaire thermique",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/installation-de-production-deau-chaude-solaire-thermique",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_be961f9cb993b619d60b230d978738a95e104c81c24a40df6d090d4c8a43cdde",
+      "title": "Installations de production de chaleur à partir de géothermie profonde",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/installations-de-production-de-chaleur-partir-de-geothermie-profonde",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_ccf3796fcf03111b7000bbcd2d1e53fcc69f0bc69e7562486889a250877c841b",
+      "title": "Installations de production de chaleur et de froid à partir de boucle d’eau tempérée géothermique",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/installations-de-production-de-chaleur-et-de-froid-partir-de-boucle-deau-temperee-geothermique",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_0d9161468d563d803e7e104202d2efff874656f9315c1b3a04ec8a62a2c25599",
+      "title": "Installations de production de chaleur et de froid renouvelable à partir de géothermie de surface, d’aérothermie ou de thalassothermie",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/installations-de-production-de-chaleur-et-de-froid-renouvelable-partir-de-geothermie-de-surface-daerothermie-ou-de-thalassothermie",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_85ff98f7c78f66be7882b9dd0a3a638f5145c070fbfd3efbc280ea43106e6107",
+      "title": "Installations de systèmes solaires combinés",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/installations-de-systemes-solaires-combines",
+      "selectionTextPresent": false
+    },
+    {
       "id": "bfc_europe_efa06bd8aa46a901dc787dcc6f03be9fd1f054fc71ce3d3a504b0d4a21ece0da",
       "title": "Instrument européen pour le voisinage, le développement et la coopération internationale",
       "sourceId": "bfc_europe",
@@ -10697,7 +11040,7 @@
       "id": "anr_71abd97a0359fe2f4cc48400c5911a7cd32251aebbad2d47743b9709be4234f3",
       "title": "Instruments de financement",
       "sourceId": "anr",
-      "officialPage": "https://anr.fr/fr/lanr/instruments-de-financement/",
+      "officialPage": "https://anr.fr/fr/lanr/instruments-de-financement",
       "selectionTextPresent": false
     },
     {
@@ -10939,6 +11282,13 @@
       "selectionTextPresent": false
     },
     {
+      "id": "ademe_00210b719cef353044352858b9daf3796174ea3cebd96280cfe09ef28ef8e031",
+      "title": "Investissements d’écoconception pour améliorer la performance environnementale",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/investissements-decoconception-pour-ameliorer-la-performance-environnementale",
+      "selectionTextPresent": false
+    },
+    {
       "id": "paca_aides_master_f45cd01fd76d7c54adef60e943df033b9b32a122af8cfa8faf50e4fbb1e45b13",
       "title": "Investissements dans les réserves naturelles régionales",
       "sourceId": "paca_aides_master",
@@ -11005,14 +11355,14 @@
       "id": "mayotte_europe_70b452f28bf5b081f55716b55b5e08d8d426947aff4f5ea082171c412bc03877",
       "title": "Je découvre l’Europe à Mayotte - GIPEAM",
       "sourceId": "mayotte_europe",
-      "officialPage": "https://europe-a-mayotte.yt/je-decouvre-leurope-a-mayotte/#financements-europeens",
+      "officialPage": "https://europe-a-mayotte.yt/je-decouvre-leurope-a-mayotte",
       "selectionTextPresent": false
     },
     {
       "id": "mayotte_europe_40345ca83caf5321907a26b491a262fc562add093c361f364c40ab06422e654b",
       "title": "Je découvre les financements européens - GIPEAM",
       "sourceId": "mayotte_europe",
-      "officialPage": "https://europe-a-mayotte.yt/je-decouvre-leurope-a-mayotte/je-decouvre-les-financements-europeens/",
+      "officialPage": "https://europe-a-mayotte.yt/je-decouvre-leurope-a-mayotte/je-decouvre-les-financements-europeens",
       "selectionTextPresent": false
     },
     {
@@ -11124,7 +11474,7 @@
       "id": "martinique_europe_69eb3f3abae0b058e3909551c77fdbb4b6c5d7aba6548f2ee3d33093d2dd5fcb",
       "title": "L’Europe s’engage auprès des agriculteurs martiniquais",
       "sourceId": "martinique_europe",
-      "officialPage": "https://www.europe-martinique.com/feader-23-27/leurope-sengage-aupres-des-agriculteurs-martiniquais/",
+      "officialPage": "https://www.europe-martinique.com/feader-23-27/leurope-sengage-aupres-des-agriculteurs-martiniquais",
       "selectionTextPresent": false
     },
     {
@@ -11299,7 +11649,7 @@
       "id": "martinique_europe_df4c43d6aba0751c90fbbfd7b5190831fe8ea70228e7a05ab93a4d99bcfe3410",
       "title": "Le circuit de vie de votre dossier d’aide européenne",
       "sourceId": "martinique_europe",
-      "officialPage": "https://www.europe-martinique.com/le-circuit-dun-dossier/",
+      "officialPage": "https://www.europe-martinique.com/le-circuit-dun-dossier",
       "selectionTextPresent": false
     },
     {
@@ -11530,7 +11880,7 @@
       "id": "occitanie_site_aides_a6730ccf12114bbbb4f3892631334f4d3bd44de30b67d171c15c5c70b1237e13",
       "title": "Les aides et appels à projets",
       "sourceId": "occitanie_site_aides",
-      "officialPage": "https://www.laregion.fr/Les-aides-et-appels-a-projets?debut_liste_articles=20#pagination_liste_articles",
+      "officialPage": "https://www.laregion.fr/Les-aides-et-appels-a-projets?debut_liste_articles=20",
       "selectionTextPresent": false
     },
     {
@@ -11558,7 +11908,7 @@
       "id": "guadeloupe_europe_64604f0fe412fd2fcc79b24acfdae13be834535e1d132a595928fd1838366a4e",
       "title": "Les appels à projets",
       "sourceId": "guadeloupe_europe",
-      "officialPage": "https://www.europe-guadeloupe.fr/jai-un-projet/les-appels-a-projets/page/2/#",
+      "officialPage": "https://www.europe-guadeloupe.fr/jai-un-projet/les-appels-a-projets/page/2",
       "selectionTextPresent": false
     },
     {
@@ -11600,7 +11950,7 @@
       "id": "grand_est_3c0e7ff85ef5253fb026b7f3ea60e3f7bbf8ba4f32a7668d7f2c4e969a77fc1a",
       "title": "Les Chèques CREA : accompagner les créateurs d’entreprises à chaque étape",
       "sourceId": "grand_est",
-      "officialPage": "https://www.grandest.fr/vos-aides-regionales/les-cheques-crea/",
+      "officialPage": "https://www.grandest.fr/vos-aides-regionales/les-cheques-crea",
       "selectionTextPresent": false
     },
     {
@@ -11642,7 +11992,7 @@
       "id": "grand_est_europe_00b7dfefdffe91eb34156f2071ca862192de5bd9630375529f88e952a56431a5",
       "title": "Les étapes pour obtenir une aide européenne",
       "sourceId": "grand_est_europe",
-      "officialPage": "https://beeurope.grandest.fr/rechercher/comment-ca-marche/",
+      "officialPage": "https://beeurope.grandest.fr/rechercher/comment-ca-marche",
       "selectionTextPresent": false
     },
     {
@@ -11691,7 +12041,7 @@
       "id": "cvl_europe_2651516654db6e60fb39c3b30e5ee55c2168cffff471f2d86608a3dd853df6c8",
       "title": "Les projets qui bougent",
       "sourceId": "cvl_europe",
-      "officialPage": "https://www.europeocentre-valdeloire.eu/les-projets-qui-bougent/",
+      "officialPage": "https://www.europeocentre-valdeloire.eu/les-projets-qui-bougent",
       "selectionTextPresent": false
     },
     {
@@ -11810,7 +12160,7 @@
       "id": "guyane_b98e8895dc0d03721a5f0cd538004b76ce9cd088d293054f178fcde44ab04a78",
       "title": "Livre et Lecture - Aides Culturelles CTG - Collectivité Territoriale de Guyane",
       "sourceId": "guyane",
-      "officialPage": "https://www.ctguyane.fr/aides-culturelles-de-la-collectivite-territoriale-de-guyane/aides-culturelles-livre-et-lecture/",
+      "officialPage": "https://www.ctguyane.fr/aides-culturelles-de-la-collectivite-territoriale-de-guyane/aides-culturelles-livre-et-lecture",
       "selectionTextPresent": false
     },
     {
@@ -12248,6 +12598,13 @@
       "selectionTextPresent": false
     },
     {
+      "id": "ademe_947a613dda9eabaf876a70de7b269d69ba65ddc0ce5404ddef39512b0a19a3f4",
+      "title": "Mobili'Pro : optimisation des déplacements professionnels",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/mobilipro-optimisation-des-deplacements-professionnels",
+      "selectionTextPresent": false
+    },
+    {
       "id": "hdf_bb0cdd60512b4873a1afcb3b2dd43b230c1a8afbe4d3d009b21deca54f09abee",
       "title": "Mobilité et Territoires en Hauts-de-France (MOTE)",
       "sourceId": "hdf",
@@ -12350,6 +12707,27 @@
       "title": "Mon ordi au lycée",
       "sourceId": "pdl",
       "officialPage": "https://www.paysdelaloire.fr/les-aides/mon-ordi-au-lycee",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_262799eb2237ae09ec800afe442e7d0b5b4053be5aeafbd10778468f0a98c4a7",
+      "title": "Mon parcours économies d'énergie - Accompagnements ACT® Pas-à-Pas et ACT® Évaluation des structures non industrielles",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/mon-parcours-economies-denergie-accompagnements-actr-pas-pas-et-actr-evaluation-des-structures-non-industrielles",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_694ebeb85447fed36426a72457e526d26a8ed20a6f05f7d04c67f8269f52817d",
+      "title": "Mon parcours économies d'énergie - Audit énergétique volontaire en industrie",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/mon-parcours-economies-denergie-audit-energetique-volontaire-en-industrie",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_369ec702fe28a573814fed5ed80b9e2b834fd2de558635e68541067f4b121a85",
+      "title": "Mon parcours économies d'énergie - Booster : réduire votre facture énergétique et gagner en valeur verte",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/mon-parcours-economies-denergie-booster-reduire-votre-facture-energetique-et-gagner-en-valeur-verte",
       "selectionTextPresent": false
     },
     {
@@ -12510,7 +12888,7 @@
       "id": "grand_est_europe_3e0aa5521b106a5e5399380520fe89c67229ac69740c4218380caf3344d2fd68",
       "title": "Nouveau podcast : le Joie-Lieu, un tiers-lieu soutenu par le FSE+ en Alsace du Nord",
       "sourceId": "grand_est_europe",
-      "officialPage": "https://beeurope.grandest.fr/actualites/nouveau-podcast-le-joie-lieu-un-tiers-lieu-soutenu-par-le-fse-en-alsace-du-nord/",
+      "officialPage": "https://beeurope.grandest.fr/actualites/nouveau-podcast-le-joie-lieu-un-tiers-lieu-soutenu-par-le-fse-en-alsace-du-nord",
       "selectionTextPresent": false
     },
     {
@@ -12559,7 +12937,7 @@
       "id": "corse_europa_725e525f542c64519a89535f9021a009cefd2e6693443d2a2c23ae20717e7c9c",
       "title": "Obtenir une aide européenne",
       "sourceId": "corse_europa",
-      "officialPage": "https://europa.corsica/obtenir-une-aide-europeenne/",
+      "officialPage": "https://europa.corsica/obtenir-une-aide-europeenne",
       "selectionTextPresent": false
     },
     {
@@ -12612,6 +12990,13 @@
       "selectionTextPresent": false
     },
     {
+      "id": "ademe_ba9aa5a70f7918056cb5d841b6a6e5ef3f13352ccf0fe3a1ac24f0e6993dd7a0",
+      "title": "Offres intégrées pompes à chaleur",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/offres-integrees-pompes-chaleur",
+      "selectionTextPresent": false
+    },
+    {
       "id": "idf_ods_248",
       "title": "Olympe - CAPITAL FILLES : L'association qui ouvre aux filles le champ des possibles",
       "sourceId": "idf",
@@ -12661,10 +13046,24 @@
       "selectionTextPresent": false
     },
     {
+      "id": "ademe_373578231f33e11b81818471bb4a705d1fdfa665f1f8b36953a3ff442e683ecb",
+      "title": "Opérations collectives pour la décarbonation des entreprises",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/operations-collectives-pour-la-decarbonation-des-entreprises-0",
+      "selectionTextPresent": false
+    },
+    {
       "id": "aura_9926f22943aec4a71f22d8e6db16df148952364c87430396dea7d8f75e3d6ea1",
       "title": "Optimiser l'usage de l'eau en élevage",
       "sourceId": "aura",
       "officialPage": "https://www.auvergnerhonealpes.fr/aides/optimiser-lusage-de-leau-en-elevage",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_31d5ce31d775ceb03e6ed55f375796d5f001fefc5a3a363eba415dd7a8f63fa5",
+      "title": "ORENO - Hébergement social et médico-social",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/oreno-hebergement-social-et-medico-social",
       "selectionTextPresent": false
     },
     {
@@ -12692,7 +13091,7 @@
       "id": "corse_europa_11d5b44fc26bd81a667ee60707e13481ee55d77e128f6d95a15069a5553af20a",
       "title": "Ouverture de l’appel à projets « Data & IA au service de l’intérêt général »",
       "sourceId": "corse_europa",
-      "officialPage": "https://europa.corsica/ouverture-de-lappel-a-projet-data-ia-au-service-de-linteret-general/",
+      "officialPage": "https://europa.corsica/ouverture-de-lappel-a-projet-data-ia-au-service-de-linteret-general",
       "selectionTextPresent": false
     },
     {
@@ -12735,6 +13134,13 @@
       "title": "Pacte Cantal 2022-2027 - Volet agricole",
       "sourceId": "aura",
       "officialPage": "https://www.auvergnerhonealpes.fr/aides/pacte-cantal-2022-2027-volet-agricole",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_f70d3fd04156203ebec027d3bef8cf1c36284bd14df5defe734ecb3d2fa5839e",
+      "title": "PACTE Industrie - Parcours Accompagnement et Compétences pour la Transition Énergétique de l’Industrie",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/pacte-industrie-parcours-accompagnement-et-competences-pour-la-transition-energetique-de-lindustrie",
       "selectionTextPresent": false
     },
     {
@@ -13140,7 +13546,7 @@
       "id": "guyane_8d1b377c1f2c084e657087ef9c90d0b26544d65edd3fc8d47c76d1a4a36409e7",
       "title": "Patrimoine et Transmission d'Identité - Aides Culturelles CTG - Collectivité Territoriale de Guyane",
       "sourceId": "guyane",
-      "officialPage": "https://www.ctguyane.fr/aides-culturelles-de-la-collectivite-territoriale-de-guyane/patrimoine-et-transmission-didentite-aides-culturelles-ctg/",
+      "officialPage": "https://www.ctguyane.fr/aides-culturelles-de-la-collectivite-territoriale-de-guyane/patrimoine-et-transmission-didentite-aides-culturelles-ctg",
       "selectionTextPresent": false
     },
     {
@@ -13396,6 +13802,13 @@
       "selectionTextPresent": false
     },
     {
+      "id": "ademe_e2a707273a0b537ce7158c746a91357ee0d322f5c10cec005eb1bc2054eac45e",
+      "title": "Plan d’aides à la modernisation et à l’innovation de la flotte (PAMI)",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/plan-daides-la-modernisation-et-linnovation-de-la-flotte-pami",
+      "selectionTextPresent": false
+    },
+    {
       "id": "naquitaine_41376348d072c6a37b1012ef04c726afd8f3f2af378cdb9dd3da6b6df99a467f",
       "title": "Plan du site",
       "sourceId": "naquitaine",
@@ -13550,6 +13963,13 @@
       "selectionTextPresent": false
     },
     {
+      "id": "ademe_1c32b0a2a3e5838fafe6c36ee7fcbea625a1f7781d35274b54ec314784aeee5d",
+      "title": "Planisols : aides en faveur de la sobriété foncière et de la limitation de l’artificialisation des sols dans les stratégies territoriales",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/planisols-aides-en-faveur-de-la-sobriete-fonciere-et-de-la-limitation-de-lartificialisation-des-sols-dans-les-strategies-territoriales",
+      "selectionTextPresent": false
+    },
+    {
       "id": "guadeloupe_feader_6f801810d23996d17d120773ca5b8dd6d798dfe4ca9d20ed21d6672ecd05d92c",
       "title": "Plaquette FEADER 2023-2027",
       "sourceId": "guadeloupe_feader",
@@ -13672,7 +14092,7 @@
       "id": "cvl_europe_ab0cfe7d6c27b0067f9f9c2621cc9f6423c23b0f27a3c80c4372b2785f24c157",
       "title": "Préparer votre demande de financement",
       "sourceId": "cvl_europe",
-      "officialPage": "https://www.europeocentre-valdeloire.eu/preparer-votre-demande-de-financement/",
+      "officialPage": "https://www.europeocentre-valdeloire.eu/preparer-votre-demande-de-financement",
       "selectionTextPresent": false
     },
     {
@@ -14323,7 +14743,7 @@
       "id": "bpifrance_projets_international_124bb3484ccff7bb61a1546e52fcf4349574893262e38a81d067008b6090a934",
       "title": "Projets d’Avenir I-Démo – Garantie de Projets à l’international",
       "sourceId": "bpifrance_projets_international",
-      "officialPage": "https://projets-international.bpifrance.fr/projets-d-avenir-i-demo/",
+      "officialPage": "https://projets-international.bpifrance.fr/projets-d-avenir-i-demo",
       "selectionTextPresent": false
     },
     {
@@ -14394,6 +14814,13 @@
       "title": "Promotion de la culture et des savoir-faire alpins",
       "sourceId": "paca_aides_master",
       "officialPage": "https://www.maregionsud.fr/vos-aides/detail/promotion-de-la-culture-et-des-savoir-faire-alpins",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_d9427ca755dd4d5c2dc1a522fb8fb0961e3c064d50314c3fcd4631a91078b7d0",
+      "title": "Promouvoir des solutions de mobilité à forts co-bénéfices qualité de l’air et santé en Occitanie - Dépôt",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/promouvoir-des-solutions-de-mobilite-forts-co-benefices-qualite-de-lair-et-sante-en-occitanie-depot",
       "selectionTextPresent": false
     },
     {
@@ -14513,6 +14940,27 @@
       "title": "REALIS",
       "sourceId": "occitanie",
       "officialPage": "https://www.laregion.fr/realis-42741",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_eee8df8afea672e03cd5814b349377f077c0b066c56c9e1f65b34228e5cbf814",
+      "title": "Réalisation d’installations de méthanisation",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/realisation-dinstallations-de-methanisation",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_d2ffdb68ae6505874538bff60655a759310da69ce7b0ab88c2d135153c94124c",
+      "title": "Réalisation d'installations de production de chaleur biomasse/bois",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/realisation-dinstallations-de-production-de-chaleur-biomassebois",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_746c12a2c9e834e23dc84510c2eb0dbd0adc717b1a01fd488833e8ba2aebb67f",
+      "title": "Réalisation d'installations de récupération de chaleur fatale",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/realisation-dinstallations-de-recuperation-de-chaleur-fatale",
       "selectionTextPresent": false
     },
     {
@@ -14743,7 +15191,7 @@
       "id": "hdf_hdfid_aap_4d721733e9a6feeb1b129e7db9385d80723466110a7f063427d078616bd15491",
       "title": "Relayer un appel à projet - HDFID",
       "sourceId": "hdf_hdfid_aap",
-      "officialPage": "https://www.hautsdefrance-id.fr/proposer-appel-a-projet/",
+      "officialPage": "https://www.hautsdefrance-id.fr/proposer-appel-a-projet",
       "selectionTextPresent": false
     },
     {
@@ -15286,6 +15734,13 @@
       "selectionTextPresent": false
     },
     {
+      "id": "ademe_12411678538d1fa7cbc26cd8e6c8e6fc08cbe166b91d4a6d756f8cf050b6ad75",
+      "title": "Soutien à l’économie de la fonctionnalité et de la coopération",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/soutien-leconomie-de-la-fonctionnalite-et-de-la-cooperation",
+      "selectionTextPresent": false
+    },
+    {
       "id": "paca_aides_master_cb3bc8a66d0cd326a5868f1b38d517a7f88c607b1ff0ec11071a3eb1a0b9a93e",
       "title": "Soutien à l'éducation aux images",
       "sourceId": "paca_aides_master",
@@ -15496,6 +15951,13 @@
       "selectionTextPresent": false
     },
     {
+      "id": "ademe_952c7c158c36e7bc308b6121868b06991120f9c2bde212aba43fa5e6a290d310",
+      "title": "Soutien à la production d'hydrogène électrolytique renouvelable ou bas-carbone 2026 - Phase de sélection des candidatures",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/soutien-la-production-dhydrogene-electrolytique-renouvelable-ou-bas-carbone-2026-phase-de-selection-des-candidatures",
+      "selectionTextPresent": false
+    },
+    {
       "id": "paca_aides_master_0a7a28e9adb094e738bfdb3d61dc77a98a53485b0b21086f99fc521e0d25d755",
       "title": "Soutien à la production de court métrage de fiction",
       "sourceId": "paca_aides_master",
@@ -15520,7 +15982,7 @@
       "id": "grand_est_a4cd65267f95264f665fba0e7579af5ccafcd88bc9596cf20ae8d2e8d954b991",
       "title": "Soutien à la récupération de chaleur fatale",
       "sourceId": "grand_est",
-      "officialPage": "https://www.grandest.fr/vos-aides-regionales/soutien-recuperation-chaleur-fatale/",
+      "officialPage": "https://www.grandest.fr/vos-aides-regionales/soutien-recuperation-chaleur-fatale",
       "selectionTextPresent": false
     },
     {
@@ -15590,7 +16052,7 @@
       "id": "grand_est_b2c62e22dab8890c028537353de3b13210210be4fe7d4d21398c438a90a2ab1b",
       "title": "Soutien au patrimoine classé au titre des monuments historiques",
       "sourceId": "grand_est",
-      "officialPage": "https://www.grandest.fr/vos-aides-regionales/soutien-patrimoine-protege/",
+      "officialPage": "https://www.grandest.fr/vos-aides-regionales/soutien-patrimoine-protege",
       "selectionTextPresent": false
     },
     {
@@ -15709,7 +16171,7 @@
       "id": "grand_est_18e336da2f0be690b063fa126a00dd5f696135c0a7636241edffbbb595be9d67",
       "title": "Soutien aux compagnies participant au Festival Off d’Avignon",
       "sourceId": "grand_est",
-      "officialPage": "https://www.grandest.fr/vos-aides-regionales/soutien-compagnies-off-avignon/",
+      "officialPage": "https://www.grandest.fr/vos-aides-regionales/soutien-compagnies-off-avignon",
       "selectionTextPresent": false
     },
     {
@@ -15730,7 +16192,7 @@
       "id": "grand_est_9d2c647e9faaa5ab1126659f664028eafb4a27ab0548b18c54698ee571246276",
       "title": "Soutien aux émergences Arts Visuels",
       "sourceId": "grand_est",
-      "officialPage": "https://www.grandest.fr/vos-aides-regionales/appel-a-projets-soutien-aux-emergences-arts-visuels/",
+      "officialPage": "https://www.grandest.fr/vos-aides-regionales/appel-a-projets-soutien-aux-emergences-arts-visuels",
       "selectionTextPresent": false
     },
     {
@@ -15759,6 +16221,13 @@
       "title": "Soutien aux établissements de formations sanitaires et sociales",
       "sourceId": "occitanie",
       "officialPage": "https://www.laregion.fr/Soutien-aux-etablissements-de-formations-sanitaires-et-sociales",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_320bdd4cb02feb9c30e5a423adbfb5373dfaf38732225c663215115a84ca665c",
+      "title": "Soutien aux études et diagnostics pour le réemploi-réutilisation et la réparation (hors emballages)",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/soutien-aux-etudes-et-diagnostics-pour-le-reemploi-reutilisation-et-la-reparation-hors-emballages",
       "selectionTextPresent": false
     },
     {
@@ -15800,7 +16269,7 @@
       "id": "grand_est_74b9fc9bce226d85e727e533c7c507055b50b52eb1ac1eb47e2acab5e7a8c3f1",
       "title": "Soutien aux initiatives artistiques et culturelles locales",
       "sourceId": "grand_est",
-      "officialPage": "https://www.grandest.fr/vos-aides-regionales/initiatives-artistiques-et-culturelles-locales/",
+      "officialPage": "https://www.grandest.fr/vos-aides-regionales/initiatives-artistiques-et-culturelles-locales",
       "selectionTextPresent": false
     },
     {
@@ -15808,6 +16277,13 @@
       "title": "Soutien aux initiatives associatives INAS",
       "sourceId": "hdf",
       "officialPage": "https://guide-aides.hautsdefrance.fr/dispositif752",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_5d14eddc86f2e1efd4f9dde0c186df3a3a8e0ad9f99f53a55a0fab3561a0842b",
+      "title": "Soutien aux investissements pour le réemploi-réutilisation et la réparation (hors emballages)",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/soutien-aux-investissements-pour-le-reemploi-reutilisation-et-la-reparation-hors-emballages",
       "selectionTextPresent": false
     },
     {
@@ -15891,7 +16367,7 @@
       "id": "grand_est_0ef169225d8ec33d8ad245bf5332278584ac2f1703aefd6170a98a7fca8182aa",
       "title": "Soutien aux professionnels des métiers d’art et aux salons de promotion à vocation régionale",
       "sourceId": "grand_est",
-      "officialPage": "https://www.grandest.fr/vos-aides-regionales/soutien-professionnels-metiers-art-salons-investissements/",
+      "officialPage": "https://www.grandest.fr/vos-aides-regionales/soutien-professionnels-metiers-art-salons-investissements",
       "selectionTextPresent": false
     },
     {
@@ -15905,7 +16381,7 @@
       "id": "grand_est_66e923f9d7f899785987e0e61061ff28fac9b70530d6fe4c44dd11fadfea68a9",
       "title": "Soutien aux projets d’innovation hybride (HPC/Quantique) dans le cadre du projet Maquest",
       "sourceId": "grand_est",
-      "officialPage": "https://www.grandest.fr/vos-aides-regionales/soutien-aux-projets-dinnovation-hybride-hpc-quantique-dans-le-cadre-du-projet-maquest/",
+      "officialPage": "https://www.grandest.fr/vos-aides-regionales/soutien-aux-projets-dinnovation-hybride-hpc-quantique-dans-le-cadre-du-projet-maquest",
       "selectionTextPresent": false
     },
     {
@@ -16171,7 +16647,7 @@
       "id": "guyane_0315b9cd3593ff1c9a97372987f7a2d03fc68914c3e979c08966a3d14d86db6c",
       "title": "Spectacle et Arts Vivants - Aides Culturelles CTG - Collectivité Territoriale de Guyane",
       "sourceId": "guyane",
-      "officialPage": "https://www.ctguyane.fr/aides-culturelles-de-la-collectivite-territoriale-de-guyane/spectacle-et-arts-vivants-aides-culturelles-ctg/",
+      "officialPage": "https://www.ctguyane.fr/aides-culturelles-de-la-collectivite-territoriale-de-guyane/spectacle-et-arts-vivants-aides-culturelles-ctg",
       "selectionTextPresent": false
     },
     {
@@ -16234,7 +16710,7 @@
       "id": "grand_est_a405964e4d9c867654dea95684940b399433c224862672beb072c4cce75a7197",
       "title": "Stratégie durable de l’entreprise",
       "sourceId": "grand_est",
-      "officialPage": "https://www.grandest.fr/vos-aides-regionales/strategie-durable-entreprise/",
+      "officialPage": "https://www.grandest.fr/vos-aides-regionales/strategie-durable-entreprise",
       "selectionTextPresent": false
     },
     {
@@ -16381,7 +16857,7 @@
       "id": "grand_est_europe_d3a4da9f39d206546b90e02abf256f721eb0b41353ea382aa048844c6a18de09",
       "title": "Suivi de mon dossier et obligations liées à mon financement",
       "sourceId": "grand_est_europe",
-      "officialPage": "https://beeurope.grandest.fr/mes-obligations/",
+      "officialPage": "https://beeurope.grandest.fr/mes-obligations",
       "selectionTextPresent": false
     },
     {
@@ -16389,6 +16865,13 @@
       "title": "SusHi Tech Tokyo & Exposition Universelle Osaka",
       "sourceId": "bpifrance_aap",
       "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/sushi-tech-tokyo-exposition-universelle-osaka",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "ademe_f718d9114d92a75d69528b8ad5c50ab619be41e46b7105afa719b3d6639b8b09",
+      "title": "Systèmes performants de production de froid en Outre-mer et Corse",
+      "sourceId": "ademe",
+      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/systemes-performants-de-production-de-froid-en-outre-mer-et-corse",
       "selectionTextPresent": false
     },
     {
@@ -16703,7 +17186,7 @@
       "id": "guadeloupe_europe_d0c76d1e283df2b9352d5421641541f9208ddae03b707ca98655b3e522f2c6c5",
       "title": "Trouver un financement",
       "sourceId": "guadeloupe_europe",
-      "officialPage": "https://www.europe-guadeloupe.fr/jai-un-projet/trouver-un-financement/",
+      "officialPage": "https://www.europe-guadeloupe.fr/jai-un-projet/trouver-un-financement",
       "selectionTextPresent": false
     },
     {
@@ -16857,7 +17340,7 @@
       "id": "grand_est_9c61268bb598796730e26aa928ddcc8a2a414f2dd6a28e632f9ec2d92f4cde82",
       "title": "Vos aides régionales & européennes (251)",
       "sourceId": "grand_est",
-      "officialPage": "https://www.grandest.fr/aides/page/3/",
+      "officialPage": "https://www.grandest.fr/aides/page/3",
       "selectionTextPresent": false
     },
     {

@@ -1,16 +1,13 @@
 {
-  "generatedAt": "2026-09-30T11:40:58.585Z",
+  "generatedAt": "2026-09-30T18:57:23.563Z",
   "collectionLock": {
     "locked": true,
     "mode": "GUICHET",
-    "name": "Bpifrance",
+    "name": "ADEME",
     "allowedSourceIds": [
-      "bpifrance_aap",
-      "bpifrance_aides",
-      "bpifrance_rebond_industriel",
-      "bpifrance_projets_international"
+      "ademe"
     ],
-    "next": "ADEME"
+    "next": "Bpifrance v2"
   },
   "sources": [
     {

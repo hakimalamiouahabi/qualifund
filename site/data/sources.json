@@ -43,10 +43,10 @@
     },
     {
       "id": "ademe",
-      "name": "ADEME — catalogue entreprises",
+      "name": "ADEME — aides financières et appels à projets entreprises",
       "scope": "France",
       "type": "web",
-      "strategy": "catalog-html",
+      "strategy": "ademe-official",
       "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue",
       "official": true,
       "priority": 0
@@ -252,16 +252,6 @@
       "priority": 0
     },
     {
-      "id": "ademe_aides_historique",
-      "name": "ADEME — aides financières engagées (historique)",
-      "scope": "France",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://data.ademe.fr/datasets/les-aides-financieres-de-l'ademe",
-      "official": true,
-      "priority": 1
-    },
-    {
       "id": "aura_france2030",
       "name": "Auvergne-Rhône-Alpes — France 2030 régionalisé",
       "scope": "Auvergne-Rhône-Alpes",
@@ -280,16 +270,6 @@
       "url": "https://www.europe-en-france.gouv.fr/fr/programmes-europeens-2021-2027/programme-auvergne-rhone-alpes-territoires-rhone-saone-massif",
       "official": true,
       "priority": 0
-    },
-    {
-      "id": "aura_reglementation",
-      "name": "Auvergne-Rhône-Alpes — eDélibérations",
-      "scope": "Auvergne-Rhône-Alpes",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://edelib.auvergnerhonealpes.fr/",
-      "official": true,
-      "priority": 1
     },
     {
       "id": "bfc_subventions",
@@ -342,26 +322,6 @@
       "priority": 0
     },
     {
-      "id": "bretagne_opendata",
-      "name": "Bretagne — Open Data / Explore API",
-      "scope": "Bretagne",
-      "type": "api",
-      "strategy": "control-only",
-      "url": "https://data.bretagne.bzh/api/explore/v2.1/",
-      "official": true,
-      "priority": 1
-    },
-    {
-      "id": "cvl_depot",
-      "name": "Centre-Val de Loire — Nos Aides en Ligne",
-      "scope": "Centre-Val de Loire",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://nosaidesenligneregion.centrevaldeloire.fr/",
-      "official": true,
-      "priority": 1
-    },
-    {
       "id": "cvl_france2030",
       "name": "Centre-Val de Loire — France 2030 régionalisé",
       "scope": "Centre-Val de Loire",
@@ -382,16 +342,6 @@
       "priority": 0
     },
     {
-      "id": "cvl_opendata",
-      "name": "Centre-Val de Loire — Open Data / Explore API",
-      "scope": "Centre-Val de Loire",
-      "type": "api",
-      "strategy": "control-only",
-      "url": "https://data.centrevaldeloire.fr/api/explore/v2.1/",
-      "official": true,
-      "priority": 1
-    },
-    {
       "id": "corse_europa",
       "name": "Corse — FEDER/FSE+/FEADER",
       "scope": "Corse",
@@ -410,16 +360,6 @@
       "url": "https://www.odarc.corsica/LE-PLAN-STRATEGIQUE-NATIONAL-PSN-2022-2027_a269.html",
       "official": true,
       "priority": 0
-    },
-    {
-      "id": "corse_opendata",
-      "name": "Corse — Data Corsica / Explore API",
-      "scope": "Corse",
-      "type": "api",
-      "strategy": "control-only",
-      "url": "https://www.data.corsica/api/explore/v2.1/",
-      "official": true,
-      "priority": 1
     },
     {
       "id": "grand_est_europe",
@@ -532,16 +472,6 @@
       "priority": 0
     },
     {
-      "id": "hdf_depot",
-      "name": "Hauts-de-France — plateforme de dépôt des aides",
-      "scope": "Hauts-de-France",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://aides.hautsdefrance.fr/",
-      "official": true,
-      "priority": 1
-    },
-    {
       "id": "hdf_hdfid_aap",
       "name": "Hauts-de-France Innovation Développement — appels à projets",
       "scope": "Hauts-de-France",
@@ -582,16 +512,6 @@
       "priority": 0
     },
     {
-      "id": "idf_depot",
-      "name": "Île-de-France — Mes démarches / dépôt",
-      "scope": "Île-de-France",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://mesdemarches.iledefrance.fr/",
-      "official": true,
-      "priority": 1
-    },
-    {
       "id": "idf_france2030",
       "name": "Île-de-France — France 2030 régionalisé",
       "scope": "Île-de-France",
@@ -620,26 +540,6 @@
       "url": "https://www.europeidf.fr/jai-un-projet/appels-a-projets",
       "official": true,
       "priority": 0
-    },
-    {
-      "id": "idf_europe_resources",
-      "name": "Île-de-France — ressources réglementaires FEDER/FSE+/FEADER",
-      "scope": "Île-de-France",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://www.europeidf.fr/ressources-documentaires",
-      "official": true,
-      "priority": 1
-    },
-    {
-      "id": "idf_actes",
-      "name": "Région Île-de-France — actes et délibérations",
-      "scope": "Île-de-France",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://www.iledefrance.fr/actes",
-      "official": true,
-      "priority": 1
     },
     {
       "id": "reunion_aap",
@@ -690,16 +590,6 @@
       "url": "https://www.regionreunion.com/IMG/pdf/comperm.250823.pdf",
       "official": true,
       "priority": 0
-    },
-    {
-      "id": "reunion_opendata",
-      "name": "La Réunion — Open Data / Explore API",
-      "scope": "La Réunion",
-      "type": "api",
-      "strategy": "control-only",
-      "url": "https://data.regionreunion.com/api/explore/v2.1/",
-      "official": true,
-      "priority": 1
     },
     {
       "id": "martinique_europe",
@@ -760,16 +650,6 @@
       "url": "https://france2030regionalise-pref.collectivitedemartinique.mq/",
       "official": true,
       "priority": 0
-    },
-    {
-      "id": "martinique_europe_beneficiaires",
-      "name": "Martinique — bénéficiaires FEDER/FSE+/FEAMPA (benchmark)",
-      "scope": "Martinique",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://www.europe-martinique.com/porteurs-de-projets/liste-beneficiaires/",
-      "official": true,
-      "priority": 1
     },
     {
       "id": "martinique_instruments_ctm",
@@ -922,26 +802,6 @@
       "priority": 1
     },
     {
-      "id": "normandie_europe_suivi",
-      "name": "Europe en Normandie — bénéficiaires / suivi programmation",
-      "scope": "Normandie",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://www.europe-en-normandie.eu/suivi-des-programmations",
-      "official": true,
-      "priority": 1
-    },
-    {
-      "id": "normandie_adn",
-      "name": "AD Normandie — développement économique / innovation",
-      "scope": "Normandie",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://adnormandie.fr/",
-      "official": true,
-      "priority": 1
-    },
-    {
       "id": "nouvelle_aquitaine_entreprises",
       "name": "Nouvelle-Aquitaine — portail entreprises / aides",
       "scope": "Nouvelle-Aquitaine",
@@ -1010,26 +870,6 @@
       "url": "https://www.prefectures-regions.gouv.fr/nouvelle-aquitaine/Actualites/France-2030-regionalise-ouverture-de-trois-appels-a-projets-dedies-a-la-Nouvelle-Aquitaine",
       "official": true,
       "priority": 1
-    },
-    {
-      "id": "nouvelle_aquitaine_beneficiaires_europe",
-      "name": "Nouvelle-Aquitaine — projets/bénéficiaires européens (benchmark)",
-      "scope": "Nouvelle-Aquitaine",
-      "type": "control",
-      "strategy": "control-only",
-      "url": "https://www.europe-en-nouvelle-aquitaine.eu/",
-      "official": true,
-      "priority": 1
-    },
-    {
-      "id": "occitanie_dataset_aides",
-      "name": "Occitanie — dataset officiel aides et appels à projets",
-      "scope": "Occitanie",
-      "type": "api",
-      "strategy": "control-only",
-      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie%40occitanie/",
-      "official": true,
-      "priority": 0
     },
     {
       "id": "occitanie_site_aides",
@@ -1122,16 +962,6 @@
       "priority": 1
     },
     {
-      "id": "pdl_opendata_interventions",
-      "name": "Pays de la Loire — Open Data interventions régionales (aides/AAP/AMI/prêts)",
-      "scope": "Pays de la Loire",
-      "type": "api",
-      "strategy": "control-only",
-      "url": "https://data.paysdelaloire.fr/explore/dataset/234400034_fluxinterventionsprod_pdl/export/",
-      "official": true,
-      "priority": 0
-    },
-    {
       "id": "pdl_france2030",
       "name": "Pays de la Loire — France 2030 régionalisé",
       "scope": "Pays de la Loire",
@@ -1170,16 +1000,6 @@
       "url": "https://www.paysdelaloire.fr/economie-et-innovation/innover/accelerer-mon-innovation",
       "official": true,
       "priority": 0
-    },
-    {
-      "id": "pdl_open_data_portal",
-      "name": "Pays de la Loire — portail Open Data",
-      "scope": "Pays de la Loire",
-      "type": "api",
-      "strategy": "control-only",
-      "url": "https://data.paysdelaloire.fr/",
-      "official": true,
-      "priority": 1
     },
     {
       "id": "paca_aides_master",
