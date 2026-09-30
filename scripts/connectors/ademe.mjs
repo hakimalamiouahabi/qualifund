@@ -81,6 +81,17 @@ async function rssLinks(source,{log=console.log}={}){
   }
 }
 
+function catalogueClosingDate(text=''){
+  const months={janvier:1,fevrier:2,'février':2,mars:3,avril:4,mai:5,juin:6,juillet:7,aout:8,'août':8,septembre:9,octobre:10,novembre:11,decembre:12,'décembre':12};
+  const m=String(text).match(/ouvert jusqu['’]au\s+(0?[1-9]|[12]\d|3[01])\s+(janvier|février|fevrier|mars|avril|mai|juin|juillet|août|aout|septembre|octobre|novembre|décembre|decembre)\s+(20\d{2})/i);
+  if(m){
+    const mm=String(months[m[2].toLowerCase()]).padStart(2,'0');
+    const dd=String(Number(m[1])).padStart(2,'0');
+    return `${m[3]}-${mm}-${dd}`;
+  }
+  return detectDates(text).at(-1)||null;
+}
+
 function catalogueCardMeta($,anchor,base){
   let node=$(anchor);
   for(let depth=0;depth<7;depth++){
@@ -99,11 +110,10 @@ function catalogueCardMeta($,anchor,base){
     else if(aidePos>=0&&aidePos<80)catalogueKind='AIDE';
     if(!catalogueKind)continue;
     const status=/ouvert jusqu['’]au/i.test(raw)?'OPEN':null;
-    const dates=detectDates(raw);
     return{
       catalogueKind,
       catalogueStatus:status,
-      catalogueClosingDate:status?(dates.at(-1)||null):null,
+      catalogueClosingDate:status?catalogueClosingDate(raw):null,
       catalogueEvidence:raw.slice(0,1200)
     };
   }
