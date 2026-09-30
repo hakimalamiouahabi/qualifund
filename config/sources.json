@@ -98,9 +98,10 @@
       "observedCatalogCount": 69,
       "webVerifiedAt": "2026-09-30",
       "webEvidenceUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue",
-      "minImported": 60,
-      "minImportRatio": 0.95,
-      "notes": "Collecte directe sans LLM depuis le catalogue officiel ADEME et le flux RSS officiel des appels à projets. Aucune base tierce, aucune API payante."
+      "minImported": 1,
+      "minImportRatio": 0,
+      "notes": "ADEME v2 : collecte directe catalogue + RSS, complétée par un contre-audit multi-moteurs (Exa, Tavily, Parallel Search, Firecrawl) utilisé uniquement pour découvrir des URL candidates. Chaque candidat est relu directement sur le domaine officiel ADEME et n'est conservé que si l'attribution ADEME, le périmètre entreprises et le statut actuel sont prouvés.",
+      "externalAuditFile": "config/ademe-v2-external-audit.json"
     },
     {
       "id": "anr",

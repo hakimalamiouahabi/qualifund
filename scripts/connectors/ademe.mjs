@@ -127,8 +127,71 @@ async function catalogueLinks(source,{log=console.log,maxPages=80}={}){
   return out;
 }
 
-function inferRegions(a){
-  const text=norm([a.title,a.objective,a.beneficiaries,a.prerequisites,a.selectionCriteria,...(a.projectsExpected||[])].filter(Boolean).join(' '));
+
+function pageText(html){
+  const $=cheerio.load(html);
+  $('script,style,noscript,nav,header,footer,svg').remove();
+  return cleanTitle(($('main').first().length?$('main').first():$('body')).text()||'');
+}
+
+function evidence(text,patterns=[]){
+  const raw=String(text||'');
+  for(const rx of patterns){
+    const m=raw.match(rx);
+    if(!m)continue;
+    const i=Math.max(0,(m.index||0)-160),j=Math.min(raw.length,(m.index||0)+m[0].length+260);
+    return cleanTitle(raw.slice(i,j));
+  }
+  return null;
+}
+
+export function ademeAttributionEvidence(text=''){
+  return evidence(text,[
+    /l['’]\s*ADEME\s+(?:vous\s+)?(?:accompagne|soutient|finance|cofinance|attribue|accorde|lance|pilote|instruit|juge)/i,
+    /(?:aide|soutien|financement)s?\s+(?:accord[eé]s?\s+)?(?:par|de)\s+l['’]\s*ADEME/i,
+    /(?:pilot[eé]|op[eé]r[eé]|g[eé]r[eé]|instruit)\s+par\s+(?:l['’]\s*)?ADEME/i,
+    /(?:contrat|convention)\s+d['’]\s*aide[^.;]{0,160}\bADEME\b/i,
+    /fonds[^.;]{0,120}\bde\s+l['’]\s*ADEME\b/i,
+    /\bADEME\b[^.;]{0,120}\b(?:finance|cofinance|soutient|accompagne|attribue|accorde)\b/i
+  ]);
+}
+
+function beneficiaryEvidence(a,text=''){
+  const section=cleanTitle(a?.beneficiaries||'');
+  const cat=(a?.companyCategories||[]).join(' ');
+  const enterprise=/\b(?:entreprises?|tpe|pme|eti|grandes?\s+entreprises?|start[- ]?ups?|soci[eé]t[eé]s?|acteurs?\s+[ée]conomiques?)\b/i;
+  if(enterprise.test(section)||enterprise.test(cat))return section||cat;
+  const ctx=evidence(text,[
+    /(?:ce dispositif|cette aide|cet appel|l['’]aide)\s+s['’]adresse[^.;]{0,420}/i,
+    /(?:b[eé]n[eé]ficiaires?|[êe]tes-vous concern[eé]s?|pour qui)[^.;]{0,420}/i
+  ]);
+  return ctx&&enterprise.test(ctx)?ctx:null;
+}
+
+function nonEnterpriseBeneficiaryEvidence(a,text=''){
+  const section=cleanTitle(a?.beneficiaries||'');
+  const enterprise=/\b(?:entreprises?|tpe|pme|eti|grandes?\s+entreprises?|start[- ]?ups?|soci[eé]t[eé]s?|acteurs?\s+[ée]conomiques?)\b/i;
+  const nonEnterprise=/\b(?:collectivit[eé]s?|communes?|intercommunalit[eé]s?|associations?|particuliers?|m[eé]nages?|[ée]tablissements?\s+publics?|syndicats?\s+publics?)\b/i;
+  if(section&&nonEnterprise.test(section)&&!enterprise.test(section))return section;
+  const ctx=evidence(text,[
+    /(?:ce dispositif|cette aide|cet appel|l['’]aide)\s+s['’]adresse[^.;]{0,420}/i,
+    /(?:b[eé]n[eé]ficiaires?|[êe]tes-vous concern[eé]s?|pour qui)[^.;]{0,420}/i
+  ]);
+  return ctx&&nonEnterprise.test(ctx)&&!enterprise.test(ctx)?ctx:null;
+}
+
+function regionEvidence(text=''){
+  return evidence(text,[
+    /quel(?:le)?\(?(?:s)?\)?\s+r[eé]gion(?:s)?\s+ou\s+pays\s+proposent\s+ce\s+dispositif[^#]{0,800}/i,
+    /r[eé]gion(?:s)?\s+ou\s+pays\s+proposent\s+ce\s+dispositif[^#]{0,800}/i
+  ]);
+}
+
+function inferRegionsFromEvidence(text=''){
+  const block=regionEvidence(text);
+  if(!block)return{regions:[],allRegions:false,evidence:null};
+  const n=norm(block);
+  if(/toutes les regions|toute la france/.test(n))return{regions:[],allRegions:true,evidence:block};
   const aliases=[
     ['Auvergne-Rhône-Alpes',['auvergne rhone alpes','aura']],
     ['Bourgogne-Franche-Comté',['bourgogne franche comte']],
@@ -143,13 +206,71 @@ function inferRegions(a){
     ['Occitanie',['occitanie']],
     ['Pays de la Loire',['pays de la loire']],
     ["Provence-Alpes-Côte d'Azur",['provence alpes cote d azur','region sud','paca']],
-    ['Guadeloupe',['guadeloupe']],
-    ['Guyane',['guyane']],
-    ['Martinique',['martinique']],
-    ['La Réunion',['la reunion','reunion']],
-    ['Mayotte',['mayotte']]
+    ['Guadeloupe',['guadeloupe']],['Guyane',['guyane']],['Martinique',['martinique']],
+    ['La Réunion',['la reunion','reunion']],['Mayotte',['mayotte']]
   ];
-  return uniq(aliases.filter(([,xs])=>xs.some(x=>text.includes(x))).map(([r])=>r)).filter(r=>REGIONS.includes(r));
+  return{
+    regions:uniq(aliases.filter(([,xs])=>xs.some(x=>n.includes(x))).map(([r])=>r)).filter(r=>REGIONS.includes(r)),
+    allRegions:false,
+    evidence:block
+  };
+}
+
+function isoDaysFromToday(d,now=new Date()){
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(String(d||'')))return null;
+  const a=new Date(String(d)+'T00:00:00Z');
+  const b=new Date(Date.UTC(now.getUTCFullYear(),now.getUTCMonth(),now.getUTCDate()));
+  return Math.floor((a-b)/86400000);
+}
+
+export function ademeStatusProof(a,text='',now=new Date()){
+  const closed=evidence(text,[
+    /(?:appel\s+[àa]\s+projets?|appel\s+d['’]offres?|dispositif|aide)[^.;]{0,100}(?:maintenant\s+clos|est\s+clos|est\s+cl[oô]tur[eé]|n['’]est\s+plus\s+ouvert)/i,
+    /(?:candidatures?|d[eé]p[oô]ts?)[^.;]{0,80}(?:sont\s+clos|sont\s+ferm[eé]s)/i
+  ]);
+  const open=evidence(text,[
+    /(?:appel\s+[àa]\s+projets?|dispositif|aide)[^.;]{0,100}(?:en\s+cours|est\s+ouvert|ouverte\s+jusqu)/i,
+    /les\s+demandes\s+d['’]aide\s+peuvent\s+[êe]tre\s+soumises/i
+  ]);
+  const permanent=evidence(text,[
+    /(?:d[eé]p[oô]t|candidature|demandes?\s+d['’]aide)[^.;]{0,100}(?:au\s+fil\s+de\s+l['’]eau|en\s+continu)/i,
+    /(?:dispositif|aide)[^.;]{0,80}(?:permanent|sans\s+date\s+limite)/i
+  ]);
+  const dates=uniq([
+    ...(a?.deadlines||[]).map(x=>typeof x==='string'?x:x?.date),
+    a?.finalClosingDate,a?.closingDate
+  ].filter(Boolean)).sort();
+  const last=dates.at(-1)||null,delta=last?isoDaysFromToday(last,now):null;
+  if(closed){
+    if(delta!=null&&delta>0)return{state:'STATUS_CONFLICT',date:last,evidence:closed,retain:false};
+    if(delta!=null&&delta>=-60)return{state:'RECENTLY_CLOSED',date:last,evidence:closed,retain:true};
+    return{state:'CLOSED_OLD',date:last,evidence:closed,retain:false};
+  }
+  if(delta!=null&&delta>=0)return{state:'OPEN',date:last,evidence:open||('Échéance officielle '+last),retain:true};
+  if(delta!=null&&delta>=-60)return{state:'RECENTLY_CLOSED',date:last,evidence:open||('Échéance officielle '+last),retain:true};
+  if(delta!=null&&delta<-60){
+    if(open)return{state:'STATUS_CONFLICT',date:last,evidence:open,retain:false};
+    return{state:'CLOSED_OLD',date:last,evidence:'Échéance officielle '+last,retain:false};
+  }
+  if(permanent&&a?.permanent)return{state:'PERMANENT',date:null,evidence:permanent,retain:true};
+  if(open)return{state:'OPEN_UNDATED',date:null,evidence:open,retain:true};
+  return{state:'UNKNOWN',date:null,evidence:null,retain:false};
+}
+
+async function externalAuditLinks(source,{log=console.log}={}){
+  if(!source.externalAuditFile)return[];
+  try{
+    const root=new URL('../../',import.meta.url);
+    const file=new URL(source.externalAuditFile,root);
+    const {readFile}=await import('node:fs/promises');
+    const audit=JSON.parse(await readFile(file,'utf8'));
+    const links=uniqueLinks((audit.candidates||[]).map(x=>({url:x.url,label:x.title||''})));
+    log(`[${source.id}] contre-audit multi-moteurs: ${links.length} URL(s) candidate(s)`);
+    return links;
+  }catch(e){
+    log(`[${source.id}] contre-audit externe indisponible: ${e.message}`);
+    return[];
+  }
 }
 
 async function extractOne(source,link){
@@ -161,6 +282,7 @@ async function extractOne(source,link){
   if(requested!==resolved){
     return{aid:null,excluded:{url:link.url,label:link.label||'',reason:'REDIRECTION_VERS_AUTRE_FICHE',resolvedUrl:resolved}};
   }
+  const text=pageText(loaded.html);
   const a=extractFromHtml(loaded.html,{url:requested,sourceTier:'B',scope:'NATIONAL',region:null});
   const rawTitle=cleanTitle(a.title||'');
   if(/(?:désolé.*offre.*plus disponible|desole.*offre.*plus disponible|page introuvable|page non trouvée|erreur 404|404 not found|access denied|forbidden|service indisponible)/i.test(rawTitle)){
@@ -171,7 +293,22 @@ async function extractOne(source,link){
   if(!a.title||a.title.length<4){
     return{aid:null,excluded:{url:link.url,label:link.label||'',reason:'TITRE_ABSENT',resolvedUrl:resolved}};
   }
-  const regions=inferRegions(a);
+
+  const attribution=ademeAttributionEvidence(text);
+  if(!attribution){
+    return{aid:null,excluded:{url:link.url,label:a.title,reason:'ATTRIBUTION_ADEME_NON_PROUVEE',resolvedUrl:resolved}};
+  }
+  const beneficiary=beneficiaryEvidence(a,text);
+  if(!beneficiary){
+    const nonEnterprise=nonEnterpriseBeneficiaryEvidence(a,text);
+    return{aid:null,excluded:{url:link.url,label:a.title,reason:nonEnterprise?'HORS_CIBLE_ENTREPRISE_PROUVE':'BENEFICIAIRE_ENTREPRISE_NON_PROUVE',resolvedUrl:resolved,evidence:nonEnterprise||null}};
+  }
+  const status=ademeStatusProof(a,text);
+  if(!status.retain){
+    return{aid:null,excluded:{url:link.url,label:a.title,reason:status.state==='CLOSED_OLD'?'CLOTURE_HORS_FENETRE_J60':'STATUT_ACTUEL_NON_PROUVE',resolvedUrl:resolved,status:status.state,date:status.date}};
+  }
+
+  const territory=inferRegionsFromEvidence(text);
   a.id=directPageId(source.id,requested);
   a.canonicalId=a.id;
   a.sourceId=source.id;
@@ -179,9 +316,20 @@ async function extractOne(source,link){
   a.kind=/\/aap\//i.test(requested)||/\b(?:aap|ami|appel a projets?|appel à projets?|appel a manifestation|appel à manifestation|appel d'offres)\b/i.test(a.title)?'AAP / AMI':'AIDE';
   a.funder=['ADEME'];
   a.operator='ADEME';
-  a.scope=regions.length?'REGIONAL':'NATIONAL';
-  a.regions=regions.length?regions:['Toutes les Régions'];
+  a.guichetVerified='ADEME';
+  a.enterpriseEligible=true;
+  a.sourceState=status.state;
+  a.scope=territory.regions.length?'REGIONAL':'NATIONAL';
+  a.regions=territory.regions.length?territory.regions:['Toutes les Régions'];
   a.sourceLinks=[{label:'Page officielle ADEME',url:requested},...(a.sourceLinks||[]).filter(x=>x?.url&&canonicalUrl(x.url)!==requested)];
+  const extra=[
+    {field:'guichet',sourceUrl:requested,sourceTier:'B',locator:'page-text-match:ademe-attribution',evidenceText:attribution.slice(0,850),checkedAt:new Date().toISOString()},
+    {field:'sourceStatus',sourceUrl:requested,sourceTier:'B',locator:'page-text-match:status',evidenceText:String(status.evidence||status.state).slice(0,850),checkedAt:new Date().toISOString()},
+    {field:'enterpriseEligibility',sourceUrl:requested,sourceTier:'B',locator:'section:beneficiaries',evidenceText:String(beneficiary).slice(0,850),checkedAt:new Date().toISOString()}
+  ];
+  if(territory.evidence)extra.push({field:'territory',sourceUrl:requested,sourceTier:'B',locator:'page-text-match:territory',evidenceText:territory.evidence.slice(0,850),checkedAt:new Date().toISOString()});
+  a.verification={...(a.verification||{}),fieldEvidence:[...(a.verification?.fieldEvidence||[]),...extra]};
+  a.guichetVerification={status:'VERIFIED',sourceUrl:requested,evidenceText:attribution.slice(0,850),checkedAt:new Date().toISOString()};
   return{aid:a,excluded:null};
 }
 
@@ -207,15 +355,19 @@ async function extractMany(source,links,{log=console.log,workers=8}={}){
 }
 
 export async function discoverAdeme(source,{log=console.log}={}){
-  const [rss,catalogue]=await Promise.all([rssLinks(source,{log}),catalogueLinks(source,{log})]);
-  const links=uniqueLinks([...catalogue,...rss]);
-  log(`[${source.id}] ADEME: ${links.length} fiches officielles uniques découvertes (${rss.length} via RSS, ${catalogue.length} via catalogue)`);
-  return{links,rss,catalogue};
+  const [rss,catalogue,externalAudit]=await Promise.all([
+    rssLinks(source,{log}),
+    catalogueLinks(source,{log}),
+    externalAuditLinks(source,{log})
+  ]);
+  const links=uniqueLinks([...catalogue,...rss,...externalAudit]);
+  log(`[${source.id}] ADEME v2: ${links.length} URL(s) officielles candidates (${rss.length} RSS, ${catalogue.length} catalogue, ${externalAudit.length} contre-audit)`);
+  return{links,rss,catalogue,externalAudit};
 }
 
 export async function collectAdeme(source,{log=console.log}={}){
   const discovered=await discoverAdeme(source,{log});
-  const {links,rss,catalogue}=discovered;
+  const {links,rss,catalogue,externalAudit}=discovered;
   const out=await extractMany(source,links,{log,workers:8});
   return{
     aids:out.aids,
@@ -226,8 +378,8 @@ export async function collectAdeme(source,{log=console.log}={}){
       excluded:out.excluded,
       errors:out.errors,
       accounted:out.aids.length+out.excluded.length+out.errors.length,
-      channels:{rss:rss.length,catalogue:catalogue.length}
+      channels:{rss:rss.length,catalogue:catalogue.length,externalAudit:externalAudit.length}
     },
-    message:`ADEME officiel: ${links.length} fiches découvertes, ${out.aids.length} extraites, ${out.excluded.length} exclusions expliquées, ${out.errors.length} erreurs`
+    message:`ADEME v2: ${links.length} URL(s) candidates, ${out.aids.length} fiche(s) validée(s), ${out.excluded.length} exclusion(s) motivée(s), ${out.errors.length} erreur(s)`
   };
 }
