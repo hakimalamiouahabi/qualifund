@@ -6,8 +6,7 @@
   "allowedSourceIds": [
     "bpifrance_aap",
     "bpifrance_aides",
-    "bpifrance_rebond_industriel",
-    "bpifrance_projets_international"
+    "bpifrance_rebond_industriel"
   ],
   "preserveUnselectedSources": true,
   "preserveUnselectedCoverage": true,
@@ -18,14 +17,12 @@
     "primarySourceIds": [
       "bpifrance_aap",
       "bpifrance_aides",
-      "bpifrance_rebond_industriel",
-      "bpifrance_projets_international"
+      "bpifrance_rebond_industriel"
     ],
     "allowedHosts": [
       "www.bpifrance.fr",
       "bpifrance.fr",
-      "rebond-industriel.bpifrance.fr",
-      "projets-international.bpifrance.fr"
+      "rebond-industriel.bpifrance.fr"
     ],
     "requireAuditAccounting": true,
     "requireZeroExtractionErrors": true,
@@ -80,13 +77,8 @@
         "master": "DIRECT_OFFICIAL_PAGE",
         "minRetained": 1,
         "requireAuditAccounting": false
-      },
-      "bpifrance_projets_international": {
-        "master": "DIRECT_OFFICIAL_MICROSITE",
-        "minRetained": 3,
-        "requireAuditAccounting": false
       }
     }
   },
-  "notes": "Verrou Bpifrance v2 : listing AAP actif + section catalogue Subventions et avances remboursables comme référentiels maîtres. Sitemap et moteurs externes servent uniquement au contre-audit. Le portail Bpifrance prouve la présence d’un dispositif, sans forcer automatiquement le financeur/opérateur. Les autres guichets/régions restent gelés jusqu’au PASS Bpifrance v2."
+  "notes": "Verrou Bpifrance v2 : listing AAP actif + section catalogue « Subventions et avances remboursables » comme référentiels maîtres, complétés par Rebond Industriel. Sitemap et moteurs externes servent uniquement au contre-audit. Les anciens dispositifs régionaux BFC ne sont plus traités comme guichet national Bpifrance ; ils seront audités dans le cycle régional dédié."
 }

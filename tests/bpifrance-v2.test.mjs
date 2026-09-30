@@ -39,8 +39,9 @@ test('le verrou courant est Bpifrance v2 et gèle les autres guichets',()=>{
   assert.equal(lock.name,'Bpifrance');
   assert.equal(lock.version,6);
   assert.deepEqual(lock.allowedSourceIds,[
-    'bpifrance_aap','bpifrance_aides','bpifrance_rebond_industriel','bpifrance_projets_international'
+    'bpifrance_aap','bpifrance_aides','bpifrance_rebond_industriel'
   ]);
+  assert.ok(!lock.allowedSourceIds.includes('bpifrance_projets_international'));
   assert.equal(lock.preserveUnselectedSources,true);
   assert.equal(lock.freezeUnselectedLifecycle,true);
   assert.equal(lock.certification.sourceRules.bpifrance_aap.requireListingDiscovery,true);

@@ -15,8 +15,6 @@ test('Bpifrance utilise des collecteurs directs dédiés et des sources complém
   assert.ok(!by.has('bpifrance_adi'));
   assert.ok(by.get('bpifrance_aap').minExpected>=20);
   assert.ok(by.get('bpifrance_aides').minExpected>=20);
-  assert.equal(by.get('bpifrance_projets_international')?.strategy,'catalog-html');
-  assert.match(by.get('bpifrance_projets_international')?.url||'',/projets-international\.bpifrance\.fr/);
   assert.doesNotThrow(()=>assertDirectSources(cfg));
 });
 
