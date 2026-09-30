@@ -93,7 +93,7 @@
       "rssUrl": "https://agirpourlatransition.ademe.fr/entreprises/rss/appels-a-projet",
       "official": true,
       "priority": 0,
-      "minExpected": 1,
+      "minExpected": 60,
       "browserFallback": true,
       "observedCatalogCount": 69,
       "webVerifiedAt": "2026-09-30",
