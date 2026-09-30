@@ -111,17 +111,6 @@
       "minImportRatio": 0.6
     },
     {
-      "id": "europe_france",
-      "name": "Europe en France — FEDER/FSE+/FTJ",
-      "scope": "France",
-      "type": "web",
-      "strategy": "catalog-html",
-      "url": "https://www.europe-en-france.gouv.fr/fr/programmes-europeens-2021-2027",
-      "official": true,
-      "priority": 1,
-      "browserFallback": true
-    },
-    {
       "id": "aura",
       "name": "Région Auvergne-Rhône-Alpes — catalogue des aides",
       "scope": "Auvergne-Rhône-Alpes",
@@ -1810,6 +1799,28 @@
     "nouvelle_aquitaine_opendata",
     "pdl_fse",
     "pdl_ftj",
-    "paca_opendata"
-  ]
+    "paca_opendata",
+    "europe_france",
+    "service_public",
+    "mes_aides",
+    "aides_gouv",
+    "les_aides",
+    "aide_sociale",
+    "solidarites",
+    "france_services"
+  ],
+  "sourceSelectionPolicy": "GUICHET_OR_REGION_OFFICIAL_ONLY",
+  "excludedAggregatorDomains": [
+    "service-public.gouv.fr",
+    "mes-aides.gouv.fr",
+    "aides.gouv.fr",
+    "les-aides.fr",
+    "aide-sociale.fr",
+    "solidarites.gouv.fr",
+    "france-services.gouv.fr",
+    "aides-entreprises.fr",
+    "aides-territoires.beta.gouv.fr",
+    "data.gouv.fr"
+  ],
+  "notesSourceSelection": "Conserver uniquement les sources publiques officielles rattachées à un guichet/financeur identifié (Bpifrance, ADEME, ANR) ou à une région/fonds régional spécifique. Les portails nationaux généralistes ou agrégateurs multi-aides ne sont pas des sources d'ingestion."
 }
