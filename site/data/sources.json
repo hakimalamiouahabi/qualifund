@@ -19,7 +19,7 @@
       "observedOpenCount": 28,
       "webVerifiedAt": "2026-09-30",
       "webEvidenceUrl": "https://www.bpifrance.fr/nos-appels-a-projets-concours",
-      "notes": "Collecte exhaustive des pages actuellement publiées, avec pagination parcourue jusqu'à épuisement. Le sitemap officiel sert de contrôle de couverture, pas de stock tiers."
+      "notes": "Collecte directe exhaustive par pagination Drupal + contrôle du sitemap officiel Bpifrance. Aucune base tierce."
     },
     {
       "id": "bpifrance_aides",
@@ -35,10 +35,10 @@
       "browserFallback": true,
       "minExpected": 20,
       "minImported": 20,
-      "minImportRatio": 0.9,
+      "minImportRatio": 0.15,
       "webVerifiedAt": "2026-09-30",
       "webEvidenceUrl": "https://www.bpifrance.fr/catalogue-offres",
-      "notes": "Collecte de la rubrique officielle « Subventions et avances remboursables » du catalogue Bpifrance, incluant les dispositifs d'innovation et le PTZI."
+      "notes": "Inspection exhaustive des pages /catalogue-offres/ trouvées par pagination et sitemap officiel ; seules les aides financières subvention / avance remboursable / prêt à taux zéro sont retenues."
     },
     {
       "id": "bpifrance_rebond_industriel",
@@ -57,6 +57,25 @@
       "notes": "Source officielle Bpifrance : Bpifrance est opérateur du volet soutien aux investissements ; subventions et avances remboursables selon le projet.",
       "webVerifiedAt": "2026-09-30",
       "webEvidenceUrl": "https://rebond-industriel.bpifrance.fr/"
+    },
+    {
+      "id": "bpifrance_projets_international",
+      "name": "Bpifrance — Projets d’innovation et I-Démo régionalisés",
+      "scope": "France",
+      "type": "web",
+      "strategy": "catalog-html",
+      "url": "https://projets-international.bpifrance.fr/homepage/",
+      "linkRegex": "/(projets-d-innovation|projets-d-avenir-i-demo)/",
+      "official": true,
+      "priority": 0,
+      "minExpected": 2,
+      "minImported": 2,
+      "minImportRatio": 1,
+      "browserFallback": true,
+      "operator": "Bpifrance",
+      "webVerifiedAt": "2026-09-30",
+      "webEvidenceUrl": "https://projets-international.bpifrance.fr/homepage/",
+      "notes": "Microsite officiel Bpifrance consacré aux projets d’innovation et I-Démo régionalisés ; collecte directe sans agrégateur."
     },
     {
       "id": "ademe",
