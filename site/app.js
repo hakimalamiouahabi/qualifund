@@ -83,6 +83,7 @@ function scheduleClientDailyRefresh(){if(hostedProduction()||CONFIG.refreshEndpo
 
 function toast(msg){const t=$('#toast');t.innerHTML=msg;t.classList.remove('hidden');clearTimeout(window.__toastTimer);window.__toastTimer=setTimeout(()=>t.classList.add('hidden'),4200)}
 function permanentVerified(a){return Boolean(a.permanent&&arr(a.verification?.fieldEvidence).some(e=>e.field==='calendar'&&['A','B'].includes(e.sourceTier)))}
+function ademeVerified(a){return Boolean(a?.sourceId==='ademe'&&a?.guichetVerified==='ADEME'&&arr(a?.verification?.fieldEvidence).some(e=>e?.field==='guichet'&&['A','B'].includes(e?.sourceTier)&&e?.sourceUrl))}
 function nextDeadline(a){if(a.permanent)return permanentVerified(a)?{ok:true,date:null,reason:'PERMANENT'}:{ok:false,date:null,reason:'PERMANENT_UNVERIFIED'};const ds=uniq([...arr(a.deadlines).map(x=>typeof x==='string'?x:x?.date),a.finalClosingDate,a.closingDate].filter(Boolean)).sort();for(const d of ds)if(daysUntil(d)>=1)return{ok:true,date:d,reason:'DEADLINE'};return{ok:false,date:ds.find(d=>daysUntil(d)>=0)||ds.at(-1)||null,reason:ds.length?'J1':'DATE_MISSING'}}
 function isGenericAidTitle(v=''){
   const t=norm(v);
@@ -122,6 +123,7 @@ function usableAid(a){
 }
 function libraryAid(a){
   if(!a||['STALE','CLOSED','CLOS','EXPIRED'].includes(a.lifecycleStatus))return false;
+  if(a?.sourceId==='ademe'&&!ademeVerified(a))return false;
   if(isGenericAidTitle(derivedAidTitle(a))||/^(appels a projets et concours(?: bpifrance)?|contact et aide|accueil|nos aides|toutes nos aides)$/.test(norm(derivedAidTitle(a))))return false;
   if(a.lifecycleStatus==='ARCHIVE'){
     const d=a.finalClosingDate||a.closingDate||arr(a.deadlines).map(x=>typeof x==='string'?x:x?.date).filter(Boolean).sort().at(-1);
@@ -135,7 +137,7 @@ function guichetLabels(a){
   const add=x=>{if(x&&!out.includes(x))out.push(x)};
   let bpiHost=false;try{bpiHost=/bpifrance\.fr$/i.test(new URL(a?.officialPage||'').hostname)}catch{}
   if(/\bbpifrance(?:_|\b)/.test(provenance)||norm(a?.operator)==='bpifrance'||(bpiHost&&/bpifrance|bpi france/.test(t)))add('Bpifrance');
-  if(/ademe|transition ecologique/.test(t))add('ADEME');
+  if(ademeVerified(a))add('ADEME');
   if(/agence nationale de la recherche|\banr\b/.test(t))add('ANR');
   if(/feder|fonds europeen de developpement regional|europe en france/.test(t))add('FEDER');
   if(/feader|fonds europeen agricole/.test(t))add('FEADER');
