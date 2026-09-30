@@ -1,0 +1,567 @@
+# LEYTON RADAR — rapport quotidien 2026-09-30
+
+Généré : 2026-09-30T11:35:37.667Z
+
+- Bibliothèque avant : **2205**
+- Bibliothèque après : **2732**
+- Nouvelles aides / AAP : **538**
+- Dispositifs modifiés : **1**
+- Clos / obsolètes / disparus : **11**
+
+## Nouvelles aides retenues
+- **« Aide Booster » - Challenge Innotech** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/aide-booster-challenge-innotech
+- **#1Ambassadeur1Entrepreneur 2018** — 2018-08-27 — https://www.bpifrance.fr/nos-appels-a-projets-concours/1ambassadeur1entrepreneur-2018
+- **#MaViedEntrepreneur** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/maviedentrepreneur
+- **#PitchTonInno** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/pitchtoninno
+- **#RéunisTaTeam** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/reunistateam
+- **#SmartParis2024** — 2016-09-30 — https://www.bpifrance.fr/nos-appels-a-projets-concours/smartparis2024
+- **1 - BENEFICIAIRE** — 2022-01-31 — https://www.bpifrance.fr/nos-appels-a-projets-concours/next-mexico-candidatez-au-programme-de-prospection-et-dimplantation
+- **10 000 startups pour changer le monde : c'est l'heure des votes** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/10-000-startups-pour-changer-le-monde-cest-lheure-des-votes
+- **15e Tremplin Entreprises : appel à candidatures** — 2014-10-19 — https://www.bpifrance.fr/nos-appels-a-projets-concours/15e-tremplin-entreprises-appel-a-candidatures
+- **16e Tremplin entreprises : le concours des entreprises innovantes** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/16e-tremplin-entreprises-le-concours-des-entreprises-innovantes
+- **19e appel à projets du Fonds unique interministériel** — 2014-11-28 — https://www.bpifrance.fr/nos-appels-a-projets-concours/19e-appel-a-projets-du-fonds-unique-interministeriel
+- **1er appel à projets innovants France - Finlande** — 2016-02-12 — https://www.bpifrance.fr/nos-appels-a-projets-concours/1er-appel-a-projets-innovants-france-finlande
+- **2 6ÈME ÉDITION DU CONCOURS D’INNOVATION I-PHD** — 2026-04-30 — https://www.bpifrance.fr/nos-appels-a-projets-concours/concours-dinnovation-i-phd
+- **21 startups des CleanTech ambassadrices de La French Tech à la Cop21** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/21-startups-des-cleantech-ambassadrices-de-la-french-tech-a-la-cop21
+- **3e édition du concours régional de l’entrepreneuriat par les femmes** — 2017-06-09 — https://www.bpifrance.fr/nos-appels-a-projets-concours/3e-edition-du-concours-regional-de-lentrepreneuriat-par-les-femmes
+- **4e appel à projets de Finance Innovation** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/4e-appel-a-projets-de-finance-innovation
+- **Accélérateur Allianz : les candidatures sont ouvertes !** — 2016-04-20 — https://www.bpifrance.fr/nos-appels-a-projets-concours/accelerateur-allianz-les-candidatures-sont-ouvertes
+- **Accélérateur Défense** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/accelerateur-defense
+- **Accélérateur des Entreprises Ambitieuses de l’Orléanais** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/accelerateur-des-entreprises-ambitieuses-de-lorleanais
+- **Accélérateur DINAMIC+ Pays de la Loire** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/accelerateur-dinamic
+- **Accélérateur ETI : candidatez à la 7e promotion** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/accelerateur-eti-candidatez-a-la-7e-promotion
+- **Accélérateur Franco-Italien : candidatez à la 2e promotion** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/accelerateur-franco-italien-candidatez-a-la-2e-promotion
+- **Accélérateur International Occitanie** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/accelerateur-international-occitanie
+- **Accélérateur PE CROISSANCE MEUSE** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/accelerateur-pe-croissance-meuse
+- **Accélérateur Transition Énergétique 4ème promotion** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/accelerateur-transition-energetique-4eme-promotion
+- **Accélérateur Transmission-Reprise** — 2026-12-09 — https://www.bpifrance.fr/catalogue-offres/accelerateur-transmission-reprise
+- **Accélérer sa start-up en Corée avec le K-Start-up Grand Challenge** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/accelerer-sa-start-en-coree-avec-le-k-start-grand-challenge
+- **Accompagnement et soutien à la constitution d’entrepôts de données de santé hospitaliers** — 2023-04-12 — https://www.bpifrance.fr/nos-appels-a-projets-concours/accompagnement-et-soutien-a-la-constitution-dentrepots-de-donnees-de-sante-hospitaliers
+- **AgriFoodNEST Israël 2021** — 2021-02-25 — https://www.bpifrance.fr/nos-appels-a-projets-concours/agrifoodnest-israel-2021
+- **Aide pour le développement de l'innovation** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/aide-pour-le-developpement-de-linnovation
+- **Appel à candidatures : 3DStartPME** — 2018-12-31 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-candidatures-3dstartpme
+- **Appel à candidatures : Handitech Trophy** — 2022-06-30 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-candidatures-handitech-trophy
+- **Appel à candidatures : Mission d’entreprises au Maroc** — 2019-10-30 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-candidatures-mission-dentreprises-au-maroc
+- **Appel à candidatures : Mission Green Mobility – Munich** — 2019-07-11 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-candidatures-mission-green-mobility-munich
+- **Appel à candidatures : Mission Hydrogène en Allemagne** — 2021-05-10 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-candidatures-mission-hydrogene-en-allemagne
+- **Appel à candidatures : mission La French Fab au Japon** — 2019-12-06 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-candidatures-mission-la-french-fab-au-japon
+- **Appel à candidatures : mission NRF, l'événement incontournable pour les retailers** — 2019-10-25 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-candidatures-mission-nrf-levenement-incontournable-pour-les-retailers
+- **Appel à candidatures : mission Rencontres Africa** — 2019-09-20 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-candidatures-mission-rencontres-africa
+- **Appel à candidatures : Mission Smart City à Singapour** — 2019-09-06 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-candidatures-mission-smart-city-a-singapour
+- **Appel à candidatures : Pavillon France du E-World Energy & Water** — 2019-11-22 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-candidatures-pavillon-france-du-e-world-energy-water
+- **Appel à candidatures : prix des délais de paiement 2018** — 2018-05-31 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-candidatures-prix-des-delais-de-paiement-2018
+- **Appel à candidatures : Trophées Défis RSE** — 2022-05-15 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-candidatures-trophees-defis-rse
+- **Appel à candidatures FT120** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-candidatures-ft120
+- **Appel à candidatures pour intégrer l’Accélérateur Eau, 2e promotion** — 2022-05-10 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-candidatures-pour-integrer-laccelerateur-eau-2e-promotion
+- **Appel à candidatures pour intégrer le programme DEFi Croissance** — 2019-09-27 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-candidatures-pour-integrer-le-programme-defi-croissance
+- **Appel à candidatures pour les structures d’accompagnement dédiées aux startups deeptech** — 2020-11-15 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-candidatures-pour-les-structures-daccompagnement-dediees-aux-startups-deeptech
+- **Appel à candidatures pour rejoindre la Communauté Santé Numérique de Bpifrance** — 2022-12-31 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-candidatures-pour-rejoindre-la-communaute-sante-numerique-de-bpifrance
+- **Appel à contributions : Innovations et ruptures technologiques dans la valorisation de la matière bois, pour la chimie et les matériaux** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-contributions-innovations-et-ruptures-technologiques-dans-la-valorisation-de-la-matiere-bois-pour-la-chimie-et-les-materiaux
+- **Appel à contributions : innovations pour une agriculture urbaine durable** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-contributions-innovations-pour-une-agriculture-urbaine-durable
+- **Appel à entrepreneurs : lance ta startup Deeptech Numérique avec Inria !** — 2021-12-03 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-entrepreneurs-lance-ta-startup-deeptech-numerique-avec-inria
+- **Appel à manifestation d’intérêt – Sponsors des Challenges IA, vague 3** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-manifestation-dinteret-sponsors-des-challenges-ia-vague-3
+- **Appel à manifestation d’intérêt : « AMI Maladies Infectieuses Emergentes et Menaces NRBC »** — 2021-06-28 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-manifestation-dinteret-ami-maladies-infectieuses-emergentes-et-menaces-nrbc
+- **Appel à manifestation d’intérêt : « AMI Santé Numérique »** — 2021-06-16 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-manifestation-dinteret-ami-sante-numerique
+- **Appel à manifestation d’intérêt : « Besoins alimentaires de demain »** — 2021-05-28 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-manifestation-dinteret-besoins-alimentaires-de-demain
+- **Appel à manifestation d’intérêt : « Développement et renforcement de la filière française et européenne du Cloud »** — 2021-05-21 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-manifestation-dinteret-developpement-et-renforcement-de-la-filiere-francaise-et-europeenne-du-cloud
+- **Appel à manifestation d’intérêt : « Intrants Dépendance russe, biélorusse ou ukrainienne »** — 2024-01-30 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-manifestation-dinteret-intrants-dependance-russe-bielorusse-ou-ukrainienne
+- **Appel à manifestation d’intérêt : « Nouvelles biothérapies et outils de production »** — 2021-04-12 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-manifestation-dinteret-nouvelles-biotherapies-et-outils-de-production
+- **Appel à manifestation d’intérêt : Fonds Build-up International** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-manifestation-dinteret-fonds-build-international
+- **Appel à manifestation d’intérêt : Les Bus de l’Entrepreneuriat Pour Tous** — 2023-05-26 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-manifestation-dinteret-les-bus-de-lentrepreneuriat-pour-tous
+- **Appel à manifestation d’intérêt « Partenaires indirects du PIIEC Santé » - MED4CURE** — 2026-02-03 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-manifestation-dinteret-partenaires-indirects-du-piiec-sante-med4cure
+- **Appel à manifestation d’intérêt « Partenaires indirects du PIIEC Santé » - TECH4CURE** — 2026-06-02 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-manifestation-dinteret-partenaires-indirects-du-piiec-sante-tech4cure
+- **Appel à manifestation d’intérêt « Stratégie Nationale Cyber – Projets d’accélérateur cyber** — 2022-03-25 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-manifestation-dinteret-strategie-nationale-cyber-projets-daccelerateur-cyber
+- **Appel à manifestation d’intérêt « Verdissement du numérique »** — 2022-03-30 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-manifestation-dinteret-verdissement-du-numerique
+- **Appel à manifestation d’intérêt AQUILA : « Développement des applications du calcul quantique à forte intensité en ressources »** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-manifestation-dinteret-aquila-developpement-des-applications-du-calcul-quantique-a-forte-intensite-en-ressources
+- **Appel à manifestation d’intérêt CORIFER 2021** — 2021-06-09 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-manifestation-dinteret-corifer-2021
+- **Appel à manifestation d’intérêt en vaccinologie** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-manifestation-dinteret-en-vaccinologie
+- **Appel à manifestation d’intérêt pour identifier des projets stratégiques sur la chaîne de valeur des batteries** — 2023-04-18 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-manifestation-dinteret-pour-identifier-des-projets-strategiques-sur-la-chaine-de-valeur-des-batteries
+- **Appel à manifestation d’intérêt pour intégrer les accélérateurs PME et ETI de Nouvelle-Aquitaine** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-manifestation-dinteret-pour-integrer-les-accelerateurs-pme-et-eti-de-nouvelle-aquitaine
+- **Appel à manifestation d'intérêt pour les « prescripteurs » du Fonds French Tech Seed** — 2019-10-15 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-manifestation-dinteret-pour-les-prescripteurs-du-fonds-french-tech-seed
+- **Appel à Manifestation d’intérêt PRAAM « Prise de Risque Amont Aval et Massification de pratiques visant à réduire l’usage des produits phytopharmaceutiques sur les exploitations agricoles »** — 2024-11-29 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-manifestation-dinteret-praam-prise-de-risque-amont-aval-et-massification-de-pratiques-visant-a-reduire-lusage-des-produits-phytopharmaceutiques-sur-les-exploitations-agricoles
+- **Appel à manifestation d'intérêt relatif à la Stratégie d’Accélération 5G – Soutien à la mise en place de Campus Fablab 5G industrielle** — 2022-09-21 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-manifestation-dinteret-relatif-a-la-strategie-dacceleration-5g-soutien-a-la-mise-en-place-de-campus-fablab-5g-industrielle
+- **Appel à manifestation d'intérêts « CORIMER 2023 »** — 2023-06-02 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-manifestation-dinterets-corimer-2023
+- **Appel à manifestation Greentech Innovation** — 2022-01-21 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-manifestation-greentech-innovation
+- **Appel à manifestations d’intérêt « CORIFER 2023 »** — 2023-11-28 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-manifestations-dinteret-corifer-2023
+- **Appel à manifestion d'intérêt : « Développer des produits biocides avec des profils plus favorables pour la santé publique et l’environnement »** — 2022-09-15 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-manifestion-dinteret-developper-des-produits-biocides-avec-des-profils-plus-favorables-pour-la-sante-publique-et-lenvironnement
+- **Appel à projet : Les trophées de la bioéconomie** — 2021-01-15 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projet-les-trophees-de-la-bioeconomie
+- **Appel à projet MPIA 2015: financez vos projets de valorisation** — 2015-04-13 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projet-mpia-2015-financez-vos-projets-de-valorisation
+- **Appel à projets – Lauréats des Challenges IA - Vague 3** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-laureats-des-challenges-ia-vague-3
+- **Appel à Projets – Plan de relance « Souveraineté dans les réseaux de télécommunications afin d’accélérer les applications de la 5G »** — 2021-09-07 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-plan-de-relance-souverainete-dans-les-reseaux-de-telecommunications-afin-daccelerer-les-applications-de-la-5g
+- **Appel à projets : "Projet important d’intérêt européen commun (PIIEC) sur les technologies avancées des semiconducteurs (AST)"** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-projet-important-dinteret-europeen-commun-piiec-sur-les-technologies-avancees-des-semiconducteurs-ast
+- **Appel à projets : « Besoins alimentaires de demain »** — 2022-06-08 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-besoins-alimentaires-de-demain
+- **Appel à projets : « Business Meetings French Healthcare Innovation 2023 - Indonésie »** — 2023-12-13 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-business-meetings-french-healthcare-innovation-2023-indonesie
+- **Appel à projets : « Cryptographie post quantique »** — 2022-05-04 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-cryptographie-post-quantique
+- **Appel à projets : « Culture immersive et métavers»** — 2025-11-25 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-culture-immersive-et-metavers
+- **Appel à projets : « Data Challenges en santé »** — 2025-06-30 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-data-challenges-en-sante
+- **Appel à projets : « French Agri Days 2024 - Brésil »** — 2024-04-30 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-french-agri-days-2024-bresil
+- **Appel à projets : « Industrialisation et Capacités Santé 2030 »** — 2025-10-07 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-industrialisation-et-capacites-sante-2030
+- **Appel à projets : « Innovation en imagerie médicale »** — 2024-03-26 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-innovation-en-imagerie-medicale
+- **Appel à projets : « Innovations en biothérapies et bioproduction »** — 2026-09-08 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-innovations-en-biotherapies-et-bioproduction
+- **Appel à projets : « Innover pour réussir la transition agroécologique »** — 2022-06-16 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-innover-pour-reussir-la-transition-agroecologique
+- **Appel à projets : « Innover pour réussir les transitions agroécologique et alimentaire »** — 2023-06-13 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-innover-pour-reussir-les-transitions-agroecologique-et-alimentaire
+- **Appel à projets : « Investir dans le domaine des grands fonds marins »** — 2023-01-31 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-investir-dans-le-domaine-des-grands-fonds-marins
+- **Appel à projets : « Maturation technologique et démonstration de solutions d’intelligence artificielle embarquée »** — 2023-01-16 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-maturation-technologique-et-demonstration-de-solutions-dintelligence-artificielle-embarquee
+- **Appel à projets : « Maturation technologique et démonstration de systèmes de confiance intégrant des briques d’intelligence artificielle »** — 2023-10-19 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-maturation-technologique-et-demonstration-de-systemes-de-confiance-integrant-des-briques-dintelligence-artificielle
+- **Appel à projets : « Mission Santé pays nordiques »** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-mission-sante-pays-nordiques
+- **Appel à projets : « NETVA 2024 »** — 2023-11-06 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-netva-2024
+- **Appel à projets : « Offre de robots et machines intelligentes d’excellence »** — 2025-06-05 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-offre-de-robots-et-machines-intelligentes-dexcellence
+- **Appel à projets : « Produire en France des aéronefs bas carbone »** — 2022-12-08 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-produire-en-france-des-aeronefs-bas-carbone
+- **Appel à projets : « Projet important d’intérêt européen commun (PIIEC) sur l’intelligence artificielle »** — 2026-09-09 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-projet-important-dinteret-europeen-commun-piiec-sur-lintelligence-artificielle
+- **Appel à projets : « Renforcement des compétences de la filière nucléaire »** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-renforcement-des-competences-de-la-filiere-nucleaire
+- **Appel à projets : « Résilience et Capacités Agroalimentaires 2030 »** — 2026-03-11 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-resilience-et-capacites-agroalimentaires-2030
+- **Appel à projets : « Soutien à la décarbonation de la filière maritime française »** — 2025-10-14 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-soutien-a-la-decarbonation-de-la-filiere-maritime-francaise
+- **Appel à projets : « Technologies innovantes des univers virtuels immersifs »** — 2025-05-22 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-technologies-innovantes-des-univers-virtuels-immersifs-0
+- **Appel à projets : Accélérateur Emergence** — 2021-02-16 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-accelerateur-emergence
+- **Appel à projets : Accessibilité Numérique** — 2017-01-10 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-accessibilite-numerique
+- **Appel à projets : BIODIV'ECO 2021 - Façade atlantique des Outre-mer** — 2021-05-02 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-biodiveco-2021-facade-atlantique-des-outre-mer
+- **Appel à projets : Biomédicament, améliorer les rendements et maîtriser les coûts de production** — 2020-11-17 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-biomedicament-ameliorer-les-rendements-et-maitriser-les-couts-de-production
+- **Appel à projets : Bourgogne-Franche-Comté Filière** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-bourgogne-franche-comte-filiere
+- **Appel à projets : Communs numériques pour l’intelligence artificielle générative** — 2023-10-24 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-communs-numeriques-pour-lintelligence-artificielle-generative
+- **Appel à projets : Concours d'innovation - i-Nov** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-concours-dinnovation-i-nov
+- **Appel à projets : Dynamique de déploiement des programmes nationaux French Tech dans les territoires** — 2021-05-24 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-dynamique-de-deploiement-des-programmes-nationaux-french-tech-dans-les-territoires
+- **Appel à projets : Entreprendre au Cœur des Territoires** — 2026-04-03 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-entreprendre-au-coeur-des-territoires
+- **Appel à projets : Evaluation du bénéfice médical et/ou économique des dispositifs médicaux à base d’intelligence artificielle** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-evaluation-du-benefice-medical-et/ou-economique-des-dispositifs-medicaux-a-base-dintelligence-artificielle
+- **Appel à projets : financement de projets « Smart Mobility » franco-suédois** — 2020-03-03 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-financement-de-projets-smart-mobility-franco-suedois
+- **Appel à projets : French Tech Tremplin Edition 5 – Volet Incubation** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-french-tech-tremplin-edition-5-volet-incubation
+- **Appel à projets : FUI 25** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-fui-25
+- **Appel à projets : Grand Prix de l’Innovation pour la santé de l’enfant 2020** — 2020-08-30 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-grand-prix-de-linnovation-pour-la-sante-de-lenfant-2020
+- **Appel à projets : Marseille en grand** — 2022-10-07 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-marseille-en-grand
+- **Appel à projets : Métaux critiques 2** — 2026-02-24 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-metaux-critiques-2
+- **Appel à projets : Partenariats régionaux d’innovation (PRI)** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-partenariats-regionaux-dinnovation-pri
+- **Appel à projets : PIAVE** — 2017-07-28 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-piave
+- **Appel à projets : prix Sofins Forces Spéciales 2017** — 2017-01-10 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-prix-sofins-forces-speciales-2017
+- **Appel à projets : Projets innovants sur le Campus Cyber** — 2021-11-18 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-projets-innovants-sur-le-campus-cyber
+- **Appel à projets : Projets Structurants Pour la Compétitivité (PSPC) – Régions n°2** — 2020-11-03 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-projets-structurants-pour-la-competitivite-pspc-regions-ndeg2
+- **Appel à projets : Société de recherche sous contrat** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-societe-de-recherche-sous-contrat
+- **Appel à projets "Accompagnement et transformation des filières" en Pays de la Loire** — 2018-10-31 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-accompagnement-et-transformation-des-filieres-en-pays-de-la-loire
+- **Appel à projets "Solutions techniques pour l'adaptation au changement climatique en Île-de-France et Normandie"** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-solutions-techniques-pour-ladaptation-au-changement-climatique-en-ile-de-france-et-normandie
+- **Appel à projets « Accélérer l’usage de l’intelligence artificielle générative dans l’économie »** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-accelerer-lusage-de-lintelligence-artificielle-generative-dans-leconomie
+- **Appel à projets « Coopérations internationales pour des chaînes de valeurs quantiques résilientes »** — 2024-07-09 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-cooperations-internationales-pour-des-chaines-de-valeurs-quantiques-resilientes
+- **Appel à projets « Démonstration de la valeur clinique et médico-économique des dispositifs médicaux d’équipements innovants »** — 2023-05-03 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-demonstration-de-la-valeur-clinique-et-medico-economique-des-dispositifs-medicaux-dequipements-innovants
+- **Appel à projets « des Pionniers de l’intelligence artificielle »** — 2025-11-05 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-des-pionniers-de-lintelligence-artificielle
+- **Appel à projets « Développement de suites bureautiques cloud de travail collaboratif »** — 2022-05-06 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-developpement-de-suites-bureautiques-cloud-de-travail-collaboratif
+- **Appel à projets « Développement de technologies innovantes critiques 4ème édition »** — 2025-04-23 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-developpement-de-technologies-innovantes-critiques-4eme-edition
+- **Appel à projets « Dispositif Cyber PME » - Phase B** — 2025-11-26 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-dispositif-cyber-pme-phase-b
+- **Appel à projets « EdTech in Africa »** — 2024-05-31 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-edtech-africa
+- **Appel à projets « Étude d'impact de l'usage de dispositifs médicaux numériques innovants dans des établissements de santé ou du médico-social »** — 2025-07-08 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-etude-dimpact-de-lusage-de-dispositifs-medicaux-numeriques-innovants-dans-des-etablissements-de-sante-ou-du-medico-social
+- **Appel à projets « Evaluation du bénéfice médical et / ou économique des dispositifs médicaux numériques ou à base d’intelligence artificielle »** — 2023-01-17 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-evaluation-du-benefice-medical-et/ou-economique-des-dispositifs-medicaux-numeriques-ou-a-base-dintelligence-artificielle
+- **Appel à projets « Evaluation du bénéfice médico-économique des dispositifs médicaux numériques et des dispositifs médicaux d’équipement »** — 2025-04-08 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-evaluation-du-benefice-medico-economique-des-dispositifs-medicaux-numeriques-et-des-dispositifs-medicaux-dequipement
+- **Appel à Projets « Financement des prototypes de technologies agricoles innovantes »** — 2026-04-28 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-financement-des-prototypes-de-technologies-agricoles-innovantes
+- **Appel à projets « French Tech Tremplin »** — 2024-05-17 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-french-tech-tremplin
+- **Appel à projets « Grands Défis – Stratégie Nationale Cyber – Axes verticaux Tranche 2** — 2022-06-16 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-grands-defis-strategie-nationale-cyber-axes-verticaux-tranche-2
+- **Appel à projets « Incubateur Startups Quantiques »** — 2024-02-23 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-incubateur-startups-quantiques
+- **Appel à projets « Innov Avenir Entreprises » en Normandie** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-innov-avenir-entreprises-en-normandie
+- **Appel à projets « Innov Avenir Filière » en Normandie** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-innov-avenir-filiere-en-normandie
+- **Appel à projets « L’intelligence artificielle pour une expérience améliorée du système de santé »** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-lintelligence-artificielle-pour-une-experience-amelioree-du-systeme-de-sante
+- **Appel à projets « Mo2 - Montagne & Mobilité » by Transdev** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-mo2-montagne-mobilite-transdev
+- **Appel à projets « Mutualisation et valorisation des données d’intérêt cyber » - Cas d’usage n°1 : Cyber Threat Intelligence** — 2021-11-16 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-mutualisation-et-valorisation-des-donnees-dinteret-cyber-cas-dusage-ndeg1-cyber-threat-intelligence
+- **Appel à Projets « PRAAM » « Prise de Risque Amont Aval et Massification de pratiques visant à réduire l’usage des produits phytopharmaceutiques sur les exploitations agricoles »** — 2026-04-14 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-praam-prise-de-risque-amont-aval-et-massification-de-pratiques-visant-a-reduire-lusage-des-produits-phytopharmaceutiques-sur-les-exploitations-agricoles
+- **Appel à projets « Réacteurs nucléaires innovants »** — 2023-06-28 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-reacteurs-nucleaires-innovants
+- **Appel à projets « Renforcement de l’offre de services cloud »** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-renforcement-de-loffre-de-services-cloud
+- **Appel à projets « Soutien aux PME et startups pour renforcer leurs compétences dans le domaine de la cybersécurité » - NCC-FR Cyber** — 2025-01-09 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-soutien-aux-pme-et-startups-pour-renforcer-leurs-competences-dans-le-domaine-de-la-cybersecurite-ncc-fr-cyber
+- **Appel à projets « Soutien aux projets de diversification des sous-traitants de filière automobile »** — 2022-09-27 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-soutien-aux-projets-de-diversification-des-sous-traitants-de-filiere-automobile
+- **Appel à projets « Territoires Hydrogènes »** — 2016-09-30 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-territoires-hydrogenes
+- **Appel à projets Alberta-Canada-France** — 2018-01-15 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-alberta-canada-france
+- **Appel à projets ATF : Plateformes d’accélération vers l’industrie du futur** — 2021-01-11 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-atf-plateformes-dacceleration-vers-lindustrie-du-futur
+- **Appel à projets ATF : Plateformes numériques et mutualisation de données pour les filières** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-atf-plateformes-numeriques-et-mutualisation-de-donnees-pour-les-filieres
+- **Appel à projets BAST** — 2021-05-03 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-bast
+- **Appel à projets Bpifrance– NEDO** — 2014-11-30 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-bpifrance-nedo
+- **Appel à projets Cluster ITEA4** — 2023-11-13 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-cluster-itea4
+- **Appel à projets Cluster Xecs** — 2024-01-18 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-cluster-xecs
+- **Appel à projets communs : Chili - France** — 2020-01-17 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-communs-chili-france
+- **Appel à projets conjoint entre la France et l’Allemagne pour des projets sur "les réseaux privés 5G pour l’industrie"** — 2022-09-06 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-conjoint-entre-la-france-et-lallemagne-pour-des-projets-sur-les-reseaux-prives-5g-pour-lindustrie
+- **Appel à projets entre la France et l’Allemagne pour des projets d’innovation en matière de réseaux privés 5G (développements techniques et d'écosystèmes)** — 2021-06-15 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-entre-la-france-et-lallemagne-pour-des-projets-dinnovation-en-matiere-de-reseaux-prives-5g-developpements-techniques-et-decosystemes
+- **Appel à projets EUREKA "Advanced Manufacturing"** — 2017-06-08 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-eureka-advanced-manufacturing
+- **Appel à Projets Eureka Biotech** — 2026-09-25 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-eureka-biotech
+- **Appel à Projets Eureka Disaster Resilience, Response and recovery** — 2024-10-31 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-eureka-disaster-resilience-response-and-recovery-2
+- **Appel à Projets Eureka France-Corée du Sud** — 2026-07-08 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-eureka-france-coree-du-sud
+- **Appel à Projets Eureka France-Singapour** — 2025-07-04 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-eureka-france-singapour
+- **Appel à Projets Eureka Lightweighting** — 2025-10-23 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-eureka-lightweighting
+- **Appel à projets EUREKA post-COVID 19 pour les innovations de demain** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-eureka-post-covid-19-pour-les-innovations-de-demain
+- **Appel à Projets Eureka sur les systèmes de création de valeur circulaire (CVC)** — 2025-09-30 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-eureka-sur-les-systemes-de-creation-de-valeur-circulaire-cvc
+- **Appel à Projets Eureka sur les technologies quantiques appliquées** — 2025-09-05 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-eureka-sur-les-technologies-quantiques-appliquees
+- **Appel à Projets Europe « Accélérateur Beauty Hub : accompagnement startups du programme Beauty Up »** — 2021-02-01 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-europe-accelerateur-beauty-hub-accompagnement-startups-du-programme-beauty
+- **Appel à Projets Eurostars Call 11** — 2026-09-10 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-eurostars-call-11
+- **Appel à projets FISO Bretagne** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-fiso-bretagne
+- **Appel à projets Foodtech & Winetech de Bordeaux Technowest** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-foodtech-winetech-de-bordeaux-technowest
+- **Appel à projets France - Canada** — 2014-12-15 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-france-canada
+- **Appel à projets France - Canada 2015** — 2015-12-18 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-france-canada-2015
+- **Appel à projets France - Catalogne (Bpifrance/Accio)** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-france-catalogne-bpifrance/accio
+- **Appel à projets France - Chine (Bpifrance - MOST)** — 2018-12-10 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-france-chine-bpifrance-most
+- **Appel à projets France - Russie** — 2018-04-19 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-france-russie
+- **Appel à Projets France-Balkans** — 2024-05-15 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-france-balkans
+- **Appel à Projets France-Chili –Greentech** — 2024-04-10 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-france-chili-greentech
+- **Appel à projets franco-néerlandais Eurostars : serious games pour applications dans le domaine médical** — 2015-09-17 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-franco-neerlandais-eurostars-serious-games-pour-applications-dans-le-domaine-medical
+- **Appel à projets Friso en Franche-Comté** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-friso-en-franche-comte
+- **Appel à projets générique n°3 « i-Démo - soutien aux projets structurants de R&D&I »** — 2024-07-16 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-generique-ndeg3-i-demo-soutien-aux-projets-structurants-de-rdi
+- **Appel à projets générique n°4 « i-Démo - soutien aux projets structurants de R&D&I »** — 2025-07-15 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-generique-ndeg4-i-demo-soutien-aux-projets-structurants-de-rdi
+- **Appel à projets générique n°5 « i-Démo - soutien aux projets structurants de R&D&I »** — 2026-09-09 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-generique-ndeg5-i-demo-soutien-aux-projets-structurants-de-rdi
+- **Appel à projets Grand Défi « Dispositifs médicaux numériques en santé mentale »** — 2025-09-30 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-grand-defi-dispositifs-medicaux-numeriques-en-sante-mentale
+- **Appel à projets Grands Défis « Soutenir l'Innovation dans la Stérilisation et la Conception de DM Respectueux de l’Environnement »** — 2025-10-15 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-grands-defis-soutenir-linnovation-dans-la-sterilisation-et-la-conception-de-dm-respectueux-de-lenvironnement
+- **Appel à projets Grands Défis « Tiers lieux d’expérimentation MedTech »** — 2026-03-17 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-grands-defis-tiers-lieux-dexperimentation-medtech
+- **Appel à projets IGNfab: agriculture, forêt et biodiversité** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-ignfab-agriculture-foret-et-biodiversite
+- **Appel à projets Innov’up Expérimentation Santé** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-innovup-experimentation-sante
+- **Appel à projets innovants collaboratifs France-Inde** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-innovants-collaboratifs-france-inde
+- **Appel à Projets Innovants dans le sport** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-innovants-dans-le-sport
+- **Appel à projets innovants France-Inde : santé digitale et médecine individualisée** — 2016-02-18 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-innovants-france-inde-sante-digitale-et-medecine-individualisee
+- **Appel à projets IV : « Formations France Num : Accompagnement des TPE/PME à la transformation numérique »** — 2023-04-20 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-iv-formations-france-num-accompagnement-des-tpe/pme-a-la-transformation-numerique
+- **Appel à projets Mobilités routières automatisées, infrastructures de services connectées et bas carbone** — 2023-01-11 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-mobilites-routieres-automatisees-infrastructures-de-services-connectees-et-bas-carbone
+- **Appel à projets multilatéral Eureka – Inde** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-multilateral-eureka-inde
+- **Appel à projets Pays de la Loire Projets d’innovation** — 2018-12-31 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-pays-de-la-loire-projets-dinnovation
+- **Appel à projets pour rejoindre l’Incubateur d’Entrepreneurs en Santé Numérique de Bpifrance et Université de Paris** — 2021-11-22 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-pour-rejoindre-lincubateur-dentrepreneurs-en-sante-numerique-de-bpifrance-et-universite-de-paris
+- **Appel à projets Protection des données personnelles (FSN Cœur de filière)** — 2016-01-19 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-protection-des-donnees-personnelles-fsn-coeur-de-filiere
+- **Appel à projets relatif à la Stratégie d’accélération Batteries « Solutions et technologies innovantes pour les batteries »** — 2023-01-10 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-relatif-a-la-strategie-dacceleration-batteries-solutions-et-technologies-innovantes-pour-les-batteries
+- **Appel à projets relatif à la Stratégie d’accélération sur la 5G et les futures technologies de réseaux de télécommunications** — 2024-11-26 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-relatif-a-la-strategie-dacceleration-sur-la-5g-et-les-futures-technologies-de-reseaux-de-telecommunications
+- **Appel à projets solutions innovantes pour la gestion des matières et déchets radioactifs et la recherche d’alternatives au stockage géologique profond** — 2021-11-02 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-solutions-innovantes-pour-la-gestion-des-matieres-et-dechets-radioactifs-et-la-recherche-dalternatives-au-stockage-geologique-profond
+- **Appel à projets Spatial : Développement de mini et micro-lanceurs** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-spatial-developpement-de-mini-et-micro-lanceurs
+- **Appel à projets Spatial : Développement de systèmes pour la Surveillance de l’Environnement Orbital** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-spatial-developpement-de-systemes-pour-la-surveillance-de-lenvironnement-orbital
+- **Appel à projets spatial : Développement de systèmes pour les Services en Orbite** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-spatial-developpement-de-systemes-pour-les-services-en-orbite
+- **Appel à projets Spatial : Développement de technologies aval pour la valorisation des données spatiales** — 2025-03-04 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-spatial-developpement-de-technologies-aval-pour-la-valorisation-des-donnees-spatiales
+- **Appel à projets Spatial : Développement et industrialisation de constellations de satellites et de leurs technologies habilitantes** — 2023-09-12 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-spatial-developpement-et-industrialisation-de-constellations-de-satellites-et-de-leurs-technologies-habilitantes
+- **Appel à Projets Structurants Pour la Compétitivité spécifique à la crise sanitaire COVID-19** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-structurants-pour-la-competitivite-specifique-a-la-crise-sanitaire-covid-19
+- **Appel à projets Tango&Scan** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-tangoscan
+- **Appel à projets Turbo** — 2017-03-22 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-turbo
+- **Appel à projets: «Structuration de Filières»** — 2018-06-13 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-structuration-de-filieres
+- **Appel à startups dans l'énergie** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-startups-dans-lenergie
+- **Appels à projets : Programme Propulse** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/appels-a-projets-programme-propulse
+- **Be a Boss 2020, c’est parti !** — 2020-08-13 — https://www.bpifrance.fr/nos-appels-a-projets-concours/be-a-boss-2020-cest-parti
+- **BigBooster : déposez votre candidature !** — 2016-09-26 — https://www.bpifrance.fr/nos-appels-a-projets-concours/bigbooster-deposez-votre-candidature
+- **Bourgogne-Franche-Comté Projets d’innovation** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/bourgogne-franche-comte-projets-dinnovation
+- **Bpifrance Création Préparez-vous à réussir votre création d’entreprise !** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/bpifrance-creation
+- **Bpifrance et Nedo lancent un appel à projets !** — 2019-09-25 — https://www.bpifrance.fr/nos-appels-a-projets-concours/bpifrance-et-nedo-lancent-un-appel-a-projets
+- **bpifrance_aap** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/accelerateur-transport-routier-candidatez-a-la-2eme-promotion
+- **Bretagne : appel à projets Inno Avenir Filières** — 2018-02-15 — https://www.bpifrance.fr/nos-appels-a-projets-concours/bretagne-appel-a-projets-inno-avenir-filieres
+- **Bretagne : appel à projets Inno Avenir Projets** — 2019-12-31 — https://www.bpifrance.fr/nos-appels-a-projets-concours/bretagne-appel-a-projets-inno-avenir-projets
+- **Business France au Web Summit’17** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/business-france-au-web-summit17
+- **Business O Féminin Award : appel à candidatures** — 2019-04-30 — https://www.bpifrance.fr/nos-appels-a-projets-concours/business-o-feminin-award-appel-a-candidatures
+- **Business With Attitude** — 2018-10-26 — https://www.bpifrance.fr/nos-appels-a-projets-concours/business-attitude
+- **Candidatez à Explore & Match : Mission French Fab Mexique** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-explore-match-mission-french-fab-mexique
+- **Candidatez à l’Accélérateur Agroécologie 2ème promotion** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-laccelerateur-agroecologie-2eme-promotion
+- **Candidatez à l'Accélérateur Booster Bretagne 3** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-laccelerateur-booster-bretagne-3
+- **Candidatez à l’Accélérateur Chimie-Plasturgie** — 2022-01-24 — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-laccelerateur-chimie-plasturgie
+- **Candidatez à l'Accélérateur Création** — 2021-04-02 — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-laccelerateur-creation
+- **Candidatez à l’Accélérateur Croissance de l’Est** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-laccelerateur-croissance-de-lest
+- **Candidatez à l’Accélérateur Industriels de la Mer** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-laccelerateur-industriels-de-la-mer
+- **Candidatez à l'Accélérateur International Ile-de-France** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-laccelerateur-international-ile-de-france
+- **Candidatez à l’Accélérateur Mode & Luxe 4e promotion** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-laccelerateur-mode-luxe-4e-promotion
+- **Candidatez à l’Accélérateur Musique et Spectacle Vivant** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-laccelerateur-musique-et-spectacle-vivant
+- **Candidatez à l'accélérateur Next French Healthcare** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-laccelerateur-next-french-healthcare
+- **Candidatez à l’Accélérateur PME Hauts-de-France 4** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-laccelerateur-pme-hauts-de-france-4
+- **Candidatez à l'Accélérateur Tourisme & Loisirs** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-laccelerateur-tourisme-loisirs
+- **Candidatez à l’appel Innovation Lab du programme Europe Créative** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-lappel-innovation-lab-du-programme-europe-creative
+- **Candidatez à la 1ère promotion de l’Accélérateur Normand** — 2022-12-05 — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-la-1ere-promotion-de-laccelerateur-normand
+- **Candidatez à la 2e promotion de l’Accélérateur Jeux vidéo** — 2022-06-07 — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-la-2e-promotion-de-laccelerateur-jeux-video
+- **Candidatez à la 2ème promotion de l’Accélérateur Industries et Technologies de Santé** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-la-2eme-promotion-de-laccelerateur-industries-et-technologies-de-sante
+- **Candidatez à la 3e édition des missions Hydrogène et partez en Allemagne et/ou aux Pays-Bas !** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-la-3e-edition-des-missions-hydrogene-et-partez-en-allemagne-et/ou-aux-pays-bas
+- **Candidatez à la 3e promotion de l’Accélérateur Cinéma & Audiovisuel** — 2023-03-31 — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-la-3e-promotion-de-laccelerateur-cinema-audiovisuel
+- **Candidatez à la 3e promotion de l’Accélérateur Décarbonation** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-la-3e-promotion-de-laccelerateur-decarbonation
+- **Candidatez à la 3e Promotion de l’Accélérateur PME Bourgogne-Franche-Comté** — 2022-06-21 — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-la-3e-promotion-de-laccelerateur-pme-bourgogne-franche-comte
+- **Candidatez à la 3ème promotion de l’Accélérateur Transformation et valorisation des déchets** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-la-3eme-promotion-de-laccelerateur-transformation-et-valorisation-des-dechets
+- **Candidatez à la 4e promotion de l’Accélérateur International** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-la-4e-promotion-de-laccelerateur-international
+- **Candidatez à la 6e promotion de l’Accélérateur Pays de la Loire** — 2023-10-09 — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-la-6e-promotion-de-laccelerateur-pays-de-la-loire
+- **Candidatez à la 6ème promotion de l’Accélérateur Automobile** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-la-5e-promotion-de-laccelerateur-automobile
+- **Candidatez à la 8e promotion de l'Accélérateur PME** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-la-8e-promotion-de-laccelerateur-pme
+- **Candidatez à la mission Creative Lab Japon 2023** — 2023-09-22 — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-la-mission-creative-lab-japon-2023
+- **Candidatez à la mission Creative Lab Suisse 2023** — 2023-09-07 — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-la-mission-creative-lab-suisse-2023
+- **Candidatez à la mission d’immersion Durabilité Agricole au Brésil** — 2022-05-19 — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-la-mission-dimmersion-durabilite-agricole-au-bresil
+- **Candidatez à la Mission Digitalisation du tourisme et de l’évènementiel dans les Pays Nordiques** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-la-mission-digitalisation-du-tourisme-et-de-levenementiel-dans-les-pays-nordiques
+- **Candidatez à la Mission Digitalisation du tourisme et de l’évènementiel en Allemagne** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-la-mission-digitalisation-du-tourisme-et-de-levenementiel-en-allemagne
+- **Candidatez à la Mission Digitalisation du tourisme et de l’évènementiel en Europe du Sud** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-la-mission-digitalisation-du-tourisme-et-de-levenementiel-en-europe-du-sud
+- **Candidatez à la Mission Élevage et durabilité dans la péninsule ibérique** — 2024-02-16 — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-la-mission-elevage-et-durabilite-dans-la-peninsule-iberique
+- **Candidatez à la mission Greentech Californie** — 2022-11-18 — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-la-mission-greentech-californie
+- **Candidatez à la mission Impact Germany 2023** — 2023-09-07 — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-la-mission-impact-germany-2023
+- **Candidatez à la mission Impact Italy 2023** — 2023-09-07 — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-la-mission-impact-italy-2023
+- **Candidatez à la mission Learn & Pick SXSW 2023** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-la-mission-learn-pick-sxsw-2023
+- **Candidatez au 2e appel à candidatures de Tech for life hub** — 2022-10-31 — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-au-2e-appel-a-candidatures-de-tech-life-hub
+- **Candidatez au French Tech Tour Agri-Food Tech Israël 2018 !** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-au-french-tech-tour-agri-food-tech-israel-2018
+- **Candidatez au French Tech Tour HEALTHCARE - Deeptech Israël 2020-2021** — 2021-02-17 — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-au-french-tech-tour-healthcare-deeptech-israel-2020-2021
+- **Candidatez au Parcours Business International – Ville durable aux Emirats Arabes Unis et au Bahreïn** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-au-parcours-business-international-ville-durable-aux-emirats-arabes-unis-et-au-bahrein
+- **Candidatez au Programme Cultur’Export** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-au-programme-culturexport
+- **Candidatez au programme SUD Accélérateur** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-au-programme-sud-accelerateur
+- **Candidatez aux missions Hydrogène 2022 et partez en Allemagne et/ou aux Pays-Bas !** — 2022-10-28 — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-aux-missions-hydrogene-2022-et-partez-en-allemagne-et/ou-aux-pays-bas
+- **Candidatez pour le Soft Landing Boston 2018** — 2018-03-01 — https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-pour-le-soft-landing-boston-2018
+- **Carrefours de l'Entrepreneuriat** — 2024-08-30 — https://www.bpifrance.fr/nos-appels-a-projets-concours/carrefours-de-lentrepreneuriat
+- **CES 2020** — 2019-09-23 — https://www.bpifrance.fr/nos-appels-a-projets-concours/ces-2020
+- **Challenge Paris-Saclay CES Las Vegas 2019 : appel à candidatures !** — 2018-06-01 — https://www.bpifrance.fr/nos-appels-a-projets-concours/challenge-paris-saclay-ces-las-vegas-2019-appel-a-candidatures
+- **Challenges Education - Appel à manifestation d’intérêts Sponsors – vague 1** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/challenges-education-appel-a-manifestation-dinterets-sponsors-vague-1
+- **Challenges Education - Appel à projets Lauréats – vague 1** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/challenges-education-appel-a-projets-laureats-vague-1
+- **Challenges numériques : appel à manifestation d’intérêt (PIA-FSN)** — 2016-01-05 — https://www.bpifrance.fr/nos-appels-a-projets-concours/challenges-numeriques-appel-a-manifestation-dinteret-pia-fsn
+- **Circular Challenge** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/circular-challenge
+- **CitésLab – Révélateurs de Talents** — 2024-09-13 — https://www.bpifrance.fr/nos-appels-a-projets-concours/citeslab-revelateurs-de-talents
+- **CleanTech Booster** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/cleantech-booster
+- **ClimateLaunchpad 2023 : le concours international d’innovation contre le changement climatique** — 2022-07-04 — https://www.bpifrance.fr/nos-appels-a-projets-concours/climatelaunchpad-2023-le-concours-international-dinnovation-contre-le-changement-climatique
+- **Com’une start-up 2017,** — 2017-09-30 — https://www.bpifrance.fr/nos-appels-a-projets-concours/comune-start-2017
+- **COMMUNIQUE DE PRESSE** — 2024-05-31 — https://www.bpifrance.fr/nos-appels-a-projets-concours/accelerateur-croissance-tpe
+- **Concours : Ma pub ici** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/concours-ma-pub-ici
+- **Concours "Energy for Smart Mobility 2020"** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/concours-energy-smart-mobility-2020
+- **Concours "Entreprendre autrement"** — 2021-05-20 — https://www.bpifrance.fr/nos-appels-a-projets-concours/concours-entreprendre-autrement
+- **Concours Cleantech Open France 2021 : l’appel à candidature est lancé !** — 2021-05-14 — https://www.bpifrance.fr/nos-appels-a-projets-concours/concours-cleantech-open-france-2021-lappel-a-candidature-est-lance
+- **Concours d’innovation i-Lab** — 2026-02-03 — https://www.bpifrance.fr/nos-appels-a-projets-concours/concours-dinnovation-i-lab
+- **Concours d'innovation numérique** — 2017-07-05 — https://www.bpifrance.fr/nos-appels-a-projets-concours/concours-dinnovation-numerique
+- **Concours d'innovations : le nouveau challenge #DigitalAfrica est lancé** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/concours-dinnovations-le-nouveau-challenge-digitalafrica-est-lance
+- **Concours de l’incubateur Descartes** — 2022-12-14 — https://www.bpifrance.fr/nos-appels-a-projets-concours/concours-de-lincubateur-descartes
+- **Concours EDFutur : 1re édition** — 2016-01-14 — https://www.bpifrance.fr/nos-appels-a-projets-concours/concours-edfutur-1re-edition
+- **Concours Graines de Boss** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/concours-graines-de-boss
+- **Concours Invivo Quest France 2019** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/concours-invivo-quest-france-2019
+- **Concours La Canopée** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/concours-la-canopee
+- **Concours Learn’Innov Genius** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/concours-learninnov-genius
+- **Concours Ma Pub Ici : édition 2017** — 2017-11-30 — https://www.bpifrance.fr/nos-appels-a-projets-concours/concours-ma-pub-ici-edition-2017
+- **Concours Ma Pub Ici : édition 2018** — 2018-11-30 — https://www.bpifrance.fr/nos-appels-a-projets-concours/concours-ma-pub-ici-edition-2018
+- **Concours Mondial d’Innovation – Phase 2** — 2017-02-15 — https://www.bpifrance.fr/nos-appels-a-projets-concours/concours-mondial-dinnovation-phase-2
+- **Concours National de la Création Agroalimentaire Biologique** — 2020-08-15 — https://www.bpifrance.fr/nos-appels-a-projets-concours/concours-national-de-la-creation-agroalimentaire-biologique
+- **Concours Prot’EAT** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/concours-proteat
+- **Concours régional de l’entrepreneuriat au féminin : 1re édition** — 2015-05-04 — https://www.bpifrance.fr/nos-appels-a-projets-concours/concours-regional-de-lentrepreneuriat-au-feminin-1re-edition
+- **Concours Start me up Challenge** — 2019-06-26 — https://www.bpifrance.fr/nos-appels-a-projets-concours/concours-start-me-challenge
+- **Concours Talents des cités** — 2020-07-31 — https://www.bpifrance.fr/nos-appels-a-projets-concours/concours-talents-des-cites
+- **Connecting The World 2016 - Internet of Things Contest** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/connecting-world-2016-internet-things-contest
+- **Conseil européen de l’innovation (EIC) : appel à projets** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/conseil-europeen-de-linnovation-eic-appel-a-projets
+- **Consultation : Stratégie d'accélération "Technologies avancées pour les systèmes énergétiques"** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/consultation-strategie-dacceleration-technologies-avancees-pour-les-systemes-energetiques
+- **Consultation : stratégie d’accélération produits biosourcés, carburants durables** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/consultation-strategie-dacceleration-produits-biosources-carburants-durables
+- **Coqs d’Or** — 2023-05-09 — https://www.bpifrance.fr/nos-appels-a-projets-concours/coqs-dor
+- **Coupe Du Monde 2030 Maroc - Candidatez au Parcours Business International** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/coupe-du-monde-2030-maroc-candidatez-au-parcours-business-international
+- **Crédit-bail Mobilier BEI** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/credit-bail-mobilier-bei
+- **Deauville Green Awards : appel à candidatures pour le prix RSE Bpifrance !** — 2019-06-13 — https://www.bpifrance.fr/nos-appels-a-projets-concours/deauville-green-awards-appel-a-candidatures-pour-le-prix-rse-bpifrance
+- **Deauville Green Awards 2020** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/deauville-green-awards-2020
+- **Deeptech North America -NETVA 2020** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/deeptech-north-america-netva-2020
+- **Design & Agroalimentaire : appel à projets** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/design-agroalimentaire-appel-a-projets
+- **Diag 360** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/diag-360
+- **Diag Adaptation** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/diag-adaptation
+- **Diag Amorçage Industriel** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/diag-amorcage-industriel
+- **Diag Axes d'Innovation** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/diag-axes-dinnovation
+- **Diag Biodiversité** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/diag-biodiversite
+- **Diag Cybersécurité** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/diag-cybersecurite
+- **Diag Data IA** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/diag-data-ia
+- **Diag Décarbon'Action** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/diag-decarbonaction
+- **Diag Eco-Flux** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/diagnostic-eco-flux
+- **Diag Ecoconception** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/diag-ecoconception
+- **Diag Europe** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/diag-europe
+- **Diag Impact Environnemental** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/diag-impact-environnemental
+- **Diag Partenariat Technologique International** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/diag-partenariat-technologique-international
+- **Diag Perf'Immo** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/diag-perfimmo
+- **Diag Stratégie Propriété Intellectuelle** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/diag-strategie-propriete-intellectuelle
+- **Digital Africa : votez pour votre innovation favorite !** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/digital-africa-votez-pour-votre-innovation-favorite
+- **Dispositifs médicaux : jusqu'au 26 octobre pour répondre à l'appel à manifestation d’intérêt national** — 2015-10-26 — https://www.bpifrance.fr/nos-appels-a-projets-concours/dispositifs-medicaux-jusquau-26-octobre-pour-repondre-a-lappel-a-manifestation-dinteret-national
+- **Disrupt Campus (2e vague)** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/disrupt-campus-2e-vague
+- **Docteurs-Entrepreneurs : et si vous étiez parmi les prochains lauréats ?** — 2019-09-16 — https://www.bpifrance.fr/nos-appels-a-projets-concours/docteurs-entrepreneurs-et-si-vous-etiez-parmi-les-prochains-laureats
+- **E-cosmetic 360° : candidatez à l'Open Innovation** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/e-cosmetic-360deg-candidatez-a-lopen-innovation
+- **E-mission Energie en Zone Rhénane** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/e-mission-energie-en-zone-rhenane
+- **Eco- Innovation: appel à Manifestation d’Intérêt** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/eco-innovation-appel-a-manifestation-dinteret
+- **EdTech Boston 2019** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/edtech-boston-2019
+- **Entrepreneuriat féminin en Ile-de-France : concours Créatrices d’avenir !** — 2015-10-30 — https://www.bpifrance.fr/nos-appels-a-projets-concours/entrepreneuriat-feminin-en-ile-de-france-concours-creatrices-davenir
+- **Entrepreneurs, candidatez au programme Entrepreneurs dans la Ville !** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/entrepreneurs-candidatez-au-programme-entrepreneurs-dans-la-ville
+- **ERANet-Lac : appel à projets de R&I ouvert** — 2014-11-27 — https://www.bpifrance.fr/nos-appels-a-projets-concours/eranet-lac-appel-a-projets-de-ri-ouvert
+- **EUREKA : appel à projets Argentine** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/eureka-appel-a-projets-argentine
+- **EUREKA : appel à projets multilatéral avec le Chili** — 2018-01-25 — https://www.bpifrance.fr/nos-appels-a-projets-concours/eureka-appel-a-projets-multilateral-avec-le-chili
+- **EUROPEAN COMMISSION** — 2021-06-30 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-manifestation-dinteret-capacity-building
+- **Experts conseil en design : répondez à l’appel à candidatures de Bpifrance** — 2015-10-31 — https://www.bpifrance.fr/nos-appels-a-projets-concours/experts-conseil-en-design-repondez-a-lappel-a-candidatures-de-bpifrance
+- **Explore & Match : Mission Agriculture en Egypte** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/explore-match-mission-agriculture-en-egypte
+- **Financement de projets européens : nouvel appel à projets Eurostars** — 2016-09-15 — https://www.bpifrance.fr/nos-appels-a-projets-concours/financement-de-projets-europeens-nouvel-appel-a-projets-eurostars
+- **Financement de projets européens : nouvel appel à projets Eurostars 2020** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/financement-de-projets-europeens-nouvel-appel-a-projets-eurostars-2020
+- **Fonds de Fonds France Relance Etat-Régions (FFRER)** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/fonds-de-fonds-france-relance-etat-regions-ffrer
+- **Food Use Tech 2019 : Speed-dating startups / investisseurs** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/food-use-tech-2019-speed-dating-startups/investisseurs
+- **Forum Avenir Bio** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/forum-avenir-bio
+- **Forum Seeds & Chips : appel à candidatures** — 2019-03-27 — https://www.bpifrance.fr/nos-appels-a-projets-concours/forum-seeds-chips-appel-a-candidatures
+- **France - Allemagne : 1er appel à projets conjoints entre Bpifrance et AiF Project Gmbh pour ZIM** — 2015-12-18 — https://www.bpifrance.fr/nos-appels-a-projets-concours/france-allemagne-1er-appel-a-projets-conjoints-entre-bpifrance-et-aif-project-gmbh-pour-zim
+- **France 2030 — Rebond Industriel — soutien à l’investissement industriel** — échéance à vérifier — https://rebond-industriel.bpifrance.fr/
+- **France Entreprise Digital, édition 2016 !** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/france-entreprise-digital-edition-2016
+- **French Healthcare Booster Corée-Japon** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/french-healthcare-booster-coree-japon
+- **French Healthcare Booster Germany 2022** — 2022-01-21 — https://www.bpifrance.fr/nos-appels-a-projets-concours/french-healthcare-booster-germany-2022
+- **French Healthcare Booster Germany 2023** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/french-healthcare-booster-germany-2023
+- **French innovation corner** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/french-innovation-corner
+- **French Tech Diversité** — 2017-03-10 — https://www.bpifrance.fr/nos-appels-a-projets-concours/french-tech-diversite
+- **French Tech for the Planet** — 2020-12-11 — https://www.bpifrance.fr/nos-appels-a-projets-concours/french-tech-planet
+- **French Tech Tour China 2019** — 2019-10-08 — https://www.bpifrance.fr/nos-appels-a-projets-concours/french-tech-tour-china-2019
+- **Fundtruck : l’innovation en mouvement** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/fundtruck-linnovation-en-mouvement
+- **Fundtruck, le concours est de retour !** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/fundtruck-le-concours-est-de-retour
+- **Garantie Court Terme** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/garantie-court-terme-0
+- **Garantie FEDER** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/garantie-feder-0
+- **Garantie Innovation** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/garantie-innovation
+- **Genopole Young Biotech Award 2016 : appel à candidature** — 2016-10-03 — https://www.bpifrance.fr/nos-appels-a-projets-concours/genopole-young-biotech-award-2016-appel-a-candidature
+- **Globalstars : Appel à projets avec le Kenya** — 2023-04-30 — https://www.bpifrance.fr/nos-appels-a-projets-concours/globalstars-appel-a-projets-avec-le-kenya
+- **Grand Défi cyber-sécurité : Appels à projet « Axes verticaux – Tranche 1 »** — 2021-05-31 — https://www.bpifrance.fr/nos-appels-a-projets-concours/grand-defi-cyber-securite-appels-a-projet-axes-verticaux-tranche-1
+- **Grand Défi cybersécurité : Appel à manifestation d’intérêt « Startup studio cyber »** — 2021-03-12 — https://www.bpifrance.fr/nos-appels-a-projets-concours/grand-defi-cybersecurite-appel-a-manifestation-dinteret-startup-studio-cyber
+- **Grand Défi cybersécurité : Appel à projets « Axes verticaux – Tranche 1 – Startups »** — 2020-12-08 — https://www.bpifrance.fr/nos-appels-a-projets-concours/grand-defi-cybersecurite-appel-a-projets-axes-verticaux-tranche-1-startups
+- **Grand Est : Be Est Filières d’Avenir** — 2018-02-15 — https://www.bpifrance.fr/nos-appels-a-projets-concours/grand-est-be-est-filieres-davenir
+- **Grand Est : Be Est Projets d’Avenir** — 2017-12-19 — https://www.bpifrance.fr/nos-appels-a-projets-concours/grand-est-be-est-projets-davenir
+- **Grand prix de l'innovation construction durable et cadre de vie** — 2020-04-30 — https://www.bpifrance.fr/nos-appels-a-projets-concours/grand-prix-de-linnovation-construction-durable-et-cadre-de-vie
+- **Grand Prix de l’Innovation pour la Santé de l’Enfant** — 2022-09-15 — https://www.bpifrance.fr/nos-appels-a-projets-concours/grand-prix-de-linnovation-pour-la-sante-de-lenfant
+- **Grands Défis du Numérique** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/grands-defis-du-numerique
+- **Guichet d’accès au dispositif d’accompagnement à la qualification SecNumCloud** — 2023-07-19 — https://www.bpifrance.fr/nos-appels-a-projets-concours/guichet-dacces-au-dispositif-daccompagnement-a-la-qualification-secnumcloud
+- **Handi Tech Trophy** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/handi-tech-trophy
+- **Hello Tomorrow** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/hello-tomorrow
+- **Hub start-up Bpifrance : appel à candidatures** — 2018-12-15 — https://www.bpifrance.fr/nos-appels-a-projets-concours/hub-start-bpifrance-appel-a-candidatures
+- **I-LAB 2015 : appel à candidatures** — 2015-03-02 — https://www.bpifrance.fr/nos-appels-a-projets-concours/i-lab-2015-appel-a-candidatures
+- **IE-Club Global 60 : appel à candidatures** — 2017-12-22 — https://www.bpifrance.fr/nos-appels-a-projets-concours/ie-club-global-60-appel-a-candidatures
+- **Impact China 2021** — 2021-06-10 — https://www.bpifrance.fr/nos-appels-a-projets-concours/impact-china-2021
+- **Impact USA 2019** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/impact-usa-2019
+- **Innov’Up Leader – France 2030 Île-de-France** — 2025-07-04 — https://www.bpifrance.fr/nos-appels-a-projets-concours/innovup-leader-france-2030-ile-de-france
+- **Innovact Awards : boostez votre start-up à Reims !** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/innovact-awards-boostez-votre-start-a-reims
+- **Innovation dating : appel à candidatures** — 2014-12-02 — https://www.bpifrance.fr/nos-appels-a-projets-concours/innovation-dating-appel-a-candidatures
+- **Innover en collaboration avec un partenaire canadien !** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/innover-en-collaboration-avec-un-partenaire-canadien
+- **Innover en santé en collaboration avec un partenaire étranger, l’appel à projets « Healthy Ageing »** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/innover-en-sante-en-collaboration-avec-un-partenaire-etranger-lappel-a-projets-healthy-ageing
+- **Intégrez l'accélérateur "Transformation et Valorisation des déchets"** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/integrez-laccelerateur-transformation-et-valorisation-des-dechets
+- **Intégrez l’Accélérateur Seine-Saint-Denis !** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/integrez-laccelerateur-seine-saint-denis
+- **Intégrez Le Pack : l'accélérateur de start-up sport & business !** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/integrez-le-pack-laccelerateur-de-start-sport-business
+- **Intégrez le programme Next French HEALTHCARE** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/integrez-le-programme-next-french-healthcare
+- **Jeune entrepreneur à la une !** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/jeune-entrepreneur-a-la-une
+- **Journées Internationales de Recherche sur l’Intelligence Artificielle 2024** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/journees-internationales-de-recherche-sur-lintelligence-artificielle-2024
+- **L’Accélérateur Bois : candidatez à la 4ème promotion** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/laccelerateur-bois-candidatez-a-la-4eme-promotion
+- **L'appel à projets Outre-mer est lancé** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/lappel-a-projets-outre-mer-est-lance
+- **L’initiative GreenTech** — 2021-12-31 — https://www.bpifrance.fr/nos-appels-a-projets-concours/linitiative-greentech
+- **La French Tech lance le concours de startups DARE France-Israël** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/la-french-tech-lance-le-concours-de-startups-dare-france-israel
+- **La French Touch Conference** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/la-french-touch-conference
+- **Lab cdc : appel à projets** — 2015-03-06 — https://www.bpifrance.fr/nos-appels-a-projets-concours/lab-cdc-appel-a-projets
+- **Lancement de l’appel à projets : « Fonds Pays de la Loire territoires d’innovation – Programme d’investissements d’avenir»** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/lancement-de-lappel-a-projets-fonds-pays-de-la-loire-territoires-dinnovation-programme-dinvestissements-davenir
+- **Lancement de l’incubateur Via ID** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/lancement-de-lincubateur-id
+- **Lancement du 10e Challenge Out of Labs** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/lancement-du-10e-challenge-out-labs
+- **Lancement du 2e appel à projets France-Israël** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/lancement-du-2e-appel-a-projets-france-israel
+- **Lancement du 3e appel à projets France-Israël** — 2015-06-08 — https://www.bpifrance.fr/nos-appels-a-projets-concours/lancement-du-3e-appel-a-projets-france-israel
+- **Lancement du concours national 2016 de la création d’entreprises agroalimentaires** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/lancement-du-concours-national-2016-de-la-creation-dentreprises-agroalimentaires
+- **Lancement du Trophée de l’intelligence alimentaire 2015** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/lancement-du-trophee-de-lintelligence-alimentaire-2015
+- **Le Challenge Covid-19 : appel aux partenariats tech internationaux face à la crise !** — 2020-05-15 — https://www.bpifrance.fr/nos-appels-a-projets-concours/le-challenge-covid-19-appel-aux-partenariats-tech-internationaux-face-a-la-crise
+- **Le Challenge des innovations durables** — 2021-06-24 — https://www.bpifrance.fr/nos-appels-a-projets-concours/le-challenge-des-innovations-durables
+- **Le concours de l'Observeur du design 2018 est lancé !** — 2017-06-26 — https://www.bpifrance.fr/nos-appels-a-projets-concours/le-concours-de-lobserveur-du-design-2018-est-lance
+- **Le concours des innovateurs** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/le-concours-des-innovateurs
+- **Le concours Innovafood est ouvert !** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/le-concours-innovafood-est-ouvert
+- **Le French Tech Tour America 2018 : appel à candidatures** — 2018-10-19 — https://www.bpifrance.fr/nos-appels-a-projets-concours/le-french-tech-tour-america-2018-appel-a-candidatures
+- **Le French Tech Tour China 2018** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/le-french-tech-tour-china-2018
+- **Le French Tech Tour Healthcare Israël 2018 : appel à candidatures** — 2018-06-26 — https://www.bpifrance.fr/nos-appels-a-projets-concours/le-french-tech-tour-healthcare-israel-2018-appel-a-candidatures
+- **Le prix Attractive Innovation** — 2016-04-30 — https://www.bpifrance.fr/nos-appels-a-projets-concours/le-prix-attractive-innovation
+- **Le Prix de l'usine alimentaire durable** — 2016-07-30 — https://www.bpifrance.fr/nos-appels-a-projets-concours/le-prix-de-lusine-alimentaire-durable
+- **Le Web Start Up Tour** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/le-web-start-tour
+- **Les appels à projets du programme Creative Europe** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/les-appels-a-projets-du-programme-creative-europe
+- **Les appels à projets du programme Digital Europe** — 2022-02-22 — https://www.bpifrance.fr/nos-appels-a-projets-concours/les-appels-a-projets-du-programme-digital-europe
+- **Les appels à projets du programme Horizon Europe - Pilier 2** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/les-appels-a-projets-du-programme-horizon-europe-pilier-2
+- **Les appels à projets du programme Life** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/les-appels-a-projets-du-programme-life
+- **Les Prix EDF Pulse 2016 : croire au progrès, faire vivre l’innovation** — 2015-12-06 — https://www.bpifrance.fr/nos-appels-a-projets-concours/les-prix-edf-pulse-2016-croire-au-progres-faire-vivre-linnovation
+- **Les Rendez-vous Carnot 2019** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/les-rendez-vous-carnot-2019
+- **Les Trophées #LetsgoFrance** — 2020-01-13 — https://www.bpifrance.fr/nos-appels-a-projets-concours/les-trophees-letsgofrance
+- **Les trophées des startups d'Auvergne-Rhône-Alpes : appel à candidatures** — 2018-04-08 — https://www.bpifrance.fr/nos-appels-a-projets-concours/les-trophees-des-startups-dauvergne-rhone-alpes-appel-a-candidatures
+- **Made in 92 : Le concours des jeunes entreprises des Hauts-de-Seine** — 2021-03-15 — https://www.bpifrance.fr/nos-appels-a-projets-concours/made-92-le-concours-des-jeunes-entreprises-des-hauts-de-seine
+- **Medtech Tour Allemagne 2019** — 2019-06-14 — https://www.bpifrance.fr/nos-appels-a-projets-concours/medtech-tour-allemagne-2019
+- **Meilleur espoir e-commerce 2017** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/meilleur-espoir-e-commerce-2017
+- **Mission "Ville durable en Afrique"** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/mission-ville-durable-en-afrique
+- **Mission Cleantech & Sustainable Smart City – Oslo** — 2019-06-12 — https://www.bpifrance.fr/nos-appels-a-projets-concours/mission-cleantech-sustainable-smart-city-oslo
+- **Mission de conseil 360 Rebond Tourisme** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/mission-de-conseil-360-rebond-tourisme
+- **Mission de conseil Maturité Environnement** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/mission-de-conseil-maturite-environnement
+- **Mission de conseil Maturité Industrie du Futur** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/mission-de-conseil-maturite-industrie-du-futur
+- **Mission de conseil Maturité Innovation** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/mission-de-conseil-maturite-innovation
+- **Mission de conseil Maturité Internationale** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/mission-de-conseil-maturite-internationale
+- **Mission Explore & Match : Tanzanie - Rwanda** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/mission-explore-match-tanzanie-rwanda
+- **Mission FrenchTouch Arabie Saoudite: Riyad / AlUla** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/mission-frenchtouch-arabie-saoudite-riyad/alula
+- **Mission Méditerranée Healthtech** — 2022-03-27 — https://www.bpifrance.fr/nos-appels-a-projets-concours/mission-mediterranee-healthtech
+- **MIT Global Startup Workshop 2020** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/mit-global-startup-workshop-2020
+- **My Global Startup** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/my-global-startup
+- **Netva 2023** — 2022-11-25 — https://www.bpifrance.fr/nos-appels-a-projets-concours/netva-2023
+- **NeXT** — 2017-01-25 — https://www.bpifrance.fr/nos-appels-a-projets-concours/next
+- **NordicPerMed : partenariats en innovation France / Pays Nordiques en médecine personnalisée** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/nordicpermed-partenariats-en-innovation-france/pays-nordiques-en-medecine-personnalisee
+- **Nova : le concours d'innovation pour imaginer les bâtiments du futur** — 2022-01-21 — https://www.bpifrance.fr/nos-appels-a-projets-concours/nova-le-concours-dinnovation-pour-imaginer-les-batiments-du-futur
+- **Occitanie Filières** — 2018-02-28 — https://www.bpifrance.fr/nos-appels-a-projets-concours/occitanie-filieres
+- **Occitanie Projets d’innovation** — 2018-12-18 — https://www.bpifrance.fr/nos-appels-a-projets-concours/occitanie-projets-dinnovation
+- **Open innovation startup accelerator : J-5 avant la fin de l'appel à candidatures !** — 2015-03-22 — https://www.bpifrance.fr/nos-appels-a-projets-concours/open-innovation-startup-accelerator-j-5-avant-la-fin-de-lappel-a-candidatures
+- **Open4Start-up** — 2017-06-30 — https://www.bpifrance.fr/nos-appels-a-projets-concours/open4start
+- **Osez l'IA France 2030** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/osez-lia-france-2030
+- **Ouverture des candidatures pour la 2e édition du French Tech Green 20** — 2022-05-06 — https://www.bpifrance.fr/nos-appels-a-projets-concours/ouverture-des-candidatures-pour-la-2e-edition-du-french-tech-green-20
+- **Palme du Rebond entrepreneurial : appel à candidatures** — 2019-06-11 — https://www.bpifrance.fr/nos-appels-a-projets-concours/palme-du-rebond-entrepreneurial-appel-a-candidatures
+- **Parcours Business International Innovation GITEX 2024** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/parcours-business-international-innovation-gitex-2024
+- **Parcours entrepreneur 2017 by Ticket for Change** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/parcours-entrepreneur-2017-ticket-change
+- **Partenariats en innovation Canada - France : nouvel appel à projets 2022 Intelligence Artificielle appliquée à la Santé & Greentech** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/partenariats-en-innovation-canada-france-nouvel-appel-a-projets-2022-intelligence-artificielle-appliquee-a-la-sante-greentech
+- **Partenariats en innovation France-Espagne : nouvel appel à projets 2023** — 2023-05-31 — https://www.bpifrance.fr/nos-appels-a-projets-concours/partenariats-en-innovation-france-espagne-nouvel-appel-a-projets-2023
+- **Partenariats en innovation France-Finlande : nouvel appel à projets Intelligence Artificielle 2022** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/partenariats-en-innovation-france-finlande-nouvel-appel-a-projets-intelligence-artificielle-2022
+- **Partenariats en innovation France-Israël : nouvel appel à projets** — 2023-02-20 — https://www.bpifrance.fr/nos-appels-a-projets-concours/partenariats-en-innovation-france-israel-nouvel-appel-a-projets
+- **Partenariats en innovation France-Japon : nouvel appel à projets 2020** — 2020-09-10 — https://www.bpifrance.fr/nos-appels-a-projets-concours/partenariats-en-innovation-france-japon-nouvel-appel-a-projets-2020
+- **Partenariats en innovation France-Singapour : appel à projets** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/partenariats-en-innovation-france-singapour-appel-a-projets
+- **Partenariats en innovation Global Stars Brésil : nouvel appel à projets 2018** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/partenariats-en-innovation-global-stars-bresil-nouvel-appel-a-projets-2018
+- **Participez à la semaine d’immersion Korea Eureka Day 2023** — 2023-11-02 — https://www.bpifrance.fr/nos-appels-a-projets-concours/participez-a-la-semaine-dimmersion-korea-eureka-day-2023
+- **Participez au Fundtruck roadshow !** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/participez-au-fundtruck-roadshow
+- **Participez au nouveau programme Acceleratech China !** — 2015-12-18 — https://www.bpifrance.fr/nos-appels-a-projets-concours/participez-au-nouveau-programme-acceleratech-china
+- **Pass Africa 3** — 2025-07-28 — https://www.bpifrance.fr/nos-appels-a-projets-concours/pass-africa-3
+- **Pavillon startup Tech4Good - Salon Produrable** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/pavillon-startup-tech4good-salon-produrable
+- **Piave : concours handicap et innovation** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/piave-concours-handicap-et-innovation
+- **PIAVE : Innovation et diversification d’entreprises impactées par les mutations de la filière automobile** — 2020-06-29 — https://www.bpifrance.fr/nos-appels-a-projets-concours/piave-innovation-et-diversification-dentreprises-impactees-par-les-mutations-de-la-filiere-automobile
+- **PIAVE : Sécurité des personnes et des biens, des infrastructures et des réseaux** — 2017-02-17 — https://www.bpifrance.fr/nos-appels-a-projets-concours/piave-securite-des-personnes-et-des-biens-des-infrastructures-et-des-reseaux
+- **PIAVE, un appel à projets thématique pour innover grâce au spatial** — 2017-03-15 — https://www.bpifrance.fr/nos-appels-a-projets-concours/piave-un-appel-a-projets-thematique-pour-innover-grace-au-spatial
+- **PIAVE, un appel à projets thématique pour l’agroalimentaire** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/piave-un-appel-a-projets-thematique-pour-lagroalimentaire
+- **PIAVE, un appel à projets thématique pour l’espace** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/piave-un-appel-a-projets-thematique-pour-lespace
+- **PIAVE, un appel à projets thématique pour le textile** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/piave-un-appel-a-projets-thematique-pour-le-textile
+- **Plan Aéro : Programme de soutien aux investissements de modernisation de la filière aéronautique** — 2020-07-31 — https://www.bpifrance.fr/nos-appels-a-projets-concours/plan-aero-programme-de-soutien-aux-investissements-de-modernisation-de-la-filiere-aeronautique
+- **Plan Auto : Programme de soutien à la R&D industrielle de la filière automobile** — 2020-06-12 — https://www.bpifrance.fr/nos-appels-a-projets-concours/plan-auto-programme-de-soutien-a-la-rd-industrielle-de-la-filiere-automobile
+- **Plan Auto : Programme de soutien aux investissements de modernisation de la filière automobile** — 2020-07-31 — https://www.bpifrance.fr/nos-appels-a-projets-concours/plan-auto-programme-de-soutien-aux-investissements-de-modernisation-de-la-filiere-automobile
+- **Prenez en charge le parcours de formation « Normandie Accélérateur 2 » à destination des Petites et Moyennes Entreprises (PME)** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/prenez-en-charge-le-parcours-de-formation-normandie-accelerateur-2-a-destination-des-petites-et-moyennes-entreprises-pme
+- **Prêt d'honneur Création-Reprise | Bpifrance Création** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/pret-dhonneur-creation-reprise
+- **Prêt d'honneur Solidaire (PH Solidaire) | Bpifrance Création** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/pret-dhonneur-solidaire
+- **Prêt Energie Environnement** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/pret-energie-environnement
+- **Prix Business with Attitude : votez pour vos projets préférés** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/prix-business-attitude-votez-pour-vos-projets-preferes
+- **Prix de l’Innovation Universal Biotech** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/prix-de-linnovation-universal-biotech
+- **Prix Entreprises et Environnement : appel à candidatures** — 2019-07-30 — https://www.bpifrance.fr/nos-appels-a-projets-concours/prix-entreprises-et-environnement-appel-a-candidatures
+- **Prix fondation Cognaq-Jay** — 2016-09-23 — https://www.bpifrance.fr/nos-appels-a-projets-concours/prix-fondation-cognaq-jay
+- **Prix Innover à la campagne** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/prix-innover-a-la-campagne
+- **Prix La Tribune BNP Paribas du Jeune Entrepreneur : candidatez dès maintenant** — 2018-03-30 — https://www.bpifrance.fr/nos-appels-a-projets-concours/prix-la-tribune-bnp-paribas-du-jeune-entrepreneur-candidatez-des-maintenant
+- **Prix Moovjee** — 2020-02-26 — https://www.bpifrance.fr/nos-appels-a-projets-concours/prix-moovjee
+- **Prix Up Your Com : appel à candidatures** — 2018-11-26 — https://www.bpifrance.fr/nos-appels-a-projets-concours/prix-your-com-appel-a-candidatures
+- **Programme Co-Innovation France-Singapour** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/programme-co-innovation-france-singapour
+- **Programme d’accélération French Tech 2030** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/programme-dacceleration-french-tech-2030
+- **Programme d’immersion : « French Culture Tech Days Berlin 2020 »** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/programme-dimmersion-french-culture-tech-days-berlin-2020
+- **Programme Fusion Montréal – « Sport Connecté » 2019** — 2019-06-09 — https://www.bpifrance.fr/nos-appels-a-projets-concours/programme-fusion-montreal-sport-connecte-2019
+- **Programme Globalstars Japon** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/programme-globalstars-japon
+- **Programme Globalstars Taïwan** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/programme-globalstars-taiwan
+- **Programme industrie du futur Île-de-France** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/programme-industrie-du-futur-ile-de-france
+- **Projets collaboratifs internationaux dans l’innovation agroalimentaire : nouvel appel à projets 2018** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/projets-collaboratifs-internationaux-dans-linnovation-agroalimentaire-nouvel-appel-a-projets-2018
+- **Projets d’Avenir Filières – Garantie de Projets à l’international** — 2024-06-30 — https://projets-international.bpifrance.fr/projets-d-avenir-filieres/
+- **Projets d’Avenir I-Démo – Garantie de Projets à l’international** — échéance à vérifier — https://projets-international.bpifrance.fr/projets-d-avenir-i-demo/
+- **Projets d’Avenir Innovation en Nouvelle-Aquitaine** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/projets-davenir-innovation-en-nouvelle-aquitaine
+- **Projets d’Innovation – Garantie de Projets à l’international** — échéance à vérifier — https://projets-international.bpifrance.fr/projets-d-innovation/
+- **Projets de recherche et développement structurants pour la compétitivité (PSPC)** — 2021-06-29 — https://www.bpifrance.fr/nos-appels-a-projets-concours/projets-de-recherche-et-developpement-structurants-pour-la-competitivite-pspc
+- **Propulsez votre startup avec Idenergie** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/propulsez-votre-startup-avec-idenergie
+- **Protein Connect 2021** — 2021-01-19 — https://www.bpifrance.fr/nos-appels-a-projets-concours/protein-connect-2021
+- **Quelle sera la Fintech de l’année 2016 ?** — 2017-02-02 — https://www.bpifrance.fr/nos-appels-a-projets-concours/quelle-sera-la-fintech-de-lannee-2016
+- **Régime cadre exempté de notification N° SA.58995 relatif aux aides à la recherche, au** — 2024-03-01 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-innovup-sport-et-evenementiel-durable
+- **Région Ile-de-France : appel à manifestation d'intérêt pour intégrer l'accélérateur PME industrielles** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/region-ile-de-france-appel-a-manifestation-dinteret-pour-integrer-laccelerateur-pme-industrielles
+- **Rejoignez l'accélérateur Centre Atlantique** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/rejoignez-laccelerateur-centre-atlantique
+- **Rejoignez la 4e promotion de l’Accélérateur Nouvelle-Aquitaine PME/ETI** — 2020-11-30 — https://www.bpifrance.fr/nos-appels-a-projets-concours/rejoignez-la-4e-promotion-de-laccelerateur-nouvelle-aquitaine-pme/eti
+- **Rejoignez le programme d'accompagnement des startups handitech de Paris&Co !** — 2022-04-29 — https://www.bpifrance.fr/nos-appels-a-projets-concours/rejoignez-le-programme-daccompagnement-des-startups-handitech-de-parisco
+- **Rencontre Ecotech : Plastiques et emballages** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/rencontre-ecotech-plastiques-et-emballages
+- **Rencontres économiques d’Aix-en-Provence : La Parole aux 18-28 ans** — 2020-04-19 — https://www.bpifrance.fr/nos-appels-a-projets-concours/rencontres-economiques-daix-en-provence-la-parole-aux-18-28-ans
+- **Rencontres Internationales de la Biotechnologies : appel à candidatures** — 2015-03-30 — https://www.bpifrance.fr/nos-appels-a-projets-concours/rencontres-internationales-de-la-biotechnologies-appel-a-candidatures
+- **Résolutions, le nouveau dispositif d’appel à innovations en Pays de la Loire !** — 2017-04-14 — https://www.bpifrance.fr/nos-appels-a-projets-concours/resolutions-le-nouveau-dispositif-dappel-a-innovations-en-pays-de-la-loire
+- **Revolution@Work Startup Contest** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/revolutionwork-startup-contest
+- **Serez-vous l’entrepreneur de l’année ?** — 2021-05-31 — https://www.bpifrance.fr/nos-appels-a-projets-concours/serez-vous-lentrepreneur-de-lannee
+- **SESAME Filières PIA** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/sesame-filieres-pia
+- **SINGA Paris recrute dès à présent leurs promotions d’entrepreneurs pour 2023** — 2023-01-31 — https://www.bpifrance.fr/nos-appels-a-projets-concours/singa-paris-recrute-des-a-present-leurs-promotions-dentrepreneurs-pour-2023
+- **Start-up Contest 2019 - Next Tourisme** — 2019-05-23 — https://www.bpifrance.fr/nos-appels-a-projets-concours/start-contest-2019-next-tourisme
+- **Startup booster : les inscriptions sont ouvertes !** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/startup-booster-les-inscriptions-sont-ouvertes
+- **Startup santé : quelles sont les clés du succès ?** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/startup-sante-quelles-sont-les-cles-du-succes
+- **Startup World Cup** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/startup-world-cup
+- **SusHi Tech Tokyo & Exposition Universelle Osaka** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/sushi-tech-tokyo-exposition-universelle-osaka
+- **The Boomer Challenge** — 2018-12-11 — https://www.bpifrance.fr/nos-appels-a-projets-concours/boomer-challenge
+- **Titre de la présentation** — 2021-09-07 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-plan-de-relance-pour-lindustrie-secteurs-strategiques-volet-national
+- **Tremplin entreprises : le concours national des entreprises innovantes** — 2015-02-09 — https://www.bpifrance.fr/nos-appels-a-projets-concours/tremplin-entreprises-le-concours-national-des-entreprises-innovantes
+- **Trophées de la bioéconomie 2019** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/trophees-de-la-bioeconomie-2019
+- **Trophées export des éco-entreprises 2014 : appel à candidatures** — 2014-10-24 — https://www.bpifrance.fr/nos-appels-a-projets-concours/trophees-export-des-eco-entreprises-2014-appel-a-candidatures
+- **Trophées Sport et Management « Entreprises » 2015** — 2015-03-08 — https://www.bpifrance.fr/nos-appels-a-projets-concours/trophees-sport-et-management-entreprises-2015
+- **UbiMobility 2018** — 2018-06-16 — https://www.bpifrance.fr/nos-appels-a-projets-concours/ubimobility-2018
+- **USA Startup Competition** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/usa-startup-competition
+- **Validez votre idée de startup avec le Visa Idenergie !** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/validez-votre-idee-de-startup-avec-le-visa-idenergie
+- **Votez pour le grand gagnant Ma pub ici 2015 !** — 2015-11-30 — https://www.bpifrance.fr/nos-appels-a-projets-concours/votez-pour-le-grand-gagnant-ma-pub-ici-2015
+- **Well-Being - San Francisco** — 2019-04-11 — https://www.bpifrance.fr/nos-appels-a-projets-concours/well-being-san-francisco
+- **Wonder Women of Paris : pitch ta startup en 6 secondes !** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/wonder-women-paris-pitch-ta-startup-en-6-secondes
+- **Worldwide Innovation Challenge - Start-up phase 2015** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/worldwide-innovation-challenge-start-phase-2015
+
+## Modifications
+- **Erreur 403** — échéance/statut actuel : ACTIVE
+
+## Aides devenues closes / obsolètes
+- **Appel à projets : Evaluation du bénéfice médico-économique des dispositifs médicaux numériques et des dispositifs médicaux d’équipement** — ARCHIVE — https://www.bpifrance.fr/catalogue-offres/appel-a-projets-evaluation-du-benefice-medico-economique-des-dispositifs-medicaux-numeriques-et-des-dispositifs-medicaux-dequipement-0
+- **Appel à projets générique n°5 « i-Démo - soutien aux projets structurants de R&D&I »** — ARCHIVE — https://www.bpifrance.fr/catalogue-offres/appel-a-projets-generique-ndeg5-i-demo-soutien-aux-projets-structurants-de-rdi
+- **Conseil européen de l’innovation (EIC)** — ACTIVE — https://www.bpifrance.fr/catalogue-offres/conseil-europeen-de-linnovation-eic-0
+- **FRENCH TECH TREMPLIN** — ACTIVE — https://www.bpifrance.fr/catalogue-offres/french-tech-tremplin
+- **Globalstars Eureka** — ACTIVE — https://www.bpifrance.fr/catalogue-offres/globalstars-eureka
+- **Horizon Europe** — ACTIVE — https://www.bpifrance.fr/catalogue-offres/horizon-europe
+- **Les formations en présentiel** — ACTIVE — https://www.bpifrance.fr/catalogue-offres/les-formations-en-presentiel
+- **Network Projects Eureka** — ACTIVE — https://www.bpifrance.fr/catalogue-offres/network-projects-eureka
+- **PI R&D BONIFIE NOUVELLE INDUSTRIE** — ACTIVE — https://www.bpifrance.fr/catalogue-offres/pi-rd-bonifie-nouvelle-industrie-0
+- **PRÊT INNOVATION R&D - INNOVATION CREATIVE** — ACTIVE — https://www.bpifrance.fr/catalogue-offres/pret-innovation-rd-innovation-creative
+- **PRÊT INNOVATION R&D CLASSIQUE** — ACTIVE — https://www.bpifrance.fr/catalogue-offres/pret-innovation-rd-classique-0
+
+> Toute information sans preuve publique reste « NON DOCUMENTÉ — À VÉRIFIER ».

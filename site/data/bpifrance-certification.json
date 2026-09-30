@@ -1,0 +1,61 @@
+{
+  "generatedAt": "2026-09-30T11:35:36.207Z",
+  "status": "PASS",
+  "lock": {
+    "version": 1,
+    "locked": true,
+    "mode": "GUICHET",
+    "name": "Bpifrance",
+    "allowedSourceIds": [
+      "bpifrance_aap",
+      "bpifrance_aides",
+      "bpifrance_rebond_industriel",
+      "bpifrance_projets_international"
+    ],
+    "preserveUnselectedSources": true,
+    "preserveUnselectedCoverage": true,
+    "freezeUnselectedLifecycle": true,
+    "enrichSelectedOnly": true,
+    "next": "ADEME",
+    "notes": "Verrou de production : un seul guichet est travaillé à la fois. Tant que Bpifrance n'est pas certifié, ADEME, ANR, régions, FEDER et FEADER ne sont ni recollectés ni mutés."
+  },
+  "configuredSources": [
+    "bpifrance_aap",
+    "bpifrance_aides",
+    "bpifrance_rebond_industriel",
+    "bpifrance_projets_international"
+  ],
+  "libraryRecords": 583,
+  "bySource": {
+    "bpifrance_aap": {
+      "discovered": 541,
+      "imported": 541,
+      "success": true,
+      "errors": 0,
+      "excluded": 0
+    },
+    "bpifrance_aides": {
+      "discovered": 356,
+      "imported": 59,
+      "success": true,
+      "errors": 0,
+      "excluded": 297
+    },
+    "bpifrance_rebond_industriel": {
+      "discovered": 1,
+      "imported": 1,
+      "success": true,
+      "errors": 0,
+      "excluded": 0
+    },
+    "bpifrance_projets_international": {
+      "discovered": 3,
+      "imported": 3,
+      "success": true,
+      "errors": 0,
+      "excluded": 0
+    }
+  },
+  "duplicates": [],
+  "problems": []
+}

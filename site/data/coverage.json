@@ -10,12 +10,19 @@
     "lowImportedCount": false,
     "lowImportRatio": false,
     "importRatio": 1,
-    "discovered": 28,
-    "imported": 28,
-    "message": "Bpifrance AAP: 28 publiés, 28 extraits",
-    "durationMs": 6708,
-    "checkedAt": "2026-09-30T08:49:19.937Z",
-    "lastSuccessfulAt": "2026-09-30T08:49:19.937Z",
+    "discovered": 541,
+    "imported": 541,
+    "audit": {
+      "discovered": 541,
+      "imported": 541,
+      "excluded": [],
+      "errors": [],
+      "accounted": 541
+    },
+    "message": "Bpifrance AAP: 541 publiés, 541 extraits, 0 erreurs",
+    "durationMs": 25656,
+    "checkedAt": "2026-09-30T11:32:01.093Z",
+    "lastSuccessfulAt": "2026-09-30T11:32:01.093Z",
     "consecutiveFailures": 0
   },
   {
@@ -28,13 +35,1843 @@
     "suspiciousVolume": false,
     "lowImportedCount": false,
     "lowImportRatio": false,
+    "importRatio": 0.16573033707865167,
+    "discovered": 356,
+    "imported": 59,
+    "audit": {
+      "discovered": 356,
+      "imported": 59,
+      "excluded": [
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/appel-a-projets-evaluation-du-benefice-medico-economique-des-dispositifs-medicaux-numeriques-et-des-dispositifs-medicaux-dequipement-0",
+          "title": "Appel à projets : Evaluation du bénéfice médico-économique des dispositifs médicaux numériques et des dispositifs médicaux d’équipement",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pi-rd-bonifie-nouvelle-industrie-0",
+          "title": "PI R&D BONIFIE NOUVELLE INDUSTRIE",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/globalstars-eureka",
+          "title": "Globalstars Eureka",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/horizon-europe",
+          "title": "Horizon Europe",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-innovation-rd-innovation-creative",
+          "title": "PRÊT INNOVATION R&D - INNOVATION CREATIVE",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/eq-30-accelerateur-croissance-tpe",
+          "title": "EQ 30 - Accélérateur Croissance TPE",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/eq-30-accelerateur-creation-developpement",
+          "title": "EQ 30 - Accélérateur Création Développement",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/eq-30-accelerateur-creation-individuelle",
+          "title": "EQ 30 - Accélérateur Création Individuelle",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/eq-30-accelerateur-emergence",
+          "title": "EQ 30 - Accélérateur Emergence",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-ia",
+          "title": "Accélérateur IA",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/eq-30-french-tech-tremplin",
+          "title": "EQ 30 - French Tech Tremplin",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-asie",
+          "title": "Accélérateur Asie",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-amerique-du-nord",
+          "title": "Accélérateur Amérique du Nord",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-agroalimentaire-0",
+          "title": "Accélérateur Agroalimentaire",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-biens-dequipement",
+          "title": "Accélérateur Biens d'Equipement",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-croissance-externe",
+          "title": "Accélérateur Croissance Externe",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-croissance-hauts-de-france",
+          "title": "Accélérateur Croissance Hauts-de-France",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/les-formations-en-presentiel",
+          "title": "Les formations en présentiel",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/network-projects-eureka",
+          "title": "Network Projects Eureka",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-pe-croissance-mayotte",
+          "title": "Accélérateur PE CROISSANCE MAYOTTE",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-croissance-occitanie-0",
+          "title": "Accélérateur Croissance Occitanie",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-innovation-rd-classique-0",
+          "title": "PRÊT INNOVATION R&D CLASSIQUE",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-croissance-sud",
+          "title": "Accélérateur Croissance SUD",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-defense",
+          "title": "Accélérateur Défense",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-frequentation-cinema",
+          "title": "Accélérateur Fréquentation Cinéma",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-eti",
+          "title": "Accélérateur ETI",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-ia-industrie",
+          "title": "Accélérateur IA & Industrie",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-decarbonation",
+          "title": "Accélérateur Décarbonation",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-industries-mecaniques",
+          "title": "Accélérateur Industries Mécaniques",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-neo-propulseur-innovation",
+          "title": "Accélérateur Néo Propulseur Innovation",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-pme-grand-est-et-bourgogne-franche-comte",
+          "title": "Accélérateur PME Grand-Est et Bourgogne-Franche-Comté",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-neo-startups-industrielles-0",
+          "title": "Accélérateur Néo Startups Industrielles",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-pme-hauts-de-france-0",
+          "title": "Accélérateur PME Hauts-de-France",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-pme-normandie",
+          "title": "Accélérateur PME Normandie",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-pme-nouvelle-aquitaine-0",
+          "title": "Accélérateur PME Nouvelle-Aquitaine",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-sud",
+          "title": "Accélérateur Sud",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accompagnement-developpement-export-business-france",
+          "title": "Accompagnement développement export Business France",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/french-tech-120/next40",
+          "title": "French Tech 120 / Next40",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/parcours-business-international",
+          "title": "Parcours Business International",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/eq-30-bus-de-lentrepreneuriat",
+          "title": "EQ 30 - Bus de l'Entrepreneuriat",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/qualification-entreprise-innovante-label-fcpi-110",
+          "title": "Qualification \"Entreprise innovante\" - Label FCPI",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/advisory-board",
+          "title": "Advisory Board",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/eq-30-carrefours-de-lentrepreneuriat-des-lieux-ressources-pour-agir",
+          "title": "EQ 30 - Carrefours de l’Entrepreneuriat : des lieux ressources pour agir",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/diag-amorcage-rh",
+          "title": "Diag Amorçage RH",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/diag-business-international",
+          "title": "Diag Business International",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/missions-dimmersion-business-innovation-a-linternational-0",
+          "title": "Missions d'immersion Business Innovation à l'international",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/diag-dispositif-medical",
+          "title": "Diag Dispositif Médical",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/diag-levee-de-fonds",
+          "title": "Diag Levée de Fonds",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/diag-scale",
+          "title": "Diag Scale-up",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/ect-entreprendre-au-coeur-des-territoires",
+          "title": "ECT - Entreprendre au Cœur des Territoires",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/mission-de-conseil-choix-de-lapproche-ia",
+          "title": "Mission de conseil Choix de l'approche IA",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/mission-de-conseil-croissance-externe",
+          "title": "Mission de conseil Croissance Externe",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/mission-de-conseil-international",
+          "title": "Mission de conseil International",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/mission-de-conseil-cybersecurite",
+          "title": "Mission de conseil Cybersécurité",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/mission-de-conseil-management-rh",
+          "title": "Mission de conseil Management & RH",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/mission-de-conseil-make-or-buy",
+          "title": "Mission de conseil Make or Buy",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/mission-de-conseil-cash-bfr",
+          "title": "Mission de conseil Cash BFR",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/mission-de-conseil-rse",
+          "title": "Mission de conseil RSE",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/mission-de-conseil-performance-commerciale",
+          "title": "Mission de conseil Performance Commerciale",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/mission-de-conseil-performance-operationnelle",
+          "title": "Mission de conseil Performance Opérationnelle",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/mission-de-conseil-reindustrialisation",
+          "title": "Mission de conseil Réindustrialisation",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/mission-de-conseil-securisation-des-operations",
+          "title": "Mission de conseil Sécurisation des opérations",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/mission-de-conseil-transformation-digitale",
+          "title": "Mission de conseil Transformation digitale",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/mission-de-conseil-strategie-industrie-du-futur",
+          "title": "Mission de conseil Stratégie Industrie du Futur",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/mission-de-conseil-strategie-innovation",
+          "title": "Mission de conseil Stratégie Innovation",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/mission-de-conseil-sur-mesure-eti",
+          "title": "Mission de Conseil sur mesure ETI",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/mission-de-conseil-strategie-environnement",
+          "title": "Mission de conseil Stratégie Environnement",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/parcours-daccompagnement-vers-linnovation-collaborative-internationale",
+          "title": "Parcours d'accompagnement vers l'innovation collaborative internationale",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/assurance-change-contrat",
+          "title": "Assurance change contrat",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/assurance-change-negociation",
+          "title": "Assurance Change négociation",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/assurance-change-multi-commandes",
+          "title": "Assurance Change Multi-commandes",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/assurance-change-negociation-stop-loss",
+          "title": "Assurance change négociation stop loss",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/assurance-caution-export",
+          "title": "Assurance Caution Export",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/assurance-de-la-confirmation-de-credit-documentaire",
+          "title": "Assurance de la confirmation de crédit documentaire",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/assurance-credit",
+          "title": "Assurance crédit",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/mission-de-conseil-transmission-gouvernance",
+          "title": "Mission de conseil Transmission & Gouvernance",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/assurance-de-lescompte-ou-de-la-cession-sans-recours-de-credit-fournisseur",
+          "title": "Assurance de l’escompte ou de la cession sans recours de crédit fournisseur",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/assurance-investissement",
+          "title": "Assurance investissement",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/assurance-financement-de-projet",
+          "title": "Assurance financement de projet",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/assurance-prefinancement-export",
+          "title": "Assurance Préfinancement Export",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/assurance-du-credit-acheteur",
+          "title": "Assurance du crédit acheteur",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/assurance-prospection",
+          "title": "Assurance Prospection",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/dispositif-de-reassurance-ct-cap-francexport",
+          "title": "Dispositif de réassurance CT Cap Francexport",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/assurances-du-contrat-commercial",
+          "title": "Assurances du contrat commercial",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/garantie-interne",
+          "title": "Garantie interne",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/garantie-rehaussee",
+          "title": "Garantie rehaussée",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/garantie-des-projets-strategiques",
+          "title": "Garantie des projets stratégiques",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/garantie-pure-et-inconditionnelle",
+          "title": "Garantie pure et inconditionnelle",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/avance",
+          "title": "Avance+",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/avance-export",
+          "title": "Avance+ Export",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/avance-cir",
+          "title": "Avance+ CIR",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/avance-allegee",
+          "title": "Avance+ Allégée",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/avance-prefinancement-export",
+          "title": "Avance+ Préfinancement Export",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/avance-prefinancement-de-marches-pour-les-tpe-et-pme",
+          "title": "Avance+ Préfinancement de marchés pour les TPE et PME",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/avance-rechargement-de-balance",
+          "title": "Avance+ Rechargement de balance",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/avance-et-prefinancement-de-marches-des-start-industrielles",
+          "title": "Avance+ et Préfinancement de marchés des Start-Up Industrielles",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/cap-croissance-tpe-centre-val-de-loire-0",
+          "title": "Cap Croissance TPE Centre Val de Loire",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/cap-rebond-transition-centre-val-de-loire",
+          "title": "Cap Rebond Transition Centre Val de Loire",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/contrat-de-developpement-investissement",
+          "title": "Contrat de Développement Investissement",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/cession-bail-immobiliere",
+          "title": "Cession bail immobilière",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/contrat-de-developpement-investissement-vert",
+          "title": "Contrat de Développement Investissement Vert",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/credit-export-fournisseur",
+          "title": "Crédit Export Fournisseur",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/credit-export-acheteur",
+          "title": "Crédit Export Acheteur",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/credit-librement-utilisable-par-le-beneficiaire-club",
+          "title": "Crédit Librement Utilisable par le Bénéficiaire - CLUB",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/credit-bail-immobilier",
+          "title": "Crédit-Bail immobilier",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/credit-bail-mobilier",
+          "title": "Crédit-Bail Mobilier",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/engagements-par-signature-sur-carrieres-cautions-et-garanties",
+          "title": "Engagements par signature Environnement (cautions et garanties)",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/engagements-par-signature-sur-marches-cautions-et-garanties",
+          "title": "Engagements par signature sur marchés (cautions et garanties)",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/location-financiere",
+          "title": "Location Financière",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/paiement-fournisseur-anticipe-programme-acheteur",
+          "title": "Paiement Fournisseur Anticipé - Programme Acheteur",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-industrie-pme-2",
+          "title": "PI PME 2",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-acomptes-equipement-pae",
+          "title": "Prêt Acomptes Equipement (PAE)",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-action-climat",
+          "title": "Prêt Action Climat",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-daccompagnement-0",
+          "title": "Prêt d'Accompagnement",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-amorcage-investissement-vert-invest-eu",
+          "title": "PRÊT AMORÇAGE INVESTISSEMENT VERT INVEST EU",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-amorcage-investissement-invest-eu-0",
+          "title": "PRÊT AMORÇAGE INVESTISSEMENT INVEST EU",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-amorcage-strategique-bei",
+          "title": "PRÊT AMORÇAGE STRATEGIQUE BEI",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-amorcage-sans-bonif-bei",
+          "title": "PRÊT AMORÇAGE SANS BONIF BEI",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-amorcage-invest-eu",
+          "title": "PRÊT AMORÇAGE INVEST EU",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-boost",
+          "title": "Prêt Boost",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-amorcage-vert-invest-eu",
+          "title": "PRÊT AMORÇAGE VERT INVEST EU",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-croissance",
+          "title": "Prêt Croissance",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-croissance-relance",
+          "title": "Prêt Croissance Relance",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-croissance-tpe-bretagne",
+          "title": "Prêt Croissance TPE Bretagne",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-croissance-tpe-grand-est",
+          "title": "Prêt Croissance TPE Grand Est",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-croissance-tpe-hauts-de-france",
+          "title": "Prêt Croissance TPE Hauts de France",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-croissance-international",
+          "title": "Prêt Croissance International",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-deffi",
+          "title": "Prêt DEF'FI",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-croissance-transmission",
+          "title": "Prêt Croissance Transmission",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-croissance-tpe-pays-de-la-loire",
+          "title": "Prêt Croissance TPE Pays de la Loire",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-de-developpement-outre-mer",
+          "title": "Prêt de Développement Outre-Mer",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-filiere-bois-0",
+          "title": "Prêt Filière Bois",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-hotellerie-pprh",
+          "title": "Prêt Hôtellerie (PPRH)",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-equipement",
+          "title": "Prêt Equipement",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-industrie-pme-2-0",
+          "title": "Prêt Industrie PME 2",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-industrie-verte",
+          "title": "Prêt Industrie Verte",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-innovation-modulo-bei",
+          "title": "PRÊT INNOVATION MODULO BEI",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-innovation-vert-invest-eu",
+          "title": "PRÊT INNOVATION VERT INVEST EU",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-a-moyen-ou-long-terme-classique",
+          "title": "Prêt à Moyen ou Long Terme Classique",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-innovation-relance-invest-eu",
+          "title": "PRÊT INNOVATION RELANCE INVEST EU",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-methanisation-agricole",
+          "title": "Prêt Méthanisation Agricole",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-methanisation-ademe-0",
+          "title": "Prêt Méthanisation ADEME",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-a-moyen-ou-long-terme-hypothecaire-0",
+          "title": "Prêt à Moyen ou Long Terme Hypothécaire",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-a-moyen-ou-long-terme-hypothecaire-avec-prefinancement",
+          "title": "Prêt à Moyen ou Long Terme Hypothécaire avec Préfinancement",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-moyen-ou-long-terme-premo",
+          "title": "Prêt Moyen ou Long Terme PREMO",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-rebond-grand-est-pret-relance-region",
+          "title": "Prêt Rebond Grand Est (Prêt Relance Région)",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-nouvelle-industrie-ce",
+          "title": "PRÊT NOUVELLE INDUSTRIE CE",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-nouvelle-industrie",
+          "title": "PRÊT NOUVELLE INDUSTRIE",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-participatif-de-developpement-ppd-bois",
+          "title": "Prêt Participatif de développement (PPD) Bois",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-recherche-developpement-ue",
+          "title": "PRET RECHERCHE & DEVELOPPEMENT UE",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-regional-de-revitalisation-hauts-de-france",
+          "title": "Prêt Régional de Revitalisation - Hauts-de-France",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-region-energie-aura",
+          "title": "Prêt Région Energie AURA",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-recherche-developpement-vert-ue",
+          "title": "PRET RECHERCHE & DEVELOPPEMENT VERT UE",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-sud-climat-pret-relance-region-paca",
+          "title": "Prêt Sud Climat (Prêt Relance Région PACA)",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-transmission",
+          "title": "Prêt Transmission",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-transition-ecologique-ile-de-france",
+          "title": "Prêt Transition Ecologique Ile-De-France",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-tourisme-3",
+          "title": "Prêt Tourisme 3",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-uimm",
+          "title": "Prêt UIMM",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/bpifrance-le-hub",
+          "title": "Bpifrance Le Hub",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-vert",
+          "title": "Prêt Vert",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/bourse-transmission",
+          "title": "Bourse Transmission",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/tous-nos-projets",
+          "title": "Tous Nos Projets",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pack-cyber-docaposte-0",
+          "title": "Pack Cyber Docaposte",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/communaute-du-coq-vert",
+          "title": "Communauté du Coq Vert",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/euroquity-service-de-mise-en-relation-international",
+          "title": "EuroQuity - Service de mise en relation international",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/le-club-excellence",
+          "title": "Le Club Excellence",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/cogarantie-bpifrance/sogama-0",
+          "title": "Cogarantie Bpifrance / SOGAMA",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/tribu",
+          "title": "Tribu",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/cogarantie-bpifrance/siagi",
+          "title": "Cogarantie Bpifrance / SIAGI",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/frg-centre-val-de-loire",
+          "title": "FRG CENTRE-VAL DE LOIRE",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/contregarantie-de-france-active-garantie",
+          "title": "Contregarantie de FRANCE ACTIVE GARANTIE",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/frg-bretagne",
+          "title": "FRG BRETAGNE",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/frg-bourgogne-franche-comte-0",
+          "title": "FRG BOURGOGNE-FRANCHE-COMTÉ",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/frg-grand-est",
+          "title": "FRG GRAND EST",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/frg-ile-de-france",
+          "title": "FRG ILE-DE-FRANCE",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/frg-hauts-de-france",
+          "title": "FRG HAUTS-DE-FRANCE",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/frg-normandie-0",
+          "title": "FRG NORMANDIE",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/frg-pays-de-la-loire",
+          "title": "FRG PAYS DE LA LOIRE",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/garantie-affacturage",
+          "title": "Garantie Affacturage",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/frg-nouvelle-aquitaine",
+          "title": "FRG NOUVELLE-AQUITAINE",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/garantie-caution-bailleur-startups-industrielles-sui",
+          "title": "Garantie caution bailleur Startups Industrielles (SUI)",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/frg-occitanie",
+          "title": "FRG OCCITANIE",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/garantie-creation-standard",
+          "title": "Garantie Création Standard",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/garantie-developpement-standard",
+          "title": "Garantie Développement Standard",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/garantie-de-fonds-propres",
+          "title": "Garantie de Fonds Propres",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/garantie-electricite-renouvelable-ger",
+          "title": "Garantie Electricité Renouvelable (GER)",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/garantie-developpement-vert",
+          "title": "Garantie Développement Vert",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/garantie-pour-le-reamenagement-des-dettes-et-le-renforcement-de-la-tresorerie-des-exploitations-agricoles-2026",
+          "title": "Garantie pour le réaménagement des dettes et le renforcement de la trésorerie des exploitations agricoles (2026)",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/garantie-international-0",
+          "title": "Garantie International",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/garantie-internationale-court-terme",
+          "title": "Garantie Internationale Court Terme",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/garantie-de-projets-a-linternational",
+          "title": "Garantie de projets à l'international",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/garantie-de-pret-etudiant-garanti-par-letat",
+          "title": "Garantie de Prêt Etudiant garanti par l'Etat",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/fonds-specialises-bois3-0",
+          "title": "Fonds spécialisés – Bois3",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/garantie-renforcement-de-la-tresorerie-standard",
+          "title": "Garantie Renforcement de la Trésorerie Standard",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/garantie-transmission-verte",
+          "title": "Garantie Transmission verte",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/fonds-specialises-fast-0",
+          "title": "Fonds spécialisés – FAST",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/fonds-specialises-fbi",
+          "title": "Fonds spécialisés - FBI",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/fonds-specialises-definvest-0",
+          "title": "Fonds spécialisés – Definvest",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/oc-french-tech-seed",
+          "title": "OC FRENCH TECH SEED",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/fonds-specialises-societes-de-projets-industriels-0",
+          "title": "Fonds spécialisés – Sociétés de Projets Industriels",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/fonds-specialises-fiee-0",
+          "title": "Fonds spécialisés – FIEE",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/fonds-specialises-fonds-innovation-defense",
+          "title": "Fonds spécialisés - Fonds Innovation Défense",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/fonds-specialises-fit2-0",
+          "title": "Fonds spécialisés – FIT2",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/large-cap-ge",
+          "title": "Large cap - GE",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/large-cap-eti-0",
+          "title": "Large cap - ETI",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/large-cap-eti",
+          "title": "Large cap - ETI",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/small-cap-fir",
+          "title": "Small cap - FIR",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/mid-cap-dette-privee-0",
+          "title": "Mid cap – Dette privée",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/partenariats-fonds-souverains",
+          "title": "Partenariats fonds souverains",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/mid-cap-fonds-propres-1",
+          "title": "Mid cap – Fonds propres",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/mid-cap-mezzanine-0",
+          "title": "Mid cap – Mezzanine",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-transformation-numerique",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-construction",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/garantie-verte",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/missions-dimmersion-business-innovation-a-linternational",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-economies-denergies",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-innovation-rd-classique",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/garantie-court-terme",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-cosmetique-2eme-promotion",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-pme-auvergne-rhone-alpes-6",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-francilien-6",
+          "title": "L’Accélérateur Francilien : candidatez à la 6ème promotion",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/mission-de-conseil-organisation",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/mission-de-conseil-strategie",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-solutions-industrie-du-futur-2",
+          "title": "Candidatez à la 2e promotion de l’Accélérateur Solutions Industrie du Futur",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-transmission-feder-ex-contrat-de-developpement-transmission-feder",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/mission-de-conseil-systemes-dinformation",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/frg-la-reunion",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/mission-business-internationale-push-go",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-creation",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/bpifrance-universite",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/appel-a-projets-offre-de-robots-et-machines-intelligentes-dexcellence-0",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pitch-win",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/communaute-blue-invest-acteurs-de-la-blue-economy-euroquity",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/programme-culturexport-chine-2024",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/plan-plasturgie",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/frg-aura",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/cyber-pme",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-centre-val-de-loire-transition-ecologique-et-energetique",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/fonds-specialises-definvest",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/communaute-business-france-invest-mise-en-relation-investisseurs-internationaux-euroquity",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/garantie-transmission-standard",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/garantie-creation-verte",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pack-cyber-docaposte",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-croissance-auvergne-rhone-alpes-7eme-promotion",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-construction-6eme-promotion",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/innowwide",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-transport-routier",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-entreprises-familiales",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/espace-de-donnees-0",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/appel-a-projets-generique-ndeg4-i-demo-soutien-aux-projets-structurants-de-rdi",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/diag-design",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-croissance-auvergne-rhone-alpes",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/appel-a-projets-transition-numerique-de-la-culture-et-appropriation-de-lintelligence-artificielle",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-booster-bretagne",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-touch-4",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-commerce-de-gros",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-pays-de-la-loire",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pfi-fiso2",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-cap-rebond-4-feder-centre-val-de-loire-pret-relance-region",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-pme-centre-val-de-loire",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-cinema-audiovisuel-et-image-animee-0",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-touch-3-0",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-bois-0",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-tourisme-et-loisirs",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/frg-feder-normandie-0",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/frg-feder-hauts-de-france-0",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-croissance-tpe-0",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/fonds-specialises-lac1-0",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-sportech-0",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-centre-val-de-loire-transition-ecologique-et-energetique-0",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/france-investissement-tourisme-0",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/autodiag-design-industrie",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-croissance-bretagne",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/appel-a-projets-innovations-en-biotherapies-et-bioproduction-0",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/frg-feder-guadeloupe",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/frg-feder-pays-de-la-loire-0",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/diagnostic-defense-europe",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/diag-croissance",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/les-publications-du-lab",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/garantie-transmission",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/concours-french-tech-tremplin",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/le-hub-digital",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/concours-dinnovation-i-phd",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/concours-dinnovation-i-lab",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-damorcage-investissement",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-damorcage",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-touch-3",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-methanisation-ademe",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-innovation",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/la-french-tech-seed-obligations-convertibles",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/concours-dinnovation-i-nov",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/assurance-change",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/boite-a-outils",
+          "title": "Vous voulez créer ou reprendre une entreprise ? Retrouvez toutes les informations pour réussir votre création d’entreprise.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/accelerateur-croissance-occitanie-3",
+          "title": "Accélérateur Croissance Occitanie : candidatez à la 3ème promotion",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-relance-region",
+          "title": "Désolé, cette offre n'est plus disponible.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/business-plan",
+          "title": "Venez avec une idée, repartez avec un réseau.",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/diaginno",
+          "title": "Diag'Inno Bpifrance",
+          "aidTypes": [],
+          "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+        }
+      ],
+      "errors": [],
+      "accounted": 356
+    },
+    "message": "Bpifrance catalogue: 356 pages officielles inspectées, 59 aides retenues, 297 hors périmètre, 0 erreurs",
+    "durationMs": 24215,
+    "checkedAt": "2026-09-30T11:32:01.117Z",
+    "lastSuccessfulAt": "2026-09-30T11:32:01.117Z",
+    "consecutiveFailures": 0
+  },
+  {
+    "id": "bpifrance_rebond_industriel",
+    "name": "Bpifrance — France 2030 Rebond Industriel",
+    "scope": "France",
+    "success": true,
+    "lifecycleSafe": true,
+    "emptyIngestion": false,
+    "suspiciousVolume": false,
+    "lowImportedCount": false,
+    "lowImportRatio": false,
     "importRatio": 1,
-    "discovered": 29,
-    "imported": 29,
-    "message": "Bpifrance aides: 29 publiées, 29 extraites",
-    "durationMs": 3998,
-    "checkedAt": "2026-09-30T08:49:19.946Z",
-    "lastSuccessfulAt": "2026-09-30T08:49:19.946Z",
+    "discovered": 1,
+    "imported": 1,
+    "audit": null,
+    "message": "Page officielle analysée: France 2030 — Rebond Industriel — soutien à l’investissement industriel",
+    "durationMs": 2099,
+    "checkedAt": "2026-09-30T11:32:01.120Z",
+    "lastSuccessfulAt": "2026-09-30T11:32:01.120Z",
+    "consecutiveFailures": 0
+  },
+  {
+    "id": "bpifrance_projets_international",
+    "name": "Bpifrance — France 2030 régionalisé Bourgogne-Franche-Comté",
+    "scope": "Bourgogne-Franche-Comté",
+    "success": true,
+    "lifecycleSafe": true,
+    "emptyIngestion": false,
+    "suspiciousVolume": false,
+    "lowImportedCount": false,
+    "lowImportRatio": false,
+    "importRatio": 1,
+    "discovered": 3,
+    "imported": 3,
+    "audit": null,
+    "message": "3 pages candidates, 3 fiches extraites",
+    "durationMs": 3546,
+    "checkedAt": "2026-09-30T11:32:01.124Z",
+    "lastSuccessfulAt": "2026-09-30T11:32:01.124Z",
     "consecutiveFailures": 0
   },
   {

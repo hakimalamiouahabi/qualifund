@@ -1,0 +1,32 @@
+{
+  "generatedAt": "2026-09-30T11:32:14.177Z",
+  "total": 2298,
+  "directLinkCount": 2296,
+  "missingDirectLinkCount": 2,
+  "missing": [
+    {
+      "id": "bpifrance_rebond_industriel_official",
+      "title": "France 2030 — Rebond Industriel — soutien à l’investissement industriel",
+      "funder": [
+        "État · France 2030 · Bpifrance"
+      ],
+      "scope": "NATIONAL",
+      "regions": [
+        "Toutes les Régions"
+      ],
+      "sourceId": "bpifrance_rebond_industriel"
+    },
+    {
+      "id": "paca_aides_master_c865942e9dbb1e9ee377fc8a7b0b9585480f571dab3d862f65dbdf555295974a",
+      "title": "Vos Aides",
+      "funder": [
+        "Région Sud"
+      ],
+      "scope": "REGIONAL",
+      "regions": [
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "sourceId": "paca_aides_master"
+    }
+  ]
+}
