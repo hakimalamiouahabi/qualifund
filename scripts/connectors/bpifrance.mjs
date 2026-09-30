@@ -198,6 +198,7 @@ export function classifyBpifranceInstrument(text='',title=''){
   const raw=cleanTitle(`${title} ${text}`);
   const n=norm(raw);
   if(/bpifrance ne finance pas directement/i.test(raw))return{aidTypes:[],reason:'BPIFRANCE_NON_FINANCEUR_DIRECT',evidence:'Bpifrance ne finance pas directement'};
+  if(/pret d['’]?honneur|accord[eé] (?:au|à la) (?:porteur|personne)|non pas [àa] l['’]?entreprise/i.test(raw))return{aidTypes:[],reason:'PRET_PERSONNEL_HORS_PERIMETRE_ENTREPRISE',evidence:'Prêt personnel / prêt d’honneur hors périmètre entreprise'};
   const aidTypes=[];
   if(/pret a taux zero|taux 0\s*%|\bptzi\b/.test(n))aidTypes.push('PRET_TAUX_ZERO');
   if(/avance recuperable|avance remboursable/.test(n))aidTypes.push('AVANCE_REMBOURSABLE');
@@ -230,8 +231,13 @@ async function extractDirect(source,link,kind,{requireTargetInstrument=false}={}
   const label=cleanTitle(link.label||'');if(label&&label.length>=4)a.title=label;
   if(!a.title||a.title.length<4)return{aid:null,excluded:{url:requested,label:label||'',reason:'TITRE_ABSENT'}};
 
-  const status=directStatus(a,text);
-  if(kind==='AAP / AMI'&&!status.retain)return{aid:null,excluded:{url:requested,title:a.title,reason:'AAP_CLOS',status:status.state}};
+  const pageStatus=directStatus(a,text);
+  const today=parisDateIso();
+  const status=kind==='AAP / AMI'
+    ? (link.closingDate
+        ? {state:link.closingDate>=today?'OPEN':'CLOSED',retain:link.closingDate>=today,evidence:`Échéance du listing maître ${link.closingDate}`,date:link.closingDate}
+        : {state:'OPEN_UNDATED',retain:true,evidence:'Présent dans le listing maître Bpifrance courant',date:null})
+    : pageStatus;
   const financial=classifyBpifranceInstrument(text,a.title);
   if(requireTargetInstrument&&!financial.aidTypes.length){
     return{aid:null,excluded:{url:requested,title:a.title,aidTypes:[],reason:financial.reason||'INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ'}};
@@ -295,7 +301,7 @@ async function extractMany(source,links,kind,{log=console.log,workers=10,require
 async function classifyExternalAapGaps(source,master,external,{log=console.log}={}){
   const known=new Set(master.map(x=>canonicalUrl(x.url)));
   const pending=external.filter(x=>!known.has(canonicalUrl(x.url)));
-  const active=[],closed=[],unknown=[];let cursor=0;
+  const active=[],closed=[],notCurrent=[],unknown=[];let cursor=0;
   const pool=Array.from({length:10},async()=>{
     while(true){
       const i=cursor++;if(i>=pending.length)return;
@@ -306,18 +312,29 @@ async function classifyExternalAapGaps(source,master,external,{log=console.log}=
         const st=directStatus(a,text);
         if(st.state==='CLOSED')closed.push({url:x.url,title:a.title||x.label||'',reason:st.evidence});
         else if(st.state==='OPEN')active.push({url:x.url,title:a.title||x.label||'',reason:st.evidence});
-        else unknown.push({url:x.url,title:a.title||x.label||'',reason:'STATUT_NON_DATE'});
+        else notCurrent.push({url:x.url,title:a.title||x.label||'',reason:'ABSENT_DU_LISTING_ACTIF_ET_AUCUNE_ECHEANCE_FUTURE_PROUVEE'});
       }catch(e){unknown.push({url:x.url,title:x.label||'',reason:String(e?.message||e)})}
     }
   });
   await Promise.all(pool);
-  log(`[${source.id}] audit externe AAP: ${active.length} actif(s) hors listing, ${closed.length} clos, ${unknown.length} indéterminé(s)`);
-  return{active,closed,unknown};
+  log(`[${source.id}] audit externe AAP: ${active.length} actif(s) hors listing, ${closed.length} clos, ${notCurrent.length} non courants, ${unknown.length} erreur(s)/indéterminé(s)`);
+  return{active,closed,notCurrent,unknown};
 }
 
 async function classifyExternalCatalogueGaps(source,master,external,{log=console.log}={}){
   const known=new Set(master.map(x=>canonicalUrl(x.url)));
-  const pending=external.filter(x=>!known.has(canonicalUrl(x.url)));
+  const aliases=new Map(Object.entries(source.canonicalAliases||{}).map(([alias,canonical])=>[canonicalUrl(alias),canonicalUrl(canonical)]));
+  const duplicateAliases=[];
+  const pending=external.filter(x=>{
+    const u=canonicalUrl(x.url);
+    if(known.has(u))return false;
+    const canonical=aliases.get(u);
+    if(canonical&&known.has(canonical)){
+      duplicateAliases.push({url:x.url,title:x.label||'',canonicalUrl:canonical,reason:'ALIAS_D_UNE_OFFRE_DU_REFERENTIEL_MAITRE'});
+      return false;
+    }
+    return true;
+  });
   const target=[],nonTarget=[],unknown=[];let cursor=0;
   const pool=Array.from({length:10},async()=>{
     while(true){
@@ -333,8 +350,8 @@ async function classifyExternalCatalogueGaps(source,master,external,{log=console
     }
   });
   await Promise.all(pool);
-  log(`[${source.id}] audit externe catalogue: ${target.length} cible(s) hors section, ${nonTarget.length} hors périmètre, ${unknown.length} indéterminée(s)`);
-  return{target,nonTarget,unknown};
+  log(`[${source.id}] audit externe catalogue: ${target.length} cible(s) hors section, ${nonTarget.length} hors périmètre, ${duplicateAliases.length} alias connu(s), ${unknown.length} indéterminée(s)`);
+  return{target,nonTarget,duplicateAliases,unknown};
 }
 
 export async function discoverBpifranceCurrentAaps(source,{log=console.log}={}){

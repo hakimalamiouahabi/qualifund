@@ -38,7 +38,10 @@
       "webVerifiedAt": "2026-09-30",
       "webEvidenceUrl": "https://www.bpifrance.fr/catalogue-offres",
       "notes": "Bpifrance v2 : la section officielle « Subventions et avances remboursables » du catalogue est le référentiel maître. Les pages sont lues directement et seules les subventions, avances remboursables/récupérables et prêts à taux zéro sont conservés. Le sitemap et les moteurs externes sont des contre-audits uniquement.",
-      "externalAuditFile": "config/bpifrance-v2-external-audit.json"
+      "externalAuditFile": "config/bpifrance-v2-external-audit.json",
+      "canonicalAliases": {
+        "https://www.bpifrance.fr/catalogue-offres/aide-pour-le-developpement-de-linnovation": "https://www.bpifrance.fr/catalogue-offres/aide-au-developpement-deeptech"
+      }
     },
     {
       "id": "bpifrance_rebond_industriel",

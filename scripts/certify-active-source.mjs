@@ -28,9 +28,12 @@ const problems=[];
 const generic=/^(document officiel|r[eè]glement|cahier des charges|annexe|formulaire|dossier de candidature|accueil|aides?|aides financières|catalogue|agir pour la transition)$/i;
 const byId=new Map(coverage.map(x=>[x.id,x]));
 const lockedCfg=(cfg.sources||[]).filter(s=>allowed.has(s.id));
-const records=(lib.aaps||[]).filter(a=>primary.has(a?.sourceId));
+const records=(lib.aaps||[]).filter(a=>primary.has(a?.sourceId)||(Array.isArray(a?.sourceAliases)&&a.sourceAliases.some(x=>primary.has(x))));
 const sourceRecordCounts=new Map();
-for(const a of records)sourceRecordCounts.set(a.sourceId,(sourceRecordCounts.get(a.sourceId)||0)+1);
+for(const a of records){
+  const ids=new Set([a?.sourceId,...(Array.isArray(a?.sourceAliases)?a.sourceAliases:[])].filter(x=>primary.has(x)));
+  for(const id of ids)sourceRecordCounts.set(id,(sourceRecordCounts.get(id)||0)+1);
+}
 
 if(lockedCfg.length!==allowed.size)problems.push('Le verrou référence une source absente du registre.');
 
@@ -40,9 +43,10 @@ for(const s of lockedCfg){
   if(!row){problems.push(`${s.id}: aucune preuve de collecte`);continue}
   if(!row.success)problems.push(`${s.id}: collecte non validée — ${row.message||'sans message'}`);
   if(Number(row.imported||0)<Number(s.minImported||0))problems.push(`${s.id}: imports ${row.imported||0} < minimum ${s.minImported}`);
-  if(cert.requireAuditAccounting&&!row.audit){
+  const auditRequired=rule.requireAuditAccounting ?? cert.requireAuditAccounting;
+  if(auditRequired&&!row.audit){
     problems.push(`${s.id}: audit comptable de collecte absent`);
-  }else if(cert.requireAuditAccounting){
+  }else if(auditRequired){
     const discovered=Number(row.audit.discovered??row.discovered??0);
     const imported=Number(row.audit.imported??row.imported??0);
     const excluded=Number(row.audit.excluded?.length||0);
