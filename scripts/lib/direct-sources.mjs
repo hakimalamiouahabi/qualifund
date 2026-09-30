@@ -43,7 +43,7 @@ export function assertDirectSources(cfg){
   if(cfg.sourcePolicy!=='DIRECT_OFFICIAL_ONLY')throw new Error('Politique de sources directes manquante');
   if(cfg.sourceSelectionPolicy!=='GUICHET_OR_REGION_OFFICIAL_ONLY')throw new Error('Politique guichet/région spécifique manquante');
   for(const s of cfg.sources||[]){
-    if(!s.official||!s.url||containsForbiddenAggregator(s)||!['catalog-html','official-page','opendatasoft','control-only','bpifrance-aap','bpifrance-aides'].includes(s.strategy))throw new Error('Source interdite: '+s.id);
+    if(!s.official||!s.url||containsForbiddenAggregator(s)||!['catalog-html','official-page','opendatasoft','control-only','bpifrance-aap','bpifrance-aides','ademe-official'].includes(s.strategy))throw new Error('Source interdite: '+s.id);
   }
 }
 
