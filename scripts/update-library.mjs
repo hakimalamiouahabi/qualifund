@@ -8,6 +8,7 @@ import { collectWebCatalog } from './connectors/web-catalog.mjs';
 import { collectControl } from './connectors/control.mjs';
 import { collectOpenDataSoft } from './connectors/opendatasoft.mjs';
 import { collectOfficialPage } from './connectors/official-page.mjs';
+import { collectBpifranceAaps, collectBpifranceAids } from './connectors/bpifrance.mjs';
 import { enrichAid } from './lib/enrich.mjs';
 import { mergeAid } from './lib/merge.mjs';
 import { dedupe, canonicalKey } from './lib/dedupe.mjs';
@@ -61,7 +62,7 @@ function directOfficialUrl(a){
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'),SITE=path.join(ROOT,'site'),DATA=path.join(SITE,'data'),FULL=process.argv.includes('--full')||(process.env.LEYTON_RADAR_FULL_REFRESH==='1'||process.env.QUALIFUND_FULL_REFRESH==='1');const log=(...x)=>console.log(new Date().toISOString(),...x);
 const previous=await readJson(path.join(DATA,'library.json'),{meta:{},aaps:[]}),previousCoverage=await readJson(path.join(DATA,'coverage.json'),[]),prevCov=new Map(previousCoverage.map(x=>[x.id,x])),prevMap=new Map((previous.aaps||[]).map(a=>[canonicalKey(a),a])),cfg=await readJson(path.join(ROOT,'config','sources.json'),{sources:[]}),coverage=[],changes=[],current=new Map(prevMap),cycleSeenKeys=new Set();
 function withTimeout(p,ms,label){return Promise.race([p,new Promise((_,rej)=>setTimeout(()=>rej(new Error(`timeout ${label} ${ms}ms`)),ms))])}
-async function collect(source){const ctx={log};switch(source.strategy){case'catalog-html':return collectWebCatalog({...source,browserFallback:true},ctx);case'opendatasoft':return collectOpenDataSoft(source,ctx);case'official-page':return collectOfficialPage(source,ctx);case'control-only':return collectControl(source,ctx);default:throw new Error('Stratégie de collecte non autorisée: '+source.strategy)}}
+async function collect(source){const ctx={log};switch(source.strategy){case'catalog-html':return collectWebCatalog({...source,browserFallback:true},ctx);case'opendatasoft':return collectOpenDataSoft(source,ctx);case'official-page':return collectOfficialPage(source,ctx);case'bpifrance-aap':return collectBpifranceAaps(source,ctx);case'bpifrance-aides':return collectBpifranceAids(source,ctx);case'control-only':return collectControl(source,ctx);default:throw new Error('Stratégie de collecte non autorisée: '+source.strategy)}}
 assertDirectSources(cfg);
 const sourceRuns=new Array(cfg.sources.length);
 let sourceCursor=0;
