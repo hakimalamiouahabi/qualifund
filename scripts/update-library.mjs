@@ -114,7 +114,7 @@ for(let i=0;i<sourceRuns.length;i++){
     }
   }
   const caution=assessment.reasons.length?`${assessment.reasons.join(' ; ')} — dernière version valide conservée. `:'';
-  coverage.push({id:source.id,name:source.name,scope:source.scope,success:assessment.success,lifecycleSafe:assessment.lifecycleSafe,emptyIngestion:assessment.emptyIngestion,suspiciousVolume:assessment.suspiciousVolume,lowImportedCount:assessment.lowImportedCount,lowImportRatio:assessment.lowImportRatio,importRatio:assessment.importRatio,discovered:assessment.discovered,imported:assessment.imported,message:caution+(r.message||'OK'),durationMs,checkedAt:nowIso(),lastSuccessfulAt:assessment.success?nowIso():(old?.lastSuccessfulAt||null),consecutiveFailures:assessment.success?0:(old?.consecutiveFailures||0)+1});
+  coverage.push({id:source.id,name:source.name,scope:source.scope,success:assessment.success,lifecycleSafe:assessment.lifecycleSafe,emptyIngestion:assessment.emptyIngestion,suspiciousVolume:assessment.suspiciousVolume,lowImportedCount:assessment.lowImportedCount,lowImportRatio:assessment.lowImportRatio,importRatio:assessment.importRatio,discovered:assessment.discovered,imported:assessment.imported,audit:r.audit||null,message:caution+(r.message||'OK'),durationMs,checkedAt:nowIso(),lastSuccessfulAt:assessment.success?nowIso():(old?.lastSuccessfulAt||null),consecutiveFailures:assessment.success?0:(old?.consecutiveFailures||0)+1});
 }
 let aids=[...current.values()];
 const aidIsInActiveLock=a=>!collectionLock.locked||selectedIds.has(a?.sourceId);
@@ -157,6 +157,20 @@ const coverageFinal=collectionLock.locked
 const manifest={version:cfg.version||'unknown',generatedAt:nowIso(),repositoryUrl:process.env.GITHUB_REPOSITORY?`https://github.com/${process.env.GITHUB_REPOSITORY}`:previous.meta?.repositoryUrl||null,sourceCount:cfg.sources.length,sourcesOk:coverageFinal.filter(x=>x.success).length,sourcesFailed:coverageFinal.filter(x=>!x.success).length,activeCollectionSourceCount:sourcesToRun.length,collectionLock:lockSummary(collectionLock),libraryCount:aids.length,activeCount:active.length,jPlusOneDate:jPlusOneDate(),jPlusOneActiveCount:activeJPlusOne.length,archivedCount:aids.length-active.length,aapCount:activeJPlusOne.filter(x=>String(x.kind).includes('AAP')).length,verifiedCount:activeJPlusOne.filter(x=>x.verification?.status==='VERIFIE').length,withCdc:activeJPlusOne.filter(x=>arr(x.cdcLinks).length).length,withDeadline:activeJPlusOne.filter(x=>x.permanent||x.closingDate||x.finalClosingDate||arr(x.deadlines).length).length,fullRefresh:FULL,libraryMode:'DIRECT_OFFICIAL_CATALOG',sourcePolicy:'DIRECT_OFFICIAL_ONLY',libraryInstruments,recommendationInstruments,targetInstrumentCount,directLinkCount,missingDirectLinkCount:missingDirectLinks.length,categoryCounts,scopeCounts,instrumentCounts,targetRule:'ACTIVE_SANS_ECHEANCE_OU_PERMANENT_OU_CLOTURE_GTE_J_PLUS_1',targetCount,targetReached:null,coverageGap:null,contentSha256:sha256(JSON.stringify(aids.map(x=>x.contentHash)))};
 const prevCount=Number(previous.meta?.libraryCount||previous.aaps?.length||0);if(!aids.length)throw new Error('QA GATE: aucune fiche directe collectée');if(prevCount>400&&aids.length<prevCount*0.55)throw new Error(`QA GATE: baisse anormale ${prevCount} -> ${aids.length}`);if(!coverage.length)throw new Error('QA GATE: aucun connecteur exécuté');
 if((previous.aaps||[]).length)await writeJsonAtomic(path.join(DATA,'library.previous.json'),previous);
+const bpifranceCoverage=coverageFinal.filter(x=>String(x.id||'').startsWith('bpifrance'));
+await writeJsonAtomic(path.join(DATA,'bpifrance-audit.json'),{
+  generatedAt:manifest.generatedAt,
+  collectionLock:lockSummary(collectionLock),
+  sources:bpifranceCoverage,
+  summary:{
+    sources:bpifranceCoverage.length,
+    success:bpifranceCoverage.filter(x=>x.success).length,
+    discovered:bpifranceCoverage.reduce((n,x)=>n+Number(x.discovered||0),0),
+    imported:bpifranceCoverage.reduce((n,x)=>n+Number(x.imported||0),0),
+    errors:bpifranceCoverage.reduce((n,x)=>n+Number(x.audit?.errors?.length||0),0),
+    excluded:bpifranceCoverage.reduce((n,x)=>n+Number(x.audit?.excluded?.length||0),0)
+  }
+});
 await writeJsonAtomic(path.join(DATA,'library.json'),{meta:manifest,aaps:aids});await writeJsonAtomic(path.join(DATA,'link-audit.json'),{generatedAt:manifest.generatedAt,total:active.length,directLinkCount,missingDirectLinkCount:missingDirectLinks.length,missing:missingDirectLinks});await writeJsonAtomic(path.join(DATA,'coverage.json'),coverageFinal);const oldChanges=await readJson(path.join(DATA,'changes.json'),[]);await writeJsonAtomic(path.join(DATA,'changes.json'),[...oldChanges,...changes].slice(-1200));await writeJsonAtomic(path.join(DATA,'manifest.json'),manifest);await writeJsonAtomic(path.join(DATA,'sources.json'),{version:cfg.version||'unknown',sources:cfg.sources.map(({id,name,scope,type,strategy,url,official,priority,coveredBy,notes})=>({id,name,scope,type,strategy,url,official,priority,coveredBy:arr(coveredBy),notes:notes||null}))});
 const PUBLIC_DIR=path.join(ROOT,'site','bibliotheque');await fs.mkdir(PUBLIC_DIR,{recursive:true});
 const csvEsc=v=>`"${String(v??'').replaceAll('"','""')}"`;
