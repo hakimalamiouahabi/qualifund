@@ -1,18 +1,35 @@
 {
-  "version": 1,
+  "version": 2,
   "locked": true,
   "mode": "GUICHET",
-  "name": "Bpifrance",
+  "name": "ADEME",
   "allowedSourceIds": [
-    "bpifrance_aap",
-    "bpifrance_aides",
-    "bpifrance_rebond_industriel",
-    "bpifrance_projets_international"
+    "ademe"
   ],
   "preserveUnselectedSources": true,
   "preserveUnselectedCoverage": true,
   "freezeUnselectedLifecycle": true,
   "enrichSelectedOnly": true,
-  "next": "ADEME",
-  "notes": "Verrou de production : un seul guichet est travaillé à la fois. Tant que Bpifrance n'est pas certifié, ADEME, ANR, régions, FEDER et FEADER ne sont ni recollectés ni mutés."
+  "next": "Auvergne-Rhône-Alpes",
+  "certification": {
+    "primarySourceIds": [
+      "ademe"
+    ],
+    "allowedHosts": [
+      "agirpourlatransition.ademe.fr"
+    ],
+    "requiredPathPrefix": "/entreprises/aides-financieres/catalogue/",
+    "forbiddenPathFragments": [
+      "/catalogue-rex/",
+      "/accessibilite",
+      "/mentions-legales",
+      "/politique-",
+      "/conditions-generales"
+    ],
+    "requireAuditAccounting": true,
+    "requireZeroExtractionErrors": true,
+    "requireDirectOfficialUrl": true,
+    "forbidGenericTitles": true
+  },
+  "notes": "Verrou ADEME : Bpifrance certifié reste figé. Aucun autre guichet ni région n’est recollecté ou muté tant que la certification ADEME n’est pas PASS."
 }
