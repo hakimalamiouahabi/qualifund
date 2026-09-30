@@ -12,7 +12,8 @@ export async function purgeIndirectSources(root=ROOT){
  const aaps=filterDirectLibrary(lib.aaps,cfg).map(a=>lib.meta?.sourcePolicy==='DIRECT_OFFICIAL_ONLY'?a:{...a,verification:{...(a.verification||{}),status:'A_REVERIFIER'}}),ids=new Set(aaps.map(a=>a.id));
  const active=aaps.filter(a=>a.lifecycleStatus==='ACTIVE');
  const migrated=lib.meta?.sourcePolicy==='DIRECT_OFFICIAL_ONLY';
- const changed=!migrated||aaps.length!==(lib.aaps||[]).length;
+ const beforeRecords=lib.aaps||[];
+ const changed=!migrated||aaps.length!==beforeRecords.length||JSON.stringify(aaps)!==JSON.stringify(beforeRecords);
  const meta={...(migrated?lib.meta:{}),version:cfg.version,generatedAt:lib.meta?.generatedAt||null,sourcePolicy:'DIRECT_OFFICIAL_ONLY',libraryMode:'DIRECT_OFFICIAL_CATALOG',repositoryUrl:lib.meta?.repositoryUrl||null,count:aaps.length,libraryCount:aaps.length,activeCount:active.length,archivedCount:aaps.filter(a=>a.lifecycleStatus==='ARCHIVE').length,sourceCount:cfg.sources.length,verifiedCount:active.filter(a=>a.verification?.status==='VERIFIE').length,coverageCertified:false};
  // Preserve the collection timestamp. A purge is not a fresh source verification.
  if(lib.meta?.sourcePolicy!=='DIRECT_OFFICIAL_ONLY')meta.sourcePolicyAppliedAt=new Date().toISOString();
@@ -39,7 +40,7 @@ export async function purgeIndirectSources(root=ROOT){
  await fs.rm(path.join(data,'library-manifest.json'),{force:true});
  await fs.rm(path.join(root,'LEYTON-RADAR-v12.2.0-AUTONOME-LIVE.html'),{force:true});
  }
- console.log(JSON.stringify({sourcePolicy:cfg.sourcePolicy,before:lib.aaps?.length||0,retained:aaps.length,removed:(lib.aaps?.length||0)-aaps.length}));
+ console.log(JSON.stringify({sourcePolicy:cfg.sourcePolicy,before:lib.aaps?.length||0,retained:aaps.length,removed:(lib.aaps?.length||0)-aaps.length,contentSanitized:changed}));
  return clean;
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url))await purgeIndirectSources();
