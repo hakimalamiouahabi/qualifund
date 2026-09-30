@@ -1,7 +1,23 @@
-# Exploitation et maintenance automatique
+# Exploitation FUNDING RADAR
 
-- **Chaque jour à 02:00 Europe/Paris** : préflight des sources, collecte complète, enrichissement, QA, delta quotidien et publication.
-- **À la demande** : le même cycle complet peut être déclenché via `workflow_dispatch` ou, sur un hébergement serverless configuré, via `api/refresh.js`.
-- **À chaque cycle** : schéma, tests, QA de volume, santé des sources, journal des changements, synchronisation des artefacts publics et reconstruction de l’index de recherche.
-- **En cas de panne source** : conservation de la dernière version valide, compteur d’échecs consécutifs, aucune suppression silencieuse.
-- **En cas de modification de PDF** : nouvelle empreinte SHA-256 et fiche repassée à contrôler si des champs critiques changent.
+## Cycle actif
+
+La collecte planifiée s’exécute chaque jour à 02:00 Europe/Paris, mais **uniquement sur le guichet ou la région défini dans `config/collection-lock.json`**.
+
+Le cycle est :
+
+`préflight → collecte → extraction → enrichissement → audit → tests → certification du verrou → commit des données`.
+
+Tant que le verrou est actif, les autres guichets/régions ne sont ni recollectés ni enrichis. Leur empreinte est contrôlée avant publication.
+
+## Passage au guichet suivant
+
+On ne change le verrou qu’après :
+- collecte sans erreur d’extraction inexpliquée ;
+- audit de toutes les URLs découvertes ;
+- absence de titre générique ou de lien parasite ;
+- conformité des liens directs officiels ;
+- certification `PASS` ;
+- branche de sauvegarde certifiée.
+
+Le guichet actif au 30/09/2026 est **ADEME**. Bpifrance est déjà certifié.
