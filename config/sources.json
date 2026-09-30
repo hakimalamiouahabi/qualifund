@@ -62,32 +62,6 @@
       "webEvidenceUrl": "https://rebond-industriel.bpifrance.fr/"
     },
     {
-      "id": "bpifrance_projets_international",
-      "name": "Bpifrance — France 2030 régionalisé Bourgogne-Franche-Comté",
-      "scope": "Bourgogne-Franche-Comté",
-      "type": "web",
-      "strategy": "catalog-html",
-      "url": "https://projets-international.bpifrance.fr/page-daccueil/",
-      "linkRegex": "/(projets-d-innovation|projets-d-avenir-filieres|projets-d-avenir-i-demo)/",
-      "official": true,
-      "priority": 0,
-      "minExpected": 3,
-      "minImported": 3,
-      "minImportRatio": 1,
-      "browserFallback": true,
-      "operator": "Bpifrance",
-      "webVerifiedAt": "2026-09-30",
-      "webEvidenceUrl": "https://projets-international.bpifrance.fr/page-daccueil/",
-      "notes": "Microsite officiel Bpifrance France 2030 régionalisé Bourgogne-Franche-Comté. Les trois axes opérés par Bpifrance sont explicitement suivis : Projets d’Innovation, Amélioration et transformation des Filières, I-Démo régionalisé. Le collecteur est verrouillé sur ces trois URLs canoniques pour éviter les pages média, accessibilité et navigation du microsite.",
-      "seedUrls": [
-        "https://projets-international.bpifrance.fr/projets-d-innovation/",
-        "https://projets-international.bpifrance.fr/projets-d-avenir-filieres/",
-        "https://projets-international.bpifrance.fr/projets-d-avenir-i-demo/"
-      ],
-      "observedOpenCount": 3,
-      "seedUrlsOnly": true
-    },
-    {
       "id": "ademe",
       "name": "ADEME — aides financières et appels à projets entreprises",
       "scope": "France",
