@@ -1,12 +1,10 @@
 {
-  "version": 6,
+  "version": 7,
   "locked": true,
   "mode": "GUICHET",
-  "name": "Bpifrance",
+  "name": "ADEME",
   "allowedSourceIds": [
-    "bpifrance_aap",
-    "bpifrance_aides",
-    "bpifrance_rebond_industriel"
+    "ademe"
   ],
   "preserveUnselectedSources": true,
   "preserveUnselectedCoverage": true,
@@ -15,27 +13,37 @@
   "next": "Auvergne-Rhône-Alpes",
   "certification": {
     "primarySourceIds": [
-      "bpifrance_aap",
-      "bpifrance_aides",
-      "bpifrance_rebond_industriel"
+      "ademe"
     ],
     "allowedHosts": [
-      "www.bpifrance.fr",
-      "bpifrance.fr",
-      "rebond-industriel.bpifrance.fr"
+      "agirpourlatransition.ademe.fr"
     ],
     "requireAuditAccounting": true,
     "requireZeroExtractionErrors": true,
     "requireDirectOfficialUrl": true,
     "forbidGenericTitles": true,
     "requireExternalAuditDiscovery": true,
-    "externalAuditFile": "config/bpifrance-v2-external-audit.json",
+    "externalAuditFile": "config/ademe-v2-external-audit.json",
     "externalAuditMaxAgeHours": 72,
+    "requireCatalogueMasterMembership": true,
+    "requireEnterpriseScope": true,
+    "requireCurrentStatusEvidence": true,
+    "allowedSourceStates": [
+      "OPEN",
+      "OPEN_UNDATED",
+      "PERMANENT",
+      "RECENTLY_CLOSED"
+    ],
+    "requiredPathPrefix": "/entreprises/aides-financieres/catalogue/",
+    "forbiddenPathFragments": [
+      "catalogue-rex",
+      "catalogue-aides-closes"
+    ],
     "sourceRules": {
-      "bpifrance_aap": {
-        "master": "ACTIVE_AAP_LISTING",
-        "requireListingDiscovery": true,
-        "requireImportedEqualsDiscovered": true,
+      "ademe": {
+        "master": "OFFICIAL_CATALOGUE_WITH_RSS_FALLBACK",
+        "requireMasterMembership": true,
+        "requireImportedEqualsDiscovered": false,
         "requireExternalDisposition": true,
         "forbidActiveExternalGaps": true,
         "forbidUnknownExternalGaps": true,
@@ -43,42 +51,18 @@
         "requireCurrentStatusEvidence": true,
         "allowedSourceStates": [
           "OPEN",
-          "OPEN_UNDATED"
+          "OPEN_UNDATED",
+          "PERMANENT",
+          "RECENTLY_CLOSED"
         ],
         "allowedKinds": [
-          "AAP / AMI"
-        ],
-        "requiredPathPrefix": "/nos-appels-a-projets-concours/",
-        "requireAuditAccounting": true
-      },
-      "bpifrance_aides": {
-        "master": "CATALOGUE_SECTION_SUB_AR",
-        "requireCatalogueSectionDiscovery": true,
-        "requireExternalDisposition": true,
-        "forbidTargetExternalGaps": true,
-        "forbidUnknownExternalGaps": true,
-        "requireGuichetEvidence": true,
-        "requireCurrentStatusEvidence": true,
-        "allowedSourceStates": [
-          "OPEN_UNDATED"
-        ],
-        "allowedKinds": [
+          "AAP / AMI",
           "AIDE"
         ],
-        "allowedAidTypes": [
-          "SUBVENTION",
-          "AVANCE_REMBOURSABLE",
-          "PRET_TAUX_ZERO"
-        ],
-        "requiredPathPrefix": "/catalogue-offres/",
+        "requiredPathPrefix": "/entreprises/aides-financieres/catalogue/",
         "requireAuditAccounting": true
-      },
-      "bpifrance_rebond_industriel": {
-        "master": "DIRECT_OFFICIAL_PAGE",
-        "minRetained": 1,
-        "requireAuditAccounting": false
       }
     }
   },
-  "notes": "Verrou Bpifrance v2 : listing AAP actif + section catalogue « Subventions et avances remboursables » comme référentiels maîtres, complétés par Rebond Industriel. Sitemap et moteurs externes servent uniquement au contre-audit. Les anciens dispositifs régionaux BFC ne sont plus traités comme guichet national Bpifrance ; ils seront audités dans le cycle régional dédié."
+  "notes": "Verrou ADEME v5 : source primaire exclusivement officielle agirpourlatransition.ademe.fr. Catalogue Entreprises comme référentiel maître ; RSS officiel utilisé en secours/contrôle d'inventaire actif. Aucun agrégateur n'alimente la bibliothèque. Contre-audit externe uniquement pour détecter les trous, avec vérification sur la fiche officielle avant disposition."
 }
