@@ -5,7 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { assertDirectSources, filterDirectLibrary, directPageId } from '../scripts/lib/direct-sources.mjs';
 import { purgeIndirectSources } from '../scripts/purge-indirect-sources.mjs';
-const cfg={version:'test',sourcePolicy:'DIRECT_OFFICIAL_ONLY',sources:[{id:'bpifrance',official:true,strategy:'catalog-html',url:'https://www.bpifrance.fr/nos-appels-a-projets-concours'}]};
+const cfg={version:'test',sourcePolicy:'DIRECT_OFFICIAL_ONLY',sourceSelectionPolicy:'GUICHET_OR_REGION_OFFICIAL_ONLY',sources:[{id:'bpifrance',official:true,strategy:'catalog-html',url:'https://www.bpifrance.fr/nos-appels-a-projets-concours'}]};
 const valid={id:'bpi1',sourceId:'bpifrance',title:'AAP',officialPage:'https://www.bpifrance.fr/nos-appels-a-projets-concours/aap-1',lifecycleStatus:'ACTIVE'};
 test('distinct pages cannot collapse to the same identifier',()=>{
  assert.notEqual(directPageId('bpifrance',valid.officialPage),directPageId('bpifrance',valid.officialPage+'-2'));
@@ -26,4 +26,17 @@ test('purge covers exports, fallback, previous records and changes; is repeatabl
   assert.deepEqual(first,second);assert.equal(second.meta.generatedAt,'2026-09-28');assert.equal(second.aaps.length,1);
   for(const f of ['site/data/library.json','site/data/bootstrap.js','site/data/library.previous.json','site/data/changes.json','site/bibliotheque/radar-library.json','site/bibliotheque/radar-library.csv'])assert.doesNotMatch(await fs.readFile(path.join(root,f),'utf8'),/ae_1|aides_entreprises/);
  }finally{await fs.rm(root,{recursive:true,force:true})}
+});
+
+
+test('les agrégateurs nationaux généralistes sont exclus mais une page régionale spécifique reste admissible',()=>{
+ const bad=[
+  'https://www.service-public.gouv.fr/particuliers/vosdroits',
+  'https://mes-aides.gouv.fr/',
+  'https://www.les-aides.fr/',
+  'https://www.europe-en-france.gouv.fr/fr/programmes-europeens-2021-2027'
+ ];
+ for(const url of bad) assert.throws(()=>assertDirectSources({...cfg,sources:[...cfg.sources,{id:'bad',official:true,strategy:'catalog-html',url}]}),url);
+ const regional={id:'martinique-feder',official:true,strategy:'official-page',url:'https://www.europe-en-france.gouv.fr/fr/programmes-europeens-2021-2027/programme-martinique-feder-fse-2021-2027'};
+ assert.doesNotThrow(()=>assertDirectSources({...cfg,sources:[...cfg.sources,regional]}));
 });
