@@ -63,7 +63,11 @@ const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'),SITE=
 const previous=await readJson(path.join(DATA,'library.json'),{meta:{},aaps:[]}),previousCoverage=await readJson(path.join(DATA,'coverage.json'),[]),prevCov=new Map(previousCoverage.map(x=>[x.id,x])),prevMap=new Map((previous.aaps||[]).map(a=>[canonicalKey(a),a])),cfg=await readJson(path.join(ROOT,'config','sources.json'),{sources:[]});
 const collectionLock=await loadCollectionLock(ROOT);validateCollectionLock(cfg,collectionLock);
 if(!collectionLock.locked)await purgeIndirectSources();
-const sourcesToRun=selectSources(cfg,collectionLock),selectedIds=selectedSourceSet(collectionLock),coverage=[],changes=[],current=new Map(prevMap),cycleSeenKeys=new Set();
+const sourcesToRun=selectSources(cfg,collectionLock),selectedIds=selectedSourceSet(collectionLock),coverage=[],changes=[];
+const current=collectionLock.locked
+  ? new Map((previous.aaps||[]).filter(a=>!selectedIds.has(a?.sourceId)).map(a=>[canonicalKey(a),a]))
+  : new Map(prevMap);
+const cycleSeenKeys=new Set();
 log('Collection lock',lockSummary(collectionLock));
 function withTimeout(p,ms,label){return Promise.race([p,new Promise((_,rej)=>setTimeout(()=>rej(new Error(`timeout ${label} ${ms}ms`)),ms))])}
 async function collect(source){const ctx={log};switch(source.strategy){case'catalog-html':return collectWebCatalog({...source,browserFallback:true},ctx);case'opendatasoft':return collectOpenDataSoft(source,ctx);case'official-page':return collectOfficialPage(source,ctx);case'bpifrance-aap':return collectBpifranceAaps(source,ctx);case'bpifrance-aides':return collectBpifranceAids(source,ctx);case'control-only':return collectControl(source,ctx);default:throw new Error('Stratégie de collecte non autorisée: '+source.strategy)}}
