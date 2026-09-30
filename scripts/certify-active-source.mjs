@@ -36,6 +36,7 @@ if(lockedCfg.length!==allowed.size)problems.push('Le verrou référence une sour
 
 for(const s of lockedCfg){
   const row=byId.get(s.id);
+  const rule=cert.sourceRules?.[s.id]||{};
   if(!row){problems.push(`${s.id}: aucune preuve de collecte`);continue}
   if(!row.success)problems.push(`${s.id}: collecte non validée — ${row.message||'sans message'}`);
   if(Number(row.imported||0)<Number(s.minImported||0))problems.push(`${s.id}: imports ${row.imported||0} < minimum ${s.minImported}`);
@@ -78,7 +79,26 @@ for(const s of lockedCfg){
     if(aap+aide!==total)problems.push(`${s.id}: classification catalogue incohérente — AAP ${aap} + aides ${aide} ≠ total ${total}`);
   }
   if(cert.requireRssDiscovery&&Number(row.audit?.channels?.rss||0)<=0)problems.push(`${s.id}: aucune fiche découverte via le RSS officiel`);
-  if(cert.requireExternalAuditDiscovery&&Number(row.audit?.channels?.externalAudit||0)<=0)problems.push(`${s.id}: aucune URL issue du contre-audit externe n’a été prise en compte`);
+  if(cert.requireExternalAuditDiscovery&&!cert.sourceRules&&Number(row.audit?.channels?.externalAudit||0)<=0)problems.push(`${s.id}: aucune URL issue du contre-audit externe n’a été prise en compte`);
+
+  if(rule.requireListingDiscovery&&Number(row.audit?.channels?.listing||0)<=0)problems.push(`${s.id}: listing maître Bpifrance vide`);
+  if(rule.requireCatalogueSectionDiscovery&&Number(row.audit?.channels?.catalogueSection||0)<=0)problems.push(`${s.id}: section catalogue maître vide`);
+  if(rule.requireImportedEqualsDiscovered){
+    const discovered=Number(row.audit?.discovered??row.discovered??0);
+    const imported=Number(row.audit?.imported??row.imported??0);
+    if(discovered!==imported)problems.push(`${s.id}: ${imported}/${discovered} fiche(s) du référentiel maître importées`);
+  }
+  if(rule.requireExternalDisposition){
+    if(Number(row.audit?.channels?.externalAudit||0)<=0)problems.push(`${s.id}: contre-audit externe absent`);
+    const disp=row.audit?.externalDisposition;
+    if(!disp)problems.push(`${s.id}: disposition du contre-audit externe absente`);
+    else{
+      if(rule.forbidActiveExternalGaps&&Number(disp.active?.length||0)>0)problems.push(`${s.id}: ${disp.active.length} AAP actif(s) détecté(s) hors listing maître`);
+      if(rule.forbidTargetExternalGaps&&Number(disp.target?.length||0)>0)problems.push(`${s.id}: ${disp.target.length} aide(s) cible(s) détectée(s) hors section maître`);
+      if(rule.forbidUnknownExternalGaps&&Number(disp.unknown?.length||0)>0)problems.push(`${s.id}: ${disp.unknown.length} candidat(s) externe(s) indéterminé(s)`);
+    }
+  }
+  if(rule.minRetained!=null&&Number(sourceRecordCounts.get(s.id)||0)<Number(rule.minRetained))problems.push(`${s.id}: ${sourceRecordCounts.get(s.id)||0} fiche(s) conservée(s) < minimum ${rule.minRetained}`);
   if(cert.requireZeroExtractionErrors&&Number(row.audit?.errors?.length||0)>0)problems.push(`${s.id}: ${row.audit.errors.length} erreur(s) d’extraction`);
 }
 
@@ -96,23 +116,30 @@ if(cert.requireExternalAuditDiscovery){
 
 const hosts=new Set((cert.allowedHosts||[]).map(x=>String(x).toLowerCase()));
 for(const a of records){
+  const rule=cert.sourceRules?.[a?.sourceId]||{};
   const title=String(a.title||'').replace(/\s+/g,' ').trim();
   if(cert.forbidGenericTitles&&(!title||generic.test(title)))problems.push(`${a.id}: intitulé générique ou absent`);
   const ev=Array.isArray(a?.verification?.fieldEvidence)?a.verification.fieldEvidence:[];
-  if(cert.requireGuichetEvidence){
+  if(cert.requireGuichetEvidence||rule.requireGuichetEvidence){
     const proof=ev.find(e=>e?.field==='guichet'&&['A','B'].includes(e?.sourceTier)&&e?.sourceUrl);
     if(a?.guichetVerified!==lock.name||!proof)problems.push(`${a.id}: présence sur le portail ${lock.name} non prouvée`);
   }
-  if(cert.requireCatalogueMasterMembership){
+  if(cert.requireCatalogueMasterMembership||rule.requireMasterMembership||rule.requireGuichetEvidence){
     const membership=ev.find(e=>e?.field==='catalogueMembership'&&['A','B'].includes(e?.sourceTier)&&e?.sourceUrl);
     const kindProof=ev.find(e=>e?.field==='catalogueKind'&&['A','B'].includes(e?.sourceTier));
-    if(a?.catalogueVerified!==true||!membership)problems.push(`${a.id}: présence dans le catalogue maître ADEME non prouvée`);
-    if(!['AAP / AMI','AIDE'].includes(a?.kind)||a?.catalogueKind!==a?.kind||!kindProof)problems.push(`${a.id}: type AIDE/AAP non repris fidèlement du catalogue ADEME`);
+    if((cert.requireCatalogueMasterMembership||rule.requireMasterMembership||rule.requireGuichetEvidence)&&(a?.catalogueVerified!==true||!membership))problems.push(`${a.id}: présence dans le référentiel maître ${lock.name} non prouvée`);
+    if((cert.requireCatalogueMasterMembership||rule.allowedKinds)&&(!kindProof||!a?.kind))problems.push(`${a.id}: type de dispositif non prouvé`);
   }
-  if(cert.requireCurrentStatusEvidence){
-    const allowedStates=new Set(cert.allowedSourceStates||[]);
+  if(cert.requireCurrentStatusEvidence||rule.requireCurrentStatusEvidence){
+    const allowedStates=new Set(rule.allowedSourceStates||cert.allowedSourceStates||[]);
     const proof=ev.find(e=>e?.field==='sourceStatus'&&['A','B'].includes(e?.sourceTier));
     if(!proof||!a?.sourceState||allowedStates.size&&!allowedStates.has(a.sourceState))problems.push(`${a.id}: statut actuel non prouvé (${a?.sourceState||'absent'})`);
+  }
+  if(rule.allowedKinds?.length&&!rule.allowedKinds.includes(a?.kind))problems.push(`${a.id}: type ${a?.kind||'absent'} hors règle ${rule.allowedKinds.join(', ')}`);
+  if(rule.allowedAidTypes?.length){
+    const allowedAidTypes=new Set(rule.allowedAidTypes);
+    const actual=Array.isArray(a?.aidTypes)?a.aidTypes:[];
+    if(!actual.length||actual.some(x=>!allowedAidTypes.has(x)))problems.push(`${a.id}: instrument(s) hors périmètre ${actual.join(', ')||'absent'}`);
   }
   if(cert.requireEnterpriseScope){
     const proof=ev.find(e=>e?.field==='enterpriseEligibility'&&['A','B'].includes(e?.sourceTier));
@@ -123,7 +150,8 @@ for(const a of records){
     try{
       const u=new URL(a.officialPage),host=u.hostname.toLowerCase(),p=u.pathname;
       if(hosts.size&&!hosts.has(host))problems.push(`${a.id}: domaine non autorisé ${host}`);
-      if(cert.requiredPathPrefix&&!p.startsWith(cert.requiredPathPrefix))problems.push(`${a.id}: chemin officiel inattendu ${p}`);
+      const requiredPrefix=rule.requiredPathPrefix||cert.requiredPathPrefix;
+      if(requiredPrefix&&!p.startsWith(requiredPrefix))problems.push(`${a.id}: chemin officiel inattendu ${p}`);
       if((cert.forbiddenPathFragments||[]).some(x=>p.includes(x)))problems.push(`${a.id}: page parasite interdite ${p}`);
     }catch{problems.push(`${a.id}: URL officielle invalide`)}
   }
@@ -173,6 +201,12 @@ const report={
     catalogue:Number(byId.get(s.id)?.audit?.channels?.catalogue||0),
     catalogueMode:String(byId.get(s.id)?.audit?.channels?.catalogueMode||''),
     externalAudit:Number(byId.get(s.id)?.audit?.channels?.externalAudit||0),
+    listing:Number(byId.get(s.id)?.audit?.channels?.listing||0),
+    catalogueSection:Number(byId.get(s.id)?.audit?.channels?.catalogueSection||0),
+    sitemap:Number(byId.get(s.id)?.audit?.channels?.sitemap||0),
+    externalActiveGaps:Number(byId.get(s.id)?.audit?.externalDisposition?.active?.length||0),
+    externalTargetGaps:Number(byId.get(s.id)?.audit?.externalDisposition?.target?.length||0),
+    externalUnknownGaps:Number(byId.get(s.id)?.audit?.externalDisposition?.unknown?.length||0),
     catalogueExpected:Number(byId.get(s.id)?.audit?.channels?.catalogueExpected||0),
     catalogueAap:Number(byId.get(s.id)?.audit?.channels?.catalogueAap||0),
     catalogueAid:Number(byId.get(s.id)?.audit?.channels?.catalogueAid||0),

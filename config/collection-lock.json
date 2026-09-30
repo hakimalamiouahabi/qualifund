@@ -1,53 +1,88 @@
 {
-  "version": 5,
+  "version": 6,
   "locked": true,
   "mode": "GUICHET",
-  "name": "ADEME",
+  "name": "Bpifrance",
   "allowedSourceIds": [
-    "ademe"
+    "bpifrance_aap",
+    "bpifrance_aides",
+    "bpifrance_rebond_industriel",
+    "bpifrance_projets_international"
   ],
   "preserveUnselectedSources": true,
   "preserveUnselectedCoverage": true,
   "freezeUnselectedLifecycle": true,
   "enrichSelectedOnly": true,
-  "next": "Bpifrance v2",
+  "next": "Auvergne-Rhône-Alpes",
   "certification": {
     "primarySourceIds": [
-      "ademe"
+      "bpifrance_aap",
+      "bpifrance_aides",
+      "bpifrance_rebond_industriel",
+      "bpifrance_projets_international"
     ],
     "allowedHosts": [
-      "agirpourlatransition.ademe.fr"
-    ],
-    "requiredPathPrefix": "/entreprises/aides-financieres/catalogue/",
-    "forbiddenPathFragments": [
-      "/catalogue-rex/",
-      "/accessibilite",
-      "/mentions-legales",
-      "/politique-",
-      "/conditions-generales"
+      "www.bpifrance.fr",
+      "bpifrance.fr",
+      "rebond-industriel.bpifrance.fr",
+      "projets-international.bpifrance.fr"
     ],
     "requireAuditAccounting": true,
     "requireZeroExtractionErrors": true,
     "requireDirectOfficialUrl": true,
     "forbidGenericTitles": true,
-    "requireCatalogueDiscovery": true,
-    "requireCatalogueCompleteness": true,
-    "requireCatalogueClassification": true,
-    "requireCatalogueMasterMembership": true,
-    "requireRssDiscovery": true,
     "requireExternalAuditDiscovery": true,
-    "externalAuditFile": "config/ademe-v2-external-audit.json",
+    "externalAuditFile": "config/bpifrance-v2-external-audit.json",
     "externalAuditMaxAgeHours": 72,
-    "requireGuichetEvidence": true,
-    "requireCurrentStatusEvidence": true,
-    "requireEnterpriseScope": true,
-    "allowedSourceStates": [
-      "OPEN",
-      "OPEN_UNDATED",
-      "PERMANENT"
-    ],
-    "allowOfficialRssFallback": true,
-    "requirePortalMembership": true
+    "sourceRules": {
+      "bpifrance_aap": {
+        "master": "ACTIVE_AAP_LISTING",
+        "requireListingDiscovery": true,
+        "requireImportedEqualsDiscovered": true,
+        "requireExternalDisposition": true,
+        "forbidActiveExternalGaps": true,
+        "forbidUnknownExternalGaps": true,
+        "requireGuichetEvidence": true,
+        "requireCurrentStatusEvidence": true,
+        "allowedSourceStates": [
+          "OPEN",
+          "OPEN_UNDATED"
+        ],
+        "allowedKinds": [
+          "AAP / AMI"
+        ],
+        "requiredPathPrefix": "/nos-appels-a-projets-concours/"
+      },
+      "bpifrance_aides": {
+        "master": "CATALOGUE_SECTION_SUB_AR",
+        "requireCatalogueSectionDiscovery": true,
+        "requireExternalDisposition": true,
+        "forbidTargetExternalGaps": true,
+        "forbidUnknownExternalGaps": true,
+        "requireGuichetEvidence": true,
+        "requireCurrentStatusEvidence": true,
+        "allowedSourceStates": [
+          "OPEN_UNDATED"
+        ],
+        "allowedKinds": [
+          "AIDE"
+        ],
+        "allowedAidTypes": [
+          "SUBVENTION",
+          "AVANCE_REMBOURSABLE",
+          "PRET_TAUX_ZERO"
+        ],
+        "requiredPathPrefix": "/catalogue-offres/"
+      },
+      "bpifrance_rebond_industriel": {
+        "master": "DIRECT_OFFICIAL_PAGE",
+        "minRetained": 1
+      },
+      "bpifrance_projets_international": {
+        "master": "DIRECT_OFFICIAL_MICROSITE",
+        "minRetained": 3
+      }
+    }
   },
-  "notes": "Verrou ADEME v4 : catalogue Entreprises en priorité ; si le rendu HTML bloque le runner, reconstruction déterministe de l'inventaire actif depuis le RSS officiel ADEME et les échéances de dépôt. Le portail ADEME est une preuve de présence, pas une preuve automatique du financeur/opérateur. Bpifrance reste gelé jusqu'au PASS ADEME."
+  "notes": "Verrou Bpifrance v2 : listing AAP actif + section catalogue Subventions et avances remboursables comme référentiels maîtres. Sitemap et moteurs externes servent uniquement au contre-audit. Le portail Bpifrance prouve la présence d’un dispositif, sans forcer automatiquement le financeur/opérateur. Les autres guichets/régions restent gelés jusqu’au PASS Bpifrance v2."
 }

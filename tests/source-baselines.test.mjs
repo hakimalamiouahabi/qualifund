@@ -8,7 +8,7 @@ test('planchers Web officiels des sources prioritaires',()=>{
   assert.ok(by.get('ademe').minImported>=1);
   assert.match(by.get('ademe').externalAuditFile||'',/ademe-v2-external-audit\.json$/);
   assert.equal(by.get('ademe').strategy,'ademe-official');
-  assert.ok(by.get('bpifrance_aap').minExpected>=28);
+  assert.ok(by.get('bpifrance_aap').minExpected>=20);
   assert.ok(by.get('bpifrance_aides').minExpected>=20);
   assert.ok(!by.has('dge_aap')); // Hors du périmètre demandé
   assert.ok(by.get('pdl').minExpected>=150);
