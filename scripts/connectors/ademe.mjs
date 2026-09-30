@@ -59,13 +59,49 @@ function uniqueLinks(items=[]){
   return [...by.values()];
 }
 
-export function parseAdemeRss(xml){
+function parisDateIso(now=new Date()){
+  return new Intl.DateTimeFormat('en-CA',{
+    timeZone:'Europe/Paris',year:'numeric',month:'2-digit',day:'2-digit'
+  }).format(now);
+}
+
+export function ademeKindFromOfficialUrl(url=''){
+  try{
+    const p=new URL(url).pathname;
+    if(p.includes('/entreprises/aides-financieres/catalogue/aap/'))return 'AAP / AMI';
+    if(/\/entreprises\/aides-financieres\/catalogue\/20\d{2}\//.test(p))return 'AIDE';
+    return null;
+  }catch{return null}
+}
+
+function rssMeta(item,now=new Date()){
+  const url=typeof item.link==='string'?item.link:item.link?.['#text']||'';
+  const description=String(item.description||'');
+  const plain=cleanTitle(description);
+  const dates=detectDates(plain);
+  const openingDate=dates[0]||null;
+  const closingDate=dates.length>1?dates.at(-1):(dates[0]||null);
+  const today=parisDateIso(now);
+  const active=Boolean(closingDate&&closingDate>=today&&(!openingDate||openingDate<=today));
+  return{
+    url,
+    label:String(item.title||''),
+    rssSummary:plain.replace(/^Délai de dépôt des dossiers\s*:\s*/i,'').slice(0,1800),
+    rssOpeningDate:openingDate,
+    rssClosingDate:closingDate,
+    rssActive:active,
+    catalogueKind:ademeKindFromOfficialUrl(url),
+    catalogueStatus:active?'OPEN':'CLOSED',
+    catalogueClosingDate:closingDate,
+    catalogueEvidence:plain.slice(0,1200),
+    inventoryMode:'RSS'
+  };
+}
+
+export function parseAdemeRss(xml,{now=new Date()}={}){
   const feed=new XMLParser({ignoreAttributes:false,trimValues:true}).parse(xml);
   const items=feed?.rss?.channel?.item||[];
-  return uniqueLinks((Array.isArray(items)?items:[items]).map(item=>({
-    url:typeof item.link==='string'?item.link:item.link?.['#text']||'',
-    label:String(item.title||'')
-  })));
+  return uniqueLinks((Array.isArray(items)?items:[items]).map(item=>rssMeta(item,now)));
 }
 
 async function rssLinks(source,{log=console.log}={}){
@@ -73,7 +109,8 @@ async function rssLinks(source,{log=console.log}={}){
   try{
     const xml=(await fetchText(source.rssUrl,{timeoutMs:25000,retries:2})).text;
     const links=parseAdemeRss(xml);
-    log(`[${source.id}] RSS officiel ADEME: ${links.length} fiches`);
+    const active=links.filter(x=>x.rssActive);
+    log(`[${source.id}] RSS officiel ADEME: ${links.length} fiches, dont ${active.length} actives`);
     return links;
   }catch(e){
     log(`[${source.id}] RSS indisponible: ${e.message}`);
@@ -347,85 +384,164 @@ async function externalAuditLinks(source,{log=console.log}={}){
   }
 }
 
+function directKindFromText(text=''){
+  const n=norm(text);
+  if(/appel a projet (?:en cours|clos)/.test(n)||/appel a manifestation d['’]?interet/.test(n))return 'AAP / AMI';
+  if(/\baide (?:en cours|close|cloturee)\b/.test(n))return 'AIDE';
+  return null;
+}
+
+async function getDetailHtml(url){
+  try{
+    const r=await fetchText(url,{timeoutMs:12000,retries:1,headers:{
+      'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/140 Safari/537.36',
+      'accept-language':'fr-FR,fr;q=0.9,en;q=0.7'
+    }});
+    const body=String(r.text||'');
+    if(body.length<1200)return null;
+    return{html:body,finalUrl:r.url||url,via:'http'};
+  }catch{return null}
+}
+
+function baseAidFromInventory(source,link){
+  const url=canonicalUrl(link.url),now=new Date().toISOString();
+  return{
+    id:directPageId(source.id,url),
+    canonicalId:directPageId(source.id,url),
+    sourceId:source.id,
+    sourceRecordId:url,
+    title:cleanTitle(link.label||'Dispositif ADEME'),
+    kind:link.catalogueKind||ademeKindFromOfficialUrl(url)||'AIDE',
+    programme:null,
+    operator:null,
+    objective:link.rssSummary||null,
+    beneficiaries:null,
+    companyCategories:[],
+    themes:[],
+    scope:'NATIONAL',
+    regions:[],
+    aidTypes:(link.catalogueKind||ademeKindFromOfficialUrl(url))==='AAP / AMI'?['APPEL_A_PROJET']:['AUTRE'],
+    openingDate:link.rssOpeningDate||null,
+    closingDate:link.catalogueClosingDate||link.rssClosingDate||null,
+    finalClosingDate:link.catalogueClosingDate||link.rssClosingDate||null,
+    deadlines:link.catalogueClosingDate||link.rssClosingDate?[link.catalogueClosingDate||link.rssClosingDate]:[],
+    permanent:false,
+    cdcLinks:[],
+    sourceLinks:[{label:'Page officielle ADEME',url}],
+    regulationLinks:[],
+    formLinks:[],
+    officialPage:url,
+    funder:[],
+    lifecycleStatus:'ACTIVE',
+    verification:{status:'A_REVERIFIER',sourceTier:'B',lastChecked:now,fieldEvidence:[]}
+  };
+}
+
 async function extractOne(source,link){
-  const loaded=await getHtml(link.url);
-  const requested=canonicalUrl(link.url),resolved=canonicalUrl(loaded.finalUrl||link.url);
-  if(!isAidUrl(resolved)){
-    return{aid:null,excluded:{url:link.url,label:link.label||'',reason:'REDIRECTION_HORS_FICHE',resolvedUrl:resolved||loaded.finalUrl||''}};
-  }
-  if(requested!==resolved){
-    return{aid:null,excluded:{url:link.url,label:link.label||'',reason:'REDIRECTION_VERS_AUTRE_FICHE',resolvedUrl:resolved}};
+  const requested=canonicalUrl(link.url);
+  if(!isAidUrl(requested)){
+    return{aid:null,excluded:{url:link.url,label:link.label||'',reason:'URL_HORS_CATALOGUE_ADEME'}};
   }
   if(!link.catalogueKind){
-    return{aid:null,excluded:{url:link.url,label:link.label||'',reason:'TYPE_CATALOGUE_NON_CLASSE',resolvedUrl:resolved}};
+    return{aid:null,excluded:{url:link.url,label:link.label||'',reason:'TYPE_OFFICIEL_NON_CLASSE'}};
   }
 
-  const text=pageText(loaded.html);
-  const a=extractFromHtml(loaded.html,{url:requested,sourceTier:'B',scope:'NATIONAL',region:null});
-  const rawTitle=cleanTitle(a.title||'');
-  if(/(?:désolé.*offre.*plus disponible|desole.*offre.*plus disponible|page introuvable|page non trouvée|erreur 404|404 not found|access denied|forbidden|service indisponible)/i.test(rawTitle)){
-    return{aid:null,excluded:{url:link.url,label:link.label||'',reason:'FICHE_INDISPONIBLE',resolvedUrl:resolved}};
+  const loaded=await getDetailHtml(requested);
+  let text='',a=baseAidFromInventory(source,link),detailWarning=null;
+  if(loaded){
+    const resolved=canonicalUrl(loaded.finalUrl||requested);
+    if(!isAidUrl(resolved)||resolved!==requested){
+      return{aid:null,excluded:{url:link.url,label:link.label||'',reason:'REDIRECTION_HORS_FICHE',resolvedUrl:resolved}};
+    }
+    text=pageText(loaded.html);
+    const parsed=extractFromHtml(loaded.html,{url:requested,sourceTier:'B',scope:'NATIONAL',region:null});
+    a={...a,...parsed,id:a.id,canonicalId:a.canonicalId,sourceId:source.id,sourceRecordId:requested,officialPage:requested};
+    const directKind=directKindFromText(text);
+    if(directKind&&directKind!==link.catalogueKind){
+      return{aid:null,excluded:{url:link.url,label:link.label||a.title,reason:'CONFLIT_TYPE_OFFICIEL',rssKind:link.catalogueKind,directKind}};
+    }
+    const directStatus=ademeStatusProof(a,text);
+    if(['STATUS_CONFLICT','CLOSED_OLD','RECENTLY_CLOSED'].includes(directStatus.state)){
+      return{aid:null,excluded:{url:link.url,label:a.title,reason:'CONFLIT_STATUT_OFFICIEL',status:directStatus.state,date:directStatus.date}};
+    }
+  }else{
+    detailWarning={url:requested,label:link.label||'',reason:'FICHE_DIRECTE_NON_LUEE_RSS_OFFICIEL_CONSERVE'};
   }
+
   const label=cleanTitle(link.label||'');
   if(label&&label.length>=4)a.title=label;
   if(!a.title||a.title.length<4){
-    return{aid:null,excluded:{url:link.url,label:link.label||'',reason:'TITRE_ABSENT',resolvedUrl:resolved}};
+    return{aid:null,excluded:{url:link.url,label:link.label||'',reason:'TITRE_ABSENT'}};
   }
 
-  // Le catalogue Entreprises actif est le référentiel maître. La présence de la carte
-  // constitue la preuve ADEME + entreprise + actif ; la fiche directe enrichit les critères.
-  const directStatus=ademeStatusProof(a,text);
-  if(['STATUS_CONFLICT','CLOSED_OLD','RECENTLY_CLOSED'].includes(directStatus.state)){
-    return{aid:null,excluded:{url:link.url,label:a.title,reason:'CONFLIT_STATUT_CATALOGUE_FICHE',resolvedUrl:resolved,status:directStatus.state,date:directStatus.date}};
-  }
-  const territory=inferRegionsFromEvidence(text);
-  const closing=link.catalogueClosingDate||directStatus.date||a.finalClosingDate||a.closingDate||null;
+  const territory=text?inferRegionsFromEvidence(text):{regions:[],allRegions:false,evidence:null};
+  const closing=link.catalogueClosingDate||link.rssClosingDate||a.finalClosingDate||a.closingDate||null;
   a.id=directPageId(source.id,requested);
   a.canonicalId=a.id;
   a.sourceId=source.id;
   a.sourceRecordId=requested;
   a.kind=link.catalogueKind;
-  a.funder=['ADEME'];
-  a.operator='ADEME';
   a.guichetVerified='ADEME';
+  a.sourcePortal='ADEME';
   a.enterpriseEligible=true;
   a.catalogueVerified=true;
   a.catalogueKind=link.catalogueKind;
-  a.catalogueStatus=link.catalogueStatus||'OPEN';
+  a.catalogueStatus='OPEN';
+  a.catalogueInventoryMode=link.inventoryMode||'CATALOGUE_HTML';
   a.sourceState='OPEN';
+  a.lifecycleStatus='ACTIVE';
+  a.officialPage=requested;
+  a.openingDate=link.rssOpeningDate||a.openingDate||null;
   if(closing){
     a.finalClosingDate=closing;
     a.closingDate=closing;
     a.deadlines=uniq([...(a.deadlines||[]),closing]).sort();
   }
-  a.scope=territory.regions.length?'REGIONAL':'NATIONAL';
-  a.regions=territory.regions.length?territory.regions:['Toutes les Régions'];
+  if(territory.regions.length){
+    a.scope='REGIONAL';a.regions=territory.regions;
+  }else if(!Array.isArray(a.regions)||!a.regions.length){
+    a.scope='NATIONAL';a.regions=[];
+  }
+  if(!Array.isArray(a.companyCategories))a.companyCategories=[];
+  if(!Array.isArray(a.aidTypes)||!a.aidTypes.length)a.aidTypes=link.catalogueKind==='AAP / AMI'?['APPEL_A_PROJET']:['AUTRE'];
+  if(link.catalogueKind==='AAP / AMI'&&!a.aidTypes.includes('APPEL_A_PROJET'))a.aidTypes=uniq([...a.aidTypes,'APPEL_A_PROJET']);
+  if(!Array.isArray(a.funder))a.funder=[];
+  // Ne jamais déduire financeur/opérateur du simple hébergement sur le portail.
+  const attribution=text?ademeAttributionEvidence(text):null;
+  if(attribution){
+    if(!a.funder.includes('ADEME'))a.funder=uniq([...a.funder,'ADEME']);
+    if(!a.operator)a.operator='ADEME';
+  }
   a.sourceLinks=[{label:'Page officielle ADEME',url:requested},...(a.sourceLinks||[]).filter(x=>x?.url&&canonicalUrl(x.url)!==requested)];
+
   const checkedAt=new Date().toISOString();
-  const membershipEvidence=link.catalogueEvidence||(`Présent dans le catalogue officiel ADEME Entreprises — ${link.catalogueKind}`);
+  const membershipSource=(link.inventoryMode==='RSS_ACTIVE_MIRROR'?source.rssUrl:source.url);
+  const membershipEvidence=link.catalogueEvidence||(`Inventaire officiel ADEME Entreprises — ${link.catalogueKind}`);
   const extra=[
-    {field:'catalogueMembership',sourceUrl:source.url,sourceTier:'B',locator:'catalogue-card',evidenceText:membershipEvidence.slice(0,850),checkedAt},
-    {field:'guichet',sourceUrl:source.url,sourceTier:'B',locator:'catalogue-master',evidenceText:'Catalogue officiel des aides financières de l’ADEME pour les entreprises',checkedAt},
-    {field:'sourceStatus',sourceUrl:source.url,sourceTier:'B',locator:'catalogue-card-status',evidenceText:(link.catalogueEvidence||'Dispositif présent dans le catalogue actif').slice(0,850),checkedAt},
+    {field:'catalogueMembership',sourceUrl:membershipSource,sourceTier:'B',locator:link.inventoryMode==='RSS_ACTIVE_MIRROR'?'rss-active-item':'catalogue-card',evidenceText:membershipEvidence.slice(0,850),checkedAt},
+    {field:'guichet',sourceUrl:membershipSource,sourceTier:'B',locator:'ademe-enterprises-inventory',evidenceText:'Référencé par le portail officiel ADEME Entreprises',checkedAt},
+    {field:'sourceStatus',sourceUrl:membershipSource,sourceTier:'B',locator:link.inventoryMode==='RSS_ACTIVE_MIRROR'?'rss-deadline':'catalogue-card-status',evidenceText:(link.catalogueEvidence||(`Échéance officielle ${closing||'active'}`)).slice(0,850),checkedAt},
     {field:'enterpriseEligibility',sourceUrl:source.url,sourceTier:'B',locator:'catalogue-entreprises',evidenceText:'Référencé dans le catalogue ADEME Entreprises',checkedAt},
-    {field:'catalogueKind',sourceUrl:source.url,sourceTier:'B',locator:'catalogue-card-type',evidenceText:link.catalogueKind,checkedAt}
+    {field:'catalogueKind',sourceUrl:loaded?requested:membershipSource,sourceTier:'B',locator:loaded?'direct-page-type':'official-url-taxonomy',evidenceText:link.catalogueKind,checkedAt}
   ];
   if(territory.evidence)extra.push({field:'territory',sourceUrl:requested,sourceTier:'B',locator:'page-text-match:territory',evidenceText:territory.evidence.slice(0,850),checkedAt});
-  a.verification={...(a.verification||{}),fieldEvidence:[...(a.verification?.fieldEvidence||[]),...extra]};
-  a.guichetVerification={status:'VERIFIED',sourceUrl:source.url,evidenceText:membershipEvidence.slice(0,850),checkedAt};
-  return{aid:a,excluded:null};
+  a.verification={...(a.verification||{}),status:loaded?'VERIFIE':'A_REVERIFIER',sourceTier:'B',lastChecked:checkedAt,fieldEvidence:[...(a.verification?.fieldEvidence||[]),...extra]};
+  a.guichetVerification={status:'VERIFIED',sourceUrl:membershipSource,evidenceText:membershipEvidence.slice(0,850),checkedAt};
+  return{aid:a,excluded:null,detailWarning};
 }
 
-async function extractMany(source,links,{log=console.log,workers=8}={}){
-  const aids=[],errors=[],excluded=[];let cursor=0;
+async function extractMany(source,links,{log=console.log,workers=12}={}){
+  const aids=[],errors=[],excluded=[],detailWarnings=[];let cursor=0;
   const pool=Array.from({length:workers},async()=>{
     while(true){
       const i=cursor++;if(i>=links.length)return;
       const link=links[i];
       try{
         const item=await extractOne(source,link);
-        if(item?.aid)aids.push(item.aid);
-        else if(item?.excluded)excluded.push(item.excluded);
+        if(item?.aid){
+          aids.push(item.aid);
+          if(item.detailWarning)detailWarnings.push(item.detailWarning);
+        }else if(item?.excluded)excluded.push(item.excluded);
         else errors.push({url:link.url,label:link.label||'',reason:'EXTRACTION_VIDE'});
       }catch(e){
         errors.push({url:link.url,label:link.label||'',reason:String(e?.message||e)});
@@ -434,7 +550,7 @@ async function extractMany(source,links,{log=console.log,workers=8}={}){
     }
   });
   await Promise.all(pool);
-  return{aids,errors,excluded};
+  return{aids,errors,excluded,detailWarnings};
 }
 
 export async function discoverAdeme(source,{log=console.log}={}){
