@@ -35,7 +35,7 @@ function loadProjectState(){
   }catch{}
   return{...DEFAULT_PROJECT};
 }
-const state={route:'home',studyStep:1,lib:[],meta:{},coverage:[],changes:[],sources:[],readiness:null,project:loadProjectState(),lastResults:[]};
+const state={route:'home',studyStep:1,lib:[],meta:{},coverage:[],changes:[],sources:[],readiness:null,certification:null,bpifranceCertification:null,dailyReport:null,project:loadProjectState(),lastResults:[]};
 const today=()=>new Date().toISOString().slice(0,10);
 const daysUntil=v=>v?Math.floor((new Date(v+'T23:59:59')-new Date(today()+'T00:00:00'))/86400000):null;
 const bootstrap=()=>window.__LEYTON_RADAR_BOOTSTRAP__||window.__QUALIFUND_BOOTSTRAP__||null;
@@ -157,9 +157,11 @@ function displayAidTitle(a){
   return ambiguous&&funders.length?title+' — '+funders[0]:title;
 }
 
-async function loadAll(){const j=await api('./data/library.json');state.lib=(j.meta?.sourcePolicy==='DIRECT_OFFICIAL_ONLY'?j.aaps||[]:[]).filter(a=>!/(?:aides[-_]entreprises|aides[-_]territoires)/i.test(JSON.stringify(a))).map(a=>{const b={...a};for(const k of ['title','objective','beneficiaries','eligibleExpenses','excludedExpenses','prerequisites','selectionCriteria','programme','operator'])if(typeof b[k]==='string')b[k]=decodeEntities(b[k]);return b});state.meta=j.meta||{};for(const[k,p]of[['coverage','./data/coverage.json'],['changes','./data/changes.json']])try{state[k]=await api(p)}catch{};try{state.sources=(await api('./data/sources.json')).sources||[]}catch{};try{state.readiness=await api('./data/production-readiness.json')}catch{};await loadClientLibrary();render();const deep=new URLSearchParams(location.search).get('aid');if(deep&&state.lib.some(a=>a.id===deep))openAid(deep)}
+async function loadAll(){const j=await api('./data/library.json');state.lib=(j.meta?.sourcePolicy==='DIRECT_OFFICIAL_ONLY'?j.aaps||[]:[]).filter(a=>!/(?:aides[-_]entreprises|aides[-_]territoires)/i.test(JSON.stringify(a))).map(a=>{const b={...a};for(const k of ['title','objective','beneficiaries','eligibleExpenses','excludedExpenses','prerequisites','selectionCriteria','programme','operator'])if(typeof b[k]==='string')b[k]=decodeEntities(b[k]);return b});state.meta=j.meta||{};for(const[k,p]of[['coverage','./data/coverage.json'],['changes','./data/changes.json'],['certification','./data/active-source-certification.json'],['bpifranceCertification','./data/bpifrance-certification.json'],['dailyReport','./bibliotheque/rapports/latest.json']])try{state[k]=await api(p)}catch{};try{state.sources=(await api('./data/sources.json')).sources||[]}catch{};try{state.readiness=await api('./data/production-readiness.json')}catch{};await loadClientLibrary();render();const deep=new URLSearchParams(location.search).get('aid');if(deep&&state.lib.some(a=>a.id===deep))openAid(deep)}
 function route(r){clearTimeout(window.__libSearchTimer);state.route=r;$$('.nav[data-route]').forEach(x=>x.classList.toggle('active',x.dataset.route===r));$('#sidebar')?.classList.remove('open');render()}
-$$('.nav[data-route]').forEach(b=>b.onclick=()=>route(b.dataset.route));
+document.querySelectorAll('.nav[data-route]').forEach(b=>b.onclick=()=>route(b.dataset.route));
+const globalSearch=$('#globalSearch');
+if(globalSearch)globalSearch.onkeydown=e=>{if(e.key==='Enter'){window.__q=globalSearch.value.trim();window.__libPage=0;route('library')}};
 $('#today').textContent=new Date().toLocaleDateString('fr-FR');
 $('#modalClose').onclick=()=>$('#modal').classList.add('hidden');
 $('#modal').onclick=e=>{if(e.target.id==='modal')$('#modal').classList.add('hidden')};
@@ -170,15 +172,124 @@ if($('#sidebarToggle')){$('#sidebarToggle').onclick=()=>setSidebarCollapsed(!doc
 $('#refreshBtn').onclick=async()=>{await loadAll();toast('Dernière bibliothèque publiée rechargée.')};
 $('#collectBtn').onclick=requestCollection;
 function counts(){const active=state.lib.filter(a=>!['ARCHIVE','STALE'].includes(a.lifecycleStatus)),verified=active.filter(x=>x.verification?.status==='VERIFIE').length;return{all:active.length,aap:active.filter(x=>String(x.kind).includes('AAP')).length,verified,j1:active.filter(x=>nextDeadline(x).ok).length,docs:active.filter(x=>arr(x.cdcLinks).length).length,complete:active.filter(x=>(x.verification?.completeness||0)>=80).length}}
-function render(){({home,study,library,watch,sources,production}[state.route]||home)()}
+function render(){({home,study,library,watch,sources,reporting,certification,production}[state.route]||home)()}
 function home(){
-  const corpus=state.lib.filter(usableAid),aap=corpus.filter(x=>String(x.kind).includes('AAP')).length;
-  const regions=uniq(corpus.flatMap(x=>arr(x.regions)).filter(x=>REGIONS.includes(x))).length;
-  $('#app').innerHTML=`<section class="hero executive-hero"><div class="eyebrow">Financements publics · France</div><h1>Les financements publics au service de vos projets</h1><p>Un référentiel national et régional pour identifier les financements mobilisables, vérifier les conditions d’accès et prioriser les dispositifs au regard du projet, des dépenses, du calendrier et des critères de sélection.</p><div class="hero-actions"><button class="btn primary" id="newStudy">Analyser un projet</button><button class="btn" id="goLibrary">Explorer la bibliothèque</button></div></section>
-  <div class="grid g4 executive-metrics" style="margin-top:18px"><div class="metric"><b>${corpus.length}</b><span>dispositifs référencés</span></div><div class="metric"><b>${aap}</b><span>AAP / AMI</span></div><div class="metric"><b>${state.sources.length||state.meta.sourceCount||'—'}</b><span>sources officielles référencées</span></div><div class="metric"><b>${regions}</b><span>régions couvertes</span></div></div>
-  <div class="grid g2" style="margin-top:16px"><div class="card"><h3>Dernière actualisation</h3><p><b>${state.meta.generatedAt?new Date(state.meta.generatedAt).toLocaleString('fr-FR'):'Bibliothèque publiée'}</b></p><p class="mini">Les données sont consolidées depuis les sources officielles nationales et régionales.</p><button class="btn small" id="goWatch">Voir les nouveaux dispositifs</button></div><div class="card"><h3>Lecture consultant</h3><div class="criteria"><div class="criterion"><span>1. Éligibilité</span><strong>Bénéficiaire, territoire, calendrier, budget, exclusions</strong></div><div class="criterion"><span>2. Adéquation projet</span><strong>Objectifs, dépenses, maturité, impacts, critères de sélection</strong></div><div class="criterion"><span>3. Décision</span><strong>Dispositifs prioritaires, points à sécuriser, source officielle</strong></div></div></div></div>`;
-  $('#newStudy').onclick=()=>{state.studyStep=1;route('study')};$('#goLibrary').onclick=()=>route('library');$('#goWatch').onclick=()=>route('watch');
+  const corpus=state.lib.filter(usableAid);
+  const active=corpus.filter(a=>!['ARCHIVE','STALE'].includes(a.lifecycleStatus));
+  const national=active.filter(a=>a.scope==='NATIONAL').length;
+  const regional=active.filter(a=>a.scope==='REGIONAL').length;
+  const nationalPct=active.length?Math.round(national/active.length*100):0;
+  const coverage=arr(state.coverage),okSources=coverage.filter(x=>x?.success).length,sourceHealth=coverage.length?Math.round(okSources/coverage.length*100):0;
+  const todayKey=new Date().toISOString().slice(0,10);
+  const importedToday=arr(state.changes).filter(x=>x.type==='CREATION'&&String(x.at||'').slice(0,10)===todayKey).length;
+  const lockName=state.meta?.collectionLock?.name||state.certification?.lock?.name||'—';
+  const bpiStatus=state.bpifranceCertification?.status||'—';
+  const activeCert=state.certification?.status||'—';
+
+  const instCounts={};
+  for(const a of active)for(const t of arr(a.aidTypes))instCounts[t]=(instCounts[t]||0)+1;
+  const instruments=Object.entries(instCounts).sort((a,b)=>b[1]-a[1]).slice(0,6);
+  const maxInst=Math.max(1,...instruments.map(x=>x[1]));
+
+  const regionCounts={};
+  for(const a of active)for(const r of arr(a.regions))if(REGIONS.includes(r))regionCounts[r]=(regionCounts[r]||0)+1;
+  const topRegions=Object.entries(regionCounts).sort((a,b)=>b[1]-a[1]).slice(0,8);
+  const maxRegion=Math.max(1,...topRegions.map(x=>x[1]));
+
+  const closing=active.slice().sort((a,b)=>{
+    const da=a.finalClosingDate||a.closingDate||'9999-12-31',db=b.finalClosingDate||b.closingDate||'9999-12-31';
+    return da.localeCompare(db);
+  }).slice(0,6);
+
+  const healthRows=[
+    ['ADEME',coverage.filter(x=>/^ademe/i.test(x.id||''))],
+    ['Bpifrance',coverage.filter(x=>/^bpifrance/i.test(x.id||''))],
+    ['Régions',coverage.filter(x=>x.scope&&x.scope!=='France'&&x.scope!=='NATIONAL')]
+  ].map(([label,rows])=>[label,rows.length?Math.round(rows.filter(x=>x.success).length/rows.length*100):null]);
+
+  $('#app').innerHTML=`<section class="premium-hero">
+    <div class="hero-kicker">Veille · Cartographie · Faisabilité · Certification</div>
+    <h1>Identifiez aujourd’hui les <span>financements de demain</span></h1>
+    <p>Un référentiel opérationnel des aides publiques et appels à projets, alimenté par des sources officielles directes et structuré pour accélérer l’analyse des opportunités de financement.</p>
+    <div class="hero-actions"><button class="btn primary" id="newStudy">Analyser un projet</button><button class="btn" id="goLibrary">Toutes les aides</button></div>
+    <div class="hero-proof"><strong>${esc(lockName)}</strong>guichet actuellement verrouillé pour certification</div>
+  </section>
+
+  <section class="premium-kpis">
+    <div class="premium-kpi"><div class="kpi-icon">▤</div><div><label>Bibliothèque officielle</label><b>${active.length.toLocaleString('fr-FR')}</b><small>dispositifs non archivés</small></div></div>
+    <div class="premium-kpi"><div class="kpi-icon">◎</div><div><label>Couverture des sources</label><b>${sourceHealth}%</b><small>${okSources}/${coverage.length||0} sources au dernier contrôle</small></div></div>
+    <div class="premium-kpi"><div class="kpi-icon">＋</div><div><label>Importées aujourd’hui</label><b>${importedToday}</b><small>créations enregistrées dans le journal</small></div></div>
+    <div class="premium-kpi"><div class="kpi-icon">◉</div><div><label>Guichet actif</label><b>${esc(lockName)}</b><small>certification : ${esc(activeCert)}</small></div></div>
+  </section>
+
+  <section class="dashboard-grid">
+    <article class="premium-card"><h3>Répartition régionale <span class="card-link">Top territoires</span></h3>
+      <div class="chart-bars">${topRegions.map(([r,n])=>`<div class="chart-col" style="--h:${Math.max(8,Math.round(n/maxRegion*130))}px"><b>${n}</b><i style="height:${Math.max(8,Math.round(n/maxRegion*130))}px"></i><span title="${esc(r)}">${esc(r.replace('Provence-Alpes-Côte d’Azur','PACA').replace('Auvergne-Rhône-Alpes','AURA').replace('Bourgogne-Franche-Comté','BFC'))}</span></div>`).join('')||'<div class="empty">Données régionales non disponibles.</div>'}</div>
+    </article>
+    <article class="premium-card"><h3>Portée des dispositifs</h3>
+      <div class="donut-layout"><div class="data-donut" style="background:conic-gradient(var(--fr-navy) 0 ${nationalPct}%, var(--fr-orange) ${nationalPct}% 100%)"><div class="donut-center"><b>${active.length}</b><span>dispositifs</span></div></div>
+      <div class="legend-list"><div class="legend-row"><i class="legend-dot" style="background:var(--fr-navy)"></i><span>Nationaux</span><strong>${national}</strong></div><div class="legend-row"><i class="legend-dot" style="background:var(--fr-orange)"></i><span>Régionaux</span><strong>${regional}</strong></div><div class="legend-row"><i class="legend-dot" style="background:var(--fr-sky)"></i><span>Régions couvertes</span><strong>${Object.keys(regionCounts).length}</strong></div></div></div>
+    </article>
+    <article class="premium-card"><h3>Typologies de financement</h3><div class="hbar-list">
+      ${instruments.map(([t,n])=>`<div class="hbar-row"><span>${esc(aidTypeLabel(t))}</span><div class="hbar-track"><i style="width:${Math.round(n/maxInst*100)}%"></i></div><strong>${n}</strong></div>`).join('')||'<div class="empty">Aucun instrument structuré.</div>'}
+    </div></article>
+  </section>
+
+  <section class="dashboard-bottom">
+    <article class="premium-card"><h3>Tableau des dispositifs <button class="btn small" id="dashLibrary">Voir toute la bibliothèque</button></h3>
+      <div class="dashboard-table-wrap"><table class="dashboard-table"><thead><tr><th>Guichet</th><th>Intitulé du dispositif</th><th>Statut</th><th>Région</th><th>Type</th><th>Lien officiel</th></tr></thead><tbody>
+      ${closing.map(a=>{const dm=libraryDateMeta(a),url=officialUrl(a),g=guichetLabels(a)[0]||arr(a.funder)[0]||'—';return`<tr><td>${esc(g)}</td><td>${esc(displayAidTitle(a))}</td><td><span class="status-open">${dm.state==='recent-closed'?'Clôturé':'Actif'}</span></td><td>${esc(a.scope==='NATIONAL'?'National':arr(a.regions)[0]||'Régional')}</td><td>${esc(a.kind||aidTypeLabel(arr(a.aidTypes)[0]||'AUTRE'))}</td><td>${url?`<a class="link" href="${esc(url)}" target="_blank" rel="noopener">Voir le lien ↗</a>`:'—'}</td></tr>`}).join('')}
+      </tbody></table></div>
+    </article>
+    <aside class="health-stack">
+      <article class="premium-card"><h3>Santé des sources <button class="link-button" id="dashSources">Voir le détail</button></h3><div class="health-ring"><div class="ring" style="background:conic-gradient(var(--fr-green) 0 ${sourceHealth}%, #e6edf2 ${sourceHealth}% 100%)"><b>${sourceHealth}%</b></div><div class="check-list">${healthRows.map(([label,p])=>`<div class="check-row"><span class="check-icon ${p!=null&&p<90?'warn':''}">✓</span><span>${esc(label)}</span><strong>${p==null?'—':p+'%'}</strong></div>`).join('')}</div></div></article>
+      <article class="premium-card"><h3>Sécurité & certifications</h3><div class="cert-box">
+        <div class="cert-item"><span class="check-icon ${bpiStatus==='PASS'?'':'warn'}">✓</span><div><b>Bpifrance : ${esc(bpiStatus)}</b><small>cycle historique figé</small></div></div>
+        <div class="cert-item"><span class="check-icon ${activeCert==='PASS'?'':'warn'}">✓</span><div><b>${esc(lockName)} : ${esc(activeCert)}</b><small>guichet de certification actif</small></div></div>
+        <div class="cert-item"><span class="check-icon">✓</span><div><b>Collecte verrouillée</b><small>autres guichets préservés</small></div></div>
+      </div></article>
+    </aside>
+  </section>`;
+
+  $('#newStudy').onclick=()=>{state.studyStep=1;route('study')};
+  $('#goLibrary').onclick=()=>route('library');
+  $('#dashLibrary').onclick=()=>route('library');
+  $('#dashSources').onclick=()=>route('sources');
 }
+
+function reporting(){
+  const corpus=state.lib.filter(usableAid).filter(a=>!['ARCHIVE','STALE'].includes(a.lifecycleStatus));
+  const byGuichet={};for(const a of corpus)for(const g of guichetLabels(a))byGuichet[g]=(byGuichet[g]||0)+1;
+  const guichets=Object.entries(byGuichet).sort((a,b)=>b[1]-a[1]).slice(0,8),maxG=Math.max(1,...guichets.map(x=>x[1]));
+  const direct=corpus.filter(a=>officialUrl(a)).length,withDocs=corpus.filter(a=>arr(a.cdcLinks).length||arr(a.regulationLinks).length).length;
+  const dated=corpus.filter(a=>a.permanent||a.closingDate||a.finalClosingDate||arr(a.deadlines).length).length;
+  const complete=corpus.filter(a=>(a.verification?.completeness||0)>=80).length;
+  $('#app').innerHTML=`<div class="page-head"><div><div class="eyebrow">Pilotage</div><h1>Reporting de la bibliothèque</h1><p class="sub">Lecture synthétique du corpus réel publié par FUNDING RADAR.</p></div></div>
+  <div class="premium-kpis"><div class="premium-kpi"><div class="kpi-icon">↗</div><div><label>Liens officiels directs</label><b>${direct}</b><small>${corpus.length?Math.round(direct/corpus.length*100):0}% du corpus</small></div></div><div class="premium-kpi"><div class="kpi-icon">▤</div><div><label>Avec documents</label><b>${withDocs}</b><small>CdC ou règlement rattaché</small></div></div><div class="premium-kpi"><div class="kpi-icon">◷</div><div><label>Calendrier documenté</label><b>${dated}</b><small>échéance ou permanent</small></div></div><div class="premium-kpi"><div class="kpi-icon">✓</div><div><label>Complétude ≥ 80</label><b>${complete}</b><small>selon le contrôle interne</small></div></div></div>
+  <div class="grid g2" style="margin-top:10px"><article class="premium-card"><h3>Répartition par guichet</h3><div class="hbar-list">${guichets.map(([g,n])=>`<div class="hbar-row"><span>${esc(g)}</span><div class="hbar-track"><i style="width:${Math.round(n/maxG*100)}%"></i></div><strong>${n}</strong></div>`).join('')}</div></article>
+  <article class="premium-card"><h3>Livrables disponibles</h3><div class="delivery-grid" style="grid-template-columns:1fr 1fr"><a class="delivery-card" href="./bibliotheque/radar-library.csv"><div class="delivery-icon">CSV</div><b>Bibliothèque exportable</b><span>Corpus structuré complet</span></a><a class="delivery-card" href="./bibliotheque/rapports/latest.md" target="_blank"><div class="delivery-icon">R</div><b>Rapport quotidien</b><span>Créations, modifications et sorties</span></a><a class="delivery-card" href="./data/link-audit.json" target="_blank"><div class="delivery-icon">↗</div><b>Audit des liens</b><span>Contrôle des pages officielles</span></a><a class="delivery-card" href="./data/coverage.json" target="_blank"><div class="delivery-icon">◎</div><b>Couverture des sources</b><span>État technique des connecteurs</span></a></div></article></div>`;
+}
+
+function certification(){
+  const c=state.certification,lock=c?.lock||state.meta?.collectionLock||{},srcId=lock?.allowedSourceIds?.[0],row=c?.bySource?.[srcId]||{};
+  const discovered=Number(row.discovered||0),imported=Number(row.imported||0),retained=Number(row.retained||0),errors=Number(row.errors||0),excluded=Number(row.excluded||0);
+  const max=Math.max(1,discovered,imported,retained),status=c?.status||'NON GÉNÉRÉ';
+  const problems=arr(c?.problems);
+  const done=status==='PASS';
+  $('#app').innerHTML=`<section class="report-hero"><div class="hero-kicker">FUNDING RADAR · Leyton France</div><h1>Livrable de certification <span>${esc(lock?.name||'Guichet')}</span></h1><p>Synthèse des contrôles, preuves et livrables produits par le cycle de collecte verrouillé. Les valeurs affichées proviennent directement du certificat généré par le pipeline.</p><div class="report-status ${done?'pass':'fail'}">${esc(status)}</div></section>
+  <section class="premium-kpis"><div class="premium-kpi"><div class="kpi-icon">⌕</div><div><label>Fiches découvertes</label><b>${discovered}</b><small>toutes sources officielles du guichet</small></div></div><div class="premium-kpi"><div class="kpi-icon">⇩</div><div><label>Fiches importées</label><b>${imported}</b><small>après extraction</small></div></div><div class="premium-kpi"><div class="kpi-icon">✓</div><div><label>Fiches conservées</label><b>${retained||c?.libraryRecords||0}</b><small>présentes dans la bibliothèque finale</small></div></div><div class="premium-kpi"><div class="kpi-icon">!</div><div><label>Erreurs</label><b>${errors}</b><small>${excluded} exclusion(s) expliquée(s)</small></div></div></section>
+
+  <section class="audit-grid">
+    <article class="premium-card"><h3>Comparaison des volumes</h3><div class="chart-bars">${[['Découvertes',discovered],['Importées',imported],['Conservées',retained||c?.libraryRecords||0]].map(([l,n])=>`<div class="chart-col" style="--h:${Math.max(8,Math.round(n/max*130))}px"><b>${n}</b><i style="height:${Math.max(8,Math.round(n/max*130))}px"></i><span>${l}</span></div>`).join('')}</div></article>
+    <article class="premium-card"><h3>Étapes de certification</h3><div class="process-steps">${[['Audit registre','Registre et politique'],['Préflight','Accès et cohérence'],['Collecte','Extraction officielle'],['Certification','Contrôles finaux']].map((x,i)=>`<div class="process-step ${c&&(i<3||done)?'done':''}"><div class="process-num">${i+1}</div><b>${x[0]}</b><small>${x[1]}</small></div>`).join('')}</div></article>
+    <article class="premium-card"><h3>Contrôles d’intégrité</h3><div class="check-list"><div class="check-row"><span class="check-icon ${errors?'warn':''}">✓</span><span>Erreurs d’extraction</span><strong>${errors}</strong></div><div class="check-row"><span class="check-icon ${imported===retained&&imported>0?'':'warn'}">✓</span><span>Importés = conservés</span><strong>${imported===retained&&imported>0?'OK':'À vérifier'}</strong></div><div class="check-row"><span class="check-icon ${c?.frozenUnselectedSha?'':'warn'}">✓</span><span>Sources gelées</span><strong>${c?.frozenUnselectedSha?'OK':'—'}</strong></div><div class="check-row"><span class="check-icon ${done?'':'warn'}">✓</span><span>Statut final</span><strong>${esc(status)}</strong></div></div></article>
+  </section>
+
+  <section class="grid g2" style="margin-top:10px"><article class="premium-card"><h3>Anomalies identifiées</h3><div class="anomaly-list">${problems.length?problems.map(p=>`<div class="anomaly"><span class="check-icon warn">!</span><div><strong>${esc(p)}</strong><span>Le cycle reste non certifié tant que ce point subsiste.</span></div></div>`).join(''):'<div class="callout ok"><b>Aucune anomalie bloquante dans le certificat courant.</b></div>'}</div></article><article class="premium-card"><h3>Preuves officielles</h3><div class="check-list"><div class="check-row"><span class="check-icon">✓</span><span>Canal RSS</span><strong>${Number(row.rss||0)}</strong></div><div class="check-row"><span class="check-icon ${Number(row.catalogue||0)>0?'':'warn'}">✓</span><span>Catalogue officiel</span><strong>${Number(row.catalogue||0)}</strong></div><div class="check-row"><span class="check-icon">✓</span><span>Doublons URL</span><strong>${arr(c?.duplicates).length}</strong></div><div class="check-row"><span class="check-icon">✓</span><span>Empreinte gel</span><strong>${c?.frozenUnselectedSha?'Présente':'Absente'}</strong></div></div></article></section>
+
+  <h2 class="section-title">Livrables générés</h2><section class="delivery-grid"><a class="delivery-card" href="./data/active-source-certification.json" target="_blank"><div class="delivery-icon">JSON</div><b>Certificat actif</b><span>Statut, contrôles et anomalies</span></a><a class="delivery-card" href="./data/coverage.json" target="_blank"><div class="delivery-icon">◎</div><b>Journal de couverture</b><span>Résultats des sources contrôlées</span></a><a class="delivery-card" href="./bibliotheque/rapports/latest.md" target="_blank"><div class="delivery-icon">R</div><b>Rapport du cycle</b><span>Créations, modifications et sorties</span></a><a class="delivery-card" href="./bibliotheque/radar-library.csv"><div class="delivery-icon">CSV</div><b>Bibliothèque publiée</b><span>Export exploitable du corpus</span></a></section>`;
+}
+
 function field(id,label,value,type='text',hint=''){return`<div class="field-wrap"><label class="field" for="${id}">${esc(label)}</label><input id="${id}" class="input" type="${type}" value="${esc(value||'')}">${hint?`<div class="mini">${esc(hint)}</div>`:''}</div>`}
 function area(id,label,value,hint=''){return`<div class="field-wrap"><label class="field" for="${id}">${esc(label)}</label><textarea id="${id}" class="input">${esc(value||'')}</textarea>${hint?`<div class="mini">${esc(hint)}</div>`:''}</div>`}
 function select(id,label,opts,val){return`<div class="field-wrap"><label class="field" for="${id}">${esc(label)}</label><select id="${id}" class="input">${opts.map(x=>`<option ${x===val?'selected':''}>${esc(x)}</option>`).join('')}</select></div>`}
