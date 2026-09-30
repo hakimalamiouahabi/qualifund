@@ -87,3 +87,10 @@ test("le manifeste multi-moteurs ADEME v2 n'est pas vide",()=>{
   assert.ok(audit.engines.includes('Firecrawl'));
   for(const x of audit.candidates)assert.match(x.url,/^https:\/\/agirpourlatransition\.ademe\.fr\/entreprises\/aides-financieres\/catalogue\//);
 });
+
+
+test('ADEME v2 détecte les conflits entre statut textuel et calendrier',()=>{
+  const out=ademeStatusProof({deadlines:['2026-12-31'],finalClosingDate:'2026-12-31'},"Cet appel à projets est maintenant clos.",new Date('2026-09-30T12:00:00Z'));
+  assert.equal(out.state,'STATUS_CONFLICT');
+  assert.equal(out.retain,false);
+});
