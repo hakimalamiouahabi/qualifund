@@ -111,8 +111,9 @@ export function sanitizeAidLinks(a,cfg){
   const official=normalizedUrl(a.officialPage||'');
   const generic=sourceUrlSet(cfg,{genericOnly:true}).has(official);
   if(!official||isForbiddenAggregatorUrl(official)||generic){
-    const replacement=out.sourceLinks.find(x=>typeof x==='object'&&x.url&&!/\.pdf(?:$|\?)/i.test(x.url))?.url
-      || out.sourceLinks.find(x=>typeof x==='string'&&!/\.pdf(?:$|\?)/i.test(x)) || '';
+    const links=Array.isArray(out.sourceLinks)?out.sourceLinks:[];
+    const replacement=links.find(x=>typeof x==='object'&&x.url&&!/\.pdf(?:$|\?)/i.test(x.url))?.url
+      || links.find(x=>typeof x==='string'&&!/\.pdf(?:$|\?)/i.test(x)) || '';
     out.officialPage=replacement||'';
   }else out.officialPage=official;
 
