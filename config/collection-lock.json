@@ -51,7 +51,8 @@
         "allowedKinds": [
           "AAP / AMI"
         ],
-        "requiredPathPrefix": "/nos-appels-a-projets-concours/"
+        "requiredPathPrefix": "/nos-appels-a-projets-concours/",
+        "requireAuditAccounting": true
       },
       "bpifrance_aides": {
         "master": "CATALOGUE_SECTION_SUB_AR",
@@ -72,15 +73,18 @@
           "AVANCE_REMBOURSABLE",
           "PRET_TAUX_ZERO"
         ],
-        "requiredPathPrefix": "/catalogue-offres/"
+        "requiredPathPrefix": "/catalogue-offres/",
+        "requireAuditAccounting": true
       },
       "bpifrance_rebond_industriel": {
         "master": "DIRECT_OFFICIAL_PAGE",
-        "minRetained": 1
+        "minRetained": 1,
+        "requireAuditAccounting": false
       },
       "bpifrance_projets_international": {
         "master": "DIRECT_OFFICIAL_MICROSITE",
-        "minRetained": 3
+        "minRetained": 3,
+        "requireAuditAccounting": false
       }
     }
   },
