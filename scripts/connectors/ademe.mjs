@@ -403,6 +403,50 @@ async function getDetailHtml(url){
   }catch{return null}
 }
 
+async function disposeExternalCandidates(source,candidates,{log=console.log,workers=8}={}){
+  const disposition={active:[],target:[],inactive:[],outOfScope:[],unknown:[]};
+  let cursor=0;
+  const pool=Array.from({length:workers},async()=>{
+    while(true){
+      const i=cursor++; if(i>=candidates.length)return;
+      const link=candidates[i],url=canonicalUrl(link.url);
+      try{
+        const loaded=await getDetailHtml(url);
+        if(!loaded){
+          disposition.unknown.push({url,label:link.label||'',reason:'FICHE_DIRECTE_NON_LUEE'});
+          continue;
+        }
+        const resolved=canonicalUrl(loaded.finalUrl||url);
+        if(!isAidUrl(resolved)||resolved!==url){
+          disposition.outOfScope.push({url,label:link.label||'',reason:'REDIRECTION_HORS_FICHE',resolvedUrl:resolved});
+          continue;
+        }
+        const text=pageText(loaded.html);
+        const parsed=extractFromHtml(loaded.html,{url,sourceTier:'B',scope:'NATIONAL',region:null});
+        const status=ademeStatusProof(parsed,text);
+        const enterprise=beneficiaryEvidence(parsed,text);
+        const nonEnterprise=nonEnterpriseBeneficiaryEvidence(parsed,text);
+        const kind=directKindFromText(text)||kindFromUrl(url);
+        const evidence={url,label:cleanTitle(link.label||parsed?.title||''),kind,status:status.state,date:status.date||null};
+        if(['CLOSED_OLD','RECENTLY_CLOSED'].includes(status.state)){
+          disposition.inactive.push({...evidence,reason:'STATUT_OFFICIEL_INACTIF'});
+        }else if(nonEnterprise&&!enterprise){
+          disposition.outOfScope.push({...evidence,reason:'HORS_CIBLE_ENTREPRISE'});
+        }else if(['OPEN','OPEN_UNDATED','PERMANENT'].includes(status.state)&&enterprise){
+          (kind==='AAP / AMI'?disposition.active:disposition.target).push({...evidence,reason:'ACTIF_ENTREPRISE_HORS_INVENTAIRE'});
+        }else{
+          disposition.unknown.push({...evidence,reason:'STATUT_OU_CIBLE_INDETERMINE'});
+        }
+      }catch(e){
+        disposition.unknown.push({url,label:link.label||'',reason:'ERREUR_VERIFICATION_DIRECTE',error:e.message});
+      }
+    }
+  });
+  await Promise.all(pool);
+  log(`[${source.id}] disposition contre-audit: ${disposition.active.length} AAP actifs, ${disposition.target.length} aides cibles, ${disposition.inactive.length} inactifs, ${disposition.outOfScope.length} hors cible, ${disposition.unknown.length} indéterminés`);
+  return disposition;
+}
+
 function baseAidFromInventory(source,link){
   const url=canonicalUrl(link.url),now=new Date().toISOString();
   return{
@@ -623,13 +667,14 @@ export async function discoverAdeme(source,{log=console.log}={}){
   const master=new Set(catalogue.map(x=>canonicalUrl(x.url)));
   const rssOutsideCatalogue=rssActive.filter(x=>!master.has(canonicalUrl(x.url)));
   const externalOutsideCatalogue=externalAudit.filter(x=>!master.has(canonicalUrl(x.url)));
+  const externalDisposition=await disposeExternalCandidates(source,externalOutsideCatalogue,{log});
   log(`[${source.id}] ADEME inventaire officiel ${inventoryMode}: ${catalogue.length} fiche(s), dont ${catalogueData.aapCount} AAP et ${catalogueData.aidCount} aides. Contrôles: ${rssOutsideCatalogue.length} RSS actifs hors inventaire, ${externalOutsideCatalogue.length} candidats externes hors inventaire.`);
-  return{links:catalogue,rss,catalogueData,externalAudit,rssOutsideCatalogue,externalOutsideCatalogue,inventoryMode};
+  return{links:catalogue,rss,catalogueData,externalAudit,rssOutsideCatalogue,externalOutsideCatalogue,externalDisposition,inventoryMode};
 }
 
 export async function collectAdeme(source,{log=console.log}={}){
   const discovered=await discoverAdeme(source,{log});
-  const {links,rss,catalogueData,externalAudit,rssOutsideCatalogue,externalOutsideCatalogue,inventoryMode}=discovered;
+  const {links,rss,catalogueData,externalAudit,rssOutsideCatalogue,externalOutsideCatalogue,externalDisposition,inventoryMode}=discovered;
   const out=await extractMany(source,links,{log,workers:12});
   return{
     aids:out.aids,
@@ -663,7 +708,8 @@ export async function collectAdeme(source,{log=console.log}={}){
       controlGaps:{
         rssOutsideCatalogue:rssOutsideCatalogue.map(x=>({url:x.url,label:x.label||''})),
         externalOutsideCatalogue:externalOutsideCatalogue.map(x=>({url:x.url,label:x.label||''}))
-      }
+      },
+      externalDisposition
     },
     message:`ADEME ${inventoryMode}: ${links.length} dispositif(s) actifs, ${catalogueData.aapCount} AAP, ${catalogueData.aidCount} aides, ${out.aids.length} fiche(s) importée(s), ${out.excluded.length} exclusion(s), ${out.errors.length} erreur(s), ${out.detailWarnings.length} fiche(s) non enrichie(s)`
   };
