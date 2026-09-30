@@ -669,6 +669,10 @@ function library(resultsOnly=false){
     if(theme&&!arr(a.themes).includes(theme))return false;
     if(instrument&&!arr(a.aidTypes).includes(instrument))return false;
     if(guichet&&!guichetLabels(a).includes(guichet))return false;
+    // La valeur vide correspond visuellement à « Ouverts + J-60 » : elle doit donc exclure
+    // les clôtures anciennes et les dispositifs sans date. Ces derniers restent accessibles
+    // via le filtre explicite « Date non publiée ».
+    if(!time&&!['open','recent-closed'].includes(dm.state))return false;
     if(time==='open'&&dm.state!=='open')return false;
     if(time==='recent'&&dm.state!=='recent-closed')return false;
     if(time==='nodate'&&dm.state!=='unknown')return false;
