@@ -159,7 +159,7 @@ function displayAidTitle(a){
 
 async function loadAll(){const j=await api('./data/library.json');state.lib=(j.meta?.sourcePolicy==='DIRECT_OFFICIAL_ONLY'?j.aaps||[]:[]).filter(a=>!/(?:aides[-_]entreprises|aides[-_]territoires)/i.test(JSON.stringify(a))).map(a=>{const b={...a};for(const k of ['title','objective','beneficiaries','eligibleExpenses','excludedExpenses','prerequisites','selectionCriteria','programme','operator'])if(typeof b[k]==='string')b[k]=decodeEntities(b[k]);return b});state.meta=j.meta||{};for(const[k,p]of[['coverage','./data/coverage.json'],['changes','./data/changes.json'],['certification','./data/active-source-certification.json'],['bpifranceCertification','./data/bpifrance-certification.json'],['dailyReport','./bibliotheque/rapports/latest.json']])try{state[k]=await api(p)}catch{};try{state.sources=(await api('./data/sources.json')).sources||[]}catch{};try{state.readiness=await api('./data/production-readiness.json')}catch{};await loadClientLibrary();render();const deep=new URLSearchParams(location.search).get('aid');if(deep&&state.lib.some(a=>a.id===deep))openAid(deep)}
 function route(r){clearTimeout(window.__libSearchTimer);state.route=r;$$('.nav[data-route]').forEach(x=>x.classList.toggle('active',x.dataset.route===r));$('#sidebar')?.classList.remove('open');render()}
-$('.nav[data-route]').forEach(b=>b.onclick=()=>route(b.dataset.route));
+document.querySelectorAll('.nav[data-route]').forEach(b=>b.onclick=()=>route(b.dataset.route));
 const globalSearch=$('#globalSearch');
 if(globalSearch)globalSearch.onkeydown=e=>{if(e.key==='Enter'){window.__q=globalSearch.value.trim();window.__libPage=0;route('library')}};
 $('#today').textContent=new Date().toLocaleDateString('fr-FR');
