@@ -398,9 +398,14 @@ async function getDetailHtml(url){
       'accept-language':'fr-FR,fr;q=0.9,en;q=0.7'
     }});
     const body=String(r.text||'');
-    if(body.length<1200)return null;
-    return{html:body,finalUrl:r.url||url,via:'http'};
-  }catch{return null}
+    if(body.length>=1200)return{html:body,finalUrl:r.url||url,via:'http'};
+  }catch{}
+  try{
+    const r=await browserHtml(url,{timeoutMs:45000});
+    const body=String(r.html||'');
+    if(body.length>=1200)return{html:body,finalUrl:r.url||url,via:'browser'};
+  }catch{}
+  return null;
 }
 
 async function disposeExternalCandidates(source,candidates,{log=console.log,workers=8}={}){
