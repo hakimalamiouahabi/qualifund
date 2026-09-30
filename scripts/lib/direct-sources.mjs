@@ -13,7 +13,7 @@ export function isDirectAid(a,cfg){
   if(!source||source.strategy==='control-only')return false;
   try{
     const u=new URL(a.officialPage);
-    if(u.protocol!=='https:'||u.pathname==='/')return false;
+    if(u.protocol!=='https:'||(u.pathname==='/'&&source.strategy!=='official-page'))return false;
     const hosts=(cfg.sources||[]).map(s=>new URL(s.url).hostname);
     if(!hosts.includes(u.hostname))return false;
     const normalize=x=>{const z=new URL(x);z.hash='';return z.href.replace(/\/$/,'')};
