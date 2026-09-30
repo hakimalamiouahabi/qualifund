@@ -40,6 +40,24 @@
       "notes": "Collecte de la rubrique officielle « Subventions et avances remboursables » du catalogue Bpifrance, incluant les dispositifs d'innovation et le PTZI."
     },
     {
+      "id": "bpifrance_rebond_industriel",
+      "name": "Bpifrance — France 2030 Rebond Industriel",
+      "scope": "France",
+      "type": "web",
+      "strategy": "official-page",
+      "url": "https://rebond-industriel.bpifrance.fr/",
+      "official": true,
+      "priority": 0,
+      "browserFallback": true,
+      "titleOverride": "France 2030 — Rebond Industriel — soutien à l’investissement industriel",
+      "kindOverride": "AIDE",
+      "funder": "État · France 2030 · Bpifrance",
+      "operator": "Bpifrance",
+      "notes": "Source officielle Bpifrance : Bpifrance est opérateur du volet soutien aux investissements ; subventions et avances remboursables selon le projet.",
+      "webVerifiedAt": "2026-09-30",
+      "webEvidenceUrl": "https://rebond-industriel.bpifrance.fr/"
+    },
+    {
       "id": "ademe",
       "name": "ADEME — catalogue entreprises",
       "scope": "France",
@@ -1203,7 +1221,8 @@
       "titleOverride": "France 2030 régionalisé — Projets d’innovation — Nouvelle-Aquitaine",
       "kindOverride": "AAP / AMI",
       "funder": "État · Région Nouvelle-Aquitaine · Bpifrance",
-      "notes": "Source officielle dédiée : aide de 75 k€ à 500 k€, subvention et/ou avance récupérable, projet individuel de faisabilité ou développement/pré-industrialisation."
+      "notes": "Source officielle dédiée : aide de 75 k€ à 500 k€, subvention et/ou avance récupérable, projet individuel de faisabilité ou développement/pré-industrialisation.",
+      "operator": "Bpifrance"
     },
     {
       "id": "nouvelle_aquitaine_europe_aap",
@@ -1589,7 +1608,8 @@
       "titleOverride": "France 2030 régionalisé — Projets de filières — Nouvelle-Aquitaine",
       "kindOverride": "AAP / AMI",
       "funder": "État · Région Nouvelle-Aquitaine · Bpifrance",
-      "notes": "Page officielle dédiée : structuration et transformation des filières stratégiques régionales."
+      "notes": "Page officielle dédiée : structuration et transformation des filières stratégiques régionales.",
+      "operator": "Bpifrance"
     },
     {
       "id": "nouvelle_aquitaine_france2030_idemo",
@@ -1604,7 +1624,8 @@
       "titleOverride": "France 2030 régionalisé — Projets collaboratifs I-Démo — Nouvelle-Aquitaine",
       "kindOverride": "AAP / AMI",
       "funder": "État · Région Nouvelle-Aquitaine · Bpifrance",
-      "notes": "Page officielle dédiée : projets collaboratifs de R&D, consortium d’entreprises et partenaire de recherche."
+      "notes": "Page officielle dédiée : projets collaboratifs de R&D, consortium d’entreprises et partenaire de recherche.",
+      "operator": "Bpifrance"
     },
     {
       "id": "bfc_france2030_innovation_direct",
@@ -1618,7 +1639,8 @@
       "browserFallback": true,
       "titleOverride": "France 2030 - Appel à projets « Projets d'Innovation »",
       "kindOverride": "AAP / AMI",
-      "funder": "État · Région Bourgogne-Franche-Comté · Bpifrance"
+      "funder": "État · Région Bourgogne-Franche-Comté · Bpifrance",
+      "operator": "Bpifrance"
     },
     {
       "id": "bretagne_france2030_innovation_direct",
@@ -1632,7 +1654,8 @@
       "browserFallback": true,
       "titleOverride": "France 2030 : Appel à projets régionalisé « INNO AVENIR Projets » - Bretagne",
       "kindOverride": "AAP / AMI",
-      "funder": "État · Région Bretagne · Bpifrance"
+      "funder": "État · Région Bretagne · Bpifrance",
+      "operator": "Bpifrance"
     },
     {
       "id": "grand_est_france2030_innovation_direct",
@@ -1646,7 +1669,8 @@
       "browserFallback": true,
       "titleOverride": "France 2030 - Appel à projets « Projets d'Innovation en Région Grand Est »",
       "kindOverride": "AAP / AMI",
-      "funder": "État · Région Grand Est · Bpifrance"
+      "funder": "État · Région Grand Est · Bpifrance",
+      "operator": "Bpifrance"
     },
     {
       "id": "guyane_france2030_innovation_direct",
@@ -1660,7 +1684,8 @@
       "browserFallback": true,
       "titleOverride": "France 2030 - Projets d'innovation - Guyane",
       "kindOverride": "AAP / AMI",
-      "funder": "État · Collectivité Territoriale de Guyane · Bpifrance"
+      "funder": "État · Collectivité Territoriale de Guyane · Bpifrance",
+      "operator": "Bpifrance"
     },
     {
       "id": "hdf_france2030_innovation_direct",
@@ -1674,7 +1699,8 @@
       "browserFallback": true,
       "titleOverride": "France 2030 (volet régionalisé) : Appel à projets « Projets d'innovation » - Hauts-de-France",
       "kindOverride": "AAP / AMI",
-      "funder": "État · Région Hauts-de-France · Bpifrance"
+      "funder": "État · Région Hauts-de-France · Bpifrance",
+      "operator": "Bpifrance"
     },
     {
       "id": "martinique_france2030_innovation_direct",
@@ -1688,7 +1714,8 @@
       "browserFallback": true,
       "titleOverride": "France 2030 : Appel à projets « Projets d'Innovation » - Martinique",
       "kindOverride": "AAP / AMI",
-      "funder": "État · Collectivité Territoriale de Martinique · Bpifrance"
+      "funder": "État · Collectivité Territoriale de Martinique · Bpifrance",
+      "operator": "Bpifrance"
     },
     {
       "id": "normandie_france2030_innovation_direct",
@@ -1702,7 +1729,8 @@
       "browserFallback": true,
       "titleOverride": "France 2030 : Appel à projets « Projets d'Innovation » - Normandie",
       "kindOverride": "AAP / AMI",
-      "funder": "État · Région Normandie · Bpifrance"
+      "funder": "État · Région Normandie · Bpifrance",
+      "operator": "Bpifrance"
     },
     {
       "id": "pdl_france2030_innovation_direct",
@@ -1716,7 +1744,8 @@
       "browserFallback": true,
       "titleOverride": "France 2030 (volet régionalisé) : Appel à projets « Pays de la Loire Innovation »",
       "kindOverride": "AAP / AMI",
-      "funder": "État · Région Pays de la Loire · Bpifrance"
+      "funder": "État · Région Pays de la Loire · Bpifrance",
+      "operator": "Bpifrance"
     },
     {
       "id": "grand_est_cinemas_independants",

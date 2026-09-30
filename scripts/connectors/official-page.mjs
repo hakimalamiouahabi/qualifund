@@ -15,6 +15,7 @@ export async function collectOfficialPage(source,{log=console.log}={}){
   if(source.titleOverride)rec.title=source.titleOverride;
   if(source.forceAidType)rec.aidTypes=uniq([...(rec.aidTypes||[]),source.forceAidType]);
   if(source.forceCompanyCategories)rec.companyCategories=uniq([...(rec.companyCategories||[]),...source.forceCompanyCategories]);
+  if(source.operator)rec.operator=source.operator;
   rec.id=`${source.id}_official`;
   rec.canonicalId=rec.id;
   rec.sourceId=source.id;
