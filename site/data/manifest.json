@@ -1,30 +1,32 @@
 {
   "version": "12.6.0",
-  "generatedAt": "2026-09-30T18:57:23.563Z",
+  "generatedAt": "2026-09-30T20:25:33.273Z",
   "repositoryUrl": "https://github.com/hakimalamiouahabi/qualifund",
-  "sourceCount": 120,
-  "sourcesOk": 92,
+  "sourceCount": 119,
+  "sourcesOk": 91,
   "sourcesFailed": 28,
-  "activeCollectionSourceCount": 1,
+  "activeCollectionSourceCount": 3,
   "collectionLock": {
     "locked": true,
     "mode": "GUICHET",
-    "name": "ADEME",
+    "name": "Bpifrance",
     "allowedSourceIds": [
-      "ademe"
+      "bpifrance_aap",
+      "bpifrance_aides",
+      "bpifrance_rebond_industriel"
     ],
-    "next": "Bpifrance v2",
-    "frozenUnselectedSha": "83ac55ac5206dbe7ab8d1f63bcf77900b6a92df361fd82ba261d3abcb64fea84"
+    "next": "Auvergne-Rhône-Alpes",
+    "frozenUnselectedSha": "8dc40e3411b739e4e58b79448dab3be0f871302c95f31952a052dfb73d9d089a"
   },
-  "libraryCount": 2792,
-  "activeCount": 2358,
+  "libraryCount": 2259,
+  "activeCount": 2114,
   "jPlusOneDate": "2026-10-01",
-  "jPlusOneActiveCount": 2344,
-  "archivedCount": 434,
-  "aapCount": 473,
+  "jPlusOneActiveCount": 2102,
+  "archivedCount": 145,
+  "aapCount": 260,
   "verifiedCount": 1,
-  "withCdc": 889,
-  "withDeadline": 537,
+  "withCdc": 817,
+  "withDeadline": 528,
   "fullRefresh": true,
   "libraryMode": "DIRECT_OFFICIAL_CATALOG",
   "sourcePolicy": "DIRECT_OFFICIAL_ONLY",
@@ -40,31 +42,31 @@
     "AVANCE_REMBOURSABLE",
     "PRET_TAUX_ZERO"
   ],
-  "targetInstrumentCount": 828,
-  "directLinkCount": 2365,
-  "missingDirectLinkCount": 2,
+  "targetInstrumentCount": 750,
+  "directLinkCount": 2115,
+  "missingDirectLinkCount": 1,
   "categoryCounts": {
-    "STARTUP": 157,
-    "PME": 457,
-    "ETI": 173,
-    "GE": 121
+    "STARTUP": 46,
+    "PME": 326,
+    "ETI": 97,
+    "GE": 106
   },
   "scopeCounts": {
-    "NATIONAL": 370,
-    "REGIONAL": 1997
+    "NATIONAL": 128,
+    "REGIONAL": 1988
   },
   "instrumentCounts": {
-    "APPEL_A_PROJET": 18,
-    "AUTRE": 1563,
-    "AVANCE_REMBOURSABLE": 58,
-    "PRET_TAUX_ZERO": 39,
-    "SUBVENTION": 794
+    "APPEL_A_PROJET": 45,
+    "AUTRE": 1383,
+    "AVANCE_REMBOURSABLE": 48,
+    "PRET_TAUX_ZERO": 29,
+    "SUBVENTION": 720
   },
   "targetRule": "ACTIVE_SANS_ECHEANCE_OU_PERMANENT_OU_CLOTURE_GTE_J_PLUS_1",
   "targetCount": null,
   "targetReached": null,
   "coverageGap": null,
-  "contentSha256": "04f5b4d4f4fe10d2215726e67dd81ccf28bad88f14c70e2c3c5098ec16c140fa",
-  "count": 2792,
+  "contentSha256": "89e3be05ba05b7bb67f97c283b98fa0eec52fccfccfd862bf9c29bae5c5d6845",
+  "count": 2259,
   "coverageCertified": false
 }

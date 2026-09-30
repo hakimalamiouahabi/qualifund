@@ -1,221 +1,195 @@
 {
-  "generatedAt": "2026-09-30T19:00:06.821Z",
+  "generatedAt": "2026-09-30T20:29:18.428Z",
   "status": "PASS",
   "lock": {
-    "version": 5,
+    "version": 6,
     "locked": true,
     "mode": "GUICHET",
-    "name": "ADEME",
+    "name": "Bpifrance",
     "allowedSourceIds": [
-      "ademe"
+      "bpifrance_aap",
+      "bpifrance_aides",
+      "bpifrance_rebond_industriel"
     ],
     "preserveUnselectedSources": true,
     "preserveUnselectedCoverage": true,
     "freezeUnselectedLifecycle": true,
     "enrichSelectedOnly": true,
-    "next": "Bpifrance v2",
+    "next": "Auvergne-Rhône-Alpes",
     "certification": {
       "primarySourceIds": [
-        "ademe"
+        "bpifrance_aap",
+        "bpifrance_aides",
+        "bpifrance_rebond_industriel"
       ],
       "allowedHosts": [
-        "agirpourlatransition.ademe.fr"
-      ],
-      "requiredPathPrefix": "/entreprises/aides-financieres/catalogue/",
-      "forbiddenPathFragments": [
-        "/catalogue-rex/",
-        "/accessibilite",
-        "/mentions-legales",
-        "/politique-",
-        "/conditions-generales"
+        "www.bpifrance.fr",
+        "bpifrance.fr",
+        "rebond-industriel.bpifrance.fr"
       ],
       "requireAuditAccounting": true,
       "requireZeroExtractionErrors": true,
       "requireDirectOfficialUrl": true,
       "forbidGenericTitles": true,
-      "requireCatalogueDiscovery": true,
-      "requireCatalogueCompleteness": true,
-      "requireCatalogueClassification": true,
-      "requireCatalogueMasterMembership": true,
-      "requireRssDiscovery": true,
       "requireExternalAuditDiscovery": true,
-      "externalAuditFile": "config/ademe-v2-external-audit.json",
+      "externalAuditFile": "config/bpifrance-v2-external-audit.json",
       "externalAuditMaxAgeHours": 72,
-      "requireGuichetEvidence": true,
-      "requireCurrentStatusEvidence": true,
-      "requireEnterpriseScope": true,
-      "allowedSourceStates": [
-        "OPEN",
-        "OPEN_UNDATED",
-        "PERMANENT"
-      ],
-      "allowOfficialRssFallback": true,
-      "requirePortalMembership": true
+      "sourceRules": {
+        "bpifrance_aap": {
+          "master": "ACTIVE_AAP_LISTING",
+          "requireListingDiscovery": true,
+          "requireImportedEqualsDiscovered": true,
+          "requireExternalDisposition": true,
+          "forbidActiveExternalGaps": true,
+          "forbidUnknownExternalGaps": true,
+          "requireGuichetEvidence": true,
+          "requireCurrentStatusEvidence": true,
+          "allowedSourceStates": [
+            "OPEN",
+            "OPEN_UNDATED"
+          ],
+          "allowedKinds": [
+            "AAP / AMI"
+          ],
+          "requiredPathPrefix": "/nos-appels-a-projets-concours/",
+          "requireAuditAccounting": true
+        },
+        "bpifrance_aides": {
+          "master": "CATALOGUE_SECTION_SUB_AR",
+          "requireCatalogueSectionDiscovery": true,
+          "requireExternalDisposition": true,
+          "forbidTargetExternalGaps": true,
+          "forbidUnknownExternalGaps": true,
+          "requireGuichetEvidence": true,
+          "requireCurrentStatusEvidence": true,
+          "allowedSourceStates": [
+            "OPEN_UNDATED"
+          ],
+          "allowedKinds": [
+            "AIDE"
+          ],
+          "allowedAidTypes": [
+            "SUBVENTION",
+            "AVANCE_REMBOURSABLE",
+            "PRET_TAUX_ZERO"
+          ],
+          "requiredPathPrefix": "/catalogue-offres/",
+          "requireAuditAccounting": true
+        },
+        "bpifrance_rebond_industriel": {
+          "master": "DIRECT_OFFICIAL_PAGE",
+          "minRetained": 1,
+          "requireAuditAccounting": false
+        }
+      }
     },
-    "notes": "Verrou ADEME v4 : catalogue Entreprises en priorité ; si le rendu HTML bloque le runner, reconstruction déterministe de l'inventaire actif depuis le RSS officiel ADEME et les échéances de dépôt. Le portail ADEME est une preuve de présence, pas une preuve automatique du financeur/opérateur. Bpifrance reste gelé jusqu'au PASS ADEME."
+    "notes": "Verrou Bpifrance v2 : listing AAP actif + section catalogue « Subventions et avances remboursables » comme référentiels maîtres, complétés par Rebond Industriel. Sitemap et moteurs externes servent uniquement au contre-audit. Les anciens dispositifs régionaux BFC ne sont plus traités comme guichet national Bpifrance ; ils seront audités dans le cycle régional dédié."
   },
   "configuredSources": [
-    "ademe"
+    "bpifrance_aap",
+    "bpifrance_aides",
+    "bpifrance_rebond_industriel"
   ],
-  "libraryRecords": 70,
-  "frozenUnselectedSha": "83ac55ac5206dbe7ab8d1f63bcf77900b6a92df361fd82ba261d3abcb64fea84",
+  "libraryRecords": 50,
+  "frozenUnselectedSha": "8dc40e3411b739e4e58b79448dab3be0f871302c95f31952a052dfb73d9d089a",
   "externalAudit": {
-    "generatedAt": "2026-09-30T19:35:00+02:00",
+    "generatedAt": "2026-09-30T19:51:24.793Z",
     "engines": [
       "Exa",
       "Tavily",
       "Parallel Search",
       "Firecrawl"
     ],
-    "candidateCount": 67,
+    "candidateCount": 118,
     "accounted": 0,
     "missing": []
   },
   "controlGaps": {
     "rssOutsideCatalogue": [],
-    "externalOutsideCatalogue": [
-      {
-        "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/biomasse-chaleur-pour-lindustrie-du-bois-bcib",
-        "label": "Biomasse Chaleur pour l’Industrie du Bois (BCIB) | Agir pour la transition écologique"
-      },
-      {
-        "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/mon-parcours-economies-denergie-constitution-dun-reseau-de-conseillers-energie",
-        "label": "Mon parcours économies d'énergie - Constitution d'un réseau de conseillers énergie | ADEME"
-      },
-      {
-        "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/operations-collectives-pour-la-decarbonation-des-entreprises",
-        "label": "Opérations collectives pour la décarbonation des entreprises | Agir pour la transition écologique"
-      },
-      {
-        "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/remove-dispositif-daide-remo",
-        "label": "ReMoVe - Dispositif d'aide ReMo - ADEME"
-      },
-      {
-        "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/actions-de-reemploi-reutilisation-reparation-et-reconditionnement-en-aura",
-        "label": "Actions de réemploi, réutilisation, réparation et reconditionnement en ..."
-      },
-      {
-        "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/actions-de-reemploi-reutilisation-reparation-reconditionnement-et-remanufacture-en-aura",
-        "label": "Actions de réemploi, réutilisation, réparation, reconditionnement et remanufacture en AURA | ADEME"
-      },
-      {
-        "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/aide-linvestissement-de-loffre-industrielle-des-energies-renouvelables",
-        "label": "Aide à l'investissement de l'offre industrielle des énergies renouvelables | ADEME"
-      },
-      {
-        "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/aides-linvestissement-pour-la-decarbonation-du-transport-et-des-services-maritimes",
-        "label": "Aides à l’investissement pour la décarbonation du transport et des services maritimes | ADEME"
-      },
-      {
-        "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/appel-doffres-grands-projets-industriels-de-decarbonation-2026",
-        "label": "Appel d’offres Grands Projets Industriels de Décarbonation 2026 | ADEME"
-      },
-      {
-        "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/appel-projets-de-recherche-energie-durable-production-gestion-et-utilisation-efficaces-et-moindre-impact",
-        "label": "Appel à projets de recherche - Énergie Durable - ademe agir"
-      },
-      {
-        "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/appel-projets-de-recherche-vers-des-batiments-responsables-2026",
-        "label": "Appel à projets de recherche - Vers des bâtiments ..."
-      },
-      {
-        "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/appel-projets-methanisation-grand-est-2026",
-        "label": "Appel à projets méthanisation Grand Est 2026 | ADEME"
-      },
-      {
-        "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/appel-projets-theses-edition-2026",
-        "label": "Appel à projets Thèses – Édition 2026"
-      },
-      {
-        "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/apr-graine-production-valorisation-des-biomasses-et-preservation-des-ecosystemes",
-        "label": "APR GRAINE - Production, valorisation des biomasses et ..."
-      },
-      {
-        "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/bciat-2026-biomasse-chaleur-pour-lindustrie-lagriculture-et-le-tertiaire",
-        "label": "BCIAT 2026 - Biomasse chaleur pour l'industrie, l'agriculture et le tertiaire | ADEME"
-      },
-      {
-        "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/briques-technologiques-et-demonstrateurs-hydrogene",
-        "label": "Briques technologiques et démonstrateurs hydrogène - ADEME"
-      },
-      {
-        "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/decarbonation-de-lindustrie-decarb-ind-25-2-releve",
-        "label": "Décarbonation de l’industrie – DECARB IND 25 – 2ᵉ relève | ADEME"
-      },
-      {
-        "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/developpement-de-la-construction-et-de-la-renovation-hors-site-crhos",
-        "label": "Développement de la Construction et de la Rénovation Hors Site (CRHOS)"
-      },
-      {
-        "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/evaluation-des-impacts-environnementaux-sanitaires-et-socio-economiques-des-polluants-et-des-activites-anthropiques-sur-le-vivant",
-        "label": "Évaluation des impacts environnementaux, sanitaires et ..."
-      },
-      {
-        "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/experimentation-pour-la-diffusion-de-bilans-ges-aupres-de-pme-et-eti-par-des-acteurs-financiers",
-        "label": "Expérimentation pour la diffusion de bilans GES auprès de PME et ETI par des acteurs financiers | ADEME"
-      },
-      {
-        "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/experimentations-collectivites-extreme-defi-logistique",
-        "label": "Expérimentations - Collectivités - eXtrême Défi Logistique - ademe agir"
-      },
-      {
-        "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/fonds-vert-territoires-dindustrie-en-transition-ecologique",
-        "label": "Fonds vert - Territoires d'industrie en transition écologique - ADEME"
-      },
-      {
-        "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/innovation-et-demonstration-hydrogene",
-        "label": "Innovation et démonstration Hydrogène - ademe agir"
-      },
-      {
-        "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/mobiliser-les-communs-pour-la-transition-ecologique",
-        "label": "Mobiliser les communs pour la Transition écologique"
-      },
-      {
-        "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/promouvoir-des-solutions-de-mobilite-forts-co-benefices-sur-la-qualite-de-lair-et-la-sante-en-occitanie-pre-depot",
-        "label": "Promouvoir des solutions de mobilité à forts co-bénéfices sur la qualité ..."
-      },
-      {
-        "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/selection-dune-banque-pour-un-pret-decarbonation-des-artisans",
-        "label": "Sélection d'une banque pour un prêt décarbonation des artisans | ADEME"
-      },
-      {
-        "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/services-de-mobilite-douce-en-entreprises-pour-la-reunion-et-mayotte",
-        "label": "Services de mobilité douce en entreprises pour La Réunion et ..."
-      },
-      {
-        "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/solutions-innovantes-pour-lamelioration-de-la-recyclabilite-du-recyclage-et-de-la-reincorporation-des-materiaux-rrr",
-        "label": "Solutions innovantes pour l'amélioration de la recyclabilité, du ..."
-      },
-      {
-        "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/soutien-au-deploiement-de-lecoconception-en-corse-etude-investissement-et-innovation-0",
-        "label": "Soutien au déploiement de l’écoconception en Corse (étude, investissement et innovation) | Agir pour la transition écologique"
-      },
-      {
-        "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/soutien-au-developpement-dune-economie-du-numerique-innovante-circulaire-et-moindre-impact-environnemental-econum",
-        "label": "Soutien au développement d'une économie du numérique innovante ..."
-      }
-    ]
+    "externalOutsideCatalogue": []
   },
   "bySource": {
-    "ademe": {
-      "discovered": 70,
-      "imported": 70,
-      "retained": 70,
+    "bpifrance_aap": {
+      "discovered": 27,
+      "imported": 27,
+      "retained": 27,
       "success": true,
-      "rss": 202,
-      "rssActive": 70,
+      "rss": 0,
+      "rssActive": 0,
       "rssWithoutClosing": 0,
-      "catalogue": 70,
-      "catalogueMode": "RSS_ACTIVE_MIRROR",
-      "externalAudit": 67,
-      "catalogueExpected": 70,
-      "catalogueAap": 18,
-      "catalogueAid": 52,
+      "catalogue": 0,
+      "catalogueMode": "",
+      "externalAudit": 73,
+      "listing": 27,
+      "catalogueSection": 0,
+      "sitemap": 540,
+      "externalActiveGaps": 0,
+      "externalTargetGaps": 0,
+      "externalUnknownGaps": 0,
+      "catalogueExpected": 0,
+      "catalogueAap": 0,
+      "catalogueAid": 0,
       "catalogueUnclassified": 0,
-      "cataloguePagesScanned": 1,
+      "cataloguePagesScanned": 0,
       "catalogueHtmlFound": 0,
       "catalogueHtmlExpected": 0,
-      "detailWarnings": 70,
+      "detailWarnings": 0,
+      "errors": 0,
+      "excluded": 0
+    },
+    "bpifrance_aides": {
+      "discovered": 29,
+      "imported": 22,
+      "retained": 22,
+      "success": true,
+      "rss": 0,
+      "rssActive": 0,
+      "rssWithoutClosing": 0,
+      "catalogue": 0,
+      "catalogueMode": "",
+      "externalAudit": 45,
+      "listing": 0,
+      "catalogueSection": 29,
+      "sitemap": 353,
+      "externalActiveGaps": 0,
+      "externalTargetGaps": 0,
+      "externalUnknownGaps": 0,
+      "catalogueExpected": 0,
+      "catalogueAap": 0,
+      "catalogueAid": 0,
+      "catalogueUnclassified": 0,
+      "cataloguePagesScanned": 0,
+      "catalogueHtmlFound": 0,
+      "catalogueHtmlExpected": 0,
+      "detailWarnings": 0,
+      "errors": 0,
+      "excluded": 7
+    },
+    "bpifrance_rebond_industriel": {
+      "discovered": 1,
+      "imported": 1,
+      "retained": 1,
+      "success": true,
+      "rss": 0,
+      "rssActive": 0,
+      "rssWithoutClosing": 0,
+      "catalogue": 0,
+      "catalogueMode": "",
+      "externalAudit": 0,
+      "listing": 0,
+      "catalogueSection": 0,
+      "sitemap": 0,
+      "externalActiveGaps": 0,
+      "externalTargetGaps": 0,
+      "externalUnknownGaps": 0,
+      "catalogueExpected": 0,
+      "catalogueAap": 0,
+      "catalogueAid": 0,
+      "catalogueUnclassified": 0,
+      "cataloguePagesScanned": 0,
+      "catalogueHtmlFound": 0,
+      "catalogueHtmlExpected": 0,
+      "detailWarnings": 0,
       "errors": 0,
       "excluded": 0
     }

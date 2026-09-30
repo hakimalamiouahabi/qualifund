@@ -32,16 +32,6 @@
       "priority": 0
     },
     {
-      "id": "bpifrance_projets_international",
-      "name": "Bpifrance — France 2030 régionalisé Bourgogne-Franche-Comté",
-      "scope": "Bourgogne-Franche-Comté",
-      "type": "web",
-      "strategy": "catalog-html",
-      "url": "https://projets-international.bpifrance.fr/page-daccueil/",
-      "official": true,
-      "priority": 0
-    },
-    {
       "id": "ademe",
       "name": "ADEME — aides financières et appels à projets entreprises",
       "scope": "France",

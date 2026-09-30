@@ -1,57 +1,195 @@
 {
-  "generatedAt": "2026-09-30T11:44:18.090Z",
+  "generatedAt": "2026-09-30T20:29:18.428Z",
   "status": "PASS",
   "lock": {
-    "version": 1,
+    "version": 6,
     "locked": true,
     "mode": "GUICHET",
     "name": "Bpifrance",
     "allowedSourceIds": [
       "bpifrance_aap",
       "bpifrance_aides",
-      "bpifrance_rebond_industriel",
-      "bpifrance_projets_international"
+      "bpifrance_rebond_industriel"
     ],
     "preserveUnselectedSources": true,
     "preserveUnselectedCoverage": true,
     "freezeUnselectedLifecycle": true,
     "enrichSelectedOnly": true,
-    "next": "ADEME",
-    "notes": "Verrou de production : un seul guichet est travaillé à la fois. Tant que Bpifrance n'est pas certifié, ADEME, ANR, régions, FEDER et FEADER ne sont ni recollectés ni mutés."
+    "next": "Auvergne-Rhône-Alpes",
+    "certification": {
+      "primarySourceIds": [
+        "bpifrance_aap",
+        "bpifrance_aides",
+        "bpifrance_rebond_industriel"
+      ],
+      "allowedHosts": [
+        "www.bpifrance.fr",
+        "bpifrance.fr",
+        "rebond-industriel.bpifrance.fr"
+      ],
+      "requireAuditAccounting": true,
+      "requireZeroExtractionErrors": true,
+      "requireDirectOfficialUrl": true,
+      "forbidGenericTitles": true,
+      "requireExternalAuditDiscovery": true,
+      "externalAuditFile": "config/bpifrance-v2-external-audit.json",
+      "externalAuditMaxAgeHours": 72,
+      "sourceRules": {
+        "bpifrance_aap": {
+          "master": "ACTIVE_AAP_LISTING",
+          "requireListingDiscovery": true,
+          "requireImportedEqualsDiscovered": true,
+          "requireExternalDisposition": true,
+          "forbidActiveExternalGaps": true,
+          "forbidUnknownExternalGaps": true,
+          "requireGuichetEvidence": true,
+          "requireCurrentStatusEvidence": true,
+          "allowedSourceStates": [
+            "OPEN",
+            "OPEN_UNDATED"
+          ],
+          "allowedKinds": [
+            "AAP / AMI"
+          ],
+          "requiredPathPrefix": "/nos-appels-a-projets-concours/",
+          "requireAuditAccounting": true
+        },
+        "bpifrance_aides": {
+          "master": "CATALOGUE_SECTION_SUB_AR",
+          "requireCatalogueSectionDiscovery": true,
+          "requireExternalDisposition": true,
+          "forbidTargetExternalGaps": true,
+          "forbidUnknownExternalGaps": true,
+          "requireGuichetEvidence": true,
+          "requireCurrentStatusEvidence": true,
+          "allowedSourceStates": [
+            "OPEN_UNDATED"
+          ],
+          "allowedKinds": [
+            "AIDE"
+          ],
+          "allowedAidTypes": [
+            "SUBVENTION",
+            "AVANCE_REMBOURSABLE",
+            "PRET_TAUX_ZERO"
+          ],
+          "requiredPathPrefix": "/catalogue-offres/",
+          "requireAuditAccounting": true
+        },
+        "bpifrance_rebond_industriel": {
+          "master": "DIRECT_OFFICIAL_PAGE",
+          "minRetained": 1,
+          "requireAuditAccounting": false
+        }
+      }
+    },
+    "notes": "Verrou Bpifrance v2 : listing AAP actif + section catalogue « Subventions et avances remboursables » comme référentiels maîtres, complétés par Rebond Industriel. Sitemap et moteurs externes servent uniquement au contre-audit. Les anciens dispositifs régionaux BFC ne sont plus traités comme guichet national Bpifrance ; ils seront audités dans le cycle régional dédié."
   },
   "configuredSources": [
     "bpifrance_aap",
     "bpifrance_aides",
-    "bpifrance_rebond_industriel",
-    "bpifrance_projets_international"
+    "bpifrance_rebond_industriel"
   ],
-  "libraryRecords": 583,
+  "libraryRecords": 50,
+  "frozenUnselectedSha": "8dc40e3411b739e4e58b79448dab3be0f871302c95f31952a052dfb73d9d089a",
+  "externalAudit": {
+    "generatedAt": "2026-09-30T19:51:24.793Z",
+    "engines": [
+      "Exa",
+      "Tavily",
+      "Parallel Search",
+      "Firecrawl"
+    ],
+    "candidateCount": 118,
+    "accounted": 0,
+    "missing": []
+  },
+  "controlGaps": {
+    "rssOutsideCatalogue": [],
+    "externalOutsideCatalogue": []
+  },
   "bySource": {
     "bpifrance_aap": {
-      "discovered": 541,
-      "imported": 541,
+      "discovered": 27,
+      "imported": 27,
+      "retained": 27,
       "success": true,
+      "rss": 0,
+      "rssActive": 0,
+      "rssWithoutClosing": 0,
+      "catalogue": 0,
+      "catalogueMode": "",
+      "externalAudit": 73,
+      "listing": 27,
+      "catalogueSection": 0,
+      "sitemap": 540,
+      "externalActiveGaps": 0,
+      "externalTargetGaps": 0,
+      "externalUnknownGaps": 0,
+      "catalogueExpected": 0,
+      "catalogueAap": 0,
+      "catalogueAid": 0,
+      "catalogueUnclassified": 0,
+      "cataloguePagesScanned": 0,
+      "catalogueHtmlFound": 0,
+      "catalogueHtmlExpected": 0,
+      "detailWarnings": 0,
       "errors": 0,
       "excluded": 0
     },
     "bpifrance_aides": {
-      "discovered": 356,
-      "imported": 59,
+      "discovered": 29,
+      "imported": 22,
+      "retained": 22,
       "success": true,
+      "rss": 0,
+      "rssActive": 0,
+      "rssWithoutClosing": 0,
+      "catalogue": 0,
+      "catalogueMode": "",
+      "externalAudit": 45,
+      "listing": 0,
+      "catalogueSection": 29,
+      "sitemap": 353,
+      "externalActiveGaps": 0,
+      "externalTargetGaps": 0,
+      "externalUnknownGaps": 0,
+      "catalogueExpected": 0,
+      "catalogueAap": 0,
+      "catalogueAid": 0,
+      "catalogueUnclassified": 0,
+      "cataloguePagesScanned": 0,
+      "catalogueHtmlFound": 0,
+      "catalogueHtmlExpected": 0,
+      "detailWarnings": 0,
       "errors": 0,
-      "excluded": 297
+      "excluded": 7
     },
     "bpifrance_rebond_industriel": {
       "discovered": 1,
       "imported": 1,
+      "retained": 1,
       "success": true,
-      "errors": 0,
-      "excluded": 0
-    },
-    "bpifrance_projets_international": {
-      "discovered": 3,
-      "imported": 3,
-      "success": true,
+      "rss": 0,
+      "rssActive": 0,
+      "rssWithoutClosing": 0,
+      "catalogue": 0,
+      "catalogueMode": "",
+      "externalAudit": 0,
+      "listing": 0,
+      "catalogueSection": 0,
+      "sitemap": 0,
+      "externalActiveGaps": 0,
+      "externalTargetGaps": 0,
+      "externalUnknownGaps": 0,
+      "catalogueExpected": 0,
+      "catalogueAap": 0,
+      "catalogueAid": 0,
+      "catalogueUnclassified": 0,
+      "cataloguePagesScanned": 0,
+      "catalogueHtmlFound": 0,
+      "catalogueHtmlExpected": 0,
+      "detailWarnings": 0,
       "errors": 0,
       "excluded": 0
     }

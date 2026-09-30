@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T19:00:22.030Z",
+  "generatedAt": "2026-09-30T20:29:30.662Z",
   "version": "12.6.0",
   "gates": [
     {
@@ -18,19 +18,19 @@
       "id": 3,
       "name": "Collecte réelle des sources",
       "status": "PARTIAL",
-      "detail": "Ingestion: 101/101 exécutées, 73 succès, 3054 imports bruts. Contrôles: 16/16. Corpus de sources directes: 2358. Préflight réseau: 0/0 accessibles/protégées."
+      "detail": "Ingestion: 100/100 exécutées, 72 succès, 3051 imports bruts. Contrôles: 16/16. Corpus de sources directes: 2114. Préflight réseau: 0/0 accessibles/protégées."
     },
     {
       "id": 4,
       "name": "Bibliothèque réglementaire vérifiée",
       "status": "PARTIAL",
-      "detail": "1/2344 fiches J+1 strictement VÉRIFIÉES ; sources directes uniquement, sans quota de fiches, au 2026-10-01. Sont comptées les aides retrouvées ACTIVE sans échéance publiée, les aides permanentes et celles avec clôture documentée >= J+1 ; STALE et ARCHIVE sont exclues. Intégrité recalculée 1/1."
+      "detail": "1/2100 fiches J+1 strictement VÉRIFIÉES ; sources directes uniquement, sans quota de fiches, au 2026-10-01. Sont comptées les aides retrouvées ACTIVE sans échéance publiée, les aides permanentes et celles avec clôture documentée >= J+1 ; STALE et ARCHIVE sont exclues. Intégrité recalculée 1/1."
     },
     {
       "id": 5,
       "name": "Extraction CdC / preuves par champ",
       "status": "WAIT_LIVE",
-      "detail": "Preuves A/B complètes sur les 8 champs critiques : 1/1 fiches VÉRIFIÉES. File de remédiation synchronisée : non. Couverture J+1 indicative : 870/2344 avec CdC/règlement."
+      "detail": "Preuves A/B complètes sur les 8 champs critiques : 1/1 fiches VÉRIFIÉES. File de remédiation synchronisée : non. Couverture J+1 indicative : 815/2100 avec CdC/règlement."
     },
     {
       "id": 6,
@@ -64,25 +64,25 @@
     }
   ],
   "counts": {
-    "sourcesConfigured": 120,
-    "ingestiveSources": 101,
+    "sourcesConfigured": 119,
+    "ingestiveSources": 100,
     "controlSources": 16,
-    "sourcesInLastCycle": 120,
-    "sourcesSuccess": 92,
-    "ingestiveExecuted": 101,
-    "ingestiveSuccess": 73,
-    "ingestiveImported": 3054,
+    "sourcesInLastCycle": 119,
+    "sourcesSuccess": 91,
+    "ingestiveExecuted": 100,
+    "ingestiveSuccess": 72,
+    "ingestiveImported": 3051,
     "controlExecuted": 16,
-    "nonBootstrapFiches": 2358,
-    "activeFiches": 2358,
+    "nonBootstrapFiches": 2114,
+    "activeFiches": 2114,
     "jPlusOneDate": "2026-10-01",
-    "jPlusOneActiveFiches": 2344,
+    "jPlusOneActiveFiches": 2100,
     "volumeTarget": null,
     "verifiedFiches": 1,
     "verifiedIntegrity": 1,
     "verifiedEvidenceIntegrity": 1,
-    "withCdc": 870,
-    "withDeadline": 537,
+    "withCdc": 815,
+    "withDeadline": 528,
     "consultantCases": 5,
     "uatTotal": 5,
     "companySmokeOk": true,

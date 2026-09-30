@@ -1,12 +1,12 @@
 # LEYTON RADAR — Production Readiness v12.6.0
 
-Généré : 2026-09-30T19:00:22.030Z
+Généré : 2026-09-30T20:29:30.662Z
 
 - **Gate 1 — Dépôt GitHub et versionnement** : PASS — hakimalamiouahabi/qualifund
 - **Gate 2 — URL permanente** : BLOCKED — Déploiement permanent non confirmé.
-- **Gate 3 — Collecte réelle des sources** : PARTIAL — Ingestion: 101/101 exécutées, 73 succès, 3054 imports bruts. Contrôles: 16/16. Corpus de sources directes: 2358. Préflight réseau: 0/0 accessibles/protégées.
-- **Gate 4 — Bibliothèque réglementaire vérifiée** : PARTIAL — 1/2344 fiches J+1 strictement VÉRIFIÉES ; sources directes uniquement, sans quota de fiches, au 2026-10-01. Sont comptées les aides retrouvées ACTIVE sans échéance publiée, les aides permanentes et celles avec clôture documentée >= J+1 ; STALE et ARCHIVE sont exclues. Intégrité recalculée 1/1.
-- **Gate 5 — Extraction CdC / preuves par champ** : WAIT_LIVE — Preuves A/B complètes sur les 8 champs critiques : 1/1 fiches VÉRIFIÉES. File de remédiation synchronisée : non. Couverture J+1 indicative : 870/2344 avec CdC/règlement.
+- **Gate 3 — Collecte réelle des sources** : PARTIAL — Ingestion: 100/100 exécutées, 72 succès, 3051 imports bruts. Contrôles: 16/16. Corpus de sources directes: 2114. Préflight réseau: 0/0 accessibles/protégées.
+- **Gate 4 — Bibliothèque réglementaire vérifiée** : PARTIAL — 1/2100 fiches J+1 strictement VÉRIFIÉES ; sources directes uniquement, sans quota de fiches, au 2026-10-01. Sont comptées les aides retrouvées ACTIVE sans échéance publiée, les aides permanentes et celles avec clôture documentée >= J+1 ; STALE et ARCHIVE sont exclues. Intégrité recalculée 1/1.
+- **Gate 5 — Extraction CdC / preuves par champ** : WAIT_LIVE — Preuves A/B complètes sur les 8 champs critiques : 1/1 fiches VÉRIFIÉES. File de remédiation synchronisée : non. Couverture J+1 indicative : 815/2100 avec CdC/règlement.
 - **Gate 6 — Déduplication et fraîcheur** : PASS_TECH — Scans vides non destructifs, ordre multi-source neutralisé, réactivation et J+1 couverts par tests. PASS final après corpus multi-sources réel.
 - **Gate 7 — Enrichissement SIREN/SIRET** : PASS — API Recherche d’entreprises DINUM validée par smoke live.
 - **Gate 8 — Qualification projet multi-financeurs** : PASS — Moteur partagé navigateur/recette avec profils Bpifrance/France 2030, ADEME, FEDER et régional. Cas UAT réussis : 5/5. Minimum : 5.
