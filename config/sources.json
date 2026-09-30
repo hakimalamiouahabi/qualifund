@@ -59,22 +59,28 @@
     },
     {
       "id": "bpifrance_projets_international",
-      "name": "Bpifrance — Projets d’innovation et I-Démo régionalisés",
-      "scope": "France",
+      "name": "Bpifrance — France 2030 régionalisé Bourgogne-Franche-Comté",
+      "scope": "Bourgogne-Franche-Comté",
       "type": "web",
       "strategy": "catalog-html",
-      "url": "https://projets-international.bpifrance.fr/homepage/",
-      "linkRegex": "/(projets-d-innovation|projets-d-avenir-i-demo)/",
+      "url": "https://projets-international.bpifrance.fr/page-daccueil/",
+      "linkRegex": "/(projets-d-innovation|projets-d-avenir-filieres|projets-d-avenir-i-demo)/",
       "official": true,
       "priority": 0,
-      "minExpected": 2,
-      "minImported": 2,
+      "minExpected": 3,
+      "minImported": 3,
       "minImportRatio": 1,
       "browserFallback": true,
       "operator": "Bpifrance",
       "webVerifiedAt": "2026-09-30",
-      "webEvidenceUrl": "https://projets-international.bpifrance.fr/homepage/",
-      "notes": "Microsite officiel Bpifrance consacré aux projets d’innovation et I-Démo régionalisés ; collecte directe sans agrégateur."
+      "webEvidenceUrl": "https://projets-international.bpifrance.fr/page-daccueil/",
+      "notes": "Microsite officiel Bpifrance France 2030 régionalisé Bourgogne-Franche-Comté. Les trois axes opérés par Bpifrance sont explicitement suivis : Projets d’Innovation, Amélioration et transformation des Filières, I-Démo régionalisé.",
+      "seedUrls": [
+        "https://projets-international.bpifrance.fr/projets-d-innovation/",
+        "https://projets-international.bpifrance.fr/projets-d-avenir-filieres/",
+        "https://projets-international.bpifrance.fr/projets-d-avenir-i-demo/"
+      ],
+      "observedOpenCount": 3
     },
     {
       "id": "ademe",
