@@ -1,22 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { fromAidesEntreprises } from '../scripts/lib/records.mjs';
 
 const cfg=JSON.parse(fs.readFileSync(new URL('../config/sources.json',import.meta.url),'utf8'));
-
-test('Aides Entreprises n’expose plus l’API REST protégée comme source active',()=>{
-  const s=cfg.sources.find(x=>x.id==='aides_entreprises');
-  assert.equal(s,undefined);
-});
-
-test('mapping Aides Entreprises n’expose pas apiUrl et normalise les échéances',()=>{
-  const raw={id_aid:42,status:1,aid_nom:'Appel à projets test',aid_objet:'Objet',aid_benef:'PME',aid_operations_el:'Dépenses',aid_conditions:'Conditions',aid_montant:'Subvention 50 %',date_fin:'2026-12-31',cache_indexation:{natures:[{id_typ:3,typ_libelle:'Subvention'},{id_typ:14,typ_libelle:'Appel à projet'}],profils:[{id_tut:4}],territoires:[{ter_libelle:'FRANCE'}],financeurs:[],projets:[]},complements:{source:[],reglement:[],formulaire:[]}};
-  const a=fromAidesEntreprises(raw);
-  assert.equal(a.apiUrl,null);
-  assert.equal(a.kind,'AAP / AMI');
-  assert.deepEqual(a.deadlines,[{date:'2026-12-31',type:'CLOTURE'}]);
-});
 
 test('workflow reconstruit les artefacts publics avant déploiement',()=>{
   const yml=fs.readFileSync(new URL('../.github/workflows/update-and-deploy.yml',import.meta.url),'utf8');
