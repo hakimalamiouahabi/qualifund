@@ -553,44 +553,45 @@ async function extractMany(source,links,{log=console.log,workers=12}={}){
   return{aids,errors,excluded,detailWarnings};
 }
 
-export async function discoverAdeme(source,{log=console.log}={}){
-  const [rss,catalogueRaw,externalAudit]=await Promise.all([
-    rssLinks(source,{log}),
-    catalogueLinks(source,{log}),
-    externalAuditLinks(source,{log})
-  ]);
-
-  const rssActive=rss.filter(x=>x.rssActive);
-  const rssWithoutClosing=rss.filter(x=>!x.rssClosingDate);
-  const htmlExpected=Number(catalogueRaw.expectedTotal||0);
-  const htmlFound=catalogueRaw.links.length;
+export function selectAdemeInventory(source,rss,catalogueRaw){
+  const rssActive=(rss||[]).filter(x=>x.rssActive);
+  const rssWithoutClosing=(rss||[]).filter(x=>!x.rssClosingDate);
+  const htmlExpected=Number(catalogueRaw?.expectedTotal||0);
+  const htmlFound=Number(catalogueRaw?.links?.length||0);
   const htmlComplete=htmlFound>0&&(
     (htmlExpected>0&&htmlFound>=htmlExpected)||
     (htmlExpected<=0&&htmlFound>=Number(source.minExpected||1))
   );
 
-  let catalogue,inventoryMode,catalogueData;
   if(htmlComplete){
-    inventoryMode='CATALOGUE_HTML';
-    const rssByUrl=new Map(rss.map(x=>[canonicalUrl(x.url),x]));
-    catalogue=catalogueRaw.links.map(x=>({
+    const inventoryMode='CATALOGUE_HTML';
+    const rssByUrl=new Map((rss||[]).map(x=>[canonicalUrl(x.url),x]));
+    const catalogue=catalogueRaw.links.map(x=>({
       ...rssByUrl.get(canonicalUrl(x.url)),
       ...x,
       inventoryMode
     }));
-    catalogueData={...catalogueRaw,inventoryMode,rssActiveCount:rssActive.length,rssWithoutClosing:rssWithoutClosing.length};
-  }else{
-    inventoryMode='RSS_ACTIVE_MIRROR';
-    catalogue=rssActive.map(x=>({
-      ...x,
-      catalogueKind:x.catalogueKind||ademeKindFromOfficialUrl(x.url),
-      catalogueStatus:'OPEN',
-      catalogueClosingDate:x.rssClosingDate,
-      catalogueEvidence:x.catalogueEvidence||(`Flux RSS officiel ADEME — échéance ${x.rssClosingDate||'non renseignée'}`),
-      inventoryMode
-    }));
-    catalogueData={
-      ...catalogueRaw,
+    return{
+      catalogue,
+      inventoryMode,
+      catalogueData:{...catalogueRaw,inventoryMode,rssActiveCount:rssActive.length,rssWithoutClosing:rssWithoutClosing.length}
+    };
+  }
+
+  const inventoryMode='RSS_ACTIVE_MIRROR';
+  const catalogue=rssActive.map(x=>({
+    ...x,
+    catalogueKind:x.catalogueKind||ademeKindFromOfficialUrl(x.url),
+    catalogueStatus:'OPEN',
+    catalogueClosingDate:x.rssClosingDate,
+    catalogueEvidence:x.catalogueEvidence||(`Flux RSS officiel ADEME — échéance ${x.rssClosingDate||'non renseignée'}`),
+    inventoryMode
+  }));
+  return{
+    catalogue,
+    inventoryMode,
+    catalogueData:{
+      ...(catalogueRaw||{}),
       links:catalogue,
       inventoryMode,
       htmlFound,
@@ -600,11 +601,25 @@ export async function discoverAdeme(source,{log=console.log}={}){
       rssWithoutClosing:rssWithoutClosing.length,
       aapCount:catalogue.filter(x=>x.catalogueKind==='AAP / AMI').length,
       aidCount:catalogue.filter(x=>x.catalogueKind==='AIDE').length,
-      unclassified:catalogue.filter(x=>!x.catalogueKind)
-    };
-    log(`[${source.id}] catalogue HTML indisponible/incomplet (${htmlFound}/${htmlExpected||'?'}). Fallback officiel RSS actif: ${catalogue.length} dispositif(s).`);
-  }
+      unclassified:catalogue.filter(x=>!x.catalogueKind),
+      pagesScanned:Number(catalogueRaw?.pagesScanned||0),
+      discoveryErrors:Array.isArray(catalogueRaw?.discoveryErrors)?catalogueRaw.discoveryErrors:[]
+    }
+  };
+}
 
+export async function discoverAdeme(source,{log=console.log}={}){
+  const [rss,catalogueRaw,externalAudit]=await Promise.all([
+    rssLinks(source,{log}),
+    catalogueLinks(source,{log}),
+    externalAuditLinks(source,{log})
+  ]);
+
+  const {catalogue,inventoryMode,catalogueData}=selectAdemeInventory(source,rss,catalogueRaw);
+  if(inventoryMode==='RSS_ACTIVE_MIRROR'){
+    log(`[${source.id}] catalogue HTML indisponible/incomplet (${catalogueData.htmlFound}/${catalogueData.htmlExpected||'?'}). Fallback officiel RSS actif: ${catalogue.length} dispositif(s).`);
+  }
+  const rssActive=rss.filter(x=>x.rssActive);
   const master=new Set(catalogue.map(x=>canonicalUrl(x.url)));
   const rssOutsideCatalogue=rssActive.filter(x=>!master.has(canonicalUrl(x.url)));
   const externalOutsideCatalogue=externalAudit.filter(x=>!master.has(canonicalUrl(x.url)));
