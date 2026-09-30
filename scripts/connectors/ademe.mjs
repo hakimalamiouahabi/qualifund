@@ -554,23 +554,68 @@ async function extractMany(source,links,{log=console.log,workers=12}={}){
 }
 
 export async function discoverAdeme(source,{log=console.log}={}){
-  const [rss,catalogueData,externalAudit]=await Promise.all([
+  const [rss,catalogueRaw,externalAudit]=await Promise.all([
     rssLinks(source,{log}),
     catalogueLinks(source,{log}),
     externalAuditLinks(source,{log})
   ]);
-  const catalogue=catalogueData.links;
+
+  const rssActive=rss.filter(x=>x.rssActive);
+  const rssWithoutClosing=rss.filter(x=>!x.rssClosingDate);
+  const htmlExpected=Number(catalogueRaw.expectedTotal||0);
+  const htmlFound=catalogueRaw.links.length;
+  const htmlComplete=htmlFound>0&&(
+    (htmlExpected>0&&htmlFound>=htmlExpected)||
+    (htmlExpected<=0&&htmlFound>=Number(source.minExpected||1))
+  );
+
+  let catalogue,inventoryMode,catalogueData;
+  if(htmlComplete){
+    inventoryMode='CATALOGUE_HTML';
+    const rssByUrl=new Map(rss.map(x=>[canonicalUrl(x.url),x]));
+    catalogue=catalogueRaw.links.map(x=>({
+      ...rssByUrl.get(canonicalUrl(x.url)),
+      ...x,
+      inventoryMode
+    }));
+    catalogueData={...catalogueRaw,inventoryMode,rssActiveCount:rssActive.length,rssWithoutClosing:rssWithoutClosing.length};
+  }else{
+    inventoryMode='RSS_ACTIVE_MIRROR';
+    catalogue=rssActive.map(x=>({
+      ...x,
+      catalogueKind:x.catalogueKind||ademeKindFromOfficialUrl(x.url),
+      catalogueStatus:'OPEN',
+      catalogueClosingDate:x.rssClosingDate,
+      catalogueEvidence:x.catalogueEvidence||(`Flux RSS officiel ADEME — échéance ${x.rssClosingDate||'non renseignée'}`),
+      inventoryMode
+    }));
+    catalogueData={
+      ...catalogueRaw,
+      links:catalogue,
+      inventoryMode,
+      htmlFound,
+      htmlExpected:htmlExpected||null,
+      expectedTotal:catalogue.length,
+      rssActiveCount:rssActive.length,
+      rssWithoutClosing:rssWithoutClosing.length,
+      aapCount:catalogue.filter(x=>x.catalogueKind==='AAP / AMI').length,
+      aidCount:catalogue.filter(x=>x.catalogueKind==='AIDE').length,
+      unclassified:catalogue.filter(x=>!x.catalogueKind)
+    };
+    log(`[${source.id}] catalogue HTML indisponible/incomplet (${htmlFound}/${htmlExpected||'?'}). Fallback officiel RSS actif: ${catalogue.length} dispositif(s).`);
+  }
+
   const master=new Set(catalogue.map(x=>canonicalUrl(x.url)));
-  const rssOutsideCatalogue=rss.filter(x=>!master.has(canonicalUrl(x.url)));
+  const rssOutsideCatalogue=rssActive.filter(x=>!master.has(canonicalUrl(x.url)));
   const externalOutsideCatalogue=externalAudit.filter(x=>!master.has(canonicalUrl(x.url)));
-  log(`[${source.id}] ADEME catalogue maître: ${catalogue.length} fiche(s), dont ${catalogueData.aapCount} AAP. Contrôles: ${rssOutsideCatalogue.length} RSS hors catalogue, ${externalOutsideCatalogue.length} candidats externes hors catalogue.`);
-  return{links:catalogue,rss,catalogueData,externalAudit,rssOutsideCatalogue,externalOutsideCatalogue};
+  log(`[${source.id}] ADEME inventaire officiel ${inventoryMode}: ${catalogue.length} fiche(s), dont ${catalogueData.aapCount} AAP et ${catalogueData.aidCount} aides. Contrôles: ${rssOutsideCatalogue.length} RSS actifs hors inventaire, ${externalOutsideCatalogue.length} candidats externes hors inventaire.`);
+  return{links:catalogue,rss,catalogueData,externalAudit,rssOutsideCatalogue,externalOutsideCatalogue,inventoryMode};
 }
 
 export async function collectAdeme(source,{log=console.log}={}){
   const discovered=await discoverAdeme(source,{log});
-  const {links,rss,catalogueData,externalAudit,rssOutsideCatalogue,externalOutsideCatalogue}=discovered;
-  const out=await extractMany(source,links,{log,workers:8});
+  const {links,rss,catalogueData,externalAudit,rssOutsideCatalogue,externalOutsideCatalogue,inventoryMode}=discovered;
+  const out=await extractMany(source,links,{log,workers:12});
   return{
     aids:out.aids,
     discovered:links.length,
@@ -579,11 +624,17 @@ export async function collectAdeme(source,{log=console.log}={}){
       imported:out.aids.length,
       excluded:out.excluded,
       errors:out.errors,
+      detailWarnings:out.detailWarnings,
       accounted:out.aids.length+out.excluded.length+out.errors.length,
       channels:{
         rss:rss.length,
+        rssActive:catalogueData.rssActiveCount||rss.filter(x=>x.rssActive).length,
+        rssWithoutClosing:catalogueData.rssWithoutClosing||0,
         catalogue:links.length,
+        catalogueMode:inventoryMode,
         catalogueExpected:catalogueData.expectedTotal,
+        catalogueHtmlFound:catalogueData.htmlFound??catalogueData.links?.length??0,
+        catalogueHtmlExpected:catalogueData.htmlExpected??null,
         cataloguePagesScanned:catalogueData.pagesScanned,
         catalogueAap:catalogueData.aapCount,
         catalogueAid:catalogueData.aidCount,
@@ -591,13 +642,14 @@ export async function collectAdeme(source,{log=console.log}={}){
         catalogueDiscoveryErrors:catalogueData.discoveryErrors.length,
         externalAudit:externalAudit.length,
         rssOutsideCatalogue:rssOutsideCatalogue.length,
-        externalOutsideCatalogue:externalOutsideCatalogue.length
+        externalOutsideCatalogue:externalOutsideCatalogue.length,
+        detailWarnings:out.detailWarnings.length
       },
       controlGaps:{
         rssOutsideCatalogue:rssOutsideCatalogue.map(x=>({url:x.url,label:x.label||''})),
         externalOutsideCatalogue:externalOutsideCatalogue.map(x=>({url:x.url,label:x.label||''}))
       }
     },
-    message:`ADEME catalogue maître: ${links.length} dispositif(s), ${catalogueData.aapCount} AAP, ${catalogueData.aidCount} aides, ${out.aids.length} fiche(s) extraites, ${out.excluded.length} exclusion(s), ${out.errors.length} erreur(s)`
+    message:`ADEME ${inventoryMode}: ${links.length} dispositif(s) actifs, ${catalogueData.aapCount} AAP, ${catalogueData.aidCount} aides, ${out.aids.length} fiche(s) importée(s), ${out.excluded.length} exclusion(s), ${out.errors.length} erreur(s), ${out.detailWarnings.length} fiche(s) non enrichie(s)`
   };
 }
