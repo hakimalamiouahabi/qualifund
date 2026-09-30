@@ -4,7 +4,7 @@ const forbidden=/(?:aides[-_]entreprises|aides[-_]territoires|data\.gouv\.fr)/i;
 export function assertDirectSources(cfg){
   if(cfg.sourcePolicy!=='DIRECT_OFFICIAL_ONLY')throw new Error('Politique de sources directes manquante');
   for(const s of cfg.sources||[]){
-    if(!s.official||!s.url||forbidden.test(JSON.stringify(s))||!['catalog-html','official-page','opendatasoft','control-only'].includes(s.strategy))throw new Error('Source interdite: '+s.id);
+    if(!s.official||!s.url||forbidden.test(JSON.stringify(s))||!['catalog-html','official-page','opendatasoft','control-only','bpifrance-aap','bpifrance-aides'].includes(s.strategy))throw new Error('Source interdite: '+s.id);
   }
 }
 export function isDirectAid(a,cfg){
