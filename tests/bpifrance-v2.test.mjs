@@ -67,3 +67,20 @@ test('le catalogue Bpifrance n’est plus balayé intégralement comme référen
   assert.match(connector,/listing maître Bpifrance/);
   assert.match(connector,/externalDisposition/);
 });
+
+
+test('Bpifrance v2 exclut les prêts d’honneur personnels du périmètre entreprise',()=>{
+  assert.equal(
+    classifyBpifranceInstrument("Prêt d'honneur à taux zéro accordé au porteur de projet à titre personnel.",'Prêt d’honneur').reason,
+    'PRET_PERSONNEL_HORS_PERIMETRE_ENTREPRISE'
+  );
+});
+
+test('l’ancien slug ADD est déclaré comme alias du référentiel maître',()=>{
+  const cfg=JSON.parse(fs.readFileSync(new URL('../config/sources.json',import.meta.url),'utf8'));
+  const s=cfg.sources.find(x=>x.id==='bpifrance_aides');
+  assert.equal(
+    s.canonicalAliases['https://www.bpifrance.fr/catalogue-offres/aide-pour-le-developpement-de-linnovation'],
+    'https://www.bpifrance.fr/catalogue-offres/aide-au-developpement-deeptech'
+  );
+});
