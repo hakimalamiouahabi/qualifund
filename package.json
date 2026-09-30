@@ -26,7 +26,8 @@
     "certify:production": "node scripts/certify-production.mjs",
     "audit:criteria": "node scripts/audit-criteria.mjs",
     "build:cloudflare": "node scripts/build-cloudflare-pages.mjs",
-    "purge:indirect": "node scripts/purge-indirect-sources.mjs"
+    "purge:indirect": "node scripts/purge-indirect-sources.mjs",
+    "certify:bpifrance": "node scripts/certify-bpifrance.mjs"
   },
   "dependencies": {
     "ajv": "8.17.1",
