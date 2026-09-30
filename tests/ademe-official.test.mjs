@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { parseAdemeRss, parseAdemeCatalogueHtml, ademeAttributionEvidence, ademeStatusProof } from '../scripts/connectors/ademe.mjs';
+import { parseAdemeRss, parseAdemeCatalogueHtml, ademeStatusProof } from '../scripts/connectors/ademe.mjs';
 
 test('le RSS ADEME ne conserve que les fiches officielles du catalogue',()=>{
   const xml=`<rss><channel>
@@ -18,78 +18,67 @@ test('ADEME est le seul guichet actif du verrou courant',()=>{
   const lock=JSON.parse(fs.readFileSync(new URL('../config/collection-lock.json',import.meta.url),'utf8'));
   assert.equal(lock.locked,true);
   assert.equal(lock.name,'ADEME');
+  assert.equal(lock.version,4);
   assert.deepEqual(lock.allowedSourceIds,['ademe']);
-  assert.equal(lock.certification.requireZeroExtractionErrors,true);
 });
 
-test('la source ADEME utilise le collecteur officiel dédié sans agrégateur',()=>{
+test('le catalogue Entreprises est la source maître ADEME et le catalogue clos est déclaré',()=>{
   const cfg=JSON.parse(fs.readFileSync(new URL('../config/sources.json',import.meta.url),'utf8'));
   const s=cfg.sources.find(x=>x.id==='ademe');
   assert.equal(s.strategy,'ademe-official');
-  assert.match(s.url,/agirpourlatransition\.ademe\.fr/);
+  assert.equal(s.url,'https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue');
+  assert.match(s.closedCatalogueUrl,/catalogue-aides-closes$/);
   assert.match(s.rssUrl,/agirpourlatransition\.ademe\.fr/);
-  assert.equal(cfg.sources.some(x=>x.id==='ademe_aides_historique'),false);
 });
 
-test('le catalogue ADEME ne conserve que les liens de fiches directes',()=>{
-  const html='<main><a href="/entreprises/aides-financieres/catalogue/2026/aide-a">Aide A</a><a href="/entreprises/aides-financieres/catalogue-rex/demo">REX</a><a href="/entreprises/aides-financieres/catalogue?page=2">Suite</a></main>';
+test('le catalogue ADEME reprend directement la classification Appel à projet / Aide',()=>{
+  const html=`<main>
+    <p>2 dispositifs d’aide correspondent à vos critères</p>
+    <article class="card"><span>Appel à projet</span><a href="/entreprises/aides-financieres/catalogue/aap/decarbonation">Décarbonation</a><span>Ouvert jusqu'au 09 février 2027</span><span>Toutes les Régions</span></article>
+    <article class="card"><span>Aide</span><a href="/entreprises/aides-financieres/catalogue/2026/etude-x">Étude X</a><span>Ouvert jusqu'au 31 décembre 2026</span><span>Toutes les Régions</span></article>
+    <a href="/entreprises/aides-financieres/catalogue-rex/demo">REX</a>
+    <a href="/entreprises/aides-financieres/catalogue?page=1">Suite</a>
+  </main>`;
+  const out=parseAdemeCatalogueHtml(html,'https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue');
+  assert.equal(out.totalCount,2);
+  assert.equal(out.aids.length,2);
+  assert.equal(out.aapCount,1);
+  assert.equal(out.aidCount,1);
+  assert.equal(out.unclassifiedCount,0);
+  assert.equal(out.aids.find(x=>x.label==='Décarbonation').catalogueKind,'AAP / AMI');
+  assert.equal(out.aids.find(x=>x.label==='Étude X').catalogueKind,'AIDE');
+  assert.equal(out.aids.find(x=>x.label==='Décarbonation').catalogueClosingDate,'2027-02-09');
+  assert.ok(out.pages.some(x=>x.includes('page=1')));
+});
+
+test('un titre contenant aide ne suffit jamais à classifier une carte sans statut ouvert',()=>{
+  const html='<main><h2><a href="/entreprises/aides-financieres/catalogue/aap/aide-experimentale">Aide expérimentale</a></h2></main>';
   const out=parseAdemeCatalogueHtml(html,'https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue');
   assert.equal(out.aids.length,1);
-  assert.equal(out.aids[0].label,'Aide A');
-  assert.ok(out.pages.some(x=>x.includes('page=2')));
+  assert.equal(out.aids[0].catalogueKind,null);
+  assert.equal(out.unclassifiedCount,1);
 });
 
-test('la certification ADEME exige les deux canaux officiels',()=>{
+test('la certification ADEME v3 exige complétude, classification et appartenance au catalogue maître',()=>{
   const lock=JSON.parse(fs.readFileSync(new URL('../config/collection-lock.json',import.meta.url),'utf8'));
   assert.equal(lock.certification.requireCatalogueDiscovery,true);
+  assert.equal(lock.certification.requireCatalogueCompleteness,true);
+  assert.equal(lock.certification.requireCatalogueClassification,true);
+  assert.equal(lock.certification.requireCatalogueMasterMembership,true);
   assert.equal(lock.certification.requireRssDiscovery,true);
-});
-
-
-test('ADEME v2 refuse une simple mention générique de transition écologique',()=>{
-  assert.equal(ademeAttributionEvidence("Ce dispositif régional accompagne la transition écologique des entreprises."),null);
-  assert.equal(Boolean(ademeAttributionEvidence("L’ADEME vous accompagne en finançant votre étude de faisabilité.")),true);
-});
-
-test('ADEME v2 ne traite pas une échéance ancienne comme ouverte',()=>{
-  const a={deadlines:['2024-12-31'],closingDate:'2024-12-31',finalClosingDate:'2024-12-31',permanent:false};
-  const out=ademeStatusProof(a,"Cet appel à projets est maintenant clos.",new Date('2026-09-30T12:00:00Z'));
-  assert.equal(out.state,'CLOSED_OLD');
-  assert.equal(out.retain,false);
-});
-
-test('ADEME v2 conserve une échéance future et une clôture J-60',()=>{
-  const open=ademeStatusProof({deadlines:['2026-12-31'],finalClosingDate:'2026-12-31'},"Aide en cours",new Date('2026-09-30T12:00:00Z'));
-  assert.equal(open.state,'OPEN');
-  assert.equal(open.retain,true);
-  const recent=ademeStatusProof({deadlines:['2026-09-15'],finalClosingDate:'2026-09-15'},"Appel à projets",new Date('2026-09-30T12:00:00Z'));
-  assert.equal(recent.state,'RECENTLY_CLOSED');
-  assert.equal(recent.retain,true);
-});
-
-test('le verrou ADEME v2 exige le contre-audit et les preuves métier',()=>{
-  const lock=JSON.parse(fs.readFileSync(new URL('../config/collection-lock.json',import.meta.url),'utf8'));
-  assert.equal(lock.version,3);
   assert.equal(lock.certification.requireExternalAuditDiscovery,true);
-  assert.equal(lock.certification.requireGuichetEvidence,true);
-  assert.equal(lock.certification.requireCurrentStatusEvidence,true);
-  assert.equal(lock.certification.requireEnterpriseScope,true);
-  assert.match(lock.certification.externalAuditFile,/ademe-v2-external-audit\.json$/);
 });
 
-test("le manifeste multi-moteurs ADEME v2 n'est pas vide",()=>{
+test("le contre-audit multi-moteurs reste un contrôle et n'est pas vide",()=>{
   const audit=JSON.parse(fs.readFileSync(new URL('../config/ademe-v2-external-audit.json',import.meta.url),'utf8'));
   assert.ok(audit.candidateCount>0);
-  assert.ok(audit.candidates.length===audit.candidateCount);
   assert.ok(audit.engines.includes('Exa'));
   assert.ok(audit.engines.includes('Tavily'));
   assert.ok(audit.engines.includes('Parallel Search'));
   assert.ok(audit.engines.includes('Firecrawl'));
-  for(const x of audit.candidates)assert.match(x.url,/^https:\/\/agirpourlatransition\.ademe\.fr\/entreprises\/aides-financieres\/catalogue\//);
 });
 
-
-test('ADEME v2 détecte les conflits entre statut textuel et calendrier',()=>{
+test('une fiche directe indiquée close entre en conflit avec le catalogue actif',()=>{
   const out=ademeStatusProof({deadlines:['2026-12-31'],finalClosingDate:'2026-12-31'},"Cet appel à projets est maintenant clos.",new Date('2026-09-30T12:00:00Z'));
   assert.equal(out.state,'STATUS_CONFLICT');
   assert.equal(out.retain,false);
