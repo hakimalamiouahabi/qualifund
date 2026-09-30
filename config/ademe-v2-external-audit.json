@@ -1,6 +1,6 @@
 {
-  "version": 1,
-  "generatedAt": "2026-09-30T19:30:00+02:00",
+  "version": 2,
+  "generatedAt": "2026-09-30T19:35:00+02:00",
   "purpose": "Contre-audit de découverte uniquement. Aucune fiche n'est importée depuis ces moteurs : chaque URL candidate doit être relue directement sur le domaine officiel ADEME avant intégration.",
   "sourceOfTruth": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue",
   "engines": [
@@ -15,7 +15,500 @@
     "allowedHost": "agirpourlatransition.ademe.fr",
     "requiredPathPrefix": "/entreprises/aides-financieres/catalogue/"
   },
-  "candidateCount": 0,
-  "corroboratedCount": 0,
-  "candidates": []
+  "candidateCount": 67,
+  "corroboratedCount": 19,
+  "candidates": [
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/aact-air-aide-laction-des-collectivites-territoriales-en-faveur-de-la-qualite-de-lair",
+      "title": "AACT-AIR – Aide à l'action des collectivités territoriales en faveur ...",
+      "engines": [
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/aides-au-changement-de-comportement",
+      "title": "Aides au changement de comportement",
+      "engines": [
+        "Tavily",
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/biomasse-chaleur-pour-lindustrie-du-bois-bcib",
+      "title": "Biomasse Chaleur pour l’Industrie du Bois (BCIB) | Agir pour la transition écologique",
+      "engines": [
+        "Exa",
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/contrat-chaleur-renouvelable",
+      "title": "Contrat Chaleur Renouvelable | ADEME",
+      "engines": [
+        "Exa"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
+      "title": "Émergence et consolidation d'une économie circulaire en Outre-mer et ...",
+      "engines": [
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/engins-de-chantier-electriques-2026-programme-cee-e-trans",
+      "title": "Engins de chantier électriques 2026 – Programme CEE E-Trans | ADEME",
+      "engines": [
+        "Exa",
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etude-daide-la-decision-pour-les-projets-de-geothermie-de-surface-daerothermie-ou-de-thalassothermie",
+      "title": "Étude d'aide à la décision pour les projets de géothermie de surface, d ...",
+      "engines": [
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etude-de-faisabilite-dinstallation-solaire-thermique",
+      "title": "Étude de faisabilité d'installation solaire thermique - ADEME",
+      "engines": [
+        "Parallel Search"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etude-dopportunite-multi-enrr",
+      "title": "Étude d'opportunité multi-EnR&R | Agir pour la transition écologique",
+      "engines": [
+        "Exa"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-de-faisabilite-de-performance-energetique-ou-de-decarbonation-dentreprises-industrielles",
+      "title": "Études de faisabilité de performance énergétique ou de décarbonation d'entreprises industrielles | Agir pour la transition écologique",
+      "engines": [
+        "Exa",
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-de-faisabilite-pour-linstallation-de-recuperation-de-chaleur-fatale",
+      "title": "Études de faisabilité pour l'installation de récupération de chaleur fatale",
+      "engines": [
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-des-projets-de-chaufferie-biomasse",
+      "title": "Études des projets de chaufferie biomasse - ADEME",
+      "engines": [
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-pour-une-installation-hydroelectrique",
+      "title": "Études pour une installation hydroélectrique - ademe agir",
+      "engines": [
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/extension-et-creation-de-reseaux-de-chaleur-ou-de-froid",
+      "title": "Extension et création de réseaux de chaleur ou de froid",
+      "engines": [
+        "Tavily"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/extreme-defi-textile-responsable",
+      "title": "Extrême défi - Textile responsable | ADEME",
+      "engines": [
+        "Exa"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/fonds-economie-circulaire-ormat-2026-objectif-recyclage-matieres",
+      "title": "Fonds Économie Circulaire - ORMAT 2026 (Objectif Recyclage MATières) | ADEME",
+      "engines": [
+        "Exa",
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/installation-de-production-deau-chaude-solaire-thermique",
+      "title": "Installation de production d'eau chaude solaire thermique | Agir pour la transition écologique",
+      "engines": [
+        "Exa",
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/installations-de-production-de-chaleur-partir-de-geothermie-profonde",
+      "title": "Installations de production de chaleur à partir de géothermie profonde",
+      "engines": [
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/investissements-decoconception-pour-ameliorer-la-performance-environnementale",
+      "title": "Investissements d’écoconception pour améliorer la performance environnementale | Agir pour la transition écologique",
+      "engines": [
+        "Exa",
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/mon-parcours-economies-denergie-booster-reduire-votre-facture-energetique-et-gagner-en-valeur-verte",
+      "title": "Mon parcours économies d'énergie - Booster : réduire votre facture énergétique et gagner en valeur verte | ADEME",
+      "engines": [
+        "Exa"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/mon-parcours-economies-denergie-constitution-dun-reseau-de-conseillers-energie",
+      "title": "Mon parcours économies d'énergie - Constitution d'un réseau de conseillers énergie | ADEME",
+      "engines": [
+        "Exa"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/offres-integrees-pompes-chaleur",
+      "title": "Offres intégrées pompes à chaleur - ADEME",
+      "engines": [
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/operations-collectives-pour-la-decarbonation-des-entreprises",
+      "title": "Opérations collectives pour la décarbonation des entreprises | Agir pour la transition écologique",
+      "engines": [
+        "Exa",
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/pacte-industrie-parcours-accompagnement-et-competences-pour-la-transition-energetique-de-lindustrie",
+      "title": "PACTE Industrie - Parcours Accompagnement et Compétences pour la Transition Énergétique de l’Industrie | ADEME",
+      "engines": [
+        "Exa",
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/realisation-dinstallations-de-methanisation",
+      "title": "Réalisation d’installations de méthanisation | ADEME",
+      "engines": [
+        "Exa",
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/realisation-dinstallations-de-production-de-chaleur-biomassebois",
+      "title": "Réalisation d'installations de production de chaleur biomasse/bois | Agir pour la transition écologique",
+      "engines": [
+        "Exa"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/realisation-dinstallations-de-recuperation-de-chaleur-fatale",
+      "title": "Réalisation d'installations de récupération de chaleur fatale | ADEME",
+      "engines": [
+        "Exa"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/remove-dispositif-daide-remo",
+      "title": "ReMoVe - Dispositif d'aide ReMo - ADEME",
+      "engines": [
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/soutien-aux-etudes-et-diagnostics-pour-le-reemploi-reutilisation-et-la-reparation-hors-emballages",
+      "title": "Soutien aux études et diagnostics pour le réemploi-réutilisation et la ...",
+      "engines": [
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/soutien-aux-investissements-pour-le-reemploi-reutilisation-et-la-reparation-hors-emballages",
+      "title": "Soutien aux investissements pour le réemploi-réutilisation ...",
+      "engines": [
+        "Tavily",
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/soutien-leconomie-de-la-fonctionnalite-et-de-la-cooperation",
+      "title": "Soutien à l’économie de la fonctionnalité et de la coopération | Agir pour la transition écologique",
+      "engines": [
+        "Exa",
+        "Tavily",
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/acquisition-de-donnees-geologiques-vers-des-industries-bas-carbone-agibac",
+      "title": "Acquisition de données Géologiques vers des Industries Bas Carbone ...",
+      "engines": [
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/actions-de-reemploi-reutilisation-reparation-et-reconditionnement-en-aura",
+      "title": "Actions de réemploi, réutilisation, réparation et reconditionnement en ...",
+      "engines": [
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/actions-de-reemploi-reutilisation-reparation-reconditionnement-et-remanufacture-en-aura",
+      "title": "Actions de réemploi, réutilisation, réparation, reconditionnement et remanufacture en AURA | ADEME",
+      "engines": [
+        "Exa"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/aide-linvestissement-de-loffre-industrielle-des-energies-renouvelables",
+      "title": "Aide à l'investissement de l'offre industrielle des énergies renouvelables | ADEME",
+      "engines": [
+        "Exa"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/aides-linvestissement-pour-la-decarbonation-du-transport-et-des-services-maritimes",
+      "title": "Aides à l’investissement pour la décarbonation du transport et des services maritimes | ADEME",
+      "engines": [
+        "Exa"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/ami-low-tech-2026",
+      "title": "AMI Low-tech 2026 - ADEME",
+      "engines": [
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/appel-doffres-grands-projets-industriels-de-decarbonation-2026",
+      "title": "Appel d’offres Grands Projets Industriels de Décarbonation 2026 | ADEME",
+      "engines": [
+        "Exa",
+        "Tavily",
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/appel-projets-de-recherche-energie-durable-production-gestion-et-utilisation-efficaces-et-moindre-impact",
+      "title": "Appel à projets de recherche - Énergie Durable - ademe agir",
+      "engines": [
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/appel-projets-de-recherche-vers-des-batiments-responsables-2026",
+      "title": "Appel à projets de recherche - Vers des bâtiments ...",
+      "engines": [
+        "Tavily",
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/appel-projets-methanisation-grand-est-2026",
+      "title": "Appel à projets méthanisation Grand Est 2026 | ADEME",
+      "engines": [
+        "Exa"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/appel-projets-theses-edition-2026",
+      "title": "Appel à projets Thèses – Édition 2026",
+      "engines": [
+        "Tavily",
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/apr-graine-production-valorisation-des-biomasses-et-preservation-des-ecosystemes",
+      "title": "APR GRAINE - Production, valorisation des biomasses et ...",
+      "engines": [
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/aqacia-2026-particules-ozone-produits-phytopharmaceutiques-et-pollutions-sectorielles",
+      "title": "AQACIA 2026 – Particules, ozone, produits phytopharmaceutiques et ...",
+      "engines": [
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/bciat-2026-biomasse-chaleur-pour-lindustrie-lagriculture-et-le-tertiaire",
+      "title": "BCIAT 2026 - Biomasse chaleur pour l'industrie, l'agriculture et le tertiaire | ADEME",
+      "engines": [
+        "Exa",
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/briques-technologiques-et-demonstrateurs-hydrogene",
+      "title": "Briques technologiques et démonstrateurs hydrogène - ADEME",
+      "engines": [
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/decarb-flash-2025-2027",
+      "title": "DECARB FLASH 2025-2027 | ADEME",
+      "engines": [
+        "Exa"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/decarbonation-de-lindustrie-decarb-ind-25-2-releve",
+      "title": "Décarbonation de l’industrie – DECARB IND 25 – 2ᵉ relève | ADEME",
+      "engines": [
+        "Exa"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/deter-decarboner-le-tertiaire",
+      "title": "DÉTER - DÉcarboner le TERtiaire | ADEME",
+      "engines": [
+        "Exa"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/developpement-de-briques-technologiques-et-services-par-des-pme-pour-la-decarbonation-de-lindustrie-ibac-pme",
+      "title": "Développement de briques technologiques et services par des ...",
+      "engines": [
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/developpement-de-la-construction-et-de-la-renovation-hors-site-crhos",
+      "title": "Développement de la Construction et de la Rénovation Hors Site (CRHOS)",
+      "engines": [
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/evaluation-des-impacts-environnementaux-sanitaires-et-socio-economiques-des-polluants-et-des-activites-anthropiques-sur-le-vivant",
+      "title": "Évaluation des impacts environnementaux, sanitaires et ...",
+      "engines": [
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/experimentation-pour-la-diffusion-de-bilans-ges-aupres-de-pme-et-eti-par-des-acteurs-financiers",
+      "title": "Expérimentation pour la diffusion de bilans GES auprès de PME et ETI par des acteurs financiers | ADEME",
+      "engines": [
+        "Exa",
+        "Parallel Search",
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/experimentations-collectivites-extreme-defi-logistique",
+      "title": "Expérimentations - Collectivités - eXtrême Défi Logistique - ademe agir",
+      "engines": [
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/fonds-vert-territoires-dindustrie-en-transition-ecologique",
+      "title": "Fonds vert - Territoires d'industrie en transition écologique - ADEME",
+      "engines": [
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/fonds-vert-territoires-dindustrie-en-transition-ecologique-0",
+      "title": "Fonds vert – Territoires d’industrie en transition écologique | ADEME",
+      "engines": [
+        "Exa"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/infrastructures-de-donnees-et-equipements-numeriques-resilients-et-durables",
+      "title": "Infrastructures de données et équipements numériques ...",
+      "engines": [
+        "Tavily",
+        "Parallel Search",
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/innovation-et-demonstration-hydrogene",
+      "title": "Innovation et démonstration Hydrogène - ademe agir",
+      "engines": [
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/mobilipro-optimisation-des-deplacements-professionnels",
+      "title": "Mobili'Pro : optimisation des déplacements professionnels",
+      "engines": [
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/mobiliser-les-communs-pour-la-transition-ecologique",
+      "title": "Mobiliser les communs pour la Transition écologique",
+      "engines": [
+        "Tavily",
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/promouvoir-des-solutions-de-mobilite-forts-co-benefices-sur-la-qualite-de-lair-et-la-sante-en-occitanie-pre-depot",
+      "title": "Promouvoir des solutions de mobilité à forts co-bénéfices sur la qualité ...",
+      "engines": [
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/selection-dune-banque-pour-un-pret-decarbonation-des-artisans",
+      "title": "Sélection d'une banque pour un prêt décarbonation des artisans | ADEME",
+      "engines": [
+        "Exa"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/services-de-mobilite-douce-en-entreprises-pour-la-reunion-et-mayotte",
+      "title": "Services de mobilité douce en entreprises pour La Réunion et ...",
+      "engines": [
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/solutions-innovantes-pour-lamelioration-de-la-recyclabilite-du-recyclage-et-de-la-reincorporation-des-materiaux-rrr",
+      "title": "Solutions innovantes pour l'amélioration de la recyclabilité, du ...",
+      "engines": [
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/soutien-au-deploiement-de-lecoconception-en-corse-etude-investissement-et-innovation-0",
+      "title": "Soutien au déploiement de l’écoconception en Corse (étude, investissement et innovation) | Agir pour la transition écologique",
+      "engines": [
+        "Exa"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/soutien-au-developpement-dune-economie-du-numerique-innovante-circulaire-et-moindre-impact-environnemental-econum",
+      "title": "Soutien au développement d'une économie du numérique innovante ...",
+      "engines": [
+        "Firecrawl"
+      ]
+    },
+    {
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/soutien-la-production-dhydrogene-electrolytique-renouvelable-ou-bas-carbone-2026-phase-de-selection-des-candidatures",
+      "title": "Soutien à la production d'hydrogène électrolytique renouvelable ou bas ...",
+      "engines": [
+        "Firecrawl"
+      ]
+    }
+  ]
 }
