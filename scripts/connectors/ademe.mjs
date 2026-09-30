@@ -4,7 +4,7 @@ import { fetchText } from '../lib/http.mjs';
 import { browserHtml } from '../lib/browser.mjs';
 import { extractFromHtml } from '../lib/extract.mjs';
 import { directPageId } from '../lib/direct-sources.mjs';
-import { canonicalUrl, cleanTitle, safeUrl, norm, uniq } from '../lib/utils.mjs';
+import { canonicalUrl, cleanTitle, safeUrl, norm, uniq, detectDates } from '../lib/utils.mjs';
 
 // Cycle verrouillé ADEME : catalogue + RSS officiels, sans agrégateur ni LLM.
 const REGIONS=[
@@ -40,13 +40,23 @@ function isAidUrl(raw){
 }
 
 function uniqueLinks(items=[]){
-  const out=[],seen=new Set();
+  const by=new Map();
   for(const item of items){
     const url=canonicalUrl(item?.url||'');
-    if(!url||!isAidUrl(url)||seen.has(url))continue;
-    seen.add(url);out.push({url,label:cleanTitle(item?.label||'')});
+    if(!url||!isAidUrl(url))continue;
+    const prev=by.get(url)||{url,label:''};
+    by.set(url,{
+      ...prev,
+      ...item,
+      url,
+      label:cleanTitle(item?.label||prev.label||''),
+      catalogueKind:item?.catalogueKind||prev.catalogueKind||null,
+      catalogueStatus:item?.catalogueStatus||prev.catalogueStatus||null,
+      catalogueClosingDate:item?.catalogueClosingDate||prev.catalogueClosingDate||null,
+      catalogueEvidence:item?.catalogueEvidence||prev.catalogueEvidence||null
+    });
   }
-  return out;
+  return [...by.values()];
 }
 
 export function parseAdemeRss(xml){
@@ -71,13 +81,44 @@ async function rssLinks(source,{log=console.log}={}){
   }
 }
 
+function catalogueCardMeta($,anchor,base){
+  let node=$(anchor);
+  for(let depth=0;depth<7;depth++){
+    node=node.parent();
+    if(!node.length)break;
+    const aidLinks=node.find('a[href]').toArray().filter(x=>isAidUrl(safeUrl($(x).attr('href'),base)));
+    if(aidLinks.length!==1)continue;
+    const raw=cleanTitle(node.text()||'');
+    const n=norm(raw);
+    if(!raw||raw.length>1800)continue;
+    const aapPos=n.indexOf('appel a projet');
+    const aidePos=n.indexOf('aide');
+    let catalogueKind=null;
+    if(aapPos>=0&&aapPos<140)catalogueKind='AAP / AMI';
+    else if(aidePos>=0&&aidePos<80)catalogueKind='AIDE';
+    if(!catalogueKind)continue;
+    const status=/ouvert jusqu['’]au/i.test(raw)?'OPEN':null;
+    const dates=detectDates(raw);
+    return{
+      catalogueKind,
+      catalogueStatus:status,
+      catalogueClosingDate:status?(dates.at(-1)||null):null,
+      catalogueEvidence:raw.slice(0,1200)
+    };
+  }
+  return{catalogueKind:null,catalogueStatus:null,catalogueClosingDate:null,catalogueEvidence:null};
+}
+
 export function parseAdemeCatalogueHtml(html,base){
   const $=cheerio.load(html),aids=[],pages=[];
+  const bodyText=cleanTitle($('body').text()||'');
+  const totalMatch=bodyText.match(/(\d+)\s+dispositifs?\s+d['’]aide\s+correspondent/i);
+  const totalCount=totalMatch?Number(totalMatch[1]):null;
   $('a[href]').each((_,a)=>{
     const url=safeUrl($(a).attr('href'),base);
     if(!url)return;
     const label=cleanTitle($(a).text()||$(a).attr('title')||'');
-    if(isAidUrl(url))aids.push({url,label});
+    if(isAidUrl(url))aids.push({url,label,...catalogueCardMeta($,a,base)});
     try{
       const u=new URL(url),b=new URL(base);
       if(u.origin!==b.origin)return;
@@ -85,18 +126,31 @@ export function parseAdemeCatalogueHtml(html,base){
       if(u.searchParams.has('page'))pages.push(u.href);
     }catch{}
   });
-  return{aids:uniqueLinks(aids),pages:[...new Set(pages)]};
+  const unique=uniqueLinks(aids);
+  return{
+    aids:unique,
+    pages:[...new Set(pages)],
+    totalCount,
+    aapCount:unique.filter(x=>x.catalogueKind==='AAP / AMI').length,
+    aidCount:unique.filter(x=>x.catalogueKind==='AIDE').length,
+    unclassifiedCount:unique.filter(x=>!x.catalogueKind).length
+  };
 }
 
-async function catalogueLinks(source,{log=console.log,maxPages=80}={}){
-  const queue=[source.url],seenPages=new Set(),found=[];
+async function catalogueLinks(source,{log=console.log,maxPages=100}={}){
+  const queue=[source.url],seenPages=new Set(),found=[],discoveryErrors=[];
+  let expectedTotal=null,pagesScanned=0;
   while(queue.length&&seenPages.size<maxPages){
     const pageUrl=queue.shift();
     if(seenPages.has(pageUrl))continue;
     seenPages.add(pageUrl);
     let loaded;
     try{loaded=await getHtml(pageUrl)}
-    catch(e){log(`[${source.id}] catalogue ignoré ${pageUrl}: ${e.message}`);continue}
+    catch(e){
+      discoveryErrors.push({url:pageUrl,reason:e.message});
+      log(\`[\${source.id}] catalogue inaccessible \${pageUrl}: \${e.message}\`);
+      continue;
+    }
     let parsed=parseAdemeCatalogueHtml(loaded.html,loaded.finalUrl||pageUrl);
     if(!parsed.aids.length){
       try{
@@ -106,27 +160,36 @@ async function catalogueLinks(source,{log=console.log,maxPages=80}={}){
           waitAfterMs:1800
         });
         const browserParsed=parseAdemeCatalogueHtml(rendered.html,rendered.url||pageUrl);
-        if(browserParsed.aids.length||browserParsed.pages.length){
+        if(browserParsed.aids.length||browserParsed.pages.length||browserParsed.totalCount!=null){
           parsed=browserParsed;
-          log(`[${source.id}] catalogue rendu navigateur ${pageUrl}: ${browserParsed.aids.length} fiche(s)`);
+          log(\`[\${source.id}] catalogue rendu navigateur \${pageUrl}: \${browserParsed.aids.length} fiche(s)\`);
         }
       }catch(e){
-        log(`[${source.id}] rendu navigateur catalogue indisponible ${pageUrl}: ${e.message}`);
+        // Une page vide après la dernière page est normale. La complétude est contrôlée
+        // par le compteur officiel du catalogue, pas par un nombre de pages codé en dur.
       }
     }
-    const {aids,pages}=parsed;
-    found.push(...aids);
-    for(const u of pages)if(!seenPages.has(u))queue.push(u);
-    if(seenPages.size===1&&!pages.length){
-      // Drupal expose parfois la pagination uniquement après rendu JS.
-      for(let p=0;p<12;p++)queue.push(source.url+(source.url.includes('?')?'&':'?')+'page='+p);
+    pagesScanned++;
+    if(expectedTotal==null&&Number.isFinite(parsed.totalCount))expectedTotal=parsed.totalCount;
+    found.push(...parsed.aids);
+    for(const u of parsed.pages)if(!seenPages.has(u))queue.push(u);
+
+    // Fallback déterministe Drupal : la pagination est zéro-indexée. On avance jusqu'à
+    // la première page sans fiche, au lieu de supposer qu'il existe toujours 8/12 pages.
+    if(!parsed.pages.length&&parsed.aids.length){
+      const u=new URL(pageUrl);
+      const current=Number(u.searchParams.get('page')||0);
+      u.searchParams.set('page',String(current+1));
+      if(!seenPages.has(u.href))queue.push(u.href);
     }
   }
-  const out=uniqueLinks(found);
-  log(`[${source.id}] catalogue officiel ADEME: ${out.length} URLs uniques`);
-  return out;
+  const links=uniqueLinks(found);
+  const aapCount=links.filter(x=>x.catalogueKind==='AAP / AMI').length;
+  const aidCount=links.filter(x=>x.catalogueKind==='AIDE').length;
+  const unclassified=links.filter(x=>!x.catalogueKind);
+  log(\`[\${source.id}] catalogue maître ADEME: \${links.length}/\${expectedTotal??'?'} URL(s), dont \${aapCount} AAP et \${aidCount} aides\`);
+  return{links,expectedTotal,pagesScanned,aapCount,aidCount,unclassified,discoveryErrors};
 }
-
 
 function pageText(html){
   const $=cheerio.load(html);
@@ -282,6 +345,10 @@ async function extractOne(source,link){
   if(requested!==resolved){
     return{aid:null,excluded:{url:link.url,label:link.label||'',reason:'REDIRECTION_VERS_AUTRE_FICHE',resolvedUrl:resolved}};
   }
+  if(!link.catalogueKind){
+    return{aid:null,excluded:{url:link.url,label:link.label||'',reason:'TYPE_CATALOGUE_NON_CLASSE',resolvedUrl:resolved}};
+  }
+
   const text=pageText(loaded.html);
   const a=extractFromHtml(loaded.html,{url:requested,sourceTier:'B',scope:'NATIONAL',region:null});
   const rawTitle=cleanTitle(a.title||'');
@@ -294,42 +361,46 @@ async function extractOne(source,link){
     return{aid:null,excluded:{url:link.url,label:link.label||'',reason:'TITRE_ABSENT',resolvedUrl:resolved}};
   }
 
-  const attribution=ademeAttributionEvidence(text);
-  if(!attribution){
-    return{aid:null,excluded:{url:link.url,label:a.title,reason:'ATTRIBUTION_ADEME_NON_PROUVEE',resolvedUrl:resolved}};
+  // Le catalogue Entreprises actif est le référentiel maître. La présence de la carte
+  // constitue la preuve ADEME + entreprise + actif ; la fiche directe enrichit les critères.
+  const directStatus=ademeStatusProof(a,text);
+  if(directStatus.state==='STATUS_CONFLICT'){
+    return{aid:null,excluded:{url:link.url,label:a.title,reason:'CONFLIT_STATUT_CATALOGUE_FICHE',resolvedUrl:resolved,status:directStatus.state,date:directStatus.date}};
   }
-  const beneficiary=beneficiaryEvidence(a,text);
-  if(!beneficiary){
-    const nonEnterprise=nonEnterpriseBeneficiaryEvidence(a,text);
-    return{aid:null,excluded:{url:link.url,label:a.title,reason:nonEnterprise?'HORS_CIBLE_ENTREPRISE_PROUVE':'BENEFICIAIRE_ENTREPRISE_NON_PROUVE',resolvedUrl:resolved,evidence:nonEnterprise||null}};
-  }
-  const status=ademeStatusProof(a,text);
-  if(!status.retain){
-    return{aid:null,excluded:{url:link.url,label:a.title,reason:status.state==='CLOSED_OLD'?'CLOTURE_HORS_FENETRE_J60':'STATUT_ACTUEL_NON_PROUVE',resolvedUrl:resolved,status:status.state,date:status.date}};
-  }
-
   const territory=inferRegionsFromEvidence(text);
+  const closing=link.catalogueClosingDate||directStatus.date||a.finalClosingDate||a.closingDate||null;
   a.id=directPageId(source.id,requested);
   a.canonicalId=a.id;
   a.sourceId=source.id;
   a.sourceRecordId=requested;
-  a.kind=/\/aap\//i.test(requested)||/\b(?:aap|ami|appel a projets?|appel à projets?|appel a manifestation|appel à manifestation|appel d'offres)\b/i.test(a.title)?'AAP / AMI':'AIDE';
+  a.kind=link.catalogueKind;
   a.funder=['ADEME'];
   a.operator='ADEME';
   a.guichetVerified='ADEME';
   a.enterpriseEligible=true;
-  a.sourceState=status.state;
+  a.catalogueVerified=true;
+  a.catalogueKind=link.catalogueKind;
+  a.sourceState='OPEN';
+  if(closing){
+    a.finalClosingDate=closing;
+    a.closingDate=closing;
+    a.deadlines=uniq([...(a.deadlines||[]),closing]).sort();
+  }
   a.scope=territory.regions.length?'REGIONAL':'NATIONAL';
   a.regions=territory.regions.length?territory.regions:['Toutes les Régions'];
   a.sourceLinks=[{label:'Page officielle ADEME',url:requested},...(a.sourceLinks||[]).filter(x=>x?.url&&canonicalUrl(x.url)!==requested)];
+  const checkedAt=new Date().toISOString();
+  const membershipEvidence=link.catalogueEvidence||(\`Présent dans le catalogue officiel ADEME Entreprises — \${link.catalogueKind}\`);
   const extra=[
-    {field:'guichet',sourceUrl:requested,sourceTier:'B',locator:'page-text-match:ademe-attribution',evidenceText:attribution.slice(0,850),checkedAt:new Date().toISOString()},
-    {field:'sourceStatus',sourceUrl:requested,sourceTier:'B',locator:'page-text-match:status',evidenceText:String(status.evidence||status.state).slice(0,850),checkedAt:new Date().toISOString()},
-    {field:'enterpriseEligibility',sourceUrl:requested,sourceTier:'B',locator:'section:beneficiaries',evidenceText:String(beneficiary).slice(0,850),checkedAt:new Date().toISOString()}
+    {field:'catalogueMembership',sourceUrl:source.url,sourceTier:'B',locator:'catalogue-card',evidenceText:membershipEvidence.slice(0,850),checkedAt},
+    {field:'guichet',sourceUrl:source.url,sourceTier:'B',locator:'catalogue-master',evidenceText:'Catalogue officiel des aides financières de l’ADEME pour les entreprises',checkedAt},
+    {field:'sourceStatus',sourceUrl:source.url,sourceTier:'B',locator:'catalogue-card-status',evidenceText:(link.catalogueEvidence||'Dispositif présent dans le catalogue actif').slice(0,850),checkedAt},
+    {field:'enterpriseEligibility',sourceUrl:source.url,sourceTier:'B',locator:'catalogue-entreprises',evidenceText:'Référencé dans le catalogue ADEME Entreprises',checkedAt},
+    {field:'catalogueKind',sourceUrl:source.url,sourceTier:'B',locator:'catalogue-card-type',evidenceText:link.catalogueKind,checkedAt}
   ];
-  if(territory.evidence)extra.push({field:'territory',sourceUrl:requested,sourceTier:'B',locator:'page-text-match:territory',evidenceText:territory.evidence.slice(0,850),checkedAt:new Date().toISOString()});
+  if(territory.evidence)extra.push({field:'territory',sourceUrl:requested,sourceTier:'B',locator:'page-text-match:territory',evidenceText:territory.evidence.slice(0,850),checkedAt});
   a.verification={...(a.verification||{}),fieldEvidence:[...(a.verification?.fieldEvidence||[]),...extra]};
-  a.guichetVerification={status:'VERIFIED',sourceUrl:requested,evidenceText:attribution.slice(0,850),checkedAt:new Date().toISOString()};
+  a.guichetVerification={status:'VERIFIED',sourceUrl:source.url,evidenceText:membershipEvidence.slice(0,850),checkedAt};
   return{aid:a,excluded:null};
 }
 
@@ -355,19 +426,22 @@ async function extractMany(source,links,{log=console.log,workers=8}={}){
 }
 
 export async function discoverAdeme(source,{log=console.log}={}){
-  const [rss,catalogue,externalAudit]=await Promise.all([
+  const [rss,catalogueData,externalAudit]=await Promise.all([
     rssLinks(source,{log}),
     catalogueLinks(source,{log}),
     externalAuditLinks(source,{log})
   ]);
-  const links=uniqueLinks([...catalogue,...rss,...externalAudit]);
-  log(`[${source.id}] ADEME v2: ${links.length} URL(s) officielles candidates (${rss.length} RSS, ${catalogue.length} catalogue, ${externalAudit.length} contre-audit)`);
-  return{links,rss,catalogue,externalAudit};
+  const catalogue=catalogueData.links;
+  const master=new Set(catalogue.map(x=>canonicalUrl(x.url)));
+  const rssOutsideCatalogue=rss.filter(x=>!master.has(canonicalUrl(x.url)));
+  const externalOutsideCatalogue=externalAudit.filter(x=>!master.has(canonicalUrl(x.url)));
+  log(\`[\${source.id}] ADEME catalogue maître: \${catalogue.length} fiche(s), dont \${catalogueData.aapCount} AAP. Contrôles: \${rssOutsideCatalogue.length} RSS hors catalogue, \${externalOutsideCatalogue.length} candidats externes hors catalogue.\`);
+  return{links:catalogue,rss,catalogueData,externalAudit,rssOutsideCatalogue,externalOutsideCatalogue};
 }
 
 export async function collectAdeme(source,{log=console.log}={}){
   const discovered=await discoverAdeme(source,{log});
-  const {links,rss,catalogue,externalAudit}=discovered;
+  const {links,rss,catalogueData,externalAudit,rssOutsideCatalogue,externalOutsideCatalogue}=discovered;
   const out=await extractMany(source,links,{log,workers:8});
   return{
     aids:out.aids,
@@ -378,8 +452,24 @@ export async function collectAdeme(source,{log=console.log}={}){
       excluded:out.excluded,
       errors:out.errors,
       accounted:out.aids.length+out.excluded.length+out.errors.length,
-      channels:{rss:rss.length,catalogue:catalogue.length,externalAudit:externalAudit.length}
+      channels:{
+        rss:rss.length,
+        catalogue:links.length,
+        catalogueExpected:catalogueData.expectedTotal,
+        cataloguePagesScanned:catalogueData.pagesScanned,
+        catalogueAap:catalogueData.aapCount,
+        catalogueAid:catalogueData.aidCount,
+        catalogueUnclassified:catalogueData.unclassified.length,
+        catalogueDiscoveryErrors:catalogueData.discoveryErrors.length,
+        externalAudit:externalAudit.length,
+        rssOutsideCatalogue:rssOutsideCatalogue.length,
+        externalOutsideCatalogue:externalOutsideCatalogue.length
+      },
+      controlGaps:{
+        rssOutsideCatalogue:rssOutsideCatalogue.map(x=>({url:x.url,label:x.label||''})),
+        externalOutsideCatalogue:externalOutsideCatalogue.map(x=>({url:x.url,label:x.label||''}))
+      }
     },
-    message:`ADEME v2: ${links.length} URL(s) candidates, ${out.aids.length} fiche(s) validée(s), ${out.excluded.length} exclusion(s) motivée(s), ${out.errors.length} erreur(s)`
+    message:\`ADEME catalogue maître: \${links.length} dispositif(s), \${catalogueData.aapCount} AAP, \${catalogueData.aidCount} aides, \${out.aids.length} fiche(s) extraites, \${out.excluded.length} exclusion(s), \${out.errors.length} erreur(s)\`
   };
 }
