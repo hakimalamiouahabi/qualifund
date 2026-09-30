@@ -54,6 +54,11 @@ for(const s of lockedCfg){
   if(cert.requireCatalogueDiscovery&&Number(row.audit?.channels?.catalogue||0)<=0)problems.push(`${s.id}: aucune fiche découverte via le catalogue officiel`);
   if(cert.requireRssDiscovery&&Number(row.audit?.channels?.rss||0)<=0)problems.push(`${s.id}: aucune fiche découverte via le RSS officiel`);
   if(cert.requireExternalAuditDiscovery&&Number(row.audit?.channels?.externalAudit||0)<=0)problems.push(`${s.id}: aucune URL issue du contre-audit externe n’a été prise en compte`);
+  if(cert.forbidAmbiguousExclusions){
+    const ambiguous=new Set(cert.ambiguousExclusionReasons||[]);
+    const pending=(row.audit?.excluded||[]).filter(x=>ambiguous.has(x?.reason));
+    if(pending.length)problems.push(`${s.id}: ${pending.length} exclusion(s) ambiguë(s) à résoudre avant certification`);
+  }
   if(cert.requireZeroExtractionErrors&&Number(row.audit?.errors?.length||0)>0)problems.push(`${s.id}: ${row.audit.errors.length} erreur(s) d’extraction`);
 }
 
