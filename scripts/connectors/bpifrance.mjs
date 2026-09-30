@@ -135,28 +135,50 @@ async function extractOne(source,link,kind){
   return a;
 }
 
-async function extractMany(source,links,kind,{log=console.log,workers=8,predicate=null}={}){
-  const aids=[];let cursor=0;
+async function extractMany(source,links,kind,{log=console.log,workers=8,predicate=null,excludeReason='hors périmètre'}={}){
+  const aids=[],excluded=[],errors=[];let cursor=0;
   const pool=Array.from({length:workers},async()=>{
     while(true){
       const i=cursor++;if(i>=links.length)return;
-      try{const a=await extractOne(source,links[i],kind);if(a&&(!predicate||predicate(a)))aids.push(a)}
-      catch(e){log(`[${source.id}] page ignorée ${links[i].url}: ${e.message}`)}
+      const link=links[i];
+      try{
+        const a=await extractOne(source,link,kind);
+        if(!a){errors.push({url:link.url,label:link.label||'',reason:'EXTRACTION_VIDE'});continue}
+        if(!predicate||predicate(a))aids.push(a);
+        else excluded.push({url:link.url,title:a.title,aidTypes:a.aidTypes||[],reason:excludeReason});
+      }catch(e){
+        errors.push({url:link.url,label:link.label||'',reason:String(e?.message||e)});
+        log(`[${source.id}] page ignorée ${link.url}: ${e.message}`);
+      }
     }
   });
   await Promise.all(pool);
-  return aids;
+  return {aids,excluded,errors};
 }
 
 export async function collectBpifranceAaps(source,{log=console.log}={}){
   const links=await discoverBpifranceCurrentAaps(source,{log});
-  const aids=await extractMany(source,links,'AAP / AMI',{log});
-  return {aids,discovered:links.length,message:`Bpifrance AAP: ${links.length} publiés, ${aids.length} extraits`};
+  const out=await extractMany(source,links,'AAP / AMI',{log});
+  return {
+    aids:out.aids,
+    discovered:links.length,
+    audit:{discovered:links.length,imported:out.aids.length,excluded:out.excluded,errors:out.errors,accounted:out.aids.length+out.excluded.length+out.errors.length},
+    message:`Bpifrance AAP: ${links.length} publiés, ${out.aids.length} extraits, ${out.errors.length} erreurs`
+  };
 }
 
 export async function collectBpifranceAids(source,{log=console.log}={}){
   const links=await discoverBpifranceCatalogueAids(source,{log});
   const target=new Set(['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO']);
-  const aids=await extractMany(source,links,'AIDE',{log,predicate:a=>a.aidTypes?.some(t=>target.has(t))});
-  return {aids,discovered:links.length,message:`Bpifrance catalogue: ${links.length} pages officielles inspectées, ${aids.length} aides financières retenues (subvention / avance remboursable / prêt à taux zéro)`};
+  const out=await extractMany(source,links,'AIDE',{
+    log,
+    predicate:a=>a.aidTypes?.some(t=>target.has(t)),
+    excludeReason:'INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ'
+  });
+  return {
+    aids:out.aids,
+    discovered:links.length,
+    audit:{discovered:links.length,imported:out.aids.length,excluded:out.excluded,errors:out.errors,accounted:out.aids.length+out.excluded.length+out.errors.length},
+    message:`Bpifrance catalogue: ${links.length} pages officielles inspectées, ${out.aids.length} aides retenues, ${out.excluded.length} hors périmètre, ${out.errors.length} erreurs`
+  };
 }
