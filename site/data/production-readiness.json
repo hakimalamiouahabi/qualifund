@@ -1,0 +1,95 @@
+{
+  "generatedAt": "2026-09-30T08:54:16.227Z",
+  "version": "12.6.0",
+  "gates": [
+    {
+      "id": 1,
+      "name": "Dépôt GitHub et versionnement",
+      "status": "PASS",
+      "detail": "hakimalamiouahabi/qualifund"
+    },
+    {
+      "id": 2,
+      "name": "URL permanente",
+      "status": "BLOCKED",
+      "detail": "Déploiement permanent non confirmé."
+    },
+    {
+      "id": 3,
+      "name": "Collecte réelle des sources",
+      "status": "PARTIAL",
+      "detail": "Ingestion: 101/101 exécutées, 73 succès, 3269 imports bruts. Contrôles: 34/34. Corpus de sources directes: 2078. Préflight réseau: 129/137 accessibles/protégées."
+    },
+    {
+      "id": 4,
+      "name": "Bibliothèque réglementaire vérifiée",
+      "status": "PARTIAL",
+      "detail": "1/2053 fiches J+1 strictement VÉRIFIÉES ; sources directes uniquement, sans quota de fiches, au 2026-10-01. Sont comptées les aides retrouvées ACTIVE sans échéance publiée, les aides permanentes et celles avec clôture documentée >= J+1 ; STALE et ARCHIVE sont exclues. Intégrité recalculée 1/1."
+    },
+    {
+      "id": 5,
+      "name": "Extraction CdC / preuves par champ",
+      "status": "WAIT_LIVE",
+      "detail": "Preuves A/B complètes sur les 8 champs critiques : 1/1 fiches VÉRIFIÉES. File de remédiation synchronisée : oui. Couverture J+1 indicative : 840/2053 avec CdC/règlement."
+    },
+    {
+      "id": 6,
+      "name": "Déduplication et fraîcheur",
+      "status": "PASS_TECH",
+      "detail": "Scans vides non destructifs, ordre multi-source neutralisé, réactivation et J+1 couverts par tests. PASS final après corpus multi-sources réel."
+    },
+    {
+      "id": 7,
+      "name": "Enrichissement SIREN/SIRET",
+      "status": "PASS",
+      "detail": "API Recherche d’entreprises DINUM validée par smoke live."
+    },
+    {
+      "id": 8,
+      "name": "Qualification projet multi-financeurs",
+      "status": "PASS",
+      "detail": "Moteur partagé navigateur/recette avec profils Bpifrance/France 2030, ADEME, FEDER et régional. Cas UAT réussis : 5/5. Minimum : 5."
+    },
+    {
+      "id": 9,
+      "name": "Exploitation quotidienne 02:00 + rapport",
+      "status": "PARTIAL",
+      "detail": "Workflow, cron 02:00 Europe/Paris et rapport implémentés ; une exécution live de la chaîne reste requise."
+    },
+    {
+      "id": 10,
+      "name": "Recette production",
+      "status": "NOT_STARTED",
+      "detail": "GO uniquement quand les Gates 1–9 sont validées et sans anomalie P0."
+    }
+  ],
+  "counts": {
+    "sourcesConfigured": 137,
+    "ingestiveSources": 101,
+    "controlSources": 34,
+    "sourcesInLastCycle": 137,
+    "sourcesSuccess": 108,
+    "ingestiveExecuted": 101,
+    "ingestiveSuccess": 73,
+    "ingestiveImported": 3269,
+    "controlExecuted": 34,
+    "nonBootstrapFiches": 2078,
+    "activeFiches": 2078,
+    "jPlusOneDate": "2026-10-01",
+    "jPlusOneActiveFiches": 2053,
+    "volumeTarget": null,
+    "verifiedFiches": 1,
+    "verifiedIntegrity": 1,
+    "verifiedEvidenceIntegrity": 1,
+    "withCdc": 840,
+    "withDeadline": 464,
+    "consultantCases": 5,
+    "uatTotal": 5,
+    "companySmokeOk": true,
+    "publicSmokeOk": false,
+    "workflowEvent": "push",
+    "inActions": true,
+    "remediationFresh": true
+  },
+  "goProduction": false
+}

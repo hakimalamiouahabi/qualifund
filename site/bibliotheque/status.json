@@ -1,15 +1,64 @@
 {
   "version": "12.6.0",
-  "generatedAt": "2026-09-28T15:45:43.468Z",
-  "sourcePolicy": "DIRECT_OFFICIAL_ONLY",
-  "libraryMode": "DIRECT_OFFICIAL_CATALOG",
+  "generatedAt": "2026-09-30T08:52:18.926Z",
   "repositoryUrl": "https://github.com/hakimalamiouahabi/qualifund",
-  "count": 79,
-  "libraryCount": 79,
-  "activeCount": 56,
-  "archivedCount": 23,
   "sourceCount": 137,
-  "verifiedCount": 0,
+  "sourcesOk": 108,
+  "sourcesFailed": 29,
+  "libraryCount": 2227,
+  "activeCount": 2078,
+  "jPlusOneDate": "2026-10-01",
+  "jPlusOneActiveCount": 2053,
+  "archivedCount": 149,
+  "aapCount": 250,
+  "verifiedCount": 1,
+  "withCdc": 840,
+  "withDeadline": 464,
+  "fullRefresh": true,
+  "libraryMode": "DIRECT_OFFICIAL_CATALOG",
+  "sourcePolicy": "DIRECT_OFFICIAL_ONLY",
+  "libraryInstruments": [
+    "AUTRE",
+    "AVANCE_REMBOURSABLE",
+    "PRET_TAUX_ZERO",
+    "SUBVENTION"
+  ],
+  "recommendationInstruments": [
+    "SUBVENTION",
+    "AVANCE_REMBOURSABLE",
+    "PRET_TAUX_ZERO"
+  ],
+  "targetInstrumentCount": 766,
+  "directLinkCount": 2077,
+  "missingDirectLinkCount": 1,
+  "categoryCounts": {
+    "STARTUP": 54,
+    "PME": 342,
+    "ETI": 106,
+    "GE": 114
+  },
+  "scopeCounts": {
+    "NATIONAL": 77,
+    "REGIONAL": 2001
+  },
+  "instrumentCounts": {
+    "AUTRE": 1354,
+    "AVANCE_REMBOURSABLE": 49,
+    "PRET_TAUX_ZERO": 38,
+    "SUBVENTION": 735
+  },
+  "targetRule": "ACTIVE_SANS_ECHEANCE_OU_PERMANENT_OU_CLOTURE_GTE_J_PLUS_1",
+  "targetCount": null,
+  "targetReached": null,
+  "coverageGap": null,
+  "contentSha256": "5ec6949cf7de5de5a8d55945ee057b8b2f245a3c36ed99b128e4db00baf5edd4",
+  "count": 2227,
   "coverageCertified": false,
-  "sourcePolicyAppliedAt": "2026-09-29T20:26:50.165Z"
+  "recommendationRule": "échéance >= J+1 ou permanent vérifié",
+  "relevanceRule": "pertinence projet >=85% ; éligibilité et confiance documentaire séparées",
+  "instruments": [
+    "SUBVENTION",
+    "AVANCE_REMBOURSABLE",
+    "PRET_TAUX_ZERO"
+  ]
 }

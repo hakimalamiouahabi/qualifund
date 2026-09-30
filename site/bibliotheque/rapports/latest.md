@@ -1,0 +1,2242 @@
+# LEYTON RADAR — rapport quotidien 2026-09-30
+
+Généré : 2026-09-30T08:53:57.532Z
+
+- Bibliothèque avant : **79**
+- Bibliothèque après : **2227**
+- Nouvelles aides / AAP : **2148**
+- Dispositifs modifiés : **58**
+- Clos / obsolètes / disparus : **19**
+
+## Nouvelles aides retenues
+- **- Les financements européens - Europe Guadeloupe** — échéance à vérifier — https://www.europe-guadeloupe.fr/les-financements-europeens/
+- **"Éco-chèque mobilité - Achat d’une voiture particulière électrique d’occasion** — échéance à vérifier — https://www.laregion.fr/eco-cheque-mobilite-vehicule-electrique-occasion
+- **"Éco-chèque mobilité" - Achat d&#8217;un vélo à assistance électrique** — échéance à vérifier — https://www.laregion.fr/Eco-cheque-mobilite-velo-a-assistance-electrique
+- **"Éco-chèque mobilité" - Bonus forfait mobilité durable** — échéance à vérifier — https://www.laregion.fr/Eco-cheque-mobilite-Bonus-forfait-mobilite-durable
+- **"Eco-chèque mobilité" - Bonus vélo adapté PMR** — échéance à vérifier — https://www.laregion.fr/Eco-cheque-mobilite-Bonus-velo-adapte-PMR
+- **"Les Bons Plans" ou les "Je m’engage" de la Carte Jeune Région** — échéance à vérifier — https://www.laregion.fr/Les-Bons-Plans-ou-les-Je-m-engage-de-la-Carte-Jeune-Region
+- **« ALLOCATIONS DOCTORALES COFINANCÉES EN PAYS DE LA LOIRE »** — 2026-05-22 — https://www.paysdelaloire.fr/les-aides/allocations-doctorales-cofinancees
+- **« ÉTOILES MONTANTES »** — 2026-11-04 — https://www.paysdelaloire.fr/les-aides/etoiles-montantes-en-pays-de-la-loire
+- **« VRAC et CONSIGNE »** — 2026-06-15 — https://www.maregionsud.fr/vos-aides/detail/vrac-et-consigne
+- **[Pack relocalisation] Impulser un partenariat PME Innovantes et donneurs d'ordre** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/pack-relocalisation-impulser-un-partenariat-pme-innovantes-et-donneurs-dordre
+- **[Pack relocalisation] Renforcer les filières stratégiques** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/pack-relocalisation-renforcer-les-filieres-strategiques
+- **[Région Industrie] Créer ma start-up avec Start-up and Go Auvergne-Rhône-Alpes** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/region-industrie-creer-ma-start-avec-start-and-go-auvergne-rhone-alpes
+- **[Région Industrie] Etre accompagné dans ma fonction RH** — 2029-03-16 — https://www.auvergnerhonealpes.fr/aides/region-industrie-etre-accompagne-dans-ma-fonction-rh
+- **[Région Industrie] Etre accompagné vers l'obtention d'une autorisation d'entrée en essais cliniques | Région Auvergne-Rhône-Alpe** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/region-industrie-etre-accompagne-vers-lobtention-dune-autorisation-dentree-en-essais
+- **[Région Industrie] Obtenir un Prêt Croissance** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/region-industrie-obtenir-un-pret-croissance
+- **[Région Industrie] Obtenir un prêt Région Energie en Auvergne-Rhône-Alpes** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/region-industrie-obtenir-un-pret-region-energie-en-auvergne-rhone-alpes
+- **[Région Industrie] Renforcer son action commerciale à l'international | Région Auvergne-Rhône-Alpes** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/region-industrie-renforcer-son-action-commerciale-linternational
+- **• TA 1.1.1 : Investissement dans les infrastructures de recherche et d’innovation** — échéance à vérifier — https://www.europe-martinique.com/wp-content/uploads/2026/07/26-PCE-739_FA_FEDER_1.1.1_V2.pdf
+- **• TA 1.1.2 : Soutenir la recherche et l’innovation dans les centres de recherche publics** — échéance à vérifier — https://www.europe-martinique.com/wp-content/uploads/2026/07/26-PCE-740_FA_FEDER_1.1.2_V2.pdf
+- **• TA 1.1.3 : Soutenir les projets de recherche et d’innovation des TPE-PME et les projets collaboratifs** — échéance à vérifier — https://www.europe-martinique.com/wp-content/uploads/2026/07/26-PCE-738_FA_FEDER_1.1.3_V2-1.pdf
+- **• TA 1.2.1 : Numérisation des TPE -PME** — échéance à vérifier — https://www.europe-martinique.com/wp-content/uploads/2026/07/26-PCE-598_FA_FEDER_1.2.1_V2.pdf
+- **• TA 1.2.2 : Solutions TIC, services en ligne et applications pour l’administration** — échéance à vérifier — https://www.europe-martinique.com/wp-content/uploads/2026/07/26-PCE-599_FA_FEDER_1.2.2_V2.pdf
+- **• TA 1.2.3 : Services et application informatiques pour les compétences numériques et l’inclusion numérique** — échéance à vérifier — https://www.europe-martinique.com/wp-content/uploads/2026/07/26-PCE-600_FA_FEDER_1.2.3_V2.pdf
+- **• TA 1.2.4 : Services et applications de santé en ligne (y compris les soins en ligne, l’internet des objets pour l’activité physique et l’assistance à l’autonomie à domicile)** — échéance à vérifier — https://www.europe-martinique.com/wp-content/uploads/2026/07/26-PCE-601_FA_FEDER_1.2.4_V2.pdf
+- **• TA 1.3.3 : Aide au Fret Bokay** — échéance à vérifier — https://www.europe-martinique.com/wp-content/uploads/2025/10/Fiche-DOMO-1.3.3-Aide-au-Fret-BOKAY.v2.pdf
+- **• TA 1.3.3.1.1 : Aide au fret intrants/extrants** — échéance à vérifier — https://www.europe-martinique.com/wp-content/uploads/2025/10/Fiche-DOMO-1.3.3.1.1-Aide-au-Fret-Intrants-Extrants-VRAC.pdf
+- **• TA 1.3.3.2 : Aide au fret déchets** — échéance à vérifier — https://www.europe-martinique.com/wp-content/uploads/2025/10/25-PCE-1222-Mesure-1.3.3.2-Modif-24-PCE-671-Aide-au-Fret-DECHETS-v2.pdf
+- **• TA 4.2.1 : Infrastructures et équipements de la petite enfance** — échéance à vérifier — https://www.europe-martinique.com/wp-content/uploads/2026/06/FA_-FEDER_4.2.1_V2.pdf
+- **• TA 4.2.2 : Infrastructures et équipements pour l’enseignement** — échéance à vérifier — https://www.europe-martinique.com/wp-content/uploads/2026/06/FA_-FEDER_4.2.2._V2.pdf
+- **• TA 4.5 : Infrastructure de santé** — échéance à vérifier — https://www.europe-martinique.com/wp-content/uploads/2026/07/26-PCE-717_FA_-FEDER_4.5_V2-1.pdf
+- **• TA 4.6.1 : Attractivité touristique : promotion des actifs touristiques publics** — échéance à vérifier — https://www.europe-martinique.com/wp-content/uploads/2026/07/26-PCE-716_FA_-FEDER_4.6.1_V2.pdf
+- **• TA 4.6.2 : Mise en valeur et valorisation du patrimoine culturel et naturel martiniquais** — échéance à vérifier — https://www.europe-martinique.com/wp-content/uploads/2026/07/26-PCE-725_FA_-FEDER_4.6.2_V2.pdf
+- **1 - OBJECTIFS DU FONDS DE COOPERATION INTERREGIONALE** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/cooperation-avec-le-quebec
+- **1 000 mares en Île-de-France** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/718
+- **1000 bornes** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/1-000-bornes
+- **11 avril : C’est parti pour le FTJ** — échéance à vérifier — https://europe-en-hautsdefrance.eu/actualites-et-evenements/detail-de-lactualite/11-avril-cest-parti-pour-le-ftj
+- **119 Million €** — échéance à vérifier — https://www.europe-martinique.com/fonds-social-europeen-2/
+- **1er Appel à projets - Interreg NEXT MED 2021-2027** — 2024-04-30 — https://www.laregion.fr/1er-Appel-a-projets-Interreg-NEXT-MED-2021-2027
+- **2. APPELS A PROJETS _______________________________ ______________________________ 5** — 2026-02-16 — https://www.paysdelaloire.fr/les-aides/modernisation-des-outils-de-production-agricole-dans-les-entreprises-de-travaux-agricoles
+- **2. OBJET ET BENEFICIAIRES ..................................................................................................................... 4** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/fonds-respir
+- **2ème appel à projets du programme de coopération transfrontalière Espagne-Franc-Andorre (POCTEFA)** — 2025-04-22 — https://www.laregion.fr/2eme-appel-a-projets-du-programme-de-cooperation-transfrontaliere-Espagne-Franc
+- **360 Export** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/360-export
+- **3ème appel à projet SUDOE : capitalisation** — 2026-09-30 — https://www.laregion.fr/3eme-appel-a-projet-SUDOE-capitalisation
+- **4. 1 . Annexe 1 : C arte des territoires à enjeux culturels** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/culture/villes-et-pays-dart-et-dhistoire
+- **4ème appel à projet SUDOE** — 2026-10-30 — https://www.laregion.fr/4eme-appel-a-projet-SUDOE-old
+- **5e appel à projets transnational du partenariat européen - Clean Energy Transition Partnership (CETP)** — 2026-09-29 — https://anr.fr/fr/detail/call/5e-appel-a-projets-transnational-du-partenariat-europeen-clean-energy-transition-partnership-cetp/
+- **70.03 - Aide à la conversion à l’agriculture biologique (CAB)** — échéance à vérifier — https://www.odarc.corsica/70-03-Aide-a-la-conversion-a-l-agriculture-biologique-CAB_a363.html
+- **A la découverte des Réserves et des Parcs naturels régionaux** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/a-la-decouverte-des-reserves-et-des-parcs-naturels-regionaux
+- **À Montigny-le-Bretonneux, 1,2 million d’euros de FEDER pour la rénovation énergétique d’une résidence emblématique** — échéance à vérifier — https://www.europeidf.fr/projets/a-montigny-le-bretonneux-12-million-deuros-de-feder-pour-la-renovation-energetique-dune
+- **A PPEL A PROJETS** — 2027-12-31 — https://www.paysdelaloire.fr/les-aides/innovation-et-transitions-pour-le-tourisme-culturel
+- **A PPEL A PROJETS « H ANDICAP ET T OURISME »** — 2027-12-31 — https://www.paysdelaloire.fr/les-aides/aap-handicap-et-tourisme
+- **A quelles autres aides puis-je prétendre ?** — échéance à vérifier — https://www.bourgognefranchecomte.fr/quelles-autres-aides-puis-je-pretendre
+- **AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD** — 2026-12-31 — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/linnovation-et-linvention-au-coeur-des-projets-artisanaux
+- **AAPG - Appel à projets générique 2027** — 2026-10-13 — https://anr.fr/fr/detail/call/aapg-appel-a-projets-generique-2027/
+- **Abonnement à lexportateur.com** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/771
+- **Abonnez vous aux flux RSS** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/abonnez-vous-aux-flux-rss
+- **Accélérateur Défense Île-de-France** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/824
+- **Accélérateur DINAMIC + pour les entreprises** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/accelerateur-dinamic-pour-les-entreprises
+- **Accélérateur ESS** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/721
+- **Accès aux Financements Européens pour les PME** — 2029-12-31 — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/acces-aux-financements-europeens-pour-les-pme-afe-pme-1
+- **Accès aux Financements Européens pour les PME (AFE PME)** — 2029-12-31 — https://www.maregionsud.fr/vos-aides/detail/acces-aux-financements-europeens-pour-les-pme-afe-pme
+- **Accès refusé** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/feader-formation-professionnelle-et-acquisition-de-competences
+- **Accessibilité** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/Accessibilite
+- **Accessiblité: partiellement conforme** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/accessibilite
+- **Accompagnement 360 grands comptes et ETI** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/accompagnement-360-grands-comptes-et-eti
+- **Accompagnement à l'installation : sélection des organismes de conseil** — 2026-10-19 — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/accompagnement-linstallation-selection-des-organismes-de-conseil
+- **Accompagnement à la transmission-reprise d’entreprise en ZRR et ZMM de la Région Occitanie – OCCTAV** — échéance à vérifier — https://www.laregion.fr/Accompagnement-a-la-transmission-reprise-d-entreprise-en-ZRR-et-ZMM-de-la-Region
+- **Accompagnement Compétitivité et Décarbonation de l'industrie** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/686
+- **Accompagnement de structure et démarche collective** — échéance à vérifier — https://www.laregion.fr/Accompagnement-de-structure-et-demarche-collective
+- **Accompagnement des acteurs de l'ESS dans leurs démarches immobilières - Splendide!** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/781
+- **Accompagnement des acteurs de la filière nautique** — 2026-12-31 — https://www.maregionsud.fr/vos-aides/detail/accompagnement-des-acteurs-de-la-filiere-nautique
+- **Accompagnement des élèves de maternelle dans les transports scolaires** — échéance à vérifier — https://www.laregion.fr/Accompagnement-des-eleves-de-maternelle-dans-les-transports-scolaires
+- **Accompagnement des personnes vivant avec un trouble du spectre de l’autisme (TSA)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/661
+- **Accompagnement des plantations agricoles en Occitanie** — échéance à vérifier — https://www.laregion.fr/Accompagnement-des-plantations-agricoles-en-Occitanie
+- **Accompagnement des porteurs de projet de l'ESS - ACC'ESS** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif1019
+- **Accompagnement des projets de startup** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/actions-sectorielles-et-multisectorielles-start
+- **Accompagnement des territoires pour une logistique vecteur de développement local** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/101
+- **Accompagnement des transitions agroécologiques des productions végétales** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/accompagnement-des-transitions-agroecologiques-des-productions-vegetales
+- **Accompagnement et l'animation de projets en faveur des énergies renouvelables** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/accompagnement-et-lanimation-de-projets-en-faveur-des-energies-renouvelables
+- **Accompagnement individuel post-installation** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/accompagnement-individuel-post-installation-suivi
+- **Accompagnement individuel pré-installation : diagnostic** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/accompagnement-individuel-pre-installation-diagnostic
+- **Accompagnement individuel pré-installation : étude économique** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/accompagnement-individuel-pre-installation-etude-economique
+- **Accompagnement Industries engagées** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/768
+- **Accompagnement RSE & inclusion** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/725
+- **Accompagner des entreprises fragilisées** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/accompagner-des-entreprises-fragilisees
+- **Accompagner des projets de reconquête de friches en Occitanie** — échéance à vérifier — https://www.laregion.fr/friches-occitanie
+- **Accompagner l'aménagement durable - volet aménagement** — 2026-12-31 — https://www.maregionsud.fr/vos-aides/detail/accompagner-lamenagement-durable-volet-amenagement
+- **Accompagner l'aménagement durable - volet bâtiment** — 2026-12-31 — https://www.maregionsud.fr/vos-aides/detail/accompagner-lamenagement-durable-volet-batiment
+- **Accompagner la résilience du territoire régional face aux risques naturels majeurs** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/accompagner-la-resilience-du-territoire-regional-face-aux-risques-naturels-majeurs
+- **Accompagner les artistes et les groupes émergents dans le domaine des musiques actuelles** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/accompagner-les-artistes-et-les-groupes-emergents-dans-le-domaine-des-musiques-actuelles
+- **Accompagner les exploitations agricoles vers la certification HVE** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/certification-haute-valeur-environnementale
+- **Accompagner les jeunes au quotidien** — échéance à vérifier — https://www.bourgognefranchecomte.fr/aidesjeunes
+- **Accroître la compétitivité des PME pour faire face aux mutations économiques** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/accroitre-la-competitivite-des-pme-pour-faire-face-aux-mutations-economiques
+- **Accueil d’un Volontaire de Solidarité Internationale** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/accueil-dun-volontaire-de-solidarite-internationale
+- **Achat des véhicules CCFF/RCSC porteurs d’eau** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/achat-des-vehicules-ccff/rcsc-porteurs-deau
+- **Acquérir de l’équipement adapté pour l’accès aux loisirs des personnes en situation de handicap** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/acquerir-de-lequipement-adapte-pour-lacces-aux-loisirs-des-personnes-en-situation-de-handicap
+- **Acquérir et installer des équipements de climatisation ou de rafraîchissement** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/acquerir-et-installer-des-equipements-de-climatisation-ou-de-rafraichissement
+- **Acquisition de fonds de livres** — 2026-10-16 — https://www.maregionsud.fr/vos-aides/detail/acquisition-de-fonds-de-livres
+- **ACTEURS DE L'ÉNERGIE POUR L'AFRIQUE AEPA** — 2024-05-02 — https://guide-aides.hautsdefrance.fr/dispositif809
+- **Action Cœur de Ville (ACV)** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif973
+- **Action Régionale pour le Développement d’Activités Nouvelles ARDAN** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif597
+- **Action Stratégique Locale** — 2028-12-31 — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/action-strategique-locale
+- **Actions collectives dans l'économie circulaire** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/transition-energetique-et-ecologique/actions-collectives-dans-leconomie-circulaire
+- **Actions collectives de soutien à l'artisanat et au commerce de proximité** — 2028-12-31 — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/actions-collectives-de-soutien-lartisanat-et-au-commerce-de-proximite
+- **Actions collectives sectorielles et multisectorielles** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/actions-collectives-sectorielles-et-multisectorielles
+- **Actions d’initiative régionale pour la recherche : volet Start-AiRR** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif507
+- **Actions d’urgence et coopération en Ukraine** — échéance à vérifier — https://www.laregion.fr/Actions-d-urgence-et-cooperation-en-Ukraine
+- **Actions de développement touristique** — échéance à vérifier — https://www.laregion.fr/Actions-de-developpement-touristique
+- **Actions de formation en amont de la qualification** — 2026-06-22 — https://www.europe-bfc.eu/nos-aides/actions-de-formation-en-amont-de-la-qualification
+- **Actions de Formation En Situation de Travail - AFEST** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/jeunesse/actions-de-formation-en-situation-de-travail-afest
+- **Actions de lutte contre le décrochage scolaire et pour la persévérance scolaire** — 2026-09-30 — https://les-aides.nouvelle-aquitaine.fr/jeunesse/actions-de-lutte-contre-le-decrochage-scolaire-et-pour-la-perseverance-scolaire
+- **Actions de prévention contre le sexisme et d’éducation à la sexualité en direction des jeunes des Hauts de France** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif744
+- **Actions de prévention des déchets** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/actions-de-prevention-des-dechets
+- **Actions éducatives - Enveloppe forfaitaire** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif739
+- **Actions éducatives Nouvelle-Aquitaine - Volet 5 : Kiosque** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/jeunesse/actions-educatives-en-nouvelle-aquitaine-volet-4-kiosque
+- **Actions en faveur des jeunes en difficulté dans leur établissement** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/actions-en-faveur-des-jeunes-en-difficulte-dans-leur-etablissement
+- **Activ'ton installation - Prépare ta transmission** — 2023-12-29 — https://guide-aides.hautsdefrance.fr/dispositif709
+- **Activités des sites de visite, de loisirs et de pleine nature** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/sites-de-visites-et-activites-de-loisirs
+- **Actualités de France 2030** — échéance à vérifier — https://anr.fr/fr/france-2030/actualites-de-france-2030/
+- **Adaptation des littoraux au changement climatique** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/adaptation-des-littoraux-au-changement-climatique-1
+- **Adapter mon exploitation agricole face aux changements (MAEC forfaitaire) (FEADER - Dispositif 209)** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/adapter-mon-exploitation-agricole-face-aux-changements-maec-forfaitaire-feader-dispositif-209
+- **Adhésion CUMA** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/adhesion-cuma
+- **agirpourlatransition.ademe.fr** — échéance à vérifier — https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/fonds-vert-territoires-dindustrie-en-transition-ecologique-0
+- **Agriculture urbaine et périurbaine** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/61
+- **Agriculture: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/jai-un-projet/je-trouve-un-financement/agriculture
+- **Agritourisme** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/agritourisme-ouverture-des-exploitations-agricoles-a-la-visite
+- **Aide à domicile** — échéance à vérifier — https://www.mayotte.fr/sante-et-social/action-sociale/aide-a-domicile
+- **Aide à l'accompagnement de projets artistiques dans le domaine du spectacle vivant** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/309
+- **Aide à l'achat d'une alarme** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/507
+- **Aide à l'achat de minibus neufs et d’occasion (MBUSA)** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif722
+- **Aide à l’achat de reproducteurs pour la filière ovine** — 2027-12-31 — https://www.bourgognefranchecomte.fr/index.php/node/3981
+- **Aide à l'achat de véhicule de commerce ambulant des TPE artisanat-commerce - MOBI 3** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif767
+- **Aide à l’acquisition d’un ordinateur portable : loRdi** — échéance à vérifier — https://www.laregion.fr/Aide-a-l-acquisition-d-un-ordinateur-portable-loRdi
+- **Aide à l’acquisition d’une licence sportive (UNSS)** — échéance à vérifier — https://www.laregion.fr/Aide-a-l-acquisition-d-une-licence-sportive-UNSS
+- **Aide à l'acquisition de minibus pour les structures sportives franciliennes** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/587
+- **Aide à l'acquisition de véhicules de transport collectif (minibus)** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/3790
+- **Aide à l’acquisition de véhicules utilitaires propres** — 2029-12-31 — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/aide-a-lacquisition-de-vehicules-utilitaires-propres
+- **Aide à l'amélioration de la desserte forestière** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/aide-lamelioration-de-la-desserte-forestiere
+- **Aide à l'aménagement des structures de création et de diffusion culturelle** — 2028-12-31 — https://www.bourgognefranchecomte.fr/node/329
+- **Aide à l'écriture de scénario - Cinéma et Audiovisuel** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/199
+- **Aide à l’émergence des compagnies – spectacle vivant** — 2026-10-15 — https://www.bourgognefranchecomte.fr/node/261
+- **Aide à l’emploi associatif** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/263
+- **Aide à l'emploi de médiateurs culturels pour les salles de cinéma de proximité de la Région Hauts-de-France MCIN** — 2028-12-31 — https://guide-aides.hautsdefrance.fr/dispositif691
+- **Aide à l'équipement / Carte Génération #HDF** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif595
+- **Aide à l’équipement d’hébergements pour femmes victimes de violences et achat de packs de téléphones avec cartes prépayées** — 2026-11-02 — https://www.grandest.fr/appel-a-projet/hebergement-femmes-victimes-violences/
+- **Aide à l'équipement des entreprises de travaux forestiers** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/aide-lequipement-des-entreprises-de-travaux-forestiers
+- **Aide à l’hébergement pour les élèves, étudiants et demandeurs d'emploi inscrits dans une formation financée par la Région** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/aide-a-lhebergement-pour-les-eleves-etudiants-et-demandeurs-demploi-dans-les-filieres-du-sanitaire-et-du-travail-social
+- **Aide à l'hôtellerie de plein air** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/3854
+- **Aide à l’hôtellerie indépendante** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/3856
+- **Aide à l’implantation d’entreprises IMPL** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif683
+- **Aide à l'initiative des femmes (AIF) | ADIM** — échéance à vérifier — https://www.adim-mayotte.fr/page/aide-a-linitiative-des-femmes
+- **Aide à l'innovation et R&D pour les entreprises de l’agroalimentaire** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/aide-linnovation-la-recherche-et-le-developpement-dans-lagroalimentaire
+- **AIDE A L’INSTALLATION DES SALICULTEURS** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/installation-des-saliculteurs
+- **Aide à l'installation du jeune agriculteur** — 2023-04-01 — https://www.europeidf.fr/jai-un-projet/appels-a-projets/installation-jeune-agriculteur
+- **Aide à l'installation en agriculture** — 2027-12-31 — https://www.maregionsud.fr/vos-aides/detail/aide-a-linstallation-en-agriculture
+- **Aide à l'installation en agriculture biologique hors DJA** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/aide-linstallation-en-agriculture-biologique-hors-dja
+- **AIDE A L’INVESTISSEMENT « MON PROJET DE RENOVATION »** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/mon-projet-de-renovation
+- **Aide à l'investissement de projets collectifs pour la logistique en circuits courts des produits agricoles alimentaires régionaux** — échéance à vérifier — https://www.bourgognefranchecomte.fr/index.php/node/3667
+- **Aide à l'investissement des pépinières viticoles régionales** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/aide-a-linvestissement-des-pepinieres-viticoles-regionales
+- **Aide à l’investissement des TPE à fort potentiel** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/aide-linvestissement-des-tpe-fort-potentiel
+- **Aide à l'investissement des transitions - Très Petites Entreprises (TPE)** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/aide-linvestissement-des-transitions-tres-petites-entreprises-tpe
+- **Aide à l'investissement en faveur de la santé des femmes et de l'accès à l'IVG** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/30
+- **Aide à l’investissement matériel** — 2026-12-31 — https://www.bourgognefranchecomte.fr/node/267
+- **Aide à l'investissement pour le réemploi, la réparation et la réutilisation** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/aide-a-linvestissement-pour-le-reemploi-la-reparation-et-la-reutilisation
+- **Aide à l'investissement reprise d'entreprise TPE** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/aide-linvestissement-reprise-dentreprise-tpe
+- **Aide à la construction, la restauration, l'aménagement des musées et la numérisation des collections** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/72
+- **Aide à la création** — 2026-12-31 — https://www.bourgognefranchecomte.fr/node/268
+- **Aide à la création d'un hébergement pour les soignants** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/858
+- **Aide à la création de films associatifs** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/2492
+- **Aide à la création en arts visuels** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/3438
+- **Aide à la création et la gestion d’une réserve naturelle régionale** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/270
+- **Aide à la création littéraire** — échéance à vérifier — https://www.grandest.fr/vos-aides-regionales/creation-litteraire/
+- **Aide à la croissance** — 2026-12-31 — https://www.bourgognefranchecomte.fr/node/271
+- **Aide à la fiction longue cinématographique et audiovisuelle : écriture, développement, production** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/635
+- **Aide à la formation des bénévoles** — 2026-09-25 — https://www.bourgognefranchecomte.fr/node/4553
+- **Aide à la formation des sportifs évoluant dans un Pôle hors région au titre de la saison 2025/2026 (AIHN2)** — 2026-06-30 — https://guide-aides.hautsdefrance.fr/dispositif966
+- **Aide à la formation vers les métiers en tension (opérateurs IDFM)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/619
+- **Aide à la Garde d’Enfants** — 2022-04-01 — https://www.laregion.fr/Aide-a-la-Garde-d-Enfants
+- **Aide à la garde d’enfants AGE campagne 2026 - 2027** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif636
+- **Aide à la lecture de loisirs** — échéance à vérifier — https://www.laregion.fr/Aide-a-la-lecture-de-loisirs
+- **Aide à la librairie indépendante** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/151
+- **Aide à la Mobilité Etudiante (PRAME) - Enseignement Supérieur** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/aide-a-la-mobilite-etudiante-prame-enseignement-superieur
+- **Aide à la Mobilité Etudiante (PRAME) - Stage BTS** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/aide-a-la-mobilite-etudiante-prame-stage-bts
+- **Aide à la Mobilité Etudiante (PRAME) - Volet Sanitaire et social** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/aide-a-la-mobilite-etudiante-prame-volet-sanitaire-et-social
+- **Aide à la mobilité internationale des élèves du sanitaire et social avec Mouv’Occitanie** — échéance à vérifier — https://www.laregion.fr/Aide-a-la-mobilite-internationale-des-eleves-du-sanitaire-et-social-avec-Mouv
+- **Aide à la mobilité internationale des jeunes en insertion avec Mouv’Occitanie** — échéance à vérifier — https://www.laregion.fr/Aide-a-la-mobilite-internationale-des-jeunes-en-insertion-avec-Mouv-Occitanie
+- **Aide à la mobilité internationale Étudiante (PRAME) - Etudes** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/aide-a-la-mobilite-internationale-etudiante-prame-etudes
+- **Aide à la modernisation des salles de cinéma et circuits itinérants** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/3853
+- **Aide à la navigation** — échéance à vérifier — https://www.grandest.fr/aide-et-accessibilite/
+- **Aide à la permanence artistique et culturelle pour les équipes artistiques professionnelles** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/54
+- **Aide à la permanence artistique et culturelle pour les fabriques de culture** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/64
+- **Aide à la permanence artistique et culturelle pour les lieux et opérateurs** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/53
+- **Aide à la production cinématographique de courts métrages** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/278
+- **Aide à la production de logements sociaux pour les opérations s’inscrivant dans les conventions NPNRU** — échéance à vérifier — https://www.laregion.fr/Aide-a-la-production-de-logements-sociaux-pour-les-operations-s-inscrivant-dans-les
+- **Aide à la production des compagnies – spectacle vivant** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/276
+- **Aide à la promotion des éditeurs (aide aux projets des professionnels de la chaîne du livre)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/206
+- **Aide à la qualification en agriculture biologique** — 2028-03-31 — https://www.bourgognefranchecomte.fr/index.php/node/281
+- **Aide à la réalisation d'études pour la protection réglementaire des espaces agricoles** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/aide-a-la-realisation-detudes-pour-la-protection-reglementaire-des-espaces-agricoles
+- **Aide à la réalisation de diagnostics pastoraux** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/aide-a-la-realisation-de-diagnostics-pastoraux
+- **Aide à la réalisation de Plan d'Occupation Pastorale Intercommunal** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/popi
+- **Aide à la recherche et à la création – Arts Visuels** — échéance à vérifier — https://www.grandest.fr/vos-aides-regionales/aide-a-recherche-a-creation-arts-visuels/
+- **Aide à la Recherche et Développement des TPE** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/aide-la-recherche-et-developpement-des-tpe
+- **Aide à la reconquête de friches de peupliers** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/aide-la-reconquete-de-friches-de-peupliers
+- **Aide à la rédaction d’un Plan simple de gestion volontaire** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/aide-la-redaction-dun-plan-simple-de-gestion-volontaire
+- **Aide à la rénovation des points de ventes fixes, artisanaux, commerciaux ou de services - REHA3** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif768
+- **Aide à la rénovation thermique des logements sociaux** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/318
+- **Aide à la réorientation des exploitations viticoles** — 2026-12-31 — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/aide-la-reorientation-des-exploitations-viticoles
+- **Aide à la reprise : hôtellerie et hôtellerie de plein air** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/3855
+- **Aide à la résidence territoriale dans le domaine du spectacle vivant** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/49
+- **Aide à la restauration des objets mobiliers protégés** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/103
+- **Aide à la restauration du patrimoine immobilier protégé** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/76
+- **Aide à la restauration et à l'aménagement des maisons ou des ateliers d'artistes remarquables** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/204
+- **Aide à la restauration et numérisation d'œuvre d'un fonds patrimonial identifié** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/71
+- **Aide à la restauration pour les élèves des formations sanitaires et sociales infra BAC** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif1058
+- **Aide à la revitalisation commerciale des communes en milieu rural** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/75
+- **Aide à la saisie du rapport activité FEDER** — échéance à vérifier — https://www.paysdelaloire.fr/sites/default/files/2023-10/Aide%20saisie%20rapport%20activit%C3%A9%20FEDER_20231012.zip
+- **Aide à la sécurisation de l'activité des professionnels de santé** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/27
+- **Aide à la signalisation et à la mise en sécurité des points d'arrêt** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif916
+- **Aide à la structuration du mouvement sportif** — 2025-02-23 — https://www.bourgognefranchecomte.fr/node/3420
+- **Aide à la transformation agroalimentaire francilienne** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/334
+- **Aide à la transmission** — 2026-12-31 — https://www.bourgognefranchecomte.fr/node/286
+- **Aide à la trésorerie en agriculture** — 2024-05-08 — https://www.laregion.fr/aide-exceptionnelle-en-agriculture
+- **Aide à projets jeunesse** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/287
+- **Aide après réalisation Cinéma** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/147
+- **Aide au boisement en peuplier** — échéance à vérifier — https://www.laregion.fr/Aide-au-boisement-en-peuplier
+- **Aide au brevet d'aptitude aux fonctions d'animateur - BAFA** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/aide-au-brevet-daptitude-aux-fonctions-danimateur-bafa
+- **Aide au conseil pour les entreprises de l'ESS** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/aide-au-conseil-pour-les-entreprises-de-less
+- **Aide au conseil stratégique** — 2026-12-31 — https://www.bourgognefranchecomte.fr/node/3825
+- **Aide au déplacement de collégiens pour des manifestations liées à l'information sur l'orientation** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/jeunesse/aide-au-deplacement-de-collegiens-pour-des-manifestations-liees-linformation-sur-lorientation
+- **Aide au déploiement de flottes hydrogène** — 2026-12-31 — https://www.bourgognefranchecomte.fr/node/3833
+- **Aide au développement de peupleraies de qualité** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/aide-au-developpement-de-peupleraies-de-qualite-en-alignement-dans-le-marais-poitevin
+- **AIDE AU DEVELOPPEMENT DEEPTECH** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/aide-au-developpement-deeptech
+- **Aide au développement des grandes entreprises ADGE** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif682
+- **Aide au documentaire cinématographique et audiovisuel : écriture, développement, production** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/636
+- **Aide au fonctionnement des compagnies de spectacle vivant** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/291
+- **Aide au fonctionnement des ensembles professionnels - Musique** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/292
+- **Aide au fonctionnement des ligues et comités régionaux sportifs ALCR** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif393
+- **Aide au logement des étudiants (Hors CPER)** — échéance à vérifier — https://www.laregion.fr/Aide-au-logement-des-etudiants-Hors-CPER
+- **Aide au logement des jeunes** — échéance à vérifier — https://www.laregion.fr/Aide-au-logement-des-jeunes
+- **Aide au mérite pour les étudiants en formations sanitaires et sociales** — échéance à vérifier — https://www.laregion.fr/Aide-au-merite
+- **Aide au montage de projets européens** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/634
+- **Aide au parcours de résidence(s) de création - spectacle vivant** — 2026-06-15 — https://www.bourgognefranchecomte.fr/node/282
+- **Aide au parcours de résidence(s) de création – musique** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/4157
+- **Aide au permis de conduire** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/financer-ma-formation-au-permis-de-conduire
+- **Aide au permis de conduire** — échéance à vérifier — https://www.bourgognefranchecomte.fr/permisdeconduire
+- **Aide au permis de conduire PERM26** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif931
+- **Aide au recrutement de cadres** — 2026-12-31 — https://www.bourgognefranchecomte.fr/node/297
+- **Aide au recrutement de cadres et d’assistant(e)s export** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/298
+- **Aide au réemploi des emballages et au développement de la vente en vrac et de la consigne.** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/aide-au-reemploi-des-emballages-et-au-developpement-de-la-vente-en-vrac-et-de-la-consigne
+- **Aide au renouvellement forestier** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/aide-au-renouvellement-forestier
+- **Aide au stage professionnel à l'étranger pour les jeunes demandeurs d’emploi** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/stages-letranger-public-demandeur-demploi
+- **Aide au Transport aux Particuliers - COVOITUREURS ATPS** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif787
+- **Aide au Transport aux Particuliers - ÉTUDIANTS ATPEF** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif780
+- **Aide au Transport aux Particuliers - SALARIES ATPS** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif458
+- **Aide au transport de collégiens, lycéens, apprentis et étudiants vers des événements dédiés à l'information sur les métiers** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/3288
+- **Aide aux actions relevant du Conservatoire du Patrimoine Biologique Régional (CPBR) et aux actions en faveur des Races Locales non menacées** — échéance à vérifier — https://www.laregion.fr/Aide-aux-actions-relevant-du-Conservatoire-du-Patrimoine-Biologique-Regional-CPBR-et
+- **Aide aux bacheliers méritants** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/119
+- **Aide aux commerces de proximité en milieu rural** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/82
+- **Aide aux commerces TPE & services du quotidien** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/aide-aux-commerces-tpe-services-du-quotidien
+- **Aide aux communes, EPCI et établissements d'enseignement supérieur mobilisés dans la vaccination** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/426
+- **Aide aux coopérations territoriales économiques - COTE** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif1016
+- **Aide aux derniers commerces multi-services et des Très Petites Entreprises (TPE)** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/aide-aux-derniers-commerces-multi-services-et-des-tres-petites-entreprises-tpe
+- **Aide aux emplois structurants** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/3870
+- **Aide aux entreprises de pêche et d'aquaculture** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif946
+- **Aide aux entreprises en consolidation financière COFI** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif679
+- **Aide aux équipements culturels et patrimoniaux structurants** — échéance à vérifier — https://www.laregion.fr/Aide-aux-equipements-culturels-et-patrimoniaux-structurants
+- **Aide aux études et à l'investissement - Chaufferie bois associée à un réseau de chaleur et réseaux de chaleur alimentés par énergies renouvelables ou de récupération** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/2624
+- **Aide aux exploitations touchées par la dermatose nodulaire contagieuse (DNC)** — 2027-12-31 — https://www.bourgognefranchecomte.fr/index.php/node/4389
+- **Aide aux festivals et aux manifestations de spectacle vivant à rayonnement régional** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/50
+- **Aide aux forces de sécurité** — 2026-12-31 — https://www.maregionsud.fr/vos-aides/detail/aide-aux-forces-de-securite
+- **Aide aux infrastructures hydrauliques sur les territoires** — 2026-09-30 — https://www.europeidf.fr/jai-un-projet/appels-a-projets/aide-aux-infrastructures-hydrauliques-sur-les-territoires
+- **Aide aux investissements dans les petits équipements pour l’agriculture** — 2027-06-30 — https://www.bourgognefranchecomte.fr/index.php/node/3875
+- **Aide aux investissements des lycées agricoles privés et maisons familiales rurales** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/aide-aux-investissements-des-lycees-agricoles-prives-et-maisons-familiales-rurales
+- **Aide aux investissements des lycées agricoles publics** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/aide-investissements-lycees-agricoles
+- **Aide aux investissements pour le soutien au pastoralisme sur le Massif du Jura** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/3605
+- **AIDE AUX INVESTISSEMENTS PRODUCTIFS EN SALICULTURE** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/aide-aux-investissements-productifs-en-saliculture
+- **Aide aux jeunes inscrits au sein du Service Militaire Volontaire (SMV) de Marseille** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/aide-aux-jeunes-inscrits-au-sein-du-service-militaire-volontaire-smv-de-marseille
+- **Aide aux jeunes pour bien vivre en montagne** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/aide-jeunes-bien-vivre-en-montagne
+- **Aide aux librairies indépendantes** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/303
+- **Aide aux lieux d’accueil en résidence - spectacle vivant** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/304
+- **Aide aux lieux de diffusion de musique - Fonctionnement** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/305
+- **Aide aux lieux et projets annuels culturels dans le domaine du spectacle vivant** — échéance à vérifier — https://www.grandest.fr/vos-aides-regionales/aide-aux-lieux-projets-annuels-structurants/
+- **Aide aux lycéens en interruption scolaire pour raisons de santé - Subvention AIST** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif740
+- **Aide aux manifestations littéraires** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/115
+- **Aide aux pôles d’innovation** — 2026-12-31 — https://www.bourgognefranchecomte.fr/node/308
+- **Aide aux pôles de coopération territoriale dans le domaine du spectacle vivant** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/311
+- **Aide aux projets des groupements (aide aux projets des professionnels de la chaîne du livre)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/148
+- **Aide aux projets des musées œuvrant à la valorisation du patrimoine** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/113
+- **Aide aux projets des réseaux franciliens œuvrant à la valorisation du patrimoine** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/111
+- **Aide aux projets éditoriaux exceptionnels (aide aux projets des professionnels du livre)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/488
+- **Aide aux projets Egalité - Citoyenneté** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/311
+- **Aide aux projets innovants (aide aux projets des professionnels de la chaîne du livre)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/257
+- **Aide aux projets labellisés par les pôles de compétitivité** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/aide-aux-projets-labellises-par-les-poles-de-competitivite
+- **Aide aux projets œuvrant à la valorisation des maisons ou des ateliers d'artistes remarquables** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/114
+- **Aide aux projets œuvrant à la valorisation du patrimoine labellisé d'intérêt régional** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/109
+- **Aide aux propriétaires forestiers à la réalisation de documents de gestion durable DGFD2** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif693
+- **Aide aux réseaux d'arts plastiques, numériques et urbains** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/346
+- **Aide aux réseaux franciliens dans le domaine du spectacle vivant** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/47
+- **Aide aux structures d'Arts plastiques et visuels** — 2026-11-24 — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/aide-aux-structures-darts-plastiques-et-visuels
+- **Aide aux structures innovantes dans les domaines du handicap et de la dépendance** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/34
+- **Aide aux structures labellisées - spectacle vivant** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/313
+- **Aide aux structures ressources cinématographiques et audiovisuelles** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/316
+- **Aide aux structures ressources et aux réseaux de professionnels - Musique** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/317
+- **Aide aux structures ressources et aux réseaux de professionnels - spectacle vivant** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/318
+- **Aide aux structures ressources et réseaux de professionnels - Livre** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/319
+- **Aide aux villages et centres de vacances (tourisme social)** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/4533
+- **Aide bourse aux auteurs** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/320
+- **Aide Certif : Soutien aux nouvelles participations à un régime de qualité SIQO** — 2022-09-03 — https://guide-aides.hautsdefrance.fr/dispositif501
+- **Aide ciblée Export et promotion de la création régionale - MOEX** — 2027-04-29 — https://guide-aides.hautsdefrance.fr/dispositif1025
+- **Aide ciblée Musée de France Soutien aux expositions temporaires - EXPO** — 2026-11-19 — https://guide-aides.hautsdefrance.fr/dispositif1024
+- **Aide ciblée pour une étude préalable (d’évaluation et de diagnostic) à un projet de restauration du patrimoine - DIAGP** — 2027-02-15 — https://guide-aides.hautsdefrance.fr/dispositif1040
+- **Aide ciblée Restauration du patrimoine protégé - REPP** — 2026-02-16 — https://guide-aides.hautsdefrance.fr/dispositif1042
+- **Aide collectives à la filière forêt bois papier** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/aide-collectives-la-filiere-foret-bois-papier
+- **Aide complémentaire à la scolarité** — 2027-06-26 — https://guide-aides.hautsdefrance.fr/dispositif627
+- **Aide d'urgence aux entreprises touchées par les inondations d'octobre 2024** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/778
+- **Aide en faveur des communes dans la gestion des obligations légales de débroussaillement** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/aide-en-faveur-des-communes-dans-la-gestion-des-obligations-legales-de-debroussaillement
+- **Aide en investissement des cinémas indépendants du Grand Est** — échéance à vérifier — https://www.grandest.fr/vos-aides-regionales/aide-investissement-faveur-salles-de-cinema/
+- **Aide en trésorerie pour les exploitations touchées par la Dermatose Nodulaire Contagieuse (DNC)** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/aide-en-tresorerie-pour-les-exploitations-touchees-par-la-dermatose-nodulaire-contagieuse-dnc
+- **Aide financière à l’engraissement de bovins** — échéance à vérifier — https://www.bourgognefranchecomte.fr/index.php/node/3948
+- **Aide génétique en faveur des élevages cunicoles** — 2025-10-15 — https://guide-aides.hautsdefrance.fr/dispositif1044
+- **Aide la réalisation de manifestations d'arts plastiques, numériques et urbains** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/345
+- **Aide pour l'effectivité des droits culturels des personnes en situation de handicap** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/272
+- **Aide pour le financement des Evènements locaux Visant à promouvoir l’Apprentissage, l’Alternance et les métiers EVAA** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif133
+- **Aide pour les entreprises intégrant la démarche CEC** — 2026-12-31 — https://www.bourgognefranchecomte.fr/node/4443
+- **Aide rebond pour les exploitations agricoles franciliennes** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/884
+- **Aide Région à l’animation énergies renouvelables** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/433
+- **Aide Région à la méthanisation** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/2813
+- **Aide Région aux études et à l'investissement - Hydroélectricité** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/397
+- **Aide Région aux études et à l’investissement – Solaire thermique** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/685
+- **Aide Région aux études et conseils pour les projets d’énergies renouvelables citoyens** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/3058
+- **Aide régionale à l'éducation artistique et culturelle dans les lycées et les CFA** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/117
+- **Aide régionale à l'installation des jeunes entraîneurs de chevaux de course et de sport** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/aide-regionale-linstallation-des-jeunes-entraineurs-de-chevaux-de-course-et-de-sport
+- **AIDE REGIONALE A LA MODERNISATION DES HIPPODROMES** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/aide-regionale-la-modernisation-des-hippodromes
+- **AIDE REGIONALE A LA PISCICULTURE EXTENSIVE EN ETANGS** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/aide-regionale-la-pisciculture-extensive-en-etangs
+- **Aide Régionale Apprentissage (ARA) pour les apprentis en 1re année d'apprentissage (niveaux 3 à 5)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/482
+- **Aide régionale au développement des chaufferies biomasse** — 2025-02-17 — https://www.laregion.fr/Aide-regionale-au-developpement-des-chaufferies-biomasse
+- **Aide régionale au développement des installations géothermiques** — 2025-02-17 — https://www.laregion.fr/Aide-regionale-au-developpement-des-installations-geothermiques
+- **Aide régionale au développement des installations solaires thermiques** — échéance à vérifier — https://www.laregion.fr/Aide-regionale-au-developpement-des-installations-solaires-thermiques
+- **Aide régionale exceptionnelle pour la résilience des exploitations agricoles d'Île-de-France** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/769
+- **Aide régionale pour la réalisation d’unités de production de biogaz** — échéance à vérifier — https://www.laregion.fr/Aide-regionale-pour-la-realisation-d-unites-de-production-de-biogaz
+- **Aide régionale pour le Diplôme d'accès aux études universitaires (DAEU)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/200
+- **Aide régionale Spécifique à l'Installation ARSI** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif833
+- **Aide TPE / PME : Prestation Tremplin Innovation** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/aide-tpe-pme-prestation-tremplin-innovation
+- **AIDEN : Connexion à mon compte Région Sud** — échéance à vérifier — https://europe.maregionsud.fr/projets-realises-1/detail/aiden-connexion-a-mon-compte-region-sud
+- **Aides à l’emploi pour l’insertion par l’activité économique** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/3745
+- **Aides à l’hébergement et à la restauration des lycéens** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/322
+- **Aides à l'investissement en méthanisation** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/aides-a-linvestissement-en-methanisation
+- **Aides à la diffusion des œuvres dans le domaine du spectacle vivant** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/307
+- **Aides aux actions de sensibilisation des arts visuels** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/253
+- **Aides aux brevets : BAFA, BAFD, BNSSA** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/aides-aux-brevets-bafa-bafd-bnssa
+- **Aides aux collectivités** — échéance à vérifier — https://www.paysdelaloire.fr/transition-ecologique/biodiversite/aides-aux-collectivites
+- **Aides aux communes, aux collectivités** — 2027-12-31 — https://www.maregionsud.fr/vos-aides/aides-aux-communes-aux-collectivites
+- **Aides aux entreprises et exploitations agricoles** — échéance à vérifier — https://www.paysdelaloire.fr/transition-ecologique/biodiversite/aides-aux-entreprises-et-exploitations-agricoles
+- **Aides aux réseaux structurant la filière des arts visuels** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/480
+- **Aides aux structures de diffusion intermédiaires d’intérêt régional - spectacle vivant** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/315
+- **Aides Culturelles de la Collectivité Territoriale de Guyane - Collectivité Territoriale de Guyane** — échéance à vérifier — https://www.ctguyane.fr/aides-culturelles-de-la-collectivite-territoriale-de-guyane/
+- **Aides d'État | L'Europe s'engage en France, le portail des Fonds européens** — 2032-12-31 — https://www.europe-en-france.gouv.fr/fr/aides-d-etat
+- **Aides en faveur d’une gestion forestière exemplaire** — échéance à vérifier — https://www.bourgognefranchecomte.fr/index.php/node/323
+- **Aides en faveur des énergies renouvelables** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/3378
+- **Aides en faveur des entreprises de travaux forestiers - Aide à l'équipement** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/3594
+- **Aides en faveur des entreprises de travaux forestiers - Aide à l'installation** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/890
+- **Aides en faveur du développement de la pratique du sport scolaire** — échéance à vérifier — https://www.laregion.fr/Aides-en-faveur-du-developpement-de-la-pratique-du-sport-scolaire
+- **Aides et Appels à projetEntreprises, retrouvez ici toutes les aides disponibles en France, toutes institutions confondues.** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet?tx_eannuaires_pi1%5Bcontroller%5D=Fiche&tx_eannuaires_pi1%5BcurrentPage%5D=3&cHash=c4fe15f067e37160b724d992b0854b61
+- **Aides individuelles aux entreprises de la 1ère transformation du bois - Aide à la création, croissance, transmission** — échéance à vérifier — https://www.bourgognefranchecomte.fr/index.php/node/326
+- **Aides individuelles aux entreprises de la 1ère transformation du bois - Aide au recrutement de cadres et d'assistant(e) export** — échéance à vérifier — https://www.bourgognefranchecomte.fr/index.php/node/325
+- **Aides individuelles aux entreprises de la première transformation du bois - Aide aux investissements matériels** — échéance à vérifier — https://www.bourgognefranchecomte.fr/index.php/node/3598
+- **Aides régionales à l’animation d’actions collectives en matière d’économie circulaire et de déchets** — échéance à vérifier — https://www.laregion.fr/Aides-regionales-a-l-animation-d-actions-collectives-en-matiere-d-economie
+- **Aides régionales à la réalisation de projets locaux en matière d’économie circulaire et de déchets** — échéance à vérifier — https://www.laregion.fr/Aides-regionales-a-la-realisation-de-projets-locaux-en-matiere-d-economie-circulaire
+- **Aides régionales individuelles haut niveau** — 2026-09-15 — https://www.bourgognefranchecomte.fr/node/4518
+- **Allocation de soutien à l'emploi Scientifique A haute Valeur Ajoutée Novatrice « SAVAN » – Appel à projets 2026** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif1081
+- **Ambassadeurs du Sport de la Région Île-de-France** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/850
+- **Amélioration de la ventilation des lieux accueillant des publics fragiles.** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/379
+- **Amélioration des connaissances sur la biodiversité.** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/amelioration-des-connaissances-sur-la-biodiversite
+- **Amélioration du potentiel pollinisateur des abeilles** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/amelioration-du-potentiel-pollinisateur-des-abeilles
+- **Amélioration et transformation des filières - France 2030 régionalisé** — 2024-06-30 — https://www.bourgognefranchecomte.fr/node/3467
+- **Améliorez la compétitivité énergétique de votre entreprise** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/competitivite-energetique-des-entreprises
+- **Aménagement des territoires: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/jai-un-projet/je-trouve-un-financement/amenagement-des-territoires
+- **Aménagement du territoire | Le Guide des Aides** — 2028-12-31 — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire
+- **Aménagement et gestion durable du littoral** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/amenagement-et-gestion-durable-du-littoral
+- **Aménagements cyclables touristiques des itinéraires et véloroutes (Pays de la Loire ACTIV)** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/amenagements-cyclables-touristiques-des-itineraires-et-veloroutes-pays-de-la-loire-activ
+- **Aménagements urbains des Petites cités de caractère (PCC)** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/amenagements-urbains-des-petites-cites-de-caractere-pcc
+- **Aménager et équiper une aire de jeux inclusive** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/amenager-et-equiper-une-aire-de-jeux-inclusive
+- **AMI - construire des stratégies territoriales pour reconquérir la biodiversité** — 2025-10-31 — https://www.laregion.fr/AMI-construire-des-strategies-territoriales-pour-reconquerir-la-biodiversite
+- **AMI « Structurer une filière santé écoresponsable »** — échéance à vérifier — https://www.hautsdefrance-id.fr/appels-a-projets/ami-structurer-une-filiere-sante-ecoresponsable/
+- **AMI Bioéconomie Hauts-de-France** — échéance à vérifier — https://www.hautsdefrance-id.fr/appels-a-projets/ami-bioeconomie-region/
+- **AMI Cycle de vie des batteries | Hauts-de-France** — échéance à vérifier — https://www.hautsdefrance-id.fr/appels-a-projets/ami-cycle-de-vie-des-batteries/
+- **AMI Décarbonation industrielle : H2, CO₂ et stockage** — 2028-03-31 — https://www.hautsdefrance-id.fr/appels-a-projets/decarbonation-process-industriels-ami/
+- **AMI FORPRO SUP - Identification des établissements publics d’enseignement supérieur d’Occitanie et des structures porteuses de la coordination** — 2026-07-17 — https://www.laregion.fr/AMI-FORPRO-SUP-Identification-des-etablissements-publics-d-enseignement-superieur-d
+- **AMI HealthIA : IA & Santé en Hauts-de-France** — échéance à vérifier — https://www.hautsdefrance-id.fr/appels-a-projets/ami-ia-en-sante/
+- **AMI Redirection écologique des zones commerciales** — 2027-03-31 — https://www.maregionsud.fr/vos-aides/detail/ami-redirection-ecologique-des-zones-commerciales
+- **AMI Technologies du vivant, Biotech et Medtech** — échéance à vérifier — https://www.hautsdefrance-id.fr/appels-a-projets/ami-technologies-du-vivant-biotech-et-medtech/
+- **AMI Territoires pilotes – Urbanisme Favorable à la Santé** — échéance à vérifier — https://www.grandest.fr/appel-a-projet/ami-territoires-pilotes/
+- **AMI Tiers - lieux 25 - 28 / Région Nouvelle - Aquitaine** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/soutien-la-creation-et-au-developpement-des-tiers-lieux
+- **AMI Tourisme de Savoir-Faire** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/ami-tourisme-de-savoir-faire
+- **Animation des groupes d’action locale (GAL) 2021-2027** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/animation-des-groupes-daction-locale-gal-2021-2027
+- **Animation et structuration des filières agricoles** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/animation-et-structuration-des-filieres-agricoles
+- **Animation territoriale : Contrats et SAGE** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/animation-territoriale-contrats-et-sage
+- **Annexe Plan de financement 21-27 RI FEDER** — échéance à vérifier — https://www.paysdelaloire.fr/sites/default/files/2026-06/V2%20Annexe_Plan%20de%20financement%2021-27-%20DS%20FEDER_V2026.zip
+- **APAVE INFRASTRUCTURES ET** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/cedre-premiers-pas
+- **Appel à candidature - Réalisation de Diags Amorçage RH** — 2026-10-31 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-candidature-realisation-de-diags-amorcage-rh
+- **Appel à candidature : Labellisation des opérateurs PASS Entrepreneur#Leader pour 3 ans** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/777
+- **Appel à candidature « Performance et Résultats » du Service Public de Prévention et de Gestion des Déchets** — 2026-12-31 — https://www.laregion.fr/Appel-a-candidature-Performance-et-Resultats-du-Service-Public-de-Prevention-et-de-Gestion-des-Dechets
+- **Appel à candidature au label « Patrimoine d'intérêt régional » en faveur du patrimoine non protégé** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/110
+- **Appel à candidatures - Foodtrucks 2026-2027 - Site de Capdeville** — 2026-07-17 — https://www.laregion.fr/Appel-a-candidatures-Foodtrucks-2026-2027-Site-de-Capdeville
+- **Appel à candidatures : délégation autour de la présidente de Région en Afrique du Sud** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/816
+- **Appel à candidatures : participation au salon Smart City Expo World Congress Barcelona 2025** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/810
+- **Appel à candidatures : participation au salon Sustainable High City Tech Tokyo 2024 (SusHi-Tech)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/703
+- **Appel à candidatures « Sélection des organismes de conseil et d’accompagnement à l’installation en agriculture en Nouvelle-Aquitaine » 2026** — échéance à vérifier — https://www.europe-en-nouvelle-aquitaine.eu/fr/appels-%C3%A0-projets/appel-candidatures-selection-des-organismes-de-conseil-et-daccompagnement
+- **Appel à candidatures d’opérateurs assurant la réalisation d’actions d’accompagnement à la création d’activité agricole à l’accompagnement/conseil des transmissions** — 2024-01-15 — https://www.laregion.fr/Appel-a-candidatures-d-operateurs-assurant-la-realisation-d-actions-d-accompagnement-45220
+- **Appel à manifestation "Campus A 2 PAS"** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/appel-manifestation-campus-2-pas
+- **Appel à manifestation d’intérêt** — 2026-01-31 — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/sobriete-fonciere
+- **Appel à Manifestation d’Intérêt - Matière Première issue du Recyclage** — échéance à vérifier — https://www.laregion.fr/Appel-a-Manifestation-d-Interet-Matiere-Premiere-issue-du-Recyclage
+- **Appel à Manifestation d’Intérêt (AMI) « Défense, Innovation, Souveraineté et Réindustrialisation des territoires »** — 2028-06-30 — https://www.laregion.fr/Appel-a-Manifestation-d-Interet-AMI-Defense-Innovation-Souverainete-et-47225
+- **Appel à Manifestation d’Intérêt (AMI) « Réemploi et Économie Circulaire dans le BTP »** — 2026-12-31 — https://www.laregion.fr/Appel-a-Manifestation-d-Interet-AMI-Reemploi-et-Economie-Circulaire-dans-le-BTP
+- **Appel à manifestation d'intérêt Ingénierie territoriale** — 2025-05-31 — https://www.paysdelaloire.fr/les-aides/appel-manifestation-dinteret-ingenierie-territoriale
+- **Appel à manifestation d’intérêt pour « Développer des formations innovantes en coopération avec l'Académie de l'Organisation Mondiale de la Santé »** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/appel-manifestation-dinteret-pour-developper-des-formations-innovantes-en-cooperation-avec
+- **Appel à manifestation d’intérêt pour l’occupation d’un terrain à Nice (06)** — 2026-10-30 — https://www.maregionsud.fr/vos-aides/detail/appel-a-manifestation-dinteret-pour-loccupation-dun-terrain-a-nice-06
+- **Appel à manifestation d’intérêt pour la mise à disposition d’un local destiné à la vente de produits de terroir et à de la restauration ou de la petite restauration** — 2026-01-30 — https://www.laregion.fr/Appel-a-manifestation-d-interet-pour-la-mise-a-disposition-d-un-local-destine-a-la
+- **Appel à manifestation d'intérêt Territoires Boca’Lab** — 2025-07-04 — https://www.paysdelaloire.fr/les-aides/appel-manifestation-dinteret-territoires-bocalab
+- **Appel à projet - Programme d’investissements d’avenir 4 (PIA 4) Appel à projets France 2030 régionalisé - Innovation formations professionnelles** — 2026-12-31 — https://www.paysdelaloire.fr/les-aides/appel-projet-programme-dinvestissements-davenir-4-pia-4-appel-projets-france-2030-regionalise
+- **Appel à projet pour l’Aire Fonctionnelle Centre du Programme INTERREG VI-A Espagne-France-Andorre (POCTEFA 2021-2027)** — 2025-10-31 — https://www.laregion.fr/Appel-a-projet-pour-l-Aire-Fonctionnelle-Centre-du-Programme-INTERREG-VI-A-Espagne-47204
+- **Appel à projet Restauration du Patrimoine rural non protégé - RPNP** — 2026-11-16 — https://guide-aides.hautsdefrance.fr/dispositif1041
+- **Appel à projets - "Lutte contre les effets d'îlots de chaleur urbains" 2ème session** — échéance à vérifier — https://www.europe-en-nouvelle-aquitaine.eu/fr/appels-%C3%A0-projets/appel-projets-lutte-contre-les-effets-dilots-de-chaleur-urbains-2eme-session.html
+- **Appel à projets - Chaufferie bois avec réseau de chaleur** — 2025-10-31 — https://www.bourgognefranchecomte.fr/node/4174
+- **Appel à Projets - Compétences actives** — 2025-09-30 — https://www.bourgognefranchecomte.fr/node/4237
+- **Appel à projets - Conseils Conversion BIO** — échéance à vérifier — https://www.bourgognefranchecomte.fr/index.php/node/4191
+- **Appel à projets - Conseils Stratégiques Bas Carbone** — échéance à vérifier — https://www.bourgognefranchecomte.fr/index.php/node/4192
+- **Appel à projets - Conseils Stratégiques PerformanceS** — échéance à vérifier — https://www.bourgognefranchecomte.fr/index.php/node/4189
+- **Appel à projets - Conseils Stratégiques TransitionS** — échéance à vérifier — https://www.bourgognefranchecomte.fr/index.php/node/4190
+- **Appel à projets - Dotation jeunes agriculteurs** — 2025-12-05 — https://www.bourgognefranchecomte.fr/node/4207
+- **Appel à projets - Economie Sociale et Solidaire (ESS) 2025** — 2025-09-15 — https://www.bourgognefranchecomte.fr/node/3903
+- **Appel à projets - France 2030 régionalisé – Projets d’innovation** — échéance à vérifier — https://www.europe-en-occitanie.eu/Appel-a-projets-France-2030-regionalise-Projets-d-innovation
+- **Appel à projets - Investissements dans les déssertes forestières** — 2025-08-12 — https://www.bourgognefranchecomte.fr/node/4180
+- **Appel à projets - Recherche et Développement** — 2024-01-31 — https://www.bourgognefranchecomte.fr/node/3664
+- **Appel à projets - Soutien aux structures de développement artistique – musiques actuelles** — 2024-10-21 — https://www.bourgognefranchecomte.fr/node/3867
+- **Appel à projets : « Espace de données »** — 2026-12-02 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-espace-de-donnees
+- **Appel à projets : « Transition numérique de la Culture et appropriation de l’intelligence artificielle »** — 2027-06-16 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-transition-numerique-de-la-culture-et-appropriation-de-lintelligence-artificielle
+- **Appel à projets : accompagner l’assistance et l’autonomie à domicile - Europe Martinique** — 2026-12-21 — https://www.europe-martinique.com/appel-a-projets-accompagner-lassistance-et-lautonomie-a-domicile/
+- **Appel à projets : CORAM 2025-2026** — 2026-12-15 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-coram-2025-2026
+- **Appel à projets : Evaluation du bénéfice médico-économique des dispositifs médicaux numériques et des dispositifs médicaux d’équipement** — 2025-04-08 — https://www.bpifrance.fr/catalogue-offres/appel-a-projets-evaluation-du-benefice-medico-economique-des-dispositifs-medicaux-numeriques-et-des-dispositifs-medicaux-dequipement-0
+- **Appel à Projets : FWF Crossroads - HDFID** — 2026-11-13 — https://www.hautsdefrance-id.fr/appels-a-projets/fwf-crossroads/
+- **Appel à projets : Grand Défi Biocontrôle et Biostimulation pour l’Agroécologie** — 2027-09-09 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-grand-defi-biocontrole-et-biostimulation-pour-lagroecologie
+- **Appel à projets : Lutte contre l’illettrisme - sensibilisation et information des acteurs sur le repérage et l’orientation des publics** — échéance à vérifier — https://www.laregion.fr/Appel-a-projets-Lutte-contre-l-illettrisme-sensibilisation-et-information-des
+- **Appel à projets : Standardisation des réseaux du futur** — 2027-01-15 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-standardisation-des-reseaux-du-futur
+- **Appel à projets : Transition numérique de la Culture et appropriation de l’intelligence artificielle - HDFID** — 2027-06-16 — https://www.hautsdefrance-id.fr/appels-a-projets/appel-a-projets-transition-numerique-de-la-culture-et-appropriation-de-lintelligence-artificielle/
+- **Appel à projets "Haute Fréquence" - HFRE26** — 2026-03-16 — https://guide-aides.hautsdefrance.fr/dispositif669
+- **Appel à projets « Biodiversité en Pays de la Loire 2026 » - Groupe Régional des Fondations en faveur de la Biodiversité** — 2026-05-15 — https://www.paysdelaloire.fr/les-aides/appel-projets-biodiversite-en-pays-de-la-loire-2026-groupe-regional-des-fondations-en-faveur-de-la
+- **Appel à projets « Challenge prévention : démontrer la valeur des innovations en vie réelle »** — 2024-12-10 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-challenge-prevention-demontrer-la-valeur-des-innovations-en-vie-reelle
+- **Appel à projets « Connect Talent »** — 2026-11-04 — https://www.paysdelaloire.fr/les-aides/appel-projets-connect-talent
+- **Appel à projets « Décarbonation des navires de pêche »** — 2026-12-10 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-decarbonation-des-navires-de-peche
+- **Appel à projets « Défi Flagships »** — 2027-04-06 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-defi-flagships
+- **Appel à projets « Démonstration de la valeur des organoïdes et organes sur puce »** — 2027-06-10 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-demonstration-de-la-valeur-des-organoides-et-organes-sur-puce
+- **Appel à projets « Soutien aux projets d’investissements pour produire en France les véhicules routiers de demain et leurs composants »** — 2026-10-20 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-soutien-aux-projets-dinvestissements-pour-produire-en-france-les-vehicules-routiers-de-demain-et-leurs-composants
+- **APPEL A PROJETS 20 2 5** — 2025-11-24 — https://www.paysdelaloire.fr/les-aides/appel-projets-structuration-des-filieres-biologiques-regionales
+- **Appel à projets 2024/2025 dans le cadre de la coopération culturelle entre la Communauté Flamande et la Région Hauts-de-France (COOPF) et entre la Fédération Wallonie Bruxelles et la Région Hauts-de-France (COOPW)** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif1010
+- **Appel à projets 2025/2026 dans le cadre de la coopération culturelle entre la Fédération Wallonie Bruxelles et la Région Hauts-de-France (COOPW)** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif984
+- **Appel à projets 2027** — 2026-09-30 — https://les-aides.nouvelle-aquitaine.fr/transition-energetique-et-ecologique/etudes-et-suivis-scientifiques-natura-2000-2
+- **Appel à projets Ambassadeur du Sport** — 2026-10-02 — https://www.maregionsud.fr/vos-aides/detail/appel-a-projets-ambassadeur-du-sport
+- **Appel à projets Aquaculture - Pêche** — 2025-12-05 — https://www.paysdelaloire.fr/les-aides/appel-projets-aquaculture-peche
+- **Appel à projets collaboratifs I-Démo Régionalisé** — 2026-12-31 — https://www.europe-en-occitanie.eu/Appel-a-projets-collaboratifs-I-Demo-Regionalise
+- **Appel à projets Conseils Engraissement** — 2024-08-30 — https://www.bourgognefranchecomte.fr/index.php/node/3956
+- **Appel à projets de l’Aire Fonctionnelle de Montagne Est (AFME)** — 2025-01-17 — https://www.laregion.fr/Appel-a-projets-de-l-Aire-Fonctionnelle-de-Montagne-Est-AFME
+- **Appel à projets de l’Aire Fonctionnelle Littoral Est (AFLE)** — 2024-06-30 — https://www.laregion.fr/Appel-a-projets-de-l-Aire-Fonctionnelle-Littoral-Est-AFLE
+- **Appel à projets de réemploi des équipements informatiques de la Région Hauts-de-France** — 2024-09-27 — https://guide-aides.hautsdefrance.fr/dispositif1036
+- **Appel à Projets du Cluster Eureka CELTIC-NEXT** — 2026-10-26 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-du-cluster-eureka-celtic-next
+- **Appel à Projets du Cluster Eureka Eurogia** — 2026-10-29 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-du-cluster-eureka-eurogia
+- **Appel à Projets du Cluster Eureka ITEA** — 2027-02-11 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-du-cluster-eureka-itea
+- **Appel à Projets du Cluster Eureka SMART** — 2027-04-15 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-du-cluster-eureka-smart
+- **Appel à Projets du Cluster Eureka XECS** — 2027-04-15 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-du-cluster-eureka-xecs
+- **Appel à projets du Programme INTERREG VI-A Espagne-France- Andorre (POCTEFA 2021-2027)** — 2025-11-19 — https://www.laregion.fr/Appel-a-projets-du-Programme-INTERREG-VI-A-Espagne-France-Andorre-POCTEFA-2021-2027-47205
+- **Appel à projets Eco-Ambassadeur** — 2026-10-02 — https://www.maregionsud.fr/vos-aides/detail/appel-a-projets-eco-ambassadeur
+- **Appel à Projets Eureka France-Japon** — 2027-01-20 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-eureka-france-japon
+- **Appel à projets FEADER - "Accompagnement à l'installation" (2026)** — échéance à vérifier — https://www.europe-en-nouvelle-aquitaine.eu/fr/appels-%C3%A0-projets/appel-projets-feader-accompagnement-linstallation-2026.html
+- **Appel à projets FEADER - "Amélioration des infrastructures hydrauliques collectives" (2026)** — échéance à vérifier — https://www.europe-en-nouvelle-aquitaine.eu/fr/appels-%C3%A0-projets/appel-projets-feader-amelioration-des-infrastructures-hydrauliques-collectives-0
+- **Appel à projets FEADER - "Mécanisation en zone de montagne" 2026** — échéance à vérifier — https://www.europe-en-nouvelle-aquitaine.eu/fr/appels-%C3%A0-projets/appel-projets-feader-mecanisation-en-zone-de-montagne-2026.html
+- **Appel à projets FEADER - "Partenariat Européen Innovation pour la productivité et le développement durable de l’agriculture"2026** — échéance à vérifier — https://www.europe-en-nouvelle-aquitaine.eu/fr/appels-%C3%A0-projets/appel-projets-feader-partenariat-europeen-innovation-pour-la-productivite-et-le-0
+- **Appel à projets FEDER - "Réutilisation des eaux non conventionnelles" 2ème session** — échéance à vérifier — https://www.europe-en-nouvelle-aquitaine.eu/fr/appels-%C3%A0-projets/appel-projets-feder-reutilisation-des-eaux-non-conventionnelles-2eme-session.html
+- **Appel à projets France 2030 (PIA4) : Aides à l’innovation « BOTTOM-UP », projets de formation professionnelle** — 2025-12-31 — https://www.bourgognefranchecomte.fr/node/3464
+- **Appel à Projets France-Allemagne** — 2026-11-18 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-france-allemagne
+- **Appel à Projets France-Italie** — 2025-10-01 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-france-italie
+- **Appel à projets générique n°5 « i-Démo - soutien aux projets structurants de R&D&I »** — 2026-09-09 — https://www.bpifrance.fr/catalogue-offres/appel-a-projets-generique-ndeg5-i-demo-soutien-aux-projets-structurants-de-rdi
+- **Appel à projets Grands Défis « Soutien aux innovations de rupture dans la filière DM implantable et robotique chirurgicale »** — 2026-10-06 — https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-grands-defis-soutien-aux-innovations-de-rupture-dans-la-filiere-dm-implantable-et-robotique-chirurgicale
+- **Appel à projets Industrie du Futur** — 2026-12-31 — https://guide-aides.hautsdefrance.fr/dispositif918
+- **Appel à projets M-ERA.NET 2026/27 - Science et ingénierie des matériaux pour l’innovation en Europe** — 2026-09-29 — https://anr.fr/fr/detail/call/appel-a-projets-m-eranet-202627-science-et-ingenierie-des-materiaux-pour-linnovation-en-europe/
+- **Appel à Projets Permanents 4T et Illettrisme 4TIL** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif664
+- **Appel à projets pour soutenir les jeunes chercheurs post doctorants** — 2026-12-31 — https://www.maregionsud.fr/vos-aides/detail/jeunes-docteurs-innovants
+- **Appel à projets Proch'Orientation, pour une orientation choisie et une trajectoire réussie vers l'emploi - JIQE** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif958
+- **Appel à projets Soutien aux investissements des entreprises agro-alimentaires - zip - 475 ko** — échéance à vérifier — https://www.europe-en-occitanie.eu/IMG/zip/9/a/6/eaa_documents_aap_2026_06_10.zip
+- **Appel à projets structurants de l’Aire Fonctionnelle Espace Catalan Transfrontalier (EsCaT) - Interreg POCTEFA** — 2024-04-19 — https://www.laregion.fr/Appel-a-projets-structurants-de-l-Aire-Fonctionnelle-Espace-Catalan-Transfrontalier
+- **APPELÀMANIFEST A TION D'INTÉRÊT** — 2027-03-31 — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/prevention-et-actions-en-region-nouvelle-aquitaine-prevana-faire-de-la-nouvelle-aquitaine-un
+- **APPELÀMANIFESTATION D’INTERET** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/ami-industrie-du-futur
+- **Appels à candidatures pour la constitution des jurys jeunes du festival international du film d’Arras et du festival international du grand reportage et du documentaire de société FIGRA** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif742
+- **Appels à projets - Arts de la Scène - Contrat de filière musiques actuelles en Occitanie État / Région / CNM - 2024-2027** — échéance à vérifier — https://www.laregion.fr/Appels-a-projets-Arts-de-la-Scene-Contrat-de-filiere-musiques-actuelles-en-Occitanie
+- **Appels à projets 2027 : Diagnostic culturel de territoire - DITE** — 2026-10-15 — https://guide-aides.hautsdefrance.fr/dispositif1039
+- **Appels à projets: Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/appels-a-projets?tx_aap_aap%5Bcontroller%5D=AAP&tx_aap_aap%5BcurrentPage%5D=7&cHash=418d10d0f93642015464fca4cd60975f
+- **Apprentissage** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/apprentissage
+- **Appui à l’identification et à la qualification de fournisseurs** — 2026-11-16 — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/identification-et-qualification-de-fournisseurs
+- **Appui au développement des Ressources Humaines des entreprises DVRH** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif688
+- **Appui au développement des smarts grids (SMILE)** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/appui-au-developpement-des-smarts-grids-smile
+- **Appui au projet scientifique et culturel de la Villa 46 à Hanoï** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/875
+- **Appui Régional pour l'emploi et les compétences - APREC** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif1055
+- **Appui technique apicole** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/appui-technique-apicole
+- **APPUI TECHNIQUE POUR L E MAINTIEN EN AGRICULTURE BIOLOGIQUE : PASS** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/pass-soutien-bio-appui-technique-pour-le-maintien-en-agriculture-biologique
+- **APPUI TECHNIQUE POUR LA CONVERSION EN AGRICULTURE BIOLOGIQUE : PASS BIO ET SUIVI BIO** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/pass-bio-et-suivi-bio-appui-technique-pour-la-conversion-en-agriculture-biologique
+- **Art contemporain - Aide à la diffusion et à la structuration de l’art contemporain** — échéance à vérifier — https://www.laregion.fr/Art-contemporain-Aide-a-la-diffusion-et-a-la-structuration-de-l-art-contemporain
+- **Art contemporain - Aide à la mobilité hors région : Résidences, salons et foires d’art contemporain** — 2026-02-11 — https://www.laregion.fr/Art-contemporain-Aide-a-la-mobilite-hors-region-Residences-salons-et-foires-d-art
+- **Art contemporain - Aide à la production : Œuvres d’art et livres d’artistes** — échéance à vérifier — https://www.laregion.fr/art-contemporain-aide-a-la-production-oeuvres-d-art-et-livre-d-artistes
+- **Article 1 - CONTEXTE ET OBJECTIFS DU DISPOSITIF** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/actions-collectives-emergentes
+- **Artisans de qualité : Charte Qualité et Artisan en Or** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif1014
+- **Arts de la Scène - Aide à la diffusion de proximité** — 2027-06-30 — https://www.laregion.fr/Arts-de-la-Scene-Aide-a-la-diffusion-de-proximite
+- **Arts de la Scène - Aide à la saison** — 2026-10-30 — https://www.laregion.fr/Arts-de-la-Scene-Aide-a-la-saison
+- **Arts de la scène – Expérimentation pour une aide à la mobilité hors région Occitanie, de collectifs** — échéance à vérifier — https://www.laregion.fr/Arts-de-la-scene-Experimentation-pour-une-aide-a-la-mobilite-hors-region-Occitanie
+- **ASSOCIATIONS** — 2026-07-06 — https://les-aides.nouvelle-aquitaine.fr/jeunesse/soutien-aux-associations-proposant-des-actions-de-prevention-et-de-lutte-contre-le-harcelement
+- **Attestation de délégation de signature du représentant légal** — échéance à vérifier — https://www.paysdelaloire.fr/sites/default/files/2022-11/Feder_21-27_attestation_de_delegation_de_signature_du_representant_legal.docx
+- **Autorisation d'occupation à la journée des zones de gares pour association et entreprises** — 2029-12-31 — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/autorisation-doccupation-a-la-journee-des-zones-de-gares-pour-association-et-entreprises
+- **Autres programmes européens** — échéance à vérifier — https://www.europe-guadeloupe.fr/les-financements-europeens/autres-programmes-europeens/
+- **Aux côtés des agriculteurs** — échéance à vérifier — https://www.laregion.fr/Aux-cotes-des-agriculteurs
+- **AVANCE INNOVATION CLASSIQUE** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/avance-innovation-classique
+- **Avance remboursable - Consolidation financière de l’entreprise** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/290
+- **Avance remboursable TPE création-reprise** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/337
+- **Avance remboursable TPE croissance** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/336
+- **Avancement PR FEDER - FSE+ - FTJ: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/mes-ressources/programme-regional-feder/fse-/ftj/donnees-financieres-davancement-du-programme-regional-feder-fse-ftj
+- **Avec Mouv’Occitanie, la Région t’aide pour ta mobilité internationale** — échéance à vérifier — https://www.laregion.fr/Avec-Mouv-Occitanie-la-Region-t-aide-pour-ta-mobilite-internationale
+- **AXE I - SOUTIEN AUX INITIATIVES DES STRUCTURES DE JEUNESSE** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/jeunesse/soutien-aux-structures-developpant-des-projets-deducation-artistique-et-culturelle-eac
+- **Bénéficier de la Bourse au mérite - Apprentis** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/beneficier-de-la-bourse-au-merite-apprentis-0
+- **Bénéficier de la Bourse au mérite - Lycéens** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/beneficier-de-la-bourse-au-merite-lyceens
+- **Bénéficier des avantages du PASS'Région jeunes** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/beneficier-des-avantages-du-passregion-jeunes
+- **Bio+ : aide régionale à l'agriculture biologique** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/819
+- **Biodiversité : Arbres et haies champêtres** — échéance à vérifier — https://www.laregion.fr/Biodiversite-Arbres-et-haies-champetres
+- **Biodiversité : Centres de soins à la faune sauvage** — échéance à vérifier — https://www.laregion.fr/Biodiversite-Centres-de-soins-a-la-faune-sauvage
+- **Biodiversité : Connaissance de la biodiversité d’Occitanie** — échéance à vérifier — https://www.laregion.fr/Biodiversite-Connaissance-de-la-biodiversite-d-Occitanie
+- **Biodiversité : Gestion des sites du Conservatoire du littoral** — échéance à vérifier — https://www.laregion.fr/Biodiversite-Gestion-des-sites-du-Conservatoire-du-littoral
+- **Biodiversité : Préservation et restauration de la biodiversité à l’échelle régionale** — échéance à vérifier — https://www.laregion.fr/Biodiversite-Preservation-et-restauration-de-la-biodiversite-a-l-echelle-regionale
+- **Biodiversité : Préservation et restauration des Trames Vertes, Bleues et Noires à l’échelle locale** — échéance à vérifier — https://www.laregion.fr/Biodiversite-Preservation-et-restauration-des-Trames-Vertes-Bleues-et-Noires-a-l
+- **Biodiversité et ruralité- BIOR** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif1079
+- **Biodiversité et territoires - Stratégies** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/biodiversite-et-territoires-strategies
+- **Boost Export Pays de la Loire** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/boost-export-pays-de-la-loire
+- **Booster Transformation Rev3 - BTR3** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif1045
+- **Bourse d'étude pour élèves et étudiants inscrits en formation sociale, paramédicale et maïeutique** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/74
+- **Bourse de formation santé-social** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/obtenir-une-bourse-pour-suivre-une-formation-dans-le-secteur-sante-social
+- **Bourse du secteur sanitaire et social** — 2026-09-30 — https://www.grandest.fr/vos-aides-regionales/bourse-secteur-sanitaire-social/
+- **BOURSE FRENCH TECH** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/bourse-french-tech
+- **BOURSE FRENCH TECH EMERGENCE** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/bourse-french-tech-emergence
+- **BOURSE FRENCH TECH LAB** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/bourse-french-tech-lab
+- **Bourse Mobilité internationale étudiant** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/me-former-letranger-avec-la-bourse-region-mobilite-internationale-etudiants
+- **Bourse régionale au mérite** — 2026-10-31 — https://www.maregionsud.fr/vos-aides/detail/bourse-regionale-au-merite
+- **Bourse régionale d'études dans les filières du sanitaire et du travail social** — 2026-06-08 — https://www.maregionsud.fr/vos-aides/detail/bourse-regionale-detudes-dans-les-filieres-du-sanitaire-et-du-travail-social
+- **Bourses aux athlètes - Team Occitanie Haut Niveau** — échéance à vérifier — https://www.laregion.fr/Bourses-aux-athletes-Team-Occitanie-Haut-Niveau
+- **Bourses d'étude Fulbright – mobilité franco-américaine** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif949
+- **Bourses d’Etudes Sanitaires et Sociales** — échéance à vérifier — https://www.laregion.fr/bourses-etudes-sanitaires-sociales
+- **Bourses d’Études Sanitaires et Sociales BESS** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif667
+- **Bourses d’études sur critères sociaux (étudiants en formations sociales, paramédicales et de santé)** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/bourses-detudes-sur-criteres-sociaux-etudiants-en-formations-sociales-paramedicales-et-de-sante-0
+- **Bourses de mobilité internationale MERMOZ** — 2026-12-31 — https://guide-aides.hautsdefrance.fr/dispositif997
+- **Bourses régionales pour les élèves et étudiants en formation initiale sociale, paramédicale et de sages-femmes** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/bourses-regionales-pour-les-eleves-et-etudiants-en-formation-initiale-sociale-paramedicale-et-de
+- **Budget d'autonomie éducative francilien (BAEF)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/564
+- **Budget participatif écologique et solidaire** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/670
+- **Budget Participatif Handicap** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/704
+- **BUDGET PREVISIONNEL 20 2 7 ☐ TTC ☐ HT** — 2026-11-04 — https://les-aides.nouvelle-aquitaine.fr/culture/soutien-aux-orchestres-0
+- **Budget, financement et rapport d’activité** — échéance à vérifier — https://www.bourgognefranchecomte.fr/budget-financement-et-rapport-dactivite
+- **BUSIN'ESS : Aide à l'émergence de nouvelles activités de l'économie sociale et solidaire** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif988
+- **C A D R E D’INTERVENTION** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/refuge-zero-fumee
+- **Cadre d’intervention régional en faveur de l’environnement maritime** — échéance à vérifier — https://www.laregion.fr/Cadre-d-intervention-regional-en-faveur-de-l-environnement-maritime
+- **Cadre d’intervention régional en faveur de la modernisation et le développement équilibré des stations littorales et des ports de plaisance** — échéance à vérifier — https://www.laregion.fr/Cadre-d-intervention-regional-en-faveur-de-la-modernisation-et-le-developpement
+- **Cadre d’intervention régional en faveur du "Plan d’adaptation au changement climatique du littoral d’Occitanie"** — échéance à vérifier — https://www.laregion.fr/Cadre-d-intervention-regional-en-faveur-du-Plan-d-adaptation-au-changement
+- **Cahier des charges relatif aux modalités de labelli sation des organismes** — 2026-12-11 — https://www.paysdelaloire.fr/les-aides/modalites-de-labellisation-des-organismes-souhaitant-participer-au-service-public-regional-de
+- **Calendrier Appels à projets FEAMPA 2021-2027 (octobre 2024)** — échéance à vérifier — https://www.europe-guadeloupe.fr/wp-content/uploads/2024/10/AAP-FEAMPA-2021-2027.pdf
+- **Campagne d’incitation financière aux covoitureurs** — échéance à vérifier — https://www.laregion.fr/Campagne-d-incitation-financiere-aux-covoitureurs
+- **Campagne de renouvellement 2024 des agréments dont la date de fin est fixée au 13/04/2025** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/668
+- **Campagne de subvention Sport, jeunesse et Vie associative - Collectivité Territoriale de Guyane** — échéance à vérifier — https://www.ctguyane.fr/subvention-sport-jeunesse-asso/
+- **Campings de tourisme indépendants** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/campings-de-tourisme-independants
+- **Candidature au salon Eurosatory - Pavillon Régional** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/837
+- **Candidatures Village Femtech au Salon Medintechs les 9-10 mars 2026 à Paris** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/823
+- **Cap Fil'Agri - FILA** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif986
+- **Cap vers l'Aero Excellence** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/827
+- **Capteurs-purificateurs bâtiments publics** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/598
+- **Capture d'écran de la page d'accueil du lien de dépôt des demandes d'aides Europe** — échéance à vérifier — https://www.paysdelaloire.fr/sites/default/files/styles/lightbox/public/2023-03/Capture%20%C3%A9cran%20assistance.png?itok=azlFzBq7
+- **CARTE DES COOPÉRATIONS EUROPÉENNES ET INTERNATIONALES DE NOUVELLE-AQUITAINE / AVRIL 2024** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/cooperation-avec-la-moyenne-franconie
+- **Carte Génération #HDF - ETABLISSEMENTS / PARTENAIRES** — 2023-02-11 — https://guide-aides.hautsdefrance.fr/dispositif598
+- **Carte Génération #HDF - LYCEENS** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif594
+- **Carte Génération #HDF-APPRENTIS : aide à l'hébergement (dit aides THR)** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif856
+- **Carte Génération #HDF-APPRENTIS : aide à la restauration (dit aides THR)** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif857
+- **Carte Génération #HDF-APPRENTIS : aide au transport (dit aides THR)** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif858
+- **Catégorie : Appel à projet en cours** — 2025-10-15 — https://www.europe-martinique.com/category/appel-a-projet-encours/
+- **CEDRE Ambition** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/cedre-ambition
+- **CEDRE Investissement** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/cedre-investissement
+- **CEDRE Premiers pas** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/cedre-premiers-pas
+- **Centre-villes et centre-bourgs CVCB** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif791
+- **Centres anciens protégés (CAP) de 10 Petites cités de caractère (PCC)** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/centres-anciens-proteges-cap-de-10-petites-cites-de-caractere-pcc
+- **CERTIF’REGION** — échéance à vérifier — https://www.laregion.fr/CERTIF-REGION
+- **Certificat Pêche Aquaculture 100% Valeurs du Sud** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/certificat-regional-dactivites-professionnelles-peche-et-aquaculture-en-region-sud
+- **Chaire régionale d'application** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/chaire-regionale-dapplication
+- **Chaire Territoire d’Avenir** — 2026-06-09 — https://www.paysdelaloire.fr/les-aides/chaire-territoire-davenir
+- **Chaires de recherche SHS (Sciences humaines et sociales) 2026** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/779
+- **Challenge AI for Space** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/835
+- **Challenge IA pour l'Industrie** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/821
+- **Challenge IA pour la Santé** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/766
+- **Challenge IA pour la Santé 2026** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/836
+- **Challenge IA pour la Santé 2027** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/871
+- **Chantiers de jeunes bénévoles CJBEA** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif247
+- **Charte d’engagements du bénéficiaire d’une aide régionale envers la** — 2026-12-20 — https://les-aides.nouvelle-aquitaine.fr/culture/manifestations-culturelles
+- **Chèque diagnostic Cyber** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/642
+- **Chèque efficacité énergétique** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/571
+- **Chèque investissement Cyber** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/640
+- **Chèque numérique pour un commerce connecté** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/283
+- **Chèque numérique pour un commerce connecté Volet 2 - Communes et leurs groupements** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/380
+- **Chèque prévention** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/596
+- **Chèque vert pour la transition écologique** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/502
+- **Choose France for Science - Appel à manifestation d’intérêt - 2025** — échéance à vérifier — https://anr.fr/fr/france-2030/france2030/call/choose-france-for-science-appel-a-manifestation-dinteret-2025/
+- **Cinéma et audiovisuel - Soutien aux associations professionnelles régionales du CIN** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/cinema-et-audiovisuel-soutien-aux-associations-professionnelles-regionales-du-cin
+- **Cinéma/Audiovisuel/Multimédia - Aide à l’écriture d’œuvres audiovisuelles** — 2026-05-15 — https://www.laregion.fr/Cinema-Audiovisuel-Multimedia-Aide-a-l-ecriture-d-oeuvres-audiovisuelles
+- **Cinéma/Audiovisuel/Multimédia - Aide à la création audiovisuelle (développement, production, diffusion)** — échéance à vérifier — https://www.laregion.fr/Cinema-Audiovisuel-Multimedia-Aide-a-la-creation-audiovisuelle
+- **Cinéma/Audiovisuel/Multimédia - Aide aux manifestations audiovisuelles** — échéance à vérifier — https://www.laregion.fr/Cinema-Audiovisuel-Multimedia-Aide-aux-manifestations-audiovisuelles
+- **Climat: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/jai-un-projet/je-trouve-un-financement/climat
+- **Clusters Eureka** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/clusters-eureka
+- **Colloques Scientifiques Internationaux** — échéance à vérifier — https://www.laregion.fr/colloques-scientifiques-internationaux
+- **Comment compléter le plan de financement des appels à projets 2021-2027** — échéance à vérifier — https://europe.maregionsud.fr/projets-realises-1/detail/comment-completer-le-plan-de-financement-des-appels-a-projets-2021-2027
+- **Commerces alimentaires de proximité et halles** — 2028-12-31 — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/commerces-alimentaires-de-proximite-et-halles
+- **Compétences RH : l’offre de services Ressources Humaines aux entreprises** — échéance à vérifier — https://www.laregion.fr/competencesRH-entreprises
+- **Comprendre les aides européennes** — échéance à vérifier — https://www.europe-bfc.eu/comprendre-les-aides-europeennes
+- **Comprendre les financements européens** — échéance à vérifier — https://www.europeocentre-valdeloire.eu/comprendre-les-financements-europeens/
+- **COMPTE INDIVIDUEL EXPORT CIE** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif941
+- **Concevoir, créer ou reprendre un spectacle professionnel** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/projet-equipes-artistiques
+- **Concours : devenez Capitale européenne du petit commerce de détail 2027** — 2026-10-09 — https://www.europeidf.fr/actualites/capitale-europeenne-petit-commerce
+- **Concours « Les Chanté Nwel de la Région Île-de-France » 2026** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/267
+- **Concours Battle régionale de la promesse républicaine** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/626
+- **Concours d'éloquence sur la citoyenneté avec l'Association Trouve ta voix** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/632
+- **Concours de grec et de latin pour les lycéens franciliens avec l'Association ATHENA** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/397
+- **Concours Innov'action 2025 | ADIM** — 2025-09-26 — https://www.adim-mayotte.fr/page/concours-innovaction2025
+- **CONCOURS INNOVATION I-LAB** — 2022-02-02 — https://www.bpifrance.fr/catalogue-offres/concours-innovation-i-lab
+- **Conditions et processus d’attribution du** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/installation-pret-dhonneur-initiative-nouvelle-aquitaine
+- **Connaissance et Inventaire des Patrimoines - Aide à la connaissance et à l’inventaire général des patrimoines** — échéance à vérifier — https://www.laregion.fr/Connaissance-et-Inventaire-des-Patrimoines-Aide-a-la-connaissance-et-a-l-inventaire
+- **Conseil à l’économie circulaire** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/transition-energetique-et-ecologique/conseil-leconomie-circulaire
+- **Conseil européen de l’innovation (EIC)** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/conseil-europeen-de-linnovation-eic-0
+- **Conservatoire du littoral** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/conservatoire-du-littoral
+- **Consortia Erasmus+ pour la mobilité européenne des apprenants et des étudiants** — échéance à vérifier — https://www.laregion.fr/Consortia-Erasmus-pour-la-mobilite-europeenne-des-apprenants-et-des-etudiants
+- **Construction de chaufferies biomasse** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/84
+- **Construction et restauration des orgues à tuyaux** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/45
+- **Construction, restructuration, réhabilitation et aménagement des Lycées Publics** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif231
+- **Construire une démarche territoriale d'éducation artistique et culturelle** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/construire-une-demarche-territoriale-deducation-artistique-et-culturelle
+- **Contact** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/contact
+- **Continuités écologiques** — 2027-10-31 — https://www.europeidf.fr/jai-un-projet/appels-a-projets/continuites-ecologiques
+- **Contrat 3S - Volet innovation** — échéance à vérifier — https://www.laregion.fr/Contrat-3S-Volet-innovation
+- **Contrat 3S - Volet transformation** — échéance à vérifier — https://www.laregion.fr/Contrat-3S-Volet-transformation
+- **Contrat Agriculture Durable - Public : Structures de conseil et d’accompagnement** — échéance à vérifier — https://www.laregion.fr/Contrat-Agriculture-Durable-Public-Structures-de-conseil-et-d-accompagnement
+- **Contrat Agriculture Durable - Public Agriculteurs** — échéance à vérifier — https://www.laregion.fr/contrat-agriculture-durable
+- **Contrat d'aménagement régional (CAR)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/235
+- **Contrat de développement transmission** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/422
+- **Contrat Énergie** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/863
+- **Contrat Énergie - Axe Développement des énergies renouvelables et de récupération (ENR&R)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/865
+- **Contrat Énergie - Axe Efficacité énergétique et thermique du bâti et sobriété de l'éclairage public** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/864
+- **Contrat Entreprise d’Avenir** — échéance à vérifier — https://www.laregion.fr/Contrat-Entreprise-d-Avenir
+- **Contrat Étudiant Région** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif618
+- **Contrat Natura 2000** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/contrat-natura-2000
+- **Contrat pour la Loire et ses annexes** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/contrat-pour-la-loire-et-ses-annexes
+- **Contrat RH-conseil** — échéance à vérifier — https://www.laregion.fr/contrat-RH
+- **Contrat RH-recrutement** — échéance à vérifier — https://www.laregion.fr/contrat-recrutement
+- **Contrat rural** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/286
+- **Contrat Transmission-Reprise D’entreprises** — échéance à vérifier — https://www.laregion.fr/Contrat-Transmission-Reprise-D-entreprises
+- **Contrat Vert et Bleu** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/867
+- **Contrat Vert et Bleu - Axe Déchets et économie circulaire** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/862
+- **Contrat Vert et Bleu (CVB) - Biodiversité, renaturation et solutions fondées sur la nature** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/866
+- **Contrat Vert et Bleu (CVB) - Qualité de l'air, bruit et santé environnementale** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/859
+- **Contrats Natura 2000** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/contrats-natura-2000
+- **Contrats Pays de la Loire 2026** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/contrats-pays-de-la-loire-2026
+- **Contrats stations 2030 : un cap d'avance"** — 2027-12-31 — https://www.maregionsud.fr/vos-aides/detail/contrats-stations-2030-un-cap-davance
+- **Contrats Territoires-Région 2020 / Contrats de Développement Métropolitain** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/contrats-territoires-region-2020/contrats-de-developpement-metropolitain
+- **Convention de coopération pour la réalisation d'opérations d'inventaire général du patrimoine culturel** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/convention-de-cooperation-pour-la-realisation-doperations-dinventaire-general-du-patrimoine-culturel
+- **Convention Justice Région** — 2026-12-31 — https://www.maregionsud.fr/vos-aides/detail/convention-justice-region-1
+- **Conventions de développement culturel Arts visuels** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/338
+- **Coopération : la CTG lance l’appel à projet Biodiversité et cultures** — 2017-09-30 — https://www.ctguyane.fr/ctg-apo-biodiversite-cultures/
+- **Coopération internationale pour l’eau 2024** — échéance à vérifier — https://www.laregion.fr/Cooperation-internationale-pour-l-eau-2024
+- **Coopération pour le renouvellement des générations en agriculture** — 2024-09-13 — https://www.europeidf.fr/jai-un-projet/cooperation-renouvellement-generations-agriculture
+- **Coopération territoriale européenne** — échéance à vérifier — https://www.europeidf.fr/les-financements-europeens/cte
+- **Coordination handicap et Ressource Handicap Formation** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/coordination-handicap-et-ressource-handicap-formation
+- **Cordées de la réussite** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/cordees-de-la-reussite
+- **Corps européen de solidarité** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/corps-europeen-de-solidarite
+- **CRéation d'Emplois Associatifs Pérennes (CREAP2)** — 2025-02-07 — https://guide-aides.hautsdefrance.fr/dispositif747
+- **Création de nouvelles activités en économie circulaire** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/transition-energetique-et-ecologique/creation-de-nouvelles-activites-en-economie-circulaire
+- **Création, rénovation ou extension de fermes apicoles** — 2025-06-20 — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/creation-renovation-ou-extension-de-fermes-apicoles
+- **Creative Europe: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/je-minforme/les-financements-europeens/creative-europe
+- **Crédit premier équipement professionnel** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/credit-premier-equipement-professionnel
+- **Crédits éducatifs autonomie** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/credits-educatifs-autonomie
+- **Créer des dessertes forestières (FEADER - Dispositif 401) | Région Auvergne-Rhône-Alpes** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/creer-des-dessertes-forestieres-feader-dispositif-401
+- **Critères de sélection FEDER- FSE+ Guadeloupe 2021-2027** — échéance à vérifier — https://www.europe-guadeloupe.fr/wp-content/uploads/2026/04/Criteres-selection-FEDER-FSE2127_V4.xlsx
+- **CTM, Mes aides en ligne – Collectivité Territoriale de Martinique** — échéance à vérifier — https://www.collectivitedemartinique.mq/2026/07/29/ctm-mes-aides-en-ligne-2/
+- **Culture | Le Guide des Aides** — 2027-01-13 — https://les-aides.nouvelle-aquitaine.fr/culture
+- **Culture de l’Eurorégion 2025** — échéance à vérifier — https://www.laregion.fr/Culture-de-l-Euroregion-2025
+- **CULTURE PATRIMOINE** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/culture/operations-dinventaire-general-du-patrimoine-culturel
+- **Culture Patrimoine: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/jai-un-projet/je-trouve-un-financement/culture-patrimoine
+- **D’EMPLOYEURS) ET DES GEIQ (GROUPEMENT D’EMPLOYEURS POUR** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/aide-au-demarrage-et-la-diversification-des-groupements-demployeurs-ge-et-groupements-demployeurs
+- **De la matière à la marque : Parcours de valorisation pour innover et se différencier** — 2027-04-01 — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/de-la-matiere-la-marque-parcours-de-valorisation-pour-innover-et-se-differencier
+- **Décarbonation des industries - Aide à l’investissement** — 2026-12-31 — https://www.bourgognefranchecomte.fr/node/3332
+- **Décarbonation des industries – Aide au conseil** — 2026-12-31 — https://www.bourgognefranchecomte.fr/node/3564
+- **Découverte économique : parcours de visite en entreprise** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/decouverte-economique-parcours-de-visite-en-entreprise
+- **Demander un agrément pour réaliser l’accompagnement des exploitations agricoles au titre de la MAEC forfaitaire du programme FEADER 2023-2027 (appel à candidatures)** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/demander-un-agrement-pour-realiser-laccompagnement-des-exploitations-agricoles-au-titre-de-la
+- **Démonstrateur de recherche académique** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/demonstrateur-de-recherche-academique
+- **Déployer une stratégie locale de développement "agri-forêt" (FEADER - Dispositif T01)** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/deployer-une-strategie-locale-de-developpement-agri-foret-feader-dispositif-t01
+- **Déposer ma demande d'aide** — échéance à vérifier — https://www.europe-bfc.eu/mon-projet/deposer-mon-projet/deposer-ma-demande-daide
+- **Des financements européens ouverts pour soutenir vos projets innovants à double usage (civil et militaire) ou liés à la sécurité** — 2026-11-05 — https://www.paysdelaloire.fr/mon-conseil-regional/toute-lactu-de-ma-region/les-actualites/des-financements-europeens-ouverts-pour-soutenir-vos-projets-innovants-double-usage-civil-et
+- **Deuxième appel à projets de l’Aire Fonctionnelle Littoral Est - POCTEFA** — 2025-10-03 — https://www.laregion.fr/Deuxieme-appel-a-projets-de-l-Aire-Fonctionnelle-Littoral-Est-POCTEFA
+- **Développement d'unités de méthanisation** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/79
+- **Développement d'unités de méthanisation (études)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/80
+- **Développement de l'offre de formation d'aide-soignant (IFAS)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/681
+- **Développement de l'offre de formation d'auxiliaire de puériculture (IFAP)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/730
+- **Développement de la filière subaquatique** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/developpement-de-la-filiere-subaquatique
+- **Développement de la formation de manipulateur d'électroradiologie médicale IFMEM** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/600
+- **Développement des PME ayant un projet structurant fortement créateur d'emplois - PME2** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif1006
+- **Développement des PME réalisant un saut technologique - PME1** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif1005
+- **Développement durable : Programme La Fresque du climat** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/660
+- **Développement économique: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/jai-un-projet/je-trouve-un-financement/developpement-economique
+- **Développer des projets culturels à destination des territoires ruraux** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/culture-en-territoire
+- **Développer l'agroforesterie et la plantation de haies (FEADER - Dispositif 208)** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/developper-lagroforesterie-et-la-plantation-de-haies-feader-dispositif-208
+- **Développer l’écosystème du financement des entreprises - Nouvelle-Aquitaine** — échéance à vérifier — https://entreprises.nouvelle-aquitaine.fr/que-fait-la-region-pour-les-entreprises/financement-des-entreprises
+- **Développer la résilience des territoires et des populations face aux risques naturels en montagne** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/developper-la-resilience-des-territoires-et-des-populations-face-aux-risques-naturels-en-montagne
+- **Développer les infrastructures commerciales des PME (y compris les parcs et sites industriels)** — 2026-12-03 — https://www.europe-en-france.gouv.fr/fr/appels-a-projet/developper-infrastructures-commerciales-pme-y-compris-parcs-sites-industriels
+- **Devenez Ambassadeur « Produit en Île-de-France » : la plus-value de votre enseigne !** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/797
+- **Devenez Ambassadeur du sport !** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/devenez-ambassadeur-du-sport
+- **Devenez éco-Ambassadeur !** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/devenez-eco-ambassadeur
+- **Diagnostic préalable au renouvellement forestier** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/diagnostic-prealable-au-renouvellement-forestier
+- **Digital Europe: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/je-minforme/les-financements-europeens/europeen/digital-europe
+- **DIGNE-LES-BAINS** — échéance à vérifier — https://europe.maregionsud.fr/aides-et-appels-a-projets/projets/detail/accroitre-loffre-certifiee-du-bois-doeuvre-alpin-transforme-localement-animation-2026-2027
+- **Dinamic+ Rebond** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/dinamic-rebond
+- **Direction des Affaires Européennes - Direction Déléguée FEDER** — échéance à vérifier — https://europe.maregionsud.fr/projets-realises-1/detail/direction-des-affaires-europeennes-/-direction-deleguee-feder-1
+- **Direction des Affaires Européennes - Direction Déléguée FEDER - Service Transition Juste Ecologique et Energétique (STJEE)** — échéance à vérifier — https://europe.maregionsud.fr/projets-realises-1/detail/direction-des-affaires-europeennes-/-direction-deleguee-feder
+- **Direction des Affaires Européennes - Direction déléguée FEDER (0s1)** — échéance à vérifier — https://europe.maregionsud.fr/projets-realises-1/detail/direction-des-affaires-europeennes-direction-deleguee-feder-0s1
+- **Direction des Affaires Européennes - Service FEDER Territorial (SFT)** — échéance à vérifier — https://europe.maregionsud.fr/projets-realises-1/detail/direction-des-affaires-europeennes-/-service-sdti
+- **Direction des Affaires Européennes - Service FSE+** — échéance à vérifier — https://europe.maregionsud.fr/projets-realises-1/detail/direction-des-affaires-europeennes-/-service-fse
+- **Dispositif - « Preuve de concept »** — échéance à vérifier — https://www.laregion.fr/Dispositif-Preuve-de-concept
+- **Dispositif : Parcours d’éducation, de pratique et de sensibilisation à la culture - PEPS26 Années scolaires 2026/27 et 2027/28** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif935
+- **Dispositif "Jumelages Handicap"** — 2025-10-06 — https://www.paysdelaloire.fr/les-aides/dispositif-jumelages-handicap
+- **Dispositif 1 emploi = 1 formation** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/dispositif-1-emploi-1-formation
+- **Dispositif ACCES Santé dans les lycées** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/881
+- **Dispositif Actions internationales** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/106
+- **Dispositif chasse** — 2026-01-19 — https://www.maregionsud.fr/vos-aides/detail/dispositif-chasse
+- **Dispositif Convention Filières Territorialisées** — échéance à vérifier — https://www.laregion.fr/Dispositif-Convention-Filieres-Territorialisees
+- **Dispositif d’accompagnement de projets à destination des jeunes citoyens** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/dispositif-daccompagnement-de-projets-a-destination-des-jeunes-citoyens
+- **Dispositif d'aide à l'acquisition d'équipements médicaux EMSP** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif920
+- **Dispositif d'aide à la construction, réhabilitation ou extension de Maisons de santé pluriprofessionnelles et centres de santé polyvalents TMSP** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif967
+- **Dispositif d’aide au logement communal et intercommunal à vocation sociale** — 2027-12-31 — https://www.laregion.fr/Dispositif-d-aide-au-logement-communal-et-intercommunal-a-vocation-sociale
+- **Dispositif d’aide au prototypage de jeu vidéo** — échéance à vérifier — https://www.laregion.fr/Dispositif-d-aide-au-prototypage-de-jeu-video
+- **Dispositif d’aide aux Actions Collectives pour l’agriculture, l’agroalimentaire et la forêt résilientes et durables** — échéance à vérifier — https://www.laregion.fr/Dispositif-d-aide-aux-Actions-Collectives-pour-l-agriculture-l-agroalimentaire-et-la
+- **Dispositif d’aide pour la mobilité professionnelle terrestre et agricole hydrogène en Occitanie** — échéance à vérifier — https://www.laregion.fr/Dispositif-d-aide-pour-la-mobilite-professionnelle-terrestre-et-agricole-hydrogene
+- **Dispositif d’aide pour la structuration de la filière truffes : animation, plantation, expérimentation, structuration de l’interprofession et commercialisation.** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/dispositif-daide-pour-la-structuration-de-la-filiere-truffes-animation-plantation-experimentation-structuration-de-linterprofession-et-commercialisation
+- **Dispositif d’aides pour les projets d’énergie renouvelable coopératifs et citoyens d’une puissance inférieure à 500 kWc** — échéance à vérifier — https://www.laregion.fr/Dispositif-d-aides-pour-les-projets-d-energie-renouvelable-cooperatifs-et-citoyens-d
+- **Dispositif d'appui aux acteurs de l'enseignement supérieur en Hauts-de-France** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif1035
+- **Dispositif d’appui aux structures de l'Économie Sociale et Solidaire DASESS** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif942
+- **Dispositif d’intervention régionale pour la gestion de l’eau agricole** — échéance à vérifier — https://www.laregion.fr/Dispositif-d-intervention-regionale-pour-la-gestion-de-l-eau-agricole
+- **Dispositif d’urgence pour les éleveurs touchés par la dermatose nodulaire contagieuse (DNC)** — échéance à vérifier — https://www.laregion.fr/Dispositif-d-urgence-pour-les-eleveurs-touches-par-la-dermatose-nodulaire
+- **Dispositif de Lutte Contre la Précarité Menstruelle : mise à disposition gratuite de protections périodiques dans les lycées publics de la Région** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif980
+- **Dispositif de lutte contre les dépôts sauvages** — 2026-12-31 — https://www.maregionsud.fr/vos-aides/detail/dispositif-de-lutte-contre-les-depots-sauvages
+- **Dispositif de soutien à la trésorerie des coopératives vinicoles et des Vignerons indépendants impactés par une perte de production ou de récolte du fait des incendies dans l’Aude** — échéance à vérifier — https://www.laregion.fr/Dispositif-de-soutien-a-la-tresorerie-des-cooperatives-vinicoles-et-des-Vignerons
+- **Dispositif de soutien aux Communes de moins de 20 000 habitants pour les équipements numériques de vidéo protection pour la sécurité des habitants des Hauts-de-France ENVP** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif960
+- **Dispositif de soutien aux éditeurs indépendants - LIED** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif1021
+- **Dispositif de soutien aux équipements structurants Bourgs-Centres Occitanie** — échéance à vérifier — https://www.laregion.fr/Dispositif-de-soutien-aux-equipements-structurants-Bourgs-Centres-Occitanie
+- **Dispositif de soutien aux initiatives d'Urbanisme Transitoire** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/208
+- **Dispositif de soutien aux Librairies indépendantes - LIED** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif1020
+- **Dispositif de soutien aux produits de qualité** — échéance à vérifier — https://www.laregion.fr/Dispositif-de-soutien-aux-produits-de-qualite
+- **Dispositif en faveur de l’accueil de la petite enfance** — échéance à vérifier — https://www.laregion.fr/Accueil-de-la-petite-enfance
+- **Dispositif en faveur de la transition alimentaire dans la restauration collective** — échéance à vérifier — https://www.laregion.fr/Dispositif-en-faveur-de-la-transition-alimentaire-dans-la-restauration-collective
+- **Dispositif en faveur du bon fonctionnement et de la valorisation des milieux aquatiques** — échéance à vérifier — https://www.laregion.fr/Dispositif-en-faveur-du-bon-fonctionnement-et-de-la-valorisation-des-milieux
+- **Dispositif Europe** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/120
+- **Dispositif local d'accompagnement (DLA)** — 2026-07-06 — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/dispositif-local-daccompagnement-dla
+- **Dispositif Local d'Accompagnement (DLA)** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/dispositif-local-daccompagnement-dla
+- **Dispositif local d'accompagnement DLA** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif943
+- **Dispositif ports propres et ports propres actifs en biodiversité** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/dispositif-ports-propres-et-ports-propres-actifs-en-biodiversite
+- **Dispositif pour la désimperméabilisation et la renaturation des espaces publics et des cours d’écoles** — échéance à vérifier — https://www.laregion.fr/Dispositif-desimpermeabilisation-renaturation-espaces-publics-et-cours-ecoles
+- **Dispositif pour le bien-être animal de compagnie et des équidés** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/dispositif-pour-le-bien-etre-animal-de-compagnie-et-des-equides
+- **Dispositif régional d'accompagnement au logement social au titre de l'acte II du « Pacte pour la réussite de la Sambre Avesnois Thiérache (SAT) »** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif970
+- **Dispositif régional d'aide à la rénovation et à l'achat des drapeaux associatifs des Hauts-de-France - READ** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif796
+- **Dispositif régional d'aide au développement des TPE [DACS2]** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif681
+- **Dispositif régional d’intervention en faveur de la réalisation de travaux d’aménagement de points d’arrêt routier** — échéance à vérifier — https://www.laregion.fr/Dispositif-regional-d-intervention-en-faveur-de-la-realisation-de-travaux-d
+- **Dispositif régional de soutien au fonctionnement des CFA-OFA - 2026** — échéance à vérifier — https://www.laregion.fr/Dispositif-regional-de-soutien-au-fonctionnement-des-CFA-OFA-2026
+- **Dispositif régional de soutien aux associations en faveur de la Politique de la Ville** — échéance à vérifier — https://www.laregion.fr/Dispositif-regional-de-soutien-aux-associations-et-EPCI-en-faveur-de-la-Politique-de
+- **Dispositif régional des aménagements cyclables** — échéance à vérifier — https://www.laregion.fr/Dispositif-regional-des-amenagements-cyclables
+- **Dispositif régional en faveur de la réalisation d&#8217;études et de travaux de mise en accessibilité de points d&#8217;arrêt routier prioritaires** — échéance à vérifier — https://www.laregion.fr/Dispositif-regional-en-faveur-de-la-realisation-d-etudes-et-de-travaux-de-mise-en
+- **Dispositif régional en faveur des Réserves Naturelles Régionales** — échéance à vérifier — https://www.laregion.fr/Dispositif-regional-RNR
+- **Dispositif régional fonds de solidarité catastrophes naturelles** — échéance à vérifier — https://www.laregion.fr/Dispositif-regional-fonds-de-solidarite-catastrophes-naturelles
+- **Dispositif régional pêche aquaculture** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/dispositif-regional-peche-aquaculture
+- **Dispositif régional pour la gestion durable de la ressource en eau** — échéance à vérifier — https://www.laregion.fr/Dispositif-regional-pour-la-gestion-durable-de-la-ressource-en-eau
+- **Dispositif SODEF : bonification des investissements en forêt** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/dispositif-sodef-bonification-des-investissements-en-foret
+- **Dispositif Véhicules propres - Acquisition de véhicules hydrogène par les petites entreprises** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/207
+- **Dispositif Véhicules propres - Prime à la non-casse - Transformation de véhicules thermiques** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/409
+- **Dispositifs d’Aides – Collectivité Territoriale de Martinique** — échéance à vérifier — https://www.collectivitedemartinique.mq/dispositifs-daides/
+- **Dispositifs d’aides à l’investissement dans les exploitations agricoles** — échéance à vérifier — https://www.laregion.fr/Dispositifs-d-aides-a-l-investissement-dans-les-exploitations-agricoles
+- **Dispositifs d'Education Artistique et Culturelle** — 2026-10-16 — https://www.maregionsud.fr/vos-aides/detail/dispositifs-deducation-artistique-et-culturelle
+- **DISPOSITION 1 - MODALITÉS DE DÉPÔT** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/jeunesse/erasmus-stage-apprentis
+- **Distribution gratuite de gilets haute visibilité aux usagers du transport scolaire ligérien** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/distribution-gratuite-de-gilets-haute-visibilite-aux-usagers-du-transport-scolaire-ligerien
+- **Diversifier l’offre touristique des territoires de montagne en toute saison** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/diversifier-loffre-touristique-des-territoires-de-montagne-en-toute-saison
+- **Diversifier le tourisme toutes saisons des vallées de montagne** — 2027-12-31 — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/espaces-valleens
+- **Domaines de Recherche et d'Innovation Majeurs** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/489
+- **DOMO FEDER- FSE+ Guadeloupe 2021-2027 (version avril 2026)** — échéance à vérifier — https://www.europe-guadeloupe.fr/wp-content/uploads/2026/04/DOMO_FEDERFSE_V8.pdf
+- **Données essentielles des conventions de subventions** — échéance à vérifier — https://www.bourgognefranchecomte.fr/donnees-essentielles-des-conventions-de-subventions
+- **DOSSIER DE DEMANDE D’AIDES** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/loffre-de-logements-et-dhebergements-pour-les-jeunes
+- **DOSSIER DE DEMANDE DE SUBVENTION** — 2025-01-31 — https://les-aides.nouvelle-aquitaine.fr/culture/outils-linguistiques-etou-culturels
+- **Dotation Globale de Fonctionnement des Lycées DGF** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif15
+- **Dotation Jeunes Agriculteurs** — 2027-12-31 — https://www.maregionsud.fr/vos-aides/detail/dotation-jeunes-agriculteurs
+- **Dotation Jeunes Agriculteurs 2026** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/dotation-jeunes-agriculteurs-2026
+- **Droits des femmes - Accueil, orientation et hébergement des femmes en difficulté (investissement)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/844
+- **Droits des Femmes - Lutte contre les inégalités et les violences faites aux femmes (fonctionnement)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/843
+- **Du théâtre interactif pour sensibiliser les lycéens aux valeurs citoyennes avec Entrées de jeu** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/278
+- **DUREE APPROXIMATIVE DU DEPOT : 45 minutes** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/culture/etudes-prealables-aux-operations-globales-de-valorisation-de-sites-patrimoniaux
+- **e-lyco** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/e-lyco
+- **e-PASS JEUNES** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/e-pass-jeunes
+- **Eau et milieux aquatiques et humides** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/39
+- **Eco-chèque** — échéance à vérifier — https://www.laregion.fr/eco-cheque
+- **Éco-chèque mobilité** — échéance à vérifier — https://www.laregion.fr/Eco-cheque-mobilite
+- **Écochèque mobilité - Lycéen boursier de classe de seconde** — échéance à vérifier — https://www.laregion.fr/Ecocheque-mobilite-lyceen-boursier
+- **Ecole de production** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/ecole-de-production
+- **Écoles de la deuxième chance Sigle : E2CH** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif1073
+- **Economie circulaire: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/jai-un-projet/je-trouve-un-financement/economie-circulaire
+- **Economie de Proximité** — échéance à vérifier — https://www.laregion.fr/dispositif-Economie-de-Proximite
+- **Économie et Emploi | Le Guide des Aides** — 2028-12-31 — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi
+- **Édifices religieux non protégés** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/edifices-religieux-non-proteges
+- **Education Formation: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/jai-un-projet/je-trouve-un-financement/education-formation
+- **Efficacité hydrique des entreprises** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/transition-energetique-et-ecologique/efficacite-hydrique-des-entreprises
+- **Égalité Femmes-Hommes** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/egalite-femmes-hommes
+- **Égalité femmes-hommes et Lutte contre les violences faites aux femmes** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/711
+- **Emploi: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/jai-un-projet/je-trouve-un-financement/emploi
+- **En route pour l'emploi (Parc auto à 1 € par jour)** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif632
+- **Enjeux de la défense : des opportunités de financement européen à saisir** — 2026-07-24 — https://www.paysdelaloire.fr/mon-conseil-regional/toute-lactu-de-ma-region/les-actualites/enjeux-de-la-defense-des-opportunites-de-financement-europeen-saisir
+- **Enseignement Professionnel : Lycées Professionnels et CFA au Festival d’Aix** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/enseignement-professionnel-lycees-professionnels-et-cfa-au-festival-daix
+- **Entreprenariat des jeunes (18-29 ans)** — 2027-01-11 — https://www.grandest.fr/vos-aides-regionales/entreprenariat-des-jeunes/
+- **Entreprendre, la Région à vos côtés** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/dispositif-regional-daccompagnement-la-creation-reprise-de-tpe-entreprendre-la-region-vos-cotes
+- **Entreprises : aides et soutien de la Région Nouvelle Aquitaine** — échéance à vérifier — https://entreprises.nouvelle-aquitaine.fr/que-fait-la-region-pour-les-entreprises/les-aides-regionales-en-faveur-des-entreprises
+- **Entreprises : conduite du changement par l'Intelligence Collective et le Codesign** — 2026-12-31 — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/conduite-au-changement-par-lintelligence-collective-et-le-codesign
+- **Entreprises, une aide pour vos investissements de production** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/aide-aux-investissements-performance-industrielle
+- **Environnement: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/jai-un-projet/je-trouve-un-financement/environnement
+- **Envoléo** — échéance à vérifier — https://www.paysdelaloire.fr/envoleo
+- **Equipement de la Snsm et des clubs nautiques** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/equipement-de-la-snsm-et-des-clubs-nautiques
+- **Équipement des centres de formation paramédicale et maïeutique** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/78
+- **Équipement professionnel de rentrée** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/jeunesse/equipement-professionnel-de-rentree
+- **Equipements culturels** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/culture/equipements-culturels
+- **Erasmus sanitaire et social** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/erasmus-sanitaire-et-social
+- **ERASMUS+** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/erasmus
+- **ERASMUS+ Stage** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/jeunesse/erasmus-stage-enseignement-superieur-0
+- **Erasmus+: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/je-minforme/les-financements-europeens/erasmus
+- **Erasmus+/MEAE/OFAJ/OFQJ** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/jeunesse/volontariat-et-echanges-internationaux
+- **Espaces Ressources Cancers Renouvellement ERCR** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif862
+- **Etat récapitulatif des dépenses - porteurs privés soumis aux aides d'Etat** — échéance à vérifier — https://www.paysdelaloire.fr/sites/default/files/2025-10/Etat%20r%C3%A9capitulatif%20des%20d%C3%A9penses_porteursPriv%C3%A9s_soumis_AidesEtat.zip
+- **Etat récapitulatif des dépenses FEDER** — échéance à vérifier — https://www.paysdelaloire.fr/sites/default/files/2024-12/Etat%20r%C3%A9capitulatif%20des%20d%C3%A9penses_V202412.zip
+- **Être labellisé "formations du Campus Région du numérique"** — 2026-10-01 — https://www.auvergnerhonealpes.fr/aides/etre-labellise-formations-du-campus-region-du-numerique
+- **Etude d'installation en agriculture** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/etude-dinstallation-en-agriculture
+- **Etude de faisabilité pour des projets de géothermie/thalassothermie** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/etude-de-faisabilite-pour-des-projets-de-geothermie/thalassothermie
+- **Etude de faisabilité pour des projets de méthanisation** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/etude-de-faisabilite-pour-des-projets-de-methanisation
+- **Etude de faisabilité pour des projets de récupération de chaleur fatale** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/etude-de-faisabilite-pour-des-projets-de-recuperation-de-chaleur-fatale
+- **Etude de faisabilité pour des projets de solaire thermique (eau chaude sanitaire, chaleur)** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/etude-de-faisabilite-pour-des-projets-de-solaire-thermique-eau-chaude-sanitaire-chaleur
+- **Etude de faisabilité pour des réseaux de chaleur et de froid** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/etude-de-faisabilite-pour-des-reseaux-de-chaleur-et-de-froid
+- **Études et Assistance à Maitrise d’Ouvrage pour l’Autoconsommation Collective multi-acteurs d’électricité renouvelable** — 2026-12-31 — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/etudes-et-assistance-maitrise-douvrage-pour-lautoconsommation-collective-multi-acteurs-delectricite
+- **Etudes et travaux pour des projets de Bois Energie** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/etudes-et-travaux-pour-des-projets-de-bois-energie
+- **Etudes multi-acteurs pour la décarbonation de la mobilité lourde ou intensive** — 2026-12-31 — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/etudes-multi-acteurs-pour-la-decarbonation-de-la-mobilite-lourde-ou-intensive
+- **Étudiant Relais Santé** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif921
+- **EU BODIES AND AGENCIES – Assistance scientifique et technique sur une activité de prospective dans le domaine de la santé des végétaux pour renforcer la préparation aux crises sur le territoire de l&apos;UE – 2026** — échéance à vérifier — https://www.europe-en-france.gouv.fr/fr/appels-a-projet/eu-bodies-and-agencies-assistance-scientifique-technique-activite-prospective
+- **EU BODIES AND AGENCIES – Recherche et analyse de la jurisprudence relative à la protection internationale et à l&apos;enregistrement dans la base de données de jurisprudence de l&apos;EUAA (recueil de jurisprudence en matière d&apos;asile) – 2026** — 2026-09-29 — https://www.europe-en-france.gouv.fr/fr/appels-a-projet/eu-bodies-and-agencies-recherche-analyse-jurisprudence-relative-protection
+- **EU4Health** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/eu4health
+- **EU4Health: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/je-minforme/les-financements-europeens/europeen/eu4health
+- **EUROPE CREATIVE** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/europe-creative
+- **European Urban Inititative: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/je-minforme/les-financements-europeens/europeen/european-urban-initiative
+- **Eurostars 3** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/eurostars-3
+- **Evénements de promotion des productions agricoles, agroalimentaires, viticoles et de la mer Occitanie-Sud de France** — échéance à vérifier — https://www.laregion.fr/Evenements-de-promotion-des-productions-agricoles-agroalimentaires-viticoles-et-de
+- **EXPERIMENTATION DANS LE DOMAINE CULTUREL 2026 (EXPE2026)** — 2026-05-21 — https://guide-aides.hautsdefrance.fr/dispositif1062
+- **Exploitation par câble** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/exploitation-par-cable
+- **Fabriques arts visuels** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/343
+- **Faciliter l'accès aux soins** — 2027-03-31 — https://les-aides.nouvelle-aquitaine.fr/jeunesse/faciliter-lacces-aux-soins
+- **Faciliter l'accession sociale à la propriété** — échéance à vérifier — https://www.mayotte.fr/sante-et-social/habitat/aide-a-la-pierre
+- **Faire une demande d’aide** — échéance à vérifier — https://www.europe-guadeloupe.fr/jai-un-projet/faire-une-demande-daide/
+- **Faites-vous aider dans le montage de votre projet PEI en Agriculture !** — échéance à vérifier — https://europe-en-hautsdefrance.eu/actualites-et-evenements/detail-de-lactualite/faites-vous-aider-dans-le-montage-de-votre-projet-pei-en-agriculture
+- **Favoriser la réussite étudiante en Nouvelle-Aquitaine** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/jeunesse/favoriser-la-reussite-etudiante-en-nouvelle-aquitaine
+- **Favoriser le développement de solutions de mobilité locale fine et de régies scolaires dans les communes peu denses** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/favoriser-le-developpement-dune-mobilite-locale-fine-dans-les-communautes-de-communes
+- **Favoriser le développement des projets européens "Amorçage Europe"** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/favoriser-le-developpement-des-projets-europeens-amorcage-europe
+- **Favoriser le partenariat entre le monde de l'éducation et le monde économique** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/341
+- **FEADER** — échéance à vérifier — https://www.europe-martinique.com/glossaire/feader/
+- **FEADER - Aide à l'installation du jeune agriculteur** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/595
+- **FEADER - Aide aux infrastructures hydrauliques sur les exploitations (73.01)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/842
+- **FEADER - Aide aux infrastructures hydrauliques sur les territoires (73.07)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/841
+- **FEADER - Amélioration de la desserte forestière (73.06.01)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/829
+- **FEADER - Animation des Documents d'Objectifs (DOCOB) et des sites Natura 2000 (73.04.02)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/765
+- **FEADER - Appel à projets 2023 "Mesure agroenvironnementale et climatique forfaitaire - Transition des pratiques": Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/feader-appel-a-projets-2023-mesure-agroenvironnementale-et-climatique-forfaitaire-transition-des-pratiques
+- **FEADER - Appel à projets 2023 PEI: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/feader-appel-a-projets-2023-pei
+- **FEADER - Appel à projets 2023/2024 Agroenvironnement: Europe en Hauts-de-France** — 2024-10-31 — https://europe-en-hautsdefrance.eu/feader-appel-a-projets-2023-agroenvironnement
+- **FEADER - Appel à projets 2023/2024 Desserte forestière: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/feader-appel-a-projets-2023-desserte-forestiere
+- **FEADER - Appel à projets 2023/2024 Elevage: Europe en Hauts-de-France** — 2024-10-31 — https://europe-en-hautsdefrance.eu/feader-appel-a-projets-2023-elevage
+- **FEADER - Appel à projets 2023/2024 Transformation Commercialisation: Europe en Hauts-de-France** — 2024-10-31 — https://europe-en-hautsdefrance.eu/feader-appel-a-projets-2023-transformation-commercialisation
+- **FEADER - Appel à projets 2023/2024 Végétal: Europe en Hauts-de-France** — 2024-10-31 — https://europe-en-hautsdefrance.eu/feader-appel-a-projets-2023-vegetal
+- **FEADER - Appel à projets 2023/2025 Formation et acquisition de compétences: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/feader-appel-a-projets-2023-formation-et-acquisition-de-competences
+- **FEADER - Appel à projets 2024 « Mesure agroenvironnementale et climatique MAEC - Amélioration du potentiel pollinisateur API des abeilles »: Europe en Hauts-de-France** — 2024-09-30 — https://europe-en-hautsdefrance.eu/feader-appel-a-projets-2024-maec-amelioration-du-potentiel-pollinisateur-des-abeilles
+- **FEADER - Appel à projets 2024 AJA: Europe en Hauts-de-France** — 2025-12-31 — https://europe-en-hautsdefrance.eu/feader-appel-a-projets-2024-aja
+- **FEADER - Appel à projets 2024 MAEC Protection des races menacées (PRM): Europe en Hauts-de-France** — 2024-09-30 — https://europe-en-hautsdefrance.eu/feampa-aap-maec-protection-des-races-menacees
+- **FEADER - Appel à projets 2024 PEI: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/feader-appel-a-projets-2024-pei
+- **FEADER - Appel à projets Permanent Animation Natura 2000: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/feader-appel-a-projets-permanent-animation-natura-2000
+- **FEADER - Appel à projets permanent Contrat Natura 2000: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/feader-contrat-natura-2000-appel-a-projets-permanent
+- **FEADER - Appel à projets permanent Elaboration Révision DOCOB Natura 2000: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/feader-appel-a-projets-permanent-elaboration-revision-docob-natura-2000
+- **FEADER - Coopération pour le renouvellement des générations en agriculture (77.04)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/720
+- **FEADER - EURO-PAC- Création de compte** — échéance à vérifier — https://europe.maregionsud.fr/projets-realises-1/detail/euro-pac-creation-de-compte-vf-v10
+- **FEADER - EURO-PAC- Dépôt de demande** — échéance à vérifier — https://europe.maregionsud.fr/projets-realises-1/detail/euro-pac-depot-de-demande
+- **FEADER - EURO-PAC- Focus Onglet** — échéance à vérifier — https://europe.maregionsud.fr/projets-realises-1/detail/euro-pac-focus-onglet-vf-v11
+- **FEADER - MAEC API 2025 - Amélioration du potentiel pollinisateur des abeilles (70.29)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/803
+- **FEADER - MAEC API 2026 - Amélioration du potentiel pollinisateur des abeilles (70.29)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/845
+- **FEADER - MAEC PRM 2025 - Protection des Races Menacées (70.30)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/806
+- **FEADER - MAEC PRM 2026 - Protection des Races Menacées (70.30)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/846
+- **FEADER - Projets LEADER contribuant au développement rural francilien (77.05.01)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/687
+- **FEADER - projets LEADER portés par les Groupes d'action locale (77.05.02)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/699
+- **FEADER - Soutien à la mécanisation forestière (73.03.01)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/828
+- **FEADER : agriculture et développement rural** — échéance à vérifier — https://www.paysdelaloire.fr/mon-conseil-regional/les-missions/europe/comprendre-les-fonds-europeens/feader-agriculture-et-developpement-durable
+- **FEADER : Appel à projets PCAE Élevage** — 2025-07-24 — https://www.paysdelaloire.fr/les-aides/feader-appel-projets-pcae-elevage
+- **FEADER : Appel à projets PCAE Végétal** — 2026-04-10 — https://www.paysdelaloire.fr/les-aides/feader-pcae-vegetal
+- **FEADER : deux dispositifs ouverts au dépôt sur EURO-PAC - Europe Martinique** — échéance à vérifier — https://www.europe-martinique.com/feader-deux-dispositifs-ouverts-au-depot-sur-euro-pac/
+- **FEADER 2023-2027** — échéance à vérifier — https://beeurope.grandest.fr/decouvrir/feader-2023-2027/
+- **FEADER Martinique 23-27** — échéance à vérifier — https://www.europe-martinique.com/feader-23-27/
+- **FEADER Occitanie 2023 - 2027 - Stratégie locale de développement forestier** — échéance à vérifier — https://www.laregion.fr/FEADER-Occitanie-2023-2027-Strategie-locale-de-developpement-forestier
+- **FEADER Occitanie 2023-2027 - Aide à la promotion des produits alimentaires et vitivinicoles sous signe de qualité** — échéance à vérifier — https://www.laregion.fr/FEADER-Occitanie-2023-2027-Aide-a-la-promotion-des-produits-alimentaires-et
+- **FEADER Occitanie 2023-2027 - Aide aux infrastructures hydrauliques sur les territoires – volet collectif** — échéance à vérifier — https://www.laregion.fr/FEADER-Occitanie-2023-2027-Aide-aux-infrastructures-hydrauliques-sur-les-territoires
+- **FEADER Occitanie 2023-2027 - Aide aux infrastructures hydrauliques sur les territoires – volet individuel** — 2022-12-16 — https://www.laregion.fr/FEADER-Occitanie-2023-2027-Aide-aux-infrastructures-hydrauliques-sur-les-territoires-46163
+- **FEADER Occitanie 2023-2027 - Aide aux infrastructures hydrauliques sur les territoires – volet stockage collectif** — échéance à vérifier — https://www.laregion.fr/FEADER-Occitanie-2023-2027-Aide-aux-infrastructures-hydrauliques-sur-les-territoires-47041
+- **FEADER Occitanie 2023-2027 - Animation Natura 2000** — échéance à vérifier — https://www.laregion.fr/Animation-Natura-2000-FEADER-23-27
+- **FEADER Occitanie 2023-2027 - Cabanes, abris pastoraux et portage** — échéance à vérifier — https://www.laregion.fr/FEADER-Occitanie-2023-2027-Cabanes-abris-pastoraux-et-portage
+- **FEADER Occitanie 2023-2027 - Contrats Natura 2000** — échéance à vérifier — https://www.laregion.fr/Contrats-Natura-2000-FEADER-23-27
+- **FEADER Occitanie 2023-2027 - Coopération territoriale** — échéance à vérifier — https://www.laregion.fr/Cooperation-territoriale-FEADER-23-27
+- **FEADER Occitanie 2023-2027 - Défense des Forêts contre l’incendie (DFCI)** — échéance à vérifier — https://www.laregion.fr/Defense-des-Forets-contre-incendie-FEADER-23-27
+- **FEADER Occitanie 2023-2027 - Desserte forestière** — échéance à vérifier — https://www.laregion.fr/Desserte-forestiere-FEADER-23-27
+- **FEADER Occitanie 2023-2027 - Diffusion des connaissances** — échéance à vérifier — https://www.laregion.fr/FEADER-Occitanie-2023-2027-Diffusion-des-connaissances
+- **FEADER Occitanie 2023-2027 - Diffusion pour le pastoralisme collectif** — échéance à vérifier — https://www.laregion.fr/FEADER-Occitanie-2023-2027-Diffusion-pour-le-pastoralisme-collectif
+- **FEADER Occitanie 2023-2027 - Dotation Jeune Agriculteur (DJA)** — échéance à vérifier — https://www.laregion.fr/Dotation-Jeune-Agriculteur-FEADER-23-27
+- **FEADER Occitanie 2023-2027 - Dotation Nouvel Agriculteur (DNA)** — échéance à vérifier — https://www.laregion.fr/Dotation-Nouvel-Agriculteur-FEADER-23-27
+- **FEADER Occitanie 2023-2027 - Formation professionnelle** — échéance à vérifier — https://www.laregion.fr/FEADER-Occitanie-2023-2027-Formation-professionnelle
+- **FEADER Occitanie 2023-2027 - Gardiennage des troupeaux** — échéance à vérifier — https://www.laregion.fr/FEADER-Occitanie-2023-2027-Gardiennage-des-troupeaux
+- **FEADER Occitanie 2023-2027 - Investissements dans les exploitations agricoles** — échéance à vérifier — https://www.laregion.fr/Investissements-exploitations-agricoles-FEADER23-27
+- **FEADER Occitanie 2023-2027 - Investissements dans les exploitations agricoles - volet CUMA** — échéance à vérifier — https://www.laregion.fr/Investissements-exploitations-agricoles-CUMA-FEADER23-27
+- **FEADER Occitanie 2023-2027 - Investissements pastoraux collectifs** — échéance à vérifier — https://www.laregion.fr/FEADER-Occitanie-2023-2027-Investissements-pastoraux-collectifs
+- **FEADER Occitanie 2023-2027 - MAEC Amélioration du potentiel pollinisateur des abeilles domestiques** — échéance à vérifier — https://www.laregion.fr/FEADER-Occitanie-2023-2027-MAEC-Amelioration-du-potentiel-pollinisateur-des-abeilles
+- **FEADER Occitanie 2023-2027 - MAEC Transition Volet Autonomie protéique** — 2026-06-30 — https://www.laregion.fr/MAEC-Transition-Volet-Autonomie-proteique-FEADER-23-27
+- **FEADER Occitanie 2023-2027 - Mobilisation des bois par câble** — échéance à vérifier — https://www.laregion.fr/Mobilisation-des-bois-par-cable-FEADER-23-27
+- **FEADER Occitanie 2023-2027 - Partenariat Européen pour l’Innovation** — échéance à vérifier — https://www.laregion.fr/Partenariat-Europeen-Innovation-FEADER-23-27
+- **FEADER Occitanie 2023-2027 - Soutien aux investissements des entreprises agro-alimentaires** — échéance à vérifier — https://www.laregion.fr/Soutien-investissements-entreprises-agro-FEADER23-27
+- **FEADER Occitanie 2023-2027 - Soutien aux plantations nouvelles de vignes par de nouveaux exploitants** — échéance à vérifier — https://www.laregion.fr/FEADER-Occitanie-2023-2027-Soutien-aux-plantations-nouvelles-de-vignes-par-de
+- **FEADER Occitanie 2023-2027 – MAEC Protection des races menacées** — échéance à vérifier — https://www.laregion.fr/FEADER-Occitanie-2023-2027-MAEC-Protection-des-races-menacees
+- **FEADER_Juin2026** — échéance à vérifier — https://www.europe-bfc.eu/sites/bfceurope/files/2026-06/Calendrier_AAP_Juin2026.pdf
+- **FEADER-Contrats Natura 2000 ni-agricoles ni-forestiers et contrats Natura 2000 forestiers (73.04.03)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/802
+- **FEAMPA** — échéance à vérifier — https://www.europe-guadeloupe.fr/les-financements-europeens/feampa/
+- **FEAMPA - AAP Innovation « Décarbonation de la filière : Vers une utilisation durable de l’énergie pour les engins de pêche, les fermes aquacoles et les entreprises de transformation des produits de la mer »: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/feampa-aap-innovation-decarbonation-de-la-filiere-vers-une-utilisation-durable-de-lenergie-pour-les-engins-de-peche-les-fermes-aquacoles-et-les-entreprises-de-transformation-des-produits-de-la-mer
+- **FEAMPA - AAP Innovation « Valorisation des coproduits des produits de la mer et des espèces invasives animales et végétales marines »: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/feampa-aap-innovation-valorisation-des-coproduits-des-produits-de-la-mer-et-des-especes-invasives-animales-et-vegetales-marines
+- **FEAMPA - M1 – Aide à la première acquisition d’un navire de pêche d’occasion (OS 1.1.2)** — échéance à vérifier — https://www.laregion.fr/FEAMPA-Aide-a-la-premiere-acquisition-d-un-navire-de-peche-d-occasion
+- **FEAMPA - M10 - Aide aux investissements en faveur de la commercialisation et de la transformation des produits de la pêche et de l’aquaculture (OS 2.2)** — échéance à vérifier — https://www.laregion.fr/FEAMPA-Aide-investissements-commercialisation-transformation-produits-peche-aquaculture
+- **FEAMPA - M11 - Aide aux actions collectives d’intérêt régional et à l’innovation pour le développement de filières halieutiques durables (OS 1.1 / OS 2.1 / OS 2.2)** — échéance à vérifier — https://www.laregion.fr/FEAMPA-Aide-actions-collectives-interet-regional-et-innovation-halieutiques
+- **FEAMPA - M12 - Aide à l’animation et au fonctionnement des GALPA (OS 3.1)** — échéance à vérifier — https://www.laregion.fr/FEAMPA-Aide-a-l-animation-et-au-fonctionnement-des-GALPA
+- **FEAMPA - M13 - Aide à la mise en œuvre des stratégies DLAL FEAMPA (OS 3.1)** — échéance à vérifier — https://www.laregion.fr/FEAMPA-Aide-a-la-mise-en-oeuvre-des-strategies-DLAL-FEAMPA
+- **FEAMPA - M2 - Aide au remplacement ou à la modernisation d’un moteur principal ou auxiliaire pour un navire de pêche (OS 1.2)** — échéance à vérifier — https://www.laregion.fr/FEAMPA-Aide-remplacement-ou-modernisation-moteur-navire-peche
+- **FEAMPA - M4 - Aide à l’augmentation du tonnage brut d’un navire de pêche pour améliorer la sécurité, les conditions de travail ou l’efficacité énergétique (OS 1.1.2)** — échéance à vérifier — https://www.laregion.fr/FEAMPA-Aide-a-l-augmentation-du-tonnage-brut-d-un-navire-de-peche
+- **FEAMPA - M5 - Aide à la modernisation des ports de pêche, sites de débarquement et halles à marée** — échéance à vérifier — https://www.laregion.fr/FEAMPA-M5-Aide-a-la-modernisation-des-ports-de-peche-sites-de-debarquement-et-halles
+- **FEAMPA - M7 - Aide à la protection et à la restauration de la biodiversité et des écosystèmes aquatiques (OS 1.6)** — échéance à vérifier — https://www.laregion.fr/FEAMPA-Aide-protection-restauration-biodiversite-ecosystemes-aquatique
+- **FEAMPA - M8 - Aide à la création d’entreprise pour les nouveaux aquaculteurs (OS 2.1)** — échéance à vérifier — https://www.laregion.fr/FEAMPA-Aide-a-la-creation-d-entreprise-pour-les-nouveaux-aquaculteurs
+- **FEAMPA - M9 - Aide aux investissements productifs dans l’aquaculture (OS 2.1)** — échéance à vérifier — https://www.laregion.fr/FEAMPA-Aide-investissements-aquaculture
+- **FEDER** — échéance à vérifier — https://www.europe-guadeloupe.fr/les-financements-europeens/feder/
+- **FEDER** — échéance à vérifier — https://www.europe-martinique.com/glossaire/feder/
+- **FEDER - Appel à projets PME industrielles** — 2025-09-30 — https://guide-aides.hautsdefrance.fr/dispositif1043
+- **FEDER - Développement des Réseaux Energétiques Intelligents: Europe en Hauts-de-France** — 2024-03-31 — https://europe-en-hautsdefrance.eu/feder-developpement-des-reseaux-energetiques-intelligents
+- **FEDER -FSE+ 2021-2027 Renforcer le potentiel humain par et pour la recherche – Allocations doctorales** — échéance à vérifier — https://www.laregion.fr/Renforcer-le-potentiel-humain-par-et-pour-la-recherche-Allocations-doctorales
+- **FEDER : économie, développement solidaire et durable des territoires** — échéance à vérifier — https://www.paysdelaloire.fr/mon-conseil-regional/les-missions-regionales/europe/comprendre-les-fonds-europeens/feder-economie-developpement-solidaire-et-durable-des-territoires
+- **FEDER (OS 1.1) - Action 3 Soutien aux infrastructures de recherche et aux équipements scientifiques structurants du territoires (hors bâtiments): Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/feder-os-11-action-3-soutien-aux-infrastructures-de-recherche-et-aux-equipements-scientifiques-structurants-du-territoires-hors-batiments-selection-au-fil-de-leau
+- **FEDER (OS 1.1) - Action 4 Soutien et développement des partenariats publics-privés: Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/feder-os-11-action-4-soutien-et-developpement-des-partenariats-publics-prives-selection-au-fil-de-leau-et/ou-par-appels-a-projets
+- **FEDER (OS 1.1) - Action 5 Valorisation de la recherche académique, son transfert vers les entreprises et développement du transfert de technologies: Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/feder-os-11-action-5-valorisation-de-la-recherche-academique-son-transfert-vers-les-entreprises-et-developpement-du-transfert-de-technologies
+- **FEDER (OS 1.1) - Action 6 Renforcer l’animation de l’écosystème régional de l’innovation et de la valorisation économique de la recherche: Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/feder-os-11-action-6-renforcer-lanimation-de-lecosysteme-regional-de-linnovation-et-de-la-valorisation-economique-de-la-recherche
+- **FEDER (OS 1.1) - Appel à projets Emile 2023: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/feder-appel-a-projets-emile
+- **FEDER (OS 1.1) - Appel à projets EMILE 2024 : Equipes mixtes laboratoire-Entreprise: Europe en Hauts-de-France** — 2024-12-31 — https://europe-en-hautsdefrance.eu/feder-os-11-appel-a-projets-emile-2024-equipes-mixtes-laboratoire-entreprise
+- **FEDER (OS 1.2) - Action 1 Financer les investissements numériques des PME pour améliorer leur compétitivité: Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/feder-os-12-investissements-numeriques-des-pme-pour-leur-competitivite-au-fil-de-leau-et/ou-par-appels-a-projets
+- **FEDER (OS 1.2) - Action 2 Développer l’offre régionale de services numériques d’intérêt public via des projets et plateformes mutualisées: Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/feder-os-12-action-2-developper-loffre-regionale-de-services-numeriques-dinteret-public-via-des-projets-et-plateformes-mutualisees
+- **FEDER (OS 1.2) - Action 3 Accompagner le développement des Smart Territoires: Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/feder-os-12-action-3-accompagner-le-developpement-des-smart-territoires
+- **FEDER (OS 1.2) - Action 4 Accompagner le développement des technologies émergentes dans les services d’intérêt public: Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/feder-os-12-action-4-accompagner-le-developpement-des-technologies-emergentes-dans-les-services-dinteret-public
+- **FEDER (OS 1.3) - Action 1 Accompagner les entreprises dans leurs choix stratégiques de développement: Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/feder-os-13-action-1-accompagner-les-entreprises-dans-leurs-choix-strategiques-de-developpement
+- **FEDER (OS 1.3) - Action 1 Promotion du système entrepreneurial afin de développer l’envie d’entreprendre en Région: Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/feder-os-13-promotion-du-systeme-entrepreneurial-afin-de-developper-lenvie-dentreprendre-en-hdf
+- **FEDER (OS 1.3) - Action 2 Accompagnement en faveur de la création (dont création d’entreprises innovantes) ou reprise d’entreprises: Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/feder-os-13-action-2-promotion-du-systeme-entrepreneurial-afin-de-developper-lenvie-dentreprendre-en-region
+- **FEDER (OS 1.3) - Action 2 Accompagnement visant à renforcer les filières, les partenariats et les synergies entre les entreprises: Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/feder-os-13-action-1-accompagnement-visant-a-renforcer-les-filieres-les-partenariats-et-les-synergies-entre-les-entreprises
+- **FEDER (OS 1.3) - Action 3 Favoriser l’amorçage, l’accélération et le développement des entreprises: Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/feder-os-13-action-3-favoriser-lamorcage-lacceleration-et-le-developpement-des-entreprises
+- **FEDER (OS 1.3) - Action 3 Soutien au développement et à l’industrialisation des projets d’innovation et de Recherche et Développement (R&D) des entreprises, et notamment aux projets collaboratifs: Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/feder-os-13-action-3-soutien-au-developpement-et-a-lindustrialisation-des-projets-dinnovation-et-de-recherche-et-developpement-rd-des-entreprises-et-notamment-aux-projets-collaboratifs
+- **FEDER (OS 1.3) - Action 4 Animation et coordination des acteurs de l’entrepreneuriat, de la création et de la digitalisation des entreprises: Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/feder-os-13-action-4-animation-et-coordination-des-acteurs-de-lentrepreneuriat-de-la-creation-et-de-la-digitalisation-des-entreprises
+- **FEDER (OS 1.3) - Action 4 Soutenir la performance et la transition industrielle des PME, petites ETI: Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/feder-os-13-action-4-soutenir-la-performance-et-la-transition-industrielle-des-pme-petites-eti
+- **FEDER (OS 2.1) - 1er Appel à projets pour la réhabilitation énergétique du parc HLM de logements locatifs sociaux: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/feder-1er-appel-a-projets-logement-social
+- **FEDER (OS 2.1) - Action 4 Accroissement de la performance énergétique des entreprises industrielles: Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/feder-os-21-action-4-accroissement-de-la-performance-energetique-des-entreprises-industrielles
+- **FEDER (OS 2.2) - Action 1 Financement du développement de projets de production d’énergies renouvelables: Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/feder-os-22-action-1-financement-du-developpement-de-projets-de-production-denergies-renouvelables
+- **FEDER (OS 2.4) - Action 1 Sous-action 1 Adaptation des territoires aux inondations continentales par débordement des cours d’eau et remontées de nappe: Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/feder-os-24-action-sous-action-1-adaptation-des-territoires-aux-inondations-continentales-par-debordement-des-cours-deau-et-remontees-de-nappe
+- **FEDER (OS 2.4) - Action 1 Sous-action 2 Adaptation des territoires littoraux aux risques naturels d’inondation, de submersion, d’érosion du trait de côte: Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/feder-os-24-action-1-sous-action-2-adaptation-des-territoires-littoraux-aux-risques-naturels-dinondation-de-submersion-derosion-du-trait-de-cote
+- **FEDER (OS 2.4) - Action 1 Sous-action 3 Prévention des risques d’effondrement de cavités: Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/feder-os-24-action-1-sous-action-3-prevention-des-risques-deffondrement-de-cavites
+- **FEDER (OS 2.4) - Action 1 Sous-action 4 Adaptation au changement climatique des territoires urbains et ruraux: Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/feder-os-24-action-1-sous-action-4-adaptation-au-changement-climatique-des-territoires-urbains-et-ruraux
+- **FEDER (OS 2.6) - Action 1 Accompagner et consolider les dynamiques de projets et d’acteurs visant à favoriser la production et l’usage de ressources dans une logique d’économie circulaire: Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/feder-os-26-action-1-accompagner-et-consolider-les-dynamiques-de-projets-et-dacteurs-visant-a-favoriser-la-production-et-lusage-de-ressources-dans-une-logique-deconomie-circulaire
+- **FEDER (OS 2.7) - Action 1 Sous-action 1 Préserver, restaurer, renforcer des corridors écologiques: Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/feder-os-27-action-1-sous-action-1-preserver-restaurer-renforcer-des-corridors-ecologiques
+- **FEDER (OS 2.7) - Action 1 Sous-action 2 Protéger et restaurer des espaces et populations d’espèces remarquables: Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/feder-os-27-action-1-sous-action-2-proteger-et-restaurer-des-espaces-et-populations-despeces-remarquables
+- **FEDER (OS 2.7) - Action 1 Sous-action 3 Lutter contre les espèces exotiques envahissantes: Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/feder-os-27-action-1-sous-action-3-lutter-contre-les-especes-exotiques-envahissantes
+- **FEDER (OS 2.7) - Action 1 Sous-action 4 Améliorer et valoriser la connaissance de la biodiversité: Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/feder-os-27-action-1-sous-action-4-ameliorer-et-valoriser-la-connaissance-de-la-biodiversite
+- **FEDER (OS 2.7) - Action 1 Sous-action 5 Protection de la biodiversité par la mobilisation des habitants: Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/feder-os-27-action-1-sous-action-5-protection-de-la-biodiversite-par-la-mobilisation-des-habitants
+- **FEDER (OS 2.7) - Action 2 Recyclage foncier des sols contaminés au bénéfice d’opérations de réhabilitation à forte ambition en matière de transition écologique: Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/feder-os-27-action-2-recyclage-foncier-des-sols-contamines-au-benefice-doperations-de-rehabilitation-a-forte-ambition-en-matiere-de-transition-ecologique
+- **FEDER (OS 2.7) - Action 3 Améliorer la qualité de l’air: Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/feder-os-27-action-3-ameliorer-la-qualite-de-lair
+- **FEDER (OS 2.8) - Action 1 Accompagner les changements de comportement et accroître des modes alternatifs à la voiture individuelle afin de limiter l’impact écologique des déplacements quotidiens: Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/feder-os-28-action-1-accompagner-les-changements-de-comportement-et-accroitre-des-modes-alternatifs-a-la-voiture-individuelle-afin-de-limiter-limpact-ecologique-des-deplacements-quotidiens
+- **FEDER (OS 2.8) - Action 2 Augmenter l’usage des transports durables, voyageurs et marchandises, dans une stratégie d’intermodalité et de réduction des pollutions: Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/feder-os-28-action-2-augmenter-lusage-des-transports-durables-voyageurs-et-marchandises-dans-une-strategie-dintermodalite-et-de-reduction-des-pollutions
+- **FEDER (OS 2.8) - Action 3 Décarboner les transports: Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/feder-os-28-action-3-decarboner-les-transports
+- **FEDER (OS 5.1 et 5.2) - Appel à projets Espaces délaissés: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/feder-appel-a-projets-espaces-delaisses
+- **FEDER (OS 5.1) - Appel à projets « Requalification des espaces publics des cités minières identifiées au titre de l’Engagement pour le Renouveau du Bassin Minier »: Europe en Hauts-de-France** — 2024-09-13 — https://europe-en-hautsdefrance.eu/feder-os-51-appel-a-projets-requalification-des-espaces-publics-des-cites-minieres-identifiees-au-titre-de-lengagement-pour-le-renouveau-du-bassin-minier
+- **FEDER (OS 5.2) - Appel à projets Amélioration Offre de services publics de la santé: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/feder-os-52-appel-a-projets-amelioration-offre-de-services-publics-de-la-sante
+- **FEDER 2014-2020** — échéance à vérifier — https://www.paysdelaloire.fr/mon-conseil-regional/les-missions/europe/solliciter-les-fonds-europeens/feder%23contenu
+- **FEDER 2021-2027** — échéance à vérifier — https://beeurope.grandest.fr/wp-content/uploads/2025/01/kit-com-feder-11-25-2.pdf
+- **FEDER FSE + 2021-2027 Soutenir l’accompagnement à la création, transmission et reprise d’entreprises** — échéance à vérifier — https://www.laregion.fr/Soutenir-l-accompagnement-a-la-creation-transmission-reprise-d-entreprises
+- **FEDER-FSE + 2021-2027 - Développer et moderniser l’offre de formation adaptée aux besoins de demain - Volet modernisation** — échéance à vérifier — https://www.laregion.fr/FEDER-FSE-2021-2027-Developper-et-moderniser-l-offre-de-formation-adaptee-aux
+- **FEDER-FSE + 2021-2027 Accompagner des projets innovants d’entreprises et de créateurs** — échéance à vérifier — https://www.laregion.fr/Accompagner-des-projets-innovants-d-entreprises-et-de-createurs
+- **FEDER-FSE + 2021-2027 Créer et améliorer les infrastructures de recherche et d’innovation – Volet équipement** — échéance à vérifier — https://www.laregion.fr/FEDER-FSE-2021-2027-Creer-et-ameliorer-les-infrastructures-de-recherche-et-d
+- **FEDER-FSE + 2021-2027 Développer des outils et programmes de gestion des risques pour réduire la vulnérabilité et augmenter la culture du risque** — échéance à vérifier — https://www.laregion.fr/FEDER-FSE-2021-2027-Developper-des-outils-et-programmes-de-gestion-des-risques-pour
+- **FEDER-FSE + 2021-2027 Développer les équipements culturels, touristiques et de loisir pour tous en zone urbaine** — échéance à vérifier — https://www.laregion.fr/Developper-les-equipements-culturels-touristiques-et-de-loisir-pour-tous-en-zone-44875
+- **FEDER-FSE + 2021-2027 Investir dans les équipements et installations de production d’énergies à partir de sources renouvelables** — échéance à vérifier — https://www.laregion.fr/Investir-dans-les-equipements-et-installations-de-production-d-energies-a-partir-de
+- **FEDER-FSE + 2021-2027 Mieux trier et recycler les déchets** — échéance à vérifier — https://www.laregion.fr/FEDER-FSE-2021-2027-Mieux-trier-et-recycler-les-dechets-44876
+- **FEDER-FSE + 2021-2027 Renforcer les collaborations entre laboratoires et entreprises** — échéance à vérifier — https://www.laregion.fr/Renforcer-les-collaborations-entre-laboratoires-et-entreprises
+- **FEDER-FSE + 2021-2027 Soutenir la Production, l’acquisition, le stockage, l’agrégation, l’ouverture, le partage et les traitements de la donnée** — échéance à vérifier — https://www.laregion.fr/Soutenir-la-Production-l-acquisition-le-stockage-l-agregation-l-ouverture-le-partage
+- **FEDER-FSE + 2021-2027 Soutenir le développement, l’expansion des entreprises et l’accès à de nouveaux marchés** — échéance à vérifier — https://www.laregion.fr/Soutenir-les-entreprises-en-vue-de-leur-developpement-leur-expansion-et-de-l-acces-a
+- **FEDER-FSE + 2021-2027 Soutenir les investissements dans les entreprises du tourisme pour accompagner leurs transformations et l’innovation** — échéance à vérifier — https://www.laregion.fr/Soutenir-les-investissements-dans-les-entreprises-du-Tourisme-pour-accompagner-les
+- **FEDER-FSE + 2021-2027 Soutien aux projets de création, extension, requalification, réhabilitation de tiers-lieux à vocation économique** — échéance à vérifier — https://www.laregion.fr/Soutien-aux-projets-de-creation-extension-requalification-rehabilitation-de-tiers
+- **FEDER-FSE + Renforcer le transfert de technologie par les démarches collectives et la mise en réseau** — échéance à vérifier — https://www.laregion.fr/Renforcer-le-transfert-de-technologie-par-les-demarches-collectives-et-la-mise-en
+- **FEDER-FSE + Soutien aux projets de création, extension, requalification, réhabilitation d’immobiliers collectifs** — échéance à vérifier — https://www.laregion.fr/Soutien-aux-projets-de-creation-extension-requalification-rehabilitation-d
+- **FEDER-FSE_Juin2026** — échéance à vérifier — https://www.europe-bfc.eu/sites/bfceurope/files/2026-06/01_Calendrier_FEDER-FSE_Juin2026_0.pdf
+- **FEDER-FSE+ 2021-2027 Accompagner la construction et/ou la rénovation énergétique de bâtiments publics innovants et exemplaires** — échéance à vérifier — https://www.laregion.fr/FEDER-FSE-2021-2027-Accompagner-la-construction-et-ou-la-renovation-energetique-de
+- **FEDER-FSE+ 2021-2027 Accompagner les stratégies de territoires intelligents et numériques** — échéance à vérifier — https://www.laregion.fr/Accompagner-les-strategies-de-territoires-intelligents-et-numeriques
+- **FEDER-FSE+ 2021-2027 Améliorer l’outil de diagnostic sur l’emploi et la formation en Occitanie** — échéance à vérifier — https://www.laregion.fr/Ameliorer-l-outil-de-diagnostic-sur-l-emploi-et-la-formation-en-Occitanie
+- **FEDER-FSE+ 2021-2027 Améliorer la connaissance sur les milieux et leur fonctionnement pour massifier les solutions fondées sur la nature (SfN)** — échéance à vérifier — https://www.laregion.fr/FEDER-FSE-2021-2027-Ameliorer-la-connaissance-sur-les-milieux-et-leur-fonctionnement
+- **FEDER-FSE+ 2021-2027 Améliorer le cadre de vie des habitants en zone défavorisée** — échéance à vérifier — https://www.laregion.fr/FEDER-FSE-2021-2027-Ameliorer-le-cadre-de-vie-des-habitants-en-zone-defavorisee
+- **FEDER-FSE+ 2021-2027 Améliorer le cadre de vie des habitants en zone rurale** — échéance à vérifier — https://www.laregion.fr/FEDER-FSE-2021-2027-Ameliorer-le-cadre-de-vie-des-habitants-en-zone-rurale
+- **FEDER-FSE+ 2021-2027 Aménagement et développement du massif des Pyrénées - volet urbain** — échéance à vérifier — https://www.laregion.fr/FEDER-FSE-2021-2027-Amenagement-et-developpement-du-massif-des-Pyrenees
+- **FEDER-FSE+ 2021-2027 Aménagement et développement du massif des Pyrénées - zone rurale** — échéance à vérifier — https://www.laregion.fr/FEDER-FSE-2021-2027-Volet-Pyrenees-en-zone-rurale
+- **FEDER-FSE+ 2021-2027 Atténuer la vulnérabilité du littoral en préparant la recomposition spatiale et la création d’outils d’aide à la décision** — échéance à vérifier — https://www.laregion.fr/FEDER-FSE-2021-2027-Attenuer-la-vulnerabilite-en-milieu-littoral-Preparer-la
+- **FEDER-FSE+ 2021-2027 Atténuer la vulnérabilité du littoral en soutenant les travaux d’atténuation des vulnérabilités** — échéance à vérifier — https://www.laregion.fr/FEDER-FSE-2021-2027-Attenuer-la-vulnerabilite-en-milieu-littoral-Travaux-d
+- **FEDER-FSE+ 2021-2027 Créer et améliorer les infrastructures de recherche et d’innovation** — échéance à vérifier — https://www.laregion.fr/Creer-et-ameliorer-des-infrastructures-de-recherche-et-d-innovation
+- **FEDER-FSE+ 2021-2027 Développer des services et contenus innovants et leur appropriation par les usagers** — échéance à vérifier — https://www.laregion.fr/Contribuer-au-developpement-des-usages-tant-sur-le-plan-de-l-emergence-de-services
+- **FEDER-FSE+ 2021-2027 Développer et moderniser l’offre de formation fondée sur les besoins de demain (INNOV EMPLOI VOLET 2 EXPERIMENTATION)** — échéance à vérifier — https://www.laregion.fr/Developper-et-moderniser-l-offre-de-formation-fondee-sur-les-besoins-de-demain-INNOV
+- **FEDER-FSE+ 2021-2027 Développer l’hébergement à destination des populations fragiles et marginalisées dans les zones rurales** — échéance à vérifier — https://www.laregion.fr/FEDER-FSE-2021-2027-Developper-l-hebergement-a-destination-des-populations-fragiles
+- **FEDER-FSE+ 2021-2027 Développer l’hébergement à destination des populations fragiles et marginalisées dans les zones urbaines** — échéance à vérifier — https://www.laregion.fr/FEDER-FSE-2021-2027-Developper-l-hebergement-a-destination-des-populations-fragiles-47650
+- **FEDER-FSE+ 2021-2027 Développer les équipements culturels, touristiques et de loisir pour tous en zone rurale** — échéance à vérifier — https://www.laregion.fr/FEDER-FSE-2021-2027-Developper-les-equipements-culturels-touristiques-et-de-loisir-47652
+- **FEDER-FSE+ 2021-2027 Développer les mobilités douces urbaines** — échéance à vérifier — https://www.laregion.fr/Developper-les-mobilites-douces-urbaines
+- **FEDER-FSE+ 2021-2027 Développer les outils de gestion des risques, et les programmes qui visent à réduire la vulnérabilité et augmenter la culture du risque** — échéance à vérifier — https://www.laregion.fr/FEDER-FSE-2021-2027-Developper-les-outils-de-gestion-des-risques-et-les-programmes
+- **FEDER-FSE+ 2021-2027 Favoriser l’utilisation des énergies renouvelables par la sensibilisation, l’information et le conseil** — échéance à vérifier — https://www.laregion.fr/FEDER-FSE-2021-2027-Favoriser-l-utilisation-des-energies-renouvelables-par-la
+- **FEDER-FSE+ 2021-2027 Favoriser la réussite éducative et l’insertion professionnelle des jeunes par des parcours d’accompagnement et de formation renforcés** — échéance à vérifier — https://www.laregion.fr/Favoriser-la-reussite-educative-et-l-insertion-professionnelle-des-jeunes-par-des
+- **FEDER-FSE+ 2021-2027 Investir dans les installations et équipements en faveur de la production, distribution, du stockage et de l’usage de l’hydrogène renouvelable** — échéance à vérifier — https://www.laregion.fr/FEDER-FSE-2021-2027-Investir-dans-les-installations-et-equipements-en-faveur-de-la
+- **FEDER-FSE+ 2021-2027 Lutter contre la désertification médicale dans les zones rurales** — échéance à vérifier — https://www.laregion.fr/FEDER-FSE-2021-2027-Lutter-contre-la-desertification-medicale-dans-les-zones-rurales
+- **FEDER-FSE+ 2021-2027 Lutter contre la désertification médicale dans les zones urbaines défavorisées** — échéance à vérifier — https://www.laregion.fr/FEDER-FSE-2021-2027-Lutter-contre-la-desertification-medicale-dans-les-zones
+- **FEDER-FSE+ 2021-2027 Moderniser et créer des centres de formations paramédicales et/ou en travail social et d’éducation supérieure dans les zones rurales** — 2003-05-06 — https://www.laregion.fr/FEDER-FSE-2021-2027-Moderniser-et-creer-des-centres-de-formations-paramedicales-et
+- **FEDER-FSE+ 2021-2027 Moderniser et créer des centres de formations paramédicales et/ou en travail social et d’éducation supérieure dans les zones urbaines** — 2003-05-06 — https://www.laregion.fr/FEDER-FSE-2021-2027-Moderniser-et-creer-des-centres-de-formation-dedies-aux
+- **FEDER-FSE+ 2021-2027 Préserver et restaurer les infrastructures vertes et bleues, y compris dans l’environnement urbain** — échéance à vérifier — https://www.laregion.fr/FEDER-FSE-2021-2027-Preserver-et-restaurer-les-infrastructures-vertes-et-bleues-y
+- **FEDER-FSE+ 2021-2027 Préserver et restaurer les populations de poissons grands migrateurs de la Garonne et de ses affluents** — échéance à vérifier — https://www.laregion.fr/FEDER-FSE-2021-2027-Preserver-et-restaurer-les-populations-de-poissons-grands
+- **FEDER-FSE+ 2021-2027 Réduire les risques d’inondations** — échéance à vérifier — https://www.laregion.fr/FEDER-FSE-2021-2027-Realiser-les-travaux-permettant-de-reduire-les-inondations
+- **FEDER-FSE+ 2021-2027 Renforcer le potentiel humain par et pour la recherche - CSTI** — échéance à vérifier — https://www.laregion.fr/Renforcer-le-potentiel-humain-par-et-pour-la-recherche-CSTI
+- **FEDER-FSE+ 2021-2027 Restaurer l’état des milieux aquatiques** — échéance à vérifier — https://www.laregion.fr/FEDER-FSE-2021-2027-Restaurer-l-etat-des-milieux-aquatiques
+- **FEDER-FSE+ 2021-2027 Service Public Régional de l’Orientation** — échéance à vérifier — https://www.laregion.fr/feder-fse-Service-Public-Regional-de-l-Orientation
+- **FEDER-FSE+ 2021-2027 Soutenir l’accès à l’enseignement supérieur - DAEU** — échéance à vérifier — https://www.laregion.fr/Soutenir-l-acces-a-l-enseignement-superieur-DAEU
+- **FEDER-FSE+ 2021-2027 Soutenir l’accompagnement technique à la gestion des milieux naturels et à la prise en compte de la biodiversité** — échéance à vérifier — https://www.laregion.fr/FEDER-FSE-2021-2027-Soutenir-l-accompagnement-technique-a-la-gestion-des-milieux
+- **FEDER-FSE+ 2021-2027 Soutenir la réhabilitation énergétique du parc de logements sociaux locatifs** — échéance à vérifier — https://www.laregion.fr/FEDER-FSE-2021-2027-Soutenir-la-rehabilitation-energetique-du-parc-de-logements
+- **FEDER-FSE+ 2021-2027 Soutenir la réhabilitation énergétique massive de logements sociaux locatifs** — échéance à vérifier — https://www.laregion.fr/FEDER-FSE-2021-2027-Soutenir-la-rehabilitation-energetique-du-parc-de-logements-47656
+- **FEDER-FSE+ 2021-2027 Soutenir les projets de transition vers l’économie circulaire et de prévention des déchets** — échéance à vérifier — https://www.laregion.fr/FEDER-FSE-2021-2027-Soutenir-les-projets-de-transition-vers-l-economie-circulaire-et
+- **FEDER-FSE+ 2021-2027 Valoriser la destination Occitanie - Renforcer l’attractivité des entreprises et des territoires touristiques** — échéance à vérifier — https://www.laregion.fr/Valoriser-l-image-destination-Occitanie-Renforcer-l-attractivite-des-entreprises-et
+- **Festival « Jardins en scène Hauts-de-France » 2026 AJES26** — 2025-12-09 — https://guide-aides.hautsdefrance.fr/dispositif748
+- **FICHES DOMO FSE+ 2021-2027** — échéance à vérifier — https://www.europe-martinique.com/fiches-domo-fse-2021-2027/
+- **Fiches programmes régionaux et nationaux FEDER-FSE+ FTJ 2021-2027** — échéance à vérifier — https://www.europe-en-france.gouv.fr/fr/ressources/fiches-programmes-regionaux-nationaux-feder-fse-ftj-2021-2027
+- **Filières Agricoles & Forestières France 2030 – France 2030 – Île-de-France** — 2026-06-30 — https://leaderpia.iledefrance.fr/filieres-agricoles-forestieres-france-2030/
+- **Financement** — échéance à vérifier — https://entreprises.maregionsud.fr/financement
+- **Financement d'une desserte forestière, amélioration de la route forestière de Mouresse et phase de stockage** — échéance à vérifier — https://europe.maregionsud.fr/projets-realises-1/detail/office-national-de-la-foret
+- **Financement d'une innovation et stratégie financière - HDFID** — échéance à vérifier — https://www.hautsdefrance-id.fr/accompagnements/financement-innovation/
+- **Financement de reprise d’entreprises à la barre du tribunal** — 2026-12-31 — https://www.bourgognefranchecomte.fr/node/283
+- **Financement des équipements scientifiques des organismes publics de recherche et d'enseignement supérieur** — 2026-12-31 — https://www.maregionsud.fr/vos-aides/detail/financement-des-equipements-scientifiques-des-organismes-publics-de-recherche-et-denseignement-superieur
+- **Financement des formations sanitaires et sociales - informations aux élèves/étudiants** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/715
+- **Financement des formations sanitaires et sociales de niveau 3 et 4** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif656
+- **Financement des formations sanitaires et sociales de niveau post-bac** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif657
+- **Financement des outils financiers - Mon projet d’entreprise** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/financement-des-outils-financiers-mon-projet-dentreprise
+- **Financement des projets culturels transfrontaliers : Présentation réussie** — échéance à vérifier — https://europe-en-hautsdefrance.eu/actualites-et-evenements/detail-de-lactualite/financement-des-projets-culturels-transfrontaliers-presentation-reussie
+- **Financement du musée de l'herboristerie et de la lavande en Pays de Lure** — échéance à vérifier — https://europe.maregionsud.fr/projets-realises-1/detail/financement-du-musee
+- **Financements directs et notation financière** — échéance à vérifier — https://www.paysdelaloire.fr/mon-conseil-regional/linstitution/financements-directs-et-notation-financiere
+- **Financements européens** — échéance à vérifier — https://www.europe-en-occitanie.eu/-Financements-europeens-
+- **Financer des actions en faveur des locaux de chasse** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/financer-des-actions-en-faveur-des-locaux-de-chasse
+- **Financer l’acquisition et la restauration d’œuvres des "Musées de France"** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/FRAM-FRAR
+- **Financer l'équipement professionnel des apprentis** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/financer-lequipement-professionnel-des-apprentis
+- **Financer la publication d'un ouvrage, d'une revue ou imprimer un catalogue d'éditeur** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/financer-la-publication-dun-ouvrage-dune-revue-ou-imprimer-un-catalogue-dediteur
+- **Financer le développement d’outils numériques de valorisation et de médiation des patrimoines** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/patrimoine-numerique
+- **Financer le projet artistique et culturel de mon équipe artistique conventionnée Auvergne-Rhône-Alpes** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/compagnies-conventionnees
+- **Financer le transport de groupes sur des événements d’orientation, découverte des métiers, réorientation** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/financer-le-transport-de-groupes-sur-des-evenements-dorientation-decouverte-des-metiers
+- **Financer les activités de mon lieu culturel labellisé** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/financer-activites-lieux-culturels-labellises
+- **Financer ma formation au permis de conduire B** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/financer-ma-formation-au-permis-de-conduire-b
+- **Financer une infrastructure de transport** — échéance à vérifier — https://www.paysdelaloire.fr/transports/aides-et-services-aux-collectivites-et-entreprises/financer-une-infrastructure-de-transport
+- **Foire aux Questions (FAQ) sur les obligations de communication des bénéficiaires d’une aide FEDER / FSE + / FTJ** — échéance à vérifier — https://beeurope.grandest.fr/foire-aux-questions-faq-sur-les-obligations-de-communication-des-beneficiaires-dune-aide-feder-fse-ftj/
+- **Fond SDIS** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/fond-sdis
+- **FOND SOCIAL EUROPEEN+ (FSE+) – Dialogue structuré avec des personnes ayant vécu l&apos;expérience de la pauvreté – 2026** — 2026-10-28 — https://www.europe-en-france.gouv.fr/fr/appels-a-projet/fond-social-europeen-fse-dialogue-structure-personnes-ayant-vecu-laposexperience
+- **Fonds 1er secours +** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif999
+- **Fonds 1er secours F1PS** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif652
+- **Fonds Asile, Migrations et Intégration - FAMI** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/fonds-asile-migrations-et-integration-fami
+- **Fonds d’accessibilité à la pratique sportive pour les personnes en situation de handicap** — échéance à vérifier — https://www.laregion.fr/Fonds-d-accessibilite-a-la-pratique-sportive-pour-les-personnes-en-situation-de
+- **Fonds d'acquisition exceptionnelle pour les collections des musées** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/480
+- **Fonds d'aide à la création cinématographique, audiovisuelle et numérique** — 2026-10-05 — https://www.paysdelaloire.fr/les-aides/fonds-daide-la-creation-cinematographique-audiovisuelle-et-numerique
+- **Fonds d'aide à la création de jeu vidéo** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/121
+- **Fonds d’aide aux projets (FAP)** — 2026-10-30 — https://www.bourgognefranchecomte.fr/node/387
+- **Fonds d'innovation pour la formation** — 2026-10-16 — https://www.maregionsud.fr/vos-aides/detail/fonds-dinnovation-pour-la-formation
+- **Fonds d'Investissement au Développement de l'Economie Sociale et Solidaire FIDESS** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif944
+- **Fonds d'urgence canicule** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/870
+- **Fonds de Capital Investissement** — échéance à vérifier — https://www.laregion.fr/Fonds-de-Capital-Investissement
+- **Fonds de Fonds Entrepreneuriat Quartiers 2030 (EQ30)** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/fonds-de-fonds-entrepreneuriat-quartiers-2030-eq30
+- **Fonds de garantie en partenariat avec BPI France** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/fonds-de-garantie-en-partenariat-avec-bpi-france
+- **Fonds de garantie en partenariat avec France Active** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/fonds-de-garantie-en-partenariat-avec-france-active
+- **Fonds de garantie en partenariat avec la SIAGI** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/fonds-de-garantie-en-partenariat-avec-la-siagi
+- **FONDS DE GARANTIE FEADER** — échéance à vérifier — https://europe.maregionsud.fr/projets-realises-1/detail/fonds-de-garantie-feader
+- **Fonds de revitalisation des centres-villes en Pays de la Loire** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/fonds-de-revitalisation-des-centres-villes-en-pays-de-la-loire
+- **Fonds de Solidarité des Apprenti(e)s – FSAP** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif608
+- **Fonds de soutien à la création et à la production pour le cinéma et l’audiovisuel** — 2026-09-21 — https://les-aides.nouvelle-aquitaine.fr/culture/fonds-de-soutien-la-creation-et-la-production-pour-le-cinema-et-laudiovisuel
+- **Fonds de soutien action coeur de ville et contrat de ville en Pays de la Loire** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/fonds-de-soutien-action-coeur-de-ville-et-contrat-de-ville-en-pays-de-la-loire
+- **Fonds de soutien Audiovisuel (aide à la production)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/371
+- **Fonds de soutien aux artisans et commerçants touchés par les émeutes urbaines** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/622
+- **Fonds de Soutien aux entreprises sinistrées par les inondations - FINE2** — 2024-06-30 — https://guide-aides.hautsdefrance.fr/dispositif930
+- **Fonds de soutien cinéma (aide à la production)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/68
+- **Fonds de soutien cinéma international (aide à la production)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/366
+- **Fonds de Travaux Urbains (FTU2)** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif971
+- **Fonds écoles** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/fonds-ecoles
+- **Fonds entrepreneurial territorial de transformation - FE2T** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif1022
+- **Fonds Européen Agricole pour le Développement Rural - Europe Martinique** — 2019-04-30 — https://www.europe-martinique.com/fonds-europeen-agricole-pour-le-developpement-rural/
+- **Fonds européen de développement régional** — échéance à vérifier — https://www.europe-en-france.gouv.fr/fr/fonds-europeens-2021-2027/fonds-europeen-de-developpement-regional-FEDER
+- **Fonds Européen de Développement Régional - Europe Martinique** — échéance à vérifier — https://www.europe-martinique.com/fonds-europeen-de-developpement-regional/
+- **Fonds Européen pour les Affaires Maritimes, la Pêche et l’Aquaculture: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/je-minforme/les-financements-europeens/feampa
+- **Fonds exceptionnel de lutte contre les punaises de lit pour les lycées publics** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/672
+- **Fonds Île de France Réindustrialisation** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/764
+- **Fonds Île-de-France Décarbonation** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/790
+- **Fonds Industries Agroalimentaires (I2A)** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/fonds-industries-agroalimentaires-i2a
+- **Fonds National d’Amorçage 3 (FNA 3)** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/fonds-national-damorcage-3-fna-3
+- **Fonds National de Venture Industriel (FNVI)** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/fonds-national-de-venture-industriel-fnvi
+- **Fonds NAture - Nouvelle-Aquitaine Territoire Uni pour Restaurer nos Ecosystèmes** — 2026-11-16 — https://les-aides.nouvelle-aquitaine.fr/transition-energetique-et-ecologique/fonds-nature-nouvelle-aquitaine-territoire-uni-pour-restaurer-nos-ecosystemes
+- **Fonds Pays de la Loire Investissement communal** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/fonds-pays-de-la-loire-investissement-communal
+- **Fonds Régional d'Acquisition pour les Musées** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/fonds-regional-dacquisition-pour-les-musees
+- **Fonds régional d’aide à l’innovation (FRI)** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/386
+- **Fonds régional d’aide aux porteurs de projets européens FRAPPE Consulting** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif607
+- **Fonds Régional d’Aide d’Urgence FRAU SASO 2026 2027** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif341
+- **Fonds Régional d'Amplification de la Troisième Révolution Industrielle - REV3 : FRATRI** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif655
+- **Fonds régional d’appui a la professionnalisation (FRAP) – Aide au recrutement de demandeurs d’emploi** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/389
+- **Fonds régional d’innovation en bibliothèque** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/fonds-regional-dinnovation-en-bibliotheque
+- **Fonds régional de développement des communes (FRDC)** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/fonds-regional-de-developpement-des-communes-frdc
+- **Fonds Régional de Garantie** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/234
+- **Fonds Régional de Garantie (FRG) Occitanie** — échéance à vérifier — https://www.laregion.fr/Fonds-Regional-de-Garantie-FRG-Occitanie
+- **Fonds régional de garantie Artisanat-Commerce-Agriculture [La SIAGI]** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/fonds-regional-de-garantie-artisanat-commerce-agriculture-la-siagi
+- **Fonds régional Jeunesse et Territoires (FRJT)** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/fonds-regional-jeunesse-et-territoires-frjt
+- **Fonds régional pour le tourisme** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/108
+- **Fonds Régional pour les Talents Emergents (FoRTE) - Bourse aux Jeunes artistes (2026)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/411
+- **Fonds Régional Social d’Urgence FRSU** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif66
+- **Fonds RESPIR pour la préservation des espaces forestiers** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/fonds-respir
+- **Fonds Social Européen - FSE Etat / FSE Inclusion (CTM) - Europe Martinique** — échéance à vérifier — https://www.europe-martinique.com/fonds-social-europeen/
+- **Fonds social européen +** — échéance à vérifier — https://www.europe-en-france.gouv.fr/fr/fonds-europeens-2021-2027/fonds-social-europeen-plus-FSE
+- **Fonds social lycéen régional** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/fonds-social-lyceen-regional
+- **Fonds social régional d'urgence (FSU)** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/fonds-social-regional-durgence-fsu
+- **Fonds solidarité commerces pillés** — 2023-10-20 — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/fonds-solidarite-commerces-pilles
+- **Forestier: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/jai-un-projet/je-trouve-un-financement/forestier
+- **Formation aux premiers secours citoyen - "Un jeune formé = une vie sauvée "** — échéance à vérifier — https://www.laregion.fr/Formation-premiers-secours
+- **Formation des acteurs du monde agricole et sylvicole** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/formation-des-acteurs-du-monde-agricole-et-sylvicole
+- **Formation des bénévoles FOBE2** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif700
+- **Formation des demandeurs d'emploi aux diplômes d'aide-soignant, d'auxiliaire puériculture, d'ambulancier et d’accompagnant éducatif et social** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/392
+- **Formation des non bacheliers DAEU** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif115
+- **Formation des personnes détenues** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/formation-des-personnes-detenues
+- **Formation professionnelle : bénéficiez d'une rémunération** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/remuneration-et-protection-sociale-des-stagiaires-de-la-formation-professionnelle
+- **Formations d'avenir en apprentissage pour les Hauts-de-France** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif992
+- **Former des demandeurs d'emploi nouvellement recrutés** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/former-des-demandeurs-demploi-nouvellement-recrutes
+- **FOSTER Région Occitanie** — échéance à vérifier — https://www.laregion.fr/foster
+- **Frais de déplacement, restauration et hébergement - Compétition des métiers - Worldskills** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/frais-de-deplacement-restauration-et-hebergement-competition-des-metiers-worldskills
+- **Frais de transport** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/frais-de-transport
+- **Frais de transport Big Bang Orientation & Emploi** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/frais-de-transport-big-bang-orientation-emploi
+- **France 2030** — échéance à vérifier — https://anr.fr/fr/france-2030/france-2030/
+- **France 2030 - Appel à projets « Projets d'Innovation »** — échéance à vérifier — https://france2030.bourgognefranchecomte.fr/projets-d-innovation/
+- **France 2030 - Appel à projets « Projets d'Innovation en Région Grand Est »** — 2026-09-30 — https://innovationavenir.grandest.fr/projets-davenir-innovation/
+- **France 2030 - PEPR Climat TRACCS "Transformer la modélisation du climat pour les services climatiques" - Appel à projets - 2026** — 2026-12-15 — https://anr.fr/fr/france-2030/france2030/call/france-2030-pepr-climat-traccs-transformer-la-modelisation-du-climat-pour-les-services-climatique/
+- **France 2030 - PEPR GFM "Grands Fonds Marins" - Appel à projets - 2026** — échéance à vérifier — https://anr.fr/fr/france-2030/france2030/call/france-2030-pepr-gfm-grands-fonds-marins-appel-a-projets-2026/
+- **France 2030 - PEPR MOBIDEC : "Digitalisation et décarbonation des mobilités" - Appel à projets – 2026** — échéance à vérifier — https://anr.fr/fr/france-2030/france2030/call/france-2030-pepr-mobidec-digitalisation-et-decarbonation-des-mobilites-appel-a-projets-202/
+- **France 2030 - PEPR PROPSY – "Psychiatrie de précision" - Appel à projets - 2026** — 2026-11-10 — https://anr.fr/fr/france-2030/france2030/call/france-2030-pepr-propsy-psychiatrie-de-precision-appel-a-projets-2026/
+- **France 2030 - Projets d'innovation - Guyane** — 2027-09-30 — https://france2030regionalise.ctguyane.fr/projets-d-innovation/
+- **France 2030 – Projet collaboratif I-DEMO** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/appel-projets-projets-collaboratifs/i-demo-regionalise-pia-4
+- **France 2030 – Projet d’Innovation** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/appel-projets-innovation-pia-4
+- **France 2030 : Appel à projets « Première Usine »** — échéance à vérifier — https://www.bpifrance.fr/nos-appels-a-projets-concours/france-2030-appel-a-projets-premiere-usine
+- **France 2030 : Appel à projets « Projets d'Innovation » - Martinique** — 2026-09-30 — https://france2030regionalise-pref.collectivitedemartinique.mq/projets-d-innovation/
+- **France 2030 : Appel à projets « Projets d'Innovation » - Normandie** — 2026-09-30 — https://innov-avenir.normandie.fr/projets-d-innovation/
+- **France 2030 : Appel à projets régionalisé « INNO AVENIR Projets » - Bretagne** — 2027-09-30 — https://inno-avenir.bretagne.bzh/projets-dentreprises/
+- **France 2030 : PPR Science pour l’Education - Appel à projets – 2025** — échéance à vérifier — https://anr.fr/fr/france-2030/france2030/call/france-2030-ppr-science-pour-leducation-appel-a-projets-2025/
+- **France 2030 (volet régionalisé) : Appel à projets « Pays de la Loire Innovation »** — 2026-09-30 — https://pia.paysdelaloire.fr/Projets-d-Innovation/
+- **France 2030 (volet régionalisé) : Appel à projets « Projets d'innovation » - Hauts-de-France** — 2026-09-30 — https://inno-avenir.hautsdefrance.fr/projets-d-innovation/
+- **France 2030 régionalisé - Accompagnement et transformation des filières** — 2026-06-15 — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/pia4-regionalise-accompagnement-et-transformation-des-filieres
+- **FRANCE 2030 REGIONALISE – ACTION « PROJETS D’INNOVATION »** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/france-2030-regionalise-action-projets-dinnovation
+- **France 2030 régionalisé — Projets collaboratifs I-Démo — Nouvelle-Aquitaine** — 2025-06-19 — https://www.france2030-en-nouvelle-aquitaine.fr/projets-d-avenir-i-demo/
+- **France 2030 régionalisé — Projets d’innovation — Nouvelle-Aquitaine** — 2026-09-30 — https://www.france2030-en-nouvelle-aquitaine.fr/projets-davenir-innovation/
+- **France 2030 régionalisé — Projets de filières — Nouvelle-Aquitaine** — 2026-06-30 — https://www.france2030-en-nouvelle-aquitaine.fr/projets-d-avenir-filieres/
+- **France 2030 Régionalisé | ADIM** — échéance à vérifier — https://www.adim-mayotte.fr/page/france-2030-regionalise
+- **FRENCH TECH TREMPLIN** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/french-tech-tremplin
+- **FSE+** — échéance à vérifier — https://www.europe-guadeloupe.fr/les-financements-europeens/fse/
+- **FSE+ - Appel à projets 2023-2027 Parcours de réussite: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/fse-appel-a-projets-2023-2027-accompagnement-vers-la-qualification-et-lemploi
+- **FSE+ : création d'entreprise, orientation, formation, santé** — échéance à vérifier — https://www.paysdelaloire.fr/mon-conseil-regional/les-missions-regionales/europe/solliciter-les-fonds-europeens/fse-creation-dentreprise-orientation-formation-sante#contenu
+- **FSE+ : ouverture de l’appel à projets « FOS – Lutte contre la privation matérielle » - Europe Martinique** — 2026-11-23 — https://www.europe-martinique.com/fse-ouverture-de-lappel-a-projets-fos-lutte-contre-la-privation-materielle/
+- **FSE+ : un nouvel appel à projets pour favoriser l’inclusion des jeunes par la création artistique - Europe Martinique** — 2026-11-30 — https://www.europe-martinique.com/fse-un-nouvel-appel-a-projets-pour-favoriser-linclusion-des-jeunes-par-la-creation-artistique/
+- **FSE+ (OS 4.1) - Action Développement de parcours individualisés et adaptés visant l’emploi des jeunes: Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/fse-os-41-action-developpement-de-parcours-individualises-et-adaptes-visant-lemploi-des-jeunes
+- **FSE+ (OS 4.5) - AAP Accompagner les apprenants vers la qualification et l'emploi en appui avec les CMQ: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/fse
+- **FSE+ (OS 4.5) - Action Diversifier les choix possibles en matière d’orientation, favoriser l’accès à l’enseignement et la découverte des métiers et des formations: Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/fse-os-45-action-diversifier-les-choix-possibles-en-matiere-dorientation-favoriser-lacces-a-lenseignement-et-la-decouverte-des-metiers-et-des-formations
+- **FSE+ (OS 4.5) - Action Innovation et expérimentation sociale: Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/fse-os-45-action-innovation-et-experimentation-sociale
+- **FSE+ (OS 4.5) - Appel à projets Soutenir les événementiels: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/fse-appel-a-projets-soutenir-les-evenementiels
+- **FSE+ (OS 4.6) - Action Renforcement des dispositifs de raccrochage de tous les jeunes (lycéens, apprentis, étudiants): Europe en Hauts-de-France** — 2027-12-31 — https://europe-en-hautsdefrance.eu/fse-os-46-action-renforcement-des-dispositifs-de-raccrochage-de-tous-les-jeunes-lyceens-apprentis-etudiants
+- **FTJ : Compenser les impacts de la transition vers la neutralité carbone** — échéance à vérifier — https://www.paysdelaloire.fr/mon-conseil-regional/les-missions-regionales/europe/solliciter-les-fonds-europeens/ftj-compenser-les-impacts-de-la-transition-vers-la-neutralite-carbone#contenu
+- **FTJ 2021-2027** — échéance à vérifier — https://beeurope.grandest.fr/wp-content/uploads/2025/01/kit-com-ftj-11-25-2.pdf
+- **GAL Nord Grande Terre – Aide au démarrage d’entreprises** — échéance à vérifier — https://www.europe-guadeloupe.fr/appels_a_projet/gal-nord-grande-terre-aide-au-demarrage-dentreprises/
+- **Garde régionale des lycées 2024-2028** — 2024-03-29 — https://www.maregionsud.fr/vos-aides/detail/garde-regionale-des-lycees-2024-2028
+- **Garde régionale forestière** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/garde-regionale-forestiere
+- **Génération+ Mobilité GMOB** — 2027-12-31 — https://guide-aides.hautsdefrance.fr/dispositif727
+- **Géothermie** — 2026-11-16 — https://www.europeidf.fr/jai-un-projet/appels-a-projets/geothermie2026
+- **Gestion et investigation de réserves naturelles régionales** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/gestion-et-investigation-de-reserves-naturelles-regionales
+- **Gestion et préservation de la ressource en eau** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/gestion-et-preservation-de-la-ressource-en-eau
+- **Gestion intégrée des milieux aquatiques et humides** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/gestion-integree-des-milieux-aquatiques-et-humiques-1
+- **GIP, SEM, SPL , PME , .. .** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/projets-e-care
+- **GIRPEH_Action Région Lycéens Handicap** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/girpehaction-region-lyceens-handicap
+- **GLI Filières France 2030 – France 2030 – Île-de-France** — 2025-05-13 — https://leaderpia.iledefrance.fr/gli-filieres-france-2030/
+- **Globalstars Eureka** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/globalstars-eureka
+- **Grand Est Innovation Sociale en Ruralité** — échéance à vérifier — https://www.grandest.fr/vos-aides-regionales/grand-est-innovation-sociale-en-ruralite/
+- **Grand Est Start-Up** — échéance à vérifier — https://www.grandest.fr/vos-aides-regionales/grand-est-start-up/
+- **Grands Lieux d'innovation (GLI) France 2030** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/282
+- **Gratuité des ressources pédagogiques et manuels scolaires** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/gratuite-des-ressources-pedagogiques-et-manuels-scolaires
+- **Guide d'aide à la saisie en ligne d'une subvention FEDER** — échéance à vérifier — https://www.paysdelaloire.fr/sites/default/files/2024-11/Modele_demande_sub_PDA_FEDER%20vf.pdf
+- **Guide demande de paiement FEDER** — échéance à vérifier — https://www.paysdelaloire.fr/sites/default/files/2024-12/Guide-Demande%20de%20paiement.pdf
+- **Guide des indicateurs FEDER 21-27** — échéance à vérifier — https://www.paysdelaloire.fr/sites/default/files/2026-04/Guide%20des%20indicateurs%202026%20avril%202026.pdf
+- **Guide du bénéficiaire FEDER-FSE-POIA 2014-2020** — échéance à vérifier — https://europe.maregionsud.fr/documents-cles/documents-cles-2014-2020/guide-du-beneficiaire-feder-fse-poia-2014-2020
+- **Guide règles de communication FEADER 2023-2027** — échéance à vérifier — https://www.paysdelaloire.fr/sites/default/files/2025-01/Guide%20comm%20FEADER%20VF%20%287%29.pdf
+- **Guide usagers - FAQ** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/guide-usagers-faq
+- **GUIDE UTILISATEUR** — échéance à vérifier — https://europe-en-hautsdefrance.eu/je-minforme/les-financements-europeens/feder
+- **Guides des aides & services** — échéance à vérifier — https://www.bourgognefranchecomte.fr/guide-des-aides?field_domaine_target_id=All&field_vous_etes_target_id=All&field_types_value=All
+- **HAUTS CŒUR DE MÉMOIRE** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif745
+- **Hauts de France Littoral Invest** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif1015
+- **HAUTS- DE -FRANCE** — 2025-12-11 — https://guide-aides.hautsdefrance.fr/dispositif962
+- **Hauts-de-France en Fête HDFFC** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif281
+- **Hauts-de-France Pass Copropriété** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif814
+- **Hauts-de-France Pass Rénovation** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif384
+- **Hauts-de-France Prévention PREV** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif704
+- **Hauts-de-France Propres 2025, les 6,7 et 8 mars 2025** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif639
+- **Hébergement en centre AFPA Occitanie** — échéance à vérifier — https://www.laregion.fr/Hebergement-en-centre-AFPA-Occitanie
+- **Hébergements de tourisme social** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hebergements-de-tourisme-social
+- **Hébergements touristiques : Refuges de montagne** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/massifs-refuges
+- **Héliportages en alpages d’accès difficile** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/heliportages-en-alpages-dacces-difficile
+- **Horizon Europe** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/horizon-europe
+- **HORIZON EUROPE – Défis EIC Pathfinder 2026 – 2026** — 2026-10-27 — https://www.europe-en-france.gouv.fr/fr/appels-a-projet/horizon-europe-defis-eic-pathfinder-2026-2026
+- **HORIZON EUROPE – MSCA Choisir l&apos;Europe pour la Science 2027 – 2027** — 2027-04-05 — https://www.europe-en-france.gouv.fr/fr/appels-a-projet/horizon-europe-msca-choisir-laposeurope-science-2027-2027
+- **HORIZON EUROPE – MSCA Échanges de personnel 2027 – 2027** — 2027-04-14 — https://www.europe-en-france.gouv.fr/fr/appels-a-projet/horizon-europe-msca-echanges-personnel-2027-2027
+- **Horizon Europe: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/je-minforme/les-financements-europeens/horizon-europe
+- **Hôtels indépendants** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants
+- **I. CONTEXTE ET ENJEUX** — 2026-12-31 — https://www.laregion.fr/Appel-a-candidature-Optimisation-et-Progres-du-Service-Public-de-Prevention-et-de-Gestion-des-Dechets
+- **Identifier votre financement** — échéance à vérifier — https://www.europeocentre-valdeloire.eu/identifier-votre-financement/
+- **Île-de-France JusTIGe** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/659
+- **Îlots de fraîcheur** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/420
+- **Impact local** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/228
+- **Impact Région Sud** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/impact-region-sud
+- **Impulsion - Soutien aux associations étudiantes** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/impulsion-soutien-aux-associations-etudiantes
+- **Inclusion sociale: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/jai-un-projet/je-trouve-un-financement/inclusion-sociale
+- **Indemnités de stage et prise en charge de frais de déplacement pour les étudiants ergothérapeutes** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/indemnites-de-stage-et-prise-en-charge-de-frais-de-deplacement-pour-les-etudiants-ergotherapeutes
+- **Indemnités de stage et remboursement de frais de déplacement pour les étudiants masseurs-kinésithérapeutes** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/indemnites-de-stage-et-remboursement-de-frais-de-deplacement-pour-les-etudiants-masseurs-kinesitherapeutes
+- **Indemnités de stage et remboursement frais de transport en masso-kinésithérapie et ergothérapie** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/813
+- **Information et promotion des produits agricoles et alimentaires sous systèmes de qualité** — 2025-02-28 — https://guide-aides.hautsdefrance.fr/dispositif792
+- **Infrastructures de recharges intelligentes pour véhicules électriques** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/infrastructures-de-recharges-intelligentes-pour-vehicules-electriques
+- **INFRASTRUCTURES DE RECHERCHE LIGERIENNES** — 2026-04-07 — https://www.paysdelaloire.fr/les-aides/soutien-aux-infrastructures-de-recherche
+- **Infrastructures vertes en ville** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/infrastructures-vertes-en-ville
+- **Ingénierie territoriale** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/ingenierie-territoriale
+- **Initiative Urbaine Européenne** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/initiative-urbaine-europeenne
+- **INNOV’EMPLOI - Volet expérimentation** — échéance à vérifier — https://www.laregion.fr/INNOV-EMPLOI-Volet-experimentation
+- **INNOV’EMPLOI - Volet recrutement** — échéance à vérifier — https://www.laregion.fr/INNOV-EMPLOI-Volet-recrutement
+- **Innov'up** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/159
+- **Innov'up Expérimentation Silver Économie / Bien vieillir** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/578
+- **Innov'up Expérimentation Transition écologique des territoires** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/562
+- **Innov'up Leader - France 2030 Île-de-France** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/513
+- **Innov'up Santé des femmes** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/856
+- **Innovation numérique responsable** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/innovation-numerique-responsable
+- **Innovations et pratiques sobres en eau en** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/innovations-et-pratiques-sobres-en-eau-en-entreprise-agroalimentaire
+- **Innovations pédagogiques dans l’enseignement supérieur** — échéance à vérifier — https://www.laregion.fr/Innovations-pedagogiques-dans-l-enseignement-superieur
+- **Innover durablement par le design** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/culture/innover-durablement-par-le-design
+- **Innovez en Nouvelle-Aquitaine ! La région vous soutient** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/soutien-aux-projets-innovants
+- **Innowwide** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/innowwide-0
+- **Innowwide : accélérer votre développement à l’international** — 2026-12-01 — https://www.bpifrance.fr/nos-appels-a-projets-concours/innowwide-accelerer-votre-developpement-a-linternational
+- **Inondations** — 2027-10-31 — https://www.europeidf.fr/jai-un-projet/appels-a-projets/inondations
+- **INONDATIONS - Aide aux habitants sinistrés - Prise en charge de la franchise d’assurance** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif1008
+- **Inscriptions à la 49e compétition des métiers Worldskills** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/inscriptions-a-la-49e-competition-des-metiers-worldskills
+- **Installation : dotation Nouveaux et Jeunes agriculteurs (DNJA)** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/installation-dotation-nouveaux-et-jeunes-agriculteurs-dnja
+- **Installation de fontaines dans l'espace public** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/579
+- **INSTALLATION EN CONCHYLICULTURE** — 2027-06-30 — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/installation-en-conchyliculture
+- **Installation en saliculture** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/installation-en-saliculture
+- **Instrument européen pour le voisinage, le développement et la coopération internationale** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/instrument-europeen-pour-le-voisinage-le-developpement-et-la-cooperation-internationale
+- **Instruments de financement** — échéance à vérifier — https://anr.fr/fr/lanr/instruments-de-financement/
+- **Instruments financiers** — échéance à vérifier — https://europe.maregionsud.fr/aides-et-appels-a-projets/instruments-financiers
+- **INTERNATIONALE DES ETUDIANTS DE LA REGION OCCITANIE –** — échéance à vérifier — https://www.laregion.fr/Aides-Mouv-Occitanie
+- **Interreg Europe** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/interreg-europe-0
+- **Interreg Europe du Nord-Ouest: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/je-minforme/les-financements-europeens/interreg-europe-du-nord-ouest
+- **Interreg Europe: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/je-minforme/les-financements-europeens/interreg-europe
+- **Interreg France Wallonie Vlaanderen: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/je-minforme/les-financements-europeens/interreg-france-wallonie
+- **Interreg Mer du Nord: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/je-minforme/les-financements-europeens/interreg-mer-du-nord
+- **INV'ESS : Aide à l'investissement des entreprises de l'économie sociale et solidaire** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif987
+- **InvESS île-de-France** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/227
+- **Investir dans des productions végétales à enjeu de souveraineté régionale (FEADER - Dispositif 301)** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/investir-dans-des-productions-vegetales-enjeu-de-souverainete-regionale-feader-dispositif-301
+- **Investir dans l’équipement des massifs forestiers** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/investir-dans-lequipement-des-massifs-forestiers
+- **Investir dans le renouvellement des forêts et l'adaptation au changement climatique** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/investir-dans-le-renouvellement-des-forets-et-ladaptation-au-changement-climatique
+- **Investir dans les exploitations apicoles** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/investir-dans-les-exploitations-apicoles
+- **Investir dans les productions végétales (FEADER - Dispositif 202) | Région Auvergne-Rhône-Alpes** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/investir-dans-les-productions-vegetales-feader-dispositif-202
+- **Investir dans les productions végétales pour limiter les risques climatiques et sanitaires (FEADER - Dispositif 203)** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/investir-dans-les-productions-vegetales-pour-limiter-les-risques-climatiques-et-sanitaires
+- **Investir dans ma scierie (FEADER - Dispositif 404) | Région Auvergne-Rhône-Alpes** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/investir-dans-ma-scierie-feader-dispositif-404
+- **Investir dans mon entreprise agroalimentaire (FEADER - Dispositif 303)** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/investir-dans-mon-entreprise-agroalimentaire-feader-dispositif-303
+- **Investir dans mon entreprise de seconde transformation bois (FEADER - Dispositif 405) | Région Auvergne-Rhône-Alpes** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/investir-dans-mon-entreprise-de-seconde-transformation-bois-feader-dispositif-405
+- **Investir dans mon entreprise de travaux forestiers manuels - Plan forêt-bois 2023-2027** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/investir-dans-mon-entreprise-de-travaux-forestiers-manuels-plan-foret-bois-2023-2027
+- **Investir dans une unité de méthanisation agricole** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/investir-dans-une-unite-de-methanisation-agricole
+- **Investir en collectif d'agriculteurs (FEADER - Dispositif 204)** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/investir-en-collectif-dagriculteurs-feader-dispositif-204
+- **Investir pour mon exploitation d'élevage (FEADER - Dispositif 201)** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/investir-pour-mon-exploitation-delevage-feader-dispositif-201
+- **Investir sur mon territoire dans les infrastructures hydrauliques agricoles (FEADER - Dispositif 206) | Région Auvergne-Rhône-Al** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/investir-sur-mon-territoire-dans-les-infrastructures-hydrauliques-agricoles-feader-dispositif
+- **Investissement culturel - Aide aux investissements numériques** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/294
+- **Investissement culturel - Aide aux structures itinérantes** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/293
+- **Investissement culturel - Aide aux travaux et à l'acquisition d'équipements** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/290
+- **Investissement culturel Aide à l'acquisition construction restauration structures itinérantes (SV)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/541
+- **Investissement des Centres de Formation d’Apprentis - opération immobilière et achat d'équipement ICFA - ECFA** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif900
+- **Investissement des CFA** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/investissement-des-cfa
+- **Investissement en faveur des bâtiments ferroviaires fermés pour en faire des lieux de vie** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/investissement-en-faveur-des-batiments-ferroviaires-fermes-pour-en-faire-des-lieux-de-vie
+- **Investissement en faveur du recyclage et du réemploi des déchets** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/transition-energetique-et-ecologique/investissement-en-faveur-du-recyclage-et-du-reemploi-des-dechets
+- **Investissement et équipement des centres de formation en travail social** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/69
+- **Investissement et équipement des établissements de formations sanitaires et sociales** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/investissement-et-equipement-des-etablissements-de-formations-sanitaires-et-sociales
+- **Investissements dans les réserves naturelles régionales** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/investissements-dans-les-reserves-naturelles-regionales
+- **Investissements dans les voies communales ou intercommunales** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/investissements-dans-les-voies-communales-ou-intercommunales
+- **Investissements en faveur de l'accès au réseau de transport régional** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/investissements-en-faveur-de-lacces-au-reseau-de-transport-regional
+- **Investissements en faveur du patrimoine naturel et des continuités écologiques** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/investissements-en-faveur-du-patrimoine-naturel-et-des-continuites-ecologiques
+- **Investissements interrégionaux en matière d'innovation** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/investissements-interregionaux-en-matiere-dinnovation
+- **Investissements productifs dans les Petites et Moyennes Entreprises (PME)** — 2029-12-31 — https://entreprises.maregionsud.fr/financement/investissements-productifs-dans-les-pme
+- **INVESTour** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/investour
+- **Itinérance cyclable** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/itinerance-cyclable
+- **Je communique sur le cofinancement de l'Union européenne** — échéance à vérifier — https://www.europeidf.fr/jai-un-projet/les-regles-de-communication
+- **Je consulte le DOMO FEDER** — échéance à vérifier — https://www.paysdelaloire.fr/sites/default/files/2026-02/DOMO%20FEDER%20v.%2017.02.2026.pdf
+- **Je découvre l’Europe à Mayotte - GIPEAM** — échéance à vérifier — https://europe-a-mayotte.yt/je-decouvre-leurope-a-mayotte/#financements-europeens
+- **Je découvre les financements européens - GIPEAM** — échéance à vérifier — https://europe-a-mayotte.yt/je-decouvre-leurope-a-mayotte/je-decouvre-les-financements-europeens/
+- **Je mange local au lycée (MANG)** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif808
+- **Je sollicite des aides sportives** — échéance à vérifier — https://www.paysdelaloire.fr/culture-sport-patrimoine/sport/je-sollicite-des-aides-sportives
+- **Je trouve un financement: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/jai-un-projet/je-trouve-un-financement
+- **Je voyage avec Aléop** — échéance à vérifier — https://www.paysdelaloire.fr/transports/aides-et-services-aux-usagers/je-voyage-avec-aleop
+- **Jeunesse | Le Guide des Aides** — 2028-12-31 — https://les-aides.nouvelle-aquitaine.fr/jeunesse
+- **Jeunesse et promesse républicaine** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/709
+- **JOP 2024 - Soutien aux Célébrations** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/683
+- **Julie TEJEDOR : 05.16.01.40.28** — 2026-11-04 — https://les-aides.nouvelle-aquitaine.fr/culture/soutien-aux-equipes-artistiques-et-ensembles-musicaux-hors-musiques-actuelles
+- **Kit de lutte contre les déserts médicaux et de soutien aux professionnels de santé** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/kit-de-lutte-contre-les-deserts-medicaux-et-de-soutien-aux-professionnels-de-sante
+- **L'aide à l'investissement (AI) | ADIM** — échéance à vérifier — https://www.adim-mayotte.fr/page/laide-a-linvestissement-ai
+- **L’animation d’actions collectives en matière d’économie circulaire et de déchets** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/lanimation-dactions-collectives-en-matiere-deconomie-circulaire-et-de-dechets
+- **L’État, la Région Occitanie et la Banque des Territoires accélèrent la rénovation des copropriétés touristiques du littoral** — échéance à vérifier — https://www.laregion.fr/PL21-Rehabilit
+- **L'éTER en Hauts-de-France - Saison estivale 2026** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif467
+- **L’Europe s’engage auprès des agriculteurs martiniquais** — échéance à vérifier — https://www.europe-martinique.com/feader-23-27/leurope-sengage-aupres-des-agriculteurs-martiniquais/
+- **L'Île des Chances - Soutien à la jeune création musicale** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/550
+- **La baguette "Tradition Sud"** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/la-baguette-tradition-sud
+- **La CTG lance l’appel à projet “Mines”** — 2017-10-30 — https://www.ctguyane.fr/ctg-apo-mines/
+- **La lutte contre les pollutions: les déchets plastiques en milieux aquatiques** — 2026-12-31 — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/la-lutte-contre-les-pollutions-les-dechets-plastiques-en-milieux-aquatiques
+- **La recherche et développement en faveur de la valorisation matière des déchets** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/la-recherche-et-developpement-en-faveur-de-la-valorisation-matiere-des-dechets
+- **La rénovation énergétique des logements sociaux** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/la-renovation-energetique-des-logements-sociaux
+- **La science pour tous - 2024 - projets ponctuels - Partage de la culture scientifique** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/298
+- **La science pour tous - 2026 - projets ponctuels - Culture Scientifique, Technique et Industrielle** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/774
+- **La science pour tous - projets pluriannuels 2026-2028 Partage de la culture scientifique** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/536
+- **Label 100% Valeurs du SUD Produisons et consommons responsable** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/label-100-valeurs-du-sud-produisons-et-consommons-responsable
+- **Labellisation des incubateurs franciliens / Réseau des incubateurs et accélérateurs franciliens** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/573
+- **Laïcité, valeurs de la République et prévention de la radicalisation** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/530
+- **Le calendrier prévisionnel des appels à projets FEDER et FSE+ est à jour** — échéance à vérifier — https://www.europeidf.fr/actualites/le-calendrier-previsionnel-des-appels-a-projets-feder-et-fse-est-a-jour
+- **Le chèque transition bioéthanol** — 2026-10-30 — https://www.maregionsud.fr/vos-aides/detail/le-cheque-transition-bioethanol
+- **Le circuit de vie de votre dossier d’aide européenne** — échéance à vérifier — https://www.europe-martinique.com/le-circuit-dun-dossier/
+- **Le Dispositif particulier employeur** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/particulier-employeur
+- **Le FEADER soutient les MAEC** — échéance à vérifier — https://europe-en-hautsdefrance.eu/actualites-et-evenements/detail-de-lactualite/le-feader-soutien-les-maec
+- **Le FEDER au service de l'adaptation au changement climatique et la préservation des ressources : Atelier 2** — échéance à vérifier — https://europe.maregionsud.fr/projets-realises-1/detail/default-ccb87b235f
+- **Le FEDER au service de la croissance des entreprises (priorité 1) : Ateliers 1 sessions 2** — échéance à vérifier — https://europe.maregionsud.fr/projets-realises-1/detail/le-feder-au-service-de-la-croissance-des-entreprises-priorite-1-ateliers-sessions-2
+- **Le FEDER au service de la transition énergétique : Atelier 2** — échéance à vérifier — https://europe.maregionsud.fr/projets-realises-1/detail/default-ea3be770d7
+- **Le Fonds européen agricole pour le développement rural (FEADER)** — échéance à vérifier — https://www.europeidf.fr/les-financements-europeens/feader
+- **Le Fonds européen agricole pour le développement rural: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/je-minforme/les-financements-europeens/feader
+- **Le Fonds européen de développement régional (FEDER)** — échéance à vérifier — https://www.europeidf.fr/les-financements-europeens/FEDER
+- **Le Fonds social européen+ (FSE+)** — échéance à vérifier — https://www.europeidf.fr/les-financements-europeens/le-fonds-social-europeen-plus
+- **Le FSE+ soutient la mobilité internationale des apprentis** — échéance à vérifier — https://www.europeidf.fr/projets/le-fse-soutient-la-mobilite-internationale-des-apprentis
+- **Le logement social étudiant** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/le-logement-social-etudiant
+- **Le Pacte pour l’Embauche** — échéance à vérifier — https://www.laregion.fr/pacte-embauche
+- **Le Plan stratégique d’intervention régional Guadeloupe FEADER 2023-2027 (version Avril 2026)** — échéance à vérifier — https://www.europe-guadeloupe.fr/wp-content/uploads/2026/05/PSR_FEADER_V6.pdf
+- **Le programme FEDER-FSE+ 2021-2027** — échéance à vérifier — https://www.europe-bfc.eu/comprendre-les-aides-europeennes/le-programme-feder-fse-2021-2027
+- **Le Sud à vélo : Aménagements pour desserte d’équipements** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/amenagements-cyclables-le-sud-a-velo
+- **Le Sud à vélo et les associations : un duo gagnant pour les usagers** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/le-sud-a-velo-et-les-associations-un-duo-gagnant-pour-les-usagers
+- **Le volet régional du Plan Stratégique National - FEADER** — échéance à vérifier — https://www.europe-bfc.eu/comprendre-les-aides-europeennes/le-volet-regional-du-plan-strategique-national-feader
+- **LEADER - Animation et frais de fonctionnement** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/leader-animation-et-frais-de-fonctionnement
+- **LEADER - Mise en oeuvre d'opérations dans le cadre de la stratégie locale de développement** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/leader-mise-en-oeuvre-doperations-dans-le-cadre-de-la-strategie-locale-de-developpement
+- **LEADER - Préparation et mise en oeuvre d'activités de coopération du GAL** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/leader-preparation-et-mise-en-oeuvre-dactivites-de-cooperation-du-gal
+- **LEADER : Liaisons entre Actions de Développement de l'Economie Rurale** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/leader-liaisons-entre-actions-de-developpement-de-leconomie-rurale
+- **Leader en Île-de-France - Programmation 2023-2027** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/551
+- **Les 7 priorités du programme régional FEDER FSE+ FTJ 2021-2027** — échéance à vérifier — https://europe.maregionsud.fr/programmes/les-7-priorites-du-programme-regional-feder-fse-ftj-2021-2027
+- **Les aides au logement** — échéance à vérifier — https://www.mayotte.fr/sante-et-social/habitat/les-aides-au-logement
+- **Les aides aux entreprises** — échéance à vérifier — https://www.mayotte.fr/economie/developpement-economique/aides-aux-entreprises
+- **Les aides et appels à projets** — échéance à vérifier — https://www.laregion.fr/Les-aides-et-appels-a-projets?debut_liste_articles=20#pagination_liste_articles
+- **Les aides pour votre territoire** — échéance à vérifier — https://www.paysdelaloire.fr/territoires-et-europe/amenagement-du-territoire/les-aides-pour-votre-territoire
+- **Les aides régionales aux entreprises en Nouvelle-Aquitaine** — échéance à vérifier — https://entreprises.nouvelle-aquitaine.fr/guides-pratiques-de-lentreprise/je-demande-une-aide-regionale-mode-demploi
+- **Les appels à projets** — échéance à vérifier — https://www.europe-guadeloupe.fr/jai-un-projet/les-appels-a-projets/page/2/#
+- **Les appels à projets 2026-2027 du Fonds Régional d’Amplification de la Troisième Révolution Industrielle - REV3 (FRATRI)** — 2026-12-15 — https://guide-aides.hautsdefrance.fr/dispositif1076
+- **Les Après-midi du Zapping en Région Hauts de France - Subventions** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif741
+- **Les Chèques CREA : accompagner les créateurs d’entreprises à chaque étape** — échéance à vérifier — https://www.grandest.fr/vos-aides-regionales/les-cheques-crea/
+- **Les Clubs Excellence d'Ile-de-France** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/13
+- **Les Cordées de la réussite** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/202
+- **LES CRITERES DE SELECTION DES PROJETS SOUTENUS** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/pays-de-la-loire-agir-tourisme
+- **LES DISPOSITIF S DU PROGRAMME « ÉLÈVE »** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/programme-eleve-dactions-educatives-de-la-region
+- **Les données publiques du Guide des Aides** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/les-donnees-publiques-du-guide-des-aides
+- **Les Ecoles de la deuxième chance** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/les-ecoles-de-la-deuxieme-chance
+- **Les équipements de valorisation et de traitement des déchets** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/les-equipements-de-valorisation-et-de-traitement-des-dechets
+- **Les étapes pour obtenir une aide européenne** — échéance à vérifier — https://beeurope.grandest.fr/rechercher/comment-ca-marche/
+- **Les filières de Réemploi, de Réparation et de Réutilisation** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/les-filieres-de-reemploi-de-reparation-et-de-reutilisation
+- **Les financements européens** — échéance à vérifier — https://www.europeidf.fr/les-financements-europeens
+- **Les financements européens: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/je-minforme/les-financements-europeens
+- **Les formations en présentiel** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/les-formations-en-presentiel
+- **Les leviers financiers d'optimisation du service public de gestion des déchets : tarification incitative et redevance spéciale** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/les-leviers-financiers-doptimisation-du-service-public-de-gestion-des-dechets-tarification-incitative-et-redevance-speciale
+- **LES OLYMPIADES DE LA CHIMIE - Subventions** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif743
+- **LES PROGRAMMES RÉGIONAUX** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/recherche-developpement-rd-start
+- **Les projets aidés** — échéance à vérifier — https://www.europe-bfc.eu/les-projets-aides
+- **Les projets qui bougent** — échéance à vérifier — https://www.europeocentre-valdeloire.eu/les-projets-qui-bougent/
+- **Les Rencontres franciliennes des achats responsables et de l'ESS** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/873
+- **Liaison Entre Actions de Développement de l'Economie Rurale: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/je-minforme/les-financements-europeens/region/leader
+- **Liberté, Égalité, Fraternité** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/818
+- **Lieux innovants de services aux publics** — 2028-12-31 — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/lieux-innovants-de-services-aux-publics
+- **LIFE** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/life
+- **Life - Programme de l'Union Européenne: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/je-minforme/les-financements-europeens/life
+- **LISTE COMMUNES RECONNUES EN ETAT DE CATASTROPHE NA TURELLE** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/intemperies-hiver-2026-fonds-exceptionnel-de-soutien-aux-entreprises
+- **Liste des Barêmes Standards de Coût Unitaire Acheminement FRET maritime et aérien** — échéance à vérifier — https://www.europe-martinique.com/wp-content/uploads/2026/03/BSCU-FRET-FEDER-2025ljlV3.pdf
+- **Liste des opérations prog. FEDER-FSE + 21-27 (144 Ko)** — échéance à vérifier — https://www.europeocentre-valdeloire.eu/wp-content/uploads/2026/04/liste-des-operations-publicite-po-feder-fse-2021-2027.zip
+- **Liste des pays concernés – (Pour l’aide Fret au BOKAY** — échéance à vérifier — https://www.europe-martinique.com/wp-content/uploads/2025/01/Liste-des-pays-beneficiaires.pdf
+- **Livre - Aide aux investissements des éditeurs indépendants** — échéance à vérifier — https://www.laregion.fr/Livre-Aide-aux-investissements-des-maisons-d-edition-independantes
+- **Livre - aide aux investissements des librairies indépendantes** — échéance à vérifier — https://www.laregion.fr/Livre-aide-aux-investissements-des-librairies-independantes
+- **Livre - Aide aux Structures proposant des Manifestations ou Programmations Littéraires / Résidences d’Auteurs** — échéance à vérifier — https://www.laregion.fr/Livre-Aide-aux-Structures-proposant-des-Manifestations-ou-Programmations-Litteraires
+- **Livre - Aide individuelle aux auteurs et aux autrices : Projet d’écriture** — échéance à vérifier — https://www.laregion.fr/Livre-Aide-individuelle-aux-auteurs-et-aux-autrices-Projet-d-ecriture
+- **Livre : Aide à la mobilité hors région et à l’export des maisons d’édition** — échéance à vérifier — https://www.laregion.fr/Livre-Aide-a-la-mobilite-hors-region-et-a-l-export-des-maisons-d-edition
+- **Livre et Lecture - Aides Culturelles CTG - Collectivité Territoriale de Guyane** — échéance à vérifier — https://www.ctguyane.fr/aides-culturelles-de-la-collectivite-territoriale-de-guyane/aides-culturelles-livre-et-lecture/
+- **Logement : Dispositif d'aide aux copropriétés en difficulté labellisées CDSR** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/650
+- **Logement : Dispositif de soutien au bail réel solidaire (BRS)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/528
+- **Logement locatif intermédiaire (LLI)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/378
+- **Logement social en ruralité** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/logement-social-en-ruralite
+- **Logistique bas carbone** — 2024-12-17 — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/logistique-bas-carbone
+- **Logo FEDER, FSE+ ou FTJ - horizontal** — échéance à vérifier — https://beeurope.grandest.fr/wp-content/uploads/2026/01/fr-finance-par-lunion-europeenne-pos.jpg
+- **Logo FEDER, FSE+ ou FTJ - vertical** — échéance à vérifier — https://beeurope.grandest.fr/wp-content/uploads/2026/01/fr-v-finance-par-lunion-europeenne-pos.jpg
+- **Lutte contre la grande précarité** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/767
+- **Lutte contre la précarité et l'exclusion** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/lutte-precarite-exclusion
+- **Lutte contre le décrochage scolaire** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/780
+- **Lutte contre le décrochage scolaire** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/lutte-contre-le-decrochage-scolaire
+- **Lutte contre le décrochage scolaire – Collèges et lycées (2026)** — 2026-12-04 — https://www.europeidf.fr/jai-un-projet/appels-a-projets/decrochage-oir-2026
+- **Lutte contre le Harcèlement Scolaire** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif1004
+- **Lutte contre les dépôts/déchets sauvages : aide à l'investissement** — 2026-10-30 — https://www.maregionsud.fr/vos-aides/detail/plan-daction-regional-de-lutte-contre-les-depots-sauvages-aide-a-linvestissment
+- **Lutte contre les rixes** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/716
+- **Lutte contre les violences faites aux femmes** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/lutte-contre-les-violences-faites-aux-femmes
+- **Lycéens : une aide pour payer vos frais de restauration et d'hébergement** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/jeunesse/fonds-social-regional-pour-la-restauration-et-lhebergement-des-lycees-eleves-en-tarification
+- **Lycéens au festival d'Avignon 2027** — 2026-10-16 — https://www.maregionsud.fr/vos-aides/detail/lyceens-au-festival-davignon-2027
+- **Lycéens et Apprentis au cinéma** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/lyceens-et-apprentis-au-cinema
+- **Lycées Éco-Responsables** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/38
+- **M’équiper en matériel en tant qu’infirmier libéral exerçant de façon groupée en Auvergne-Rhône-Alpes** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/mequiper-en-materiel-en-tant-quinfirmier-liberal-exercant-de-facon-groupee-en-auvergne-rhone
+- **M’équiper en matériel en tant que sage-femme libérale installée et exerçant en Auvergne-Rhône-Alpes** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/mequiper-en-materiel-en-tant-que-sage-femme-liberale-installee-et-exercant-en-auvergne-rhone
+- **M’équiper pour ma primo installation en tant que médecin généraliste libéral en Auvergne-Rhône-Alpes** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/mequiper-pour-ma-primo-installation-en-tant-que-medecin-generaliste-liberal-en-auvergne-rhone
+- **M’installer en tant que médecin thermal en Auvergne-Rhône-Alpes** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/minstaller-en-tant-que-medecin-thermal-en-auvergne-rhone-alpes
+- **Ma subvention - Règles et visibilité, logo** — échéance à vérifier — https://www.auvergnerhonealpes.fr/contenus/ma-subvention-regles-et-visibilite-logo
+- **MAEC - API : Amélioration du potentiel pollinisateur des abeilles (FEADER)** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/maec-api-amelioration-du-potentiel-pollinisateur-des-abeilles-feader
+- **MAEC - PRM : Protection des races menacées** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/aide-la-protection-des-races-menacees
+- **Maintenir une exploitation par câble forestier - Plan forêt-bois 2023-2027** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/maintenir-une-exploitation-par-cable-forestier-plan-foret-bois-2023-2027
+- **Maison des entrepreneurs Hauts de France** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif703
+- **Maison Région Solidaire** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/682
+- **Major de promotion dans les filières du Sanitaire et du Travail Social** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/major-de-promotion-dans-les-filieres-du-sanitaire-et-du-travail-social
+- **Manager de transition pour les entreprises ESS en difficulté** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/manager-de-transition-pour-les-entreprises-ess-en-difficulte
+- **Manger local dans les restaurants scolaires des lycées** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/manger-local-dans-les-restaurants-scolaires-des-lycees
+- **Manifestations agricoles et Pêche** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/manifestations-agricoles-et-peche
+- **Manifestations nautiques inclusives** — 2026-12-31 — https://www.maregionsud.fr/vos-aides/detail/manifestations-nautiques-inclusives
+- **Manuels scolaires numériques** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/manuels-scolaires-numeriques
+- **Massifs : Aménagement et modernisation des stations de ski** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/massifs-amenagement-et-modernisation-des-stations-de-ski
+- **Massifs : Création d'aires de bivouacs** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/massifs-creation-daires-de-bivouacs
+- **Massifs : Gîtes d'étape** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/massifs-gites-detape
+- **Mécanisme pour l'interconnexion en Europe** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/mecanisme-pour-linterconnexion-en-europe
+- **Mécanisme pour l’Interconnexion en Europe: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/je-minforme/les-financements-europeens/europeen/mie
+- **Mécénat de pair à pair dans l'ESS** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/mecenat-de-pair-pair-dans-less
+- **MECF - Aide à la mécanisation forestière** — échéance à vérifier — https://www.laregion.fr/MECF-Aide-a-la-mecanisation-forestiere
+- **Médiation territoriale sur les estives** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/mediation-territoriale-sur-les-estives
+- **Mémoire - Restauration des monuments aux morts de la Grande Guerre** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/memoire-restauration-des-monuments-aux-morts-de-la-grande-guerre
+- **Mémoire des 20e et 21e siècles** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/memoire-des-20e-et-21e-siecles
+- **Mémoire et Citoyenneté** — 2026-10-16 — https://www.maregionsud.fr/vos-aides/detail/memoire-et-citoyennete
+- **Mentions légales** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/mentions-legales
+- **MES AIDES EN LIGNE** — 2026-11-15 — https://www.laregion.fr/Arts-de-la-scene-Aide-aux-festivals
+- **MES AIDES EN LIGNE** — 2026-11-30 — https://www.laregion.fr/Arts-de-la-scene-Aide-aux-equipes-artistiques-Volet-1-Projets-de-creation-artistique
+- **Mes aides pour l’achat ou l’utilisation d’un vélo (classique ou électrique)** — échéance à vérifier — https://www.laregion.fr/ecocheque-velo
+- **Mesure agroenvironnementale et climatique forfaitaire - Transition des pratiques** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/mesure-agroenvironnementale-et-climatique-forfaitaire-transition-des-pratiques
+- **Mesures Agro-Environnementales et Climatiques - Protection des Races Menacées avicoles (MAEC PRM Avicoles)** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/transition-energetique-et-ecologique/mesures-agro-environnementales-et-climatiques-protection-des-races-menacees-avicoles-maec-prm
+- **Mesures face au COVID-19 | ADIM** — échéance à vérifier — https://www.adim-mayotte.fr/page/mesures-daides-face-a-lepidemie-de-covid-19
+- **METHANISATION** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/transition-energetique-et-ecologique/soutien-la-methanisation
+- **Méthanisation** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/methanisation
+- **Métiers d’Art : Salons et démarches collectives** — échéance à vérifier — https://www.laregion.fr/Metiers-d-Art-Salons-et-demarches-collectives
+- **Mettre en œuvre un contrat Natura 2000** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/mettre-en-oeuvre-un-contrat-natura-2000
+- **MIE - Capacités de réparation des câbles sous-marins - 2026** — 2026-10-07 — https://www.europe-en-france.gouv.fr/fr/appels-a-projet/mie-capacites-reparation-cables-sous-marins-2026
+- **MIE - MIE 2 Transport - Facilité pour les infrastructures dédiées aux carburants alternatifs - Enveloppe générale - 2026** — 2026-10-05 — https://www.europe-en-france.gouv.fr/fr/appels-a-projet/mie-mie-2-transport-facilite-infrastructures-dediees-carburants-alternatifs
+- **Mieux protéger les victimes** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/126
+- **Mise en accessibilité des bâtiments publics (ERP)** — échéance à vérifier — https://www.laregion.fr/Mise-en-accessibilite-des-batiments-publics-ERP
+- **Mise en accessibilité des points d'arrêts routiers du réseau régional** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/mise-en-accessibilite-des-points-darrets-routiers-du-reseau-regional
+- **Mise en œuvre des DOCOB des sites Natura 2000** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/mise-en-oeuvre-des-docob-des-sites-natura-2000
+- **MISEÀJOUR - AOÛT 2024** — échéance à vérifier — https://www.europeidf.fr/jai-un-projet/les-etapes-a-suivre/avant-de-deposer-ma-demande-de-financement-europeen
+- **Mobilité et Territoires en Hauts-de-France (MOTE)** — 2026-06-10 — https://guide-aides.hautsdefrance.fr/dispositif1012
+- **Mobilité européenne des personnels des formations sanitaires et sociales** — échéance à vérifier — https://www.laregion.fr/Mobilite-europeenne-des-personnels-des-formations-sanitaires-et-sociales
+- **Mobilités durables urbaines** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/mobilites-durables-urbaines
+- **Mobilités en milieu rural** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/mobilites-en-milieu-rural
+- **Mobinov - Erasmus+** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif728
+- **Modernisation des instituts de formations sanitaires sociales** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/modernisation-des-instituts-de-formations-sanitaires-sociales
+- **Modernisation et adaptation des exploitations d'élevage au dérèglement climatique** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/modernisation-et-adaptation-des-exploitations-delevage-au-dereglement-climatique-0
+- **Modernisation et développement des centres, clubs et bases nautiques** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/modernisation-et-developpement-des-centres-clubs-et-bases-nautiques
+- **Modernisations des bases nautiques** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/modernisations-des-bases-nautiques
+- **Mon Abo Etudiant TER Hauts-de-France** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif813
+- **Mon assistant IA** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/mon-assistant-ia
+- **Mon bouclier cyber essentiel** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/mon-bouclier-cyber-essentiel
+- **Mon bouclier cyber expert** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/mon-bouclier-cyber-expert
+- **Mon écomobilité** — échéance à vérifier — https://www.paysdelaloire.fr/transports/aides-et-services-aux-usagers/mon-ecomobilite
+- **Mon ordi au lycée** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/mon-ordi-au-lycee
+- **Mon prêt TPE** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/mon-pret-tpe
+- **Mon projet d'entreprise** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/mon-projet-dentreprise
+- **Mon projet de boutique** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/mon-projet-de-boutique
+- **Mon projet de rénovation** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/mon-projet-de-renovation
+- **Montagne pour tous** — 2026-12-31 — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/montagne-pour-tous
+- **Mouillages organisés -"Sauvons nos Posidonies"** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/mouillages-organises-sauvons-nos-posidonies
+- **Move2Digital** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/move2digital
+- **Multicap croissance N°4 (MC4)** — 2026-12-07 — https://www.bpifrance.fr/nos-appels-a-projets-concours/multicap-croissance-ndeg4-mc4
+- **N'oubliez pas les aides du FEADER au titre des PRE'ADE 2023-2024 !** — 2024-06-30 — https://europe-en-hautsdefrance.eu/actualites-et-evenements/detail-de-lactualite/noubliez-pas-les-aides-du-feader-au-titre-des-preade-2023-2024
+- **Nager en Hauts-de-France NAGE2** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif776
+- **NATURA 2000 - 2023-2027: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/je-minforme/les-financements-europeens/feader/natura-2000-2023-2027
+- **Nature ta ville** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/nature-ta-ville
+- **Network Projects Eureka** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/network-projects-eureka
+- **Nos agriculteurs agissent pour l'environnement : Les Fermes Bas Carbone** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/nos-agriculteurs-agissent-pour-lenvironnement-les-fermes-bas-carbone
+- **Nos aides** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides?f%5B0%5D=thematic%3A3763
+- **Nos communes d'abord** — 2026-12-31 — https://www.maregionsud.fr/vos-aides/detail/nos-communes-dabord
+- **Nos Quartiers d'Eté (NQE2)** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif711
+- **Notice procédures & aide au remplissage - pdf - 15.5Mo** — échéance à vérifier — https://www.europe-en-occitanie.eu/IMG/pdf/9/9/3/notice_information_porteur.pdf
+- **Notre projet coopératif** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/notre-projet-cooperatif-1
+- **Nouveau Bauhaus européen: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/je-minforme/les-financements-europeens/europeen/bauhaus-europeen
+- **Nouveau podcast : le Joie-Lieu, un tiers-lieu soutenu par le FSE+ en Alsace du Nord** — échéance à vérifier — https://beeurope.grandest.fr/actualites/nouveau-podcast-le-joie-lieu-un-tiers-lieu-soutenu-par-le-fse-en-alsace-du-nord/
+- **Nouvel AAP Interreg ENO** — échéance à vérifier — https://europe-en-hautsdefrance.eu/actualites-et-evenements/detail-de-lactualite/nouvel-aap-interreg-eno
+- **Nouvelle-Aquitaine Croissance Tourisme** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/nouvelle-aquitaine-croissance-tourisme
+- **Nouvelles Chances en Hauts-De-France** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif991
+- **Numérique: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/jai-un-projet/je-trouve-un-financement/numerique
+- **Objectif transmission TPE** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/objectif-transmission-tpe
+- **Obtenir et gérer une aide européenne** — échéance à vérifier — https://www.europe-en-occitanie.eu/-Obtenir-et-gerer-une-aide-europeenne-
+- **Obtenir l'agrément pour le dispositif "Transmettre mon savoir-faire agricole"** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/obtenir-lagrement-pour-le-dispositif-transmettre-mon-savoir-faire-agricole
+- **Obtenir le financement de ma formation individuelle** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/obtenir-le-financement-de-ma-formation-individuelle
+- **Obtenir une aide européenne** — échéance à vérifier — https://europa.corsica/obtenir-une-aide-europeenne/
+- **Obtenir une bourse régionale en tant qu'étudiant de 3ème cycle en médecine générale** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/obtenir-une-bourse-regionale-en-tant-quetudiant-de-3eme-cycle-en-medecine-generale
+- **Occitan et Catalan - Aide aux opérateurs structurants pour les langues et cultures occitane et catalane - Plan « Parlem una cultura viva »** — échéance à vérifier — https://www.laregion.fr/Catalan-Occitan-Aide-operateurs
+- **Occitan et Catalan - Aide aux relais de proximité pour les langues et cultures Occitanes et Catalanes dans les territoires - Plan « Parlem una cultura viva »** — échéance à vérifier — https://www.laregion.fr/Catalan-Occitan-Aide-relais-linguistiques-territoires
+- **Occitan et Catalan - La Région engagée pour la créativité en langues occitane et catalane** — échéance à vérifier — https://www.laregion.fr/Occitan-et-Catalan-La-Region-engagee-pour-la-creativite-en-langues-occitane-et
+- **Olympe - CAPITAL FILLES : L'association qui ouvre aux filles le champ des possibles** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/787
+- **Olympe - Porteuses - accompagner les lycéennes vers les filières techniques (bâtiment et artisanat)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/783
+- **Olympe - TELEMAQUE : Accompagnement des filleules franciliennes dans leur réussite** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/788
+- **Olympiade culturelle 2024** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/658
+- **Opération Hauts-de-France en Avignon 2027(FAVI27)** — 2026-09-15 — https://guide-aides.hautsdefrance.fr/dispositif668
+- **Optimiser l'usage de l'eau en élevage** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/optimiser-lusage-de-leau-en-elevage
+- **Orientation : information, promotion sur les métiers et les formations** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/orientation-information-promotion-sur-les-metiers-et-les-formations
+- **Orientation et évolution professionnelle** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/service-public-regional-de-lorientation-et-de-levolution-professionnelle
+- **Ouverture de l’appel à projets « Data & IA au service de l’intérêt général »** — 2026-09-30 — https://europa.corsica/ouverture-de-lappel-a-projet-data-ia-au-service-de-linteret-general/
+- **OUVERTURE OU EXTENSION DE + 10 PLACES DE LA FORMATION EDUCATEUR SPECIALISE (ES)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/254
+- **Ouverture ou extension de places (plus de 10) pour la formation Assistant familial (AF)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/826
+- **Pack Relance Île-de-France** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/430
+- **Pack Zéro Emballage Occitanie** — échéance à vérifier — https://www.laregion.fr/Pack-Zero-Emballage-Occitanie-47434
+- **Pacte Allier 2024-2027 - volet agricole** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/pacte-allier-2024-2027-volet-agricole
+- **Pacte Cantal 2022-2027 - Volet agricole** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/pacte-cantal-2022-2027-volet-agricole
+- **Page non disponible: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/feder-os-12-investissements-numeriques-des-pme-pour-leur-competitivite-au-fil-de-leau-et/ou-par-appels-a-projets-1
+- **Parcours de la transition écologique des entreprisesObjectif 100% Climat** — échéance à vérifier — https://entreprises.maregionsud.fr/financement/parcours-de-la-transition-ecologique-des-entreprises
+- **Parcours sud territoires intelligents innovants et durables** — 2028-12-31 — https://www.maregionsud.fr/vos-aides/detail/parcours-sud-territoires-intelligents-innovants-et-durables
+- **Parcs naturels régionaux** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/creation-renouvellement-gestion-et-investissements-pour-les-parcs-naturels-regionaux
+- **Parentalité, ouverture socio-culturelle et scolarité pour les enfants en difficulté** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/23
+- **Paris Region PhD 2026** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/116
+- **Paris Region Venture Fund** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/249
+- **Parlement régional de la jeunesse** — 2026-10-02 — https://www.maregionsud.fr/vos-aides/detail/prj
+- **Paroles de chercheuses et chercheurs (PDCC)** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/505
+- **Partenariats en innovation France-Taiwan : nouvel appel à projets** — 2026-10-30 — https://www.bpifrance.fr/nos-appels-a-projets-concours/partenariats-en-innovation-france-taiwan-nouvel-appel-a-projets
+- **Participation à l'espace régional au Festival du Livre de Paris 2027** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/516
+- **Participation au Salon du Bourget 2027 : pavillon Paris Region** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/883
+- **Participation financière de la Région aux projets de réalisation des pôles d'échanges multimodaux** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/participation-financiere-de-la-region-aux-projets-de-realisation-des-poles-dechanges-multimodaux
+- **Pass - Aide à l’investissement d’urgence pour les exploitations agricoles ayant subi des dégâts matériels agricoles suite aux incendies de l’été 2025** — 2026-03-31 — https://www.laregion.fr/Pass-Aide-a-l-investissement-d-urgence-pour-les-exploitations-agricoles-ayant-subi
+- **Pass - Petits investissements dans les exploitations agricoles** — échéance à vérifier — https://www.laregion.fr/Pass-Petits-investissements-dans-les-exploitations-agricoles
+- **Pass 1 Entrepreneur#Leader : Je crée mon entreprise** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/792
+- **Pass 2 Entrepreneur#Leader : Je finance mon entreprise** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/793
+- **Pass 3 Entrepreneur#Leader : Je dirige mon entreprise** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/795
+- **Pass Cyber Conseil** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif867
+- **Pass Cyber Formation** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif924
+- **PASS Élevage** — échéance à vérifier — https://www.laregion.fr/PASS-ELEVAGE
+- **PASS Entreprendre en Pays de la Loire - Formation** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/pass-entreprendre-en-pays-de-la-loire-formation
+- **Pass Entreprendre en Pays de la Loire – Pass Construction du projet** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/pass-entreprendre-en-pays-de-la-loire-pass-construction-du-projet
+- **Pass Médiation** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif150
+- **Pass Métiers d&#8217;art** — échéance à vérifier — https://www.laregion.fr/Pass-Metiers-d-art
+- **Pass Mutuelle Etudiant.e** — échéance à vérifier — https://www.laregion.fr/Pass-Mutuelle-Etudiant-e
+- **Pass Plein Air** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/pass-plein-air
+- **Pass Plein Air - Partenaires** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/pass-plein-air-partenaires
+- **Pass RH** — échéance à vérifier — https://www.laregion.fr/Pass-RH
+- **Pass Santé Jeunes** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/pass-sante-jeunes
+- **Pass Santé Jeunes - Professionnels de santé** — 2029-12-31 — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/pass-sante-jeunes-pro
+- **Pass Sud Formation** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/pass-sud-formation
+- **Pass Sûreté** — 2027-12-31 — https://www.maregionsud.fr/vos-aides/detail/pass-surete
+- **Pass VAE** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/validation-des-acquis-de-lexperience
+- **Pass'Agri filières en Hauts-de-France PAFI** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif829
+- **Passeurs d'images** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/passeurs-dimages
+- **Patrimoine - Aide à l’enrichissement et à la restauration des collections des musées et fonds patrimoniaux des bibliothèques (FRAM, FRAR et FRRAB)** — échéance à vérifier — https://www.laregion.fr/Patrimoine-Aide-a-l-enrichissement-et-a-la-restauration-des-collections-des-musees
+- **Patrimoine - Aide à la restauration du patrimoine culturel** — échéance à vérifier — https://www.laregion.fr/Patrimoine-Aide-a-la-restauration-du-patrimoine-culturel
+- **Patrimoine - Aide à la valorisation du patrimoine culturel et à l’archéologie** — 2025-10-31 — https://www.laregion.fr/Patrimoine-Aide-a-la-valorisation-du-patrimoine-culturel-et-a-l-archeologie
+- **Patrimoine - Chaîne patrimoniale** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/patrimoine-chaine-patrimoniale
+- **Patrimoine - Fonds d’intervention d’urgence pour le patrimoine communal** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/patrimoine-fonds-dintervention-durgence-pour-le-patrimoine-communal
+- **Patrimoine - Plan concerté de restauration et valorisation du patrimoine** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/patrimoine-plan-concerte-de-restauration-et-valorisation-du-patrimoine
+- **Patrimoine - Plan musées et Ciap** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/patrimoine-plan-musees-et-ciap
+- **Patrimoine - Recherche en partenariat et soutien aux projets de recherche** — 2026-10-16 — https://www.maregionsud.fr/vos-aides/detail/patrimoine-recherche-en-partenariat-et-soutien-aux-projets-de-recherche
+- **Patrimoine et Transmission d'Identité - Aides Culturelles CTG - Collectivité Territoriale de Guyane** — échéance à vérifier — https://www.ctguyane.fr/aides-culturelles-de-la-collectivite-territoriale-de-guyane/patrimoine-et-transmission-didentite-aides-culturelles-ctg/
+- **Patrimoine naturel et culturel - Massif du Jura** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/patrimoine-naturel-et-culturel-massif-du-jura
+- **Pays de la Loire Accélérateur** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/pays-de-la-loire-accelerateur
+- **Pays de la Loire Accès Innovation** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/pays-de-la-loire-acces-innovation
+- **Pays de la Loire Accès Recherche** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/pays-de-la-loire-acces-recherche
+- **Pays de la Loire Bocage - Plantations et acquisition de matériel** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/pays-de-la-loire-bocage-plantations-et-acquisition-de-materiel
+- **Pays de la Loire Bocage – Outils de gestion durable des haies et Structuration de filières bois bocage** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/pays-de-la-loire-bocage-outils-de-gestion-durable-des-haies-et-structuration-de-filieres-bois-bocage
+- **Pays de la Loire Capital Impact** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/pays-de-la-loire-capital-impact
+- **Pays de la Loire Emploi Transitions** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/pays-de-la-loire-emploi-transitions
+- **Pays de la Loire Entrepreneurs Engagés** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/pays-de-la-loire-entrepreneurs-engages
+- **Pays de la Loire Garantie** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/pays-de-la-loire-garantie
+- **Pays de la Loire Initiative Innovation (PL2I)** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/pays-de-la-loire-initiative-innovation-pl2i
+- **Pays de la Loire Investissement numérique** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/pays-de-la-loire-investissement-numerique
+- **Pays de la Loire Participations** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/pays-de-la-loire-participations
+- **Pays de la Loire Prêt Entreprise** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/pays-de-la-loire-pret-entreprise
+- **Pays de la Loire Prêts TPE/PME** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/pays-de-la-loire-prets-tpe/pme
+- **Pays de la Loire Relance Investissement Communal (PLRIC)** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/pays-de-la-loire-relance-investissement-communal-plric
+- **Pays de la Loire Transmission - Reprise** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/pays-de-la-loire-transmission-reprise
+- **Pêche Aquaculture: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/jai-un-projet/je-trouve-un-financement/peche-aquaculture
+- **Pêche et aquaculture : aides européennes du FEAMPA 2021/2027** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/peche-et-aquaculture-feampa-20212027
+- **Pépite (Pôles étudiants pour l’innovation, le transfert et l’entrepreneuriat)** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif464
+- **Pépite Start'up Île-de-France : l'appel à candidatures pour la 16e promotion est ouvert** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/791
+- **Permettre à des sportifs de haut niveau d'intégrer l'équipe régionale** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/permettre-des-sportifs-de-haut-niveau-dintegrer-lequipe-regionale
+- **Permis B : une aide financière de la Région pour les jeunes** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/jeunesse/aide-au-passage-du-permis-de-conduire-b
+- **Petit patrimoine naturel** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/543
+- **PI R&D BONIFIE NOUVELLE INDUSTRIE** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/pi-rd-bonifie-nouvelle-industrie-0
+- **Plan bassins d'apprentissage mobiles** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/617
+- **Plan Booster TPE Artisans-Commerçants** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif690
+- **Plan de sauvegarde et de valorisation du cheval Boulonnais et du Trait du Nord 2026– Cadre d'intervention de l'appel à projet « Cheval Territorial en Hauts-de-France » 1er janvier 2026 au 15 juin 2026 - AAP** — 2026-06-15 — https://guide-aides.hautsdefrance.fr/dispositif820
+- **Plan du site** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/plan-du-site
+- **Plan régional de formation à la prévention de la radicalisation** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/531
+- **Plan régional hydrogène** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/plan-regional-hydrogene
+- **Plan régional piscines et patinoires** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/15
+- **Plan route de demain : Agences locales de mobilité et Plans de mobilité** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/611
+- **Plan route de demain : Électromobilité** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/609
+- **Plan route de demain : Innovation** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/608
+- **Plan route de demain : PEMR, voies réservées et aires de covoiturage** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/607
+- **Plan route de demain : Sécurité routière** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/606
+- **Plan route de demain: Amélioration de la desserte des lycées et des îles de loisirs** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/610
+- **Plan solaire : AMI - Foncier dérisqué** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/plan-solaire-ami-foncier-derisque
+- **Plan Solaire : AMO Opéra favorise la concrétisation de projets photovoltaïques** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/plan-solaire-amo-opera-favorise-la-concretisation-de-projets-photovoltaiques
+- **Plan solaire : Dispositif "Paré pour le solaire"** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/plan-solaire-dispositif-pare-pour-le-solaire
+- **Plan Solaire : EFICAS en soutien des études d’autoconsommations spéciales** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/plan-solaire-eficas-en-soutien-des-etudes-dautoconsommations-speciales
+- **Plan Solaire : SOLAIRE INNOV’ en soutien de projets solaires innovants** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/plan-solaire-solaire-innov-en-soutien-de-projets-solaires-innovants
+- **Plan solaire : Sud PV Plus en soutien de l'autoconsommation photovoltaïque** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/plan-solaire-sud-pv-plus-en-soutien-de-lautoconsommation-photovoltaique
+- **Plan stratégique de développement et rayonnement du cheval et de ses usages 2023 -2026 – « Soutien à l'amélioration de la génétique des produits issus de l'élevage équin en Région Hauts-de-France » - GENA** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif841
+- **Plan stratégique de développement et rayonnement du cheval et de ses usages 2023 -2026 – Appel à projet « Soutien aux investissements de la filière équine » - EQUI** — 2025-06-30 — https://guide-aides.hautsdefrance.fr/dispositif837
+- **Plan stratégique de développement et rayonnement du cheval et de ses usages 2023 -2026 – Soutien à l'acquisition de dispositifs de sécurisation des poulinages - ADSPA** — 2026-12-31 — https://guide-aides.hautsdefrance.fr/dispositif983
+- **Plan stratégique de développement et rayonnement du cheval et de ses usages 2023 -2026 – Soutien aux associations d'éleveurs et de propriétaires de chevaux de sport ou de course et structures organisatrices de concours d'élevage de chevaux de s** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif839
+- **Plan stratégique de développement et rayonnement du cheval et de ses usages 2023 -2026 – Soutien aux propriétaires et éleveurs : Prime à la naissance pour les poulains de race Henson nés en Hauts-de-France - PNRHA** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif982
+- **Plan stratégique de développement et rayonnement du cheval et de ses usages 2023-2026 – Soutien à la modernisation des hippodromes - SAFE** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif838
+- **Plan vélo régional** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/92
+- **Plaquette FEADER 2023-2027** — échéance à vérifier — https://www.europe-guadeloupe.fr/wp-content/uploads/2026/09/SYNTHESE-A4-PSR-FEADER-2027-WEB.pdf
+- **plus d'infos** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/donnees-personnelles
+- **PM'up** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/432
+- **PM'up Jeunes pousses industrielles** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/613
+- **Points d'arrêts du réseau de transports ZOU!** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/points-darrets-du-reseau-de-transports-zou
+- **Politique d'Aides aux Communes et aux Territoires (ACTes) FONDS D'APPUI AUX PROJETS LOCAUX DES COMMUNES RURALES DES HAUTS-DE-FRANCE (FAPL)** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif975
+- **Politique d'Aides aux Communes et aux Territoires (ACTes) FONDS DE SOUTIEN AUX PROJETS STRUCTURANTS (FSPS)** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif976
+- **POLITIQUE REGIONALE EN FAVEUR DE LA CULTURE ET DU** — 2026-10-15 — https://www.laregion.fr/Arts-de-la-scene-Aide-aux-operateurs-structurants-43861
+- **Polluants aérobiologiques** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/719
+- **Porter un projet collaboratif d’expérimentations ou de recherche appliquée en agriculture avec le dispositif PEPIT (Pôles d'Expérimentations agricoles Partenariales pour l'Innovation et le Transfert) - Etape AAP 2026** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/porter-un-projet-collaboratif-dexperimentations-ou-de-recherche-appliquee-en-agriculture-0
+- **Porter un projet européen d’innovation (agri- forêt) - PEI (FEADER - Dispositif 601) - AAP 2025 | Région Auvergne-Rhône-Alpes** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/porter-un-projet-europeen-dinnovation-agri-foret-pei-feader-dispositif-601-aap-2025
+- **Porter un Projet Européen d’Innovation (agri-forêt) - PEI (FEADER - Dispositif 601) - étape AMI 2025** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/porter-un-projet-europeen-dinnovation-agri-foret-pei-feader-dispositif-601-etape-ami-2025
+- **Porter un projet LEADER (FEADER - Dispositif 501)** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/porter-un-projet-leader-feader-dispositif-501
+- **Pour les agglomérations : les investissements territoriaux intégrés (ITI)** — échéance à vérifier — https://www.paysdelaloire.fr/amenagement-des-territoires/les-aides-europeennes-pour-mon-projet-de-territoire/pour-les-agglomerations-les-investissements-territoriaux-integres-iti
+- **Pour les territoires ruraux : la démarche LEADER** — échéance à vérifier — https://www.paysdelaloire.fr/amenagement-des-territoires/les-aides-europeennes-pour-mon-projet-de-territoire/pour-les-territoires-ruraux-la-demarche-leader
+- **Pour tou t renseignemen t merci de vous rapprocher d’une agence Crédit Mutuel, Crédit** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/agriboost-elevage
+- **Pré-annonce : Appel à projets Transnational Conjoint Water4All 2026 "Gestion durable des ressources en eau"** — 2026-09-29 — https://anr.fr/fr/detail/call/pre-annonce-appel-a-projets-transnational-conjoint-water4all-2026-gestion-durable-des-ressources/
+- **Pré-annonce : Quatrième appel à projets transnationaux co-financé du partenariat européen Sustainable Blue Economy Partnership (SBEP)** — 2026-09-29 — https://anr.fr/fr/detail/call/pre-annonce-quatrieme-appel-a-projets-transnationaux-co-finance-du-partenariat-europeen-sustainabl/
+- **Premier appel à projets transnational du Partenariat Européen sur les matières premières – RAMP – appel 2026** — 2026-09-29 — https://anr.fr/fr/detail/call/premier-appel-a-projets-transnational-du-partenariat-europeen-sur-les-matieres-premieres-ramp-ap/
+- **Premier équipement professionnel** — échéance à vérifier — https://www.laregion.fr/Premier-equipement-professionnel
+- **Première installation d'un dispositif de sécurisation des copropriétés** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/567
+- **Premiers projets pour le FTJ en Hauts-de-France: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/je-minforme/les-projets-soutenus/premiers-projets-pour-le-ftj-en-hauts-de-france
+- **PREO (Préserver, Retenir, Évacuer, Organiser)** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif1077
+- **Préparer votre demande de financement** — échéance à vérifier — https://www.europeocentre-valdeloire.eu/preparer-votre-demande-de-financement/
+- **Préservation des espèces** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/preservation-des-especes
+- **Préservation et restauration de la biodiversité marine** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/preservation-et-restauration-de-la-biodiversite-marine
+- **Préservation et restauration des sites Natura 2000** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/preservation-et-restauration-des-sites-natura-2000
+- **Préservation et restauration des sites Natura 2000 - Contrats Natura 2000** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/preservation-et-restauration-des-sites-natura-2000-contrats-natura-2000
+- **Préservation, maintien et restauration des continuités écologiques** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/preservation-maintien-et-restauration-des-continuites-ecologiques
+- **Prêt à taux réduit/projet de développement agricole** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif938
+- **PRÊT A TAUX ZERO POUR L’INNOVATION - PTZI** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/pret-a-taux-zero-pour-linnovation-ptzi
+- **Prêt croissance TPE** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif637
+- **Prêt d'amorcage** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/223
+- **Prêt d’honneur Agri Boost 40+** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/pret-dhonneur-agri-boost-40
+- **PRÊT D’HONNEUR FEADER** — échéance à vérifier — https://europe.maregionsud.fr/projets-realises-1/detail/pret-dhonneur-feader
+- **Prêt des manuels scolaires** — échéance à vérifier — https://www.laregion.fr/Pret-des-manuels-scolaires
+- **Prêt gratuit de vélos à assistance électrique dans 8 lycées pilotes d’Occitanie !** — échéance à vérifier — https://www.laregion.fr/Pret-gratuit-de-velos-a-assistance-electrique-dans-8-lycees-pilotes-d-Occitanie
+- **PRÊT INNOVATION R&D - INNOVATION CREATIVE** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/pret-innovation-rd-innovation-creative
+- **PRÊT INNOVATION R&D CLASSIQUE** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/pret-innovation-rd-classique-0
+- **PRÊT INNOVATION R&D FEDER - PI R&D FEDER** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/pret-innovation-rd-feder-pi-rd-feder
+- **Prêt Transition écologique Île-de-France** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/684
+- **Prêts d'honneur Initiative Nouvelle-Aquitaine (Création, reprise, et développement d'entreprise)** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/prets-dhonneur-initiative-nouvelle-aquitaine-creation-reprise-et-developpement-dentreprise
+- **Prêts d’honneur innovation - Créalia Occitanie** — échéance à vérifier — https://www.laregion.fr/Prets-d-honneur-innovation-Crealia-Occitanie
+- **Prêts d’honneur Occitanie Transmission** — échéance à vérifier — https://www.laregion.fr/Prets-d-honneur-Occitanie-Transmission
+- **Prévention des risques pour forêts – Volet DFCI** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/prevention-des-risques-pour-forets-volet-dfci
+- **Prévention santé des jeunes** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/389
+- **Prévention Santé Innovation PSIE - Appel à projets « Santé environnement »2026** — 2027-06-30 — https://guide-aides.hautsdefrance.fr/dispositif957
+- **Prévention Santé Innovation PSIO - Appel à projets « Prévention du surpoids et de l’obésité » 2026** — 2027-06-30 — https://guide-aides.hautsdefrance.fr/dispositif956
+- **PRF - S'Engager Vers l'Emploi - SIEG** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif1072
+- **PRF - Se Former pour Créer ou Reprendre une Entreprise - CRE -** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif1071
+- **PRF - Se former pour un emploi en région – Module « Découverte » SFER « Découverte »** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif1069
+- **PRF - Se former pour un emploi en région – Module « Perfectionnement » SFER « Perfectionnement »** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif1068
+- **PRF - Se former pour un emploi en région – Module « Qualifiant » SFER « Qualifiant »** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif1070
+- **Prime Booster** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/prime-booster
+- **PRIO - Plateformes de Recherche et d’Innovation Ouvertes** — échéance à vérifier — https://www.laregion.fr/PRIO-Plateformes-de-Recherche-et-d-Innovation-Ouvertes
+- **Prix d'excellence internationale en enseignement supérieur** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif821
+- **Prix des initiatives étudiantes pour le climat** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/723
+- **Prix des Innovateurs 2026 : l'appel à candidatures est ouvert** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/838
+- **Prix des Innovateurs Île-de-France 2024** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/700
+- **Proch’ Emploi - Volet demandeurs d'emploi** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif457
+- **Proch’ Emploi - Volet entreprises** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif888
+- **Proch’Info-Formation** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif863
+- **PROCH’ORIENTATION : Convention de stage de découverte des métiers pendant les vacances scolaires COST** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif901
+- **Production de jeux vidéo** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/production-de-jeux-video-0
+- **Programme : les défis numériques des Très Petites Entreprises (TPE)** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/programme-les-defis-numeriques-des-tres-petites-entreprises-tpe
+- **Programme " Ensemble c'est tout ! " avec l'association Citoyenneté Jeunesse** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/280
+- **Programme "Citoyens, Egalité, Droits et Valeurs"** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/programme-citoyens-egalite-droits-et-valeurs
+- **Programme "Devoir de mémoire sur la 1ère guerre mondiale" Musée de la Grande Guerre du Pays de Meaux** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/243
+- **Programme "Mémoire et citoyenneté" avec Mémoire 2000** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/399
+- **Programme « Jeunes, citoyenneté et vivre ensemble » avec l'ADRIC** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/242
+- **Programme « Le Parcours citoyen » avec l'Association Expressions de France** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/400
+- **Programme « Valeurs de la République et lutte contre les discriminations » avec l'Association ÉVEIL** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/241
+- **Programme «Terrorisme, Et si on écoutait les victimes ? Et si on écoutait les lycéens ?» avec l'AFVT** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/275
+- **Programme Artisanal Régional International PARI** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif945
+- **Programme d'accompagnement pendant les interruptions de scolarité avec l'association PEP75** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/656
+- **Programme d'Actions Culturelles Investissement PACI27** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif788
+- **Programme d'éducation au dessin de presse et à la citoyenneté avec Dessinez Créez Liberté** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/630
+- **Programme de l'Union européenne en faveur du marché unique** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/programme-de-lunion-europeenne-en-faveur-du-marche-unique
+- **Programme de Parcours citoyen « Liberté, égalité, laïcité » avec l'Association FEMMES SOLIDAIRES** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/240
+- **Programme de sensibilisation et codéveloppement dédié à la transition écologique des entreprises** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/621
+- **Programme FEDER-FSE+** — échéance à vérifier — https://www.europe-martinique.com/wp-content/uploads/2024/10/sfc2021-PRG-2021FR16FFPR008-3.1.pdf
+- **Programme Hauts-de-France Export PHFE** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif947
+- **Programme Hauts-de-France FEDER-FSE+- FTJ 2021-2027** — échéance à vérifier — https://www.europe-en-france.gouv.fr/en/programmes-europeens-2021-2027/programme-hauts-france-feder-fse-ftj-2021-2027
+- **Programme InSPIR - Appui aux acteurs de la Recherche des Hauts-de-France pour des Initiatives Scientifiques Pilotes d'Intérêt Régional 2026 « Attractivité, sécurité et bien-être territorial »** — 2026-09-07 — https://guide-aides.hautsdefrance.fr/dispositif1047
+- **Programme Interreg Espace Alpin** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/programme-interreg-espace-alpin
+- **Programme Interreg Europe du Nord-Ouest (ENO)** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/programme-interreg-europe-du-nord-ouest-eno
+- **Programme interreg France-Suisse** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/programme-interreg-france-suisse
+- **Programme Numérique Engagé** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/872
+- **Programme Numérique responsable "Mieux comprendre pour mieux utiliser" avec l'association e-ENFANCE** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/238
+- **Programme pour une Europe numérique (Digital Europe)** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/programme-pour-une-europe-numerique-digital-europe
+- **Programme Régional d’intervention en faveur des Pôles d’Echanges Multimodaux ferroviaires et routiers, et des aires multimodales d’intérêt régional** — échéance à vérifier — https://www.laregion.fr/Programme-Regional-d-intervention-en-faveur-des-Poles-d-Echanges-Multimodaux
+- **Programme Régional de Formation "se former en milieu pénitentiaire" - Compétence obligatoire* SFEMP** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif757
+- **Programme régional de formation « Aides individuelles – Se former dans l'enseignement supérieur » SFES** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif1067
+- **Programme régional de résidences d'artistes - arts plastiques, numériques et urbains** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/592
+- **Programme régional de résidences d'écrivains** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/152
+- **Programme Régional de Réussite en Etudes Longues PRREL - Dispositif AMBITION** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif521
+- **Programme Régional de Réussite en Etudes Longues PRREL - Dispositif RÉUSSITE** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif614
+- **Programme Régional de Réussite en Etudes Longues PRREL - Dispositif TREMPLIN** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif615
+- **Programme régional FEDER - FSE+ - FTJ - Massif des Alpes 2021-2027** — échéance à vérifier — https://europe.maregionsud.fr/programmes/programme-regional-2021-2027
+- **Programme régional FEDER/FSE+/FTJ: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/mes-ressources/programme-regional-feder/fse-/ftj
+- **Programme URBACT** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/programme-urbact
+- **Programmes de progression collective - Industrie** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/programmes-de-progression-collective-industrie
+- **Programmes européens thématiques** — échéance à vérifier — https://www.europeidf.fr/les-financements-europeens/programmes-europeens-thematiques
+- **Programmes FEADER/LEADER: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/mes-ressources/programmes-feader/leader
+- **Projet "Parcours autour de l'engagement citoyen" avec la Fondation Charles de Gaulle** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/398
+- **Projet d’Innovation – France 2030 régionalisé** — 2026-12-31 — https://www.bourgognefranchecomte.fr/node/3468
+- **Projet emblématiques et citoyens** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif979
+- **Projets à Rayonnement Artistique et Culturel (PRAC27)** — 2027-01-28 — https://guide-aides.hautsdefrance.fr/dispositif777
+- **Projets collaboratifs i-Démo régionalisé – France 2030 régionalisé** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/3469
+- **Projets d'associations étudiantes ou associations juniors** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/projets-asso-etudiantes
+- **Projets d'initiative Citoyenne (PIC2)** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif723
+- **Projets de recherche collaboratifs public/privé** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/projets-collaboratifs-entre-les-entreprises-du-territoire-et-les-centres-de-transfert-de
+- **Projets et programmations de médiation du patrimoine** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/culture/projets-et-programmations-de-mediation-du-patrimoine
+- **Projets innovants de production de gaz renouvelables (études & travaux)** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/projets-innovants-de-production-de-gaz-renouvelables-etudes-travaux
+- **Projets LEADER contribuant au développement rural francilien** — 2024-02-05 — https://www.europeidf.fr/jai-un-projet/appels-a-projets/projets-leader-contribuant-au-developpement-rural-francilien
+- **Projets solaires thermiques collectifs pour production d'eau chaude sanitaire, chauffage (nouveaux projets)** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/projets-solaires-thermiques-collectifs-nouveaux-projets
+- **Projets structurants accélérateurs de transitions** — 2028-12-31 — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/projets-structurants-accelerateurs-de-transitions
+- **Prolongation des délais pour les AAP PRE'AD** — 2024-10-31 — https://europe-en-hautsdefrance.eu/actualites-et-evenements/detail-de-lactualite/prolongation-des-delais-pour-les-aap-pread
+- **Promotion collective des produits agricoles et agroalimentaires** — échéance à vérifier — https://www.laregion.fr/Promotion-collective-des-produits-agricoles-et-agroalimentaires
+- **Promotion de la Citoyenneté et Lutte Contre les discriminations – Plan régional d’actions contre le racisme et l’antisémitisme** — échéance à vérifier — https://www.laregion.fr/Promotion-de-la-Citoyennete-et-Lutte-contre-les-discriminations
+- **Promotion de la culture et des savoir-faire alpins** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/promotion-de-la-culture-et-des-savoir-faire-alpins
+- **Promouvoir les signes officiels de qualité (FEADER - Dispositif 305)** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/promouvoir-les-signes-officiels-de-qualite-feader-dispositif-305
+- **Proposer une présence artistique (programmation et création) sur les territoires faiblement dotés en offre culturelle dans le domaine des musiques actuelles** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/proposer-une-programmation-de-musiques-actuelles-en-milieu-rural
+- **Protection des cours d'eau et des sols** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/protection-des-cours-deau-et-des-sols-0
+- **Protection des races menacées** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/protection-des-races-menacees
+- **Protéger collectivement le foncier agricole (FEADER - Dispositif 104)** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/proteger-collectivement-le-foncier-agricole-feader-dispositif-104
+- **Protéger les personnes, les biens et les activités économiques des inondations** — échéance à vérifier — https://www.laregion.fr/Proteger-les-personnes-les-biens-et-les-activites-economiques-des-inondations
+- **Protéger les races menacées (MAEC PRM - Dispositif 211)** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/proteger-les-races-menacees-maec-prm-dispositif-211
+- **PULSAR – Académie des jeunes chercheurs en Pays de la Loire** — 2026-05-07 — https://www.paysdelaloire.fr/les-aides/pulsar-academie-des-jeunes-chercheurs-en-pays-de-la-loire
+- **Qualité de l’air intérieur des bâtiments publics** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/603
+- **Radios associatives - Aide à l’acquisition et la modernisation du matériel radiophonique des radios associatives non commerciales** — 2025-07-31 — https://www.laregion.fr/Radios-associatives-Aide-a-l-acquisition-et-la-modernisation-du-materiel
+- **Radios associatives - Aide à la mission de communication sociale de proximité des radios associatives non commerciales** — échéance à vérifier — https://www.laregion.fr/Radios-associatives-Aide-a-la-mission-de-communication-sociale-de-proximite-des
+- **RAISON SOCIALE** — 2026-12-31 — https://les-aides.nouvelle-aquitaine.fr/transition-energetique-et-ecologique/electrification-et-flexibilite
+- **RAISON SOCIALE Dénomination :** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/aide-aux-investissements-productifs-dans-lagroalimentaire
+- **Rapport de 2021 du plan stratégique relevant de la PAC** — 2024-07-12 — https://europe.maregionsud.fr/programmes/programmes-europeens/detail/programme-regional-feader-2023-2027-2
+- **Rapprochement offre-demande** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif994
+- **Ready to Move !** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif978
+- **REALIS** — échéance à vérifier — https://www.laregion.fr/realis-42741
+- **Reboisement en peuplier après exploitation** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/reboisement-en-peuplier-apres-exploitation
+- **Recherche clinique dans les établissements de santé en région Hauts-de-France - 5° session** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif761
+- **Recherche et innovation: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/jai-un-projet/je-trouve-un-financement/recherche-et-innovation
+- **Recherche et réseaux alpins** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/recherche-reseaux-alpins
+- **Recherche Expérimentation Agricole** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/recherche-experimentation-agricole
+- **Recherche, animation et reconnaissance du pastoralisme** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/recherche-animation-et-reconnaissance-du-pastoralisme
+- **Reconquête de la biodiversité** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/40
+- **Reconquête de la ressource en eau** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/reconquete-de-la-ressource-en-eau
+- **Reconstitution du cheptel apicole** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/reconstitution-du-cheptel-apicole
+- **Reconversion des stations de moyenne montagne** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/reconversion-des-stations-de-moyenne-montagne
+- **Recrut'Up** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/861
+- **Recrutement de médecins généralistes pour le Centre de Santé à Les Cabannes (Ariège)** — échéance à vérifier — https://www.laregion.fr/Recrutement-de-medecins-generalistes-pour-le-Centre-de-Sante-a-Les-Cabannes-Ariege
+- **Recrutement de médecins généralistes pour le Centre de Santé à Salviac (Lot)** — échéance à vérifier — https://www.laregion.fr/Recrutement-de-medecins-generalistes-pour-le-Centre-de-Sante-Salviac-Cazals
+- **Recrutement de médecins généralistes pour le Centre de Santé bi-sites de Saint-Gaudens et Montréjeau (Haute-Garonne)** — échéance à vérifier — https://www.laregion.fr/Recrutement-de-medecins-generalistes-pour-le-Centre-de-Sante-bi-sites-de-Saint
+- **Recrutement de médecins généralistes pour le Centre de Santé de Loures-Barousse (Hautes-Pyrénées)** — échéance à vérifier — https://www.laregion.fr/Recrutement-de-medecins-generalistes-pour-le-Centre-de-Sante-de-Loures-Barousse
+- **Recrutement de médecins généralistes pour le Centre de Santé de Ma Région à Beaucaire et Jonquières Saint Vincent (Gard)** — échéance à vérifier — https://www.laregion.fr/Recrutement-de-medecins-generalistes-pour-le-Centre-de-Sante-de-Ma-Region-a-Beaucaire
+- **Recrutement de médecins généralistes pour le Centre de Santé de Ma Région à Bordères-sur-l’Echez (Hautes-Pyrénées)** — échéance à vérifier — https://www.laregion.fr/Recrutement-de-medecins-generalistes-pour-le-Centre-de-Sante-de-Ma-Region-a-Borderes
+- **Recrutement de médecins généralistes pour le Centre de Santé de Ma Région à Durban-Corbières (Aude)** — échéance à vérifier — https://www.laregion.fr/Recrutement-de-medecins-generalistes-pour-le-Centre-de-Sante-de-Ma-Region-a-Durban
+- **Recrutement de médecins généralistes pour le Centre de Santé de Ma Région à Fourques (Pyrénées Orientales)** — échéance à vérifier — https://www.laregion.fr/Recrutement-de-medecins-generalistes-pour-le-Centre-de-Sante-de-Ma-Region-a-Fourques
+- **Recrutement de médecins généralistes pour le Centre de Santé de Ma Région à Lacaune et Viane (Tarn)** — échéance à vérifier — https://www.laregion.fr/Recrutement-de-medecins-generalistes-pour-le-Centre-de-Sante-de-Ma-Region-a-Lacaune
+- **Recrutement de médecins généralistes pour le Centre de Santé de Ma Région à Livinhac-Le-Haut et Saint-Santin (Aveyron)** — échéance à vérifier — https://www.laregion.fr/Recrutement-de-medecins-generalistes-pour-le-Centre-de-Sante-de-Ma-Region-Aveyron
+- **Recrutement de médecins généralistes pour le Centre de Santé de Ma Région à Lodève (Hérault)** — échéance à vérifier — https://www.laregion.fr/Recrutement-de-medecins-generalistes-pour-le-Centre-de-Sante-de-Ma-Region-a-Lodeve
+- **Recrutement de médecins généralistes pour le Centre de Santé de Ma Région à Lussan (Gard)** — échéance à vérifier — https://www.laregion.fr/Recrutement-de-medecins-generalistes-pour-le-Centre-de-Sante-de-Ma-Region-a-Lussan
+- **Recrutement de médecins généralistes pour le Centre de Santé de Ma Région à Mazamet (Tarn)** — échéance à vérifier — https://www.laregion.fr/Recrutement-de-medecins-generalistes-pour-le-Centre-de-Sante-de-Ma-Region-a-Mazamet
+- **Recrutement de médecins généralistes pour le Centre de Santé de Ma Région à Verdun-sur-Garonne (Tarn et Garonne)** — échéance à vérifier — https://www.laregion.fr/Recrutement-de-medecins-generalistes-pour-le-Centre-de-Sante-de-Ma-Region-a-Verdun
+- **Recrutement de médecins généralistes pour le Centre de Santé multi-sites à Castelsarrasin, La Ville-Dieu-du-Temple et Saint-Porquier (Tarn-et-Garonne)** — échéance à vérifier — https://www.laregion.fr/Recrutement-de-medecins-generalistes-pour-le-Centre-de-Sante-Tarn-et-Garonne
+- **Référencement Labels RSE** — 2027-03-31 — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/referencement-labels-rse
+- **Référentiel indicateurs FEDER** — échéance à vérifier — https://www.europe-guadeloupe.fr/wp-content/uploads/2026/01/23102025_Referentiel_indicateurs_21_27_FEDER_-ppbenef_v2.xlsm
+- **Référentiel indicateurs FEDER-FSE+** — échéance à vérifier — https://www.europe-martinique.com/wp-content/uploads/2024/08/Referentiel-des-indicateurs-du-programme-FSE4-avec-compression.pdf
+- **Régime cadre exempté de notification N° SA. 111723 relatif aux aides à la recherche, au** — 2026-12-31 — https://www.hautsdefrance-id.fr/appels-a-projets/appel-a-projets-collaboratifs-innovation-industrie-du-futur/
+- **REGION DES PAYS DE LA LOIRE** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/aide-linvestissement-en-faveur-des-industries-agro-alimentaires-ariaa-feader
+- **REGION NOUVELLE - AQUITAINE** — 2027-03-31 — https://les-aides.nouvelle-aquitaine.fr/transition-energetique-et-ecologique/referencement-doffres-daccompagnement-rse
+- **Région Sud Investissement – Prêts** — échéance à vérifier — https://europe.maregionsud.fr/projets-realises-1/detail/region-sud-investissement-prets
+- **REGLEMENT D’INTERVENTION** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/investissements-en-faveur-de-laccessibilite-des-lycees-par-les-modes-actifs
+- **RÈGLEMENT D'INTERVENTION** — 2026-04-20 — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/programme-annuel-de-promotion-de-legalite-femmes-hommes-de-lutte-contre-les-discriminations-et-de
+- **RÈGLEMENT D’INTERVENTION DE SOUTIENÀLA VIE ASSOCIATIVE EN REGION** — 2026-04-20 — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/offre-dappui-des-tetes-de-reseau-associatif
+- **Règlement d’intervention Réserve naturelle régionale** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/reserves-naturelles-regionales
+- **Règlement particulier d'aide régionale : COLLOQUES SCIENTIFIQUES DE HAUT NIVEAU** — 2026-11-23 — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/colloques-scientifiques-2027
+- **Règlement_ue_2021_1058_Feder** — échéance à vérifier — https://www.europe-martinique.com/wp-content/uploads/2022/12/reglement_ue_2021_1058_Feder.pdf
+- **Relayer un appel à projet - HDFID** — échéance à vérifier — https://www.hautsdefrance-id.fr/proposer-appel-a-projet/
+- **Rémunération des stagiaires de la formation professionnelle** — échéance à vérifier — https://www.laregion.fr/Remuneration-des-stagiaires-de-la-formation-professionnelle
+- **Rémunération des stagiaires de la formation professionnelle** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/remuneration-des-stagiaires-de-la-formation-professionnelle
+- **Rémunération des stagiaires de la formation professionnelle continue** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/remuneration-des-stagiaires-de-la-formation-professionnelle-continue
+- **Rémunération des stagiaires de la formation professionnelle et aides annexes** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/467
+- **Rémunération des stagiaires de la formation professionnelle RSFP** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif147
+- **Rencontre avec les Ambassadeurs du Sport de la Région Île-de-France** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/663
+- **Rencontres ID.METIERS- Campagne 2026-2027** — échéance à vérifier — https://www.laregion.fr/Rencontres-ID-METIERS-Campagne-2026-2027
+- **Renforcement économique des** — 2026-12-31 — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/renforcement-economique-des-ecosystemes-hydrogene-par-lusage-mobilite
+- **Renouvellement des chauffages au fuel, au bois ou au charbon - site fermé depuis le 24 janvier 2025** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/534
+- **Renouvellement urbain** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/renouvellement-urbain
+- **Renouvellement urbain en milieu rural** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/renouvellement-urbain-en-milieu-rural
+- **Rénovation de bâtiments d'enseignement public et de bureaux publics intégrant des matériaux biosourcés** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/renovation-de-batiments-denseignement-public-et-de-bureaux-publics-integrant-des
+- **Rénovation des monuments aux morts des Hauts-de-France (non protégés au titre de la protection des Monuments historiques) - MONU** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif797
+- **Rénovation énergétique des bâtiments publics (ERP) pour une meilleure performance énergétique** — échéance à vérifier — https://www.laregion.fr/Renovation-energetique-des-batiments-publics-ERP-pour-une-meilleure-performance
+- **Rénovation énergétique du logement social collectif** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/renovation-energetique-du-logement-social-collectif
+- **Repérer et proposer aux jeunes NEET des Hauts-de-France un parcours de réussite vers une insertion professionnelle durable** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif993
+- **Reprise des Apprentis** — 2025-12-31 — https://guide-aides.hautsdefrance.fr/dispositif624
+- **Réseau régional des incubateurs et accélérateurs franciliens** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/651
+- **Résorption des dépôts sauvages de déchets d'importance régionale et situations exceptionnelles** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/42
+- **Résorption des dépôts sauvages de déchets sur les terres agricoles** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/63
+- **Restauration et valorisation du patrimoine rural non protégé** — 2026-12-31 — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/restauration-et-valorisation-du-patrimoine-rural-non-protege
+- **Restructuration financière des entreprises fragilisées** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/restructuration-financiere-des-entreprises-fragilisees
+- **Résultats de recherche pour "Feader"** — échéance à vérifier — https://www.europe-en-nouvelle-aquitaine.eu/fr/recherche?search_text&f%5B%5D=tags%3A170
+- **Retrouvez le détail des programmes FEDER FSE+ FTJ par région.** — échéance à vérifier — https://www.europe-en-france.gouv.fr/europe-en-france.gouv.fr/fr/ressources/fiches-programmes-regionaux-et-nationaux-feder-fse-ftj-2021-2027
+- **Revenu Écologique Jeunes** — échéance à vérifier — https://www.laregion.fr/Revenu-ecologique-Jeunes
+- **S103 Sport A nnexe 1** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/sport-handicap-materiel-sportif
+- **Santé et Territoires** — 2028-12-31 — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/sante-et-territoires
+- **Santé numérique et innovation** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/406
+- **Santé: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/jai-un-projet/je-trouve-un-financement/sante
+- **Schéma régional des véloroutes de Provence Alpes Côte d'Azur** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/schema-regional-des-veloroutes-de-provence-alpes-cote-dazur
+- **Sécurisation des écoles et instituts de formations sanitaires et sociales** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/77
+- **Séjours d'études à l’étranger post bac** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/jeunesse/sejours-detudes-letranger-post-bac
+- **Sensibilisation des publics à la mer** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/sensibilisation-des-publics-a-la-mer
+- **Sensibilisation lycéens développement durable- Groupe SOS : AlimenTaSanté : Alimentation Durable** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/754
+- **Sensibilisation lycées développement durable - Bilan Carbone : Projet Établissement Bas Carbone** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/757
+- **Sensibilisation lycées développement durable - Ecophylle : Escape Game « Ça déménage »** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/756
+- **Sensibilisation lycées développement durable - La Fresque du Climat** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/753
+- **Sensibilisation lycées développement durable - Rennaissance Ecologique : Agir ensemble pour le Dével** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/755
+- **Service Fonds Européen Agricole pour le Développement Rural (FEADER)** — échéance à vérifier — https://europe.maregionsud.fr/projets-realises-1/detail/service-fonds-europeen-agricole-pour-le-developpement-rural-feader-1
+- **Services et mobilités en montagne** — 2026-10-01 — https://www.maregionsud.fr/vos-aides/detail/services-mobilites-montagne
+- **SESAME - Équipements et plateformes scientifiques et technologiques** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/104
+- **SESAME FILIERES France 2030 - vague n°8** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/508
+- **SESAME Filières France 2030 – France 2030 – Île-de-France** — 2026-01-13 — https://leaderpia.iledefrance.fr/sesame-filieres-france-2030/
+- **SESAME-FEDER Plateformes de recherche** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/707
+- **SFC2021 Programme soutenu par le FEDER (objectif «Investissement pour** — échéance à vérifier — https://europe-en-hautsdefrance.eu/je-minforme/les-financements-europeens/region/ftj
+- **Silencieux avions écoles franciliens** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/666
+- **Single Market : le programme en faveur du marché unique: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/je-minforme/les-financements-europeens/europeen/single-market-1
+- **Site internet Compétences Hauts de France : https://competences.hautsdefrance.fr/** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif934
+- **Sites touristiques exemplaires** — 2028-12-31 — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/sites-touristiques-exemplaires
+- **SOCPL – Information, consultation et participation des représentants des entreprises – 2026** — 2026-11-11 — https://www.europe-en-france.gouv.fr/fr/appels-a-projet/socpl-information-consultation-participation-representants-entreprises-2026
+- **Solidarité Alimentaire en Occitanie** — échéance à vérifier — https://www.laregion.fr/bien-manger-pour-tous
+- **Solidarités nouvelles et innovation sociale en faveur des plus précaires** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/247
+- **Solutions d’hébergement et de logement pour les jeunes de moins de 30 ans** — échéance à vérifier — https://www.laregion.fr/Solutions-hebergement-et-logement-jeunes
+- **Soutenir des programmes à ambition régionale – Plan forêt-bois 2023-2027** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/soutenir-des-programmes-ambition-regionale-plan-foret-bois-2023-2027
+- **Soutenir des projets partenariaux de progrès (expérimentation, recherche, innovation) – Plan forêt-bois 2023-2027** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/soutenir-des-projets-partenariaux-de-progres-experimentation-recherche-innovation-plan-foret
+- **Soutenir l'investissement dans le secteur de l'exploitation cinématographique** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/soutenir-linvestissement-dans-le-secteur-de-lexploitation-cinematographique
+- **Soutenir la filière Bovins Lait - Plan régional filière Bovins Lait 2023-2027 | Région Auvergne-Rhône-Alpes** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/soutenir-la-filiere-bovins-lait-plan-regional-filiere-bovins-lait-2023-2027
+- **Soutenir la filière castanéicole - Plan régional filière châtaigneraies traditionnelles 2023-2027** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/soutenir-la-filiere-castaneicole-plan-regional-filiere-chataigneraies-traditionnelles-2023
+- **Soutenir la filière Chevreaux - Plan régional filière Chevreaux 2023-2027** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/soutenir-la-filiere-chevreaux-plan-regional-filiere-chevreaux-2023-2027
+- **Soutenir la filière cunicole - Plan régional filière cunicole 2023-2027** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/soutenir-la-filiere-cunicole-plan-regional-filiere-cunicole-2023-2027
+- **Soutenir la filière équine - Plan régional filière équine 2023-2027** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/soutenir-la-filiere-equine-plan-regional-filiere-equine-2023-2027
+- **Soutenir la filière fruits - Plan régional filière fruits 2023-2027 | Région Auvergne-Rhône-Alpes** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/soutenir-la-filiere-fruits-plan-regional-filiere-fruits-2023-2027
+- **Soutenir la filière grandes cultures – Plan régional filière grandes cultures 2024-2027 | Région Auvergne-Rhône-Alpes** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/soutenir-la-filiere-grandes-cultures-plan-regional-filiere-grandes-cultures-2024-2027
+- **Soutenir la filière horticole - Plan régional filière horticole 2023-2027** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/soutenir-la-filiere-horticole-plan-regional-filiere-horticole-2023-2027
+- **Soutenir la filière maraîchage – Plan régional filière maraîchage 2024-2027** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/soutenir-la-filiere-maraichage-plan-regional-filiere-maraichage-2024-2027
+- **Soutenir la filière Plantes à Parfum, Aromatiques et Médicinales (PPAM) - Plan régional filière PPAM 2023-2027** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/soutenir-la-filiere-plantes-parfum-aromatiques-et-medicinales-ppam-plan-regional-filiere-ppam
+- **Soutenir la filière trufficole - Plan régional Filière Truffe 2023-2027** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/soutenir-la-filiere-trufficole-plan-regional-filiere-truffe-2023-2027
+- **Soutenir la filière viticole - Plan régional filière viticole 2023-2027** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/soutenir-la-filiere-viticole-plan-regional-filiere-viticole-2023-2027
+- **Soutenir les Guid'Asso accompagnement généraliste (GUID)** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif702
+- **Soutenir les projets de médiation pour mon cinéma d'art et d'essai** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/soutenir-les-projets-de-mediation-pour-mon-cinema-dart-et-dessai
+- **Soutenir les projets e-formation, e-orientation, e-inclusion** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/soutenir-les-projets-e-formation-e-orientation-e-inclusion
+- **Soutenir les projets e-gouvernement** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/soutenir-les-projets-e-gouvernement
+- **Soutenir les projets e-tourisme et e-culture** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/soutenir-les-projets-e-tourisme-et-e-culture
+- **Soutenir les projets pédagogiques collectifs sportifs des établissements régionaux** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/soutenir-les-projets-pedagogiques-collectifs-sportifs-des-etablissements-regionaux
+- **Soutien à l'acquisition d’équipements sportifs collectifs** — 2026-12-31 — https://www.maregionsud.fr/vos-aides/detail/soutien-a-linvestissement-des-associations-sportives
+- **Soutien à l’acquisition d’instruments de musique : INSTRUMENTARIUM** — 2026-10-16 — https://www.maregionsud.fr/vos-aides/detail/soutien-a-lacquisition-dinstruments-de-musique-instrumentarium
+- **Soutien à l'acquisition d'un véhicule de transport collectif par les associations sportives** — 2026-12-31 — https://www.maregionsud.fr/vos-aides/detail/soutien-a-lacquisition-dun-vehicule-de-transport-collectif-par-les-associations-sportives
+- **Soutien à l'agriculture dans les zones périurbaines** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/364
+- **Soutien à l'amélioration de la desserte des zones logistiques** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/99
+- **Soutien à l'animation des résidences étudiantes par l'engagement de leurs résidents** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/451
+- **Soutien à l'éducation aux images** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/soutien-a-leducation-aux-images
+- **Soutien à l'emploi et aux parcours de réussite des jeunes par l'apprentissage** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif995
+- **Soutien à l'équipement des forces de sécurité et à la sécurisation des équipements publics** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/125
+- **Soutien à l'équipement en vidéoprotection** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/124
+- **Soutien à l’équipement informatique et numérique du réseau régional de lecture publique** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/soutien-a-lequipement-informatique-et-numerique-du-reseau-regional-de-lecture-publique
+- **Soutien à l'hébergement touristique** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/soutien-a-lhebergement-touristique
+- **Soutien à l'hébergement, aux services et accueils de jour destinés aux femmes en difficulté** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/24
+- **Soutien à l'installation des professionnels de santé libéraux** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/31
+- **Soutien à l'investissement des écoles et instituts de formation dispensant des formations sanitaires** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/849
+- **Soutien à l'investissement des écoles et instituts dispensant des formations sanitaires autorisées** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/481
+- **Soutien à l'investissement des organismes de formation dispensant des formations par apprentissage** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/424
+- **Soutien à l’investissement pour la création, l’équipement et la réhabilitation des salles de cinéma** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/soutien-a-linvestissement-pour-la-creation-lequipement-et-la-rehabilitation-des-salles-de-cinema
+- **Soutien à l'investissement pour musiques, théâtre, arts du mouvement, arts visuels** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/soutien-a-linvestissement-pour-musiques-theatre-arts-du-mouvement-arts-visuels
+- **Soutien à l'offre de formation musiques, danse, théâtre, art du mouvement, arts visuels** — 2026-10-16 — https://www.maregionsud.fr/vos-aides/detail/soutien-a-loffre-de-formation-musiques-danse-theatre-art-du-mouvement-arts-visuels
+- **Soutien à l'organisation de manifestations à label Running - MASP** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif951
+- **Soutien à l’organisation de manifestations sportives** — 2026-12-31 — https://www.maregionsud.fr/vos-aides/detail/soutien-a-lorganisation-de-manifestations-sportives
+- **Soutien à l'organisation de manifestations Tournoi internationaux de football jeunes - MASP** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif460
+- **Soutien à la construction et à la rénovation d’équipements sportifs** — échéance à vérifier — https://www.laregion.fr/Soutien-a-la-construction-et-a-la-renovation-d-equipements-sportifs
+- **Soutien à la création cinématographique et audiovisuelle - Collectivité Territoriale de Guyane** — échéance à vérifier — https://www.ctguyane.fr/aides-creation-cinematographique-audiovisuelle/
+- **Soutien à la création d’outils pédagogiques, supports d’éducation à l’environnement et au développement durable (investissement)** — échéance à vérifier — https://www.laregion.fr/Soutien-a-la-creation-d-outils-pedagogiques-supports-d-education-a-l-environnement
+- **Soutien à la création et à la production d'œuvres audiovisuelles de fiction.** — 2025-09-30 — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/soutien-a-la-creation-et-a-la-production-doeuvres-audiovisuelles-de-fiction
+- **Soutien à la création et à la production d’œuvres d’animation** — 2026-10-16 — https://www.maregionsud.fr/vos-aides/detail/soutien-a-la-creation-et-a-la-production-doeuvres-danimation
+- **Soutien à la création et à la production d’œuvres de web-création** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/soutien-a-la-creation-et-a-la-production-doeuvres-de-web-creation
+- **Soutien à la création et à la production d’œuvres documentaires** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/soutien-a-la-creation-et-a-la-production-doeuvres-documentaires
+- **Soutien à la création et à la production d’œuvres immersives** — 2026-10-16 — https://www.maregionsud.fr/vos-aides/detail/soutien-a-la-creation-et-a-la-production-doeuvres-immersives
+- **Soutien à la création et à la production de long métrage de fiction** — 2026-10-16 — https://www.maregionsud.fr/vos-aides/detail/soutien-a-la-creation-et-a-la-production-de-long-metrage-de-fiction
+- **Soutien à la création et au développement d'activités dans l'ESS** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/soutien-la-creation-et-au-developpement-dactivites-dans-less
+- **Soutien à la création ou la rénovation de lieux de lecture ouverts au public** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/soutien-a-la-creation-ou-la-renovation-de-lieux-de-lecture-ouverts-au-public
+- **Soutien à la desserte forestière** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/soutien-a-la-desserte-forestiere
+- **Soutien à la gestion durable des forêts franciliennes** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/692
+- **Soutien à la maturation technologique** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/soutien-la-maturation-technologique
+- **Soutien à la mobilisation des bois par câble** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/soutien-a-la-mobilisation-des-bois-par-cable
+- **Soutien à la mobilité des éditeurs de Provence-Alpes-Cote d'Azur** — 2026-10-16 — https://www.maregionsud.fr/vos-aides/detail/soutien-a-la-mobilite-des-editeurs-de-provence-alpes-cote-dazur
+- **Soutien à la prévention des déchets et à la tarification incitative** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/soutien-prevention-dechets-et-tarification-incitative
+- **Soutien à la production de court métrage de fiction** — 2026-10-16 — https://www.maregionsud.fr/vos-aides/detail/soutien-a-la-production-de-court-metrage-de-fiction
+- **Soutien à la production de logements locatifs sociaux, très sociaux et intermédiaire** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/129
+- **Soutien à la production de logements pour jeunes, apprentis et étudiants** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/118
+- **Soutien à la récupération de chaleur fatale** — échéance à vérifier — https://www.grandest.fr/vos-aides-regionales/soutien-recuperation-chaleur-fatale/
+- **Soutien à la rénovation des ascenseurs** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/568
+- **Soutien à la restauration et à l'aménagement du patrimoine labellisé d'intérêt régional** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/112
+- **Soutien à la télémédecine** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/605
+- **Soutien au développement de l’éducation à l’environnement et au développement durable - Actions et réseaux (fonctionnement)** — échéance à vérifier — https://www.laregion.fr/Soutien-au-developpement-de-l-education-a-l-environnement-et-au-developpement
+- **Soutien au développement des Organismes de Défense et de Gestion (ODG) et des Organismes de Producteurs (OP)** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/soutien-au-developpement-des-organismes-de-defense-et-de-gestion-odg-et-des-organismes-de-producteurs-op
+- **Soutien au développement sylvicole et aux besoins d’adaptation au changement climatique** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/soutien-au-developpement-sylvicole-et-aux-besoins-dadaptation-au-changement-climatique
+- **Soutien au fonctionnement des CFA : majoration de la prise en charge des contrats d’apprentissage** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/soutien-au-fonctionnement-des-cfa-majoration-de-la-prise-en-charge-des-contrats-dapprentissage
+- **Soutien au mouvement sportif fédéral** — 2026-12-31 — https://www.maregionsud.fr/vos-aides/detail/soutien-au-sport-federal
+- **Soutien au Mouvement sportif regional** — échéance à vérifier — https://www.laregion.fr/Soutien-au-Mouvement-sportif-regional
+- **Soutien au para-sport** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/soutien-au-para-sport
+- **Soutien au patrimoine classé au titre des monuments historiques** — 2026-12-31 — https://www.grandest.fr/vos-aides-regionales/soutien-patrimoine-protege/
+- **Soutien au patrimoine non protégé ou inscrit au titre des Monuments Historiques** — 2026-12-31 — https://www.grandest.fr/vos-aides-regionales/soutien-patrimoine-non-protege-monuments-historiques/
+- **Soutien au programme éditorial** — 2029-12-31 — https://www.maregionsud.fr/vos-aides/detail/soutien-au-programme-editorial
+- **Soutien au prototypage et à la production de jeu vidéo** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/soutien-au-prototypage-et-a-la-production-de-jeu-video
+- **Soutien au réseau d’acteurs transition écologique et développement durable** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/soutien-au-reseau-dacteurs-transition-ecologique-et-developpement-durable
+- **Soutien au réseau régional de centres pour le livre et la lecture** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/soutien-au-reseau-regional-de-centres-pour-le-livre-et-la-lecture
+- **Soutien au ressourcement scientifique dans le cadre d’un projet européen** — 2026-07-17 — https://www.paysdelaloire.fr/les-aides/soutien-au-ressourcement-scientifique-dans-le-cadre-dun-projet-europeen
+- **Soutien aux actions d'innovation en matière de logistique** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/100
+- **Soutien aux actions en faveur du dialogue sciences-société** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/soutien-aux-actions-en-faveur-du-dialogue-sciences-societe
+- **Soutien aux agences et réseaux** — 2027-03-31 — https://www.maregionsud.fr/vos-aides/detail/soutien-aux-agences-et-reseaux
+- **Soutien aux aidants** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/198
+- **Soutien aux aires de covoiturage ou de mobilité** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/soutien-aux-aires-de-covoiturage-ou-de-mobilite
+- **Soutien aux animations sportives territoriales** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/soutien-aux-animations-sportives-territoriales
+- **Soutien aux artistes : musique, théâtre, arts du mouvement** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/soutien-aux-artistes-musique-theatre-arts-du-mouvement
+- **Soutien aux audits et réhabilitation d’installations solaires thermiques collectives (installations existantes)** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/soutien-aux-audits-et-rehabilitation-dinstallations-solaires-thermiques-collectives-installations-existantes
+- **Soutien aux centres de formation des clubs professionnels** — 2026-12-31 — https://www.maregionsud.fr/vos-aides/detail/soutien-aux-centres-de-formation-des-clubs-professionnels
+- **Soutien aux Clubs de Haut Niveau en Arrêté - CHNA** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif1028
+- **Soutien aux Clubs de Haut Niveau en Convention - CHNC** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif1029
+- **Soutien aux clubs de l'élite sportive régionale** — 2026-12-31 — https://www.maregionsud.fr/vos-aides/detail/soutien-aux-clubs-de-lelite-sportive-regionale
+- **Soutien aux compagnies participant au Festival Off d’Avignon** — échéance à vérifier — https://www.grandest.fr/vos-aides-regionales/soutien-compagnies-off-avignon/
+- **Soutien aux coordinations et têtes de réseaux associatives COTR2** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif701
+- **Soutien aux Écoles de Production - Aide au démarrage FAPR** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif952
+- **Soutien aux émergences Arts Visuels** — échéance à vérifier — https://www.grandest.fr/vos-aides-regionales/appel-a-projets-soutien-aux-emergences-arts-visuels/
+- **Soutien aux entreprises franciliennes de la filière forêt-bois** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/690
+- **Soutien aux entreprises impactées par les intempéries des 1er et 2 décembre 2023 sur les Hautes-Alpes et les Alpes-de-Haute-Provence** — 2029-12-31 — https://www.maregionsud.fr/vos-aides/detail/soutien-aux-entreprises-impactees-par-les-intemperies-des-1er-et-2-decembre-2023-sur-les-hautes-alpes-et-les-alpes-de-haute-provence
+- **Soutien aux équipements et filières de valorisation des déchets** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/soutien-aux-equipements-et-filieres-de-valorisation-des-dechets
+- **Soutien aux équipements sportifs de Nouvelle-Aquitaine** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/soutien-aux-equipements-sportifs
+- **Soutien aux établissements de formations sanitaires et sociales** — échéance à vérifier — https://www.laregion.fr/Soutien-aux-etablissements-de-formations-sanitaires-et-sociales
+- **Soutien aux études stratégiques économie circulaire déchets** — 2026-10-30 — https://www.maregionsud.fr/vos-aides/detail/soutien-aux-etudes-strategiques-economie-circulaire-dechets
+- **Soutien aux femmes en difficulté** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/22
+- **Soutien aux festivals manifestations : musique, théâtre, arts du mouvement, arts visuels** — 2027-03-31 — https://www.maregionsud.fr/vos-aides/detail/soutien-aux-festivals-manifestations-musique-theatre-arts-du-mouvement-arts-visuels
+- **Soutien aux festivals, manifestations et à la diffusion : cinéma et audiovisuel** — 2027-03-31 — https://www.maregionsud.fr/vos-aides/detail/soutien-aux-festivals-aux-manifestations-et-a-la-diffusion
+- **Soutien aux industries agro-alimentaires** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/soutien-aux-industries-agro-alimentaires
+- **SOUTIEN AUX INITIATIVES** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/jeunesse/projets-initiatives-jeunesse-soutien-aux-projets-portes-par-les-jeunes-constitues-en-association
+- **Soutien aux initiatives artistiques et culturelles locales** — échéance à vérifier — https://www.grandest.fr/vos-aides-regionales/initiatives-artistiques-et-culturelles-locales/
+- **Soutien aux initiatives associatives INAS** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif752
+- **Soutien aux langues régionales** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/soutien-aux-langues-regionales
+- **Soutien aux lieux : musique, théâtre, arts du mouvement, arts visuels** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/soutien-aux-lieux-musique-theatre-arts-du-mouvement-arts-visuels
+- **Soutien aux M aisons des Lycéens et ALESA 2026** — 2026-07-06 — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/soutien-aux-maisons-des-lyceens-mdl-et-associations-des-lyceens-etudiants-stagiaires-et-apprentis
+- **Soutien aux manifestations cinématographiques** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/127
+- **Soutien aux manifestations locales et régionales - hors filières agricoles** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/soutien-aux-manifestations-locales-et-regionales-hors-filieres-agricoles
+- **Soutien aux manifestations pour le livre et aux résidences d’auteurs** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/soutien-aux-manifestations-pour-le-livre-et-la-lecture-et-aux-residences-dauteurs
+- **Soutien aux manifestations sportives** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/soutien-aux-manifestations-sportives
+- **Soutien aux manifestations sportives MASP** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif719
+- **Soutien aux modes de garde innovants pour la petite enfance** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/248
+- **Soutien aux Parcs naturels régionaux des Pays de la Loire** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/soutien-aux-parcs-naturels-regionaux-des-pays-de-la-loire
+- **Soutien aux personnes concernées par l'après-cancer, la drépanocytose ou les soins palliatifs** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/403
+- **Soutien aux plans simples de gestion concertés** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/soutien-aux-plans-simples-de-gestion-concertes
+- **Soutien aux plateformes du réseau Biogenouest** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/soutien-aux-plateformes-du-reseau-biogenouest
+- **Soutien aux professionnels des métiers d’art et aux salons de promotion à vocation régionale** — échéance à vérifier — https://www.grandest.fr/vos-aides-regionales/soutien-professionnels-metiers-art-salons-investissements/
+- **Soutien aux projets associatifs en faveur du départ en vacances** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/25
+- **Soutien aux projets citoyens territoriaux pour la transition énergétique et climatique en Nouvelle-Aquitaine** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/transition-energetique-et-ecologique/soutien-aux-projets-citoyens-territoriaux-pour-la-transition-energetique-et-climatique-en-nouvelle
+- **Soutien aux projets d’innovation hybride (HPC/Quantique) dans le cadre du projet Maquest** — échéance à vérifier — https://www.grandest.fr/vos-aides-regionales/soutien-aux-projets-dinnovation-hybride-hpc-quantique-dans-le-cadre-du-projet-maquest/
+- **Soutien aux projets de maisons et centres de santé pluri-professionnels** — échéance à vérifier — https://www.laregion.fr/soutien-maisons-de-sante
+- **Soutien aux projets des jeunes – projets CLAP (Comité Local d'Aide aux Projets des jeunes)** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif754
+- **Soutien aux projets en faveur des animaux de compagnie** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/387
+- **Soutien aux projets innovants pour les forêts franciliennes et l'usage des biosourcés** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/691
+- **Soutien aux refuges de montagne** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/soutien-refuges-montagne
+- **Soutien aux réseaux cinématographiques** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/128
+- **Soutien aux réseaux de distribution d'aide alimentaire** — 2026-09-28 — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/soutien-aux-reseaux-de-distribution-daide-alimentaire
+- **Soutien aux résidences d’écriture pour le cinéma et l’audiovisuel** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/soutien-aux-residences-decriture-pour-le-cinema-et-laudiovisuel
+- **Soutien aux solutions de production et préparation de la matière en vue d'utilisation ou de fabrication de matières premières recyclées.** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/soutien-aux-solutions-de-production-et-preparation-de-la-matiere-en-vue-dutilisation-ou-de-fabrication-de-matieres-premieres-recyclees
+- **Soutien aux sportifs de haut niveau inscrits en structure** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/soutien-aux-sportifs-de-haut-niveau-inscrits-en-structure
+- **Soutien aux sportifs du Team Jeux Olympiques et Paralympiques Nouvelle-Aquitaine** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/soutien-aux-sportifs-du-team-jeux-olympiques-et-paralympiques-nouvelle-aquitaine
+- **Soutien aux sportifs du Team Nouvelle-Aquitaine** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/soutien-aux-sportifs-du-team-nouvelle-aquitaine
+- **Soutien aux structures d'accès au sport de haut niveau** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/soutien-aux-structures-dacces-au-sport-de-haut-niveau
+- **Soutien aux structures d’Accueil Information Orientation SAIO** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif123
+- **Soutien aux structures régionales d'accès au haut niveau en région** — 2026-12-31 — https://www.maregionsud.fr/vos-aides/detail/soutien-aux-structures-regionales-dacces-au-haut-niveau-en-region
+- **Soutien aux structures sportives – aide aux clubs – aide aux projets (AAP)** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/238
+- **Soutien aux tournages** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/soutien-aux-tournages
+- **Soutien aux travaux sur les équipements sportifs collectifs** — 2026-12-31 — https://www.maregionsud.fr/vos-aides/detail/soutien-aux-travaux-sur-les-equipements-sportifs-collectifs
+- **Soutien conjoncturel pour les entreprises ESS en difficulté** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/soutien-conjoncturel-pour-les-entreprises-ess-en-difficulte
+- **Soutien de la Région Hauts-de-France au Nouveau Programme National de Renouvellement Urbain - NPNRU** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif974
+- **Soutien des clubs "Occitanie - Sport Performance"** — échéance à vérifier — https://www.laregion.fr/Soutien-des-clubs-Occitanie-Sport-Performance
+- **Soutien des clubs sportifs "Occitanie - Ambassadeur Sport"** — échéance à vérifier — https://www.laregion.fr/Soutien-des-clubs-sportifs-Occitanie-Ambassadeur-Sport
+- **Soutien des clubs sportifs "Occitanie sport pour tous"** — échéance à vérifier — https://www.laregion.fr/Soutien-des-clubs-sportifs-Occitanie-sport-pour-tous
+- **Soutien des manifestations sportives** — échéance à vérifier — https://www.laregion.fr/Soutien-des-manifestations-sportives
+- **Soutien en trésorerie et aide à l’investissement d’urgence aux acteurs économiques suite aux incendies de l’été 2025** — 2026-03-31 — https://www.laregion.fr/Soutien-en-tresorerie-et-aide-a-l-investissement-d-urgence-aux-acteurs-economiques
+- **Soutien exceptionnel aux éleveurs ovins touchés par la FCO8** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/soutien-exceptionnel-aux-eleveurs-ovins-touches-par-la-fco8
+- **Soutien juridique aux éleveurs dans le cadre des procédures judiciaires en lien avec l’utilisation des chiens de protection** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/soutien-juridique-aux-eleveurs-dans-le-cadre-des-procedures-judiciaires-en-lien-avec-lutilisation-des-chiens-de-protection
+- **Soutien majoré aux organismes de formation en apprentissage** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/357
+- **Soutien pour une Ile-de-France sans SIDA** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/391
+- **Soutien régional à l’acquisition de matériels et aux investissements sportifs** — 2026-06-25 — https://www.paysdelaloire.fr/les-aides/soutien-regional-lacquisition-de-materiels-et-aux-investissements-sportifs
+- **Soutien régional à l'acquisition de matériels sportifs, e-sportifs ou parasportifs** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/717
+- **Soutien régional à l'habitat** — 2026-12-31 — https://www.maregionsud.fr/vos-aides/detail/soutien-regional-a-lhabitat
+- **Soutien régional à la création d'emplois étudiants mentors franciliens** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/589
+- **Soutien régional à la création et à la réhabilitation d'équipements sportifs franciliens** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/706
+- **Soutien régional à la structuration et au développement des disciplines sportives et de l'esport** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/17
+- **Soutien régional aux clubs de lecture et à la lecture à voix haute dans les lycées** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/555
+- **Soutien régional aux événements sportifs et e-sportifs** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/708
+- **Soutien régional aux expressions citoyennes** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/1
+- **Soutien régional aux partenaires engagés pour la nature** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/soutien-regional-aux-partenaires-engages-pour-la-nature
+- **Soutien régional aux ULIS Micro lycée - ULMI** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif1023
+- **Soutien régional en investissement pour la protection des jeunes en situation de précarité** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/6
+- **Soutien scolaire : service gratuit d'aide aux devoirs** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/soutien-scolaire-service-gratuit-daide-aux-devoirs
+- **SOUTIENS AUX RADIOS ASSOCIATIVES EN HAUTS DE FRANCE - RADIO** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif1031
+- **Spectacle et Arts Vivants - Aides Culturelles CTG - Collectivité Territoriale de Guyane** — échéance à vérifier — https://www.ctguyane.fr/aides-culturelles-de-la-collectivite-territoriale-de-guyane/spectacle-et-arts-vivants-aides-culturelles-ctg/
+- **Stage de parrainage en agriculture** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/stage-de-parrainage-en-agriculture
+- **Stages à l’étranger infra bac** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/stages-letranger-infra-bac
+- **Stages à l’étranger post bac** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/jeunesse/stages-letranger-post-bac
+- **Stages au Sud : pour contribuer à la réussite de tous les jeunes** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/stages-au-sud-pour-contribuer-a-la-reussite-de-tous-les-jeunes
+- **START’UP - Aide à la création/reprise d'entreprises Start'Up** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif1000
+- **STARTER ESS : Accompagnement à la création d'entreprise sociale et solidaire** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif948
+- **Startup, industrie de demain** — échéance à vérifier — https://www.laregion.fr/Startup-industrie-de-demain
+- **Stationnement vélo sécurisé au niveau des points d'arrêts routiers structurants du réseau Aléop** — 2028-12-31 — https://www.paysdelaloire.fr/les-aides/stationnement-velo-securise-au-niveau-des-points-darrets-routiers-structurants-du-reseau-aleop
+- **Stratégie durable de l’entreprise** — échéance à vérifier — https://www.grandest.fr/vos-aides-regionales/strategie-durable-entreprise/
+- **Stratégie régionale de l'eau** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/transition-energetique-et-ecologique/aides-de-la-strategie-regionale-de-leau
+- **Structures d’interface scientifique et technologique** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/structures-dinterface-scientifique-et-technologique
+- **Subvention d’investissement pour les établissements prives agricoles sous contrat** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/4186
+- **Subvention de fonctionnement dans les écoles de production** — échéance à vérifier — https://www.bourgognefranchecomte.fr/node/3970
+- **Subvention et visibilité** — échéance à vérifier — https://www.paysdelaloire.fr/mon-conseil-regional/identite-visuelle/subvention-visibilite
+- **Subvention Filière Maritime Pêche** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/subvention-filiere-maritime-peche
+- **SUBVENTION INNOVATION** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/subvention-innovation
+- **SUBVENTION INNOVATION - INNOVATION CREATIVE** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/subvention-innovation-innovation-creative
+- **SUBVENTION INNOVATION OUTRE MER** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/subvention-innovation-outre-mer-0
+- **SUBVENTION INVESTISSEMENT OUTRE-MER** — échéance à vérifier — https://www.bpifrance.fr/catalogue-offres/subvention-investissement-outre-mer
+- **Subvention pour la mise en place d'un abri sur un point d'arrêt de ligne scolaire** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/subvention-pour-la-mise-en-place-dun-abri-sur-un-point-darret-de-ligne-scolaire
+- **Subventions via d'autres modalités** — échéance à vérifier — https://europe.maregionsud.fr/aides-et-appels-a-projets/subventions-via-dautres-modalites
+- **Subventions via les appels à projets** — échéance à vérifier — https://europe.maregionsud.fr/aides-et-appels-a-projets/projets
+- **SUD Accélérateur** — 2027-02-26 — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/sud-accelerateur
+- **Sud Développement** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/sud-developpement
+- **Sud Garantie** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/sud-garantie
+- **Sud Investissement** — 2026-09-30 — https://www.maregionsud.fr/vos-aides/detail/sud-investissement
+- **Sud Prêt Climat** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/sud-pret-climat
+- **Sud Prévention TPE-PME** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/sud-prevention-tpe-pme
+- **Sud saisonniers** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/sud-saisonniers
+- **Suivi de mon dossier et obligations liées à mon financement** — échéance à vérifier — https://beeurope.grandest.fr/mes-obligations/
+- **T RANSFORMATION DES PRODUITS DE LA PECHE** — 2027-06-30 — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/transformation-des-produits-de-la-peche-et-de-laquaculture
+- **TA 1.3.3.1 : Aide au fret intrants/extrants** — échéance à vérifier — https://www.europe-martinique.com/wp-content/uploads/2025/07/MESURE-1.3.31-Aide-au-fret-intrants-extrants.pdf
+- **TABLE DES MATIERES** — 2027-12-31 — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/accompagnement-des-plateformes-mutualisees-et-ouvertes-de-recherche-en-nouvelle-aquitaine
+- **Tableau récapitulatif des dépenses** — échéance à vérifier — https://www.europe-martinique.com/wp-content/uploads/2025/02/Annexe1-2127INSTRUCTION-DE-LA-DEMANDE-Tableau-recapitulatif-des-depenses-Aide-au-fret-bokay-ou-dechets.xls
+- **Tableau récapitulatif des dépenses – Certification** — échéance à vérifier — https://www.europe-martinique.com/wp-content/uploads/2025/02/Annexe1-2127-Certification-des-depenses-Tableau-recapitulatif-des-depenses-Aide-au-fret-bokay-ou-dechets.xls
+- **Tarif spécial Main square Festival** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif1082
+- **Tarification réduite sur le réseau d'autocars Hauts-de-France mobilités** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif1002
+- **Tarification solidaire de la restauration scolaire des lycées** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/jeunesse/tarification-solidaire-de-la-restauration-scolaire-des-lycees
+- **Technologies et vecteurs énergétiques innovants** — 2026-10-30 — https://les-aides.nouvelle-aquitaine.fr/transition-energetique-et-ecologique/technologies-et-vecteurs-energetiques-innovants
+- **Téléchargements des fichiers - Coup de pousse 2016** — échéance à vérifier — https://www.laregion.fr/Telechargements-des-fichiers-Coup-de-pousse-2016
+- **Télécharger l'appel** — échéance à vérifier — https://europe-a-mayotte.yt/wp-content/uploads/2026/09/AAP-_-RESTORE-DI-021-Developpement-commercial-et-internationalisation-des-PME.zip
+- **Terra Nea** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/terra-nea
+- **Territoires d'ESS en Hauts-de-France - TESS** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif1017
+- **Territoires d'expérimentation** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/territoires-dexperimentation
+- **Tester ma création ou ma reprise d'entreprise** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/region-commerce-et-artisanat-creation-reprise-entreprendre-en-cae-couveuse-ou-incubation
+- **Textes réglementaires** — échéance à vérifier — https://www.europeidf.fr/les-financements-europeens/textes-reglementaires
+- **Thèses tandem aux thèses Cifre** — 2026-05-22 — https://www.paysdelaloire.fr/les-aides/theses-tandem-aux-theses-cifre
+- **Tickets-Loisirs** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/123
+- **Tourisme durable et patrimoine en milieu rural** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/tourisme-durable-et-patrimoine-en-milieu-rural
+- **Tourisme durable, patrimoine et culture** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/tourisme-durable-patrimoine-et-culture
+- **Tourisme: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/jai-un-projet/je-trouve-un-financement/tourisme
+- **Toutes les aides** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projets
+- **Toutes vos aides en 1 clic !** — 2026-09-30 — https://www.maregionsud.fr/ma-region/cest-quoi-la-region/education-orientation-et-apprentissage/toutes-vos-aides-en-1-clic
+- **TP'up** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/436
+- **TPE & PME gagnantes sur tous les coûts !** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/tpe-pme-gagnantes-sur-tous-les-couts
+- **Traditions - Lieux de conservation des traditions régionales** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/traditions-lieux-de-conservation-des-traditions-regionales
+- **Traditions - Valorisation et diffusion des traditions régionales** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/traditions-valorisation-et-diffusion-des-traditions-regionales
+- **Trajectoire nationale de la recherche ligérienne** — 2026-01-21 — https://www.paysdelaloire.fr/les-aides/trajectoire-nationale-de-la-recherche-ligerienne
+- **Transformation et/ou commercialisation de produits agricoles par les agriculteurs et leurs groupements** — 2026-03-16 — https://guide-aides.hautsdefrance.fr/dispositif996
+- **Transformer et valoriser mes productions agricoles (FEADER - Dispositif 302)** — échéance à vérifier — https://www.auvergnerhonealpes.fr/aides/transformer-et-valoriser-mes-productions-agricoles-feader-dispositif-302
+- **Transition énergétique et écologique | Le Guide des Aides** — 2028-12-31 — https://les-aides.nouvelle-aquitaine.fr/transition-energetique-et-ecologique
+- **Transition énergétique: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/jai-un-projet/je-trouve-un-financement/transition-energetique
+- **Transitions agroécologiques des productions végétales** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/transitions-agroecologiques-des-productions-vegetales
+- **Transports: Europe en Hauts-de-France** — échéance à vérifier — https://europe-en-hautsdefrance.eu/jai-un-projet/je-trouve-un-financement/transports
+- **Travaux de géothermie/thalassothermie** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/travaux-de-geothermie-thalassothermie
+- **Travaux de récupération de chaleur fatale** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/travaux-de-recuperation-de-chaleur-fatale
+- **Travaux de réseaux de chaleur et de froid** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/travaux-de-reseaux-de-chaleur-et-de-froid
+- **Travaux de résorption de fuites sur les réseaux d'eau potable** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/travaux-de-resorption-de-fuites-sur-les-reseaux-deau-potable
+- **Tri à la source et valorisation des biodéchets** — 2026-10-30 — https://www.maregionsud.fr/vos-aides/detail/tri-a-la-source-et-valorisation-des-biodechets
+- **Trier et valoriser les biodéchets pour un retour au sol de la matière organique** — échéance à vérifier — https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/trier-et-valoriser-les-biodechets-pour-un-retour-au-sol-de-la-matiere-organique
+- **Trop Puissant** — 2026-10-16 — https://www.maregionsud.fr/vos-aides/detail/trop-puissant
+- **Trophée de l'étudiant engagé** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/789
+- **Trophées franciliens de l'innovation numérique dans le supérieur** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/601
+- **Trouver un financement** — échéance à vérifier — https://www.europe-guadeloupe.fr/jai-un-projet/trouver-un-financement/
+- **Trouver une aide pour financer son projet** — échéance à vérifier — https://www.europe-en-france.gouv.fr/fr/trouver-aide
+- **TUTO #1 Comment s'informer sur le FEADER ?** — échéance à vérifier — https://www.europe-guadeloupe.fr/wp-content/uploads/2025/11/TUTO-1.pdf
+- **TUTO #2 Quelles sont les étapes essentielles d'un projet FEADER ?** — échéance à vérifier — https://www.europe-guadeloupe.fr/wp-content/uploads/2025/11/TUTO-2.pdf
+- **TUTO #3 Quel est le cycle de vie d'un projet FEADER ?** — échéance à vérifier — https://www.europe-guadeloupe.fr/wp-content/uploads/2025/11/TUTO-3.pdf
+- **TUTO #4 Quels sont les dispositifs FEADER ouverts sur EURO-PAC ?** — échéance à vérifier — https://www.europe-guadeloupe.fr/wp-content/uploads/2026/01/TUTO-4-Jan26.pdf
+- **TUTO #7 Comment savoir si je peux déposer une demande d'aide FEADER ?** — échéance à vérifier — https://www.europe-guadeloupe.fr/wp-content/uploads/2025/11/TUTO-7.pdf
+- **TUTO #8 Ou trouver les pièces justificatives à déposer dans mon dossier FEADER ?** — échéance à vérifier — https://www.europe-guadeloupe.fr/wp-content/uploads/2025/11/TUTO-8.pdf
+- **TUTO #9 Comment faire ma demande d'aide FEADER sur EURO-PAC ?** — échéance à vérifier — https://www.europe-guadeloupe.fr/wp-content/uploads/2025/11/TUTO-9.pdf
+- **Un accompagnement gagnant : les projets FSE+ permettent de trouver un emploi !** — échéance à vérifier — https://www.europeidf.fr/actualites/un-accompagnement-gagnant-les-projets-fse-permettent-de-trouver-un-emploi
+- **Une aide à la formation certifiante pour les demandeurs d'emploi** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/service-public-regional-de-la-formation-professionnelle
+- **Une chance pour tous** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/599
+- **Une Europe plus utile pour une Région plus efficace** — échéance à vérifier — https://www.paysdelaloire.fr/territoires-et-europe/financer-mon-projet-avec-les-aides-europeennes
+- **Usine du Futur : excellence opérationnelle des PME/ETI** — 2026-12-31 — https://les-aides.nouvelle-aquitaine.fr/transition-energetique-et-ecologique/usine-du-futur-agissons-aujourd-hui-pour-une-industrie-durable-et-competitive
+- **ValoRIS** — échéance à vérifier — https://guide-aides.hautsdefrance.fr/dispositif824
+- **Valorisation du patrimoine** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/valorisation-du-patrimoine
+- **Version du 26/09/2025 Page 1 / 7** — 2026-11-20 — https://www.paysdelaloire.fr/les-aides/appel-projets-developpement-experimental-en-agriculture
+- **Versions des programmes FEDER-FSE+ - Europe Martinique** — échéance à vérifier — https://www.europe-martinique.com/versions-des-programmes-feder-fse
+- **Villages intelligents et durables** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/villages-intelligents-et-durables
+- **Villes intelligentes** — échéance à vérifier — https://www.europe-bfc.eu/nos-aides/villes-intelligentes
+- **Visionnez la vidéo de présentation du programme FEDER FSE+ FTJ 2021-2027** — échéance à vérifier — https://europe.maregionsud.fr/projets-realises-1/detail/visionnez-la-video-de-presentation-du-programme-feder-fse-ftj-2021-2027
+- **VITITECH** — échéance à vérifier — https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/vititech
+- **VŒUX PEPS 2026-2027 VPEPS26** — 2025-12-18 — https://guide-aides.hautsdefrance.fr/dispositif794
+- **Vos Aides** — 2026-10-30 — https://www.maregionsud.fr/vos-aides?tx_solr%5Bpage%5D=2
+- **Vos aides régionales & européennes (251)** — échéance à vérifier — https://www.grandest.fr/aides/page/3/
+- **Webinaire : Comprendre l’appel à projets FEDER " Réseaux Energétiques intelligents "** — échéance à vérifier — https://europe-en-hautsdefrance.eu/actualites-et-evenements/detail-de-lactualite/webinaire-comprendre-lappel-a-projets-feder-reseaux-energetiques-inteligents
+- **Webinaire AAP Patrimoine culturel et touristique** — 2024-06-07 — https://europe-en-hautsdefrance.eu/actualites-et-evenements/detail-de-lactualite/webinaire-aap-patrimoine-culturel-et-touristique
+- **Webinaire de présentation de l'appel à projets FEDER Géothermie** — 2026-11-16 — https://www.europeidf.fr/leurope-dans-ma-region/agenda/webinaire-de-presentation-de-lappel-a-projets-feder-geothermie
+- **Wébinaire FEDER sur le renouveau du Bassin minier** — échéance à vérifier — https://europe-en-hautsdefrance.eu/actualites-et-evenements/detail-de-lactualite/webinaire-feder-sur-le-renouveau-du-bassin-minier
+- **www.paysdelaloire.fr** — échéance à vérifier — https://www.paysdelaloire.fr/les-aides/pass-entreprendre-en-pays-de-la-loire-pass-diagnostic
+- **Zéro déchet et économie circulaire** — échéance à vérifier — https://www.iledefrance.fr/aides-et-appels-a-projets/335
+- **ZOU ! Études** — échéance à vérifier — https://www.maregionsud.fr/vos-aides/detail/zou-etudes
+
+## Modifications
+- **Accueil | L'Europe s'engage en France, le portail des Fonds européens** — échéance/statut actuel : 2032-12-31
+- **AMI accompagnement à la modernisation et transition écologique des PME et ETI industrielles** — échéance/statut actuel : 2023-07-21
+- **AMI Fonds de capital investissement ciblant les structures de la Femtech** — échéance/statut actuel : 2025-09-22
+- **APPEL A MANIFESTATION D’INTERET - Activité économique de surf sur l'île de loisirs de Vaires-Torcy** — échéance/statut actuel : 2019-10-18
+- **Appel à manifestation d’intérêt - Ecole Régionale du Numérique 2027/2030** — échéance/statut actuel : 2026-09-30
+- **Appel à Manifestation d’Intérêt - Offres de Bons Plans jeunesse "Carte Jeune Région"** — échéance/statut actuel : ACTIVE
+- **Appel à manifestation d’intérêt - Projets structurants de Culture Scientifique Technique et Industrielle** — échéance/statut actuel : ACTIVE
+- **Appel à Manifestation d’Intérêt "Transformer son entreprise - Vers un engagement plus vert"** — échéance/statut actuel : ACTIVE
+- **Appel à Manifestation d’Intérêt (AMI) - Territoires viticoles pilotes, laboratoires d’une filière en mutation et d’une région aux avant-postes du changement climatique** — échéance/statut actuel : 2026-01-02
+- **Appel à Manifestation d’Intérêt 2024-2025 « Nouveaux modèles énergétiques citoyens »** — échéance/statut actuel : 2025-08-29
+- **Appel à projet - "Investissement pour la solidarité alimentaire"** — échéance/statut actuel : 2026-06-30
+- **Appel à Projet - Accompagnement à la création d’activité agricole (post-installation)** — échéance/statut actuel : ACTIVE
+- **Appel à Projet - Accompagnement à la création d’activité agricole (pré-installation)** — échéance/statut actuel : ACTIVE
+- **Appel à Projet - Plan Littoral 21 - Déploiement des Ports Propres en Occitanie** — échéance/statut actuel : 2026-05-22
+- **Appel à projets - « Coopération internationale pour l’eau et l’agroécologie » 2025** — échéance/statut actuel : 2026-01-04
+- **Appel à projets - Accompagnement des actions d’expérimentation en agriculture** — échéance/statut actuel : 2030-12-31
+- **Appel à projets - Accompagner les transitions et les métiers de demain** — échéance/statut actuel : 2026-07-23
+- **Appel à projets - Anim’Bio Pour le développement et la structuration des filières biologiques en Occitanie** — échéance/statut actuel : ACTIVE
+- **Appel à projets - Apprentissage en Occitanie 2026** — échéance/statut actuel : 2025-05-14
+- **Appel à projets - Coopération transfrontalière dans les Pyrénées** — échéance/statut actuel : 2023-11-30
+- **Appel à projets - Dispositif régional d’accompagnement des jeunes volontaires en service civique 2025/2026** — échéance/statut actuel : 2025-04-04
+- **Appel à projets - Foodtrucks 2025-2026 - Site de Capdeville** — échéance/statut actuel : 2025-07-11
+- **Appel à projets - Impulser des formations d’enseignement supérieur pour préparer aux métiers de demain 2026** — échéance/statut actuel : 2026-04-30
+- **Appel à projets - Info métiers** — échéance/statut actuel : 2026-05-07
+- **Appel à projets - Nérée 4 : valorisation du patrimoine maritime régional d’Occitanie** — échéance/statut actuel : 2025-07-11
+- **Appel à projets - Réduction de l’impact des ancres des navires de plaisance par la mise en peuvre de mouillages organisés** — échéance/statut actuel : 2023-02-28
+- **Appel à projets - Total Festum - Solstice d’été / Feu de la Saint-Jean** — échéance/statut actuel : ACTIVE
+- **Appel à projets - Tourisme durable, responsable et solidaire** — échéance/statut actuel : 2026-06-30
+- **Appel à projets : Lutte contre l&#8217;illettrisme - sensibilisation et information des acteurs sur le repérage et l&#8217;orientation des publics** — échéance/statut actuel : ACTIVE
+- **Appel à projets "EMERGENCE" - Edition 2027** — échéance/statut actuel : 2026-11-13
+- **Appel à projets « Île-de-France zéro plastique »** — échéance/statut actuel : 2026-05-21
+- **Appel à projets diffusion de la Culture Scientifique Technique et Industrielle (CSTI) 2027** — échéance/statut actuel : ACTIVE
+- **Appel à projets École-Entreprise : partenariats associatifs** — échéance/statut actuel : 2026-03-02
+- **Appel à projets en faveur de la sensibilisation et de l’amélioration des conditions d’accueil des bénéficiaires d’une protection internationale et des demandeurs d’asile** — échéance/statut actuel : 2025-03-31
+- **Appel à projets Entrepreneuriat** — échéance/statut actuel : 2025-03-15
+- **Appel à projets Ingénierie et Formations professionnelles (IFP Île-de-France)** — échéance/statut actuel : 2026-07-01
+- **APPEL A PROJETS OCCITANIE LIBRE ET SOLIDAIRE** — échéance/statut actuel : 2027-09-30
+- **Appel à projets pour l’égalité réelle entre les Femmes et les Hommes en Occitanie 2023** — échéance/statut actuel : ACTIVE
+- **Appel à projets pour l'orientation des Franciliens tout au long de la vie** — échéance/statut actuel : 2027-04-08
+- **Appel à projets pour le soutien aux Actions de développement et structuration des filières en Agriculture Biologique en Occitanie** — échéance/statut actuel : 2022-10-21
+- **Appel à projets READYNOV - Santé du futur, Silver Economie et Industrie du sport - Clos** — échéance/statut actuel : ACTIVE
+- **Calendrier Appels à projets FEDER- FSE+ 2021-2027 (octobre 2024)** — échéance/statut actuel : 2015-06-24
+- **corse_europa** — échéance/statut actuel : 2026-09-30
+- **Dotation jeunes agriculteurs (DJA) (FEADER)** — échéance/statut actuel : ACTIVE
+- **Etre conseillé sur notre activité de transformation et de commercialisation** — échéance/statut actuel : 2026-08-31
+- **FEADER - Soutien aux investissements agricoles - Modernisation des exploitations AAP 2026** — échéance/statut actuel : 2026-11-15
+- **FEADER - Soutien aux investissements agricoles environnementaux non productifs AAP 2026** — échéance/statut actuel : 2026-11-15
+- **FEDER 2014 – 2020** — échéance/statut actuel : 2019-04-30
+- **Fonds régional pour les talents émergents (FoRTE) - Subvention aux structures (2026)** — échéance/statut actuel : 2026-11-30
+- **grand_est_europe** — échéance/statut actuel : 2025-10-31
+- **guyane_europe** — échéance/statut actuel : 2017-09-30
+- **martinique_europe** — échéance/statut actuel : 2019-04-30
+- **mayotte_adim** — échéance/statut actuel : 2025-09-26
+- **nouvelle_aquitaine_entreprises** — échéance/statut actuel : 2028-12-31
+- **occitanie_foster** — échéance/statut actuel : 2026-11-30
+- **paca_aides_master** — échéance/statut actuel : 2029-12-31
+- **Page officielle** — échéance/statut actuel : 2026-07-24
+- **pdl_france2030** — échéance/statut actuel : 2026-05-22
+
+## Aides devenues closes / obsolètes
+- **Appel à Manifestation d’Intérêt (AMI) - Territoires viticoles pilotes, laboratoires d’une filière en mutation et d’une région aux avant-postes du changement climatique** — ARCHIVE — https://www.laregion.fr/Appel-Manifestation-Interet-Territoires-viticoles-pilotes-filiere-mutation
+- **Appel à Manifestation d’Intérêt 2024-2025 « Nouveaux modèles énergétiques citoyens »** — ARCHIVE — https://www.laregion.fr/Appel-a-Manifestation-d-Interet-2024-2025-Nouveaux-modeles-energetiques-citoyens
+- **Appel à projet - "Investissement pour la solidarité alimentaire"** — ARCHIVE — https://www.laregion.fr/Appel-a-projet-Investissement-pour-la-solidarite-alimentaire
+- **Appel à Projet - Plan Littoral 21 - Déploiement des Ports Propres en Occitanie** — ARCHIVE — https://www.laregion.fr/Appel-a-Projet-Plan-Littoral-21-Deploiement-des-Ports-Propres-en-Occitanie
+- **Appel à projets - « Coopération internationale pour l’eau et l’agroécologie » 2025** — ARCHIVE — https://www.laregion.fr/Appel-a-projets-Cooperation-internationale-pour-l-eau-et-l-agroecologie-2025
+- **Appel à projets - Apprentissage en Occitanie 2026** — ARCHIVE — https://www.laregion.fr/Appel-a-projets-Apprentissage-en-Occitanie-2026
+- **Appel à projets - Coopération transfrontalière dans les Pyrénées** — ARCHIVE — https://www.laregion.fr/Appel-a-projets-Cooperation-transfrontaliere-dans-les-Pyrenees
+- **Appel à projets - Foodtrucks 2025-2026 - Site de Capdeville** — ARCHIVE — https://www.laregion.fr/Appel-a-projets-Foodtrucks-2024-2025-Site-de-Capdeville
+- **Appel à projets - Impulser des formations d’enseignement supérieur pour préparer aux métiers de demain 2026** — ARCHIVE — https://www.laregion.fr/Appel-a-projets-Impulser-des-formations-d-enseignement-superieur-pour-preparer-aux
+- **Appel à projets - Info métiers** — ARCHIVE — https://www.laregion.fr/Appel-a-projets-Info-metiers
+- **Appel à projets - Nérée 4 : valorisation du patrimoine maritime régional d’Occitanie** — ARCHIVE — https://www.laregion.fr/Appel-a-projets-Neree-4-valorisation-du-patrimoine-maritime-regional-d-Occitanie
+- **Appel à projets - Réduction de l’impact des ancres des navires de plaisance par la mise en peuvre de mouillages organisés** — ARCHIVE — https://www.laregion.fr/Appel-a-projets-Reduction-de-l-impact-des-ancres-des-navires-de-plaisance-par-la
+- **Appel à projets - Tourisme durable, responsable et solidaire** — ARCHIVE — https://www.laregion.fr/Appel-a-projets-Tourisme-durable-responsable-et-solidaire
+- **Appel à projets en faveur de la sensibilisation et de l’amélioration des conditions d’accueil des bénéficiaires d’une protection internationale et des demandeurs d’asile** — ARCHIVE — https://www.laregion.fr/Soutien-demandeurs-asile-bpi-refugies
+- **Appel à projets pour le soutien aux Actions de développement et structuration des filières en Agriculture Biologique en Occitanie** — ARCHIVE — https://www.laregion.fr/Appel-a-projets-soutien-Actions-developpement-structuration-des-filieres-Agriculture-Biologique-Occitanie
+- **occitanie_foster** — STALE — https://www.laregion.fr/IMG/pdf/1/d/7/foster_re_gion_occitanie_flyer_v_internet.pdf
+- **nouvelle_aquitaine_entreprises** — STALE — https://les-aides.nouvelle-aquitaine.fr/system/files/specific_pj_files/1_formulaire_D1_equipes_27.pdf
+- **paca_aides_master** — STALE — https://www.maregionsud.fr/fileadmin/user_upload/1-FICHIERS/2-DOCUMENTS/Education-lycee-Formation/Communes_region_Loi_Montagne_-_Region_Sud.pdf
+- **corse_europa** — STALE — https://europa.corsica/wp-content/uploads/2026/03/AAP_DATA_CORSICA_Cahier_des_charges.pdf
+
+> Toute information sans preuve publique reste « NON DOCUMENTÉ — À VÉRIFIER ».

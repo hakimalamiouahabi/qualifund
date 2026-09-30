@@ -1,263 +1,747 @@
 {
-  "version": "12.2.0",
-  "generatedAt": "2026-09-28T15:47:24.906Z",
-  "engineVersion": "12.2.0",
+  "version": "12.6.0",
+  "generatedAt": "2026-09-30T08:54:12.000Z",
+  "engineVersion": "12.6.0",
   "total": 5,
   "passed": 5,
-  "threshold": 85,
+  "threshold": "profil métier — seuils de recette par cas",
   "results": [
     {
       "id": "innovation-ai-poc",
       "name": "R&D / IA — prototype et PoC",
-      "score": 96,
-      "min": 85,
+      "score": 86,
+      "min": 75,
       "pass": true,
       "dims": [
         {
-          "label": "Objectifs & thématiques",
-          "max": 25,
-          "score": 25,
-          "detail": "Forte concordance"
+          "key": "strategic",
+          "label": "Objectifs, priorités & thématiques",
+          "max": 1,
+          "score": 0.8500000000000001,
+          "ratio": 85,
+          "detail": "Alignement stratégique fort",
+          "matched": [
+            "prototype",
+            "logiciel",
+            "recherche",
+            "demonstrateur",
+            "intelligence",
+            "artificielle",
+            "numerique",
+            "data",
+            "innovation",
+            "cloud",
+            "digital",
+            "ai"
+          ],
+          "documented": true
         },
         {
-          "label": "Typologie de projet",
-          "max": 15,
-          "score": 15,
-          "detail": "Typologie 100%"
+          "key": "expected",
+          "label": "Nature des projets attendus",
+          "max": 1,
+          "score": 0.6400000000000001,
+          "ratio": 64,
+          "detail": "Projet comparé aux opérations attendues",
+          "matched": [
+            "prototype",
+            "logiciel",
+            "demonstrateur",
+            "innovation",
+            "digital",
+            "ai"
+          ],
+          "documented": true
         },
         {
-          "label": "Dépenses éligibles",
-          "max": 20,
-          "score": 20,
-          "detail": "Lots de coûts bien couverts"
+          "key": "expenses",
+          "label": "Dépenses & assiette éligible",
+          "max": 1,
+          "score": 1,
+          "ratio": 100,
+          "detail": "Postes de dépenses rapprochés de l’assiette publiée",
+          "matched": [
+            "personnel",
+            "prototype",
+            "logiciel",
+            "cloud",
+            "data",
+            "sous-traitance",
+            "recherche",
+            "innovation",
+            "digital"
+          ],
+          "documented": true
         },
         {
-          "label": "Éligibilité / sélection",
-          "max": 15,
-          "score": 11,
-          "detail": "Critères publiés rapprochés du projet"
+          "key": "selection",
+          "label": "Critères de sélection & prérequis",
+          "max": 1,
+          "score": 0.56,
+          "ratio": 56,
+          "detail": "Critères de sélection rapprochés du projet",
+          "matched": [
+            "prototype",
+            "demonstrateur",
+            "innovation",
+            "technologique",
+            "investment"
+          ],
+          "documented": true
         },
         {
-          "label": "Finance",
-          "max": 10,
-          "score": 10,
-          "detail": "Assiette / modalités cohérentes"
+          "key": "beneficiary",
+          "label": "Bénéficiaire, activité & secteur",
+          "max": 1,
+          "score": 0.6460000000000001,
+          "ratio": 65,
+          "detail": "Profil porteur à confirmer",
+          "matched": [],
+          "documented": true
         },
         {
-          "label": "Calendrier / maturité",
-          "max": 10,
-          "score": 10,
-          "detail": "Fenêtre exploitable et maturité rapprochée"
+          "key": "maturity",
+          "label": "Maturité technique & typologie",
+          "max": 1,
+          "score": 1,
+          "ratio": 100,
+          "detail": "Maturité et typologie cohérentes",
+          "matched": [],
+          "documented": true
         },
         {
-          "label": "Territorialité / stratégie",
-          "max": 5,
-          "score": 5,
-          "detail": "Territoire compatible"
+          "key": "impacts",
+          "label": "Impacts attendus & valeur du projet",
+          "max": 1,
+          "score": 1,
+          "ratio": 100,
+          "detail": "Impacts rapprochés des attendus du financeur",
+          "matched": [
+            "innovation",
+            "technologique",
+            "logiciel",
+            "data",
+            "cloud",
+            "prototype",
+            "recherche",
+            "demonstrateur",
+            "digital",
+            "ai",
+            "investment"
+          ],
+          "documented": true
+        },
+        {
+          "key": "finance",
+          "label": "Budget, intensité & montage financier",
+          "max": 1,
+          "score": 1,
+          "ratio": 100,
+          "detail": "Budget compatible avec les modalités connues",
+          "matched": [],
+          "documented": true
+        },
+        {
+          "key": "access",
+          "label": "Territoire, calendrier & accessibilité",
+          "max": 1,
+          "score": 1,
+          "ratio": 100,
+          "detail": "Accès temporel et territorial cohérent",
+          "matched": [],
+          "documented": true
         }
       ]
     },
     {
       "id": "industrialisation",
       "name": "Investissement productif — industrialisation",
-      "score": 95,
-      "min": 85,
+      "score": 91,
+      "min": 75,
       "pass": true,
       "dims": [
         {
-          "label": "Objectifs & thématiques",
-          "max": 25,
-          "score": 25,
-          "detail": "Forte concordance"
+          "key": "strategic",
+          "label": "Objectifs, priorités & thématiques",
+          "max": 1,
+          "score": 0.9200000000000002,
+          "ratio": 92,
+          "detail": "Alignement stratégique fort",
+          "matched": [
+            "production",
+            "machines",
+            "industrie",
+            "investissement",
+            "productif",
+            "industrialisation",
+            "investment"
+          ],
+          "documented": true
         },
         {
-          "label": "Typologie de projet",
-          "max": 15,
-          "score": 15,
-          "detail": "Typologie 100%"
+          "key": "expected",
+          "label": "Nature des projets attendus",
+          "max": 1,
+          "score": 0.9200000000000002,
+          "ratio": 92,
+          "detail": "Projet comparé aux opérations attendues",
+          "matched": [
+            "ligne",
+            "production",
+            "machines",
+            "investissement",
+            "productif",
+            "industrialisation",
+            "investment"
+          ],
+          "documented": true
         },
         {
-          "label": "Dépenses éligibles",
-          "max": 20,
-          "score": 20,
-          "detail": "Lots de coûts bien couverts"
+          "key": "expenses",
+          "label": "Dépenses & assiette éligible",
+          "max": 1,
+          "score": 1,
+          "ratio": 100,
+          "detail": "Postes de dépenses rapprochés de l’assiette publiée",
+          "matched": [
+            "machines",
+            "equipements",
+            "ligne",
+            "production",
+            "automatisation",
+            "batiment",
+            "industriel",
+            "industrialisation",
+            "digital",
+            "investment"
+          ],
+          "documented": true
         },
         {
-          "label": "Éligibilité / sélection",
-          "max": 15,
-          "score": 10,
-          "detail": "Critères publiés rapprochés du projet"
+          "key": "selection",
+          "label": "Critères de sélection & prérequis",
+          "max": 1,
+          "score": 0.9400000000000002,
+          "ratio": 94,
+          "detail": "Critères de sélection rapprochés du projet",
+          "matched": [
+            "production",
+            "investissement",
+            "capacite",
+            "emplois",
+            "productivite",
+            "deploiement",
+            "industrialisation",
+            "employment",
+            "investment"
+          ],
+          "documented": true
         },
         {
-          "label": "Finance",
-          "max": 10,
-          "score": 10,
-          "detail": "Assiette / modalités cohérentes"
+          "key": "beneficiary",
+          "label": "Bénéficiaire, activité & secteur",
+          "max": 1,
+          "score": 0.49560000000000004,
+          "ratio": 50,
+          "detail": "Profil porteur à confirmer",
+          "matched": [],
+          "documented": true
         },
         {
-          "label": "Calendrier / maturité",
-          "max": 10,
-          "score": 10,
-          "detail": "Fenêtre exploitable et maturité rapprochée"
+          "key": "maturity",
+          "label": "Maturité technique & typologie",
+          "max": 1,
+          "score": 1,
+          "ratio": 100,
+          "detail": "Maturité et typologie cohérentes",
+          "matched": [],
+          "documented": true
         },
         {
-          "label": "Territorialité / stratégie",
-          "max": 5,
-          "score": 5,
-          "detail": "Territoire compatible"
+          "key": "impacts",
+          "label": "Impacts attendus & valeur du projet",
+          "max": 1,
+          "score": 0.9571428571428573,
+          "ratio": 96,
+          "detail": "Impacts rapprochés des attendus du financeur",
+          "matched": [
+            "capacite",
+            "production",
+            "emplois",
+            "productivite",
+            "ligne",
+            "machines",
+            "industrialisation",
+            "employment"
+          ],
+          "documented": true
+        },
+        {
+          "key": "finance",
+          "label": "Budget, intensité & montage financier",
+          "max": 1,
+          "score": 1,
+          "ratio": 100,
+          "detail": "Budget compatible avec les modalités connues",
+          "matched": [],
+          "documented": true
+        },
+        {
+          "key": "access",
+          "label": "Territoire, calendrier & accessibilité",
+          "max": 1,
+          "score": 1,
+          "ratio": 100,
+          "detail": "Accès temporel et territorial cohérent",
+          "matched": [],
+          "documented": true
         }
       ]
     },
     {
       "id": "cyber-digital",
       "name": "Transformation numérique / cybersécurité",
-      "score": 100,
-      "min": 85,
+      "score": 92,
+      "min": 75,
       "pass": true,
       "dims": [
         {
-          "label": "Objectifs & thématiques",
-          "max": 25,
-          "score": 25,
-          "detail": "Forte concordance"
+          "key": "strategic",
+          "label": "Objectifs, priorités & thématiques",
+          "max": 1,
+          "score": 0.9800000000000002,
+          "ratio": 98,
+          "detail": "Alignement stratégique fort",
+          "matched": [
+            "cyber",
+            "cloud",
+            "cybersecurite",
+            "automatisation",
+            "logiciel",
+            "numerique",
+            "securite",
+            "informatique",
+            "digital"
+          ],
+          "documented": true
         },
         {
-          "label": "Typologie de projet",
-          "max": 15,
-          "score": 15,
-          "detail": "Typologie 100%"
+          "key": "expected",
+          "label": "Nature des projets attendus",
+          "max": 1,
+          "score": 0.9200000000000002,
+          "ratio": 92,
+          "detail": "Projet comparé aux opérations attendues",
+          "matched": [
+            "cyber",
+            "cloud",
+            "automatisation",
+            "logiciel",
+            "saas",
+            "digital"
+          ],
+          "documented": true
         },
         {
-          "label": "Dépenses éligibles",
-          "max": 20,
-          "score": 20,
-          "detail": "Lots de coûts bien couverts"
+          "key": "expenses",
+          "label": "Dépenses & assiette éligible",
+          "max": 1,
+          "score": 1,
+          "ratio": 100,
+          "detail": "Postes de dépenses rapprochés de l’assiette publiée",
+          "matched": [
+            "logiciels",
+            "cloud",
+            "cybersecurite",
+            "audit",
+            "securite",
+            "automatisation",
+            "integration",
+            "digital",
+            "cyber"
+          ],
+          "documented": true
         },
         {
-          "label": "Éligibilité / sélection",
-          "max": 15,
-          "score": 15,
-          "detail": "Critères publiés rapprochés du projet"
+          "key": "selection",
+          "label": "Critères de sélection & prérequis",
+          "max": 1,
+          "score": 0.6933333333333334,
+          "ratio": 69,
+          "detail": "Critères de sélection rapprochés du projet",
+          "matched": [
+            "cybersecurite",
+            "numerique",
+            "resilience",
+            "productivite",
+            "deploiement",
+            "digital",
+            "cyber"
+          ],
+          "documented": true
         },
         {
-          "label": "Finance",
-          "max": 10,
-          "score": 10,
-          "detail": "Assiette / modalités cohérentes"
+          "key": "beneficiary",
+          "label": "Bénéficiaire, activité & secteur",
+          "max": 1,
+          "score": 0.6812000000000001,
+          "ratio": 68,
+          "detail": "Profil porteur à confirmer",
+          "matched": [],
+          "documented": true
         },
         {
-          "label": "Calendrier / maturité",
-          "max": 10,
-          "score": 10,
-          "detail": "Fenêtre exploitable et maturité rapprochée"
+          "key": "maturity",
+          "label": "Maturité technique & typologie",
+          "max": 1,
+          "score": 1,
+          "ratio": 100,
+          "detail": "Maturité et typologie cohérentes",
+          "matched": [],
+          "documented": true
         },
         {
-          "label": "Territorialité / stratégie",
-          "max": 5,
-          "score": 5,
-          "detail": "Territoire compatible"
+          "key": "impacts",
+          "label": "Impacts attendus & valeur du projet",
+          "max": 1,
+          "score": 1,
+          "ratio": 100,
+          "detail": "Impacts rapprochés des attendus du financeur",
+          "matched": [
+            "resilience",
+            "cyber",
+            "productivite",
+            "numerique",
+            "cloud",
+            "saas",
+            "cybersecurite",
+            "securite",
+            "informatique",
+            "automatisation",
+            "logiciel",
+            "digital"
+          ],
+          "documented": true
+        },
+        {
+          "key": "finance",
+          "label": "Budget, intensité & montage financier",
+          "max": 1,
+          "score": 1,
+          "ratio": 100,
+          "detail": "Budget compatible avec les modalités connues",
+          "matched": [],
+          "documented": true
+        },
+        {
+          "key": "access",
+          "label": "Territoire, calendrier & accessibilité",
+          "max": 1,
+          "score": 1,
+          "ratio": 100,
+          "detail": "Accès temporel et territorial cohérent",
+          "matched": [],
+          "documented": true
         }
       ]
     },
     {
       "id": "decarbonation-energy",
       "name": "Décarbonation / efficacité énergétique",
-      "score": 100,
-      "min": 85,
+      "score": 95,
+      "min": 75,
       "pass": true,
       "dims": [
         {
-          "label": "Objectifs & thématiques",
-          "max": 25,
-          "score": 25,
-          "detail": "Forte concordance"
+          "key": "strategic",
+          "label": "Objectifs, priorités & thématiques",
+          "max": 1,
+          "score": 1,
+          "ratio": 100,
+          "detail": "Alignement stratégique fort",
+          "matched": [
+            "decarbonation",
+            "co2",
+            "efficacite",
+            "energetique",
+            "chaleur",
+            "electrification",
+            "industrie",
+            "energie",
+            "carbone",
+            "energy"
+          ],
+          "documented": true
         },
         {
-          "label": "Typologie de projet",
-          "max": 15,
-          "score": 15,
-          "detail": "Typologie 100%"
+          "key": "expected",
+          "label": "Nature des projets attendus",
+          "max": 1,
+          "score": 0.9200000000000002,
+          "ratio": 92,
+          "detail": "Projet comparé aux opérations attendues",
+          "matched": [
+            "decarbonation",
+            "efficacite",
+            "energetique",
+            "recuperation",
+            "chaleur",
+            "energy"
+          ],
+          "documented": true
         },
         {
-          "label": "Dépenses éligibles",
-          "max": 20,
-          "score": 20,
-          "detail": "Lots de coûts bien couverts"
+          "key": "expenses",
+          "label": "Dépenses & assiette éligible",
+          "max": 1,
+          "score": 1,
+          "ratio": 100,
+          "detail": "Postes de dépenses rapprochés de l’assiette publiée",
+          "matched": [
+            "equipements",
+            "efficacite",
+            "energetique",
+            "recuperation",
+            "chaleur",
+            "electrification",
+            "etudes",
+            "energie",
+            "energy"
+          ],
+          "documented": true
         },
         {
-          "label": "Éligibilité / sélection",
-          "max": 15,
-          "score": 15,
-          "detail": "Critères publiés rapprochés du projet"
+          "key": "selection",
+          "label": "Critères de sélection & prérequis",
+          "max": 1,
+          "score": 0.9400000000000002,
+          "ratio": 94,
+          "detail": "Critères de sélection rapprochés du projet",
+          "matched": [
+            "co2",
+            "energetique",
+            "energie",
+            "investissement",
+            "carbone",
+            "deploiement",
+            "decarbonation",
+            "energy",
+            "investment"
+          ],
+          "documented": true
         },
         {
-          "label": "Finance",
-          "max": 10,
-          "score": 10,
-          "detail": "Assiette / modalités cohérentes"
+          "key": "beneficiary",
+          "label": "Bénéficiaire, activité & secteur",
+          "max": 1,
+          "score": 0.6876000000000001,
+          "ratio": 69,
+          "detail": "Profil porteur à confirmer",
+          "matched": [],
+          "documented": true
         },
         {
-          "label": "Calendrier / maturité",
-          "max": 10,
-          "score": 10,
-          "detail": "Fenêtre exploitable et maturité rapprochée"
+          "key": "maturity",
+          "label": "Maturité technique & typologie",
+          "max": 1,
+          "score": 1,
+          "ratio": 100,
+          "detail": "Maturité et typologie cohérentes",
+          "matched": [],
+          "documented": true
         },
         {
-          "label": "Territorialité / stratégie",
-          "max": 5,
-          "score": 5,
-          "detail": "Territoire compatible"
+          "key": "impacts",
+          "label": "Impacts attendus & valeur du projet",
+          "max": 1,
+          "score": 1,
+          "ratio": 100,
+          "detail": "Impacts rapprochés des attendus du financeur",
+          "matched": [
+            "carbone",
+            "co2",
+            "energie",
+            "industriels",
+            "decarbonation",
+            "energetique",
+            "chaleur",
+            "efficacite",
+            "recuperation",
+            "electrification",
+            "energy"
+          ],
+          "documented": true
+        },
+        {
+          "key": "finance",
+          "label": "Budget, intensité & montage financier",
+          "max": 1,
+          "score": 1,
+          "ratio": 100,
+          "detail": "Budget compatible avec les modalités connues",
+          "matched": [],
+          "documented": true
+        },
+        {
+          "key": "access",
+          "label": "Territoire, calendrier & accessibilité",
+          "max": 1,
+          "score": 1,
+          "ratio": 100,
+          "detail": "Accès temporel et territorial cohérent",
+          "matched": [],
+          "documented": true
         }
       ]
     },
     {
       "id": "circular-water",
       "name": "Économie circulaire / eau",
-      "score": 100,
-      "min": 85,
+      "score": 92,
+      "min": 75,
       "pass": true,
       "dims": [
         {
-          "label": "Objectifs & thématiques",
-          "max": 25,
-          "score": 25,
-          "detail": "Forte concordance"
+          "key": "strategic",
+          "label": "Objectifs, priorités & thématiques",
+          "max": 1,
+          "score": 0.9800000000000002,
+          "ratio": 98,
+          "detail": "Alignement stratégique fort",
+          "matched": [
+            "reemploi",
+            "eau",
+            "economie",
+            "circulaire",
+            "recyclage",
+            "reutilisation",
+            "ecoconception",
+            "effluents",
+            "circular",
+            "water"
+          ],
+          "documented": true
         },
         {
-          "label": "Typologie de projet",
-          "max": 15,
-          "score": 15,
-          "detail": "Typologie 100%"
+          "key": "expected",
+          "label": "Nature des projets attendus",
+          "max": 1,
+          "score": 0.9000000000000001,
+          "ratio": 90,
+          "detail": "Projet comparé aux opérations attendues",
+          "matched": [
+            "reemploi",
+            "eau",
+            "recyclage",
+            "reutilisation",
+            "circular",
+            "water"
+          ],
+          "documented": true
         },
         {
-          "label": "Dépenses éligibles",
-          "max": 20,
-          "score": 20,
-          "detail": "Lots de coûts bien couverts"
+          "key": "expenses",
+          "label": "Dépenses & assiette éligible",
+          "max": 1,
+          "score": 1,
+          "ratio": 100,
+          "detail": "Postes de dépenses rapprochés de l’assiette publiée",
+          "matched": [
+            "equipements",
+            "recyclage",
+            "reemploi",
+            "traitement",
+            "eau",
+            "reutilisation",
+            "effluents",
+            "ecoconception",
+            "circular",
+            "water"
+          ],
+          "documented": true
         },
         {
-          "label": "Éligibilité / sélection",
-          "max": 15,
-          "score": 15,
-          "detail": "Critères publiés rapprochés du projet"
+          "key": "selection",
+          "label": "Critères de sélection & prérequis",
+          "max": 1,
+          "score": 0.7333333333333334,
+          "ratio": 73,
+          "detail": "Critères de sélection rapprochés du projet",
+          "matched": [
+            "eau",
+            "economie",
+            "dechets",
+            "reduction",
+            "consommation",
+            "demonstrateur",
+            "pilote",
+            "innovation",
+            "water"
+          ],
+          "documented": true
         },
         {
-          "label": "Finance",
-          "max": 10,
-          "score": 10,
-          "detail": "Assiette / modalités cohérentes"
+          "key": "beneficiary",
+          "label": "Bénéficiaire, activité & secteur",
+          "max": 1,
+          "score": 0.6876000000000001,
+          "ratio": 69,
+          "detail": "Profil porteur à confirmer",
+          "matched": [],
+          "documented": true
         },
         {
-          "label": "Calendrier / maturité",
-          "max": 10,
-          "score": 10,
-          "detail": "Fenêtre exploitable et maturité rapprochée"
+          "key": "maturity",
+          "label": "Maturité technique & typologie",
+          "max": 1,
+          "score": 1,
+          "ratio": 100,
+          "detail": "Maturité et typologie cohérentes",
+          "matched": [],
+          "documented": true
         },
         {
-          "label": "Territorialité / stratégie",
-          "max": 5,
-          "score": 5,
-          "detail": "Territoire compatible"
+          "key": "impacts",
+          "label": "Impacts attendus & valeur du projet",
+          "max": 1,
+          "score": 1,
+          "ratio": 100,
+          "detail": "Impacts rapprochés des attendus du financeur",
+          "matched": [
+            "reduction",
+            "dechets",
+            "consommation",
+            "eau",
+            "economie",
+            "circulaire",
+            "recyclage",
+            "reemploi",
+            "ecoconception",
+            "effluents",
+            "reutilisation",
+            "circular"
+          ],
+          "documented": true
+        },
+        {
+          "key": "finance",
+          "label": "Budget, intensité & montage financier",
+          "max": 1,
+          "score": 1,
+          "ratio": 100,
+          "detail": "Budget compatible avec les modalités connues",
+          "matched": [],
+          "documented": true
+        },
+        {
+          "key": "access",
+          "label": "Territoire, calendrier & accessibilité",
+          "max": 1,
+          "score": 1,
+          "ratio": 100,
+          "detail": "Accès temporel et territorial cohérent",
+          "matched": [],
+          "documented": true
         }
       ]
     }

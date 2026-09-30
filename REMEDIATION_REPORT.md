@@ -1,37 +1,38 @@
-# LEYTON RADAR — Rapport de remédiation v12.2.0
+# LEYTON RADAR — Rapport de remédiation v12.6.0
 
-Généré : 2026-09-28T15:47:28.344Z
+Généré : 2026-09-30T08:54:15.354Z
 
-- Fiches actives : **2173**
-- Fiches VÉRIFIÉES : **4**
-- File de remédiation : **2170**
-- Permanences sans preuve calendrier A/B : **8**
-- Avances remboursables / PTZ sans modalités de remboursement : **387**
-- Fiches sans CdC/règlement rattaché : **1958**
+- Fiches actives : **2078**
+- Fiches VÉRIFIÉES : **6**
+- File de remédiation : **2075**
+- Permanences sans preuve calendrier A/B : **189**
+- Avances remboursables / PTZ sans modalités de remboursement : **56**
+- Fiches sans CdC/règlement rattaché : **1214**
 
 ## Preuves A/B manquantes par champ
 
-- objective: 2108
-- beneficiaries: 2152
-- financialTerms: 2155
-- projectsExpected: 2168
-- eligibleExpenses: 2164
-- calendar: 2163
-- prerequisites: 2151
-- selectionCriteria: 2161
+- objective: 659
+- beneficiaries: 1256
+- financialTerms: 1753
+- projectsExpected: 2058
+- eligibleExpenses: 2012
+- calendar: 1740
+- prerequisites: 1629
+- selectionCriteria: 1825
 
 ## Principaux drapeaux QA
 
-- MISSING_DISBURSEMENT_TERMS: 2162
-- MISSING_SELECTION_CRITERIA: 2161
-- MISSING_CDC: 1963
-- MISSING_DEADLINE: 1753
-- MISSING_PREREQUISITES: 887
-- MISSING_REPAYMENT_TERMS: 387
-- MISSING_ELIGIBLE_EXPENSES: 166
-- MISSING_COMPANY_CATEGORY: 136
-- MISSING_FINANCIAL_TERMS: 134
-- MISSING_BENEFICIARIES: 105
-- MISSING_OBJECTIVE: 28
+- MISSING_ELIGIBLE_EXPENSES: 2011
+- MISSING_DISBURSEMENT_TERMS: 1952
+- MISSING_SELECTION_CRITERIA: 1825
+- MISSING_COMPANY_CATEGORY: 1662
+- MISSING_PREREQUISITES: 1629
+- MISSING_DEADLINE: 1589
+- MISSING_CDC: 1214
+- MISSING_FINANCIAL_TERMS: 1153
+- MISSING_BENEFICIARIES: 757
+- MISSING_OBJECTIVE: 217
+- MISSING_REPAYMENT_TERMS: 56
+- DATE_INCONSISTENCY: 3
 
 La file détaillée priorisée est publiée dans `site/data/remediation.json`.

@@ -1,0 +1,20 @@
+{
+  "generatedAt": "2026-09-30T08:52:18.926Z",
+  "total": 2078,
+  "directLinkCount": 2077,
+  "missingDirectLinkCount": 1,
+  "missing": [
+    {
+      "id": "paca_aides_master_c865942e9dbb1e9ee377fc8a7b0b9585480f571dab3d862f65dbdf555295974a",
+      "title": "Vos Aides",
+      "funder": [
+        "Région Sud"
+      ],
+      "scope": "REGIONAL",
+      "regions": [
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "sourceId": "paca_aides_master"
+    }
+  ]
+}
