@@ -5,7 +5,7 @@ async function getBrowser(){
   }
   return browserPromise;
 }
-export async function browserHtml(url,{timeoutMs=45000}={}){
+export async function browserHtml(url,{timeoutMs=45000,waitForSelector=null,waitAfterMs=900}={}){
   const browser=await getBrowser(),context=await browser.newContext({
     userAgent:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/128 Safari/537.36',
     locale:'fr-FR',
@@ -23,7 +23,10 @@ export async function browserHtml(url,{timeoutMs=45000}={}){
       const bodyText=await page.locator('body').innerText({timeout:1500}).catch(()=> '');
       if(html.length<1200||bodyText.trim().length<40)throw e;
     }
-    await page.waitForTimeout(900);
+    if(waitForSelector){
+      await page.waitForSelector(waitForSelector,{state:'attached',timeout:Math.min(20000,timeoutMs)}).catch(()=>null);
+    }
+    await page.waitForTimeout(waitAfterMs);
     return{html:await page.content(),url:page.url(),title:await page.title()};
   }finally{
     await context.close();
