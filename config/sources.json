@@ -100,8 +100,9 @@
       "webEvidenceUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue",
       "minImported": 1,
       "minImportRatio": 0,
-      "notes": "ADEME v2 : collecte directe catalogue + RSS, complétée par un contre-audit multi-moteurs (Exa, Tavily, Parallel Search, Firecrawl) utilisé uniquement pour découvrir des URL candidates. Chaque candidat est relu directement sur le domaine officiel ADEME et n'est conservé que si l'attribution ADEME, le périmètre entreprises et le statut actuel sont prouvés.",
-      "externalAuditFile": "config/ademe-v2-external-audit.json"
+      "notes": "ADEME v3 : le catalogue officiel Entreprises est le référentiel maître de tous les dispositifs actifs. La classification AIDE / AAP est reprise directement de chaque carte du catalogue. RSS, Exa, Tavily, Parallel Search et Firecrawl servent uniquement de contrôles de découverte et ne créent jamais de fiche.",
+      "externalAuditFile": "config/ademe-v2-external-audit.json",
+      "closedCatalogueUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue-aides-closes"
     },
     {
       "id": "anr",

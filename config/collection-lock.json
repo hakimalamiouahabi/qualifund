@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "locked": true,
   "mode": "GUICHET",
   "name": "ADEME",
@@ -31,25 +31,21 @@
     "requireDirectOfficialUrl": true,
     "forbidGenericTitles": true,
     "requireCatalogueDiscovery": true,
+    "requireCatalogueCompleteness": true,
+    "requireCatalogueClassification": true,
+    "requireCatalogueMasterMembership": true,
     "requireRssDiscovery": true,
     "requireExternalAuditDiscovery": true,
     "externalAuditFile": "config/ademe-v2-external-audit.json",
-    "externalAuditMaxAgeHours": 48,
+    "externalAuditMaxAgeHours": 72,
     "requireGuichetEvidence": true,
     "requireCurrentStatusEvidence": true,
     "requireEnterpriseScope": true,
     "allowedSourceStates": [
       "OPEN",
       "OPEN_UNDATED",
-      "PERMANENT",
-      "RECENTLY_CLOSED"
-    ],
-    "forbidAmbiguousExclusions": true,
-    "ambiguousExclusionReasons": [
-      "ATTRIBUTION_ADEME_NON_PROUVEE",
-      "BENEFICIAIRE_ENTREPRISE_NON_PROUVE",
-      "STATUT_ACTUEL_NON_PROUVE"
+      "PERMANENT"
     ]
   },
-  "notes": "Verrou ADEME v2 : reconstruction stricte depuis les pages officielles. Les moteurs externes servent uniquement de contre-audit de découverte ; aucune donnée n'est acceptée sans preuve directe ADEME. Bpifrance reste gelé jusqu'au PASS ADEME v2."
+  "notes": "Verrou ADEME v3 : le catalogue officiel Entreprises est le référentiel maître des dispositifs actifs. La classification AIDE / AAP vient exclusivement des cartes du catalogue. RSS et moteurs externes sont des contrôles de découverte, jamais des sources d'ingestion. Bpifrance reste gelé jusqu'au PASS ADEME v3."
 }
