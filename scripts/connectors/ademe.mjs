@@ -168,6 +168,18 @@ function beneficiaryEvidence(a,text=''){
   return ctx&&enterprise.test(ctx)?ctx:null;
 }
 
+function nonEnterpriseBeneficiaryEvidence(a,text=''){
+  const section=cleanTitle(a?.beneficiaries||'');
+  const enterprise=/\b(?:entreprises?|tpe|pme|eti|grandes?\s+entreprises?|start[- ]?ups?|soci[eé]t[eé]s?|acteurs?\s+[ée]conomiques?)\b/i;
+  const nonEnterprise=/\b(?:collectivit[eé]s?|communes?|intercommunalit[eé]s?|associations?|particuliers?|m[eé]nages?|[ée]tablissements?\s+publics?|syndicats?\s+publics?)\b/i;
+  if(section&&nonEnterprise.test(section)&&!enterprise.test(section))return section;
+  const ctx=evidence(text,[
+    /(?:ce dispositif|cette aide|cet appel|l['’]aide)\s+s['’]adresse[^.;]{0,420}/i,
+    /(?:b[eé]n[eé]ficiaires?|[êe]tes-vous concern[eé]s?|pour qui)[^.;]{0,420}/i
+  ]);
+  return ctx&&nonEnterprise.test(ctx)&&!enterprise.test(ctx)?ctx:null;
+}
+
 function regionEvidence(text=''){
   return evidence(text,[
     /quel(?:le)?\(?(?:s)?\)?\s+r[eé]gion(?:s)?\s+ou\s+pays\s+proposent\s+ce\s+dispositif[^#]{0,800}/i,
@@ -230,14 +242,18 @@ export function ademeStatusProof(a,text='',now=new Date()){
   ].filter(Boolean)).sort();
   const last=dates.at(-1)||null,delta=last?isoDaysFromToday(last,now):null;
   if(closed){
+    if(delta!=null&&delta>0)return{state:'STATUS_CONFLICT',date:last,evidence:closed,retain:false};
     if(delta!=null&&delta>=-60)return{state:'RECENTLY_CLOSED',date:last,evidence:closed,retain:true};
     return{state:'CLOSED_OLD',date:last,evidence:closed,retain:false};
   }
   if(delta!=null&&delta>=0)return{state:'OPEN',date:last,evidence:open||('Échéance officielle '+last),retain:true};
   if(delta!=null&&delta>=-60)return{state:'RECENTLY_CLOSED',date:last,evidence:open||('Échéance officielle '+last),retain:true};
+  if(delta!=null&&delta<-60){
+    if(open)return{state:'STATUS_CONFLICT',date:last,evidence:open,retain:false};
+    return{state:'CLOSED_OLD',date:last,evidence:'Échéance officielle '+last,retain:false};
+  }
   if(permanent&&a?.permanent)return{state:'PERMANENT',date:null,evidence:permanent,retain:true};
   if(open)return{state:'OPEN_UNDATED',date:null,evidence:open,retain:true};
-  if(delta!=null)return{state:'CLOSED_OLD',date:last,evidence:'Échéance officielle '+last,retain:false};
   return{state:'UNKNOWN',date:null,evidence:null,retain:false};
 }
 
@@ -284,7 +300,8 @@ async function extractOne(source,link){
   }
   const beneficiary=beneficiaryEvidence(a,text);
   if(!beneficiary){
-    return{aid:null,excluded:{url:link.url,label:a.title,reason:'HORS_CIBLE_ENTREPRISE',resolvedUrl:resolved}};
+    const nonEnterprise=nonEnterpriseBeneficiaryEvidence(a,text);
+    return{aid:null,excluded:{url:link.url,label:a.title,reason:nonEnterprise?'HORS_CIBLE_ENTREPRISE_PROUVE':'BENEFICIAIRE_ENTREPRISE_NON_PROUVE',resolvedUrl:resolved,evidence:nonEnterprise||null}};
   }
   const status=ademeStatusProof(a,text);
   if(!status.retain){
