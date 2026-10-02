@@ -47,6 +47,11 @@ test('l’interface déverrouille les guichets depuis le ledger et filtre le hor
   assert.match(app,/applyCertificationLedger/);
   assert.match(app,/CERTIFIED_SOURCE_NAMES/);
   assert.match(app,/targetFundingAid/);
+  assert.match(app,/publicAidUnlocked\(a\).*PUBLIC_UNLOCKED_SOURCE_IDS\.has\(a\.sourceId\)/);
+  assert.doesNotMatch(app,/publicAidUnlocked\(a\).*sourceAliases/);
+  assert.match(app,/timeZone:'Europe\/Paris'/);
+  assert.match(app,/isoDayNumber/);
+  assert.doesNotMatch(app,/const today=\(\)=>new Date\(\)\.toISOString\(\)\.slice\(0,10\)/);
   assert.doesNotMatch(app,/const PUBLIC_UNLOCKED_SOURCE_IDS=new Set\(\['bpifrance_aap'/);
 });
 
