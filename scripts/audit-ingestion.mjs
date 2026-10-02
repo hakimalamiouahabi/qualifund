@@ -1,20 +1,24 @@
 import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { buildCertificationLedger, isPublishableAid } from './lib/publication.mjs';
 
-const cfg=JSON.parse(fs.readFileSync(new URL('../config/sources.json',import.meta.url),'utf8'));
-const lib=JSON.parse(fs.readFileSync(new URL('../site/data/library.json',import.meta.url),'utf8'));
-const cov=JSON.parse(fs.readFileSync(new URL('../site/data/coverage.json',import.meta.url),'utf8'));
+const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const DATA=path.join(ROOT,'site','data');
+const cfg=JSON.parse(fs.readFileSync(path.join(ROOT,'config','sources.json'),'utf8'));
+const lib=JSON.parse(fs.readFileSync(path.join(DATA,'library.json'),'utf8'));
+const cov=JSON.parse(fs.readFileSync(path.join(DATA,'coverage.json'),'utf8'));
 const strategies={};for(const s of cfg.sources)strategies[s.strategy]=(strategies[s.strategy]||0)+1;
 const controls=cfg.sources.filter(s=>s.strategy==='control-only');
 const ingestive=cfg.sources.filter(s=>s.official&&s.strategy!=='control-only');
 const suspiciousControls=controls.filter(s=>s.type==='api');
-const ledger=await buildCertificationLedger(new URL('../site/data/',import.meta.url),cfg);
+const ledger=await buildCertificationLedger(DATA,cfg);
 const configuredSourceIds=new Set(cfg.sources.map(s=>s.id));
 const unlockedSourceIds=new Set(ledger.unlockedSourceIds||[]);
 const raw=lib.aaps||[];
 const published=raw.filter(a=>isPublishableAid(a,{configuredSourceIds,unlockedSourceIds}));
 const covById=new Map((cov||[]).map(x=>[x.id,x]));
-const currentLock=JSON.parse(fs.readFileSync(new URL('../config/collection-lock.json',import.meta.url),'utf8'));
+const currentLock=JSON.parse(fs.readFileSync(path.join(ROOT,'config','collection-lock.json'),'utf8'));
 const currentIds=new Set(currentLock.allowedSourceIds||[]);
 const currentCoverage=(cov||[]).filter(x=>currentIds.has(x.id));
 const report={
