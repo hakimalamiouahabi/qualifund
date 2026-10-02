@@ -1,29 +1,30 @@
 {
-  "version": 7,
+  "version": 8,
   "locked": true,
-  "mode": "GUICHET",
-  "name": "ADEME",
+  "mode": "REGION",
+  "name": "Auvergne-Rhône-Alpes",
   "allowedSourceIds": [
-    "ademe"
+    "aura"
   ],
   "preserveUnselectedSources": true,
   "preserveUnselectedCoverage": true,
   "freezeUnselectedLifecycle": true,
   "enrichSelectedOnly": true,
-  "next": "Auvergne-Rhône-Alpes",
+  "next": "Bourgogne-Franche-Comté",
   "certification": {
     "primarySourceIds": [
-      "ademe"
+      "aura"
     ],
     "allowedHosts": [
-      "agirpourlatransition.ademe.fr"
+      "www.auvergnerhonealpes.fr",
+      "auvergnerhonealpes.fr"
     ],
     "requireAuditAccounting": true,
     "requireZeroExtractionErrors": true,
     "requireDirectOfficialUrl": true,
     "forbidGenericTitles": true,
     "requireExternalAuditDiscovery": true,
-    "externalAuditFile": "config/ademe-v2-external-audit.json",
+    "externalAuditFile": "config/aura-v1-external-audit.json",
     "externalAuditMaxAgeHours": 72,
     "requireCatalogueMasterMembership": true,
     "requireEnterpriseScope": true,
@@ -31,38 +32,45 @@
     "allowedSourceStates": [
       "OPEN",
       "OPEN_UNDATED",
-      "PERMANENT",
-      "RECENTLY_CLOSED"
-    ],
-    "requiredPathPrefix": "/entreprises/aides-financieres/catalogue/",
-    "forbiddenPathFragments": [
-      "catalogue-rex",
-      "catalogue-aides-closes"
+      "PERMANENT"
     ],
     "sourceRules": {
-      "ademe": {
-        "master": "OFFICIAL_CATALOGUE_WITH_RSS_FALLBACK",
-        "requireMasterMembership": true,
-        "requireImportedEqualsDiscovered": false,
+      "aura": {
+        "master": "ENTERPRISE_FILTERED_REGIONAL_CATALOGUE",
+        "requireEnterpriseCatalogueDiscovery": true,
+        "requireExpectedCount": true,
+        "expectedCount": 175,
+        "requireAuditAccounting": true,
         "requireExternalDisposition": true,
-        "forbidActiveExternalGaps": true,
-        "forbidUnknownExternalGaps": true,
+        "forbidExternalOutsideCatalogue": true,
         "requireGuichetEvidence": true,
         "requireCurrentStatusEvidence": true,
+        "requireEnterpriseScope": true,
         "allowedSourceStates": [
           "OPEN",
           "OPEN_UNDATED",
-          "PERMANENT",
-          "RECENTLY_CLOSED"
+          "PERMANENT"
         ],
         "allowedKinds": [
           "AAP / AMI",
           "AIDE"
         ],
-        "requiredPathPrefix": "/entreprises/aides-financieres/catalogue/",
-        "requireAuditAccounting": true
+        "allowedAidTypes": [
+          "SUBVENTION",
+          "AVANCE_REMBOURSABLE",
+          "PRET_TAUX_ZERO"
+        ],
+        "requiredPathPrefix": "/aides/",
+        "forbiddenTitleFragments": [
+          "FEADER",
+          "FEDER",
+          "FSE",
+          "FTJ",
+          "LEADER",
+          "PEI"
+        ]
       }
     }
   },
-  "notes": "Verrou ADEME v5 : source primaire exclusivement officielle agirpourlatransition.ademe.fr. Catalogue Entreprises comme référentiel maître ; RSS officiel utilisé en secours/contrôle d'inventaire actif. Aucun agrégateur n'alimente la bibliothèque. Contre-audit externe uniquement pour détecter les trous, avec vérification sur la fiche officielle avant disposition."
+  "notes": "Verrou Région Auvergne-Rhône-Alpes v1 : catalogue officiel filtré Entreprise comme référentiel maître. FEDER/FEADER/FSE+/FTJ sont exclus du cycle régional et restent gelés pour leurs cycles dédiés. Les moteurs externes servent uniquement au contre-audit. ADEME et Bpifrance restent figés sur leurs certificats PASS."
 }
