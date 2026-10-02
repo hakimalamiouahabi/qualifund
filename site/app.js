@@ -36,7 +36,7 @@ function applyCertificationLedger(ledger){
   for(const cert of arr(ledger.certifications))for(const id of arr(cert.sourceIds))CERTIFIED_SOURCE_NAMES.set(id,cert.name||id);
 }
 function sourceAliasId(x){return typeof x==='string'?x:(x?.id||x?.sourceId||null)}
-function publicAidUnlocked(a){return [a?.sourceId,...arr(a?.sourceAliases).map(sourceAliasId)].filter(Boolean).some(id=>PUBLIC_UNLOCKED_SOURCE_IDS.has(id))}
+function publicAidUnlocked(a){return Boolean(a?.sourceId&&PUBLIC_UNLOCKED_SOURCE_IDS.has(a.sourceId))}
 function targetFundingAid(a){return String(a?.kind||'').toUpperCase().includes('AAP')||String(a?.kind||'').toUpperCase().includes('AMI')||arr(a?.aidTypes).some(x=>TARGET_PUBLIC_INSTRUMENTS.has(x))}
 function loadProjectState(){
   try{
@@ -53,8 +53,13 @@ function loadProjectState(){
   return{...DEFAULT_PROJECT};
 }
 const state={route:'home',studyStep:1,lib:[],meta:{},coverage:[],changes:[],sources:[],readiness:null,certification:null,bpifranceCertification:null,certificationLedger:null,dailyReport:null,project:loadProjectState(),lastResults:[]};
-const today=()=>new Date().toISOString().slice(0,10);
-const daysUntil=v=>v?Math.floor((new Date(v+'T23:59:59')-new Date(today()+'T00:00:00'))/86400000):null;
+const today=()=>new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Paris',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+function isoDayNumber(v){
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(String(v||'')))return null;
+  const [y,m,d]=String(v).split('-').map(Number);
+  return Math.floor(Date.UTC(y,m-1,d)/86400000);
+}
+const daysUntil=v=>{const target=isoDayNumber(v),base=isoDayNumber(today());return target==null||base==null?null:target-base};
 const bootstrap=()=>window.__LEYTON_RADAR_BOOTSTRAP__||window.__QUALIFUND_BOOTSTRAP__||null;
 async function fetchJsonStrict(url){
   const r=await fetch(url,{cache:'no-store',headers:{Accept:'application/json'}});
