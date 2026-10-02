@@ -24,7 +24,9 @@ test('purge covers exports, fallback, previous records and changes; is repeatabl
   await fs.writeFile(path.join(root,'site/data/changes.json'),JSON.stringify([{id:'bpi1'},{id:'ae_1'}]));
   const first=await purgeIndirectSources(root),second=await purgeIndirectSources(root);
   assert.deepEqual(first,second);assert.equal(second.meta.generatedAt,'2026-09-28');assert.equal(second.aaps.length,1);
-  for(const f of ['site/data/library.json','site/data/bootstrap.js','site/data/library.previous.json','site/data/changes.json','site/bibliotheque/radar-library.json','site/bibliotheque/radar-library.csv'])assert.doesNotMatch(await fs.readFile(path.join(root,f),'utf8'),/ae_1|aides_entreprises/);
+  for(const f of ['site/data/library.json','site/data/changes.json'])assert.doesNotMatch(await fs.readFile(path.join(root,f),'utf8'),/ae_1|aides_entreprises/);
+  for(const f of ['site/data/bootstrap.js','site/data/library.previous.json','site/bibliotheque/radar-library.json','site/bibliotheque/qualifund-library.json','site/bibliotheque/qualifund-library.csv'])assert.equal(await fs.stat(path.join(root,f)).then(()=>true).catch(()=>false),false,f);
+  assert.equal(await fs.stat(path.join(root,'site/bibliotheque/radar-library.csv')).then(()=>true).catch(()=>false),false);
  }finally{await fs.rm(root,{recursive:true,force:true})}
 });
 
