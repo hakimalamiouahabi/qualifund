@@ -63,7 +63,8 @@ test('le verrou courant cible uniquement la Région Auvergne-Rhône-Alpes',()=>{
   assert.equal(lock.version,8);
   assert.deepEqual(lock.allowedSourceIds,['aura']);
   assert.equal(lock.certification.sourceRules.aura.expectedCount,175);
-  assert.equal(lock.certification.sourceRules.aura.forbidExternalOutsideCatalogue,true);
+  assert.equal(lock.certification.sourceRules.aura.forbidActiveExternalGaps,true);
+  assert.equal(lock.certification.sourceRules.aura.forbidUnknownExternalGaps,true);
 });
 
 test('la source AURA est filtrée Entreprise et les sources fonds européens restent hors verrou',()=>{
