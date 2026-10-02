@@ -143,7 +143,7 @@ function currentState(a,listing,now=new Date()){
   return{state:'OPEN_UNDATED',retain:true,closing:null,evidence:'Présent dans le catalogue officiel Entreprise courant'};
 }
 
-function targetInstrument(a,text=''){
+export function classifyAuraInstrument(a,text=''){
   const raw=cleanTitle(`${a?.title||''} ${text||''}`);
   const actual=uniq((a?.aidTypes||[]).filter(x=>['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO'].includes(x)));
   if(/garantie de pr[eê]t|garantir un cr[eé]dit|fonds propres|quasi[- ]fonds propres|lev[eé]e de fonds|prise de participation|pr[eê]t croissance|pr[eê]t classique|cr[eé]dit[- ]bail/i.test(raw)&&!actual.includes('PRET_TAUX_ZERO')){
@@ -178,7 +178,7 @@ async function extractOne(source,link){
   if(!a.title||a.title.length<4)return{aid:null,excluded:{url:requested,label:label||'',reason:'TITRE_ABSENT'}};
   const state=currentState(a,link);
   if(!state.retain)return{aid:null,excluded:{url:requested,label:a.title,reason:'DISPOSITIF_CLOS',closingDate:state.closing}};
-  const instrument=targetInstrument(a,text);
+  const instrument=classifyAuraInstrument(a,text);
   if(!instrument.aidTypes.length){
     return{aid:null,excluded:{url:requested,label:a.title,reason:instrument.reason}};
   }
