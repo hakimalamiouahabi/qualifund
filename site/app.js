@@ -18,8 +18,8 @@ const REGIONS=['Auvergne-Rhône-Alpes','Bourgogne-Franche-Comté','Bretagne','Ce
 const TYPES=['R&D / Innovation','Investissement productif','Transition numérique','Transition écologique'];
 const MATURITY=['À préciser','Faisabilité','PoC','Prototype','Démonstrateur / pilote','Première industrialisation','Investissement / déploiement'];
 const DEFAULT_PROJECT={company:'',siren:'',category:'À préciser',startup:false,region:'À préciser',projectSite:'',sector:'',naf:'',employees:'',turnover:'',balanceSheet:'',group:'À vérifier',creationDate:'',legalForm:'',name:'',budget:'',types:[],summary:'',expenses:'',startDate:'',endDate:'',maturity:'À préciser',partners:'',impacts:'',jobs:'',environment:'',digital:'',financing:'',otherAids:''};
-const STORAGE='leyton-as-project-v12.6';
-const LEGACY_STORAGES=['funding-radar-project-v12.5','qualifund-project-v12.4','leyton-radar-project-v12.3','leyton-radar-project-v12.2','leyton-radar-project-v12.1','leyton-radar-project-v12'];
+const STORAGE='funding-radar-project-v13';
+const LEGACY_STORAGES=['leyton-as-project-v12.6','funding-radar-project-v12.5','qualifund-project-v12.4','leyton-radar-project-v12.3','leyton-radar-project-v12.2','leyton-radar-project-v12.1','leyton-radar-project-v12'];
 const PUBLIC_UNLOCKED_SOURCE_IDS=new Set();
 let PUBLIC_UNLOCKED_GUICHETS=[];
 const FALLBACK_CERTIFIED_SOURCE_IDS=['bpifrance_aap','bpifrance_aides','bpifrance_rebond_industriel','ademe'];
@@ -68,6 +68,15 @@ async function chunkedLibrary(manifestPath='./data/library-manifest.json'){
   return{meta:m.meta||{},aaps};
 }
 const api=async p=>{if(!p.includes('library.json'))return fetchJsonStrict(p);try{return await chunkedLibrary('./data/library-manifest.json')}catch(chunkError){try{return await fetchJsonStrict('./data/library.json')}catch(rawError){throw new Error('Bibliothèque indisponible — fragments: '+chunkError.message+' — JSON: '+rawError.message)}}};
+function clientDirectUrl(raw=''){
+  if(!/^https?:\/\//i.test(String(raw||'')))return null;
+  try{
+    const u=new URL(raw),host=u.hostname.toLowerCase(),p=(u.pathname||'/').toLowerCase().replace(/\/+$/,'')||'/';
+    if(/data\.aides-entreprises\.fr$/.test(host)&&(/^\/stock$/.test(p)||/^\/files\/aides\.json$/.test(p)))return null;
+    if(['/','/catalogue','/aides','/les-aides','/vos-aides','/appels','/fr/appels'].includes(p)||/accessibilite|accessibility|declaration-accessibilite|rgaa|mentions-legales|politique-confidentialite|cookies/.test(p))return null;
+    return u.href;
+  }catch{return null}
+}
 function toast(msg){const t=$('#toast');t.innerHTML=msg;t.classList.remove('hidden');clearTimeout(window.__toastTimer);window.__toastTimer=setTimeout(()=>t.classList.add('hidden'),4200)}
 function permanentVerified(a){return Boolean(a.permanent&&arr(a.verification?.fieldEvidence).some(e=>e.field==='calendar'&&['A','B'].includes(e.sourceTier)))}
 function ademeVerified(a){return Boolean(a?.sourceId==='ademe'&&a?.guichetVerified==='ADEME'&&arr(a?.verification?.fieldEvidence).some(e=>e?.field==='guichet'&&['A','B'].includes(e?.sourceTier)&&e?.sourceUrl))}
