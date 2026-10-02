@@ -11,7 +11,7 @@ export const sleep = ms => new Promise(r=>setTimeout(r,ms));
 export function safeUrl(u, base){ try { return new URL(u, base).href; } catch { return null; } }
 export function htmlToText(s=''){return String(s).replace(/<script[\s\S]*?<\/script>/gi,' ').replace(/<style[\s\S]*?<\/style>/gi,' ').replace(/<br\s*\/?>/gi,'\n').replace(/<\/p>/gi,'\n').replace(/<[^>]+>/g,' ').replace(/&nbsp;/gi,' ').replace(/&amp;/gi,'&').replace(/&quot;/gi,'"').replace(/&#39;/g,"'").replace(/\s+/g,' ').trim();}
 export async function readJson(file, fallback=null){try{return JSON.parse(await fs.readFile(file,'utf8'))}catch{return fallback}}
-export async function writeJsonAtomic(file,obj){await fs.mkdir(path.dirname(file),{recursive:true});const tmp=file+'.tmp';await fs.writeFile(tmp,JSON.stringify(obj,null,2),'utf8');await fs.rename(tmp,file)}
+export async function writeJsonAtomic(file,obj,{pretty=true}={}){await fs.mkdir(path.dirname(file),{recursive:true});const tmp=file+'.tmp';await fs.writeFile(tmp,JSON.stringify(obj,null,pretty?2:0)+(pretty?'\n':''),'utf8');await fs.rename(tmp,file)}
 export function cleanTitle(s=''){return htmlToText(s).replace(/\s+/g,' ').trim()}
 export function detectCurrencyAmounts(text=''){
   const out=[]; const re=/(\d{1,3}(?:[ .\u00a0]\d{3})*(?:[,.]\d+)?)\s*(k|m)?\s*(?:€|euros?)/gi; let m;
