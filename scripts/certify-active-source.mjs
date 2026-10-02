@@ -87,6 +87,13 @@ for(const s of lockedCfg){
 
   if(rule.requireListingDiscovery&&Number(row.audit?.channels?.listing||0)<=0)problems.push(`${s.id}: listing maître Bpifrance vide`);
   if(rule.requireCatalogueSectionDiscovery&&Number(row.audit?.channels?.catalogueSection||0)<=0)problems.push(`${s.id}: section catalogue maître vide`);
+  if(rule.requireEnterpriseCatalogueDiscovery&&Number(row.audit?.channels?.enterpriseCatalogue||0)<=0)problems.push(`${s.id}: catalogue régional Entreprise vide`);
+  if(rule.requireExpectedCount){
+    const found=Number(row.audit?.channels?.enterpriseCatalogue||0);
+    const expected=Number(row.audit?.channels?.enterpriseExpected||rule.expectedCount||0);
+    if(expected<=0)problems.push(`${s.id}: compteur officiel Entreprise absent`);
+    else if(found!==expected)problems.push(`${s.id}: catalogue Entreprise incomplet — ${found}/${expected}`);
+  }
   if(rule.requireImportedEqualsDiscovered){
     const discovered=Number(row.audit?.discovered??row.discovered??0);
     const imported=Number(row.audit?.imported??row.imported??0);
@@ -100,6 +107,7 @@ for(const s of lockedCfg){
       if(rule.forbidActiveExternalGaps&&Number(disp.active?.length||0)>0)problems.push(`${s.id}: ${disp.active.length} AAP actif(s) détecté(s) hors listing maître`);
       if(rule.forbidTargetExternalGaps&&Number(disp.target?.length||0)>0)problems.push(`${s.id}: ${disp.target.length} aide(s) cible(s) détectée(s) hors section maître`);
       if(rule.forbidUnknownExternalGaps&&Number(disp.unknown?.length||0)>0)problems.push(`${s.id}: ${disp.unknown.length} candidat(s) externe(s) indéterminé(s)`);
+      if(rule.forbidExternalOutsideCatalogue&&Number(disp.outsideCatalogue?.length||0)>0)problems.push(`${s.id}: ${disp.outsideCatalogue.length} candidat(s) officiel(s) externe(s) hors catalogue Entreprise`);
     }
   }
   if(rule.minRetained!=null&&Number(sourceRecordCounts.get(s.id)||0)<Number(rule.minRetained))problems.push(`${s.id}: ${sourceRecordCounts.get(s.id)||0} fiche(s) conservée(s) < minimum ${rule.minRetained}`);
@@ -144,6 +152,10 @@ for(const a of records){
     const allowedAidTypes=new Set(rule.allowedAidTypes);
     const actual=Array.isArray(a?.aidTypes)?a.aidTypes:[];
     if(!actual.length||actual.some(x=>!allowedAidTypes.has(x)))problems.push(`${a.id}: instrument(s) hors périmètre ${actual.join(', ')||'absent'}`);
+  }
+  if(rule.forbiddenTitleFragments?.length){
+    const hit=rule.forbiddenTitleFragments.find(x=>title.toLowerCase().includes(String(x).toLowerCase()));
+    if(hit)problems.push(`${a.id}: fiche fonds européen interdite dans ce cycle (${hit})`);
   }
   if(cert.requireEnterpriseScope){
     const proof=ev.find(e=>e?.field==='enterpriseEligibility'&&['A','B'].includes(e?.sourceTier));
@@ -211,6 +223,11 @@ const report={
     externalActiveGaps:Number(byId.get(s.id)?.audit?.externalDisposition?.active?.length||0),
     externalTargetGaps:Number(byId.get(s.id)?.audit?.externalDisposition?.target?.length||0),
     externalUnknownGaps:Number(byId.get(s.id)?.audit?.externalDisposition?.unknown?.length||0),
+    externalOutsideCatalogue:Number(byId.get(s.id)?.audit?.externalDisposition?.outsideCatalogue?.length||0),
+    enterpriseCatalogue:Number(byId.get(s.id)?.audit?.channels?.enterpriseCatalogue||0),
+    enterpriseExpected:Number(byId.get(s.id)?.audit?.channels?.enterpriseExpected||0),
+    enterprisePagesScanned:Number(byId.get(s.id)?.audit?.channels?.pagesScanned||0),
+    europeanExcluded:Number(byId.get(s.id)?.audit?.channels?.europeanExcluded||0),
     catalogueExpected:Number(byId.get(s.id)?.audit?.channels?.catalogueExpected||0),
     catalogueAap:Number(byId.get(s.id)?.audit?.channels?.catalogueAap||0),
     catalogueAid:Number(byId.get(s.id)?.audit?.channels?.catalogueAid||0),
