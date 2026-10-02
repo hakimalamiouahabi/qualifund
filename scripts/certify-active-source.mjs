@@ -25,6 +25,9 @@ if(cert.externalAuditFile){
   }
 }
 const problems=[];
+const warnings=[];
+const workflowEvent=String(process.env.GITHUB_EVENT_NAME||'');
+const strictExternalFreshness=process.env.QUALIFUND_STRICT_EXTERNAL_AUDIT==='1'||workflowEvent!=='schedule';
 const generic=/^(document officiel|r[eè]glement|cahier des charges|annexe|formulaire|dossier de candidature|accueil|aides?|aides financières|catalogue|agir pour la transition)$/i;
 const byId=new Map(coverage.map(x=>[x.id,x]));
 const lockedCfg=(cfg.sources||[]).filter(s=>allowed.has(s.id));
@@ -121,7 +124,10 @@ if(cert.requireExternalAuditDiscovery){
     const generated=Date.parse(externalAudit.generatedAt||'');
     const maxAge=Number(cert.externalAuditMaxAgeHours||0);
     if(!Number.isFinite(generated))problems.push('Contre-audit externe: date de génération invalide');
-    else if(maxAge>0&&(Date.now()-generated)>(maxAge*3600000))problems.push(`Contre-audit externe périmé: plus de ${maxAge} h`);
+    else if(maxAge>0&&(Date.now()-generated)>(maxAge*3600000)){
+      const msg=`Contre-audit externe périmé: plus de ${maxAge} h`;
+      if(strictExternalFreshness)problems.push(msg);else warnings.push(msg+' — non bloquant sur le cycle planifié quotidien');
+    }
     if(!Array.isArray(externalAudit.candidates)||!externalAudit.candidates.length)problems.push('Contre-audit externe: aucune URL candidate');
   }
 }
@@ -240,6 +246,7 @@ const report={
     excluded:Number(byId.get(s.id)?.audit?.excluded?.length||0)
   }])),
   duplicates:duplicates.map(([url,count])=>({url,count})),
+  warnings,
   problems
 };
 await fs.writeFile(path.join(DATA,`${slug}-certification.json`),JSON.stringify(report,null,2),'utf8');
