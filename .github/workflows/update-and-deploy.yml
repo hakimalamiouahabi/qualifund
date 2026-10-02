@@ -140,8 +140,7 @@ jobs:
       - name: Rapport de remédiation preuves
         if: ${{ steps.lock.outputs.locked != 'true' }}
         run: npm run remediation >> "$GITHUB_STEP_SUMMARY"
-      - name: Pré-readiness avant déploiement
-        if: ${{ steps.lock.outputs.locked != 'true' }}
+      - name: Pré-readiness du cycle
         run: npm run production:gates >> "$GITHUB_STEP_SUMMARY"
       - name: Commit des données générées
         id: commit_data
