@@ -260,6 +260,9 @@ export async function collectAura(source,{log=console.log}={}){
         externalOutsideCatalogue:discovered.externalOutside.length,
         europeanExcluded:european.length
       },
+      externalDisposition:{
+        outsideCatalogue:discovered.externalOutside.map(x=>({url:x.url,label:x.label||'',engines:x.engines||[]}))
+      },
       controlGaps:{
         externalOutsideCatalogue:discovered.externalOutside.map(x=>({url:x.url,label:x.label||'',engines:x.engines||[]}))
       }
