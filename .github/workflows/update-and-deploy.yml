@@ -121,6 +121,8 @@ jobs:
         run: npm run sync:metadata
       - name: Reconstruire l'index de recherche
         run: npm run build:index
+      - name: Valider le bundle Cloudflare certifié
+        run: npm run build:cloudflare
       - name: Auditer l'ingestion
         run: npm run audit:ingestion
       - name: Auditer les critères et leurs preuves officielles
