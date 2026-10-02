@@ -18,8 +18,8 @@ export async function purgeIndirectSources(root=ROOT){
  // Preserve the collection timestamp. A purge is not a fresh source verification.
  if(lib.meta?.sourcePolicy!=='DIRECT_OFFICIAL_ONLY')meta.sourcePolicyAppliedAt=new Date().toISOString();
  else if(lib.meta.sourcePolicyAppliedAt)meta.sourcePolicyAppliedAt=lib.meta.sourcePolicyAppliedAt;
- const clean={meta,aaps};await write(path.join(data,'library.json'),clean);
- await write(path.join(data,'library.previous.json'),{meta:{sourcePolicy:'DIRECT_OFFICIAL_ONLY'},aaps:[]});
+ const clean={meta,aaps};await fs.mkdir(data,{recursive:true});await fs.writeFile(path.join(data,'library.json'),JSON.stringify(clean),'utf8');
+ await fs.rm(path.join(data,'library.previous.json'),{force:true});
  const sources={version:cfg.version,sourcePolicy:cfg.sourcePolicy,sources:cfg.sources};await write(path.join(data,'sources.json'),sources);
  await write(path.join(data,'manifest.json'),meta);
  const changes=(await read(path.join(data,'changes.json'),[])).filter(x=>ids.has(x.id));await write(path.join(data,'changes.json'),changes);
