@@ -6,7 +6,7 @@ const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const DATA=path.join(ROOT,'site','data');
 const lib=JSON.parse(await fs.readFile(path.join(DATA,'library.json'),'utf8'));
 const cfg=JSON.parse(await fs.readFile(path.join(ROOT,'config','sources.json'),'utf8'));
-const rows=(lib.aaps||[]).filter(a=>a.lifecycleStatus!=='ARCHIVE').map(a=>({
+const rows=(lib.aaps||[]).filter(a=>a.lifecycleStatus==='ACTIVE').map(a=>({
   id:a.id,
   title:a.title,
   scope:a.scope,
