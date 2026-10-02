@@ -42,7 +42,6 @@
         "expectedCount": 175,
         "requireAuditAccounting": true,
         "requireExternalDisposition": true,
-        "forbidExternalOutsideCatalogue": true,
         "requireGuichetEvidence": true,
         "requireCurrentStatusEvidence": true,
         "requireEnterpriseScope": true,
@@ -68,7 +67,9 @@
           "FTJ",
           "LEADER",
           "PEI"
-        ]
+        ],
+        "forbidActiveExternalGaps": true,
+        "forbidUnknownExternalGaps": true
       }
     }
   },
