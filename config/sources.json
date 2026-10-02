@@ -103,12 +103,17 @@
       "name": "Région Auvergne-Rhône-Alpes — catalogue des aides",
       "scope": "Auvergne-Rhône-Alpes",
       "type": "region",
-      "strategy": "catalog-html",
-      "url": "https://www.auvergnerhonealpes.fr/aides",
+      "strategy": "aura-official",
+      "url": "https://www.auvergnerhonealpes.fr/aides?f%5B0%5D=profil%3A3",
       "orgQuery": "Région Auvergne-Rhône-Alpes",
       "official": true,
       "priority": 1,
-      "browserFallback": true
+      "browserFallback": true,
+      "externalAuditFile": "config/aura-v1-external-audit.json",
+      "minExpected": 175,
+      "minImported": 20,
+      "minImportRatio": 0.1,
+      "notes": "AURA v1 : le catalogue officiel Région filtré sur le profil Entreprise est le référentiel maître (175 résultats observés le 03/10/2026). Les fiches FEADER/FEDER/FSE+/FTJ sont exclues de ce cycle et traitées ultérieurement dans les cycles fonds européens. Seuls subventions, avances remboursables/récupérables, prêts à taux zéro et AAP/AMI correspondant au périmètre FUNDING RADAR sont conservés. Exa/Tavily/Parallel/Firecrawl = contre-audit uniquement."
     },
     {
       "id": "bfc",
@@ -383,18 +388,6 @@
       "observedCatalogCount": 6,
       "webVerifiedAt": "2026-09-22",
       "webEvidenceUrl": "https://anr.fr/france-2030/appels/"
-    },
-    {
-      "id": "aura_france2030",
-      "name": "Auvergne-Rhône-Alpes — France 2030 régionalisé",
-      "scope": "Auvergne-Rhône-Alpes",
-      "type": "web",
-      "strategy": "catalog-html",
-      "url": "https://france2030.auvergnerhonealpes.fr/",
-      "official": true,
-      "priority": 0,
-      "minExpected": 2,
-      "browserFallback": true
     },
     {
       "id": "aura_feder",
@@ -1589,6 +1582,7 @@
     "aides_entreprises",
     "aides_gouv",
     "aides_territoires",
+    "aura_france2030",
     "aura_reglementation",
     "banque_territoires_france2030",
     "bretagne_opendata",
