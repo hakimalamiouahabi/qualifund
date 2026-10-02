@@ -9,7 +9,7 @@ const health=await readJson(path.join(root,'site/data/source-health.json'),{summ
 const cfg=await readJson(path.join(root,'config/sources.json'),{sources:[]});
 const a=lib.aaps||[];
 const pct=(n,d)=>d?Math.round(n/d*100):0;
-const active=a.filter(x=>x.lifecycleStatus!=='ARCHIVE');
+const active=a.filter(x=>x.lifecycleStatus==='ACTIVE');
 const hs=health.summary||{};
 const healthResults=Array.isArray(health.results)?health.results:[];
 const cycleRows=Array.isArray(cov)?cov:[];
