@@ -3,10 +3,10 @@ const cfg=JSON.parse(fs.readFileSync(new URL('../config/sources.json',import.met
 const lib=JSON.parse(fs.readFileSync(new URL('../site/data/library.json',import.meta.url),'utf8'));
 const cov=JSON.parse(fs.readFileSync(new URL('../site/data/coverage.json',import.meta.url),'utf8'));
 const strategies={};for(const s of cfg.sources)strategies[s.strategy]=(strategies[s.strategy]||0)+1;
-const ingestStrategies=new Set(['aides-entreprises','catalog-html','data-gouv-query','region-hybrid','opendatasoft','aides-territoires','official-page']);
-const ingestive=cfg.sources.filter(s=>ingestStrategies.has(s.strategy));
+const ingestive=cfg.sources.filter(s=>s.strategy!=='control-only');
 const controls=cfg.sources.filter(s=>s.strategy==='control-only');
 const suspiciousControls=controls.filter(s=>s.type==='api');
 const ae=(lib.aaps||[]).filter(a=>String(a.id||'').startsWith('ae_')).length;
-const report={version:cfg.version,sourcesConfigured:cfg.sources.length,strategies,ingestiveSources:ingestive.length,controlOnlySources:controls.length,apiStillControlOnly:suspiciousControls.map(s=>s.id),lastCycleSources:cov.length,lastCycleSuccess:cov.filter(x=>x.success).length,libraryCount:(lib.aaps||[]).length,aidesEntreprisesBootstrapRecords:ae,nonAidesEntreprisesRecords:(lib.aaps||[]).length-ae};
+const active=(lib.aaps||[]).filter(a=>a.lifecycleStatus==='ACTIVE').length;
+const report={version:cfg.version,sourcesConfigured:cfg.sources.length,strategies,ingestiveSources:ingestive.length,controlOnlySources:controls.length,apiStillControlOnly:suspiciousControls.map(s=>s.id),lastCycleSources:cov.length,lastCycleSuccess:cov.filter(x=>x.success).length,libraryCount:(lib.aaps||[]).length,activeRecords:active,aidesEntreprisesBootstrapRecords:ae,nonAidesEntreprisesRecords:(lib.aaps||[]).length-ae};
 console.log(JSON.stringify(report,null,2));
