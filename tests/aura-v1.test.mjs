@@ -1,0 +1,85 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {
+  parseAuraEnterpriseListingHtml,
+  isEuropeanFundAid,
+  classifyAuraInstrument
+} from '../scripts/connectors/aura.mjs';
+
+test('le catalogue AURA Entreprise lit le compteur officiel et les cartes',()=>{
+  const html=`<main>
+    <p>175 Résultat(s)</p>
+    <article class="node node--type-aid node--view-mode-search-result">
+      <div class="c-result__category">Aide</div>
+      <a href="/aides/region-industrie-test">Financer mon investissement</a>
+      <p>Date limite du dépôt : 30/10/2026</p>
+    </article>
+    <article class="node node--type-aid node--view-mode-search-result">
+      <a href="/aides/appel-projets-demo">Appel à projets démonstrateurs</a>
+    </article>
+  </main>`;
+  const out=parseAuraEnterpriseListingHtml(html,'https://www.auvergnerhonealpes.fr/aides?f%5B0%5D=profil%3A3');
+  assert.equal(out.expectedCount,175);
+  assert.equal(out.items.length,2);
+  assert.equal(out.items[0].closingDate,'2026-10-30');
+  assert.equal(out.items[0].kind,'AIDE');
+  assert.equal(out.items[1].kind,'AAP / AMI');
+});
+
+test('les dispositifs FEADER/FEDER/LEADER sont réservés aux cycles fonds européens',()=>{
+  assert.equal(isEuropeanFundAid({label:'Investir dans mon entreprise (FEADER - Dispositif 303)',url:'https://www.auvergnerhonealpes.fr/aides/demo'}),true);
+  assert.equal(isEuropeanFundAid({label:'Financer mon investissement régional',url:'https://www.auvergnerhonealpes.fr/aides/demo'}),false);
+});
+
+test('la qualification AURA conserve subvention, AR et PTZ et exclut garanties/fonds propres',()=>{
+  assert.deepEqual(
+    classifyAuraInstrument({title:'Industrie du Futur',aidTypes:['SUBVENTION']},'subvention plafonnée à 16 000 €').aidTypes,
+    ['SUBVENTION']
+  );
+  assert.deepEqual(
+    classifyAuraInstrument({title:'Commerce',aidTypes:[]},'Le taux d’aide est de 20 % des dépenses éligibles. L’aide régionale est versée après instruction.').aidTypes,
+    ['SUBVENTION']
+  );
+  assert.deepEqual(
+    classifyAuraInstrument({title:'Prêt Région',aidTypes:['PRET_TAUX_ZERO']},'Prêt à taux 0 %').aidTypes,
+    ['PRET_TAUX_ZERO']
+  );
+  assert.equal(
+    classifyAuraInstrument({title:'Garantie bancaire',aidTypes:[]},'La Région garantit un crédit bancaire à hauteur de 50 %.').reason,
+    'INSTRUMENT_HORS_PERIMETRE'
+  );
+  assert.equal(
+    classifyAuraInstrument({title:'Fonds souverain',aidTypes:[]},'Augmenter les fonds propres de mon entreprise.').reason,
+    'INSTRUMENT_HORS_PERIMETRE'
+  );
+});
+
+test('le verrou courant cible uniquement la Région Auvergne-Rhône-Alpes',()=>{
+  const lock=JSON.parse(fs.readFileSync(new URL('../config/collection-lock.json',import.meta.url),'utf8'));
+  assert.equal(lock.locked,true);
+  assert.equal(lock.mode,'REGION');
+  assert.equal(lock.name,'Auvergne-Rhône-Alpes');
+  assert.equal(lock.version,8);
+  assert.deepEqual(lock.allowedSourceIds,['aura']);
+  assert.equal(lock.certification.sourceRules.aura.expectedCount,175);
+  assert.equal(lock.certification.sourceRules.aura.forbidExternalOutsideCatalogue,true);
+});
+
+test('la source AURA est filtrée Entreprise et les sources fonds européens restent hors verrou',()=>{
+  const cfg=JSON.parse(fs.readFileSync(new URL('../config/sources.json',import.meta.url),'utf8'));
+  const aura=cfg.sources.find(x=>x.id==='aura');
+  assert.equal(aura.strategy,'aura-official');
+  assert.match(aura.url,/profil%3A3/);
+  assert.equal(aura.minExpected,175);
+  assert.match(aura.externalAuditFile,/aura-v1-external-audit\.json$/);
+  assert.ok(cfg.sources.some(x=>x.id==='aura_feder'));
+  assert.ok(!cfg.sources.some(x=>x.id==='aura_france2030'));
+});
+
+test('ADEME et Bpifrance restent certifiés PASS avant le cycle régional',()=>{
+  const ademe=JSON.parse(fs.readFileSync(new URL('../site/data/ademe-certification.json',import.meta.url),'utf8'));
+  const bpi=JSON.parse(fs.readFileSync(new URL('../site/data/bpifrance-certification.json',import.meta.url),'utf8'));
+  assert.equal(ademe.status,'PASS');
+  assert.equal(bpi.status,'PASS');
+});
