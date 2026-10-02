@@ -33,19 +33,14 @@ test('la qualification financière distingue subvention, avance remboursable et 
   );
 });
 
-test('le verrou courant est Bpifrance v2 et gèle les autres guichets',()=>{
-  const lock=JSON.parse(fs.readFileSync(new URL('../config/collection-lock.json',import.meta.url),'utf8'));
-  assert.equal(lock.locked,true);
-  assert.equal(lock.name,'Bpifrance');
-  assert.equal(lock.version,6);
-  assert.deepEqual(lock.allowedSourceIds,[
-    'bpifrance_aap','bpifrance_aides','bpifrance_rebond_industriel'
-  ]);
-  assert.ok(!lock.allowedSourceIds.includes('bpifrance_projets_international'));
-  assert.equal(lock.preserveUnselectedSources,true);
-  assert.equal(lock.freezeUnselectedLifecycle,true);
-  assert.equal(lock.certification.sourceRules.bpifrance_aap.requireListingDiscovery,true);
-  assert.equal(lock.certification.sourceRules.bpifrance_aides.requireCatalogueSectionDiscovery,true);
+test('Bpifrance v2 conserve son certificat PASS après passage au cycle régional',()=>{
+  const cert=JSON.parse(fs.readFileSync(new URL('../site/data/bpifrance-certification.json',import.meta.url),'utf8'));
+  assert.equal(cert.status,'PASS');
+  assert.equal(cert.lock?.name,'Bpifrance');
+  assert.equal(cert.problems?.length,0);
+  assert.equal(cert.bySource?.bpifrance_aap?.retained,27);
+  assert.equal(cert.bySource?.bpifrance_aides?.retained,22);
+  assert.equal(cert.bySource?.bpifrance_rebond_industriel?.retained,1);
 });
 
 test('les deux sources maîtres Bpifrance utilisent le contre-audit multi-moteurs',()=>{
