@@ -45,6 +45,7 @@ test('l’interface déverrouille les guichets depuis le ledger et filtre le hor
   const app=fs.readFileSync(path.join(ROOT,'site/app.js'),'utf8');
   assert.match(app,/certification-ledger\.json/);
   assert.match(app,/applyCertificationLedger/);
+  assert.doesNotMatch(app,/!ledger\.unlockedSourceIds\.length/);
   assert.match(app,/CERTIFIED_SOURCE_NAMES/);
   assert.match(app,/targetFundingAid/);
   assert.match(app,/publicAidUnlocked\(a\).*PUBLIC_UNLOCKED_SOURCE_IDS\.has\(a\.sourceId\)/);
@@ -67,4 +68,14 @@ test('les audits d’ingestion n’utilisent plus les stratégies tierces histor
     const src=fs.readFileSync(path.join(ROOT,p),'utf8');
     assert.doesNotMatch(src,/aides-entreprises|aides-territoires|data-gouv-query/);
   }
+});
+
+
+test('le workflow de production publie l’artefact dist certifié pendant un cycle verrouillé',()=>{
+  const wf=fs.readFileSync(path.join(ROOT,'.github/workflows/update-and-deploy.yml'),'utf8');
+  assert.match(wf,/Construire l'artefact public certifié/);
+  assert.match(wf,/run: npm run build:cloudflare/);
+  assert.match(wf,/path: dist/);
+  assert.doesNotMatch(wf,/deploy:\n\s+needs: build\n\s+if:.*collection_locked/);
+  assert.doesNotMatch(wf,/verify-production:\n\s+needs: \[build, deploy\]\n\s+if:.*collection_locked/);
 });
