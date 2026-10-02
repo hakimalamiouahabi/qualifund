@@ -27,14 +27,15 @@ export async function purgeIndirectSources(root=ROOT){
  const coverage=(await read(path.join(data,'coverage.json'),[])).filter(x=>allowed.has(x.id)).map(x=>({...x,message:String(x.message||'').replace(/Aides Entreprises/gi,'ancienne source retirée')}));
  await write(path.join(data,'coverage.json'),coverage);
  await write(path.join(data,'curated-aids.json'),{aaps:[]});
- for(const name of ['radar-library.json','qualifund-library.json'])await write(path.join(pub,name),clean);
- const csv=['id,titre,page_officielle',...aaps.map(a=>[a.id,a.title,a.officialPage].map(x=>'"'+String(x||'').replaceAll('"','""')+'"').join(','))].join('\n');
- for(const name of ['radar-library.csv','qualifund-library.csv'])await fs.writeFile(path.join(pub,name),csv);
+ // Les exports publics sont reconstruits après certification par sync-static-metadata.
+ for(const obsolete of ['radar-library.json','qualifund-library.json','qualifund-library.csv','radar-library.csv']){
+   await fs.rm(path.join(pub,obsolete),{force:true});
+ }
+ await fs.rm(path.join(data,'bootstrap.js'),{force:true});
  await write(path.join(pub,'status.json'),meta);
- await fs.writeFile(path.join(data,'bootstrap.js'),`window.__LEYTON_RADAR_BOOTSTRAP__=${JSON.stringify({library:clean,sources,coverage,changes})};\n`);
  // Derived reports and caches must not retain the former stock or its counts.
  if(changed){
- for(const name of ['search-index.json','criteria-audit.json','remediation.json','source-health.json','production-readiness.json','link-audit.json'])await fs.rm(path.join(data,name),{force:true});
+ for(const name of ['search-index.json','criteria-audit.json','remediation.json','source-health.json','production-readiness.json','link-audit.json','certified-sources.json'])await fs.rm(path.join(data,name),{force:true});
  await fs.rm(path.join(pub,'rapports'),{recursive:true,force:true});
  await fs.rm(path.join(data,'library-parts'),{recursive:true,force:true});
  await fs.rm(path.join(data,'library-manifest.json'),{force:true});
