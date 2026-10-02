@@ -34,6 +34,25 @@ const unlockedSourceIds=new Set(ledger.unlockedSourceIds||[]);
 const records=(Array.isArray(library.aaps)?library.aaps:[])
   .filter(a=>isPublishableAid(a,{configuredSourceIds,unlockedSourceIds}));
 
+// Réécrire les exports téléchargeables dans dist à partir du corpus certifié uniquement.
+const pubDir=path.join(DIST,'bibliotheque');
+await fs.mkdir(pubDir,{recursive:true});
+const arr=v=>Array.isArray(v)?v:[];
+const csvEsc=v=>`"${String(v??'').replaceAll('"','""')}"`;
+const csvRows=[['id','titre','type','portee','regions','financeurs','instruments','beneficiaires','cloture','permanent','page_officielle'].join(',')];
+for(const a of records)csvRows.push([
+  a.id,a.title,a.kind,a.scope,arr(a.regions).join(' | '),arr(a.funder).join(' | '),arr(a.aidTypes).join(' | '),
+  arr(a.companyCategories).join(' | '),a.finalClosingDate||a.closingDate||'',a.permanent?'oui':'non',a.officialPage||''
+].map(csvEsc).join(','));
+for(const name of ['radar-library.csv','qualifund-library.csv'])await fs.writeFile(path.join(pubDir,name),csvRows.join('\n'),'utf8');
+await fs.writeFile(path.join(pubDir,'status.json'),JSON.stringify({
+  version:cfg.version||null,
+  publicationPolicy:'CERTIFIED_SOURCE_ONLY',
+  publishedCount:records.length,
+  certifiedSources:[...unlockedSourceIds].sort(),
+  generatedAt:library.meta?.generatedAt||null
+},null,2),'utf8');
+
 const changesPath=path.join(DIST,'data','changes.json');
 try{
   const changes=JSON.parse(await fs.readFile(changesPath,'utf8'));
