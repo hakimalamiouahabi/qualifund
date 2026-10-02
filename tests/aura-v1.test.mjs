@@ -55,6 +55,13 @@ test('la qualification AURA conserve subvention, AR et PTZ et exclut garanties/f
   );
 });
 
+test('le collecteur AURA bascule sur Playwright quand la vue Drupal brute est vide',()=>{
+  const connector=fs.readFileSync(new URL('../scripts/connectors/aura.mjs',import.meta.url),'utf8');
+  assert.match(connector,/getListingHtml/);
+  assert.match(connector,/waitForSelector:'article\.node--type-aid\.node--view-mode-search-result'/);
+  assert.match(connector,/browser-forced/);
+});
+
 test('le collecteur AURA matérialise explicitement l’éligibilité entreprise',()=>{
   const connector=fs.readFileSync(new URL('../scripts/connectors/aura.mjs',import.meta.url),'utf8');
   assert.match(connector,/a\.enterpriseEligible=true/);
