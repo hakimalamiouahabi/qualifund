@@ -308,17 +308,23 @@
 
     const documentedWeight=dims.filter(d=>d.documented).reduce((s,d)=>s+d.max,0);
     const earned=dims.filter(d=>d.documented).reduce((s,d)=>s+d.score,0);
+    const totalWeight=Object.values(w).reduce((s,x)=>s+x,0);
     const normalized=documentedWeight?100*earned/documentedWeight:0;
-    const coverageFactor=1;
-    const score=Math.round(Math.min(100,normalized*coverageFactor));
+    const evidenceCoverage=totalWeight?documentedWeight/totalWeight:0;
+    // Le score d'adéquation reste neutre vis-à-vis des informations absentes.
+    // Le rankingScore pénalise toutefois les fiches trop peu documentées pour éviter
+    // qu'un match fort sur 1-2 dimensions domine une fiche mieux étayée.
+    const evidenceFactor=.62+.38*evidenceCoverage;
+    const score=Math.round(Math.min(100,normalized));
+    const rankingScore=Math.round(Math.min(100,normalized*evidenceFactor));
     return{
-      score,dims,checks:dims.length,documentedWeight,
-      coverageFactor:Math.round(coverageFactor*100),
+      score,rankingScore,dims,checks:dims.length,documentedWeight,
+      coverageFactor:Math.round(evidenceCoverage*100),
       family,profileLabel:PROFILE_LABEL[family]||PROFILE_LABEL.GENERAL,
       basis:String(p.summary||'').trim()?'description projet':'activité / NAF / thématiques'
     };
   }
 
-  root.LEYTON_SCORING={relevance,tokens,norm,conceptSet,overlapDetails,detectFamily,nafText,projectContext,bm25fRank,retrievalQuery,version:'12.6.0'};
+  root.LEYTON_SCORING={relevance,tokens,norm,conceptSet,overlapDetails,detectFamily,nafText,projectContext,bm25fRank,retrievalQuery,version:'13.0.0'};
 })(typeof globalThis!=='undefined'?globalThis:this);
 
