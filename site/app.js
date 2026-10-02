@@ -13,16 +13,25 @@ const fmtDate=v=>{if(!v)return'—';const d=new Date(v+'T00:00:00');return isNaN
 const money=v=>v==null?'—':new Intl.NumberFormat('fr-FR',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(v);
 const missing=()=>'<span class="missing">À préciser</span>';
 const aidTypeLabel=t=>({SUBVENTION:'Subvention',AVANCE_REMBOURSABLE:'Avance remboursable',PRET_TAUX_ZERO:'Prêt à taux zéro',PRET:'Prêt',BONIFICATION_INTERET:"Bonification d’intérêt",GARANTIE:'Garantie',ALLEGEMENT_FISCAL:'Allègement fiscal',PARTICIPATION_CAPITAL:'Participation au capital',APPEL_A_PROJET:'Appel à projets',ACCOMPAGNEMENT_GRATUIT:'Accompagnement gratuit',CREDIT_BAIL:'Crédit-bail',AUTRE:'Autre dispositif'}[t]||t);
-const CONFIG=window.LEYTON_RADAR_CONFIG||{minRelevance:80};
+const CONFIG=window.FUNDING_RADAR_CONFIG||window.LEYTON_RADAR_CONFIG||{minRelevance:80};
 const REGIONS=['Auvergne-Rhône-Alpes','Bourgogne-Franche-Comté','Bretagne','Centre-Val de Loire','Corse','Grand Est','Hauts-de-France','Île-de-France','Normandie','Nouvelle-Aquitaine','Occitanie','Pays de la Loire','Provence-Alpes-Côte d’Azur','Guadeloupe','Guyane','Martinique','La Réunion','Mayotte'];
 const TYPES=['R&D / Innovation','Investissement productif','Transition numérique','Transition écologique'];
 const MATURITY=['À préciser','Faisabilité','PoC','Prototype','Démonstrateur / pilote','Première industrialisation','Investissement / déploiement'];
 const DEFAULT_PROJECT={company:'',siren:'',category:'À préciser',startup:false,region:'À préciser',projectSite:'',sector:'',naf:'',employees:'',turnover:'',balanceSheet:'',group:'À vérifier',creationDate:'',legalForm:'',name:'',budget:'',types:[],summary:'',expenses:'',startDate:'',endDate:'',maturity:'À préciser',partners:'',impacts:'',jobs:'',environment:'',digital:'',financing:'',otherAids:''};
 const STORAGE='leyton-as-project-v12.6';
 const LEGACY_STORAGES=['funding-radar-project-v12.5','qualifund-project-v12.4','leyton-radar-project-v12.3','leyton-radar-project-v12.2','leyton-radar-project-v12.1','leyton-radar-project-v12'];
-const LIVE_DB='funding-direct-sources-v1',LIVE_STORE='kv',LIVE_LIBRARY_KEY='library',LIVE_REFRESH_KEY='last-refresh';
-const PUBLIC_UNLOCKED_SOURCE_IDS=new Set(['bpifrance_aap','bpifrance_aides','bpifrance_rebond_industriel','ademe']);
-const PUBLIC_UNLOCKED_GUICHETS=['Bpifrance','ADEME'];
+const PUBLIC_UNLOCKED_SOURCE_IDS=new Set();
+let PUBLIC_UNLOCKED_GUICHETS=[];
+const FALLBACK_CERTIFIED_SOURCE_IDS=['bpifrance_aap','bpifrance_aides','bpifrance_rebond_industriel','ademe'];
+const FALLBACK_CERTIFIED_GUICHETS=['Bpifrance','ADEME'];
+function applyCertifiedRegistry(payload){
+  PUBLIC_UNLOCKED_SOURCE_IDS.clear();
+  for(const id of arr(payload?.sourceIds))if(id)PUBLIC_UNLOCKED_SOURCE_IDS.add(id);
+  PUBLIC_UNLOCKED_GUICHETS=arr(payload?.guichets).filter(Boolean);
+}
+function applyCertifiedFallback(){
+  applyCertifiedRegistry({sourceIds:FALLBACK_CERTIFIED_SOURCE_IDS,guichets:FALLBACK_CERTIFIED_GUICHETS});
+}
 function sourceAliasId(x){return typeof x==='string'?x:(x?.id||x?.sourceId||null)}
 function publicAidUnlocked(a){return [a?.sourceId,...arr(a?.sourceAliases).map(sourceAliasId)].filter(Boolean).some(id=>PUBLIC_UNLOCKED_SOURCE_IDS.has(id))}
 function loadProjectState(){
@@ -42,7 +51,6 @@ function loadProjectState(){
 const state={route:'home',studyStep:1,lib:[],meta:{},coverage:[],changes:[],sources:[],readiness:null,certification:null,bpifranceCertification:null,dailyReport:null,project:loadProjectState(),lastResults:[]};
 const today=()=>new Date().toISOString().slice(0,10);
 const daysUntil=v=>v?Math.floor((new Date(v+'T23:59:59')-new Date(today()+'T00:00:00'))/86400000):null;
-const bootstrap=()=>window.__LEYTON_RADAR_BOOTSTRAP__||window.__QUALIFUND_BOOTSTRAP__||null;
 async function fetchJsonStrict(url){
   const r=await fetch(url,{cache:'no-store',headers:{Accept:'application/json'}});
   if(!r.ok)throw new Error(`HTTP ${r.status} — ${url}`);
@@ -59,32 +67,9 @@ async function chunkedLibrary(manifestPath='./data/library-manifest.json'){
   if(m.count!=null&&aaps.length!==Number(m.count))throw new Error(`Bibliothèque incomplète : ${aaps.length}/${m.count} fiches chargées.`);
   return{meta:m.meta||{},aaps};
 }
-const api=async p=>{
-  if(p.includes('library.json')){
-    try{return await chunkedLibrary('./data/library-manifest.json')}
-    catch(e){const b=bootstrap();if(b?.library)return b.library;throw e}
-  }
-  try{return await fetchJsonStrict(p)}
-  catch(e){const b=bootstrap();if(b){if(p.includes('coverage.json'))return b.coverage;if(p.includes('changes.json'))return b.changes;if(p.includes('sources.json'))return b.sources;if(p.includes('production-readiness.json')&&window.__LEYTON_RADAR_READINESS__)return window.__LEYTON_RADAR_READINESS__}throw e}
-};
-const idbOpen=()=>new Promise((resolve,reject)=>{try{const q=indexedDB.open(LIVE_DB,1);q.onupgradeneeded=()=>{const db=q.result;if(!db.objectStoreNames.contains(LIVE_STORE))db.createObjectStore(LIVE_STORE)};q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error)}catch(e){reject(e)}});
-async function liveGet(key){try{const db=await idbOpen();return await new Promise((resolve,reject)=>{const tx=db.transaction(LIVE_STORE,'readonly'),q=tx.objectStore(LIVE_STORE).get(key);q.onsuccess=()=>resolve(q.result??null);q.onerror=()=>reject(q.error)})}catch{return null}}
-async function liveSet(key,value){const db=await idbOpen();return new Promise((resolve,reject)=>{const tx=db.transaction(LIVE_STORE,'readwrite');tx.objectStore(LIVE_STORE).put(value,key);tx.oncomplete=()=>resolve(true);tx.onerror=()=>reject(tx.error)})}
-function clientDirectUrl(raw=''){
-  if(!/^https?:\/\//i.test(String(raw||'')))return null;
-  try{
-    const u=new URL(raw),host=u.hostname.toLowerCase(),p=(u.pathname||'/').toLowerCase().replace(/\/+$/,'')||'/';
-    if(/data\.aides-entreprises\.fr$/.test(host)&&(/^\/stock$/.test(p)||/^\/files\/aides\.json$/.test(p)))return null;
-    if(['/','/catalogue','/aides','/les-aides','/vos-aides','/appels','/fr/appels'].includes(p)||/accessibilite|accessibility|declaration-accessibilite|rgaa|mentions-legales|politique-confidentialite|cookies/.test(p))return null;
-    return u.href;
-  }catch{return null}
-}
-async function loadClientLibrary(){return false}
-async function clientLiveRefresh(){await loadAll();toast('Les sources officielles sont collectées côté serveur. La bibliothèque publiée a été rechargée.')}
-const hostedProduction=()=>/^https?:$/.test(location.protocol);
-async function maybeAutoClientRefresh(){if(hostedProduction()||CONFIG.refreshEndpoint||!navigator.onLine)return;const last=Number(await liveGet(LIVE_REFRESH_KEY)||0);if(Date.now()-last<20*3600*1000)return;clientLiveRefresh({full:true,silent:true}).catch(()=>{})}
-function scheduleClientDailyRefresh(){if(hostedProduction()||CONFIG.refreshEndpoint)return;setInterval(async()=>{if(!navigator.onLine)return;const parts=Object.fromEntries(new Intl.DateTimeFormat('fr-FR',{timeZone:'Europe/Paris',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()).filter(x=>x.type!=='literal').map(x=>[x.type,x.value]));if(parts.hour!=='02'||Number(parts.minute)>4)return;const last=Number(await liveGet(LIVE_REFRESH_KEY)||0);if(Date.now()-last<6*3600*1000)return;clientLiveRefresh({full:true,silent:true}).catch(()=>{})},60000)}
-
+const api=async p=>p.includes('library.json')
+  ? chunkedLibrary('./data/library-manifest.json')
+  : fetchJsonStrict(p);
 function toast(msg){const t=$('#toast');t.innerHTML=msg;t.classList.remove('hidden');clearTimeout(window.__toastTimer);window.__toastTimer=setTimeout(()=>t.classList.add('hidden'),4200)}
 function permanentVerified(a){return Boolean(a.permanent&&arr(a.verification?.fieldEvidence).some(e=>e.field==='calendar'&&['A','B'].includes(e.sourceTier)))}
 function ademeVerified(a){return Boolean(a?.sourceId==='ademe'&&a?.guichetVerified==='ADEME'&&arr(a?.verification?.fieldEvidence).some(e=>e?.field==='guichet'&&['A','B'].includes(e?.sourceTier)&&e?.sourceUrl))}
@@ -163,7 +148,41 @@ function displayAidTitle(a){
   return ambiguous&&funders.length?title+' — '+funders[0]:title;
 }
 
-async function loadAll(){const j=await api('./data/library.json');state.lib=(j.meta?.sourcePolicy==='DIRECT_OFFICIAL_ONLY'?j.aaps||[]:[]).filter(a=>!/(?:aides[-_]entreprises|aides[-_]territoires)/i.test(JSON.stringify(a))).map(a=>{const b={...a};for(const k of ['title','objective','beneficiaries','eligibleExpenses','excludedExpenses','prerequisites','selectionCriteria','programme','operator'])if(typeof b[k]==='string')b[k]=decodeEntities(b[k]);return b}).filter(publicAidUnlocked);state.meta=j.meta||{};for(const[k,p]of[['coverage','./data/coverage.json'],['changes','./data/changes.json'],['certification','./data/active-source-certification.json'],['bpifranceCertification','./data/bpifrance-certification.json'],['dailyReport','./bibliotheque/rapports/latest.json']])try{state[k]=await api(p)}catch{};try{state.sources=((await api('./data/sources.json')).sources||[]).filter(s=>PUBLIC_UNLOCKED_SOURCE_IDS.has(s.id))}catch{};state.coverage=arr(state.coverage).filter(x=>PUBLIC_UNLOCKED_SOURCE_IDS.has(x?.id));const visibleIds=new Set(state.lib.map(a=>a.id));state.changes=arr(state.changes).filter(x=>visibleIds.has(x?.id));try{state.readiness=await api('./data/production-readiness.json')}catch{};await loadClientLibrary();render();const deep=new URLSearchParams(location.search).get('aid');if(deep&&state.lib.some(a=>a.id===deep))openAid(deep)}
+async function loadAll(){
+  try{applyCertifiedRegistry(await api('./data/certified-sources.json'))}
+  catch{applyCertifiedFallback()}
+
+  const j=await api('./data/library.json');
+  state.lib=(j.meta?.sourcePolicy==='DIRECT_OFFICIAL_ONLY'?j.aaps||[]:[])
+    .filter(a=>!/(?:aides[-_]entreprises|aides[-_]territoires)/i.test(JSON.stringify(a)))
+    .map(a=>{
+      const b={...a};
+      for(const k of ['title','objective','beneficiaries','eligibleExpenses','excludedExpenses','prerequisites','selectionCriteria','programme','operator'])
+        if(typeof b[k]==='string')b[k]=decodeEntities(b[k]);
+      return b;
+    })
+    .filter(publicAidUnlocked);
+  state.meta=j.meta||{};
+
+  for(const[k,p]of[
+    ['coverage','./data/coverage.json'],
+    ['changes','./data/changes.json'],
+    ['certification','./data/active-source-certification.json'],
+    ['bpifranceCertification','./data/bpifrance-certification.json'],
+    ['dailyReport','./bibliotheque/rapports/latest.json']
+  ])try{state[k]=await api(p)}catch{}
+
+  try{state.sources=((await api('./data/sources.json')).sources||[]).filter(s=>PUBLIC_UNLOCKED_SOURCE_IDS.has(s.id))}
+  catch{state.sources=[]}
+  state.coverage=arr(state.coverage).filter(x=>PUBLIC_UNLOCKED_SOURCE_IDS.has(x?.id));
+  const visibleIds=new Set(state.lib.map(a=>a.id));
+  state.changes=arr(state.changes).filter(x=>visibleIds.has(x?.id));
+  try{state.readiness=await api('./data/production-readiness.json')}catch{state.readiness=null}
+
+  render();
+  const deep=new URLSearchParams(location.search).get('aid');
+  if(deep&&state.lib.some(a=>a.id===deep))openAid(deep);
+}
 function route(r){clearTimeout(window.__libSearchTimer);state.route=r;$$('.nav[data-route]').forEach(x=>x.classList.toggle('active',x.dataset.route===r));$('#sidebar')?.classList.remove('open');render()}
 document.querySelectorAll('.nav[data-route]').forEach(b=>b.onclick=()=>route(b.dataset.route));
 const globalSearch=$('#globalSearch');
@@ -760,8 +779,8 @@ function sources(){
 }
 function production(){const r=state.readiness;const gates=r?.gates||[];$('#app').innerHTML=`<div class="page-head"><div><div class="eyebrow">Production Readiness</div><h1>Validation interne</h1><p class="sub">Les 10 gates de passage en production. Un point n'est considéré validé qu'après preuve d'exécution réelle.</p></div><span class="badge ${r?.goProduction?'ok':'warn'}">${r?.goProduction?'GO PRODUCTION':'EN COURS'}</span></div>${gates.length?`<div class="grid g2">${gates.map(g=>`<div class="card"><div class="row between"><h3>Gate ${g.id}</h3><span class="badge ${/PASS/.test(g.status)?'ok':g.status==='FAIL'||g.status==='BLOCKED'?'block':'warn'}">${esc(g.status)}</span></div><b>${esc(g.name)}</b><p class="mini">${esc(g.detail)}</p></div>`).join('')}</div>`:'<div class="callout warn">Le rapport de readiness sera généré par le pipeline de production.</div>'}`}
 
-async function requestCollection(){if(CONFIG.refreshEndpoint){const token=window.prompt('Code administrateur (non enregistré)');if(!token)return;try{toast('Demande de collecte envoyée…');const r=await fetch(CONFIG.refreshEndpoint,{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+token},body:JSON.stringify({action:'full-refresh'})});const j=await r.json().catch(()=>({}));if(!r.ok)throw new Error(j.error||('HTTP '+r.status));toast('Collecte demandée. Le rapport sera mis à jour après le cycle.')}catch(e){toast(`Impossible de déclencher la collecte : ${esc(e.message)}`)}}else if(hostedProduction()){await loadAll();toast('Bibliothèque officielle publiée rechargée. La collecte complète reste exécutée côté serveur.')}else{clientLiveRefresh({full:true,silent:false}).catch(()=>{})}}
+async function requestCollection(){if(CONFIG.refreshEndpoint){const token=window.prompt('Code administrateur (non enregistré)');if(!token)return;try{toast('Demande de collecte envoyée…');const r=await fetch(CONFIG.refreshEndpoint,{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+token},body:JSON.stringify({action:'full-refresh'})});const j=await r.json().catch(()=>({}));if(!r.ok)throw new Error(j.error||('HTTP '+r.status));toast('Collecte demandée. Le rapport sera mis à jour après le cycle.')}catch(e){toast(`Impossible de déclencher la collecte : ${esc(e.message)}`)}}else if(hostedProduction()){await loadAll();toast('Bibliothèque officielle publiée rechargée. La collecte complète reste exécutée côté serveur.')}else{loadAll().catch(e=>toast(`Rechargement impossible : ${esc(e.message)}`))}}
 document.addEventListener('click',e=>{const t=e.target.closest('.open-result,.open-aid');if(t){e.preventDefault();openAid(t.dataset.id)}});
-loadAll().then(()=>{scheduleClientDailyRefresh();return maybeAutoClientRefresh()}).catch(e=>{$('#app').innerHTML=`<div class="callout warn"><b>Bibliothèque publiée indisponible.</b><br>${esc(e.message)}<br>La dernière version embarquée reste accessible si elle est présente.</div>`});
+loadAll().catch(e=>{$('#app').innerHTML=`<div class="callout warn"><b>Bibliothèque publiée indisponible.</b><br>${esc(e.message)}<br>Le manifeste de publication ou ses fragments sont incomplets.</div>`});
 
 
