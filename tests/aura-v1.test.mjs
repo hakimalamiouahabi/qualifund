@@ -55,6 +55,12 @@ test('la qualification AURA conserve subvention, AR et PTZ et exclut garanties/f
   );
 });
 
+test('le collecteur AURA matérialise explicitement l’éligibilité entreprise',()=>{
+  const connector=fs.readFileSync(new URL('../scripts/connectors/aura.mjs',import.meta.url),'utf8');
+  assert.match(connector,/a\.enterpriseEligible=true/);
+  assert.match(connector,/field:'enterpriseEligibility'/);
+});
+
 test('le verrou courant cible uniquement la Région Auvergne-Rhône-Alpes',()=>{
   const lock=JSON.parse(fs.readFileSync(new URL('../config/collection-lock.json',import.meta.url),'utf8'));
   assert.equal(lock.locked,true);
