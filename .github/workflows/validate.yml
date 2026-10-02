@@ -35,3 +35,4 @@ jobs:
       - run: npm run build:index
       - run: npm run audit:deep
       - run: npm run production:gates
+      - run: npm run build:cloudflare
