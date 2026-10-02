@@ -190,6 +190,7 @@ async function extractOne(source,link){
   a.scope='REGIONAL';a.regions=[REGION];
   a.aidTypes=instrument.aidTypes;
   a.sourcePortal=REGION;a.guichetVerified=REGION;
+  a.enterpriseEligible=true;
   a.catalogueVerified=true;a.sourceState=state.state;a.lifecycleStatus='ACTIVE';
   a.officialPage=requested;
   if(state.closing){
