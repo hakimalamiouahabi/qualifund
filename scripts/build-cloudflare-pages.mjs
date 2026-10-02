@@ -34,6 +34,21 @@ const unlockedSourceIds=new Set(ledger.unlockedSourceIds||[]);
 const records=(Array.isArray(library.aaps)?library.aaps:[])
   .filter(a=>isPublishableAid(a,{configuredSourceIds,unlockedSourceIds}));
 
+const distData=path.join(DIST,'data');
+await fs.mkdir(distData,{recursive:true});
+await fs.writeFile(path.join(distData,'certification-ledger.json'),JSON.stringify(ledger,null,2),'utf8');
+const publicSources={
+  version:cfg.version||null,
+  sourcePolicy:'CERTIFIED_SOURCE_ONLY',
+  sources:(cfg.sources||[]).filter(s=>unlockedSourceIds.has(s.id))
+    .map(({id,name,scope,type,strategy,url,official,priority})=>({id,name,scope,type,strategy,url,official,priority}))
+};
+await fs.writeFile(path.join(distData,'sources.json'),JSON.stringify(publicSources,null,2),'utf8');
+try{
+  const coverage=JSON.parse(await fs.readFile(path.join(DATA,'coverage.json'),'utf8'));
+  await fs.writeFile(path.join(distData,'coverage.json'),JSON.stringify((coverage||[]).filter(x=>unlockedSourceIds.has(x.id)),null,2),'utf8');
+}catch{}
+
 // Réécrire les exports téléchargeables dans dist à partir du corpus certifié uniquement.
 const pubDir=path.join(DIST,'bibliotheque');
 await fs.mkdir(pubDir,{recursive:true});
@@ -99,6 +114,7 @@ const manifest={
   parts:partFiles
 };
 await fs.writeFile(path.join(DIST,'data','library-manifest.json'),JSON.stringify(manifest),'utf8');
+await fs.writeFile(path.join(DIST,'data','manifest.json'),JSON.stringify(publicMeta,null,2),'utf8');
 
 async function walk(dir){
   const out=[];
