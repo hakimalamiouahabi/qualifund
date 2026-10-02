@@ -146,7 +146,7 @@ function currentState(a,listing,now=new Date()){
 export function classifyAuraInstrument(a,text=''){
   const raw=cleanTitle(`${a?.title||''} ${text||''}`);
   const actual=uniq((a?.aidTypes||[]).filter(x=>['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO'].includes(x)));
-  if(/garantie de pr[eê]t|garantir un cr[eé]dit|fonds propres|quasi[- ]fonds propres|lev[eé]e de fonds|prise de participation|pr[eê]t croissance|pr[eê]t classique|cr[eé]dit[- ]bail/i.test(raw)&&!actual.includes('PRET_TAUX_ZERO')){
+  if(/garantie(?: bancaire| de pr[eê]t)|garantir un cr[eé]dit|garantit[^.;]{0,80}(?:cr[eé]dit|pr[eê]t|financement)|fonds propres|quasi[- ]fonds propres|lev[eé]e de fonds|prise de participation|pr[eê]t croissance|pr[eê]t classique|cr[eé]dit[- ]bail/i.test(raw)&&!actual.includes('PRET_TAUX_ZERO')){
     return{aidTypes:[],reason:'INSTRUMENT_HORS_PERIMETRE'};
   }
   if(actual.length)return{aidTypes:actual,reason:null};
