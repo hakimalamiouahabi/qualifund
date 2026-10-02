@@ -207,7 +207,6 @@ function home(){
   const todayKey=new Date().toISOString().slice(0,10);
   const importedToday=arr(state.changes).filter(x=>x.type==='CREATION'&&String(x.at||'').slice(0,10)===todayKey).length;
   const lockName=state.meta?.collectionLock?.name||state.certification?.lock?.name||'—';
-  const bpiStatus=state.bpifranceCertification?.status||'—';
   const activeCert=state.certification?.status||'—';
 
   const instCounts={};
@@ -225,11 +224,9 @@ function home(){
     return da.localeCompare(db);
   }).slice(0,6);
 
-  const healthRows=[
-    ['ADEME',coverage.filter(x=>/^ademe/i.test(x.id||''))],
-    ['Bpifrance',coverage.filter(x=>/^bpifrance/i.test(x.id||''))],
-    ['Régions',coverage.filter(x=>x.scope&&x.scope!=='France'&&x.scope!=='NATIONAL')]
-  ].map(([label,rows])=>[label,rows.length?Math.round(rows.filter(x=>x.success).length/rows.length*100):null]);
+  const certifiedCertificates=arr(state.certifiedRegistry?.certificates);
+  const healthRows=certifiedCertificates.map(cert=>{const ids=new Set(arr(cert.sourceIds)),rows=coverage.filter(x=>ids.has(x.id));return[cert.name,rows.length?Math.round(rows.filter(x=>x.success).length/rows.length*100):null]});
+  const certifiedCards=certifiedCertificates.map(cert=>`<div class="cert-item"><span class="check-icon">✓</span><div><b>${esc(cert.name)} : PASS</b><small>cycle certifié${cert.generatedAt?' · '+esc(fmtDate(String(cert.generatedAt).slice(0,10))):''}</small></div></div>`).join('');
 
   $('#app').innerHTML=`<section class="premium-hero">
     <div class="hero-kicker">Veille · Cartographie · Faisabilité · Certification</div>
@@ -268,8 +265,8 @@ function home(){
     <aside class="health-stack">
       <article class="premium-card"><h3>Santé des sources <button class="link-button" id="dashSources">Voir le détail</button></h3><div class="health-ring"><div class="ring" style="background:conic-gradient(var(--fr-green) 0 ${sourceHealth}%, #e6edf2 ${sourceHealth}% 100%)"><b>${sourceHealth}%</b></div><div class="check-list">${healthRows.map(([label,p])=>`<div class="check-row"><span class="check-icon ${p!=null&&p<90?'warn':''}">✓</span><span>${esc(label)}</span><strong>${p==null?'—':p+'%'}</strong></div>`).join('')}</div></div></article>
       <article class="premium-card"><h3>Sécurité & certifications</h3><div class="cert-box">
-        <div class="cert-item"><span class="check-icon ${bpiStatus==='PASS'?'':'warn'}">✓</span><div><b>Bpifrance : ${esc(bpiStatus)}</b><small>cycle historique figé</small></div></div>
-        <div class="cert-item"><span class="check-icon ${activeCert==='PASS'?'':'warn'}">✓</span><div><b>${esc(lockName)} : ${esc(activeCert)}</b><small>guichet de certification actif</small></div></div>
+        ${certifiedCards}
+        <div class="cert-item"><span class="check-icon ${activeCert==='PASS'?'':'warn'}">✓</span><div><b>${esc(lockName)} : ${esc(activeCert)}</b><small>cycle de certification actif</small></div></div>
         <div class="cert-item"><span class="check-icon">✓</span><div><b>Collecte verrouillée</b><small>autres guichets préservés</small></div></div>
       </div></article>
     </aside>
