@@ -26,7 +26,9 @@
     "audit:criteria": "node scripts/audit-criteria.mjs",
     "build:cloudflare": "node scripts/build-cloudflare-pages.mjs",
     "purge:indirect": "node scripts/purge-indirect-sources.mjs",
-    "certify:active": "node scripts/certify-active-source.mjs"
+    "certify:active": "node scripts/certify-active-source.mjs",
+    "audit:deep": "node scripts/deep-audit.mjs",
+    "audit:deep:strict": "node scripts/deep-audit.mjs --strict"
   },
   "dependencies": {
     "ajv": "8.17.1",
