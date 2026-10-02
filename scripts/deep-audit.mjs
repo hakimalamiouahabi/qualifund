@@ -31,6 +31,7 @@ const counters={
   sourceLinksAggregator:0,sourceLinksDuplicate:0
 };
 const reasons={};
+const reasonSamples={};
 const sample={};
 const put=(key,item)=>{counters[key]++;(sample[key]??=[]);if(sample[key].length<20)sample[key].push(item)};
 const officialSeen=new Map();
@@ -39,7 +40,7 @@ for(const a of rows){
   const id=a?.id||null,title=String(a?.title||''),sourceId=a?.sourceId||null,url=String(a?.officialPage||'');
   const ref={id,title,sourceId,officialPage:url||null};
   const reason=publicationReason(a,{configuredSourceIds:configured,unlockedSourceIds:unlocked});
-  if(reason){counters.quarantined++;reasons[reason]=(reasons[reason]||0)+1}else counters.publishable++;
+  if(reason){counters.quarantined++;reasons[reason]=(reasons[reason]||0)+1;(reasonSamples[reason]??=[]);if(reasonSamples[reason].length<20)reasonSamples[reason].push(ref)}else counters.publishable++;
 
   if(!configured.has(sourceId))put('orphanSource',ref);
   if(!url)put('missingOfficialUrl',ref);
@@ -121,7 +122,7 @@ const report={
   generatedAt:new Date().toISOString(),
   version:cfg.version||null,
   currentLock:{name:lock.name||null,mode:lock.mode||null,allowedSourceIds:lock.allowedSourceIds||[]},
-  publication:{policy:'CERTIFIED_SOURCE_ONLY',certifiedSourceIds:ledger.unlockedSourceIds||[],certifiedGuichets:ledger.guichets||[],reasons},
+  publication:{policy:'CERTIFIED_SOURCE_ONLY',certifiedSourceIds:ledger.unlockedSourceIds||[],certifiedGuichets:ledger.guichets||[],reasons,reasonSamples},
   library:counters,
   sourceRegistry:{
     configured:(cfg.sources||[]).length,
@@ -165,6 +166,11 @@ console.log(JSON.stringify({
     forbiddenAggregator:counters.forbiddenAggregator,outOfTargetInstrument:counters.outOfTargetInstrument,
     expiredButActive:counters.expiredButActive,noStatusEvidence:counters.noStatusEvidence,
     noInstrumentEvidence:counters.noInstrumentEvidence,noEnterpriseEvidence:counters.noEnterpriseEvidence
+  },
+  samples:{
+    outOfTargetCertified:reasonSamples.OUT_OF_TARGET_INSTRUMENT||[],
+    inactiveCertified:reasonSamples.INACTIVE_OR_STALE||[],
+    expiredButActive:sample.expiredButActive||[]
   }
 },null,2));
 if(process.argv.includes('--strict')&&p0.length)process.exitCode=1;
