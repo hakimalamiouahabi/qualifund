@@ -144,9 +144,17 @@ function currentState(a,listing,now=new Date()){
 }
 
 function targetInstrument(a,text=''){
+  const raw=cleanTitle(`${a?.title||''} ${text||''}`);
   const actual=uniq((a?.aidTypes||[]).filter(x=>['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO'].includes(x)));
+  if(/garantie de pr[eê]t|garantir un cr[eé]dit|fonds propres|quasi[- ]fonds propres|lev[eé]e de fonds|prise de participation|pr[eê]t croissance|pr[eê]t classique|cr[eé]dit[- ]bail/i.test(raw)&&!actual.includes('PRET_TAUX_ZERO')){
+    return{aidTypes:[],reason:'INSTRUMENT_HORS_PERIMETRE'};
+  }
   if(actual.length)return{aidTypes:actual,reason:null};
-  if(EXCLUDED_FINANCIAL_RX.test(text))return{aidTypes:[],reason:'INSTRUMENT_HORS_PERIMETRE'};
+  if(/(?:taux d['’]aide|aide r[eé]gionale|aide financi[eè]re|prise en charge|finance les co[uû]ts|financement de \d{1,3}\s*%)/i.test(raw)
+     &&!/rembours|r[eé]cup[eé]rable|pr[eê]t|garantie|fonds propres|participation/i.test(raw)){
+    return{aidTypes:['SUBVENTION'],reason:null};
+  }
+  if(EXCLUDED_FINANCIAL_RX.test(raw))return{aidTypes:[],reason:'INSTRUMENT_HORS_PERIMETRE'};
   return{aidTypes:[],reason:'INSTRUMENT_CIBLE_NON_PROUVE'};
 }
 
@@ -162,7 +170,7 @@ async function extractOne(source,link){
   const resolved=canonicalUrl(loaded.finalUrl||requested);
   if(resolved!==requested)return{aid:null,excluded:{url:requested,label:link.label||'',reason:'REDIRECTION_VERS_AUTRE_PAGE',resolvedUrl:resolved}};
   const text=pageText(loaded.html);
-  if(EUROPEAN_RX.test(text)||isEuropeanFundAid(link)){
+  if(isEuropeanFundAid(link)){
     return{aid:null,excluded:{url:requested,label:link.label||'',reason:'FONDS_EUROPEEN_CYCLE_DEDIE'}};
   }
   const a=extractFromHtml(loaded.html,{url:requested,sourceTier:'B',scope:'REGIONAL',region:REGION});
