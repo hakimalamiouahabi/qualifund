@@ -5,6 +5,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { aidIsCertified, writeCertifiedSourcesArtifact } from './lib/certified-sources.mjs';
+import { filterDirectLibrary } from './lib/direct-sources.mjs';
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const DATA=path.join(ROOT,'site','data');
@@ -26,12 +27,12 @@ const meta={
   count:all.length
 };
 library.meta=meta;
-await fs.writeFile(libraryPath,JSON.stringify(library,null,2)+'\n','utf8');
+await fs.writeFile(libraryPath,JSON.stringify(library),'utf8');
 await fs.writeFile(path.join(DATA,'manifest.json'),JSON.stringify(meta,null,2)+'\n','utf8');
 
 const certified=await writeCertifiedSourcesArtifact(ROOT,cfg);
 const certifiedIds=new Set(certified.sourceIds);
-const publicAids=active.filter(a=>aidIsCertified(a,certifiedIds));
+const publicAids=filterDirectLibrary(active,cfg).filter(a=>aidIsCertified(a,certifiedIds));
 const publicSources=(cfg.sources||[]).filter(s=>certifiedIds.has(s.id));
 const publicMeta={
   version,
@@ -87,7 +88,6 @@ const runtimeConfig=`(()=>{
     repositoryUrl:server.repositoryUrl||null,
     sirenApi:'https://recherche-entreprises.api.gouv.fr/search',
     companyEndpoint:server.companyEndpoint||null,
-    minRelevance:85,
     version:'${version}'
   };
   window.FUNDING_RADAR_CONFIG=config;
