@@ -342,7 +342,11 @@ function eligibility(a,p){
   const types=arr(a.aidTypes),cats=arr(a.companyCategories),regions=arr(a.regions);
   const targetInstruments=['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO'];
   const hasTargetInstrument=types.some(x=>targetInstruments.includes(x));
-  add('Instrument',!types.length?'À VÉRIFIER':hasTargetInstrument?'CONFORME':'NON CONFORME',types.length?types.map(aidTypeLabel).join(', '):'Instrument non documenté',null,types.length>0);
+  const isCall=a.kind==='AAP / AMI'||types.includes('APPEL_A_PROJET');
+  if(!types.length)add('Instrument','À VÉRIFIER','Instrument non documenté');
+  else if(hasTargetInstrument)add('Instrument','CONFORME',types.map(aidTypeLabel).join(', '));
+  else if(isCall)add('Instrument','À VÉRIFIER','AAP / AMI identifié ; forme financière à confirmer sur la fiche officielle','instrument');
+  else add('Instrument','NON CONFORME',types.map(aidTypeLabel).join(', '),null,true);
 
   add('Statut','À VÉRIFIER','Le référencement dans la base ne confirme pas à lui seul l’ouverture du dispositif.','calendar');
 
@@ -443,30 +447,33 @@ async function runFeasibility(){
 
   // Deux classements indépendants sont fusionnés par Reciprocal Rank Fusion (RRF).
   // Cela évite qu'un unique score arbitraire décide seul du classement.
-  const structured=[...scored].sort((x,y)=>y.relevance.score-x.relevance.score||y.relevance.documentedWeight-x.relevance.documentedWeight);
-  const lexical=[...scored].sort((x,y)=>y.bm25-x.bm25||y.relevance.score-x.relevance.score);
+  const structured=[...scored].sort((x,y)=>(y.relevance.rankingScore??y.relevance.score)-(x.relevance.rankingScore??x.relevance.score)||y.relevance.documentedWeight-x.relevance.documentedWeight);
+  const lexical=[...scored].sort((x,y)=>y.bm25-x.bm25||(y.relevance.rankingScore??y.relevance.score)-(x.relevance.rankingScore??x.relevance.score));
   const rankStructured=new Map(structured.map((x,i)=>[x.a.id,i+1]));
   const rankLexical=new Map(lexical.map((x,i)=>[x.a.id,i+1]));
   for(const x of scored){
     const rs=rankStructured.get(x.a.id)||scored.length,rl=rankLexical.get(x.a.id)||scored.length;
-    x.rrf=1/(60+rs)+1/(60+rl);
+    const rrfBase=1/(60+rs)+1/(60+rl);
+    const evidenceCoverage=Math.max(0,Math.min(1,Number(x.relevance.coverageFactor||0)/100));
+    x.rrf=rrfBase*(.7+.3*evidenceCoverage);
     const dims=arr(x.relevance.dims).filter(d=>d.documented!==false);
     x.expertSignals={
       documented:dims.length,
+      evidenceCoverage,
       strong:dims.filter(d=>(d.ratio??0)>=65).length,
       medium:dims.filter(d=>(d.ratio??0)>=40).length,
       core:dims.some(d=>['strategic','expected','beneficiary'].includes(d.key)&&(d.ratio??0)>=55),
       direct:Boolean(officialUrl(x.a))
     };
   }
-  scored.sort((x,y)=>y.rrf-x.rrf||y.relevance.score-x.relevance.score);
+  scored.sort((x,y)=>y.rrf-x.rrf||(y.relevance.rankingScore??y.relevance.score)-(x.relevance.rankingScore??x.relevance.score));
 
   const isProject=String(p.summary||'').trim().length>0;
-  const priorities=scored.filter(x=>isProject&&x.expertSignals.direct&&x.expertSignals.documented>=5&&x.expertSignals.strong>=3&&x.expertSignals.core).slice(0,10);
+  const priorities=scored.filter(x=>isProject&&x.expertSignals.direct&&x.expertSignals.documented>=5&&x.expertSignals.evidenceCoverage>=.55&&x.expertSignals.strong>=3&&x.expertSignals.core).slice(0,10);
   const priorityIds=new Set(priorities.map(x=>x.a.id));
-  const leads=scored.filter(x=>!priorityIds.has(x.a.id)&&x.expertSignals.documented>=3&&(x.expertSignals.strong>=2||x.expertSignals.strong+x.expertSignals.medium>=4)&&x.expertSignals.core).slice(0,12);
+  const leads=scored.filter(x=>!priorityIds.has(x.a.id)&&x.expertSignals.documented>=3&&x.expertSignals.evidenceCoverage>=.35&&(x.expertSignals.strong>=2||x.expertSignals.strong+x.expertSignals.medium>=4)&&x.expertSignals.core).slice(0,12);
   const leadIds=new Set(leads.map(x=>x.a.id));
-  const potentials=scored.filter(x=>!priorityIds.has(x.a.id)&&!leadIds.has(x.a.id)&&x.expertSignals.core).slice(0,10);
+  const potentials=scored.filter(x=>!priorityIds.has(x.a.id)&&!leadIds.has(x.a.id)&&x.expertSignals.documented>=2&&x.expertSignals.evidenceCoverage>=.2&&x.expertSignals.core).slice(0,10);
   const shownIds=new Set([...priorities,...leads,...potentials].map(x=>x.a.id));
   const bestBelow=scored.filter(x=>!shownIds.has(x.a.id)).slice(0,5);
   const duration=Math.round(performance.now()-started);
@@ -540,7 +547,7 @@ function resultCard(r,rank,kind='À APPROFONDIR'){
       <section><h4>Pré-requis</h4>${listText(a.prerequisites)}</section>
       <section class="span-2 eligibility-note"><h4>Éligibilité — commentaire</h4><p>${esc(eligibilityComment(r))}</p></section>
     </div>
-    <details class="score-audit"><summary>Lire l’analyse détaillée</summary><div class="mini" style="margin:8px 0">Base : ${esc(r.relevance.basis||'données disponibles')}. Rapprochement indicatif, sans barème officiel du financeur. Les données absentes ne constituent pas une incompatibilité.</div>${scoreAudit}</details>
+    <details class="score-audit"><summary>Lire l’analyse détaillée</summary><div class="mini" style="margin:8px 0">Base : ${esc(r.relevance.basis||'données disponibles')}. Couverture de preuve : ${esc(r.relevance.coverageFactor??0)} %. Rapprochement indicatif, sans barème officiel du financeur. Les données absentes ne constituent pas une incompatibilité, mais une faible couverture réduit le rang final.</div>${scoreAudit}</details>
     <div class="row end aid-result-actions">
       <a class="btn small open-result" data-id="${esc(a.id)}" href="${esc(deepHref)}">Voir la fiche complète</a>
       ${url?`<a class="btn primary small" href="${esc(url)}" target="_blank" rel="noopener">Ouvrir la source officielle ↗</a>`:''}
