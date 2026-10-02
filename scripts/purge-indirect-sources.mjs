@@ -19,7 +19,6 @@ export async function purgeIndirectSources(root=ROOT){
  if(lib.meta?.sourcePolicy!=='DIRECT_OFFICIAL_ONLY')meta.sourcePolicyAppliedAt=new Date().toISOString();
  else if(lib.meta.sourcePolicyAppliedAt)meta.sourcePolicyAppliedAt=lib.meta.sourcePolicyAppliedAt;
  const clean={meta,aaps};await write(path.join(data,'library.json'),clean);
- await write(path.join(data,'library.previous.json'),{meta:{sourcePolicy:'DIRECT_OFFICIAL_ONLY'},aaps:[]});
  const sources={version:cfg.version,sourcePolicy:cfg.sourcePolicy,sources:cfg.sources};await write(path.join(data,'sources.json'),sources);
  await write(path.join(data,'manifest.json'),meta);
  const changes=(await read(path.join(data,'changes.json'),[])).filter(x=>ids.has(x.id));await write(path.join(data,'changes.json'),changes);
@@ -31,10 +30,11 @@ export async function purgeIndirectSources(root=ROOT){
  const csv=['id,titre,page_officielle',...aaps.map(a=>[a.id,a.title,a.officialPage].map(x=>'"'+String(x||'').replaceAll('"','""')+'"').join(','))].join('\n');
  for(const name of ['radar-library.csv','qualifund-library.csv'])await fs.writeFile(path.join(pub,name),csv);
  await write(path.join(pub,'status.json'),meta);
- await fs.writeFile(path.join(data,'bootstrap.js'),`window.__LEYTON_RADAR_BOOTSTRAP__=${JSON.stringify({library:clean,sources,coverage,changes})};\n`);
  // Derived reports and caches must not retain the former stock or its counts.
+ await fs.rm(path.join(data,'bootstrap.js'),{force:true});
+ await fs.rm(path.join(data,'library.previous.json'),{force:true});
  if(changed){
- for(const name of ['search-index.json','criteria-audit.json','remediation.json','source-health.json','production-readiness.json','link-audit.json'])await fs.rm(path.join(data,name),{force:true});
+ for(const name of ['search-index.json','criteria-audit.json','remediation.json','source-health.json','production-readiness.json','link-audit.json','certification-ledger.json'])await fs.rm(path.join(data,name),{force:true});
  await fs.rm(path.join(pub,'rapports'),{recursive:true,force:true});
  await fs.rm(path.join(data,'library-parts'),{recursive:true,force:true});
  await fs.rm(path.join(data,'library-manifest.json'),{force:true});
