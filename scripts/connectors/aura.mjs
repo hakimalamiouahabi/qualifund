@@ -12,6 +12,16 @@ const EUROPEAN_RX=/\b(?:FEADER|FEDER|FSE\+?|FTJ|LEADER|PEI)\b/i;
 const AAP_RX=/\b(?:appel(?:s)? à projets?|appel(?:s)? a projets?|appel(?:s)? à manifestation d['’]intérêt|appel(?:s)? a manifestation d['’]interet|\bAMI\b)\b/i;
 const EXCLUDED_FINANCIAL_RX=/\b(?:garantie de pr[eê]t|garantir un cr[eé]dit|fonds propres|quasi[- ]fonds propres|lev[eé]e de fonds|prise de participation|pr[eê]t croissance|pr[eê]t classique|cr[eé]dit[- ]bail)\b/i;
 
+function looksLikeEnterpriseListing(html=''){
+  return /view-aura-aids/.test(html)
+    && /node--type-aid node--view-mode-search-result/.test(html)
+    && /R[eé]sultat\(s\)/i.test(html);
+}
+function looksLikeAidPage(html=''){
+  return /<h1\b/i.test(html)
+    && /(?:Votre projet|Montant et accompagnement propos[eé]|B[eé]n[eé]ficiaires et points d['’]attention|D[eé]poser une demande)/i.test(html);
+}
+
 async function getHtml(url){
   try{
     const r=await fetchText(url,{timeoutMs:25000,retries:2,headers:{
@@ -23,6 +33,45 @@ async function getHtml(url){
     const r=await browserHtml(url,{timeoutMs:65000});
     return{html:r.html,finalUrl:r.url||url,via:'browser'};
   }
+}
+
+async function getListingHtml(url,{log=console.log}={}){
+  let loaded=null;
+  try{loaded=await getHtml(url)}catch{}
+  if(loaded&&looksLikeEnterpriseListing(loaded.html))return loaded;
+  try{
+    const rendered=await browserHtml(url,{
+      timeoutMs:70000,
+      waitForSelector:'article.node--type-aid.node--view-mode-search-result',
+      waitAfterMs:1200
+    });
+    if(looksLikeEnterpriseListing(rendered.html)){
+      log(`[aura] rendu navigateur utilisé pour ${url}`);
+      return{html:rendered.html,finalUrl:rendered.url||url,via:'browser-forced'};
+    }
+  }catch(e){
+    log(`[aura] rendu navigateur listing indisponible ${url}: ${e.message}`);
+  }
+  return loaded||{html:'',finalUrl:url,via:'empty'};
+}
+
+async function getAidHtml(url,{log=console.log}={}){
+  let loaded=null;
+  try{loaded=await getHtml(url)}catch{}
+  if(loaded&&looksLikeAidPage(loaded.html))return loaded;
+  try{
+    const rendered=await browserHtml(url,{
+      timeoutMs:65000,
+      waitForSelector:'h1',
+      waitAfterMs:650
+    });
+    if(looksLikeAidPage(rendered.html)){
+      return{html:rendered.html,finalUrl:rendered.url||url,via:'browser-forced'};
+    }
+  }catch(e){
+    log(`[aura] rendu navigateur fiche indisponible ${url}: ${e.message}`);
+  }
+  return loaded||{html:'',finalUrl:url,via:'empty'};
 }
 
 function pageText(html){
@@ -93,13 +142,16 @@ async function enterpriseMaster(source,{log=console.log,maxPages=80}={}){
     u.searchParams.set('f[0]','profil:3');
     u.searchParams.set('page',String(page));
     let loaded;
-    try{loaded=await getHtml(u.href)}
+    try{loaded=await getListingHtml(u.href,{log})}
     catch(e){
       log(`[${source.id}] page catalogue inaccessible ${u.href}: ${e.message}`);
       break;
     }
     const parsed=parseAuraEnterpriseListingHtml(loaded.html,loaded.finalUrl||u.href);
     pagesScanned++;
+    if(page===0&&!parsed.items.length&&parsed.expectedCount==null){
+      log(`[${source.id}] vue Drupal Entreprise absente après HTTP + navigateur`);
+    }
     if(expectedCount==null&&Number.isFinite(parsed.expectedCount))expectedCount=parsed.expectedCount;
     let added=0;
     for(const item of parsed.items){
@@ -166,8 +218,9 @@ function directRegionEvidence(text=''){
 
 async function extractOne(source,link){
   const requested=canonicalUrl(link.url);
-  const loaded=await getHtml(requested);
+  const loaded=await getAidHtml(requested);
   const resolved=canonicalUrl(loaded.finalUrl||requested);
+  if(!looksLikeAidPage(loaded.html))return{aid:null,excluded:{url:requested,label:link.label||'',reason:'FICHE_OFFICIELLE_NON_LUEE'}};
   if(resolved!==requested)return{aid:null,excluded:{url:requested,label:link.label||'',reason:'REDIRECTION_VERS_AUTRE_PAGE',resolvedUrl:resolved}};
   const text=pageText(loaded.html);
   if(isEuropeanFundAid(link)){
@@ -250,7 +303,7 @@ async function classifyExternalGaps(source,master,external,{log=console.log}={})
       const i=cursor++;if(i>=pending.length)return;
       const link=pending[i];
       try{
-        const loaded=await getHtml(link.url);
+        const loaded=await getAidHtml(link.url,{log});
         const text=pageText(loaded.html);
         const parsed=extractFromHtml(loaded.html,{url:link.url,sourceTier:'B',scope:'REGIONAL',region:REGION});
         const title=cleanTitle(parsed.title||link.label||'');
