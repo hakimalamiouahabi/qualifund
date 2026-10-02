@@ -9,6 +9,7 @@ import { collectOpenDataSoft } from './connectors/opendatasoft.mjs';
 import { collectOfficialPage } from './connectors/official-page.mjs';
 import { collectBpifranceAaps, collectBpifranceAids } from './connectors/bpifrance.mjs';
 import { collectAdeme } from './connectors/ademe.mjs';
+import { collectAura } from './connectors/aura.mjs';
 import { enrichAid } from './lib/enrich.mjs';
 import { mergeAid } from './lib/merge.mjs';
 import { dedupe, canonicalKey } from './lib/dedupe.mjs';
@@ -73,7 +74,7 @@ const current=collectionLock.locked
 const cycleSeenKeys=new Set();
 log('Collection lock',lockSummary(collectionLock));
 function withTimeout(p,ms,label){return Promise.race([p,new Promise((_,rej)=>setTimeout(()=>rej(new Error(`timeout ${label} ${ms}ms`)),ms))])}
-async function collect(source){const ctx={log};switch(source.strategy){case'catalog-html':return collectWebCatalog({...source,browserFallback:true},ctx);case'opendatasoft':return collectOpenDataSoft(source,ctx);case'official-page':return collectOfficialPage(source,ctx);case'bpifrance-aap':return collectBpifranceAaps(source,ctx);case'bpifrance-aides':return collectBpifranceAids(source,ctx);case'ademe-official':return collectAdeme(source,ctx);case'control-only':return collectControl(source,ctx);default:throw new Error('Stratégie de collecte non autorisée: '+source.strategy)}}
+async function collect(source){const ctx={log};switch(source.strategy){case'catalog-html':return collectWebCatalog({...source,browserFallback:true},ctx);case'opendatasoft':return collectOpenDataSoft(source,ctx);case'official-page':return collectOfficialPage(source,ctx);case'bpifrance-aap':return collectBpifranceAaps(source,ctx);case'bpifrance-aides':return collectBpifranceAids(source,ctx);case'ademe-official':return collectAdeme(source,ctx);case'aura-official':return collectAura(source,ctx);case'control-only':return collectControl(source,ctx);default:throw new Error('Stratégie de collecte non autorisée: '+source.strategy)}}
 assertDirectSources(cfg);
 const sourceRuns=new Array(sourcesToRun.length);
 let sourceCursor=0;
