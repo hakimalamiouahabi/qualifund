@@ -125,6 +125,8 @@ jobs:
         run: npm run audit:ingestion
       - name: Auditer les critères et leurs preuves officielles
         run: npm run audit:criteria
+      - name: Audit approfondi data engineering
+        run: npm run audit:deep
       - name: Tests unitaires
         run: npm test
       - name: Validation schéma
@@ -136,10 +138,8 @@ jobs:
       - name: QA
         run: npm run qa >> "$GITHUB_STEP_SUMMARY"
       - name: Rapport de remédiation preuves
-        if: ${{ steps.lock.outputs.locked != 'true' }}
         run: npm run remediation >> "$GITHUB_STEP_SUMMARY"
-      - name: Pré-readiness avant déploiement
-        if: ${{ steps.lock.outputs.locked != 'true' }}
+      - name: Readiness du cycle courant
         run: npm run production:gates >> "$GITHUB_STEP_SUMMARY"
       - name: Commit des données générées
         id: commit_data
@@ -148,7 +148,7 @@ jobs:
           set -euo pipefail
           git config user.name "qualifund-bot"
           git config user.email "qualifund-bot@users.noreply.github.com"
-          git add package-lock.json site/data site/bibliotheque site/runtime-config.js site/sw.js PRODUCTION_READINESS.md REMEDIATION_REPORT.md || true
+          git add package-lock.json site/data site/bibliotheque site/runtime-config.js site/sw.js PRODUCTION_READINESS.md REMEDIATION_REPORT.md DATA_QUALITY_AUDIT.md || true
           if ! git diff --cached --quiet; then
             git commit -m "chore(data): actualisation FUNDING RADAR [skip ci]"
             git pull --rebase origin main
