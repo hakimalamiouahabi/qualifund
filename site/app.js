@@ -29,7 +29,7 @@ const CERTIFIED_SOURCE_NAMES=new Map([
 ]);
 const TARGET_PUBLIC_INSTRUMENTS=new Set(['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO','APPEL_A_PROJET']);
 function applyCertificationLedger(ledger){
-  if(!ledger||!Array.isArray(ledger.unlockedSourceIds)||!ledger.unlockedSourceIds.length)return;
+  if(!ledger||!Array.isArray(ledger.unlockedSourceIds))return;
   PUBLIC_UNLOCKED_SOURCE_IDS.clear();for(const id of ledger.unlockedSourceIds)PUBLIC_UNLOCKED_SOURCE_IDS.add(id);
   PUBLIC_UNLOCKED_GUICHETS.splice(0,PUBLIC_UNLOCKED_GUICHETS.length,...uniq(arr(ledger.guichets)));
   CERTIFIED_SOURCE_NAMES.clear();
