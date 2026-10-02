@@ -7,5 +7,7 @@ test('aucun import stock ni rafraîchissement tiers dans le navigateur',()=>{
  for(const name of ['refreshAidesTerritoiresClient','refreshAidesEntreprisesClient','importOfficialStockFile'])assert.ok(!app.includes(name));
  assert.doesNotMatch(html,/importStockInput/);
  assert.match(app,/DIRECT_OFFICIAL_ONLY/);
- assert.match(app,/async function loadClientLibrary\(\)\{return false\}/);
+ assert.match(app,/certified-sources\.json/);
+ assert.match(app,/chunkedLibrary/);
+ assert.doesNotMatch(app,/refreshAidesTerritoiresClient|refreshAidesEntreprisesClient|importOfficialStockFile/);
 });
