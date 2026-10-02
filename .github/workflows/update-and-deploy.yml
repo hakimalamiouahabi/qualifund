@@ -155,19 +155,18 @@ jobs:
             git push origin HEAD:main
           fi
           echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Construire l'artefact public certifié
+        run: npm run build:cloudflare
       - name: Configurer GitHub Pages
-        if: ${{ steps.lock.outputs.locked != 'true' }}
         id: pages
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
-      - name: Charger l'artefact Pages
-        if: ${{ steps.lock.outputs.locked != 'true' }}
+      - name: Charger l'artefact Pages certifié
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
-          path: site
+          path: dist
 
   deploy:
     needs: build
-    if: ${{ needs.build.outputs.collection_locked != 'true' }}
     runs-on: ubuntu-latest
     permissions:
       pages: write
@@ -184,7 +183,6 @@ jobs:
 
   verify-production:
     needs: [build, deploy]
-    if: ${{ needs.build.outputs.collection_locked != 'true' }}
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -217,7 +215,6 @@ jobs:
       - name: Recette UAT finale
         run: npm run uat
       - name: Calculer la readiness finale sur le SHA publié
-        if: ${{ steps.lock.outputs.locked != 'true' }}
         env:
           RADAR_PUBLIC_URL: ${{ needs.deploy.outputs.page_url }}
         run: npm run production:gates >> "$GITHUB_STEP_SUMMARY"
@@ -238,17 +235,18 @@ jobs:
       - name: Certification production stricte
         if: ${{ steps.lock.outputs.locked != 'true' }}
         run: npm run certify:production
+      - name: Reconstruire l'artefact public avec les preuves finales
+        run: npm run build:cloudflare
       - name: Reconfigurer Pages pour l'artefact vérifié
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
-      - name: Charger le site avec readiness finale
+      - name: Charger le site certifié avec readiness finale
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
           name: github-pages-verified
-          path: site
+          path: dist
 
   redeploy-verified:
     needs: [build, verify-production]
-    if: ${{ needs.build.outputs.collection_locked != 'true' }}
     runs-on: ubuntu-latest
     permissions:
       pages: write
