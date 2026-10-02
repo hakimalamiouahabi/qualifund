@@ -48,7 +48,7 @@ function loadProjectState(){
   }catch{}
   return{...DEFAULT_PROJECT};
 }
-const state={route:'home',studyStep:1,lib:[],meta:{},coverage:[],changes:[],sources:[],readiness:null,certification:null,bpifranceCertification:null,dailyReport:null,project:loadProjectState(),lastResults:[]};
+const state={route:'home',studyStep:1,lib:[],meta:{},coverage:[],changes:[],sources:[],readiness:null,certification:null,bpifranceCertification:null,certifiedRegistry:null,dailyReport:null,project:loadProjectState(),lastResults:[]};
 const today=()=>new Date().toISOString().slice(0,10);
 const daysUntil=v=>v?Math.floor((new Date(v+'T23:59:59')-new Date(today()+'T00:00:00'))/86400000):null;
 async function fetchJsonStrict(url){
@@ -67,9 +67,7 @@ async function chunkedLibrary(manifestPath='./data/library-manifest.json'){
   if(m.count!=null&&aaps.length!==Number(m.count))throw new Error(`Bibliothèque incomplète : ${aaps.length}/${m.count} fiches chargées.`);
   return{meta:m.meta||{},aaps};
 }
-const api=async p=>p.includes('library.json')
-  ? chunkedLibrary('./data/library-manifest.json')
-  : fetchJsonStrict(p);
+const api=async p=>{if(!p.includes('library.json'))return fetchJsonStrict(p);try{return await chunkedLibrary('./data/library-manifest.json')}catch(chunkError){try{return await fetchJsonStrict('./data/library.json')}catch(rawError){throw new Error('Bibliothèque indisponible — fragments: '+chunkError.message+' — JSON: '+rawError.message)}}};
 function toast(msg){const t=$('#toast');t.innerHTML=msg;t.classList.remove('hidden');clearTimeout(window.__toastTimer);window.__toastTimer=setTimeout(()=>t.classList.add('hidden'),4200)}
 function permanentVerified(a){return Boolean(a.permanent&&arr(a.verification?.fieldEvidence).some(e=>e.field==='calendar'&&['A','B'].includes(e.sourceTier)))}
 function ademeVerified(a){return Boolean(a?.sourceId==='ademe'&&a?.guichetVerified==='ADEME'&&arr(a?.verification?.fieldEvidence).some(e=>e?.field==='guichet'&&['A','B'].includes(e?.sourceTier)&&e?.sourceUrl))}
@@ -124,6 +122,7 @@ function guichetLabels(a){
   const provenance=norm([a?.sourceId,...arr(a?.sourceAliases)].filter(Boolean).join(' '));
   const t=norm([...arr(a?.funder),a?.operator,a?.programme,a?.sourceId].filter(Boolean).join(' ')),out=[];
   const add=x=>{if(x&&!out.includes(x))out.push(x)};
+  if(a?.guichetVerified&&PUBLIC_UNLOCKED_GUICHETS.includes(a.guichetVerified))add(a.guichetVerified);
   let bpiHost=false;try{bpiHost=/bpifrance\.fr$/i.test(new URL(a?.officialPage||'').hostname)}catch{}
   if(/\bbpifrance(?:_|\b)/.test(provenance)||norm(a?.operator)==='bpifrance'||(bpiHost&&/bpifrance|bpi france/.test(t)))add('Bpifrance');
   if(ademeVerified(a))add('ADEME');
@@ -133,7 +132,7 @@ function guichetLabels(a){
   if(/franceagrimer/.test(t))add('FranceAgriMer');
   if(/banque des territoires|caisse des depots/.test(t))add('Banque des Territoires');
   if(/office francais de la biodiversite|\bofb\b/.test(t))add('OFB');
-  if(/region|conseil regional|collectivite territoriale/.test(t))add('Régions');
+  if(/region|conseil regional|collectivite territoriale/.test(t)&&!out.some(x=>REGIONS.includes(x)))add('Régions');
   if(/ministere|etat /.test(t))add('État / Ministères');
   if(!out.length&&arr(a?.funder).length)add(arr(a.funder)[0]);
   return out;
@@ -149,8 +148,8 @@ function displayAidTitle(a){
 }
 
 async function loadAll(){
-  try{applyCertifiedRegistry(await api('./data/certified-sources.json'))}
-  catch{applyCertifiedFallback()}
+  try{state.certifiedRegistry=await api('./data/certified-sources.json');applyCertifiedRegistry(state.certifiedRegistry)}
+  catch{state.certifiedRegistry={sourceIds:FALLBACK_CERTIFIED_SOURCE_IDS,guichets:FALLBACK_CERTIFIED_GUICHETS,certificates:[]};applyCertifiedFallback()}
 
   const j=await api('./data/library.json');
   state.lib=(j.meta?.sourcePolicy==='DIRECT_OFFICIAL_ONLY'?j.aaps||[]:[])
@@ -718,7 +717,7 @@ function library(resultsOnly=false){
   const markup=`<div class="page-head library-head"><div><div class="eyebrow">Bibliothèque des aides & appels à projets</div><h1>Référentiel des financements publics</h1><p class="sub">Dispositifs ouverts, permanents et clôturés depuis moins de 60 jours. Filtrez par région, thématique, instrument, guichet et bénéficiaire.</p></div><div class="row end"><span class="badge info" id="libraryCount" aria-live="polite">${list.length} résultat(s)</span><button class="btn primary" id="exportLibraryCsv">Exporter CSV</button></div></div>
   <div class="filters funding-filters">
     <input class="input search-main" id="libQ" aria-label="Rechercher dans les aides" placeholder="Rechercher un dispositif, une thématique, un financeur…" value="${esc(q)}">
-    <select id="libGuichet" aria-label="Guichet"><option value="">Bpifrance + ADEME</option>${guichets.map(g=>`<option value="${esc(g)}" ${g===guichet?'selected':''}>${esc(g)}</option>`).join('')}</select>
+    <select id="libGuichet" aria-label="Guichet"><option value="">Tous les guichets certifiés</option>${guichets.map(g=>`<option value="${esc(g)}" ${g===guichet?'selected':''}>${esc(g)}</option>`).join('')}</select>
     <select id="libRegion"><option value="">Toutes régions</option>${REGIONS.map(r=>`<option ${r===region?'selected':''}>${esc(r)}</option>`).join('')}</select>
     <select id="libTheme" aria-label="Thématique"><option value="">Toutes thématiques</option>${themes.map(t=>`<option value="${esc(t)}" ${t===theme?'selected':''}>${esc(t)}</option>`).join('')}</select>
     <select id="libInstrument" aria-label="Instrument"><option value="">Tous instruments</option>${instruments.map(t=>`<option value="${esc(t)}" ${t===instrument?'selected':''}>${esc(aidTypeLabel(t))}</option>`).join('')}</select>
