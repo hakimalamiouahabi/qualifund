@@ -1,0 +1,64 @@
+name: ADEME — recertification PR ponctuelle
+
+on:
+  push:
+    branches: [fix/ademe-catalogue-policy-evidence]
+    paths:
+      - '.github/workflows/ademe-policy-certify-once.yml'
+
+jobs:
+  certify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 0
+      - name: Node 22
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - name: Dépendances
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Tests statiques
+        run: |
+          set -euo pipefail
+          find scripts tests -type f -name '*.mjs' -print0 | xargs -0 -n1 node --check
+          npm test
+          npm run validate
+      - name: Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Préflight
+        run: |
+          npm run audit:sources
+          npm run preflight:sources
+      - name: Collecte ADEME avec politique officielle
+        env:
+          FUNDING_RADAR_FULL_REFRESH: '1'
+        run: npm run update:full
+      - name: Certifier ADEME
+        run: npm run certify:active
+      - name: Synchroniser le ledger et les métadonnées
+        run: |
+          npm run sync:metadata
+          npm run build:index
+          npm run audit:ingestion
+          npm run audit:criteria
+          npm run audit:deep:strict
+          npm run uat
+          npm run qa
+      - name: Commit du corpus certifié dans la branche PR
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "funding-radar-bot"
+          git config user.email "funding-radar-bot@users.noreply.github.com"
+          git add site/data site/bibliotheque site/runtime-config.js site/sw.js PRODUCTION_READINESS.md REMEDIATION_REPORT.md DATA_QUALITY_AUDIT.md || true
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(data): recertification ADEME policy [skip ci]"
+            git push origin HEAD:fix/ademe-catalogue-policy-evidence
+          fi
