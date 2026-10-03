@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { loadCollectionLock, validateCollectionLock } from './lib/collection-lock.mjs';
-import { sourceConfigFingerprint, certificationBasisFingerprint, sourceDataFingerprint } from './lib/publication.mjs';
+import { sourceConfigFingerprint, certificationBasisFingerprint, sourceDataFingerprint, publicationReason } from './lib/publication.mjs';
 import { purgeIndirectSources } from './purge-indirect-sources.mjs';
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
@@ -19,6 +19,7 @@ const coverage=JSON.parse(await fs.readFile(path.join(DATA,'coverage.json'),'utf
 const lib=JSON.parse(await fs.readFile(path.join(DATA,'library.json'),'utf8'));
 const manifest=JSON.parse(await fs.readFile(path.join(DATA,'manifest.json'),'utf8'));
 const allowed=new Set(lock.allowedSourceIds||[]);
+const configuredSourceIds=new Set((cfg.sources||[]).map(x=>x.id));
 const primary=new Set(lock.certification?.primarySourceIds||lock.allowedSourceIds||[]);
 const cert=lock.certification||{};
 const problems=[];
@@ -133,6 +134,10 @@ for(const a of records){
   if(cert.requireEnterpriseScope){
     const proof=ev.find(e=>e?.field==='enterpriseEligibility'&&['A','B'].includes(e?.sourceTier));
     if(a?.enterpriseEligible!==true||!proof)problems.push(`${a.id}: éligibilité entreprise non prouvée`);
+  }
+  if(cert.requirePublicationReady){
+    const reason=publicationReason(a,{configuredSourceIds,unlockedSourceIds:null});
+    if(reason)problems.push(`${a.id}: non publiable — ${reason}`);
   }
   if(cert.requireDirectOfficialUrl){
     if(!/^https:\/\//i.test(String(a.officialPage||''))){problems.push(`${a.id}: page officielle directe absente`);continue}
