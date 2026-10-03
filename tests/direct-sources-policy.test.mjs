@@ -167,7 +167,7 @@ test('une fiche quarantinée d’une source déjà certifiée quitte le stock op
    {field:'instrument',sourceTier:'B',sourceUrl:'https://www.bpifrance.fr/catalogue-offres/offre-test'},
    {field:'enterpriseEligibility',sourceTier:'B',sourceUrl:'https://www.bpifrance.fr/catalogue-offres/offre-test'}
   ];
-  const clean={...valid,id:'bpi-clean',sourceId:'bpifrance',officialPage:'https://www.bpifrance.fr/catalogue-offres/offre-test',
+  const clean={...valid,id:'bpi-clean',title:'AAP Innovation Bpifrance',sourceId:'bpifrance',officialPage:'https://www.bpifrance.fr/catalogue-offres/offre-test',
    verification:{status:'VERIFIE',fieldEvidence:evidence}};
   const quarantined={...clean,id:'bpi-bad',officialPage:'https://www.bpifrance.fr/catalogue-offres/offre-bad',
    verification:{status:'A_REVERIFIER',fieldEvidence:evidence.filter(e=>e.field!=='enterpriseEligibility')}};
