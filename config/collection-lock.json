@@ -1,5 +1,5 @@
 {
-  "version": 9,
+  "version": 10,
   "locked": true,
   "mode": "GUICHET",
   "name": "Bpifrance",
@@ -28,17 +28,11 @@
     "requireZeroExtractionErrors": true,
     "requireDirectOfficialUrl": true,
     "forbidGenericTitles": true,
-    "requireExternalAuditDiscovery": true,
-    "externalAuditFile": "config/bpifrance-v2-external-audit.json",
-    "externalAuditMaxAgeHours": 72,
     "sourceRules": {
       "bpifrance_aap": {
         "master": "ACTIVE_AAP_LISTING",
         "requireListingDiscovery": true,
         "requireImportedEqualsDiscovered": true,
-        "requireExternalDisposition": true,
-        "forbidActiveExternalGaps": true,
-        "forbidUnknownExternalGaps": true,
         "requireGuichetEvidence": true,
         "requireCurrentStatusEvidence": true,
         "allowedSourceStates": [
@@ -54,9 +48,6 @@
       "bpifrance_aides": {
         "master": "CATALOGUE_SECTION_SUB_AR",
         "requireCatalogueSectionDiscovery": true,
-        "requireExternalDisposition": true,
-        "forbidTargetExternalGaps": true,
-        "forbidUnknownExternalGaps": true,
         "requireGuichetEvidence": true,
         "requireCurrentStatusEvidence": true,
         "allowedSourceStates": [
@@ -80,9 +71,9 @@
       }
     }
   },
-  "notes": "Recertification Foundation v3 / v12.8 : Bpifrance est repris en premier sur un pipeline fail-closed. ADEME sera recertifié ensuite. Auvergne-Rhône-Alpes reste gelée jusqu'aux deux PASS v12.8. Les certificats historiques antérieurs restent conservés comme preuves mais ne déverrouillent plus la publication sans fingerprints de configuration et de base technique.",
+  "notes": "Recertification Foundation v3.1 / v12.9 officiel-only : Bpifrance est repris en premier sans aucun contre-audit externe payant/LLM. ADEME sera recertifié ensuite sur catalogue/RSS officiels, puis Auvergne-Rhône-Alpes sur son catalogue officiel Entreprise. AURA reste gelée jusqu'aux deux PASS v12.9.",
   "foundationBaseline": {
-    "version": "Foundation v3 / 12.8",
+    "version": "Foundation v3.1 / 12.9 official-only",
     "status": "HARDENING",
     "validatedAt": null,
     "p0": null
