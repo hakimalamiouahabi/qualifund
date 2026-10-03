@@ -155,7 +155,8 @@ jobs:
           git config user.email "funding-radar-bot@users.noreply.github.com"
           git add package-lock.json site/data site/bibliotheque site/runtime-config.js site/sw.js PRODUCTION_READINESS.md REMEDIATION_REPORT.md DATA_QUALITY_AUDIT.md || true
           if ! git diff --cached --quiet; then
-            git commit -m "chore(data): actualisation FUNDING RADAR [skip ci]"
+            # Ce commit DOIT déclencher Cloudflare Pages. Ne jamais ajouter [skip ci] ici.
+            git commit -m "chore(data): actualisation FUNDING RADAR"
             git pull --rebase origin main
             git push origin HEAD:main
           fi

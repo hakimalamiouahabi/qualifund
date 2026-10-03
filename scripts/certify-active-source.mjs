@@ -110,11 +110,12 @@ for(const a of records){
     const proof=ev.find(e=>e?.field==='guichet'&&['A','B'].includes(e?.sourceTier)&&e?.sourceUrl);
     if(a?.guichetVerified!==lock.name||!proof)problems.push(`${a.id}: présence sur le portail ${lock.name} non prouvée`);
   }
-  if(cert.requireCatalogueMasterMembership||rule.requireMasterMembership||rule.requireGuichetEvidence){
+  const requireMasterMembership=Boolean(cert.requireCatalogueMasterMembership||rule.requireMasterMembership);
+  if(requireMasterMembership){
     const membership=ev.find(e=>e?.field==='catalogueMembership'&&['A','B'].includes(e?.sourceTier)&&e?.sourceUrl);
     const kindProof=ev.find(e=>e?.field==='catalogueKind'&&['A','B'].includes(e?.sourceTier));
-    if((cert.requireCatalogueMasterMembership||rule.requireMasterMembership||rule.requireGuichetEvidence)&&(a?.catalogueVerified!==true||!membership))problems.push(`${a.id}: présence dans le référentiel maître ${lock.name} non prouvée`);
-    if((cert.requireCatalogueMasterMembership||rule.allowedKinds)&&(!kindProof||!a?.kind))problems.push(`${a.id}: type de dispositif non prouvé`);
+    if(a?.catalogueVerified!==true||!membership)problems.push(`${a.id}: présence dans le référentiel maître ${lock.name} non prouvée`);
+    if(rule.allowedKinds?.length&&(!kindProof||!a?.kind))problems.push(`${a.id}: type de dispositif non prouvé`);
   }
   if(cert.requireCurrentStatusEvidence||rule.requireCurrentStatusEvidence){
     const allowedStates=new Set(rule.allowedSourceStates||cert.allowedSourceStates||[]);
