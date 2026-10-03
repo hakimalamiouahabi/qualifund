@@ -1,68 +1,84 @@
 {
-  "version": 13,
+  "version": 14,
   "locked": true,
-  "mode": "GUICHET",
-  "name": "ADEME",
+  "mode": "REGION",
+  "name": "AURA",
   "allowedSourceIds": [
-    "ademe"
+    "aura"
   ],
   "preserveUnselectedSources": true,
   "preserveUnselectedCoverage": true,
   "freezeUnselectedLifecycle": true,
   "enrichSelectedOnly": true,
-  "next": "AURA",
+  "next": "Bourgogne-Franche-Comté",
   "certification": {
     "primarySourceIds": [
-      "ademe"
+      "aura"
     ],
     "allowedHosts": [
-      "agirpourlatransition.ademe.fr"
+      "www.auvergnerhonealpes.fr",
+      "auvergnerhonealpes.fr"
     ],
     "forbiddenPathFragments": [
-      "/catalogue-rex/",
-      "/accessibilite",
       "/mentions-legales",
+      "/accessibilite",
       "/politique-",
-      "/conditions-generales"
+      "/contact"
     ],
     "requireAuditAccounting": true,
     "requireZeroExtractionErrors": true,
     "requireDirectOfficialUrl": true,
     "forbidGenericTitles": true,
-    "requireCatalogueDiscovery": true,
-    "requireCatalogueCompleteness": true,
-    "requireCatalogueClassification": true,
-    "requireRssDiscovery": true,
-    "requireGuichetEvidence": true,
-    "requireCurrentStatusEvidence": true,
     "requireEnterpriseScope": true,
-    "allowedSourceStates": [
-      "OPEN"
-    ],
+    "requireCurrentStatusEvidence": true,
     "requirePublicationReady": true,
+    "allowedSourceStates": [
+      "OPEN",
+      "OPEN_UNDATED",
+      "PERMANENT"
+    ],
     "sourceRules": {
-      "ademe": {
-        "master": "ADEME_ENTERPRISES_ACTIVE_INVENTORY",
+      "aura": {
+        "master": "AURA_ENTERPRISE_CATALOGUE",
+        "requireEnterpriseCatalogueDiscovery": true,
+        "requireExpectedCount": true,
+        "expectedCount": 175,
         "requireMasterMembership": true,
+        "requireAuditAccounting": true,
         "requireGuichetEvidence": true,
         "requireCurrentStatusEvidence": true,
         "allowedSourceStates": [
-          "OPEN"
+          "OPEN",
+          "OPEN_UNDATED",
+          "PERMANENT"
         ],
         "allowedKinds": [
           "AAP / AMI",
           "AIDE"
         ],
-        "requiredPathPrefix": "/entreprises/aides-financieres/catalogue/",
-        "requireAuditAccounting": true
+        "allowedAidTypes": [
+          "SUBVENTION",
+          "AVANCE_REMBOURSABLE",
+          "PRET_TAUX_ZERO"
+        ],
+        "requiredPathPrefix": "/aides/",
+        "forbiddenTitleFragments": [
+          "FEADER",
+          "FEDER",
+          "FSE",
+          "FTJ",
+          "LEADER",
+          "PEI"
+        ],
+        "minRetained": 55
       }
     }
   },
-  "notes": "ADEME v13 official-only certifié PASS le 03/10/2026 : 68 dispositifs actifs issus de l’inventaire RSS officiel (16 AAP/AMI, 52 Aides), 68/68 publication-ready, 0 erreur et 0 exclusion. Les fiches directes restent protégées côté runner GitHub par HTTP 403 / challenge Cloudflare ; aucun contournement n’est utilisé. Pour les cartes classées `Aide`, l’instrument SUBVENTION et le guichet ADEME reposent sur la politique institutionnelle officielle du catalogue Entreprises, versionnée le 03/10/2026, bornée à 120 jours et excluant explicitement ADEME Investissement/fonds propres. Bpifrance reste PASS ; AURA est le prochain cycle. Mises à jour automatiques : le 1er et le 15 uniquement.",
+  "notes": "AURA v14 official-only. Baseline live du 04/10/2026 : compteur maître Entreprise 175/175, 60 dispositifs cibles prouvés, 115 exclusions comptabilisées (26 fonds européens dédiés, 21 clos, 16 instruments hors périmètre, 52 instruments non suffisamment prouvés), 0 erreur. Le lecteur navigateur est limité à 2 workers avec retry contrôlé et fermeture explicite de Chromium. Bpifrance et ADEME restent gelés sur leurs certificats PASS. Aucune source agrégée, aucun LLM, aucune API payante, aucun moteur externe. Mise à jour automatique uniquement le 1er et le 15.",
   "foundationBaseline": {
-    "version": "Foundation v3.5 / ADEME official-only certified",
-    "status": "CERTIFIED",
-    "validatedAt": "2026-10-03T15:00:44Z",
-    "p0": 0
+    "version": "Foundation v3.6 / AURA official-only hardening",
+    "status": "HARDENING",
+    "validatedAt": null,
+    "p0": null
   }
 }

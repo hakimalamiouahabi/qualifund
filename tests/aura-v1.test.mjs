@@ -68,22 +68,27 @@ test('le collecteur AURA matérialise explicitement l’éligibilité entreprise
   assert.match(connector,/field:'enterpriseEligibility'/);
 });
 
-test('AURA devient le prochain cycle après le PASS ADEME',()=>{
+test('AURA v14 est le cycle actif après les PASS Bpifrance et ADEME',()=>{
   const lock=JSON.parse(fs.readFileSync(new URL('../config/collection-lock.json',import.meta.url),'utf8'));
+  const ademe=JSON.parse(fs.readFileSync(new URL('../site/data/ademe-certification.json',import.meta.url),'utf8'));
   const bpi=JSON.parse(fs.readFileSync(new URL('../site/data/bpifrance-certification.json',import.meta.url),'utf8'));
+  const raw=JSON.stringify(lock);
   assert.equal(lock.locked,true);
-  assert.equal(lock.mode,'GUICHET');
-  assert.equal(lock.name,'ADEME');
-  assert.equal(lock.version,13);
-  assert.deepEqual(lock.allowedSourceIds,['ademe']);
-  assert.equal(lock.next,'AURA');
-  assert.equal(lock.allowedSourceIds.includes('aura'),false);
-  assert.match(lock.notes,/AURA est le prochain cycle/i);
+  assert.equal(lock.mode,'REGION');
+  assert.equal(lock.name,'AURA');
+  assert.equal(lock.version,14);
+  assert.deepEqual(lock.allowedSourceIds,['aura']);
+  assert.equal(lock.next,'Bourgogne-Franche-Comté');
+  assert.equal(lock.certification?.requirePublicationReady,true);
+  assert.equal(lock.certification?.sourceRules?.aura?.requireExpectedCount,true);
+  assert.equal(lock.certification?.sourceRules?.aura?.expectedCount,175);
+  assert.equal(lock.certification?.sourceRules?.aura?.minRetained,55);
+  assert.equal(lock.certification?.sourceRules?.aura?.requireMasterMembership,true);
+  assert.doesNotMatch(raw,/externalAudit|Exa|Tavily|Parallel|Firecrawl|TinyFish|OpenAI|Anthropic|Gemini/i);
+  assert.equal(ademe.status,'PASS');
+  assert.equal(ademe.lock?.name,'ADEME');
   assert.equal(bpi.status,'PASS');
   assert.equal(bpi.lock?.name,'Bpifrance');
-  assert.ok(bpi.sourceConfigFingerprint);
-  assert.ok(bpi.certificationBasisFingerprint);
-  assert.ok(bpi.certifiedDataFingerprint);
 });
 
 test('la source AURA est filtrée Entreprise et les sources fonds européens restent hors verrou',()=>{
@@ -92,6 +97,10 @@ test('la source AURA est filtrée Entreprise et les sources fonds européens res
   assert.equal(aura.strategy,'aura-official');
   assert.match(aura.url,/profil%3A3/);
   assert.equal(aura.minExpected,175);
+  assert.equal(aura.minImported,55);
+  assert.equal(aura.minImportRatio,0.30);
+  assert.match(aura.notes,/175\/175/);
+  assert.match(aura.notes,/60 dispositifs cibles/);
   assert.equal(aura.externalAuditFile,undefined);
   assert.ok(cfg.sources.some(x=>x.id==='aura_feder'));
   assert.ok(!cfg.sources.some(x=>x.id==='aura_france2030'));
@@ -145,4 +154,17 @@ test('AURA retente le rendu navigateur après un reset réseau sans élargir le 
   assert.match(connector,/await sleep\(900\*attempt\)/);
   assert.match(connector,/FICHE_OFFICIELLE_NON_LUEE/);
   assert.match(connector,/FONDS_EUROPEEN_CYCLE_DEDIE/);
+});
+
+test('AURA ferme toujours Chromium après la collecte complète',()=>{
+  const connector=fs.readFileSync(new URL('../scripts/connectors/aura.mjs',import.meta.url),'utf8');
+  assert.match(connector,/browserHtml, closeBrowser/);
+  assert.match(connector,/finally\s*\{[\s\S]*await closeBrowser\(\)/);
+});
+
+test('AURA conserve le libellé régional officiel tout en certifiant le guichet interne AURA',()=>{
+  const connector=fs.readFileSync(new URL('../scripts/connectors/aura.mjs',import.meta.url),'utf8');
+  assert.match(connector,/const REGION='Auvergne-Rhône-Alpes'/);
+  assert.match(connector,/const GUICHET='AURA'/);
+  assert.match(connector,/a\.sourcePortal=REGION;a\.guichetVerified=GUICHET/);
 });

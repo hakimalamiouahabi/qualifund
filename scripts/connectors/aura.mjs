@@ -1,11 +1,12 @@
 import * as cheerio from 'cheerio';
 import { fetchText } from '../lib/http.mjs';
-import { browserHtml } from '../lib/browser.mjs';
+import { browserHtml, closeBrowser } from '../lib/browser.mjs';
 import { extractFromHtml } from '../lib/extract.mjs';
 import { directPageId } from '../lib/direct-sources.mjs';
 import { canonicalUrl, cleanTitle, detectDates, norm, safeUrl, sleep, uniq } from '../lib/utils.mjs';
 
 const REGION='Auvergne-Rhône-Alpes';
+const GUICHET='AURA';
 const PATH_PREFIX='/aides/';
 const EUROPEAN_RX=/\b(?:FEADER|FEDER|FSE\+?|FTJ|LEADER|PEI)\b/i;
 const AAP_RX=/\b(?:appel(?:s)? à projets?|appel(?:s)? a projets?|appel(?:s)? à manifestation d['’]intérêt|appel(?:s)? a manifestation d['’]interet|\bAMI\b)\b/i;
@@ -229,7 +230,7 @@ async function extractOne(source,link){
   a.kind=link.kind||'AIDE';a.catalogueKind=a.kind;
   a.scope='REGIONAL';a.regions=[REGION];
   a.aidTypes=instrument.aidTypes;
-  a.sourcePortal=REGION;a.guichetVerified=REGION;
+  a.sourcePortal=REGION;a.guichetVerified=GUICHET;
   a.enterpriseEligible=true;
   a.catalogueVerified=true;a.sourceState=state.state;a.lifecycleStatus='ACTIVE';
   a.officialPage=requested;
@@ -251,7 +252,7 @@ async function extractOne(source,link){
   ];
   if(regionEv)extra.push({field:'funder',sourceUrl:requested,sourceTier:'B',locator:'direct-page-region',evidenceText:regionEv.slice(0,850),checkedAt});
   a.verification={...(a.verification||{}),fieldEvidence:[...(a.verification?.fieldEvidence||[]),...extra]};
-  a.guichetVerification={status:'VERIFIED',sourceUrl:source.url,evidenceText:extra[0].evidenceText,checkedAt};
+  a.guichetVerification={status:'VERIFIED',sourceUrl:source.url,evidenceText:extra.find(e=>e.field==='guichet')?.evidenceText||REGION,checkedAt};
   return{aid:a,excluded:null};
 }
 
@@ -281,27 +282,31 @@ export async function discoverAura(source,{log=console.log}={}){
 }
 
 export async function collectAura(source,{log=console.log}={}){
-  const discovered=await discoverAura(source,{log});
-  const nonEuropean=discovered.links.filter(x=>!isEuropeanFundAid(x));
-  const european=discovered.links.filter(isEuropeanFundAid);
-  const out=await extractMany(source,nonEuropean,{log,workers:2});
-  const excluded=[...european.map(x=>({url:x.url,label:x.label||'',reason:'FONDS_EUROPEEN_CYCLE_DEDIE'})),...out.excluded];
-  return{
-    aids:out.aids,
-    discovered:discovered.links.length,
-    audit:{
+  try{
+    const discovered=await discoverAura(source,{log});
+    const nonEuropean=discovered.links.filter(x=>!isEuropeanFundAid(x));
+    const european=discovered.links.filter(isEuropeanFundAid);
+    const out=await extractMany(source,nonEuropean,{log,workers:2});
+    const excluded=[...european.map(x=>({url:x.url,label:x.label||'',reason:'FONDS_EUROPEEN_CYCLE_DEDIE'})),...out.excluded];
+    return{
+      aids:out.aids,
       discovered:discovered.links.length,
-      imported:out.aids.length,
-      excluded,
-      errors:out.errors,
-      accounted:out.aids.length+excluded.length+out.errors.length,
-      channels:{
-        enterpriseCatalogue:discovered.links.length,
-        enterpriseExpected:discovered.expectedCount,
-        pagesScanned:discovered.pagesScanned,
-        europeanExcluded:european.length
-      }
-    },
-    message:`AURA v1: ${discovered.links.length}/${discovered.expectedCount??'?'} dispositifs Entreprise comptabilisés, ${out.aids.length} aides/AAP cible(s) importés, ${excluded.length} exclusion(s), ${out.errors.length} erreur(s)`
-  };
+      audit:{
+        discovered:discovered.links.length,
+        imported:out.aids.length,
+        excluded,
+        errors:out.errors,
+        accounted:out.aids.length+excluded.length+out.errors.length,
+        channels:{
+          enterpriseCatalogue:discovered.links.length,
+          enterpriseExpected:discovered.expectedCount,
+          pagesScanned:discovered.pagesScanned,
+          europeanExcluded:european.length
+        }
+      },
+      message:`AURA v14: ${discovered.links.length}/${discovered.expectedCount??'?'} dispositifs Entreprise comptabilisés, ${out.aids.length} aides/AAP cible(s) importés, ${excluded.length} exclusion(s), ${out.errors.length} erreur(s)`
+    };
+  }finally{
+    await closeBrowser();
+  }
 }

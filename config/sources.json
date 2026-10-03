@@ -127,9 +127,9 @@
       "priority": 1,
       "browserFallback": true,
       "minExpected": 175,
-      "minImported": 20,
-      "minImportRatio": 0.1,
-      "notes": "AURA v2 officiel-only : le catalogue officiel Région filtré sur le profil Entreprise est le référentiel maître. Les fiches FEADER/FEDER/FSE+/FTJ sont exclues de ce cycle et traitées dans leurs cycles dédiés. Seuls subventions, avances remboursables/récupérables, prêts à taux zéro et AAP/AMI du périmètre sont conservés."
+      "minImported": 55,
+      "minImportRatio": 0.3,
+      "notes": "AURA official-only — baseline live 04/10/2026 : catalogue officiel Région filtré profil Entreprise = 175/175 fiches sur 30 pages ; 60 dispositifs cibles lus avec preuve financière, 26 fonds européens réservés à leurs cycles dédiés, 21 dispositifs clos, 16 instruments hors périmètre et 52 instruments cibles non suffisamment prouvés ; 0 erreur d’extraction. Seuls subventions, avances remboursables/récupérables et prêts à taux zéro prouvés sont conservés."
     },
     {
       "id": "bfc",
