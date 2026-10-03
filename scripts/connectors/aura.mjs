@@ -23,16 +23,11 @@ function looksLikeAidPage(html=''){
 }
 
 async function getHtml(url){
-  try{
-    const r=await fetchText(url,{timeoutMs:25000,retries:2,headers:{
-      'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/140 Safari/537.36',
-      'accept-language':'fr-FR,fr;q=0.9'
-    }});
-    return{html:r.text,finalUrl:r.url||url,via:'http'};
-  }catch{
-    const r=await browserHtml(url,{timeoutMs:65000});
-    return{html:r.html,finalUrl:r.url||url,via:'browser'};
-  }
+  const r=await fetchText(url,{timeoutMs:8000,retries:0,headers:{
+    'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/140 Safari/537.36',
+    'accept-language':'fr-FR,fr;q=0.9'
+  }});
+  return{html:r.text,finalUrl:r.url||url,via:'http'};
 }
 
 async function getListingHtml(url,{log=console.log}={}){
