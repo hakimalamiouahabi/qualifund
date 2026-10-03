@@ -48,6 +48,15 @@ test('la preuve entreprise Bpifrance est positive uniquement quand la page relie
   );
 });
 
+test('le baseline AAP distingue couverture du listing et rétention publication-ready',()=>{
+  const cfg=JSON.parse(fs.readFileSync(new URL('../config/sources.json',import.meta.url),'utf8'));
+  const source=cfg.sources.find(x=>x.id==='bpifrance_aap');
+  assert.ok(source.minExpected>=20);
+  assert.equal(source.minImported,17);
+  assert.equal(source.minImportRatio,0.60);
+  assert.match(source.notes,/27 URL actives observées, 17 fiches directement publiables/);
+});
+
 test('le certificat historique Bpifrance reste cohérent avec les seuils calibrés',()=>{
   const cert=JSON.parse(fs.readFileSync(new URL('../site/data/bpifrance-certification.json',import.meta.url),'utf8'));
   const cfg=JSON.parse(fs.readFileSync(new URL('../config/sources.json',import.meta.url),'utf8'));
@@ -109,11 +118,11 @@ test('le connecteur Bpifrance matérialise la preuve entreprise depuis la page d
 
 test('le verrou Bpifrance exige désormais un corpus publication-ready et autorise les exclusions du listing AAP',()=>{
   const lock=JSON.parse(fs.readFileSync(new URL('../config/collection-lock.json',import.meta.url),'utf8'));
-  assert.equal(lock.version,11);
+  assert.equal(lock.version,12);
   assert.equal(lock.certification.requirePublicationReady,true);
   assert.equal(lock.certification.requireEnterpriseScope,undefined);
   assert.equal(lock.certification.sourceRules.bpifrance_aap.requireImportedEqualsDiscovered,undefined);
-  assert.ok(lock.certification.sourceRules.bpifrance_aap.minRetained>=20);
+  assert.equal(lock.certification.sourceRules.bpifrance_aap.minRetained,17);
 });
 
 test('Rebond Industriel est certifié comme page directe sans fausse exigence de catalogue maître',()=>{

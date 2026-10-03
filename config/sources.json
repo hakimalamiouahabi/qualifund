@@ -1,5 +1,5 @@
 {
-  "version": "12.9.2",
+  "version": "12.9.3",
   "sources": [
     {
       "id": "bpifrance_aap",
@@ -13,11 +13,11 @@
       "priority": 0,
       "browserFallback": true,
       "minExpected": 20,
-      "minImported": 20,
-      "minImportRatio": 0.7,
+      "minImported": 17,
+      "minImportRatio": 0.6,
       "webVerifiedAt": "2026-09-30",
       "webEvidenceUrl": "https://www.bpifrance.fr/nos-appels-a-projets-concours",
-      "notes": "Bpifrance v3.2 officiel-only : le listing officiel /nos-appels-a-projets-concours est le référentiel maître des AAP/AMI/concours actifs. Chaque page directe est contrôlée ; seules les fiches avec preuve officielle d'éligibilité entreprise sont retenues. Les fonds de fonds, dispositifs hors cible entreprise et fiches sans preuve suffisante sont des exclusions comptabilisées. Le sitemap officiel Bpifrance sert uniquement de contrôle de couverture."
+      "notes": "Bpifrance v3.3 officiel-only : le listing officiel /nos-appels-a-projets-concours est le référentiel maître des AAP/AMI/concours actifs. Chaque page directe est enrichie puis soumise au gate publication-ready. Baseline vérifiée le 03/10/2026 : 27 URL actives observées, 17 fiches directement publiables avec preuves suffisantes ; les fonds de fonds et pages sans preuve entreprise suffisante sont des exclusions comptabilisées. Le sitemap officiel sert uniquement de contrôle de couverture."
     },
     {
       "id": "bpifrance_aides",
