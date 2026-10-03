@@ -300,4 +300,4 @@ export async function collectAura(source,{log=console.log}={}){
   }finally{
     await closeBrowser();
   }
-}}
+}
