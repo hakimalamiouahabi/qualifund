@@ -53,6 +53,17 @@ function loadProjectState(){
   return{...DEFAULT_PROJECT};
 }
 const state={route:'home',studyStep:1,lib:[],meta:{},coverage:[],changes:[],sources:[],readiness:null,certification:null,bpifranceCertification:null,certificationLedger:null,dailyReport:null,project:loadProjectState(),lastResults:[]};
+function currentLockCertification(){
+  const current=state.meta?.collectionLock||{};
+  const cert=state.certification;
+  if(!cert)return null;
+  const certLock=cert.lock||{};
+  const currentIds=uniq(arr(current.allowedSourceIds)).sort();
+  const certIds=uniq(arr(cert.configuredSources?.length?cert.configuredSources:certLock.allowedSourceIds)).sort();
+  const sameName=Boolean(current.name&&certLock.name===current.name);
+  const sameIds=currentIds.length===certIds.length&&currentIds.every((x,i)=>x===certIds[i]);
+  return sameName&&sameIds?cert:null;
+}
 const today=()=>new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Paris',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
 function isoDayNumber(v){
   if(!/^\d{4}-\d{2}-\d{2}$/.test(String(v||'')))return null;
@@ -233,7 +244,8 @@ function home(){
   const importedToday=arr(state.changes).filter(x=>x.type==='CREATION'&&String(x.at||'').slice(0,10)===todayKey).length;
   const lockName=state.meta?.collectionLock?.name||state.certification?.lock?.name||'—';
   const bpiStatus=state.bpifranceCertification?.status||'—';
-  const activeCert=state.certification?.status||'—';
+  const currentCert=currentLockCertification();
+  const activeCert=currentCert?.status||'PENDING';
 
   const instCounts={};
   for(const a of active)for(const t of arr(a.aidTypes))instCounts[t]=(instCounts[t]||0)+1;
