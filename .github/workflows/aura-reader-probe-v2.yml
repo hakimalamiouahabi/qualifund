@@ -1,0 +1,46 @@
+name: AURA — probe lecteur durci v2
+on:
+  push:
+    branches: [maintenance/aura-reader-probe-v2]
+    paths:
+      - '.github/workflows/aura-reader-probe-v2.yml'
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Collecter AURA avec le lecteur durci
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import {collectAura} from './scripts/connectors/aura.mjs';
+          import {closeBrowser} from './scripts/lib/browser.mjs';
+          const cfg=JSON.parse(fs.readFileSync('./config/sources.json','utf8'));
+          const source=cfg.sources.find(s=>s.id==='aura');
+          const c=await collectAura(source,{log:console.log});
+          const byReason={};
+          for(const x of c.audit.excluded||[])byReason[x.reason]=(byReason[x.reason]||0)+1;
+          console.log('AURA_V2_COLLECTION='+JSON.stringify({
+            discovered:c.discovered,
+            imported:c.aids.length,
+            excluded:(c.audit.excluded||[]).length,
+            errors:(c.audit.errors||[]).length,
+            byReason,
+            channels:c.audit.channels,
+            samples:c.aids.slice(0,15).map(a=>({
+              title:a.title,
+              kind:a.kind,
+              aidTypes:a.aidTypes,
+              sourceState:a.sourceState,
+              officialPage:a.officialPage
+            }))
+          }));
+          await closeBrowser();
+          NODE
