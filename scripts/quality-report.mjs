@@ -1,6 +1,7 @@
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {readJson} from './lib/utils.mjs';
+import {isActiveRecord,isPublicationCandidate,isTargetFunding} from './lib/data-governance.mjs';
 import { buildCertificationLedger, isPublishableAid } from './lib/publication.mjs';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
