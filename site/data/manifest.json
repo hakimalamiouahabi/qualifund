@@ -1,30 +1,28 @@
 {
-  "version": "12.6.0",
+  "version": "12.7.0",
   "generatedAt": "2026-09-30T20:25:33.273Z",
   "repositoryUrl": "https://github.com/hakimalamiouahabi/qualifund",
-  "sourceCount": 119,
+  "sourceCount": 118,
   "sourcesOk": 91,
   "sourcesFailed": 28,
   "activeCollectionSourceCount": 3,
   "collectionLock": {
     "locked": true,
-    "mode": "GUICHET",
-    "name": "Bpifrance",
+    "mode": "REGION",
+    "name": "Auvergne-Rhône-Alpes",
     "allowedSourceIds": [
-      "bpifrance_aap",
-      "bpifrance_aides",
-      "bpifrance_rebond_industriel"
+      "aura"
     ],
-    "next": "Auvergne-Rhône-Alpes",
+    "next": "Bourgogne-Franche-Comté",
     "frozenUnselectedSha": "8dc40e3411b739e4e58b79448dab3be0f871302c95f31952a052dfb73d9d089a"
   },
-  "libraryCount": 2259,
-  "activeCount": 2114,
+  "libraryCount": 215,
+  "activeCount": 213,
   "jPlusOneDate": "2026-10-01",
   "jPlusOneActiveCount": 2102,
-  "archivedCount": 145,
+  "archivedCount": 2,
   "aapCount": 260,
-  "verifiedCount": 1,
+  "verifiedCount": 0,
   "withCdc": 817,
   "withDeadline": 528,
   "fullRefresh": true,
@@ -67,6 +65,7 @@
   "targetReached": null,
   "coverageGap": null,
   "contentSha256": "89e3be05ba05b7bb67f97c283b98fa0eec52fccfccfd862bf9c29bae5c5d6845",
-  "count": 2259,
-  "coverageCertified": false
+  "count": 215,
+  "coverageCertified": false,
+  "rawLibraryCount": 215
 }
