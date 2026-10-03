@@ -62,9 +62,13 @@ function directOfficialUrl(a){
 }
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'),SITE=path.join(ROOT,'site'),DATA=path.join(SITE,'data'),FULL=process.argv.includes('--full')||(process.env.LEYTON_RADAR_FULL_REFRESH==='1'||process.env.QUALIFUND_FULL_REFRESH==='1');const log=(...x)=>console.log(new Date().toISOString(),...x);
-const previous=await readJson(path.join(DATA,'library.json'),{meta:{},aaps:[]}),previousCoverage=await readJson(path.join(DATA,'coverage.json'),[]),prevCov=new Map(previousCoverage.map(x=>[x.id,x])),prevMap=new Map((previous.aaps||[]).map(a=>[canonicalKey(a),a])),cfg=await readJson(path.join(ROOT,'config','sources.json'),{sources:[]});
+const cfg=await readJson(path.join(ROOT,'config','sources.json'),{sources:[]});
 const collectionLock=await loadCollectionLock(ROOT);validateCollectionLock(cfg,collectionLock);
-if(!collectionLock.locked)await purgeIndirectSources();
+await purgeIndirectSources();
+const previous=await readJson(path.join(DATA,'library.json'),{meta:{},aaps:[]});
+const previousCoverage=await readJson(path.join(DATA,'coverage.json'),[]);
+const prevCov=new Map(previousCoverage.map(x=>[x.id,x]));
+const prevMap=new Map((previous.aaps||[]).map(a=>[canonicalKey(a),a]));
 const sourcesToRun=selectSources(cfg,collectionLock),selectedIds=selectedSourceSet(collectionLock),coverage=[],changes=[];
 const cycleId=String(process.env.QUALIFUND_CYCLE_ID||process.env.GITHUB_RUN_ID||('local-'+nowIso()));
 const frozenDigest=list=>sha256(JSON.stringify(arr(list).filter(a=>!selectedIds.has(a?.sourceId)).map(a=>a).sort((a,b)=>String(a.id||'').localeCompare(String(b.id||'')))));
