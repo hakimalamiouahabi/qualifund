@@ -34,7 +34,6 @@ jobs:
     timeout-minutes: 330
     permissions:
       contents: write
-      pages: read
     outputs:
       data_sha: ${{ steps.commit_data.outputs.sha }}
       collection_locked: ${{ steps.lock.outputs.locked }}
