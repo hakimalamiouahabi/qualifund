@@ -77,6 +77,12 @@ export function publicationReason(a,{configuredSourceIds=null,unlockedSourceIds=
   if(configuredSourceIds&& !configuredSourceIds.has(a.sourceId))return'SOURCE_NOT_CONFIGURED';
   if(unlockedSourceIds&& !unlockedSourceIds.has(a.sourceId))return'SOURCE_NOT_CERTIFIED';
   if(!recentOrActive(a,{now,recentDays}))return'INACTIVE_OR_STALE';
+  const kinds=String(a?.kind||'').toUpperCase();
+  const types=Array.isArray(a?.aidTypes)?a.aidTypes.filter(Boolean):[];
+  const isCall=kinds.includes('AAP')||kinds.includes('AMI');
+  const hasTargetType=types.some(x=>TARGET_PUBLIC_INSTRUMENTS.has(x));
+  const instrumentUnknown=!isCall&&!hasTargetType&&(!types.length||types.every(x=>x==='AUTRE'));
+  if(instrumentUnknown)return'MISSING_INSTRUMENT_EVIDENCE';
   if(!targetFunding(a))return'OUT_OF_TARGET_INSTRUMENT';
   if(!hasGuichetEvidence(a))return'MISSING_GUICHET_EVIDENCE';
   if(!hasStatusEvidence(a))return'MISSING_STATUS_EVIDENCE';

@@ -45,9 +45,10 @@ test('la publication refuse une source non certifiée et un instrument hors pér
   };
   const configured=new Set(['aura']);
   assert.equal(publicationReason(base,{configuredSourceIds:configured,unlockedSourceIds:new Set()}),'SOURCE_NOT_CERTIFIED');
-  assert.equal(publicationReason({...base,aidTypes:['AUTRE']},{configuredSourceIds:configured,unlockedSourceIds:new Set(['aura'])}),'OUT_OF_TARGET_INSTRUMENT');
+  assert.equal(publicationReason({...base,aidTypes:['AUTRE']},{configuredSourceIds:configured,unlockedSourceIds:new Set(['aura'])}),'MISSING_INSTRUMENT_EVIDENCE');
   assert.equal(publicationReason(base,{configuredSourceIds:configured,unlockedSourceIds:new Set(['aura'])}),null);
   assert.equal(targetFunding({...base,kind:'AAP / AMI',aidTypes:['AUTRE']}),true);
+  assert.equal(publicationReason({...base,kind:'AIDE',aidTypes:['PRET']},{configuredSourceIds:configured,unlockedSourceIds:new Set(['aura'])}),'OUT_OF_TARGET_INSTRUMENT');
 });
 
 test('une date de clôture ancienne prime sur un lifecycle ACTIVE obsolète',()=>{
