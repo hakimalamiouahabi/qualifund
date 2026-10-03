@@ -4,7 +4,7 @@ await purgeIndirectSources();
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { buildCertificationLedger, isPublishableAid, sourceConfigFingerprint, certificationBasisFingerprint } from './lib/publication.mjs';
+import { buildCertificationLedger, isPublishableAid, sourceConfigFingerprint, certificationBasisFingerprint, sourceDataFingerprint } from './lib/publication.mjs';
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const DATA=path.join(ROOT,'site','data');
@@ -64,6 +64,7 @@ if(!activeCertification){
     configuredSources:collectionLock.allowedSourceIds,
     sourceConfigFingerprint:sourceConfigFingerprint(cfg,collectionLock.allowedSourceIds),
     certificationBasisFingerprint:await certificationBasisFingerprint(ROOT,cfg,collectionLock.allowedSourceIds),
+    certifiedDataFingerprint:sourceDataFingerprint(all,collectionLock.allowedSourceIds),
     libraryRecords:0,
     bySource,
     duplicates:[],
