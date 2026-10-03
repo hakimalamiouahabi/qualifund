@@ -259,7 +259,7 @@ function evidence(text,patterns=[]){
 export function ademeAttributionEvidence(text=''){
   return evidence(text,[
     /l['’]\s*ADEME\s+(?:vous\s+)?(?:accompagne|soutient|finance|cofinance|attribue|accorde|lance|pilote|instruit|juge)/i,
-    /(?:aide|soutien|financement)s?\s+(?:accord[eé]s?\s+)?(?:par|de)\s+l['’]\s*ADEME/i,
+    /(?:aide|soutien|financement)s?\s+(?:(?:est|sont)\s+)?(?:accord(?:e|é|ée|és|ées)\s+)?(?:par|de)\s+l['’]\s*ADEME/i,
     /(?:pilot[eé]|op[eé]r[eé]|g[eé]r[eé]|instruit)\s+par\s+(?:l['’]\s*)?ADEME/i,
     /(?:contrat|convention)\s+d['’]\s*aide[^.;]{0,160}\bADEME\b/i,
     /fonds[^.;]{0,120}\bde\s+l['’]\s*ADEME\b/i,
@@ -500,7 +500,6 @@ async function extractOne(source,link){
   a.sourceId=source.id;
   a.sourceRecordId=requested;
   a.kind=link.catalogueKind;
-  a.guichetVerified='ADEME';
   a.sourcePortal='ADEME';
   a.enterpriseEligible=true;
   a.catalogueVerified=true;
@@ -530,6 +529,7 @@ async function extractOne(source,link){
   if(attribution){
     if(!a.funder.includes('ADEME'))a.funder=uniq([...a.funder,'ADEME']);
     if(!a.operator)a.operator='ADEME';
+    a.guichetVerified='ADEME';
   }
   a.sourceLinks=[{label:'Page officielle ADEME',url:requested},...(a.sourceLinks||[]).filter(x=>x?.url&&canonicalUrl(x.url)!==requested)];
 
@@ -538,7 +538,6 @@ async function extractOne(source,link){
   const membershipEvidence=link.catalogueEvidence||(`Inventaire officiel ADEME Entreprises — ${link.catalogueKind}`);
   const extra=[
     {field:'catalogueMembership',sourceUrl:membershipSource,sourceTier:'B',locator:link.inventoryMode==='RSS_ACTIVE_MIRROR'?'rss-active-item':'catalogue-card',evidenceText:membershipEvidence.slice(0,850),checkedAt},
-    {field:'guichet',sourceUrl:membershipSource,sourceTier:'B',locator:'ademe-enterprises-inventory',evidenceText:'Référencé par le portail officiel ADEME Entreprises',checkedAt},
     {field:'sourceStatus',sourceUrl:membershipSource,sourceTier:'B',locator:link.inventoryMode==='RSS_ACTIVE_MIRROR'?'rss-deadline':'catalogue-card-status',evidenceText:(link.catalogueEvidence||(`Échéance officielle ${closing||'active'}`)).slice(0,850),checkedAt},
     {field:'enterpriseEligibility',sourceUrl:source.url,sourceTier:'B',locator:'catalogue-entreprises',evidenceText:'Référencé dans le catalogue ADEME Entreprises',checkedAt},
     {field:'catalogueKind',sourceUrl:loaded?requested:membershipSource,sourceTier:'B',locator:loaded?'direct-page-type':'official-url-taxonomy',evidenceText:link.catalogueKind,checkedAt}
@@ -546,8 +545,9 @@ async function extractOne(source,link){
   if(territory.evidence)extra.push({field:'territory',sourceUrl:requested,sourceTier:'B',locator:'page-text-match:territory',evidenceText:territory.evidence.slice(0,850),checkedAt});
   const instrumentEvidence=loaded?ademeInstrumentEvidence(text,a.aidTypes):null;
   if(instrumentEvidence)extra.push({field:'instrument',sourceUrl:requested,sourceTier:'B',locator:'page-text-match:instrument',evidenceText:instrumentEvidence,checkedAt});
+  if(attribution)extra.push({field:'guichet',sourceUrl:requested,sourceTier:'B',locator:'page-text-match:ademe-attribution',evidenceText:attribution.slice(0,850),checkedAt});
   a.verification={...(a.verification||{}),status:loaded?'VERIFIE':'A_REVERIFIER',sourceTier:'B',lastChecked:checkedAt,fieldEvidence:[...(a.verification?.fieldEvidence||[]),...extra]};
-  a.guichetVerification={status:'VERIFIED',sourceUrl:membershipSource,evidenceText:membershipEvidence.slice(0,850),checkedAt};
+  a.guichetVerification=attribution?{status:'VERIFIED',sourceUrl:requested,evidenceText:attribution.slice(0,850),checkedAt}:{status:'UNVERIFIED',sourceUrl:membershipSource,evidenceText:'Présence sur le portail ADEME Entreprises : hébergement officiel, sans preuve suffisante du financeur/opérateur du dispositif.',checkedAt};
   return{aid:a,excluded:null,detailWarning};
 }
 

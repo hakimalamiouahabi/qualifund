@@ -7,7 +7,8 @@ import {
   ademeStatusProof,
   ademeKindFromOfficialUrl,
   selectAdemeInventory,
-  ademeInstrumentEvidence
+  ademeInstrumentEvidence,
+  ademeAttributionEvidence
 } from '../scripts/connectors/ademe.mjs';
 
 const NOW=new Date('2026-09-30T18:30:00Z');
@@ -159,4 +160,18 @@ test('la preuve instrument ADEME vient exclusivement de la page directe officiel
   assert.match(connector,/sourceUrl:requested/);
   assert.match(connector,/loaded\?ademeInstrumentEvidence\(text,a\.aidTypes\):null/);
   assert.doesNotMatch(connector,/catalogueKind.*SUBVENTION/);
+});
+
+test('la présence sur le portail ADEME ne prouve pas à elle seule le guichet financeur',()=>{
+  const connector=fs.readFileSync(new URL('../scripts/connectors/ademe.mjs',import.meta.url),'utf8');
+  assert.doesNotMatch(connector,/field:'guichet'.*ademe-enterprises-inventory/);
+  assert.doesNotMatch(connector,/a\.guichetVerified='ADEME';\s*a\.sourcePortal='ADEME'/);
+  assert.match(connector,/field:'guichet'.*page-text-match:ademe-attribution/);
+  assert.match(connector,/status:'UNVERIFIED'/);
+});
+
+test('la preuve de guichet ADEME exige une attribution explicite sur la fiche directe',()=>{
+  const proof=ademeAttributionEvidence("Cette aide est accordée par l’ADEME aux entreprises éligibles.");
+  assert.ok(proof);
+  assert.equal(ademeAttributionEvidence("Ce dispositif est référencé sur le portail ADEME Entreprises."),null);
 });
