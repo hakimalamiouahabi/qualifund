@@ -68,16 +68,16 @@ test('le collecteur AURA matérialise explicitement l’éligibilité entreprise
   assert.match(connector,/field:'enterpriseEligibility'/);
 });
 
-test('le verrou courant cible uniquement la Région Auvergne-Rhône-Alpes',()=>{
+test('AURA reste gelée tant que Bpifrance puis ADEME ne sont pas recertifiés v12.8',()=>{
   const lock=JSON.parse(fs.readFileSync(new URL('../config/collection-lock.json',import.meta.url),'utf8'));
   assert.equal(lock.locked,true);
-  assert.equal(lock.mode,'REGION');
-  assert.equal(lock.name,'Auvergne-Rhône-Alpes');
-  assert.equal(lock.version,8);
-  assert.deepEqual(lock.allowedSourceIds,['aura']);
-  assert.equal(lock.certification.sourceRules.aura.expectedCount,175);
-  assert.equal(lock.certification.sourceRules.aura.forbidActiveExternalGaps,true);
-  assert.equal(lock.certification.sourceRules.aura.forbidUnknownExternalGaps,true);
+  assert.equal(lock.mode,'GUICHET');
+  assert.equal(lock.name,'Bpifrance');
+  assert.equal(lock.version,9);
+  assert.deepEqual(lock.allowedSourceIds,['bpifrance_aap','bpifrance_aides','bpifrance_rebond_industriel']);
+  assert.equal(lock.next,'ADEME');
+  assert.equal(lock.allowedSourceIds.includes('aura'),false);
+  assert.match(lock.notes,/Auvergne-Rhône-Alpes reste gelée/i);
 });
 
 test('la source AURA est filtrée Entreprise et les sources fonds européens restent hors verrou',()=>{
@@ -91,7 +91,7 @@ test('la source AURA est filtrée Entreprise et les sources fonds européens res
   assert.ok(!cfg.sources.some(x=>x.id==='aura_france2030'));
 });
 
-test('ADEME et Bpifrance restent certifiés PASS avant le cycle régional',()=>{
+test('les anciens certificats ADEME et Bpifrance restent conservés comme historique',()=>{
   const ademe=JSON.parse(fs.readFileSync(new URL('../site/data/ademe-certification.json',import.meta.url),'utf8'));
   const bpi=JSON.parse(fs.readFileSync(new URL('../site/data/bpifrance-certification.json',import.meta.url),'utf8'));
   assert.equal(ademe.status,'PASS');
