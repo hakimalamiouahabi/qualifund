@@ -93,7 +93,7 @@ const p0=Array.isArray(deepAudit?.severity?.p0)?deepAudit.severity.p0:[];
 const gate6Pass=p0.length===0;
 const inActions=process.env.GITHUB_ACTIONS==='true';
 const workflowEvent=String(process.env.GITHUB_EVENT_NAME||'');
-const workflowLiveOk=Boolean(inActions&&repo&&gate3Pass&&['schedule','workflow_dispatch','push'].includes(workflowEvent));
+const workflowLiveOk=Boolean(inActions&&repo&&gate3Pass&&['schedule','workflow_dispatch'].includes(workflowEvent));
 
 const gates=[
   {id:1,name:'Dépôt GitHub et versionnement',status:repo?'PASS':'BLOCKED',detail:repo||'Aucun dépôt GitHub accessible/configuré.'},
@@ -110,7 +110,7 @@ const gates=[
   {id:6,name:'Intégrité, déduplication et périmètre',status:gate6Pass?'PASS':'FAIL',detail:gate6Pass?'Aucune anomalie P0 détectée par l’audit approfondi.':`${p0.length} anomalie(s) P0 : ${p0.join(' ; ')}`},
   {id:7,name:'Enrichissement SIREN/SIRET',status:companyLiveOk?'PASS':'READY',detail:companyLiveOk?'API Recherche d’entreprises DINUM validée par smoke live.':'Endpoint officiel disponible ; smoke live à confirmer.'},
   {id:8,name:'Qualification projet multi-financeurs',status:consultantCases>=5&&uat.total>=5?'PASS':'PARTIAL',detail:`Cas UAT réussis : ${consultantCases}/${uat.total||0}. Les résultats orientent l’instruction sans conclure à l’attribution.`},
-  {id:9,name:'Exploitation automatisée',status:workflowLiveOk?'PASS':'PARTIAL',detail:workflowLiveOk?`Chaîne GitHub Actions exécutée sur ${workflowEvent} avec le verrou courant.`:'Workflow quotidien configuré ; exécution live du cycle courant à finaliser.'}
+  {id:9,name:'Exploitation automatisée',status:workflowLiveOk?'PASS':'PARTIAL',detail:workflowLiveOk?`Chaîne GitHub Actions exécutée sur ${workflowEvent} avec le verrou courant.`:'Workflow quinzaine configuré ; exécution live du cycle courant à finaliser.'}
 ];
 const preProductionPass=gates.every(g=>g.status==='PASS');
 gates.push({id:10,name:'Recette production',status:preProductionPass?'PASS':'NOT_STARTED',detail:preProductionPass?'Gates 1–9 validées ; recette finale autorisée.':'Autorisation uniquement lorsque les Gates 1–9 sont PASS.'});
