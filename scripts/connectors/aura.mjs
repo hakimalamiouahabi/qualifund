@@ -53,17 +53,20 @@ async function getAidHtml(url,{log=console.log}={}){
   let loaded=null;
   try{loaded=await getHtml(url)}catch{}
   if(loaded&&looksLikeAidPage(loaded.html))return loaded;
-  try{
-    const rendered=await browserHtml(url,{
-      timeoutMs:25000,
-      waitForSelector:'article.node--type-aid.node--view-mode-full',
-      waitAfterMs:350
-    });
-    if(looksLikeAidPage(rendered.html)){
-      return{html:rendered.html,finalUrl:rendered.url||url,via:'browser-forced'};
+  for(let attempt=1;attempt<=2;attempt++){
+    try{
+      const rendered=await browserHtml(url,{
+        timeoutMs:25000,
+        waitForSelector:'article.node--type-aid.node--view-mode-full',
+        waitAfterMs:350
+      });
+      if(looksLikeAidPage(rendered.html)){
+        return{html:rendered.html,finalUrl:rendered.url||url,via:attempt===1?'browser-forced':'browser-retry'};
+      }
+    }catch(e){
+      log(`[aura] rendu navigateur fiche indisponible ${url} tentative ${attempt}/2: ${e.message}`);
+      if(attempt<2)await new Promise(resolve=>setTimeout(resolve,750));
     }
-  }catch(e){
-    log(`[aura] rendu navigateur fiche indisponible ${url}: ${e.message}`);
   }
   return loaded||{html:'',finalUrl:url,via:'empty'};
 }
@@ -277,7 +280,7 @@ export async function collectAura(source,{log=console.log}={}){
     const discovered=await discoverAura(source,{log});
   const nonEuropean=discovered.links.filter(x=>!isEuropeanFundAid(x));
   const european=discovered.links.filter(isEuropeanFundAid);
-  const out=await extractMany(source,nonEuropean,{log,workers:12});
+  const out=await extractMany(source,nonEuropean,{log,workers:4});
   const excluded=[...european.map(x=>({url:x.url,label:x.label||'',reason:'FONDS_EUROPEEN_CYCLE_DEDIE'})),...out.excluded];
   return{
     aids:out.aids,
