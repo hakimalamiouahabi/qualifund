@@ -144,6 +144,16 @@ if(counters.orphanSource)p0.push(`${counters.orphanSource} fiche(s) rattachée(s
 if(publishedDuplicates.length)p0.push(`${publishedDuplicates.length} doublon(s) dans le corpus certifié publiable`);
 
 const p1=[];
+const certifiedEvidenceDebt={
+  missingGuichet:Number(reasons.MISSING_GUICHET_EVIDENCE||0),
+  missingStatus:Number(reasons.MISSING_STATUS_EVIDENCE||0),
+  missingInstrument:Number(reasons.MISSING_INSTRUMENT_EVIDENCE||0),
+  missingEnterprise:Number(reasons.MISSING_ENTERPRISE_EVIDENCE||0)
+};
+if(certifiedEvidenceDebt.missingGuichet)p1.push(`${certifiedEvidenceDebt.missingGuichet} fiche(s) de sources certifiées restent en quarantaine faute de preuve guichet`);
+if(certifiedEvidenceDebt.missingStatus)p1.push(`${certifiedEvidenceDebt.missingStatus} fiche(s) de sources certifiées restent en quarantaine faute de preuve statut`);
+if(certifiedEvidenceDebt.missingInstrument)p1.push(`${certifiedEvidenceDebt.missingInstrument} fiche(s) de sources certifiées restent en quarantaine faute de preuve instrument`);
+if(certifiedEvidenceDebt.missingEnterprise)p1.push(`${certifiedEvidenceDebt.missingEnterprise} fiche(s) de sources certifiées restent en quarantaine faute de preuve entreprise`);
 if(publishedQuality.expiredButActive)p1.push(`${publishedQuality.expiredButActive} fiche(s) publiable(s) ont une clôture ancienne malgré un statut actif`);
 if(publishedQuality.noGuichetEvidence)p1.push(`${publishedQuality.noGuichetEvidence} fiche(s) publiable(s) sans preuve A/B de guichet`);
 if(publishedQuality.noStatusEvidence)p1.push(`${publishedQuality.noStatusEvidence} fiche(s) publiable(s) sans preuve A/B de statut`);
@@ -179,6 +189,7 @@ const report={
     manifestLock:manifest?.collectionLock||null
   },
   historicalCertifications,
+  certifiedEvidenceDebt,
   publishedQuality,
   severity:{p0,p1,p2},
   samples:{raw:sample,published:publishedQualitySamples}
@@ -206,6 +217,7 @@ console.log(JSON.stringify({
   generatedAt:report.generatedAt,
   raw:counters.raw,publishable:counters.publishable,quarantined:counters.quarantined,
   p0,p1,p2,
+  certifiedEvidenceDebt,
   publishedQuality,
   reasons,
   keyCounters:{
