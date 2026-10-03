@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-09-30T20:29:18.428Z",
+  "generatedAt": "2026-10-03T10:14:45.507Z",
   "status": "PASS",
   "lock": {
-    "version": 6,
+    "version": 10,
     "locked": true,
     "mode": "GUICHET",
     "name": "Bpifrance",
@@ -15,7 +15,7 @@
     "preserveUnselectedCoverage": true,
     "freezeUnselectedLifecycle": true,
     "enrichSelectedOnly": true,
-    "next": "Auvergne-Rhône-Alpes",
+    "next": "ADEME",
     "certification": {
       "primarySourceIds": [
         "bpifrance_aap",
@@ -31,17 +31,11 @@
       "requireZeroExtractionErrors": true,
       "requireDirectOfficialUrl": true,
       "forbidGenericTitles": true,
-      "requireExternalAuditDiscovery": true,
-      "externalAuditFile": "config/bpifrance-v2-external-audit.json",
-      "externalAuditMaxAgeHours": 72,
       "sourceRules": {
         "bpifrance_aap": {
           "master": "ACTIVE_AAP_LISTING",
           "requireListingDiscovery": true,
           "requireImportedEqualsDiscovered": true,
-          "requireExternalDisposition": true,
-          "forbidActiveExternalGaps": true,
-          "forbidUnknownExternalGaps": true,
           "requireGuichetEvidence": true,
           "requireCurrentStatusEvidence": true,
           "allowedSourceStates": [
@@ -57,9 +51,6 @@
         "bpifrance_aides": {
           "master": "CATALOGUE_SECTION_SUB_AR",
           "requireCatalogueSectionDiscovery": true,
-          "requireExternalDisposition": true,
-          "forbidTargetExternalGaps": true,
-          "forbidUnknownExternalGaps": true,
           "requireGuichetEvidence": true,
           "requireCurrentStatusEvidence": true,
           "allowedSourceStates": [
@@ -83,30 +74,26 @@
         }
       }
     },
-    "notes": "Verrou Bpifrance v2 : listing AAP actif + section catalogue « Subventions et avances remboursables » comme référentiels maîtres, complétés par Rebond Industriel. Sitemap et moteurs externes servent uniquement au contre-audit. Les anciens dispositifs régionaux BFC ne sont plus traités comme guichet national Bpifrance ; ils seront audités dans le cycle régional dédié."
+    "notes": "Recertification Foundation v3.1 / v12.9 officiel-only : Bpifrance est repris en premier sans aucun contre-audit externe payant/LLM. ADEME sera recertifié ensuite sur catalogue/RSS officiels, puis Auvergne-Rhône-Alpes sur son catalogue officiel Entreprise. AURA reste gelée jusqu'aux deux PASS v12.9.",
+    "foundationBaseline": {
+      "version": "Foundation v3.1 / 12.9 official-only",
+      "status": "HARDENING",
+      "validatedAt": null,
+      "p0": null
+    }
   },
   "configuredSources": [
     "bpifrance_aap",
     "bpifrance_aides",
     "bpifrance_rebond_industriel"
   ],
-  "libraryRecords": 50,
-  "frozenUnselectedSha": "8dc40e3411b739e4e58b79448dab3be0f871302c95f31952a052dfb73d9d089a",
-  "externalAudit": {
-    "generatedAt": "2026-09-30T19:51:24.793Z",
-    "engines": [
-      "Exa",
-      "Tavily",
-      "Parallel Search",
-      "Firecrawl"
-    ],
-    "candidateCount": 118,
-    "accounted": 0,
-    "missing": []
-  },
+  "sourceConfigFingerprint": "84605ce57eee65cb8110296fff7be3d0090966c45304ac53f39145f2acd6a3e2",
+  "certificationBasisFingerprint": "320f0b2f00c417eaf1efa9b502cdc84508e9d84f3a0a014c139cf47fb49d4810",
+  "certifiedDataFingerprint": "62ee1302d6acdb2362b6c5d2769d33fcfcbdfd6b86810960f2d6425080656fa6",
+  "libraryRecords": 49,
+  "frozenUnselectedSha": "98b67062ebc7fb87821c37fcbfd1a597b3ea1f46ba828b295288bd7d22ad652e",
   "controlGaps": {
-    "rssOutsideCatalogue": [],
-    "externalOutsideCatalogue": []
+    "rssOutsideCatalogue": []
   },
   "bySource": {
     "bpifrance_aap": {
@@ -119,13 +106,13 @@
       "rssWithoutClosing": 0,
       "catalogue": 0,
       "catalogueMode": "",
-      "externalAudit": 73,
       "listing": 27,
       "catalogueSection": 0,
       "sitemap": 540,
-      "externalActiveGaps": 0,
-      "externalTargetGaps": 0,
-      "externalUnknownGaps": 0,
+      "enterpriseCatalogue": 0,
+      "enterpriseExpected": 0,
+      "enterprisePagesScanned": 0,
+      "europeanExcluded": 0,
       "catalogueExpected": 0,
       "catalogueAap": 0,
       "catalogueAid": 0,
@@ -138,22 +125,22 @@
       "excluded": 0
     },
     "bpifrance_aides": {
-      "discovered": 29,
-      "imported": 22,
-      "retained": 22,
+      "discovered": 27,
+      "imported": 21,
+      "retained": 21,
       "success": true,
       "rss": 0,
       "rssActive": 0,
       "rssWithoutClosing": 0,
       "catalogue": 0,
       "catalogueMode": "",
-      "externalAudit": 45,
       "listing": 0,
-      "catalogueSection": 29,
-      "sitemap": 353,
-      "externalActiveGaps": 0,
-      "externalTargetGaps": 0,
-      "externalUnknownGaps": 0,
+      "catalogueSection": 27,
+      "sitemap": 354,
+      "enterpriseCatalogue": 0,
+      "enterpriseExpected": 0,
+      "enterprisePagesScanned": 0,
+      "europeanExcluded": 0,
       "catalogueExpected": 0,
       "catalogueAap": 0,
       "catalogueAid": 0,
@@ -163,7 +150,7 @@
       "catalogueHtmlExpected": 0,
       "detailWarnings": 0,
       "errors": 0,
-      "excluded": 7
+      "excluded": 6
     },
     "bpifrance_rebond_industriel": {
       "discovered": 1,
@@ -175,13 +162,13 @@
       "rssWithoutClosing": 0,
       "catalogue": 0,
       "catalogueMode": "",
-      "externalAudit": 0,
       "listing": 0,
       "catalogueSection": 0,
       "sitemap": 0,
-      "externalActiveGaps": 0,
-      "externalTargetGaps": 0,
-      "externalUnknownGaps": 0,
+      "enterpriseCatalogue": 0,
+      "enterpriseExpected": 0,
+      "enterprisePagesScanned": 0,
+      "europeanExcluded": 0,
       "catalogueExpected": 0,
       "catalogueAap": 0,
       "catalogueAid": 0,

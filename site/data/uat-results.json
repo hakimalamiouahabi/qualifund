@@ -1,17 +1,39 @@
 {
   "version": "12.6.0",
-  "generatedAt": "2026-09-30T20:29:33.434Z",
+  "generatedAt": "2026-10-03T10:14:51.365Z",
   "engineVersion": "12.6.0",
-  "total": 5,
-  "passed": 5,
-  "threshold": "profil métier — seuils de recette par cas",
+  "total": 10,
+  "passed": 10,
+  "positive": {
+    "total": 5,
+    "passed": 5,
+    "minScore": 86
+  },
+  "negative": {
+    "total": 3,
+    "passed": 3,
+    "maxScore": 20
+  },
+  "sparseEvidenceGuard": {
+    "pass": true,
+    "documentedWeight": 4,
+    "score": 89
+  },
+  "separation": {
+    "points": 66,
+    "minRequired": 20,
+    "pass": true
+  },
+  "threshold": "tests positifs, contrôles négatifs, séparation des scores et garde-fou documentaire",
   "results": [
     {
       "id": "innovation-ai-poc",
       "name": "R&D / IA — prototype et PoC",
+      "type": "positive",
       "score": 86,
       "min": 75,
       "pass": true,
+      "documentedWeight": 9,
       "dims": [
         {
           "key": "strategic",
@@ -156,9 +178,11 @@
     {
       "id": "industrialisation",
       "name": "Investissement productif — industrialisation",
+      "type": "positive",
       "score": 91,
       "min": 75,
       "pass": true,
+      "documentedWeight": 9,
       "dims": [
         {
           "key": "strategic",
@@ -301,9 +325,11 @@
     {
       "id": "cyber-digital",
       "name": "Transformation numérique / cybersécurité",
+      "type": "positive",
       "score": 92,
       "min": 75,
       "pass": true,
+      "documentedWeight": 9,
       "dims": [
         {
           "key": "strategic",
@@ -448,9 +474,11 @@
     {
       "id": "decarbonation-energy",
       "name": "Décarbonation / efficacité énergétique",
+      "type": "positive",
       "score": 95,
       "min": 75,
       "pass": true,
+      "documentedWeight": 9,
       "dims": [
         {
           "key": "strategic",
@@ -597,9 +625,11 @@
     {
       "id": "circular-water",
       "name": "Économie circulaire / eau",
+      "type": "positive",
       "score": 92,
       "min": 75,
       "pass": true,
+      "documentedWeight": 9,
       "dims": [
         {
           "key": "strategic",
@@ -732,6 +762,426 @@
           "detail": "Budget compatible avec les modalités connues",
           "matched": [],
           "documented": true
+        },
+        {
+          "key": "access",
+          "label": "Territoire, calendrier & accessibilité",
+          "max": 1,
+          "score": 1,
+          "ratio": 100,
+          "detail": "Accès temporel et territorial cohérent",
+          "matched": [],
+          "documented": true
+        }
+      ]
+    },
+    {
+      "id": "negative-culture-vs-ai",
+      "name": "Contrôle négatif — culture vs IA industrielle",
+      "type": "negative",
+      "score": 13,
+      "max": 45,
+      "pass": true,
+      "documentedWeight": 9,
+      "dims": [
+        {
+          "key": "strategic",
+          "label": "Objectifs, priorités & thématiques",
+          "max": 1,
+          "score": 0.17,
+          "ratio": 17,
+          "detail": "Alignement faible",
+          "matched": [
+            "culture"
+          ],
+          "documented": true
+        },
+        {
+          "key": "expected",
+          "label": "Nature des projets attendus",
+          "max": 1,
+          "score": 0,
+          "ratio": 0,
+          "detail": "Projet comparé aux opérations attendues",
+          "matched": [],
+          "documented": true
+        },
+        {
+          "key": "expenses",
+          "label": "Dépenses & assiette éligible",
+          "max": 1,
+          "score": 0,
+          "ratio": 0,
+          "detail": "Postes de dépenses rapprochés de l’assiette publiée",
+          "matched": [],
+          "documented": true
+        },
+        {
+          "key": "selection",
+          "label": "Critères de sélection & prérequis",
+          "max": 1,
+          "score": 0,
+          "ratio": 0,
+          "detail": "Critères de sélection rapprochés du projet",
+          "matched": [],
+          "documented": true
+        },
+        {
+          "key": "beneficiary",
+          "label": "Bénéficiaire, activité & secteur",
+          "max": 1,
+          "score": 0.37400000000000005,
+          "ratio": 37,
+          "detail": "Profil porteur à confirmer",
+          "matched": [],
+          "documented": true
+        },
+        {
+          "key": "maturity",
+          "label": "Maturité technique & typologie",
+          "max": 1,
+          "score": 0.25,
+          "ratio": 25,
+          "detail": "Maturité peu alignée",
+          "matched": [],
+          "documented": true
+        },
+        {
+          "key": "impacts",
+          "label": "Impacts attendus & valeur du projet",
+          "max": 1,
+          "score": 0,
+          "ratio": 0,
+          "detail": "Impacts rapprochés des attendus du financeur",
+          "matched": [],
+          "documented": true
+        },
+        {
+          "key": "finance",
+          "label": "Budget, intensité & montage financier",
+          "max": 1,
+          "score": 0,
+          "ratio": 0,
+          "detail": "Budget hors assiette connue",
+          "matched": [],
+          "documented": true
+        },
+        {
+          "key": "access",
+          "label": "Territoire, calendrier & accessibilité",
+          "max": 1,
+          "score": 0.42,
+          "ratio": 42,
+          "detail": "Accès à confirmer",
+          "matched": [],
+          "documented": true
+        }
+      ]
+    },
+    {
+      "id": "negative-agri-vs-cyber",
+      "name": "Contrôle négatif — agriculture vs cybersécurité",
+      "type": "negative",
+      "score": 20,
+      "max": 45,
+      "pass": true,
+      "documentedWeight": 9,
+      "dims": [
+        {
+          "key": "strategic",
+          "label": "Objectifs, priorités & thématiques",
+          "max": 1,
+          "score": 0,
+          "ratio": 0,
+          "detail": "Alignement faible",
+          "matched": [],
+          "documented": true
+        },
+        {
+          "key": "expected",
+          "label": "Nature des projets attendus",
+          "max": 1,
+          "score": 0,
+          "ratio": 0,
+          "detail": "Projet comparé aux opérations attendues",
+          "matched": [],
+          "documented": true
+        },
+        {
+          "key": "expenses",
+          "label": "Dépenses & assiette éligible",
+          "max": 1,
+          "score": 0,
+          "ratio": 0,
+          "detail": "Postes de dépenses rapprochés de l’assiette publiée",
+          "matched": [],
+          "documented": true
+        },
+        {
+          "key": "selection",
+          "label": "Critères de sélection & prérequis",
+          "max": 1,
+          "score": 0,
+          "ratio": 0,
+          "detail": "Critères de sélection rapprochés du projet",
+          "matched": [],
+          "documented": true
+        },
+        {
+          "key": "beneficiary",
+          "label": "Bénéficiaire, activité & secteur",
+          "max": 1,
+          "score": 0.37400000000000005,
+          "ratio": 37,
+          "detail": "Profil porteur à confirmer",
+          "matched": [],
+          "documented": true
+        },
+        {
+          "key": "maturity",
+          "label": "Maturité technique & typologie",
+          "max": 1,
+          "score": 1,
+          "ratio": 100,
+          "detail": "Maturité et typologie cohérentes",
+          "matched": [],
+          "documented": true
+        },
+        {
+          "key": "impacts",
+          "label": "Impacts attendus & valeur du projet",
+          "max": 1,
+          "score": 0,
+          "ratio": 0,
+          "detail": "Impacts rapprochés des attendus du financeur",
+          "matched": [],
+          "documented": true
+        },
+        {
+          "key": "finance",
+          "label": "Budget, intensité & montage financier",
+          "max": 1,
+          "score": 0,
+          "ratio": 0,
+          "detail": "Budget hors assiette connue",
+          "matched": [],
+          "documented": true
+        },
+        {
+          "key": "access",
+          "label": "Territoire, calendrier & accessibilité",
+          "max": 1,
+          "score": 0.42,
+          "ratio": 42,
+          "detail": "Accès à confirmer",
+          "matched": [],
+          "documented": true
+        }
+      ]
+    },
+    {
+      "id": "negative-tourism-vs-carbon",
+      "name": "Contrôle négatif — tourisme vs décarbonation industrielle",
+      "type": "negative",
+      "score": 12,
+      "max": 45,
+      "pass": true,
+      "documentedWeight": 9,
+      "dims": [
+        {
+          "key": "strategic",
+          "label": "Objectifs, priorités & thématiques",
+          "max": 1,
+          "score": 0,
+          "ratio": 0,
+          "detail": "Alignement faible",
+          "matched": [],
+          "documented": true
+        },
+        {
+          "key": "expected",
+          "label": "Nature des projets attendus",
+          "max": 1,
+          "score": 0,
+          "ratio": 0,
+          "detail": "Projet comparé aux opérations attendues",
+          "matched": [],
+          "documented": true
+        },
+        {
+          "key": "expenses",
+          "label": "Dépenses & assiette éligible",
+          "max": 1,
+          "score": 0,
+          "ratio": 0,
+          "detail": "Postes de dépenses rapprochés de l’assiette publiée",
+          "matched": [],
+          "documented": true
+        },
+        {
+          "key": "selection",
+          "label": "Critères de sélection & prérequis",
+          "max": 1,
+          "score": 0,
+          "ratio": 0,
+          "detail": "Critères de sélection rapprochés du projet",
+          "matched": [],
+          "documented": true
+        },
+        {
+          "key": "beneficiary",
+          "label": "Bénéficiaire, activité & secteur",
+          "max": 1,
+          "score": 0.37400000000000005,
+          "ratio": 37,
+          "detail": "Profil porteur à confirmer",
+          "matched": [],
+          "documented": true
+        },
+        {
+          "key": "maturity",
+          "label": "Maturité technique & typologie",
+          "max": 1,
+          "score": 0.25,
+          "ratio": 25,
+          "detail": "Maturité peu alignée",
+          "matched": [],
+          "documented": true
+        },
+        {
+          "key": "impacts",
+          "label": "Impacts attendus & valeur du projet",
+          "max": 1,
+          "score": 0,
+          "ratio": 0,
+          "detail": "Impacts rapprochés des attendus du financeur",
+          "matched": [],
+          "documented": true
+        },
+        {
+          "key": "finance",
+          "label": "Budget, intensité & montage financier",
+          "max": 1,
+          "score": 0,
+          "ratio": 0,
+          "detail": "Budget hors assiette connue",
+          "matched": [],
+          "documented": true
+        },
+        {
+          "key": "access",
+          "label": "Territoire, calendrier & accessibilité",
+          "max": 1,
+          "score": 0.42,
+          "ratio": 42,
+          "detail": "Accès à confirmer",
+          "matched": [],
+          "documented": true
+        }
+      ]
+    },
+    {
+      "id": "sparse-evidence-guard",
+      "name": "Garde-fou — aide très peu documentée",
+      "type": "evidence-guard",
+      "score": 89,
+      "documentedWeight": 4,
+      "strongDimensions": 4,
+      "pass": true,
+      "dims": [
+        {
+          "key": "strategic",
+          "label": "Objectifs, priorités & thématiques",
+          "max": 1,
+          "score": 0.75,
+          "ratio": 75,
+          "detail": "Alignement stratégique fort",
+          "matched": [
+            "prototype",
+            "logiciel",
+            "intelligence",
+            "artificielle",
+            "innovation",
+            "digital",
+            "ai"
+          ],
+          "documented": true
+        },
+        {
+          "key": "expected",
+          "label": "Nature des projets attendus",
+          "max": 1,
+          "score": 0,
+          "ratio": null,
+          "detail": "Projet attendu non documenté",
+          "matched": [],
+          "documented": false
+        },
+        {
+          "key": "expenses",
+          "label": "Dépenses & assiette éligible",
+          "max": 1,
+          "score": 0,
+          "ratio": null,
+          "detail": "Dépenses éligibles non documentées",
+          "matched": [],
+          "documented": false
+        },
+        {
+          "key": "selection",
+          "label": "Critères de sélection & prérequis",
+          "max": 1,
+          "score": 0,
+          "ratio": null,
+          "detail": "Critères de sélection non documentés",
+          "matched": [],
+          "documented": false
+        },
+        {
+          "key": "beneficiary",
+          "label": "Bénéficiaire, activité & secteur",
+          "max": 1,
+          "score": 0,
+          "ratio": null,
+          "detail": "Bénéficiaires non documentés",
+          "matched": [],
+          "documented": false
+        },
+        {
+          "key": "maturity",
+          "label": "Maturité technique & typologie",
+          "max": 1,
+          "score": 1,
+          "ratio": 100,
+          "detail": "Maturité et typologie cohérentes",
+          "matched": [],
+          "documented": true
+        },
+        {
+          "key": "impacts",
+          "label": "Impacts attendus & valeur du projet",
+          "max": 1,
+          "score": 0.81,
+          "ratio": 81,
+          "detail": "Impacts rapprochés des attendus du financeur",
+          "matched": [
+            "innovation",
+            "logiciel",
+            "prototype",
+            "digital",
+            "ai"
+          ],
+          "documented": true
+        },
+        {
+          "key": "finance",
+          "label": "Budget, intensité & montage financier",
+          "max": 1,
+          "score": 0,
+          "ratio": null,
+          "detail": "Modalités financières non documentées",
+          "matched": [],
+          "documented": false
         },
         {
           "key": "access",

@@ -1,0 +1,327 @@
+{
+  "generatedAt": "2026-10-03T10:14:46.619Z",
+  "corpusGeneratedAt": "2026-10-03T10:11:02.972Z",
+  "policy": "CERTIFIED_SOURCE_ONLY",
+  "rawTotal": 66,
+  "publishedTotal": 0,
+  "quarantinedTotal": 66,
+  "certifiedSources": [],
+  "sourceCount": 0,
+  "sourcesSucceeded": 0,
+  "sourcesFailed": 0,
+  "overall": {
+    "total": 0,
+    "verified": 0,
+    "active": 0,
+    "fields": {
+      "beneficiaries": {
+        "present": 0,
+        "officialProof": 0
+      },
+      "eligibleExpenses": {
+        "present": 0,
+        "officialProof": 0
+      },
+      "prerequisites": {
+        "present": 0,
+        "officialProof": 0
+      },
+      "selectionCriteria": {
+        "present": 0,
+        "officialProof": 0
+      },
+      "financialTerms": {
+        "present": 0,
+        "officialProof": 0
+      },
+      "calendar": {
+        "present": 0,
+        "officialProof": 0
+      }
+    }
+  },
+  "aapAmi": {
+    "total": 0,
+    "verified": 0,
+    "active": 0,
+    "fields": {
+      "beneficiaries": {
+        "present": 0,
+        "officialProof": 0
+      },
+      "eligibleExpenses": {
+        "present": 0,
+        "officialProof": 0
+      },
+      "prerequisites": {
+        "present": 0,
+        "officialProof": 0
+      },
+      "selectionCriteria": {
+        "present": 0,
+        "officialProof": 0
+      },
+      "financialTerms": {
+        "present": 0,
+        "officialProof": 0
+      },
+      "calendar": {
+        "present": 0,
+        "officialProof": 0
+      }
+    }
+  },
+  "byInstrument": {
+    "SUBVENTION": {
+      "total": 0,
+      "verified": 0,
+      "active": 0,
+      "fields": {
+        "beneficiaries": {
+          "present": 0,
+          "officialProof": 0
+        },
+        "eligibleExpenses": {
+          "present": 0,
+          "officialProof": 0
+        },
+        "prerequisites": {
+          "present": 0,
+          "officialProof": 0
+        },
+        "selectionCriteria": {
+          "present": 0,
+          "officialProof": 0
+        },
+        "financialTerms": {
+          "present": 0,
+          "officialProof": 0
+        },
+        "calendar": {
+          "present": 0,
+          "officialProof": 0
+        }
+      }
+    },
+    "AVANCE_REMBOURSABLE": {
+      "total": 0,
+      "verified": 0,
+      "active": 0,
+      "fields": {
+        "beneficiaries": {
+          "present": 0,
+          "officialProof": 0
+        },
+        "eligibleExpenses": {
+          "present": 0,
+          "officialProof": 0
+        },
+        "prerequisites": {
+          "present": 0,
+          "officialProof": 0
+        },
+        "selectionCriteria": {
+          "present": 0,
+          "officialProof": 0
+        },
+        "financialTerms": {
+          "present": 0,
+          "officialProof": 0
+        },
+        "calendar": {
+          "present": 0,
+          "officialProof": 0
+        }
+      }
+    },
+    "PRET_TAUX_ZERO": {
+      "total": 0,
+      "verified": 0,
+      "active": 0,
+      "fields": {
+        "beneficiaries": {
+          "present": 0,
+          "officialProof": 0
+        },
+        "eligibleExpenses": {
+          "present": 0,
+          "officialProof": 0
+        },
+        "prerequisites": {
+          "present": 0,
+          "officialProof": 0
+        },
+        "selectionCriteria": {
+          "present": 0,
+          "officialProof": 0
+        },
+        "financialTerms": {
+          "present": 0,
+          "officialProof": 0
+        },
+        "calendar": {
+          "present": 0,
+          "officialProof": 0
+        }
+      }
+    }
+  },
+  "byCompanyCategory": {
+    "STARTUP": {
+      "total": 0,
+      "verified": 0,
+      "active": 0,
+      "fields": {
+        "beneficiaries": {
+          "present": 0,
+          "officialProof": 0
+        },
+        "eligibleExpenses": {
+          "present": 0,
+          "officialProof": 0
+        },
+        "prerequisites": {
+          "present": 0,
+          "officialProof": 0
+        },
+        "selectionCriteria": {
+          "present": 0,
+          "officialProof": 0
+        },
+        "financialTerms": {
+          "present": 0,
+          "officialProof": 0
+        },
+        "calendar": {
+          "present": 0,
+          "officialProof": 0
+        }
+      }
+    },
+    "PME": {
+      "total": 0,
+      "verified": 0,
+      "active": 0,
+      "fields": {
+        "beneficiaries": {
+          "present": 0,
+          "officialProof": 0
+        },
+        "eligibleExpenses": {
+          "present": 0,
+          "officialProof": 0
+        },
+        "prerequisites": {
+          "present": 0,
+          "officialProof": 0
+        },
+        "selectionCriteria": {
+          "present": 0,
+          "officialProof": 0
+        },
+        "financialTerms": {
+          "present": 0,
+          "officialProof": 0
+        },
+        "calendar": {
+          "present": 0,
+          "officialProof": 0
+        }
+      }
+    },
+    "ETI": {
+      "total": 0,
+      "verified": 0,
+      "active": 0,
+      "fields": {
+        "beneficiaries": {
+          "present": 0,
+          "officialProof": 0
+        },
+        "eligibleExpenses": {
+          "present": 0,
+          "officialProof": 0
+        },
+        "prerequisites": {
+          "present": 0,
+          "officialProof": 0
+        },
+        "selectionCriteria": {
+          "present": 0,
+          "officialProof": 0
+        },
+        "financialTerms": {
+          "present": 0,
+          "officialProof": 0
+        },
+        "calendar": {
+          "present": 0,
+          "officialProof": 0
+        }
+      }
+    },
+    "GE": {
+      "total": 0,
+      "verified": 0,
+      "active": 0,
+      "fields": {
+        "beneficiaries": {
+          "present": 0,
+          "officialProof": 0
+        },
+        "eligibleExpenses": {
+          "present": 0,
+          "officialProof": 0
+        },
+        "prerequisites": {
+          "present": 0,
+          "officialProof": 0
+        },
+        "selectionCriteria": {
+          "present": 0,
+          "officialProof": 0
+        },
+        "financialTerms": {
+          "present": 0,
+          "officialProof": 0
+        },
+        "calendar": {
+          "present": 0,
+          "officialProof": 0
+        }
+      }
+    }
+  },
+  "unknownCompanyCategory": {
+    "total": 0,
+    "verified": 0,
+    "active": 0,
+    "fields": {
+      "beneficiaries": {
+        "present": 0,
+        "officialProof": 0
+      },
+      "eligibleExpenses": {
+        "present": 0,
+        "officialProof": 0
+      },
+      "prerequisites": {
+        "present": 0,
+        "officialProof": 0
+      },
+      "selectionCriteria": {
+        "present": 0,
+        "officialProof": 0
+      },
+      "financialTerms": {
+        "present": 0,
+        "officialProof": 0
+      },
+      "calendar": {
+        "present": 0,
+        "officialProof": 0
+      }
+    }
+  },
+  "missingSelectionProof": []
+}

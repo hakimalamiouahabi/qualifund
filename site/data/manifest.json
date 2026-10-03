@@ -1,27 +1,28 @@
 {
   "version": "12.9.0",
-  "generatedAt": "2026-09-30T20:25:33.273Z",
-  "purgedAt": "2026-10-03T09:55:04.495Z",
+  "generatedAt": "2026-10-03T10:11:02.972Z",
+  "purgedAt": "2026-10-03T10:14:45.945Z",
   "repositoryUrl": "https://github.com/hakimalamiouahabi/qualifund",
   "sourcePolicy": "DIRECT_OFFICIAL_ONLY",
   "libraryMode": "DIRECT_OFFICIAL_CATALOG",
-  "count": 35,
-  "libraryCount": 35,
-  "rawLibraryCount": 35,
-  "activeCount": 35,
+  "count": 66,
+  "libraryCount": 66,
+  "rawLibraryCount": 66,
+  "activeCount": 66,
   "jPlusOneDate": "2026-10-04",
-  "jPlusOneActiveCount": 33,
+  "jPlusOneActiveCount": 64,
   "archivedCount": 0,
   "staleCount": 0,
-  "aapCount": 28,
+  "aapCount": 43,
   "verifiedCount": 0,
-  "withCdc": 12,
-  "withDeadline": 28,
+  "withCdc": 34,
+  "withDeadline": 43,
   "sourceCount": 118,
   "activeCollectionSourceCount": 3,
   "libraryInstruments": [
     "APPEL_A_PROJET",
     "AVANCE_REMBOURSABLE",
+    "PRET_TAUX_ZERO",
     "SUBVENTION"
   ],
   "recommendationInstruments": [
@@ -30,23 +31,24 @@
     "PRET_TAUX_ZERO",
     "APPEL_A_PROJET"
   ],
-  "targetInstrumentCount": 35,
-  "directLinkCount": 35,
+  "targetInstrumentCount": 66,
+  "directLinkCount": 66,
   "missingDirectLinkCount": 0,
   "categoryCounts": {
-    "STARTUP": 3,
-    "PME": 17,
-    "ETI": 15,
-    "GE": 2
+    "STARTUP": 10,
+    "PME": 36,
+    "ETI": 27,
+    "GE": 5
   },
   "scopeCounts": {
-    "NATIONAL": 35,
+    "NATIONAL": 66,
     "REGIONAL": 0
   },
   "instrumentCounts": {
-    "APPEL_A_PROJET": 30,
-    "AVANCE_REMBOURSABLE": 5,
-    "SUBVENTION": 17
+    "APPEL_A_PROJET": 45,
+    "AVANCE_REMBOURSABLE": 11,
+    "PRET_TAUX_ZERO": 2,
+    "SUBVENTION": 39
   },
   "targetRule": "ACTIVE_SANS_ECHEANCE_OU_PERMANENT_OU_CLOTURE_GTE_J_PLUS_1",
   "targetCount": null,
@@ -54,12 +56,12 @@
   "coverageGap": null,
   "coverageCertified": false,
   "purgeStats": {
-    "input": 41,
-    "afterDirectSanitization": 41,
-    "afterCertifiedScope": 35,
+    "input": 67,
+    "afterDirectSanitization": 66,
+    "afterCertifiedScope": 66,
     "removedOutOfTarget": 0,
     "removedCertifiedQuarantine": 0,
-    "retainedOperational": 35
+    "retainedOperational": 66
   },
   "collectionLock": {
     "locked": true,
@@ -71,6 +73,11 @@
       "bpifrance_rebond_industriel"
     ],
     "next": "ADEME",
-    "frozenUnselectedSha": "8dc40e3411b739e4e58b79448dab3be0f871302c95f31952a052dfb73d9d089a"
-  }
+    "frozenUnselectedSha": "98b67062ebc7fb87821c37fcbfd1a597b3ea1f46ba828b295288bd7d22ad652e"
+  },
+  "publishedCount": 0,
+  "publishedActiveCount": 0,
+  "quarantinedCount": 66,
+  "certifiedSourceCount": 0,
+  "certifiedSources": []
 }

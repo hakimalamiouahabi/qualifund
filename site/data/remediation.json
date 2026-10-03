@@ -1,0 +1,39 @@
+{
+  "generatedAt": "2026-10-03T10:14:52.683Z",
+  "version": "12.9.0",
+  "policy": "CERTIFIED_SOURCE_ONLY",
+  "rawFiches": 66,
+  "publishedFiches": 0,
+  "quarantinedFiches": 66,
+  "activeFiches": 0,
+  "verifiedFiches": 0,
+  "certifiedSources": [],
+  "certifiedQuarantineCount": 0,
+  "certifiedQuarantineByReason": {},
+  "criticalFields": [
+    "objective",
+    "beneficiaries",
+    "financialTerms",
+    "projectsExpected",
+    "eligibleExpenses",
+    "calendar",
+    "prerequisites",
+    "selectionCriteria"
+  ],
+  "missingEvidenceABByField": {
+    "objective": 0,
+    "beneficiaries": 0,
+    "financialTerms": 0,
+    "projectsExpected": 0,
+    "eligibleExpenses": 0,
+    "calendar": 0,
+    "prerequisites": 0,
+    "selectionCriteria": 0
+  },
+  "qaFlags": {},
+  "permanentUnverified": 0,
+  "advancesMissingRepayment": 0,
+  "missingCriticalDocs": 0,
+  "remediationQueueCount": 0,
+  "topPriority": []
+}

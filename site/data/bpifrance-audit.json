@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T20:25:33.273Z",
+  "generatedAt": "2026-10-03T10:11:02.972Z",
   "collectionLock": {
     "locked": true,
     "mode": "GUICHET",
@@ -9,10 +9,11 @@
       "bpifrance_aides",
       "bpifrance_rebond_industriel"
     ],
-    "next": "Auvergne-Rhône-Alpes"
+    "next": "ADEME"
   },
   "sources": [
     {
+      "cycleId": "37115488704",
       "id": "bpifrance_aap",
       "name": "Bpifrance — appels à projets, AMI et concours",
       "scope": "France",
@@ -33,305 +34,17 @@
         "accounted": 27,
         "channels": {
           "listing": 27,
-          "sitemap": 540,
-          "externalAudit": 73
-        },
-        "externalDisposition": {
-          "active": [],
-          "closed": [
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/accelerateur-croissance-tpe",
-              "title": "Accélérateur Croissance TPE",
-              "reason": "Échéance 2024-05-31"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-cluster-itea4",
-              "title": "Appel à projets Cluster ITEA4",
-              "reason": "Échéance 2023-11-13"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-manifestation-dinteret-partenaires-indirects-du-piiec-sante-med4cure",
-              "title": "Appel à manifestation d’intérêt « Partenaires indirects du PIIEC Santé » - MED4CURE",
-              "reason": "Échéance 2026-02-03"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-demonstration-de-la-valeur-clinique-et-medico-economique-des-dispositifs-medicaux-dequipements-innovants",
-              "title": "Appel à projets « Démonstration de la valeur clinique et médico-économique des dispositifs médicaux d’équipements innovants »",
-              "reason": "Échéance 2023-05-03"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-eureka-france-coree-du-sud",
-              "title": "Appel à Projets Eureka France-Corée du Sud",
-              "reason": "Échéance 2026-07-08"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-eureka-biotech",
-              "title": "Appel à Projets Eureka Biotech",
-              "reason": "Échéance 2026-09-25"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-candidatures-accompagnement-renforce",
-              "title": "Appel à candidatures : Accompagnement Renforcé",
-              "reason": "Échéance 2024-05-31"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-business-meetings-french-healthcare-innovation-2023-indonesie",
-              "title": "Appel à projets : « Business Meetings French Healthcare Innovation 2023 - Indonésie »",
-              "reason": "Échéance 2023-12-13"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-eureka-sur-les-technologies-quantiques-appliquees",
-              "title": "Appel à Projets Eureka sur les technologies quantiques appliquées",
-              "reason": "Échéance 2025-09-05"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-financement-des-prototypes-de-technologies-agricoles-innovantes",
-              "title": "Appel à Projets « Financement des prototypes de technologies agricoles innovantes »",
-              "reason": "Échéance 2026-04-28"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-evaluation-du-benefice-medico-economique-des-dispositifs-medicaux-numeriques-et-des-dispositifs-medicaux-dequipement",
-              "title": "Appel à projets « Evaluation du bénéfice médico-économique des dispositifs médicaux numériques et des dispositifs médicaux d’équipement »",
-              "reason": "Échéance 2025-04-08"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-french-tech-tremplin",
-              "title": "Appel à projets « French Tech Tremplin »",
-              "reason": "Échéance 2024-05-17"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-des-pionniers-de-lintelligence-artificielle",
-              "title": "Appel à projets « des Pionniers de l’intelligence artificielle »",
-              "reason": "Échéance 2025-11-05"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-entreprendre-au-coeur-des-territoires",
-              "title": "Appel à projets : Entreprendre au Cœur des Territoires",
-              "reason": "Échéance 2026-04-03"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-france-balkans",
-              "title": "Appel à Projets France-Balkans",
-              "reason": "Échéance 2024-05-15"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-industrialisation-et-capacites-sante-2030",
-              "title": "Appel à projets : « Industrialisation et Capacités Santé 2030 »",
-              "reason": "Échéance 2025-10-07"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-generique-ndeg5-i-demo-soutien-aux-projets-structurants-de-rdi",
-              "title": "Appel à projets générique n°5 « i-Démo - soutien aux projets structurants de R&D&I »",
-              "reason": "Échéance 2026-09-09"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-metaux-critiques-2",
-              "title": "Appel à projets : Métaux critiques 2",
-              "reason": "Échéance 2026-02-24"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-innovations-en-biotherapies-et-bioproduction",
-              "title": "Appel à projets : « Innovations en biothérapies et bioproduction »",
-              "reason": "Échéance 2026-09-08"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-innovup-sport-et-evenementiel-durable",
-              "title": "Appel à projets Innov'up Sport et Événementiel durable",
-              "reason": "Échéance 2024-03-01"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-innovation-en-imagerie-medicale",
-              "title": "Appel à projets : « Innovation en imagerie médicale »",
-              "reason": "Échéance 2024-03-26"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-structuration-de-filieres",
-              "title": "Appel à projets: «Structuration de Filières»",
-              "reason": "Échéance 2018-06-13"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/bus-de-lentrepreneuriat",
-              "title": "Bus de l'entrepreneuriat",
-              "reason": "Échéance 2024-09-13"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-projet-important-dinteret-europeen-commun-piiec-sur-lintelligence-artificielle",
-              "title": "Appel à projets : « Projet important d’intérêt européen commun (PIIEC) sur l’intelligence artificielle »",
-              "reason": "Échéance 2026-09-09"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-resilience-et-capacites-agroalimentaires-2030",
-              "title": "Appel à projets : « Résilience et Capacités Agroalimentaires 2030 »",
-              "reason": "Échéance 2026-03-11"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-au-2e-appel-a-candidatures-de-tech-life-hub",
-              "title": "Candidatez au 2e appel à candidatures de Tech for life hub",
-              "reason": "Échéance 2022-10-31"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-la-3e-promotion-de-laccelerateur-pme-bourgogne-franche-comte",
-              "title": "Candidatez à la 3e Promotion de l’Accélérateur PME Bourgogne-Franche-Comté",
-              "reason": "Échéance 2022-06-21"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/concours-dinnovation-i-lab",
-              "title": "Concours d’innovation i-Lab",
-              "reason": "Échéance 2026-02-03"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/carrefours-de-lentrepreneuriat",
-              "title": "Carrefours de l'Entrepreneuriat",
-              "reason": "Échéance 2024-08-30"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/concours-dinnovation-i-phd",
-              "title": "Concours d'innovation : i-PhD",
-              "reason": "Échéance 2026-04-30"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/entrepreneuriat-feminin-en-ile-de-france-concours-creatrices-davenir",
-              "title": "Entrepreneuriat féminin en Ile-de-France : concours Créatrices d’avenir !",
-              "reason": "Échéance 2015-10-30"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/concours-dinnovation-numerique",
-              "title": "Concours d'innovation numérique",
-              "reason": "Échéance 2017-07-05"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/concours-entreprendre-autrement",
-              "title": "Concours \"Entreprendre autrement\"",
-              "reason": "Échéance 2021-05-20"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/forum-seeds-chips-appel-a-candidatures",
-              "title": "Forum Seeds & Chips : appel à candidatures",
-              "reason": "Échéance 2019-03-27"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/grand-est-be-est-filieres-davenir",
-              "title": "Grand Est : Be Est Filières d’Avenir",
-              "reason": "Échéance 2018-02-15"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/plan-aero-programme-de-soutien-aux-investissements-de-modernisation-de-la-filiere-aeronautique",
-              "title": "Plan Aéro : Programme de soutien aux investissements de modernisation de la filière aéronautique",
-              "reason": "Échéance 2020-07-31"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/projets-de-recherche-et-developpement-structurants-pour-la-competitivite-pspc",
-              "title": "Projets de recherche et développement structurants pour la compétitivité (PSPC)",
-              "reason": "Échéance 2021-06-29"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/piave-innovation-et-diversification-dentreprises-impactees-par-les-mutations-de-la-filiere-automobile",
-              "title": "PIAVE : Innovation et diversification d’entreprises impactées par les mutations de la filière automobile",
-              "reason": "Échéance 2020-06-29"
-            }
-          ],
-          "notCurrent": [
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/aide-booster-challenge-innotech",
-              "title": "« Aide Booster » - Challenge Innotech",
-              "reason": "ABSENT_DU_LISTING_ACTIF_ET_AUCUNE_ECHEANCE_FUTURE_PROUVEE"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-bourgogne-franche-comte-filiere",
-              "title": "Appel à projets : Bourgogne-Franche-Comté Filière",
-              "reason": "ABSENT_DU_LISTING_ACTIF_ET_AUCUNE_ECHEANCE_FUTURE_PROUVEE"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-foodtech-winetech-de-bordeaux-technowest",
-              "title": "Appel à projets Foodtech & Winetech de Bordeaux Technowest",
-              "reason": "ABSENT_DU_LISTING_ACTIF_ET_AUCUNE_ECHEANCE_FUTURE_PROUVEE"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-innov-avenir-filiere-en-normandie",
-              "title": "Appel à projets « Innov Avenir Filière » en Normandie",
-              "reason": "ABSENT_DU_LISTING_ACTIF_ET_AUCUNE_ECHEANCE_FUTURE_PROUVEE"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-innov-avenir-entreprises-en-normandie",
-              "title": "Appel à projets « Innov Avenir Entreprises » en Normandie",
-              "reason": "ABSENT_DU_LISTING_ACTIF_ET_AUCUNE_ECHEANCE_FUTURE_PROUVEE"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-multilateral-eureka-inde",
-              "title": "Appel à projets multilatéral Eureka – Inde",
-              "reason": "ABSENT_DU_LISTING_ACTIF_ET_AUCUNE_ECHEANCE_FUTURE_PROUVEE"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-tangoscan",
-              "title": "Appel à projets Tango&Scan",
-              "reason": "ABSENT_DU_LISTING_ACTIF_ET_AUCUNE_ECHEANCE_FUTURE_PROUVEE"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-laccelerateur-musique-et-spectacle-vivant",
-              "title": "Candidatez à l’Accélérateur Musique et Spectacle Vivant",
-              "reason": "ABSENT_DU_LISTING_ACTIF_ET_AUCUNE_ECHEANCE_FUTURE_PROUVEE"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-au-parcours-business-international-ville-durable-aux-emirats-arabes-unis-et-au-bahrein",
-              "title": "Candidatez au Parcours Business International – Ville durable aux Emirats Arabes Unis et au Bahreïn",
-              "reason": "ABSENT_DU_LISTING_ACTIF_ET_AUCUNE_ECHEANCE_FUTURE_PROUVEE"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-au-programme-culturexport",
-              "title": "Candidatez au Programme Cultur’Export",
-              "reason": "ABSENT_DU_LISTING_ACTIF_ET_AUCUNE_ECHEANCE_FUTURE_PROUVEE"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/concours-la-canopee",
-              "title": "Concours La Canopée",
-              "reason": "ABSENT_DU_LISTING_ACTIF_ET_AUCUNE_ECHEANCE_FUTURE_PROUVEE"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/consultation-strategie-dacceleration-produits-biosources-carburants-durables",
-              "title": "Consultation : stratégie d’accélération produits biosourcés, carburants durables",
-              "reason": "ABSENT_DU_LISTING_ACTIF_ET_AUCUNE_ECHEANCE_FUTURE_PROUVEE"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/fonds-de-fonds-france-relance-etat-regions-ffrer",
-              "title": "Fonds de Fonds France Relance Etat-Régions (FFRER)",
-              "reason": "ABSENT_DU_LISTING_ACTIF_ET_AUCUNE_ECHEANCE_FUTURE_PROUVEE"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/integrez-laccelerateur-seine-saint-denis",
-              "title": "Intégrez l’Accélérateur Seine-Saint-Denis !",
-              "reason": "ABSENT_DU_LISTING_ACTIF_ET_AUCUNE_ECHEANCE_FUTURE_PROUVEE"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/handi-tech-trophy",
-              "title": "Handi Tech Trophy",
-              "reason": "ABSENT_DU_LISTING_ACTIF_ET_AUCUNE_ECHEANCE_FUTURE_PROUVEE"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/piave-concours-handicap-et-innovation",
-              "title": "Piave : concours handicap et innovation",
-              "reason": "ABSENT_DU_LISTING_ACTIF_ET_AUCUNE_ECHEANCE_FUTURE_PROUVEE"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/lancement-de-lincubateur-id",
-              "title": "Lancement de l’incubateur Via ID",
-              "reason": "ABSENT_DU_LISTING_ACTIF_ET_AUCUNE_ECHEANCE_FUTURE_PROUVEE"
-            },
-            {
-              "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/les-appels-a-projets-du-programme-horizon-europe-pilier-2",
-              "title": "Les appels à projets du programme Horizon Europe - Pilier 2",
-              "reason": "ABSENT_DU_LISTING_ACTIF_ET_AUCUNE_ECHEANCE_FUTURE_PROUVEE"
-            }
-          ],
-          "unknown": []
+          "sitemap": 540
         }
       },
       "message": "Bpifrance AAP v2: 27 actif(s) au listing maître, 27 importé(s), 0 exclusion(s), 0 erreur(s)",
-      "durationMs": 10403,
-      "checkedAt": "2026-09-30T20:25:28.826Z",
-      "lastSuccessfulAt": "2026-09-30T20:25:28.826Z",
+      "durationMs": 9630,
+      "checkedAt": "2026-10-03T10:10:57.233Z",
+      "lastSuccessfulAt": "2026-10-03T10:10:57.233Z",
       "consecutiveFailures": 0
     },
     {
+      "cycleId": "37115488704",
       "id": "bpifrance_aides",
       "name": "Bpifrance — subventions, avances remboursables et aides à l'innovation",
       "scope": "France",
@@ -341,16 +54,16 @@
       "suspiciousVolume": false,
       "lowImportedCount": false,
       "lowImportRatio": false,
-      "importRatio": 0.7586206896551724,
-      "discovered": 29,
-      "imported": 22,
+      "importRatio": 0.7777777777777778,
+      "discovered": 27,
+      "imported": 21,
       "audit": {
-        "discovered": 29,
-        "imported": 22,
+        "discovered": 27,
+        "imported": 21,
         "excluded": [
           {
-            "url": "https://www.bpifrance.fr/catalogue-offres/pi-rd-bonifie-nouvelle-industrie-0",
-            "title": "PI R&D BONIFIE NOUVELLE INDUSTRIE",
+            "url": "https://www.bpifrance.fr/catalogue-offres/appel-a-projets-evaluation-du-benefice-medico-economique-des-dispositifs-medicaux-numeriques-et-des-dispositifs-medicaux-dequipement-0",
+            "title": "Appel à projets : Evaluation du bénéfice médico-économique des dispositifs médicaux numériques et des dispositifs médicaux d’équipement",
             "aidTypes": [],
             "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
           },
@@ -361,8 +74,8 @@
             "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
           },
           {
-            "url": "https://www.bpifrance.fr/catalogue-offres/appel-a-projets-evaluation-du-benefice-medico-economique-des-dispositifs-medicaux-numeriques-et-des-dispositifs-medicaux-dequipement-0",
-            "title": "Appel à projets : Evaluation du bénéfice médico-économique des dispositifs médicaux numériques et des dispositifs médicaux d’équipement",
+            "url": "https://www.bpifrance.fr/catalogue-offres/pi-rd-bonifie-nouvelle-industrie-0",
+            "title": "PI R&D BONIFIE NOUVELLE INDUSTRIE",
             "aidTypes": [],
             "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
           },
@@ -371,12 +84,6 @@
             "title": "Les formations en présentiel",
             "aidTypes": [],
             "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-          },
-          {
-            "url": "https://www.bpifrance.fr/catalogue-offres/horizon-europe",
-            "title": "Horizon Europe",
-            "aidTypes": [],
-            "reason": "BPIFRANCE_NON_FINANCEUR_DIRECT"
           },
           {
             "url": "https://www.bpifrance.fr/catalogue-offres/pret-innovation-rd-classique-0",
@@ -392,224 +99,20 @@
           }
         ],
         "errors": [],
-        "accounted": 29,
+        "accounted": 27,
         "channels": {
-          "catalogueSection": 29,
-          "sitemap": 353,
-          "externalAudit": 45
-        },
-        "externalDisposition": {
-          "target": [],
-          "nonTarget": [
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/avance-et-prefinancement-de-marches-des-start-industrielles",
-              "title": "Avance+ et Préfinancement de marchés des Start-Up Industrielles",
-              "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-            },
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/avance",
-              "title": "Avance+",
-              "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-            },
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/assurance-prospection",
-              "title": "Assurance Prospection",
-              "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-            },
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/avance-allegee",
-              "title": "Avance+ Allégée",
-              "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-            },
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/avance-prefinancement-de-marches-pour-les-tpe-et-pme",
-              "title": "Avance+ Préfinancement de marchés pour les TPE et PME",
-              "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-            },
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/frg-hauts-de-france",
-              "title": "FRG HAUTS-DE-FRANCE",
-              "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-            },
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/credit-bail-mobilier-bei",
-              "title": "Crédit-bail Mobilier BEI",
-              "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-            },
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/avance-rechargement-de-balance",
-              "title": "Avance+ Rechargement de balance",
-              "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-            },
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/garantie-de-pret-etudiant-garanti-par-letat",
-              "title": "Garantie de Prêt Etudiant garanti par l'Etat",
-              "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-            },
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/garantie-pour-le-reamenagement-des-dettes-et-le-renforcement-de-la-tresorerie-des-exploitations-agricoles-2026",
-              "title": "Garantie pour le réaménagement des dettes et le renforcement de la trésorerie des exploitations agricoles (2026)",
-              "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-            },
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/garantie-developpement-vert",
-              "title": "Garantie Développement Vert",
-              "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-            },
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/paiement-fournisseur-anticipe-programme-acheteur",
-              "title": "Paiement Fournisseur Anticipé - Programme Acheteur",
-              "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-            },
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/pret-amorcage-sans-bonif-bei",
-              "title": "PRÊT AMORÇAGE SANS BONIF BEI",
-              "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-            },
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/contrat-de-developpement-investissement-vert",
-              "title": "Contrat de Développement Investissement Vert",
-              "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-            },
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/pret-a-moyen-ou-long-terme-classique",
-              "title": "Prêt à Moyen ou Long Terme Classique",
-              "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-            },
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/garantie-creation-standard",
-              "title": "Garantie Création Standard",
-              "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-            },
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/pret-daccompagnement-0",
-              "title": "Prêt d'Accompagnement",
-              "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-            },
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/pret-acomptes-equipement-pae",
-              "title": "Prêt Acomptes Equipement (PAE)",
-              "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-            },
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/pret-a-moyen-ou-long-terme-hypothecaire-avec-prefinancement",
-              "title": "Prêt à Moyen ou Long Terme Hypothécaire avec Préfinancement",
-              "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-            },
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/garantie-developpement-standard",
-              "title": "Garantie Développement Standard",
-              "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-            },
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/pret-action-climat",
-              "title": "Prêt Action Climat",
-              "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-            },
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/pret-de-developpement-outre-mer",
-              "title": "Prêt de Développement Outre-Mer",
-              "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-            },
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/pret-croissance-relance",
-              "title": "Prêt Croissance Relance",
-              "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-            },
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/pret-filiere-bois-0",
-              "title": "Prêt Filière Bois",
-              "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-            },
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/pret-nouvelle-industrie",
-              "title": "PRÊT NOUVELLE INDUSTRIE",
-              "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-            },
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/pret-moyen-ou-long-terme-premo",
-              "title": "Prêt Moyen ou Long Terme PREMO",
-              "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-            },
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/pret-nouvelle-industrie-ce",
-              "title": "PRÊT NOUVELLE INDUSTRIE CE",
-              "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-            },
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/pret-region-energie-aura",
-              "title": "Prêt Région Energie AURA",
-              "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-            },
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/pret-touch-4",
-              "title": "Désolé, cette offre n'est plus disponible.",
-              "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-            },
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/pret-industrie-verte",
-              "title": "Prêt Industrie Verte",
-              "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-            },
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/pret-hotellerie-pprh",
-              "title": "Prêt Hôtellerie (PPRH)",
-              "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-            },
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/pret-dhonneur-creation-reprise",
-              "title": "Prêt d'honneur Création-Reprise",
-              "reason": "PRET_PERSONNEL_HORS_PERIMETRE_ENTREPRISE"
-            },
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/pret-rebond-grand-est",
-              "title": "Prêt Rebond Grand Est (Prêt Relance Région)",
-              "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-            },
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/pret-regional-de-revitalisation-hauts-de-france",
-              "title": "Prêt Régional de Revitalisation - Hauts-de-France",
-              "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-            },
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/pret-vert",
-              "title": "Prêt Vert",
-              "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-            },
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/pret-innovation-bonifie-nouvelle-industrie",
-              "title": "PI R&D BONIFIE NOUVELLE INDUSTRIE",
-              "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-            },
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/pret-dhonneur-renfort",
-              "title": "Prêt d'honneur",
-              "reason": "PRET_PERSONNEL_HORS_PERIMETRE_ENTREPRISE"
-            },
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/pret-industrie-pme-2",
-              "title": "PI PME 2",
-              "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-            }
-          ],
-          "duplicateAliases": [
-            {
-              "url": "https://www.bpifrance.fr/catalogue-offres/aide-pour-le-developpement-de-linnovation",
-              "title": "Aide pour le développement de l'innovation",
-              "canonicalUrl": "https://www.bpifrance.fr/catalogue-offres/aide-au-developpement-deeptech",
-              "reason": "ALIAS_D_UNE_OFFRE_DU_REFERENTIEL_MAITRE"
-            }
-          ],
-          "unknown": []
+          "catalogueSection": 27,
+          "sitemap": 354
         }
       },
-      "message": "Bpifrance aides v2: 29 offre(s) dans la section maître, 22 aide(s) cible(s), 7 exclusion(s), 0 erreur(s)",
-      "durationMs": 11161,
-      "checkedAt": "2026-09-30T20:25:28.842Z",
-      "lastSuccessfulAt": "2026-09-30T20:25:28.842Z",
+      "message": "Bpifrance aides v2: 27 offre(s) dans la section maître, 21 aide(s) cible(s), 6 exclusion(s), 0 erreur(s)",
+      "durationMs": 11975,
+      "checkedAt": "2026-10-03T10:10:57.240Z",
+      "lastSuccessfulAt": "2026-10-03T10:10:57.240Z",
       "consecutiveFailures": 0
     },
     {
+      "cycleId": "37115488704",
       "id": "bpifrance_rebond_industriel",
       "name": "Bpifrance — France 2030 Rebond Industriel",
       "scope": "France",
@@ -624,18 +127,18 @@
       "imported": 1,
       "audit": null,
       "message": "Page officielle analysée: France 2030 — Rebond Industriel — soutien à l’investissement industriel",
-      "durationMs": 1664,
-      "checkedAt": "2026-09-30T20:25:28.845Z",
-      "lastSuccessfulAt": "2026-09-30T20:25:28.845Z",
+      "durationMs": 1853,
+      "checkedAt": "2026-10-03T10:10:57.241Z",
+      "lastSuccessfulAt": "2026-10-03T10:10:57.241Z",
       "consecutiveFailures": 0
     }
   ],
   "summary": {
     "sources": 3,
     "success": 3,
-    "discovered": 57,
-    "imported": 50,
+    "discovered": 55,
+    "imported": 49,
     "errors": 0,
-    "excluded": 7
+    "excluded": 6
   }
 }

@@ -1,11 +1,19 @@
 {
-  "version": "12.6.0",
-  "generatedAt": "2026-09-30T20:25:33.273Z",
-  "repositoryUrl": "https://github.com/hakimalamiouahabi/qualifund",
-  "sourceCount": 119,
-  "sourcesOk": 91,
-  "sourcesFailed": 28,
-  "activeCollectionSourceCount": 3,
+  "version": "12.9.0",
+  "generatedAt": "2026-10-03T10:11:02.972Z",
+  "publishedCount": 0,
+  "publishedActiveCount": 0,
+  "certifiedSourceCount": 0,
+  "certifiedSources": [],
+  "sourcePolicy": "DIRECT_OFFICIAL_ONLY",
+  "publicationPolicy": "CERTIFIED_SOURCE_ONLY",
+  "instruments": [
+    "SUBVENTION",
+    "AVANCE_REMBOURSABLE",
+    "PRET_TAUX_ZERO",
+    "APPEL_A_PROJET"
+  ],
+  "qualificationRule": "éligibilité, critères et preuves officielles séparés",
   "collectionLock": {
     "locked": true,
     "mode": "GUICHET",
@@ -15,65 +23,7 @@
       "bpifrance_aides",
       "bpifrance_rebond_industriel"
     ],
-    "next": "Auvergne-Rhône-Alpes",
-    "frozenUnselectedSha": "8dc40e3411b739e4e58b79448dab3be0f871302c95f31952a052dfb73d9d089a"
-  },
-  "libraryCount": 2259,
-  "activeCount": 2114,
-  "jPlusOneDate": "2026-10-01",
-  "jPlusOneActiveCount": 2102,
-  "archivedCount": 145,
-  "aapCount": 260,
-  "verifiedCount": 1,
-  "withCdc": 817,
-  "withDeadline": 528,
-  "fullRefresh": true,
-  "libraryMode": "DIRECT_OFFICIAL_CATALOG",
-  "sourcePolicy": "DIRECT_OFFICIAL_ONLY",
-  "libraryInstruments": [
-    "APPEL_A_PROJET",
-    "AUTRE",
-    "AVANCE_REMBOURSABLE",
-    "PRET_TAUX_ZERO",
-    "SUBVENTION"
-  ],
-  "recommendationInstruments": [
-    "SUBVENTION",
-    "AVANCE_REMBOURSABLE",
-    "PRET_TAUX_ZERO"
-  ],
-  "targetInstrumentCount": 750,
-  "directLinkCount": 2115,
-  "missingDirectLinkCount": 1,
-  "categoryCounts": {
-    "STARTUP": 46,
-    "PME": 326,
-    "ETI": 97,
-    "GE": 106
-  },
-  "scopeCounts": {
-    "NATIONAL": 128,
-    "REGIONAL": 1988
-  },
-  "instrumentCounts": {
-    "APPEL_A_PROJET": 45,
-    "AUTRE": 1383,
-    "AVANCE_REMBOURSABLE": 48,
-    "PRET_TAUX_ZERO": 29,
-    "SUBVENTION": 720
-  },
-  "targetRule": "ACTIVE_SANS_ECHEANCE_OU_PERMANENT_OU_CLOTURE_GTE_J_PLUS_1",
-  "targetCount": null,
-  "targetReached": null,
-  "coverageGap": null,
-  "contentSha256": "89e3be05ba05b7bb67f97c283b98fa0eec52fccfccfd862bf9c29bae5c5d6845",
-  "count": 2259,
-  "coverageCertified": false,
-  "recommendationRule": "échéance >= J+1 ou permanent vérifié",
-  "relevanceRule": "pertinence projet >=85% ; éligibilité et confiance documentaire séparées",
-  "instruments": [
-    "SUBVENTION",
-    "AVANCE_REMBOURSABLE",
-    "PRET_TAUX_ZERO"
-  ]
+    "next": "ADEME",
+    "frozenUnselectedSha": "98b67062ebc7fb87821c37fcbfd1a597b3ea1f46ba828b295288bd7d22ad652e"
+  }
 }

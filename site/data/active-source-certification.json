@@ -1,8 +1,7 @@
 {
-  "generatedAt": "2026-10-03T10:10:20.837Z",
+  "generatedAt": "2026-10-03T10:14:46.021Z",
   "status": "PENDING",
   "lock": {
-    "version": 10,
     "locked": true,
     "mode": "GUICHET",
     "name": "Bpifrance",
@@ -11,76 +10,8 @@
       "bpifrance_aides",
       "bpifrance_rebond_industriel"
     ],
-    "preserveUnselectedSources": true,
-    "preserveUnselectedCoverage": true,
-    "freezeUnselectedLifecycle": true,
-    "enrichSelectedOnly": true,
     "next": "ADEME",
-    "certification": {
-      "primarySourceIds": [
-        "bpifrance_aap",
-        "bpifrance_aides",
-        "bpifrance_rebond_industriel"
-      ],
-      "allowedHosts": [
-        "www.bpifrance.fr",
-        "bpifrance.fr",
-        "rebond-industriel.bpifrance.fr"
-      ],
-      "requireAuditAccounting": true,
-      "requireZeroExtractionErrors": true,
-      "requireDirectOfficialUrl": true,
-      "forbidGenericTitles": true,
-      "sourceRules": {
-        "bpifrance_aap": {
-          "master": "ACTIVE_AAP_LISTING",
-          "requireListingDiscovery": true,
-          "requireImportedEqualsDiscovered": true,
-          "requireGuichetEvidence": true,
-          "requireCurrentStatusEvidence": true,
-          "allowedSourceStates": [
-            "OPEN",
-            "OPEN_UNDATED"
-          ],
-          "allowedKinds": [
-            "AAP / AMI"
-          ],
-          "requiredPathPrefix": "/nos-appels-a-projets-concours/",
-          "requireAuditAccounting": true
-        },
-        "bpifrance_aides": {
-          "master": "CATALOGUE_SECTION_SUB_AR",
-          "requireCatalogueSectionDiscovery": true,
-          "requireGuichetEvidence": true,
-          "requireCurrentStatusEvidence": true,
-          "allowedSourceStates": [
-            "OPEN_UNDATED"
-          ],
-          "allowedKinds": [
-            "AIDE"
-          ],
-          "allowedAidTypes": [
-            "SUBVENTION",
-            "AVANCE_REMBOURSABLE",
-            "PRET_TAUX_ZERO"
-          ],
-          "requiredPathPrefix": "/catalogue-offres/",
-          "requireAuditAccounting": true
-        },
-        "bpifrance_rebond_industriel": {
-          "master": "DIRECT_OFFICIAL_PAGE",
-          "minRetained": 1,
-          "requireAuditAccounting": false
-        }
-      }
-    },
-    "notes": "Recertification Foundation v3.1 / v12.9 officiel-only : Bpifrance est repris en premier sans aucun contre-audit externe payant/LLM. ADEME sera recertifié ensuite sur catalogue/RSS officiels, puis Auvergne-Rhône-Alpes sur son catalogue officiel Entreprise. AURA reste gelée jusqu'aux deux PASS v12.9.",
-    "foundationBaseline": {
-      "version": "Foundation v3.1 / 12.9 official-only",
-      "status": "HARDENING",
-      "validatedAt": null,
-      "p0": null
-    }
+    "frozenUnselectedSha": "98b67062ebc7fb87821c37fcbfd1a597b3ea1f46ba828b295288bd7d22ad652e"
   },
   "configuredSources": [
     "bpifrance_aap",
@@ -89,9 +20,39 @@
   ],
   "sourceConfigFingerprint": "84605ce57eee65cb8110296fff7be3d0090966c45304ac53f39145f2acd6a3e2",
   "certificationBasisFingerprint": "320f0b2f00c417eaf1efa9b502cdc84508e9d84f3a0a014c139cf47fb49d4810",
-  "certifiedDataFingerprint": "5a59fb98dfca3c558c21e9c30c084534a404b43335e316e32b25d911095f8421",
-  "libraryRecords": 17,
+  "certifiedDataFingerprint": "4d9c885e5c0768d95cabd2dac980227eac30c8fe7a6f3f51c0e57c481e321c21",
+  "libraryRecords": 0,
+  "bySource": {
+    "bpifrance_aap": {
+      "discovered": 27,
+      "imported": 27,
+      "retained": 27,
+      "errors": 0,
+      "excluded": 0,
+      "rss": 0,
+      "catalogue": 27
+    },
+    "bpifrance_aides": {
+      "discovered": 27,
+      "imported": 21,
+      "retained": 21,
+      "errors": 0,
+      "excluded": 6,
+      "rss": 0,
+      "catalogue": 27
+    },
+    "bpifrance_rebond_industriel": {
+      "discovered": 1,
+      "imported": 1,
+      "retained": 1,
+      "errors": 0,
+      "excluded": 0,
+      "rss": 0,
+      "catalogue": 0
+    }
+  },
+  "duplicates": [],
   "problems": [
-    "Recertification requise sur la configuration et le code courants avant déverrouillage de publication."
+    "Certification du cycle courant non acquise. Les données de ce guichet/région restent hors publication tant que le statut PASS n’est pas généré."
   ]
 }

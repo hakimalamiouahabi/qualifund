@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T10:10:20.751Z",
+  "generatedAt": "2026-10-03T10:14:46.018Z",
   "version": "12.9.0",
   "policy": "CERTIFIED_SOURCE_ONLY",
   "unlockedSourceIds": [],
@@ -20,15 +20,15 @@
     {
       "file": "bpifrance-certification.json",
       "name": "Bpifrance",
-      "generatedAt": "2026-09-30T20:29:18.428Z",
+      "generatedAt": "2026-10-03T10:14:45.507Z",
       "sourceIds": [
         "bpifrance_aap",
         "bpifrance_aides",
         "bpifrance_rebond_industriel"
       ],
-      "reason": "SOURCE_CONFIG_FINGERPRINT_MISSING",
-      "certifiedFingerprint": null,
-      "currentFingerprint": "84605ce57eee65cb8110296fff7be3d0090966c45304ac53f39145f2acd6a3e2"
+      "reason": "CERTIFIED_DATA_CHANGED",
+      "certifiedDataFingerprint": "62ee1302d6acdb2362b6c5d2769d33fcfcbdfd6b86810960f2d6425080656fa6",
+      "currentDataFingerprint": "4d9c885e5c0768d95cabd2dac980227eac30c8fe7a6f3f51c0e57c481e321c21"
     }
   ]
 }
