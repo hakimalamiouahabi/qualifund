@@ -141,3 +141,10 @@ test('le cycle AURA ferme toujours Chromium après collecte',()=>{
   assert.match(connector,/browserHtml, closeBrowser/);
   assert.match(connector,/finally\s*\{[\s\S]*await closeBrowser\(\)/);
 });
+
+test('AURA limite la pression réseau à 4 workers et un retry borné',()=>{
+  const connector=fs.readFileSync(new URL('../scripts/connectors/aura.mjs',import.meta.url),'utf8');
+  assert.match(connector,/extractMany\(source,nonEuropean,\{log,workers:4\}\)/);
+  assert.match(connector,/attempt<=2/);
+  assert.match(connector,/setTimeout\(resolve,750\)/);
+});
