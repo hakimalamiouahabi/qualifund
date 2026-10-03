@@ -26,9 +26,8 @@ await fs.cp(SITE,DIST,{recursive:true,filter:src=>!excluded.has(rel(src))});
 const library=JSON.parse(await fs.readFile(path.join(DATA,'library.json'),'utf8'));
 const cfg=JSON.parse(await fs.readFile(path.join(ROOT,'config','sources.json'),'utf8'));
 const lock=JSON.parse(await fs.readFile(path.join(ROOT,'config','collection-lock.json'),'utf8'));
-let ledger;
-try{ledger=JSON.parse(await fs.readFile(path.join(DATA,'certification-ledger.json'),'utf8'))}
-catch{ledger=await buildCertificationLedger(DATA,cfg)}
+const ledger=await buildCertificationLedger(DATA,cfg,{root:ROOT});
+await fs.writeFile(path.join(DATA,'certification-ledger.json'),JSON.stringify(ledger,null,2)+'\n','utf8');
 const configuredSourceIds=new Set((cfg.sources||[]).map(s=>s.id));
 const unlockedSourceIds=new Set(ledger.unlockedSourceIds||[]);
 const records=(Array.isArray(library.aaps)?library.aaps:[])
