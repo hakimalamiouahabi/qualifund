@@ -108,7 +108,7 @@ jobs:
           cp site/data/library.json /tmp/funding-radar/library-before.json || echo '{"aaps":[]}' > /tmp/funding-radar/library-before.json
       - name: Collecte complète quotidienne / manuelle
         env:
-          QUALIFUND_FULL_REFRESH: '1'
+          FUNDING_RADAR_FULL_REFRESH: '1'
         run: npm run update:full
       - name: Certifier le guichet ou la région verrouillée
         if: ${{ steps.lock.outputs.locked == 'true' }}
