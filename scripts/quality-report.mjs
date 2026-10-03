@@ -1,7 +1,6 @@
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {readJson} from './lib/utils.mjs';
-import {isActiveRecord,isPublicationCandidate,isTargetFunding} from './lib/data-governance.mjs';
 import { buildCertificationLedger, isPublishableAid } from './lib/publication.mjs';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
@@ -17,7 +16,8 @@ const unlockedSourceIds=new Set(ledger.unlockedSourceIds||[]);
 const raw=lib.aaps||[];
 const published=raw.filter(a=>isPublishableAid(a,{configuredSourceIds,unlockedSourceIds}));
 const pct=(n,d)=>d?Math.round(n/d*100):0;
-const active=published.filter(x=>x.lifecycleStatus!=='ARCHIVE');
+const active=published.filter(x=>x.lifecycleStatus==='ACTIVE');
+const archived=published.filter(x=>x.lifecycleStatus==='ARCHIVE');
 const hs=health.summary||{};
 const healthResults=Array.isArray(health.results)?health.results:[];
 const cycleRows=(Array.isArray(cov)?cov:[]).filter(x=>unlockedSourceIds.has(x.id));
@@ -28,6 +28,7 @@ const report={
   library:published.length,
   quarantined:raw.length-published.length,
   active:active.length,
+  archived:archived.length,
   aap:active.filter(x=>String(x.kind).includes('AAP')||String(x.kind).includes('AMI')).length,
   verified:active.filter(x=>x.verification?.status==='VERIFIE').length,
   withCdc:active.filter(x=>(x.cdcLinks||[]).length).length,
