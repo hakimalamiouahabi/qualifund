@@ -83,10 +83,22 @@
       "webEvidenceUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue",
       "minImported": 50,
       "minImportRatio": 0.8,
-      "notes": "ADEME official-only : le catalogue Entreprises est la référence ; le RSS officiel sert de miroir actif déterministe si le HTML du catalogue est indisponible. Constat live GitHub du 03/10/2026 : les fiches directes peuvent répondre HTTP 403 / challenge Cloudflare ; le RSS confirme l’inventaire et les échéances mais ne suffit pas à prouver l’instrument financier des fiches AIDE. Aucune qualification n’est inventée en cas de blocage.",
+      "notes": "ADEME official-only : inventaire actif via catalogue officiel Entreprises, avec fallback RSS officiel si le HTML est protégé. La politique de référentiel ADEME, versionnée et bornée dans le temps, attribue les cartes `Aide` du catalogue à des subventions ADEME ; ADEME Investissement/fonds propres reste explicitement hors périmètre.",
       "closedCatalogueUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue-aides-closes",
       "inventoryFallback": "rss-active-deadlines",
-      "rssRole": "official-active-inventory-fallback"
+      "rssRole": "official-active-inventory-fallback",
+      "cataloguePolicy": {
+        "verifiedAt": "2026-10-03",
+        "maxAgeDays": 120,
+        "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres",
+        "catalogueScope": "ADEME_ONLY",
+        "guichet": "ADEME",
+        "aidKindInstrument": "SUBVENTION",
+        "excludes": [
+          "ADEME_INVESTISSEMENT_FONDS_PROPRES"
+        ],
+        "evidence": "Le référentiel Entreprises ADEME présente les subventions et appels à projets de l’ADEME ; les offres ADEME Investissement en fonds propres sont distinctes du catalogue d’aides financières."
+      }
     },
     {
       "id": "anr",
