@@ -5,7 +5,7 @@ import vm from 'node:vm';
 
 const code=fs.readFileSync(new URL('../site/scoring-core.js',import.meta.url),'utf8');
 const ctx={};ctx.globalThis=ctx;vm.createContext(ctx);vm.runInContext(code,ctx);
-const {bm25fRank,relevance}=ctx.LEYTON_SCORING;
+const {bm25fRank,relevance}=ctx.FUNDING_RADAR_SCORING;
 
 test('BM25F classe un dispositif innovation IA devant un dispositif touristique sans rapport',()=>{
   const p={name:'Prototype IA industriel',summary:'Développer un prototype logiciel d intelligence artificielle, R&D, données et démonstrateur',sector:'logiciel',naf:'6201Z',types:['R&D / Innovation','Transition numérique'],digital:'IA data cloud',environment:'',impacts:'innovation productivité',expenses:'personnel R&D logiciel cloud',maturity:'Prototype',partners:''};

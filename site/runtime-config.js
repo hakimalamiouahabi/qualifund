@@ -1,6 +1,6 @@
 (()=>{
-  const server=window.LEYTON_RADAR_SERVER_CONFIG||{};
-  window.LEYTON_RADAR_CONFIG={
+  const server=window.FUNDING_RADAR_SERVER_CONFIG||{};
+  window.FUNDING_RADAR_CONFIG={
     refreshEndpoint:server.refreshEndpoint||null,
     repositoryUrl:server.repositoryUrl||null,
     sirenApi:'https://recherche-entreprises.api.gouv.fr/search',

@@ -5,7 +5,7 @@ import vm from 'node:vm';
 
 const core=fs.readFileSync(new URL('../site/scoring-core.js',import.meta.url),'utf8');
 const ctx={};ctx.globalThis=ctx;vm.createContext(ctx);vm.runInContext(core,ctx);
-const relevance=ctx.LEYTON_SCORING.relevance;
+const relevance=ctx.FUNDING_RADAR_SCORING.relevance;
 
 test('la description détaillée du projet influence directement le classement des AAP',()=>{
   const project={

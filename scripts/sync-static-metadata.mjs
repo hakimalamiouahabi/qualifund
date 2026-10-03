@@ -135,8 +135,8 @@ await fs.writeFile(path.join(DATA,'sources.json'),JSON.stringify(publicSources,n
 await fs.rm(path.join(DATA,'bootstrap.js'),{force:true});
 
 const runtimeConfig=`(()=>{
-  const server=window.LEYTON_RADAR_SERVER_CONFIG||{};
-  window.LEYTON_RADAR_CONFIG={
+  const server=window.FUNDING_RADAR_SERVER_CONFIG||{};
+  window.FUNDING_RADAR_CONFIG={
     refreshEndpoint:server.refreshEndpoint||null,
     repositoryUrl:server.repositoryUrl||null,
     sirenApi:'https://recherche-entreprises.api.gouv.fr/search',
@@ -147,7 +147,7 @@ const runtimeConfig=`(()=>{
 })();
 `;
 await fs.writeFile(path.join(ROOT,'site','runtime-config.js'),runtimeConfig,'utf8');
-const sw=`const CACHE='leyton-radar-v${version}-shell';const SHELL=['./','./index.html','./styles.css','./app.js','./scoring-core.js','./manifest.webmanifest','./runtime-config.js'];self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL)))});self.addEventListener('activate',e=>{e.waitUntil((async()=>{await Promise.all((await caches.keys()).filter(k=>k!==CACHE).map(k=>caches.delete(k)));await self.clients.claim()})())});self.addEventListener('fetch',e=>{const u=new URL(e.request.url);if(u.pathname.includes('/data/')){e.respondWith(fetch(e.request,{cache:'no-store'}).then(r=>{const c=r.clone();caches.open(CACHE).then(x=>x.put(e.request,c));return r}).catch(()=>caches.match(e.request)));return}e.respondWith(fetch(e.request).catch(()=>caches.match(e.request)))})
+const sw=`const CACHE='funding-radar-v${version}-shell';const SHELL=['./','./index.html','./styles.css','./app.js','./scoring-core.js','./manifest.webmanifest','./runtime-config.js'];self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL)))});self.addEventListener('activate',e=>{e.waitUntil((async()=>{await Promise.all((await caches.keys()).filter(k=>k!==CACHE).map(k=>caches.delete(k)));await self.clients.claim()})())});self.addEventListener('fetch',e=>{const u=new URL(e.request.url);if(u.pathname.includes('/data/')){e.respondWith(fetch(e.request,{cache:'no-store'}).then(r=>{const c=r.clone();caches.open(CACHE).then(x=>x.put(e.request,c));return r}).catch(()=>caches.match(e.request)));return}e.respondWith(fetch(e.request).catch(()=>caches.match(e.request)))})
 `;
 await fs.writeFile(path.join(ROOT,'site','sw.js'),sw,'utf8');
 

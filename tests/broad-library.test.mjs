@@ -15,8 +15,8 @@ test('interface bibliothèque expose taille région thème et instrument',()=>{
   for(const token of ['PME','ETI','GE','STARTUP','id="region"','id="theme"','id="instrument"'])assert.ok(pub.includes(token),token);
 });
 
-test('moteur de recommandation reste strict SUB AR PTZ',()=>{
+test('moteur de qualification accepte aussi les appels à projets',()=>{
   const app=fs.readFileSync(new URL('../site/app.js',import.meta.url),'utf8');
-  assert.match(app,/const targetInstruments=\['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO'\]/);
+  assert.match(app,/const targetInstruments=\['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO','APPEL_A_PROJET'\]/);
 });
 

@@ -6,7 +6,7 @@ import path from 'node:path';
 import { assertDirectSources, filterDirectLibrary, directPageId, sanitizeAidLinks } from '../scripts/lib/direct-sources.mjs';
 import { purgeIndirectSources } from '../scripts/purge-indirect-sources.mjs';
 const cfg={version:'test',sourcePolicy:'DIRECT_OFFICIAL_ONLY',sourceSelectionPolicy:'GUICHET_OR_REGION_OFFICIAL_ONLY',sources:[{id:'bpifrance',official:true,strategy:'catalog-html',url:'https://www.bpifrance.fr/nos-appels-a-projets-concours'}]};
-const valid={id:'bpi1',sourceId:'bpifrance',title:'AAP',officialPage:'https://www.bpifrance.fr/nos-appels-a-projets-concours/aap-1',lifecycleStatus:'ACTIVE'};
+const valid={id:'bpi1',sourceId:'bpifrance',title:'AAP',kind:'AAP / AMI',aidTypes:['APPEL_A_PROJET'],companyCategories:[],regions:[],scope:'NATIONAL',officialPage:'https://www.bpifrance.fr/nos-appels-a-projets-concours/aap-1',lifecycleStatus:'ACTIVE'};
 test('distinct pages cannot collapse to the same identifier',()=>{
  assert.notEqual(directPageId('bpifrance',valid.officialPage),directPageId('bpifrance',valid.officialPage+'-2'));
 });
@@ -88,7 +88,7 @@ test('la purge élimine les doublons d’URL même avec des IDs différents',()=
 });
 
 test('les statuts CLOSED/CLOS/EXPIRED ne survivent pas dans le stock direct',()=>{
- for(const lifecycleStatus of ['CLOSED','CLOS','EXPIRED','STALE'])assert.equal(filterDirectLibrary([{...valid,id:lifecycleStatus,lifecycleStatus}],cfg).length,0);
+ for(const lifecycleStatus of ['CLOSED','CLOS','EXPIRED','STALE','ARCHIVE'])assert.equal(filterDirectLibrary([{...valid,id:lifecycleStatus,lifecycleStatus}],cfg).length,0);
 });
 
 test('une simple mention textuelle de data.gouv.fr ne supprime pas une fiche officielle valide',()=>{
@@ -101,4 +101,81 @@ test('les alias objets vers une source exclue sont correctement purgés',()=>{
  const aid={...valid,id:'aliases',sourceAliases:[{sourceId:'old_control'},{sourceId:'bpifrance'}]};
  const out=sanitizeAidLinks(aid,localCfg);
  assert.deepEqual(out.sourceAliases,[{sourceId:'bpifrance'}]);
+});
+
+
+test('la purge retire physiquement les instruments hors périmètre du stock opérationnel',async()=>{
+ const root=await fs.mkdtemp(path.join(os.tmpdir(),'target-purge-test-'));
+ try{
+  await fs.mkdir(path.join(root,'config'),{recursive:true});await fs.mkdir(path.join(root,'site/data'),{recursive:true});
+  await fs.writeFile(path.join(root,'config/sources.json'),JSON.stringify(cfg));
+  await fs.writeFile(path.join(root,'config/collection-lock.json'),JSON.stringify({locked:true,mode:'GUICHET',name:'Bpifrance test',allowedSourceIds:['bpifrance']}));
+  const other={...valid,id:'other',kind:'AIDE',aidTypes:['AUTRE'],officialPage:'https://www.bpifrance.fr/nos-appels-a-projets-concours/autre'};
+  await fs.writeFile(path.join(root,'site/data/library.json'),JSON.stringify({meta:{generatedAt:'2026-10-03'},aaps:[valid,other]}));
+  const clean=await purgeIndirectSources(root);
+  assert.equal(clean.aaps.length,1);
+  assert.equal(clean.aaps[0].id,'bpi1');
+  assert.equal(clean.meta.purgeStats.removedOutOfTarget,1);
+  assert.ok(!clean.meta.libraryInstruments.includes('AUTRE'));
+ }finally{await fs.rm(root,{recursive:true,force:true})}
+});
+
+
+test('les doublons de liens entre familles sont éliminés avec priorité aux liens spécialisés',()=>{
+ const row={...valid,
+   sourceLinks:[
+     {label:'page',url:'https://www.bpifrance.fr/nos-appels-a-projets-concours/aap-1'},
+     {label:'pdf dupliqué',url:'https://media.bpifrance.fr/cdc.pdf'}
+   ],
+   cdcLinks:[{label:'CdC',url:'https://media.bpifrance.fr/cdc.pdf'}],
+   regulationLinks:[{label:'Règlement',url:'https://media.bpifrance.fr/reglement.pdf'}],
+   formLinks:[{label:'Formulaire',url:'https://media.bpifrance.fr/formulaire.pdf'}]
+ };
+ const out=sanitizeAidLinks(row,cfg);
+ const urls=[...(out.sourceLinks||[]),...(out.cdcLinks||[]),...(out.regulationLinks||[]),...(out.formLinks||[])]
+  .map(x=>typeof x==='string'?x:x.url);
+ assert.equal(new Set(urls).size,urls.length);
+ assert.equal(out.cdcLinks.length,1);
+ assert.equal(out.sourceLinks.some(x=>(typeof x==='string'?x:x.url).includes('cdc.pdf')),false);
+});
+
+
+test('une fiche quarantinée d’une source déjà certifiée quitte le stock opérationnel',async()=>{
+ const root=await fs.mkdtemp(path.join(os.tmpdir(),'certified-quarantine-test-'));
+ try{
+  const localCfg={
+   version:'test',
+   sourcePolicy:'DIRECT_OFFICIAL_ONLY',
+   sourceSelectionPolicy:'GUICHET_OR_REGION_OFFICIAL_ONLY',
+   sources:[
+    {id:'bpifrance',official:true,strategy:'catalog-html',url:'https://www.bpifrance.fr/catalogue-offres'},
+    {id:'aura',official:true,strategy:'official-page',url:'https://www.auvergnerhonealpes.fr/aides/test'}
+   ]
+  };
+  await fs.mkdir(path.join(root,'config'),{recursive:true});
+  await fs.mkdir(path.join(root,'site/data'),{recursive:true});
+  await fs.writeFile(path.join(root,'config/sources.json'),JSON.stringify(localCfg));
+  await fs.writeFile(path.join(root,'config/collection-lock.json'),JSON.stringify({
+   locked:true,mode:'REGION',name:'AURA test',allowedSourceIds:['aura']
+  }));
+  await fs.writeFile(path.join(root,'site/data/bpifrance-certification.json'),JSON.stringify({
+   status:'PASS',generatedAt:'2026-10-03T00:00:00Z',configuredSources:['bpifrance'],lock:{name:'Bpifrance'}
+  }));
+  const evidence=[
+   {field:'guichet',sourceTier:'B',sourceUrl:'https://www.bpifrance.fr/catalogue-offres/offre-test'},
+   {field:'sourceStatus',sourceTier:'B',sourceUrl:'https://www.bpifrance.fr/catalogue-offres/offre-test'},
+   {field:'instrument',sourceTier:'B',sourceUrl:'https://www.bpifrance.fr/catalogue-offres/offre-test'},
+   {field:'enterpriseEligibility',sourceTier:'B',sourceUrl:'https://www.bpifrance.fr/catalogue-offres/offre-test'}
+  ];
+  const clean={...valid,id:'bpi-clean',title:'AAP Innovation Bpifrance',sourceId:'bpifrance',officialPage:'https://www.bpifrance.fr/catalogue-offres/offre-test',
+   verification:{status:'VERIFIE',fieldEvidence:evidence}};
+  const quarantined={...clean,id:'bpi-bad',officialPage:'https://www.bpifrance.fr/catalogue-offres/offre-bad',
+   verification:{status:'A_REVERIFIER',fieldEvidence:evidence.filter(e=>e.field!=='enterpriseEligibility')}};
+  const aura={...clean,id:'aura-current',sourceId:'aura',officialPage:'https://www.auvergnerhonealpes.fr/aides/test',
+   verification:{status:'A_REVERIFIER',fieldEvidence:[]}};
+  await fs.writeFile(path.join(root,'site/data/library.json'),JSON.stringify({meta:{generatedAt:'2026-10-03'},aaps:[clean,quarantined,aura]}));
+  const out=await purgeIndirectSources(root);
+  assert.deepEqual(out.aaps.map(x=>x.id).sort(),['aura-current','bpi-clean']);
+  assert.equal(out.meta.purgeStats.removedCertifiedQuarantine,1);
+ }finally{await fs.rm(root,{recursive:true,force:true})}
 });

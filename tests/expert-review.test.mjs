@@ -17,14 +17,14 @@ test('une exclusion lexicale potentielle reste à vérifier',()=>{
 });
 test('prospection NAF autorisée sans description',()=>assert.equal(context.validateProjectForStudy({naf:'62.01Z'}).length,0));
 test('dépenses, budget, maturité absents neutralisés',()=>{
- const out=context.LEYTON_SCORING.relevance(aid,project);for(const key of ['expenses','finance','maturity'])assert.equal(out.dims.find(d=>d.key===key).documented,false);
+ const out=context.FUNDING_RADAR_SCORING.relevance(aid,project);for(const key of ['expenses','finance','maturity'])assert.equal(out.dims.find(d=>d.key===key).documented,false);
 });
-test('IA ne correspond pas à une sous-chaîne dans social',()=>assert.equal(context.LEYTON_SCORING.conceptSet('innovation sociale').includes('ai'),false));
+test('IA ne correspond pas à une sous-chaîne dans social',()=>assert.equal(context.FUNDING_RADAR_SCORING.conceptSet('innovation sociale').includes('ai'),false));
 test('recherche mots indépendants, accents, pluriels et alias BPI',()=>assert.equal(context.matchesSearch({title:'Aide pour le développement de l’innovation',funder:['Bpifrance']},'bpi innovation développement'),true));
-test('une fiche territoriale innovation n’est pas attribuée à Bpifrance',()=>assert.equal(context.LEYTON_SCORING.detectFamily({title:'Aide aux projets d’innovation',funder:['CC des Montagnes du Giffre'],scope:'REGIONAL'}),'REGIONAL'));
+test('une fiche territoriale innovation n’est pas attribuée à Bpifrance',()=>assert.equal(context.FUNDING_RADAR_SCORING.detectFamily({title:'Aide aux projets d’innovation',funder:['CC des Montagnes du Giffre'],scope:'REGIONAL'}),'REGIONAL'));
 test('catégories non exhaustives ne suffisent pas à exclure',()=>assert.equal(context.eligibility({...aid,companyCategories:['PME']},{...project,category:'ETI'}).eligible,true));
 test('une contradiction territoriale sans preuve officielle reste à vérifier',()=>{const r=context.eligibility({...aid,regions:['Bretagne']},project);assert.equal(r.eligible,true);assert.equal(r.criteria.find(x=>x.label==='Territoire').status,'À VÉRIFIER')});
 test('les cartes de résultats sont rendues sans fonction manquante',()=>{
- const result={a:aid,elig:context.eligibility(aid,project),relevance:context.LEYTON_SCORING.relevance(aid,project)};
+ const result={a:aid,elig:context.eligibility(aid,project),relevance:context.FUNDING_RADAR_SCORING.relevance(aid,project)};
  assert.match(context.resultCard(result,1),/Conditions à confirmer/);
 });

@@ -319,6 +319,6 @@
     };
   }
 
-  root.LEYTON_SCORING={relevance,tokens,norm,conceptSet,overlapDetails,detectFamily,nafText,projectContext,bm25fRank,retrievalQuery,version:'12.6.0'};
+  root.FUNDING_RADAR_SCORING={relevance,tokens,norm,conceptSet,overlapDetails,detectFamily,nafText,projectContext,bm25fRank,retrievalQuery,version:'12.6.0'};
 })(typeof globalThis!=='undefined'?globalThis:this);
 

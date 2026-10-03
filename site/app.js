@@ -13,13 +13,13 @@ const fmtDate=v=>{if(!v)return'—';const d=new Date(v+'T00:00:00');return isNaN
 const money=v=>v==null?'—':new Intl.NumberFormat('fr-FR',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(v);
 const missing=()=>'<span class="missing">À préciser</span>';
 const aidTypeLabel=t=>({SUBVENTION:'Subvention',AVANCE_REMBOURSABLE:'Avance remboursable',PRET_TAUX_ZERO:'Prêt à taux zéro',PRET:'Prêt',BONIFICATION_INTERET:"Bonification d’intérêt",GARANTIE:'Garantie',ALLEGEMENT_FISCAL:'Allègement fiscal',PARTICIPATION_CAPITAL:'Participation au capital',APPEL_A_PROJET:'Appel à projets',ACCOMPAGNEMENT_GRATUIT:'Accompagnement gratuit',CREDIT_BAIL:'Crédit-bail',AUTRE:'Autre dispositif'}[t]||t);
-const CONFIG=window.LEYTON_RADAR_CONFIG||{minRelevance:80};
+const CONFIG=window.FUNDING_RADAR_CONFIG||{minRelevance:80};
 const REGIONS=['Auvergne-Rhône-Alpes','Bourgogne-Franche-Comté','Bretagne','Centre-Val de Loire','Corse','Grand Est','Hauts-de-France','Île-de-France','Normandie','Nouvelle-Aquitaine','Occitanie','Pays de la Loire','Provence-Alpes-Côte d’Azur','Guadeloupe','Guyane','Martinique','La Réunion','Mayotte'];
 const TYPES=['R&D / Innovation','Investissement productif','Transition numérique','Transition écologique'];
 const MATURITY=['À préciser','Faisabilité','PoC','Prototype','Démonstrateur / pilote','Première industrialisation','Investissement / déploiement'];
 const DEFAULT_PROJECT={company:'',siren:'',category:'À préciser',startup:false,region:'À préciser',projectSite:'',sector:'',naf:'',employees:'',turnover:'',balanceSheet:'',group:'À vérifier',creationDate:'',legalForm:'',name:'',budget:'',types:[],summary:'',expenses:'',startDate:'',endDate:'',maturity:'À préciser',partners:'',impacts:'',jobs:'',environment:'',digital:'',financing:'',otherAids:''};
-const STORAGE='leyton-as-project-v12.6';
-const LEGACY_STORAGES=['funding-radar-project-v12.5','qualifund-project-v12.4','leyton-radar-project-v12.3','leyton-radar-project-v12.2','leyton-radar-project-v12.1','leyton-radar-project-v12'];
+const STORAGE='funding-radar-project-v12.7';
+const LEGACY_STORAGES=['leyton-as-project-v12.6','funding-radar-project-v12.5','qualifund-project-v12.4','leyton-radar-project-v12.3','leyton-radar-project-v12.2','leyton-radar-project-v12.1','leyton-radar-project-v12'];
 const PUBLIC_UNLOCKED_SOURCE_IDS=new Set();
 const PUBLIC_UNLOCKED_GUICHETS=[];
 const CERTIFIED_SOURCE_NAMES=new Map();
@@ -42,6 +42,7 @@ function loadProjectState(){
       if(!raw)continue;
       const migrated={...DEFAULT_PROJECT,...JSON.parse(raw)};
       localStorage.setItem(STORAGE,JSON.stringify(migrated));
+      for(const legacy of LEGACY_STORAGES)try{localStorage.removeItem(legacy)}catch{}
       return migrated;
     }
   }catch{}
@@ -66,7 +67,6 @@ function isoDayNumber(v){
   return Math.floor(Date.UTC(y,m-1,d)/86400000);
 }
 const daysUntil=v=>{const target=isoDayNumber(v),base=isoDayNumber(today());return target==null||base==null?null:target-base};
-const bootstrap=()=>window.__LEYTON_RADAR_BOOTSTRAP__||window.__QUALIFUND_BOOTSTRAP__||null;
 async function fetchJsonStrict(url){
   const r=await fetch(url,{cache:'no-store',headers:{Accept:'application/json'}});
   if(!r.ok)throw new Error(`HTTP ${r.status} — ${url}`);
@@ -86,10 +86,10 @@ async function chunkedLibrary(manifestPath='./data/library-manifest.json'){
 const api=async p=>{
   if(p.includes('library.json')){
     try{return await chunkedLibrary('./data/library-manifest.json')}
-    catch(e){const b=bootstrap();if(b?.library)return b.library;throw e}
+    catch(e){throw e}
   }
   try{return await fetchJsonStrict(p)}
-  catch(e){const b=bootstrap();if(b){if(p.includes('coverage.json'))return b.coverage;if(p.includes('changes.json'))return b.changes;if(p.includes('sources.json'))return b.sources;if(p.includes('production-readiness.json')&&window.__LEYTON_RADAR_READINESS__)return window.__LEYTON_RADAR_READINESS__}throw e}
+  catch(e){throw e}
 };
 function clientDirectUrl(raw=''){
   if(!/^https?:\/\//i.test(String(raw||'')))return null;
@@ -369,7 +369,7 @@ function eligibility(a,p){
     if(provenHard&&status==='NON CONFORME')block.push(detail||label);
   };
   const types=arr(a.aidTypes),cats=arr(a.companyCategories),regions=arr(a.regions);
-  const targetInstruments=['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO'];
+  const targetInstruments=['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO','APPEL_A_PROJET'];
   const hasTargetInstrument=types.some(x=>targetInstruments.includes(x));
   add('Instrument',!types.length?'À VÉRIFIER':hasTargetInstrument?'CONFORME':'NON CONFORME',types.length?types.map(aidTypeLabel).join(', '):'Instrument non documenté',null,types.length>0);
 
@@ -429,7 +429,7 @@ function eligibility(a,p){
   const confirmed=criteria.length>0&&criteria.every(x=>x.status==='CONFORME');
   return{eligible:block.length===0,status:block.length?'NON CONFORME':confirmed?'CONFORME':'À VÉRIFIER',criteria,next:nd,blocking:block};
 }
-function relevance(a,p){if(window.LEYTON_SCORING?.relevance)return window.LEYTON_SCORING.relevance(a,p);throw new Error('Moteur de pertinence partagé indisponible.')}
+function relevance(a,p){if(window.FUNDING_RADAR_SCORING?.relevance)return window.FUNDING_RADAR_SCORING.relevance(a,p);throw new Error('Moteur de pertinence partagé indisponible.')}
 function validateProjectForStudy(p){
   const anchors=[
     String(p.summary||'').trim(),
@@ -454,7 +454,7 @@ async function runFeasibility(){
   const started=performance.now(),corpus=state.lib.filter(usableAid),scored=[],rejected=[];
   root.innerHTML=`<div class="analysis-progress"><div class="row between"><b>Cartographie en cours</b><span id="analysisProgressLabel">0 / ${corpus.length}</span></div><div class="progress"><i id="analysisProgressBar" style="width:0%"></i></div><p class="mini">Étape 1 : incompatibilités réglementaires explicites. Étape 2 : analyse structurée des critères. Étape 3 : classement documentaire BM25F et fusion des rangs.</p></div>`;
 
-  const bm25=window.LEYTON_SCORING?.bm25fRank?window.LEYTON_SCORING.bm25fRank(corpus,p):new Map();
+  const bm25=window.FUNDING_RADAR_SCORING?.bm25fRank?window.FUNDING_RADAR_SCORING.bm25fRank(corpus,p):new Map();
   for(let i=0;i<corpus.length;i++){
     const a=corpus[i],e=eligibility(a,p);
     if(e.eligible){
