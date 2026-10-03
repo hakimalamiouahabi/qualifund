@@ -293,3 +293,14 @@ test('l’interface échoue fermée si le ledger de certification est indisponib
   assert.match(app,/const CERTIFIED_SOURCE_NAMES=new Map\(\)/);
   assert.doesNotMatch(app,/FALLBACK_UNLOCKED_SOURCE_IDS/);
 });
+
+
+test('la purge reconstruit les agrégats du manifeste au lieu de recopier les anciens compteurs',()=>{
+  const purge=fs.readFileSync(path.join(ROOT,'scripts/purge-indirect-sources.mjs'),'utf8');
+  assert.doesNotMatch(purge,/\.\.\.\(migrated\?lib\.meta/);
+  assert.match(purge,/jPlusOneActiveCount:activeJPlusOne\.length/);
+  assert.match(purge,/instrumentCounts/);
+  assert.match(purge,/purgedAt:new Date\(\)\.toISOString\(\)/);
+  const update=fs.readFileSync(path.join(ROOT,'scripts/update-library.mjs'),'utf8');
+  assert.match(update,/const active=aids\.filter\(a=>String\(a\.lifecycleStatus\|\|'\'\)\.toUpperCase\(\)==='ACTIVE'\)/);
+});
