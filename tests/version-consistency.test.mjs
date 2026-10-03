@@ -12,5 +12,5 @@ test('version applicative cohérente et non figée dans les générateurs',()=>{
   assert.match(update,/version:cfg\.version/);
   assert.match(gates,/version:cfg\.version/);
   assert.match(indexer,/version:cfg\.version/);
-  assert.match(preflight,/LEYTON-RADAR\/\$\{cfg\.version\} source-health/);
+  assert.match(preflight,/FUNDING-RADAR\/\$\{cfg\.version\} source-health/);
 });
