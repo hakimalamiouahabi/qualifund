@@ -401,7 +401,14 @@ function hasUsefulAidDetail(html=''){
   return /(?:appel\s+[àa]\s+projets?|aide|dispositif)[^.;]{0,140}(?:clos|cl[oô]tur[eé]|ouvert|en\s+cours)|d[eé]lai\s+de\s+d[eé]p[oô]t|heure\s+de\s+cl[oô]ture|b[eé]n[eé]ficiaires?|[êe]tes-vous\s+concern[eé]s?/i.test(text);
 }
 
+function ademeAccessBlockReason(html='',title=''){
+  const sample=(String(title||'')+' '+String(html||'').slice(0,12000)).toLowerCase();
+  if(/un instant|just a moment|cf-chl|challenge-platform|verify you are human|verification en cours/.test(sample))return 'CLOUDFLARE_CHALLENGE';
+  return null;
+}
+
 async function getDetailHtml(url){
+  let httpReason=null,browserReason=null;
   try{
     const r=await fetchText(url,{timeoutMs:15000,retries:1,headers:{
       'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/140 Safari/537.36',
@@ -409,17 +416,24 @@ async function getDetailHtml(url){
     }});
     const body=String(r.text||'');
     if(body.length>=1200&&hasUsefulAidDetail(body)){
-      return{html:body,finalUrl:r.url||url,via:'http'};
+      return{html:body,finalUrl:r.url||url,via:'http',unavailableReason:null};
     }
-  }catch{}
+    httpReason=ademeAccessBlockReason(body)||'HTTP_CONTENT_INSUFFICIENT';
+  }catch(e){
+    const msg=String(e?.message||e);
+    httpReason=/HTTP\s+403/i.test(msg)?'HTTP_403':('HTTP_ERROR_'+msg.slice(0,120));
+  }
   try{
-    const r=await browserHtml(url,{timeoutMs:65000});
+    const r=await browserHtml(url,{timeoutMs:65000,waitAfterMs:2500});
     const body=String(r.html||'');
     if(body.length>=1200&&hasUsefulAidDetail(body)){
-      return{html:body,finalUrl:r.url||url,via:'browser'};
+      return{html:body,finalUrl:r.url||url,via:'browser',unavailableReason:null};
     }
-  }catch{}
-  return null;
+    browserReason=ademeAccessBlockReason(body,r.title)||'BROWSER_CONTENT_INSUFFICIENT';
+  }catch(e){
+    browserReason='BROWSER_ERROR_'+String(e?.message||e).slice(0,120);
+  }
+  return{html:null,finalUrl:url,via:null,unavailableReason:browserReason||httpReason||'DETAIL_UNAVAILABLE',httpReason};
 }
 
 function baseAidFromInventory(source,link){
@@ -465,7 +479,8 @@ async function extractOne(source,link){
     return{aid:null,excluded:{url:link.url,label:link.label||'',reason:'TYPE_OFFICIEL_NON_CLASSE'}};
   }
 
-  const loaded=await getDetailHtml(requested);
+  const detail=await getDetailHtml(requested);
+  const loaded=detail?.html?detail:null;
   let text='',a=baseAidFromInventory(source,link),detailWarning=null;
   if(loaded){
     const resolved=canonicalUrl(loaded.finalUrl||requested);
@@ -484,7 +499,13 @@ async function extractOne(source,link){
       return{aid:null,excluded:{url:link.url,label:a.title,reason:'CONFLIT_STATUT_OFFICIEL',status:directStatus.state,date:directStatus.date}};
     }
   }else{
-    detailWarning={url:requested,label:link.label||'',reason:'FICHE_DIRECTE_NON_LUEE_RSS_OFFICIEL_CONSERVE'};
+    const protectedByCloudflare=['CLOUDFLARE_CHALLENGE','HTTP_403'].includes(detail?.unavailableReason)||['CLOUDFLARE_CHALLENGE','HTTP_403'].includes(detail?.httpReason);
+    detailWarning={
+      url:requested,
+      label:link.label||'',
+      reason:protectedByCloudflare?'FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE':'FICHE_DIRECTE_NON_LUEE_RSS_OFFICIEL_CONSERVE',
+      accessReason:detail?.unavailableReason||detail?.httpReason||'DETAIL_UNAVAILABLE'
+    };
   }
 
   const label=cleanTitle(link.label||'');
@@ -650,6 +671,12 @@ export async function collectAdeme(source,{log=console.log}={}){
   const discovered=await discoverAdeme(source,{log});
   const {links,rss,catalogueData,rssOutsideCatalogue,inventoryMode}=discovered;
   const out=await extractMany(source,links,{log,workers:12});
+  const detailWarningReasons=out.detailWarnings.reduce((acc,item)=>{
+    const reason=String(item?.reason||'UNKNOWN');
+    acc[reason]=(acc[reason]||0)+1;
+    return acc;
+  },{});
+  if(out.detailWarnings.length)log(`[${source.id}] accès fiches directes: ${JSON.stringify(detailWarningReasons)}`);
   return{
     aids:out.aids,
     discovered:links.length,
@@ -675,7 +702,8 @@ export async function collectAdeme(source,{log=console.log}={}){
         catalogueUnclassified:catalogueData.unclassified.length,
         catalogueDiscoveryErrors:catalogueData.discoveryErrors.length,
         rssOutsideCatalogue:rssOutsideCatalogue.length,
-        detailWarnings:out.detailWarnings.length
+        detailWarnings:out.detailWarnings.length,
+        detailWarningReasons
       },
       controlGaps:{rssOutsideCatalogue:rssOutsideCatalogue.map(x=>({url:x.url,label:x.label||''}))}
     },
