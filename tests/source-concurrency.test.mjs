@@ -1,2 +1,2 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';
-test('collecte source utilise un pool borné et fusion séquentielle',()=>{const s=fs.readFileSync(new URL('../scripts/update-library.mjs',import.meta.url),'utf8');assert.match(s,/QUALIFUND_SOURCE_WORKERS\|\|4/);assert.match(s,/await Promise\.all\(sourceWorkers\)/);assert.match(s,/La fusion reste séquentielle et déterministe/);});
+test('collecte source utilise un pool borné et fusion séquentielle',()=>{const s=fs.readFileSync(new URL('../scripts/update-library.mjs',import.meta.url),'utf8');assert.match(s,/FUNDING_RADAR_SOURCE_WORKERS\|\|4/);assert.match(s,/await Promise\.all\(sourceWorkers\)/);assert.match(s,/La fusion reste séquentielle et déterministe/);});
