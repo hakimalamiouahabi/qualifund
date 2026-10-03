@@ -17,14 +17,6 @@ const manifest=JSON.parse(await fs.readFile(path.join(DATA,'manifest.json'),'utf
 const allowed=new Set(lock.allowedSourceIds||[]);
 const primary=new Set(lock.certification?.primarySourceIds||lock.allowedSourceIds||[]);
 const cert=lock.certification||{};
-let externalAudit=null,externalAuditError=null;
-if(cert.externalAuditFile){
-  try{
-    externalAudit=JSON.parse(await fs.readFile(path.join(ROOT,cert.externalAuditFile),'utf8'));
-  }catch(e){
-    externalAuditError=e.message;
-  }
-}
 const problems=[];
 const generic=/^(document officiel|r[eè]glement|cahier des charges|annexe|formulaire|dossier de candidature|accueil|aides?|aides financières|catalogue|agir pour la transition)$/i;
 const byId=new Map(coverage.map(x=>[x.id,x]));
@@ -84,7 +76,6 @@ for(const s of lockedCfg){
     if(aap+aide!==total)problems.push(`${s.id}: classification catalogue incohérente — AAP ${aap} + aides ${aide} ≠ total ${total}`);
   }
   if(cert.requireRssDiscovery&&Number(row.audit?.channels?.rss||0)<=0)problems.push(`${s.id}: aucune fiche découverte via le RSS officiel`);
-  if(cert.requireExternalAuditDiscovery&&!cert.sourceRules&&Number(row.audit?.channels?.externalAudit||0)<=0)problems.push(`${s.id}: aucune URL issue du contre-audit externe n’a été prise en compte`);
 
   if(rule.requireListingDiscovery&&Number(row.audit?.channels?.listing||0)<=0)problems.push(`${s.id}: listing maître Bpifrance vide`);
   if(rule.requireCatalogueSectionDiscovery&&Number(row.audit?.channels?.catalogueSection||0)<=0)problems.push(`${s.id}: section catalogue maître vide`);
@@ -100,31 +91,8 @@ for(const s of lockedCfg){
     const imported=Number(row.audit?.imported??row.imported??0);
     if(discovered!==imported)problems.push(`${s.id}: ${imported}/${discovered} fiche(s) du référentiel maître importées`);
   }
-  if(rule.requireExternalDisposition){
-    if(Number(row.audit?.channels?.externalAudit||0)<=0)problems.push(`${s.id}: contre-audit externe absent`);
-    const disp=row.audit?.externalDisposition;
-    if(!disp)problems.push(`${s.id}: disposition du contre-audit externe absente`);
-    else{
-      if(rule.forbidActiveExternalGaps&&Number(disp.active?.length||0)>0)problems.push(`${s.id}: ${disp.active.length} AAP actif(s) détecté(s) hors listing maître`);
-      if(rule.forbidTargetExternalGaps&&Number(disp.target?.length||0)>0)problems.push(`${s.id}: ${disp.target.length} aide(s) cible(s) détectée(s) hors section maître`);
-      if(rule.forbidUnknownExternalGaps&&Number(disp.unknown?.length||0)>0)problems.push(`${s.id}: ${disp.unknown.length} candidat(s) externe(s) indéterminé(s)`);
-      if(rule.forbidExternalOutsideCatalogue&&Number(disp.outsideCatalogue?.length||0)>0)problems.push(`${s.id}: ${disp.outsideCatalogue.length} candidat(s) officiel(s) externe(s) hors catalogue Entreprise`);
-    }
-  }
   if(rule.minRetained!=null&&Number(sourceRecordCounts.get(s.id)||0)<Number(rule.minRetained))problems.push(`${s.id}: ${sourceRecordCounts.get(s.id)||0} fiche(s) conservée(s) < minimum ${rule.minRetained}`);
   if(cert.requireZeroExtractionErrors&&Number(row.audit?.errors?.length||0)>0)problems.push(`${s.id}: ${row.audit.errors.length} erreur(s) d’extraction`);
-}
-
-if(cert.requireExternalAuditDiscovery){
-  if(!externalAudit){
-    problems.push('Contre-audit externe absent ou illisible'+(externalAuditError?` — ${externalAuditError}`:''));
-  }else{
-    const generated=Date.parse(externalAudit.generatedAt||'');
-    const maxAge=Number(cert.externalAuditMaxAgeHours||0);
-    if(!Number.isFinite(generated))problems.push('Contre-audit externe: date de génération invalide');
-    else if(maxAge>0&&(Date.now()-generated)>(maxAge*3600000))problems.push(`Contre-audit externe périmé: plus de ${maxAge} h`);
-    if(!Array.isArray(externalAudit.candidates)||!externalAudit.candidates.length)problems.push('Contre-audit externe: aucune URL candidate');
-  }
 }
 
 const hosts=new Set((cert.allowedHosts||[]).map(x=>String(x).toLowerCase()));
@@ -174,16 +142,11 @@ for(const a of records){
   }
 }
 
-let externalCoverage={candidateCount:0,accounted:0,missing:[]};
-let controlGaps={rssOutsideCatalogue:[],externalOutsideCatalogue:[]};
-if(externalAudit?.candidates?.length){
-  externalCoverage.candidateCount=[...new Set(externalAudit.candidates.map(x=>String(x?.url||'').replace(/\/$/,'')).filter(Boolean))].length;
-}
+let controlGaps={rssOutsideCatalogue:[]};
 for(const s of lockedCfg){
   const row=byId.get(s.id);
   controlGaps={
-    rssOutsideCatalogue:row?.audit?.controlGaps?.rssOutsideCatalogue||controlGaps.rssOutsideCatalogue,
-    externalOutsideCatalogue:row?.audit?.controlGaps?.externalOutsideCatalogue||controlGaps.externalOutsideCatalogue
+    rssOutsideCatalogue:row?.audit?.controlGaps?.rssOutsideCatalogue||controlGaps.rssOutsideCatalogue
   };
 }
 
@@ -208,7 +171,6 @@ const report={
   certifiedDataFingerprint:sourceDataFingerprint(lib.aaps||[],lockedCfg.map(s=>s.id)),
   libraryRecords:records.length,
   frozenUnselectedSha:manifest?.collectionLock?.frozenUnselectedSha||null,
-  externalAudit:externalAudit?{generatedAt:externalAudit.generatedAt||null,engines:externalAudit.engines||[],...externalCoverage}:null,
   controlGaps,
   bySource:Object.fromEntries(lockedCfg.map(s=>[s.id,{
     discovered:Number(byId.get(s.id)?.discovered||0),
@@ -220,14 +182,9 @@ const report={
     rssWithoutClosing:Number(byId.get(s.id)?.audit?.channels?.rssWithoutClosing||0),
     catalogue:Number(byId.get(s.id)?.audit?.channels?.catalogue||0),
     catalogueMode:String(byId.get(s.id)?.audit?.channels?.catalogueMode||''),
-    externalAudit:Number(byId.get(s.id)?.audit?.channels?.externalAudit||0),
     listing:Number(byId.get(s.id)?.audit?.channels?.listing||0),
     catalogueSection:Number(byId.get(s.id)?.audit?.channels?.catalogueSection||0),
     sitemap:Number(byId.get(s.id)?.audit?.channels?.sitemap||0),
-    externalActiveGaps:Number(byId.get(s.id)?.audit?.externalDisposition?.active?.length||0),
-    externalTargetGaps:Number(byId.get(s.id)?.audit?.externalDisposition?.target?.length||0),
-    externalUnknownGaps:Number(byId.get(s.id)?.audit?.externalDisposition?.unknown?.length||0),
-    externalOutsideCatalogue:Number(byId.get(s.id)?.audit?.externalDisposition?.outsideCatalogue?.length||0),
     enterpriseCatalogue:Number(byId.get(s.id)?.audit?.channels?.enterpriseCatalogue||0),
     enterpriseExpected:Number(byId.get(s.id)?.audit?.channels?.enterpriseExpected||0),
     enterprisePagesScanned:Number(byId.get(s.id)?.audit?.channels?.pagesScanned||0),

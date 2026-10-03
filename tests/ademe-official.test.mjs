@@ -125,13 +125,14 @@ test('le certificat ADEME archivé conserve les preuves de complétude',()=>{
   assert.equal(cert.problems?.length,0);
 });
 
-test("le contre-audit multi-moteurs reste un contrôle et n'est pas vide",()=>{
-  const audit=JSON.parse(fs.readFileSync(new URL('../config/ademe-v2-external-audit.json',import.meta.url),'utf8'));
-  assert.ok(audit.candidateCount>0);
-  assert.ok(audit.engines.includes('Exa'));
-  assert.ok(audit.engines.includes('Tavily'));
-  assert.ok(audit.engines.includes('Parallel Search'));
-  assert.ok(audit.engines.includes('Firecrawl'));
+test("ADEME ne dépend d'aucun contre-audit externe",()=>{
+  const cfg=JSON.parse(fs.readFileSync(new URL('../config/sources.json',import.meta.url),'utf8'));
+  const source=cfg.sources.find(x=>x.id==='ademe');
+  const connector=fs.readFileSync(new URL('../scripts/connectors/ademe.mjs',import.meta.url),'utf8');
+  assert.equal(source.externalAuditFile,undefined);
+  assert.doesNotMatch(connector,/externalAudit|Exa|Tavily|Parallel|Firecrawl/i);
+  assert.match(connector,/rssLinks/);
+  assert.match(connector,/catalogueLinks/);
 });
 
 test('une fiche directe indiquée close entre en conflit avec un inventaire actif',()=>{

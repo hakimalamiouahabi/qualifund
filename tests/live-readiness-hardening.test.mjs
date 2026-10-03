@@ -20,9 +20,10 @@ test('configuration navigateur n’invente aucun endpoint serverless sur héberg
   assert.doesNotMatch(js,/'\/api\/company'/);
 });
 
-test('service worker utilise exclusivement le cache de release v12',()=>{
+test('service worker utilise exclusivement le cache de la version applicative courante',()=>{
   const sw=fs.readFileSync(new URL('../site/sw.js',import.meta.url),'utf8');
-  assert.match(sw,/funding-radar-v12\.7\.0-shell/);
+  const pkg=JSON.parse(fs.readFileSync(new URL('../package.json',import.meta.url),'utf8'));
+  assert.ok(sw.includes(`funding-radar-v${pkg.version}-shell`));
   assert.doesNotMatch(sw,/v10-shell|v11\./);
 });
 

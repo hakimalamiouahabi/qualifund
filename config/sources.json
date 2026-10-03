@@ -1,5 +1,5 @@
 {
-  "version": "12.8.0",
+  "version": "12.9.0",
   "sources": [
     {
       "id": "bpifrance_aap",
@@ -17,8 +17,7 @@
       "minImportRatio": 0.9,
       "webVerifiedAt": "2026-09-30",
       "webEvidenceUrl": "https://www.bpifrance.fr/nos-appels-a-projets-concours",
-      "notes": "Bpifrance v2 : le listing officiel /nos-appels-a-projets-concours est le référentiel maître des AAP/AMI/concours actifs. Le sitemap et Exa/Tavily/Parallel/Firecrawl servent uniquement de contre-audit ; toute URL externe absente du listing est vérifiée directement avant disposition.",
-      "externalAuditFile": "config/bpifrance-v2-external-audit.json"
+      "notes": "Bpifrance v3 officiel-only : le listing officiel /nos-appels-a-projets-concours est le référentiel maître des AAP/AMI/concours actifs. Le sitemap officiel Bpifrance sert uniquement de contrôle de couverture. Chaque fiche retenue est vérifiée directement sur bpifrance.fr."
     },
     {
       "id": "bpifrance_aides",
@@ -37,8 +36,7 @@
       "minImportRatio": 0.5,
       "webVerifiedAt": "2026-09-30",
       "webEvidenceUrl": "https://www.bpifrance.fr/catalogue-offres",
-      "notes": "Bpifrance v2 : la section officielle « Subventions et avances remboursables » du catalogue est le référentiel maître. Les pages sont lues directement et seules les subventions, avances remboursables/récupérables et prêts à taux zéro sont conservés. Le sitemap et les moteurs externes sont des contre-audits uniquement.",
-      "externalAuditFile": "config/bpifrance-v2-external-audit.json",
+      "notes": "Bpifrance v3 officiel-only : la section officielle « Subventions et avances remboursables » du catalogue est le référentiel maître. Les pages sont lues directement ; seules les subventions, avances remboursables/récupérables et prêts à taux zéro sont conservés. Le sitemap officiel Bpifrance sert uniquement de contrôle de couverture.",
       "canonicalAliases": {
         "https://www.bpifrance.fr/catalogue-offres/aide-pour-le-developpement-de-linnovation": "https://www.bpifrance.fr/catalogue-offres/aide-au-developpement-deeptech"
       }
@@ -81,8 +79,7 @@
       "webEvidenceUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue",
       "minImported": 50,
       "minImportRatio": 0.8,
-      "notes": "ADEME v4 : le catalogue officiel Entreprises reste la référence fonctionnelle. Si son HTML bloque l'automatisation, l'inventaire actif est reconstruit exclusivement depuis le flux RSS officiel ADEME en conservant les entrées dont la période de dépôt est ouverte. La classification AAP/AIDE est issue de la structure officielle des URLs et contrôlée sur la fiche directe quand elle est lisible. Exa, Tavily, Parallel Search et Firecrawl restent des contre-audits uniquement.",
-      "externalAuditFile": "config/ademe-v2-external-audit.json",
+      "notes": "ADEME v5 officiel-only : le catalogue officiel Entreprises est la référence. Si son HTML bloque l'automatisation, l'inventaire actif est reconstruit exclusivement depuis le flux RSS officiel ADEME ; les fiches directes officielles servent à la vérification du type, du statut et des critères.",
       "closedCatalogueUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue-aides-closes",
       "inventoryFallback": "rss-active-deadlines",
       "rssRole": "official-active-inventory-fallback"
@@ -113,11 +110,10 @@
       "official": true,
       "priority": 1,
       "browserFallback": true,
-      "externalAuditFile": "config/aura-v1-external-audit.json",
       "minExpected": 175,
       "minImported": 20,
       "minImportRatio": 0.1,
-      "notes": "AURA v1 : le catalogue officiel Région filtré sur le profil Entreprise est le référentiel maître (175 résultats observés le 03/10/2026). Les fiches FEADER/FEDER/FSE+/FTJ sont exclues de ce cycle et traitées ultérieurement dans les cycles fonds européens. Seuls subventions, avances remboursables/récupérables, prêts à taux zéro et AAP/AMI correspondant au périmètre FUNDING RADAR sont conservés. Exa/Tavily/Parallel/Firecrawl = contre-audit uniquement."
+      "notes": "AURA v2 officiel-only : le catalogue officiel Région filtré sur le profil Entreprise est le référentiel maître. Les fiches FEADER/FEDER/FSE+/FTJ sont exclues de ce cycle et traitées dans leurs cycles dédiés. Seuls subventions, avances remboursables/récupérables, prêts à taux zéro et AAP/AMI du périmètre sont conservés."
     },
     {
       "id": "bfc",

@@ -1,12 +1,31 @@
-name: FUNDING RADAR — validation
+name: FUNDING RADAR — validation non destructive
+
 on:
   pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/**'
+      - 'config/**'
+      - 'schemas/**'
+      - 'tests/**'
+      - 'api/**'
+      - 'site/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/**'
   workflow_dispatch:
+
 permissions:
   contents: read
+
+concurrency:
+  group: funding-radar-validation-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -17,24 +36,29 @@ jobs:
         with:
           node-version: '22'
           package-manager-cache: false
-      - name: Installer les dépendances
-        shell: bash
-        run: |
-          set -euo pipefail
-          if [ -f package-lock.json ]; then
-            npm ci --ignore-scripts --no-audit --no-fund
-          else
-            npm install --ignore-scripts --no-audit --no-fund
-          fi
-      - run: npm test
-      - name: Appliquer la purge déterministe avant les audits de données
+      - name: Installer les dépendances verrouillées
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Vérifier la syntaxe JavaScript
+        run: find scripts tests -type f -name '*.mjs' -print0 | xargs -0 -n1 node --check
+      - name: Tests de non-régression
+        run: npm test
+      - name: Appliquer la purge déterministe au workspace éphémère
         run: npm run purge:indirect
-      - run: npm run validate
-      - run: npm run audit:sources
-      - run: npm run audit:ingestion
-      - run: npm run uat
-      - run: npm run sync:metadata
-      - run: npm run build:index
-      - run: npm run audit:deep:strict
-      - run: npm run production:gates
-      - run: npm run build:cloudflare
+      - name: Valider le schéma
+        run: npm run validate
+      - name: Auditer le registre officiel
+        run: npm run audit:sources
+      - name: Auditer l'ingestion
+        run: npm run audit:ingestion
+      - name: Recette UAT
+        run: npm run uat
+      - name: Synchroniser les métadonnées éphémères
+        run: npm run sync:metadata
+      - name: Reconstruire l'index
+        run: npm run build:index
+      - name: Audit approfondi strict
+        run: npm run audit:deep:strict
+      - name: Gates de production
+        run: npm run production:gates
+      - name: Build Cloudflare
+        run: npm run build:cloudflare

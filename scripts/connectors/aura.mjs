@@ -1,5 +1,4 @@
 import * as cheerio from 'cheerio';
-import { readFile } from 'node:fs/promises';
 import { fetchText } from '../lib/http.mjs';
 import { browserHtml } from '../lib/browser.mjs';
 import { extractFromHtml } from '../lib/extract.mjs';
@@ -162,21 +161,6 @@ async function enterpriseMaster(source,{log=console.log,maxPages=80}={}){
   return{links,expectedCount,pagesScanned};
 }
 
-async function externalAuditLinks(source,{log=console.log}={}){
-  if(!source.externalAuditFile)return[];
-  try{
-    const root=new URL('../../',import.meta.url);
-    const file=new URL(source.externalAuditFile,root);
-    const audit=JSON.parse(await readFile(file,'utf8'));
-    const links=uniqueLinks((audit.candidates||[]).map(x=>({url:x.url,label:x.title||'',engines:x.engines||[]})));
-    log(`[${source.id}] contre-audit externe AURA: ${links.length} URL(s)`);
-    return links;
-  }catch(e){
-    log(`[${source.id}] contre-audit externe indisponible: ${e.message}`);
-    return[];
-  }
-}
-
 function currentState(a,listing,now=new Date()){
   const today=parisToday(now);
   const directDates=uniq([
@@ -284,53 +268,8 @@ async function extractMany(source,links,{log=console.log,workers=12}={}){
   return{aids,excluded,errors};
 }
 
-function enterpriseEvidence(text=''){
-  return /\b(?:entreprises?|TPE|PME|ETI|start[- ]?ups?|artisans?|commer[cç]ants?|soci[eé]t[eé]s?)\b/i.test(String(text||''));
-}
-
-async function classifyExternalGaps(source,master,external,{log=console.log}={}){
-  const known=new Set(master.map(x=>canonicalUrl(x.url)));
-  const pending=external.filter(x=>!known.has(canonicalUrl(x.url)));
-  const active=[],closed=[],nonEnterprise=[],european=[],nonTarget=[],unknown=[];
-  let cursor=0;
-  const pool=Array.from({length:8},async()=>{
-    while(true){
-      const i=cursor++;if(i>=pending.length)return;
-      const link=pending[i];
-      try{
-        const loaded=await getAidHtml(link.url,{log});
-        const text=pageText(loaded.html);
-        const parsed=extractFromHtml(loaded.html,{url:link.url,sourceTier:'B',scope:'REGIONAL',region:REGION});
-        const title=cleanTitle(parsed.title||link.label||'');
-        const proxy={...link,label:title,listingEvidence:title};
-        if(isEuropeanFundAid(proxy)){european.push({url:link.url,title,reason:'FONDS_EUROPEEN_CYCLE_DEDIE'});continue}
-        if(!enterpriseEvidence(`${title} ${parsed.beneficiaries||''} ${text}`)){
-          nonEnterprise.push({url:link.url,title,reason:'PROFIL_ENTREPRISE_NON_PROUVE'});continue;
-        }
-        const state=currentState(parsed,null);
-        if(!state.retain){closed.push({url:link.url,title,reason:state.evidence});continue}
-        const instrument=classifyAuraInstrument(parsed,text);
-        if(!instrument.aidTypes.length){nonTarget.push({url:link.url,title,reason:instrument.reason});continue}
-        active.push({url:link.url,title,aidTypes:instrument.aidTypes,state:state.state});
-      }catch(e){
-        unknown.push({url:link.url,title:link.label||'',reason:String(e?.message||e)});
-      }
-    }
-  });
-  await Promise.all(pool);
-  log(`[${source.id}] contre-audit AURA hors catalogue: ${active.length} cible(s) active(s), ${closed.length} close(s), ${nonEnterprise.length} hors profil, ${european.length} fonds UE, ${nonTarget.length} hors instrument, ${unknown.length} indéterminée(s)`);
-  return{active,closed,nonEnterprise,european,nonTarget,unknown};
-}
-
 export async function discoverAura(source,{log=console.log}={}){
-  const [master,external]=await Promise.all([
-    enterpriseMaster(source,{log}),
-    externalAuditLinks(source,{log})
-  ]);
-  const masterSet=new Set(master.links.map(x=>canonicalUrl(x.url)));
-  const externalOutside=external.filter(x=>!masterSet.has(canonicalUrl(x.url)));
-  const externalDisposition=await classifyExternalGaps(source,master.links,external,{log});
-  return{...master,external,externalOutside,externalDisposition};
+  return enterpriseMaster(source,{log});
 }
 
 export async function collectAura(source,{log=console.log}={}){
@@ -352,13 +291,7 @@ export async function collectAura(source,{log=console.log}={}){
         enterpriseCatalogue:discovered.links.length,
         enterpriseExpected:discovered.expectedCount,
         pagesScanned:discovered.pagesScanned,
-        externalAudit:discovered.external.length,
-        externalOutsideCatalogue:discovered.externalOutside.length,
         europeanExcluded:european.length
-      },
-      externalDisposition:discovered.externalDisposition,
-      controlGaps:{
-        externalOutsideCatalogue:discovered.externalOutside.map(x=>({url:x.url,label:x.label||'',engines:x.engines||[]}))
       }
     },
     message:`AURA v1: ${discovered.links.length}/${discovered.expectedCount??'?'} dispositifs Entreprise comptabilisés, ${out.aids.length} aides/AAP cible(s) importés, ${excluded.length} exclusion(s), ${out.errors.length} erreur(s)`

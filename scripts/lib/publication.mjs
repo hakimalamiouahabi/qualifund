@@ -168,7 +168,6 @@ export async function certificationBasisFingerprint(root,cfg,sourceIds=[]){
   for(const source of selected){
     const impl=STRATEGY_IMPLEMENTATIONS[source.strategy];
     if(impl)files.add(impl);
-    if(source.externalAuditFile)files.add(source.externalAuditFile);
   }
   const parts=[['source-config',sourceConfigFingerprint(cfg,sourceIds)]];
   for(const rel of [...files].sort()){

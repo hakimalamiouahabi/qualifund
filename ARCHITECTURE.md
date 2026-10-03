@@ -4,7 +4,7 @@
 Guichet / région verrouillé
         ↓
 Sources officielles directes
-(HTML / RSS / API publique / Open Data / PDF)
+(HTML / RSS / sitemap / API publique / Open Data / PDF)
         ↓
 Collecteur dédié ou connecteur officiel
         ↓
@@ -25,9 +25,14 @@ Interface FUNDING RADAR
 
 Un seul guichet ou une seule région peut être actif à la fois. La bibliothèque des autres sources est reprise à l’identique. Le pipeline calcule une empreinte SHA-256 des fiches non sélectionnées avant et après le cycle et échoue si elles changent.
 
+
+## Sources de vérité
+
+La collecte et la certification fonctionnent uniquement à partir des sources officielles directes. Aucun moteur externe, LLM ou API payante n’est une dépendance de production.
+
 ## Résilience
 
-- aucune suppression silencieuse lors d’un scan dégradé ;
+- aucune fusion ni suppression lors d’un scan dégradé : le snapshot précédent de la source est conservé intégralement ;
 - chaque URL découverte doit être importée, explicitement exclue ou déclarée en erreur ;
 - les pages génériques, accessibilité, mentions légales et agrégateurs ne peuvent pas devenir des fiches dispositif ;
 - les titres génériques (« Document officiel ») sont refusés ;
