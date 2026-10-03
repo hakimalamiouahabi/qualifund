@@ -45,3 +45,8 @@ npm run validate
 ```
 
 Le registre maître est `config/sources.json`. Le verrou courant est `config/collection-lock.json`. Les données publiées sont dans `site/data/`.
+
+
+## Foundation v2 — baseline 03/10/2026
+
+Le socle de production applique désormais : publication limitée aux sources certifiées, quarantaine stricte des fiches non prouvées, purge des données historiques hors périmètre, validation AJV 2020-12, déduplication inter-familles et blocage des sources non calibrées avant activation. Le cycle régional Auvergne-Rhône-Alpes est repris uniquement après validation complète de cette baseline.
