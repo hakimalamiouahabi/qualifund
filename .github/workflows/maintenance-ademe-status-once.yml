@@ -1,0 +1,96 @@
+name: FUNDING RADAR — statut ADEME courant ponctuel
+
+on:
+  push:
+    branches: [maintenance/ademe-current-status-once]
+
+concurrency:
+  group: funding-radar-maintenance-ademe-status
+  cancel-in-progress: true
+
+jobs:
+  status:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 0
+      - name: Node 22
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - name: Installer les dépendances
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Vérifier le verrou actif
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const lock=JSON.parse(fs.readFileSync('config/collection-lock.json','utf8'));
+          if(lock.name!=='ADEME'||JSON.stringify(lock.allowedSourceIds)!=='["ademe"]') throw new Error('Le verrou main n’est pas ADEME');
+          console.log(JSON.stringify({name:lock.name,version:lock.version,next:lock.next}));
+          NODE
+      - name: Installer Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Préflight ADEME
+        run: npm run preflight:sources
+      - name: Collecte ADEME live fail-closed
+        env:
+          FUNDING_RADAR_FULL_REFRESH: '1'
+        run: npm run update:full
+      - name: Produire le certificat ADEME courant
+        shell: bash
+        run: |
+          set +e
+          npm run certify:active
+          code=$?
+          echo "certify_exit=$code"
+          exit 0
+      - name: Reconstruire le ledger sur l'état courant
+        run: npm run sync:metadata
+      - name: Vérifier les états produits
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const cert=JSON.parse(fs.readFileSync('site/data/ademe-certification.json','utf8'));
+          const active=JSON.parse(fs.readFileSync('site/data/active-source-certification.json','utf8'));
+          const ledger=JSON.parse(fs.readFileSync('site/data/certification-ledger.json','utf8'));
+          const manifest=JSON.parse(fs.readFileSync('site/data/manifest.json','utf8'));
+          console.log(JSON.stringify({
+            ademeStatus:cert.status,
+            activeName:active.lock?.name,
+            activeStatus:active.status,
+            manifestLock:manifest.collectionLock?.name,
+            unlocked:ledger.unlockedSourceIds,
+            problems:cert.problems
+          },null,2));
+          if(active.lock?.name!=='ADEME')throw new Error('active-source-certification ne reflète pas ADEME');
+          if(manifest.collectionLock?.name!=='ADEME')throw new Error('manifest ne reflète pas ADEME');
+          if(!(ledger.unlockedSourceIds||[]).includes('bpifrance_aap'))throw new Error('Bpifrance a perdu son déverrouillage certifié');
+          NODE
+      - name: Publier uniquement l'état de certification courant sur main
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/ademe-status
+          for f in library.json coverage.json manifest.json ademe-certification.json active-source-certification.json certification-ledger.json; do
+            cp "site/data/$f" "/tmp/ademe-status/$f"
+          done
+
+          git config user.name "funding-radar-bot"
+          git config user.email "funding-radar-bot@users.noreply.github.com"
+          git fetch origin main
+          git checkout -B publish-ademe-status origin/main
+          for f in library.json coverage.json manifest.json ademe-certification.json active-source-certification.json certification-ledger.json; do
+            cp "/tmp/ademe-status/$f" "site/data/$f"
+          done
+          git add site/data/library.json site/data/coverage.json site/data/manifest.json site/data/ademe-certification.json site/data/active-source-certification.json site/data/certification-ledger.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(certification): publier le statut ADEME courant [skip ci]"
+            git push origin HEAD:main
+          fi
