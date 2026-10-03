@@ -223,3 +223,21 @@ test('le build Cloudflare régénère le certificat actif du verrou courant',()=
   assert.match(build,/active-source-certification\.json/);
   assert.match(build,/c\.name===lock\.name/);
 });
+
+
+test('la chaîne de production valide Cloudflare Pages et non un site GitHub Pages parallèle',()=>{
+  const wf=fs.readFileSync(path.join(ROOT,'.github/workflows/update-and-deploy.yml'),'utf8');
+  assert.match(wf,/RADAR_PUBLIC_URL: https:\/\/qualifund\.pages\.dev/);
+  assert.match(wf,/build-info\.json/);
+  assert.match(wf,/EXPECTED_SHA/);
+  assert.doesNotMatch(wf,/actions\/deploy-pages/);
+  assert.doesNotMatch(wf,/actions\/upload-pages-artifact/);
+  assert.doesNotMatch(wf,/environment:\s*\n\s*name: github-pages/);
+});
+
+test('le build Cloudflare publie un marqueur de SHA vérifiable',()=>{
+  const build=fs.readFileSync(path.join(ROOT,'scripts/build-cloudflare-pages.mjs'),'utf8');
+  assert.match(build,/CF_PAGES_COMMIT_SHA/);
+  assert.match(build,/build-info\.json/);
+  assert.match(build,/deployment:'cloudflare-pages'/);
+});
