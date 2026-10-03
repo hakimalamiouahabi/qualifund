@@ -19,7 +19,7 @@ function looksLikeEnterpriseListing(html=''){
 }
 function looksLikeAidPage(html=''){
   return /<h1\b/i.test(html)
-    && /(?:Votre projet|Montant et accompagnement propos[eé]|B[eé]n[eé]ficiaires et points d['’]attention|D[eé]poser une demande)/i.test(html);
+    && /node--type-aid\s+node--view-mode-full/i.test(html);
 }
 
 async function getHtml(url){
@@ -61,9 +61,9 @@ async function getAidHtml(url,{log=console.log}={}){
   if(loaded&&looksLikeAidPage(loaded.html))return loaded;
   try{
     const rendered=await browserHtml(url,{
-      timeoutMs:65000,
-      waitForSelector:'h1',
-      waitAfterMs:650
+      timeoutMs:25000,
+      waitForSelector:'article.node--type-aid.node--view-mode-full',
+      waitAfterMs:350
     });
     if(looksLikeAidPage(rendered.html)){
       return{html:rendered.html,finalUrl:rendered.url||url,via:'browser-forced'};
