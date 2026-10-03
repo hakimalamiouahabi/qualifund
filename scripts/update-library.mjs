@@ -61,7 +61,7 @@ function directOfficialUrl(a){
   return null;
 }
 
-const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'),SITE=path.join(ROOT,'site'),DATA=path.join(SITE,'data'),FULL=process.argv.includes('--full')||(process.env.LEYTON_RADAR_FULL_REFRESH==='1'||process.env.QUALIFUND_FULL_REFRESH==='1');const log=(...x)=>console.log(new Date().toISOString(),...x);
+const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'),SITE=path.join(ROOT,'site'),DATA=path.join(SITE,'data'),FULL=process.argv.includes('--full')||(process.env.FUNDING_RADAR_FULL_REFRESH==='1'||process.env.FUNDING_RADAR_FULL_REFRESH==='1');const log=(...x)=>console.log(new Date().toISOString(),...x);
 const cfg=await readJson(path.join(ROOT,'config','sources.json'),{sources:[]});
 const collectionLock=await loadCollectionLock(ROOT);validateCollectionLock(cfg,collectionLock);
 await purgeIndirectSources();
@@ -70,7 +70,7 @@ const previousCoverage=await readJson(path.join(DATA,'coverage.json'),[]);
 const prevCov=new Map(previousCoverage.map(x=>[x.id,x]));
 const prevMap=new Map((previous.aaps||[]).map(a=>[canonicalKey(a),a]));
 const sourcesToRun=selectSources(cfg,collectionLock),selectedIds=selectedSourceSet(collectionLock),coverage=[],changes=[];
-const cycleId=String(process.env.QUALIFUND_CYCLE_ID||process.env.GITHUB_RUN_ID||('local-'+nowIso()));
+const cycleId=String(process.env.FUNDING_RADAR_CYCLE_ID||process.env.GITHUB_RUN_ID||('local-'+nowIso()));
 const frozenDigest=list=>sha256(JSON.stringify(arr(list).filter(a=>!selectedIds.has(a?.sourceId)).map(a=>a).sort((a,b)=>String(a.id||'').localeCompare(String(b.id||'')))));
 const frozenBeforeSha=collectionLock.locked?frozenDigest(previous.aaps||[]):null;
 const current=collectionLock.locked
@@ -83,7 +83,7 @@ async function collect(source){const ctx={log};switch(source.strategy){case'cata
 assertDirectSources(cfg);
 const sourceRuns=new Array(sourcesToRun.length);
 let sourceCursor=0;
-const sourceWorkerCount=Math.max(1,Math.min(8,Number(process.env.QUALIFUND_SOURCE_WORKERS||4)));
+const sourceWorkerCount=Math.max(1,Math.min(8,Number(process.env.FUNDING_RADAR_SOURCE_WORKERS||4)));
 log(`Collecte sources: ${sourcesToRun.length}/${cfg.sources.length} sources avec ${sourceWorkerCount} workers`);
 const sourceWorkers=Array.from({length:sourceWorkerCount},async()=>{
   while(true){
@@ -139,7 +139,7 @@ candidates.sort((a,b)=>{
   if(at!==bt)return at-bt;
   return completenessScore(b)-completenessScore(a);
 });
-const enrichLimit=collectionLock.locked?candidates.length:Math.max(0,Number(process.env.QUALIFUND_ENRICH_LIMIT||process.env.LEYTON_RADAR_ENRICH_LIMIT||(FULL?180:80)));
+const enrichLimit=collectionLock.locked?candidates.length:Math.max(0,Number(process.env.FUNDING_RADAR_ENRICH_LIMIT||process.env.FUNDING_RADAR_ENRICH_LIMIT||(FULL?180:80)));
 const batch=candidates.slice(0,enrichLimit);
 log(`Enrichissement officiel borné: ${batch.length}/${candidates.length} (limite ${enrichLimit})`);const enriched=new Map();let cursor=0;const workers=Array.from({length:6},async()=>{while(true){const i=cursor++;if(i>=batch.length)return;const a=batch[i];try{const e=await withTimeout(enrichAid(a,{log}),120000,`enrich ${a.id}`);enriched.set(canonicalKey(e),e)}catch(err){log(`Enrichissement ignoré ${a.title}: ${err.message}`)}}});await Promise.all(workers);for(const[k,a]of enriched)current.set(k,a);
 const processedSelected=dedupe(filterDirectLibrary([...current.values()].filter(a=>aidIsInActiveLock(a)&&a.lifecycleStatus!=='STALE'),cfg)).map(repairAidTitle)
@@ -159,7 +159,7 @@ const now=new Date(),todayParis=parisDate(now);for(const a of aids){if(collectio
 const oldBy=new Map((previous.aaps||[]).map(a=>[canonicalKey(a),a])),newBy=new Map(aids.map(a=>[canonicalKey(a),a]));for(const[k,a]of newBy){const old=oldBy.get(k);if(!old)changes.push({type:'CREATION',id:a.id,title:a.title,at:nowIso()});else if(old.contentHash&&a.contentHash!==old.contentHash){const fields=['objective','themes','beneficiaries','aidTypes','aidSplit','aidRate','aidAmount','minimumProjectCost','maximumProjectCost','eligibleExpenses','excludedExpenses','prerequisites','selectionCriteria','deadlines','closingDate','finalClosingDate','disbursementTerms','repaymentTerms','stateAidRules','cdcLinks'];const changed=fields.filter(f=>JSON.stringify(old[f]??null)!==JSON.stringify(a[f]??null));changes.push({type:'MODIFICATION',id:a.id,title:a.title,fields:changed,at:nowIso()})}}for(const[k,a]of oldBy)if(!newBy.has(k))changes.push({type:'SORTIE_PERIMETRE',id:a.id,title:a.title,at:nowIso()});
 const active=aids.filter(a=>String(a.lifecycleStatus||'').toUpperCase()==='ACTIVE');
 const activeJPlusOne=active.filter(a=>isActiveAtJPlusOne(a));
-const recommendationInstruments=['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO'];
+const recommendationInstruments=['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO','APPEL_A_PROJET'];
 const libraryInstruments=uniq(active.flatMap(a=>arr(a.aidTypes))).sort();
 const categoryCounts=Object.fromEntries(['STARTUP','PME','ETI','GE'].map(c=>[c,active.filter(a=>arr(a.companyCategories).includes(c)).length]));
 const scopeCounts={NATIONAL:active.filter(a=>a.scope==='NATIONAL').length,REGIONAL:active.filter(a=>a.scope==='REGIONAL').length};
