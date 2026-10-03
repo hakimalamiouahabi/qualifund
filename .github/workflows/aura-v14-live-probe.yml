@@ -1,0 +1,38 @@
+name: AURA v14 — probe live final
+on:
+  push:
+    branches: [maintenance/aura-v14-live-probe]
+    paths:
+      - '.github/workflows/aura-v14-live-probe.yml'
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Collecte AURA v14 sans mutation
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import {collectAura} from './scripts/connectors/aura.mjs';
+          const cfg=JSON.parse(fs.readFileSync('./config/sources.json','utf8'));
+          const source=cfg.sources.find(s=>s.id==='aura');
+          const c=await collectAura(source,{log:console.log});
+          const byReason={};
+          for(const x of c.audit.excluded||[])byReason[x.reason]=(byReason[x.reason]||0)+1;
+          console.log('AURA_V14='+JSON.stringify({
+            discovered:c.discovered,
+            imported:c.aids.length,
+            excluded:(c.audit.excluded||[]).length,
+            errors:(c.audit.errors||[]).length,
+            accounted:c.audit.accounted,
+            byReason,
+            channels:c.audit.channels
+          }));
+          NODE
