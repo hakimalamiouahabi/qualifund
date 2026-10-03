@@ -78,3 +78,27 @@ test('les URL de sources dupliquées sont interdites dans le registre',()=>{
   {id:'dup',official:true,strategy:'control-only',url:cfg.sources[0].url}
  ]}),/Source dupliquée/);
 });
+
+
+test('la purge élimine les doublons d’URL même avec des IDs différents',()=>{
+ const a={...valid,id:'a1'};
+ const b={...valid,id:'a2'};
+ const out=filterDirectLibrary([a,b],cfg);
+ assert.equal(out.length,1);
+});
+
+test('les statuts CLOSED/CLOS/EXPIRED ne survivent pas dans le stock direct',()=>{
+ for(const lifecycleStatus of ['CLOSED','CLOS','EXPIRED','STALE'])assert.equal(filterDirectLibrary([{...valid,id:lifecycleStatus,lifecycleStatus}],cfg).length,0);
+});
+
+test('une simple mention textuelle de data.gouv.fr ne supprime pas une fiche officielle valide',()=>{
+ const aid={...valid,id:'text-mention',objective:'Les données sectorielles peuvent aussi être consultées sur data.gouv.fr.'};
+ assert.equal(filterDirectLibrary([aid],cfg).length,1);
+});
+
+test('les alias objets vers une source exclue sont correctement purgés',()=>{
+ const localCfg={...cfg,excludedSources:['old_control']};
+ const aid={...valid,id:'aliases',sourceAliases:[{sourceId:'old_control'},{sourceId:'bpifrance'}]};
+ const out=sanitizeAidLinks(aid,localCfg);
+ assert.deepEqual(out.sourceAliases,[{sourceId:'bpifrance'}]);
+});
