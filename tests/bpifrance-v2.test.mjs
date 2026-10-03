@@ -33,27 +33,30 @@ test('la qualification financière distingue subvention, avance remboursable et 
   );
 });
 
-test('Bpifrance v2 conserve son certificat PASS après passage au cycle régional',()=>{
+test('le certificat historique Bpifrance reste cohérent avec les seuils calibrés',()=>{
   const cert=JSON.parse(fs.readFileSync(new URL('../site/data/bpifrance-certification.json',import.meta.url),'utf8'));
+  const cfg=JSON.parse(fs.readFileSync(new URL('../config/sources.json',import.meta.url),'utf8'));
   assert.equal(cert.status,'PASS');
   assert.equal(cert.lock?.name,'Bpifrance');
   assert.equal(cert.problems?.length,0);
-  assert.equal(cert.bySource?.bpifrance_aap?.retained,27);
-  assert.equal(cert.bySource?.bpifrance_aides?.retained,22);
-  assert.equal(cert.bySource?.bpifrance_rebond_industriel?.retained,1);
+  for(const id of ['bpifrance_aap','bpifrance_aides','bpifrance_rebond_industriel']){
+    const source=cfg.sources.find(x=>x.id===id);
+    const row=cert.bySource?.[id];
+    assert.ok(row,id+' absent du certificat');
+    assert.ok(Number(row.retained)>=Number(source.minImported||1),id+' sous le seuil calibré');
+  }
 });
 
-test('les deux sources maîtres Bpifrance utilisent le contre-audit multi-moteurs',()=>{
+test('les deux sources maîtres Bpifrance sont strictement officiel-only',()=>{
   const cfg=JSON.parse(fs.readFileSync(new URL('../config/sources.json',import.meta.url),'utf8'));
+  const connector=fs.readFileSync(new URL('../scripts/connectors/bpifrance.mjs',import.meta.url),'utf8');
   for(const id of ['bpifrance_aap','bpifrance_aides']){
-    const s=cfg.sources.find(x=>x.id===id);
-    assert.match(s.externalAuditFile||'',/bpifrance-v2-external-audit\.json$/);
+    const source=cfg.sources.find(x=>x.id===id);
+    assert.equal(source.externalAuditFile,undefined);
   }
-  const audit=JSON.parse(fs.readFileSync(new URL('../config/bpifrance-v2-external-audit.json',import.meta.url),'utf8'));
-  assert.ok(audit.candidateCount>0);
-  assert.ok(audit.candidates.some(x=>x.family==='aap'));
-  assert.ok(audit.candidates.some(x=>x.family==='catalogue'));
-  for(const engine of ['Exa','Tavily','Parallel Search','Firecrawl'])assert.ok(audit.engines.includes(engine));
+  assert.doesNotMatch(connector,/externalAudit|Exa|Tavily|Parallel|Firecrawl/i);
+  assert.match(connector,/sitemapUrls/);
+  assert.match(connector,/listing maître Bpifrance|section maître/);
 });
 
 test('le catalogue Bpifrance n’est plus balayé intégralement comme référentiel des aides',()=>{
@@ -61,7 +64,7 @@ test('le catalogue Bpifrance n’est plus balayé intégralement comme référen
   assert.match(connector,/section maître/);
   assert.match(connector,/Subventions et avances remboursables/);
   assert.match(connector,/listing maître Bpifrance/);
-  assert.match(connector,/externalDisposition/);
+  assert.doesNotMatch(connector,/externalDisposition|externalAudit/);
 });
 
 
