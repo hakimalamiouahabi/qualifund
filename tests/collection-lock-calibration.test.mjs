@@ -1,6 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { sourceCalibration, validateCollectionLock } from '../scripts/lib/collection-lock.mjs';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { sourceCalibration, validateCollectionLock, requireCollectionLock } from '../scripts/lib/collection-lock.mjs';
+
+const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 
 const calibrated={id:'aura',official:true,strategy:'aura-official',minExpected:175,minImported:20,minImportRatio:0.1};
 const pending={id:'bfc',official:true,strategy:'catalog-html'};
@@ -30,4 +35,19 @@ test('les seuils de calibration doivent être strictement positifs et le ratio b
     {...calibrated,minImportRatio:0},
     {...calibrated,minImportRatio:1.2}
   ])assert.equal(sourceCalibration(bad).calibrated,false);
+});
+
+
+test('la collecte de production refuse un mode global non verrouillé',()=>{
+  assert.throws(()=>requireCollectionLock({locked:false,allowedSourceIds:[]}),/COLLECTION_LOCK_REQUIRED/);
+  assert.doesNotThrow(()=>requireCollectionLock({locked:true,allowedSourceIds:['aura']}));
+});
+
+test('Bpifrance, ADEME et AURA ont tous des seuils de calibration exploitables en v12.8',()=>{
+  const cfg=JSON.parse(fs.readFileSync(path.join(ROOT,'config','sources.json'),'utf8'));
+  for(const id of ['bpifrance_aap','bpifrance_aides','bpifrance_rebond_industriel','ademe','aura']){
+    const source=cfg.sources.find(x=>x.id===id);
+    assert.ok(source,id+' absent du registre');
+    assert.equal(sourceCalibration(source).calibrated,true,id+' non calibré');
+  }
 });
