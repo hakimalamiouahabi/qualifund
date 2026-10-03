@@ -20,7 +20,15 @@ const published=raw.filter(a=>isPublishableAid(a,{configuredSourceIds,unlockedSo
 const covById=new Map((cov||[]).map(x=>[x.id,x]));
 const currentLock=JSON.parse(fs.readFileSync(path.join(ROOT,'config','collection-lock.json'),'utf8'));
 const currentIds=new Set(currentLock.allowedSourceIds||[]);
+const currentCycleId=lib.meta?.collectionCycleId||null;
+const generatedAtMs=Date.parse(lib.meta?.generatedAt||'');
+const fresh=x=>{
+  if(currentCycleId&&x?.cycleId)return String(x.cycleId)===String(currentCycleId);
+  const checked=Date.parse(x?.checkedAt||'');
+  return Number.isFinite(checked)&&Number.isFinite(generatedAtMs)&&Math.abs(generatedAtMs-checked)<=6*3600*1000;
+};
 const currentCoverage=(cov||[]).filter(x=>currentIds.has(x.id));
+const freshCurrentCoverage=currentCoverage.filter(fresh);
 const report={
   version:cfg.version,
   policy:'DIRECT_OFFICIAL_ONLY',
@@ -32,7 +40,9 @@ const report={
   lastCycleSources:cov.length,
   lastCycleSuccess:cov.filter(x=>x.success).length,
   currentLock:{name:currentLock.name||null,mode:currentLock.mode||null,sourceIds:[...currentIds]},
-  currentCycleCoverage:currentCoverage.map(x=>({id:x.id,success:x.success,discovered:x.discovered,imported:x.imported})),
+  collectionCycleId:currentCycleId,
+  currentCycleCoverage:currentCoverage.map(x=>({id:x.id,success:x.success,discovered:x.discovered,imported:x.imported,cycleId:x.cycleId||null,checkedAt:x.checkedAt||null,fresh:fresh(x)})),
+  freshCurrentCoverageCount:freshCurrentCoverage.length,
   configuredWithoutCoverage:ingestive.filter(s=>!covById.has(s.id)).map(s=>s.id),
   rawLibraryCount:raw.length,
   certifiedPublishedCount:published.length,
