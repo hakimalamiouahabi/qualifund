@@ -16,7 +16,7 @@ test('bibliothèque opérationnelle limitée aux instruments cibles dont AAP',()
 });
 
 test('moteur v12.6 combine critères documentaires et BM25F sans simuler un barème financeur',()=>{
-  const code=read('site/scoring-core.js');const ctx={globalThis:{}};vm.runInNewContext(code,ctx);const scorer=ctx.globalThis.LEYTON_SCORING;
+  const code=read('site/scoring-core.js');const ctx={globalThis:{}};vm.runInNewContext(code,ctx);const scorer=ctx.globalThis.FUNDING_RADAR_SCORING;
   const aid={id:'a1',title:'Innovation digitale',objective:'Innovation digitale',themes:['innovation'],projectsExpected:['prototype'],eligibleExpenses:'logiciel prototype',selectionCriteria:'innovation impact',prerequisites:'PME',aidRate:{max:50},scope:'NATIONAL',permanent:false,deadlines:['2099-12-31']};
   const p={name:'Innovation digitale',summary:'prototype logiciel innovation',sector:'industrie',expenses:'logiciel prototype',impacts:'impact innovation',environment:'',digital:'digital',partners:'',types:['R&D / Innovation'],maturity:'Prototype',budget:100000,region:'Île-de-France'};
   const r=scorer.relevance(aid,p);
