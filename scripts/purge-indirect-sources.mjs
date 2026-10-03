@@ -163,7 +163,7 @@ export async function purgeIndirectSources(root=ROOT){
   const activePath=path.join(data,'active-source-certification.json');
   const activeCertification=await read(activePath,null);
   const currentIds=Array.isArray(lock.allowedSourceIds)?[...lock.allowedSourceIds].sort():[];
-  const activeIds=Array.isArray(activeCertification?.configuredSources)?[...active.configuredSources].sort():[];
+  const activeIds=Array.isArray(activeCertification?.configuredSources)?[...activeCertification.configuredSources].sort():[];
   const sameIds=currentIds.length===activeIds.length&&currentIds.every((x,i)=>x===activeIds[i]);
   const currentSourceFingerprint=sourceConfigFingerprint(cfg,currentIds);
   const currentBasisFingerprint=await certificationBasisFingerprint(root,cfg,currentIds);
