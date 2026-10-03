@@ -9,20 +9,8 @@ on:
         type: boolean
         default: true
   schedule:
-    - cron: '0 2 * * *'
+    - cron: '0 2 1,15 * *'
       timezone: 'Europe/Paris'
-  push:
-    branches: [main]
-    paths:
-      - 'site/**'
-      - 'scripts/**'
-      - 'config/**'
-      - 'schemas/**'
-      - 'tests/**'
-      - 'api/**'
-      - 'package.json'
-      - 'package-lock.json'
-      - '.github/workflows/**'
 
 concurrency:
   group: funding-radar-production
@@ -113,14 +101,14 @@ jobs:
         run: |
           mkdir -p /tmp/funding-radar
           cp site/data/library.json /tmp/funding-radar/library-before.json || echo '{"aaps":[]}' > /tmp/funding-radar/library-before.json
-      - name: Collecte complète quotidienne / manuelle
+      - name: Collecte complète quinzaine / manuelle
         env:
           FUNDING_RADAR_FULL_REFRESH: '1'
         run: npm run update:full
       - name: Certifier le guichet ou la région verrouillée
         if: ${{ steps.lock.outputs.locked == 'true' }}
         run: npm run certify:active
-      - name: Rapport quotidien des changements
+      - name: Rapport du cycle de mise à jour
         run: node scripts/generate-daily-report.mjs /tmp/funding-radar/library-before.json site/data/library.json site/bibliotheque/rapports
       - name: Synchroniser les artefacts publics
         run: npm run sync:metadata
