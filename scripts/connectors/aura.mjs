@@ -295,6 +295,9 @@ export async function collectAura(source,{log=console.log}={}){
         europeanExcluded:european.length
       }
     },
-    message:`AURA v1: ${discovered.links.length}/${discovered.expectedCount??'?'} dispositifs Entreprise comptabilisés, ${out.aids.length} aides/AAP cible(s) importés, ${excluded.length} exclusion(s), ${out.errors.length} erreur(s)`
+    message:`AURA v14: ${discovered.links.length}/${discovered.expectedCount??'?'} dispositifs Entreprise comptabilisés, ${out.aids.length} aides/AAP cible(s) importés, ${excluded.length} exclusion(s), ${out.errors.length} erreur(s)`
   };
-}
+  }finally{
+    await closeBrowser();
+  }
+}}
