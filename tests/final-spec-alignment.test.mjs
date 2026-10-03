@@ -40,7 +40,9 @@ test('workflow : SHA pinning, corpus publié et cron Europe\/Paris',()=>{
   assert.match(y,/cron: '0 2 \* \* \*'/);assert.match(y,/timezone: 'Europe\/Paris'/);
   assert.match(y,/ref: \$\{\{ needs\.build\.outputs\.data_sha \}\}/);
   assert.doesNotMatch(y,/uses:\s*[^\n]+@v\d/);
-  const refs=[...y.matchAll(/uses:\s*[^@\n]+@([0-9a-f]{40})/g)];assert.ok(refs.length>=6);
+  const uses=[...y.matchAll(/uses:\s*([^@\n]+)@([^\s#]+)/g)];
+  assert.ok(uses.length>=2);
+  assert.ok(uses.every(([,name,ref])=>name&&/^[0-9a-f]{40}$/.test(ref)));
 });
 
 test('API : SIREN exact et token refresh comparé en temps constant',()=>{
