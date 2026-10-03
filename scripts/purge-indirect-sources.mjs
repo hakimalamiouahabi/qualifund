@@ -2,7 +2,8 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { assertDirectSources, filterDirectLibrary } from './lib/direct-sources.mjs';
-import { buildCertificationLedger } from './lib/publication.mjs';
+import { buildCertificationLedger, targetFunding } from './lib/publication.mjs';
+import { isActiveAtJPlusOne, jPlusOneDate } from './lib/jplus1.mjs';
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const read=async(p,fallback)=>{try{return JSON.parse(await fs.readFile(p,'utf8'))}catch(e){if(e.code==='ENOENT')return fallback;throw e}};
@@ -29,6 +30,15 @@ export async function purgeIndirectSources(root=ROOT){
     );
   const ids=new Set(aaps.map(a=>a.id));
   const active=aaps.filter(a=>String(a.lifecycleStatus||'').toUpperCase()==='ACTIVE');
+  const activeJPlusOne=active.filter(a=>isActiveAtJPlusOne(a));
+  const archived=aaps.filter(a=>String(a.lifecycleStatus||'').toUpperCase()==='ARCHIVE');
+  const recommendationInstruments=['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO'];
+  const libraryInstruments=[...new Set(active.flatMap(a=>Array.isArray(a.aidTypes)?a.aidTypes:[]))].sort();
+  const categoryCounts=Object.fromEntries(['STARTUP','PME','ETI','GE'].map(c=>[c,active.filter(a=>(a.companyCategories||[]).includes(c)).length]));
+  const scopeCounts={NATIONAL:active.filter(a=>a.scope==='NATIONAL').length,REGIONAL:active.filter(a=>a.scope==='REGIONAL').length};
+  const instrumentCounts=Object.fromEntries(libraryInstruments.map(t=>[t,active.filter(a=>(a.aidTypes||[]).includes(t)).length]));
+  const targetInstrumentCount=active.filter(a=>targetFunding(a)).length;
+  const directLinkCount=active.filter(a=>/^https:\/\//i.test(String(a.officialPage||''))).length;
   const migrated=lib.meta?.sourcePolicy==='DIRECT_OFFICIAL_ONLY';
   const beforeRecords=lib.aaps||[];
   const changed=!migrated||aaps.length!==beforeRecords.length||JSON.stringify(aaps)!==JSON.stringify(beforeRecords);
@@ -41,19 +51,38 @@ export async function purgeIndirectSources(root=ROOT){
     frozenUnselectedSha:lib.meta?.collectionLock?.frozenUnselectedSha||null
   };
   const meta={
-    ...(migrated?lib.meta:{}),
     version:cfg.version,
     generatedAt:lib.meta?.generatedAt||null,
+    purgedAt:new Date().toISOString(),
+    repositoryUrl:lib.meta?.repositoryUrl||null,
     sourcePolicy:'DIRECT_OFFICIAL_ONLY',
     libraryMode:'DIRECT_OFFICIAL_CATALOG',
-    repositoryUrl:lib.meta?.repositoryUrl||null,
     count:aaps.length,
     libraryCount:aaps.length,
     rawLibraryCount:aaps.length,
     activeCount:active.length,
-    archivedCount:aaps.filter(a=>a.lifecycleStatus==='ARCHIVE').length,
+    jPlusOneDate:jPlusOneDate(),
+    jPlusOneActiveCount:activeJPlusOne.length,
+    archivedCount:archived.length,
+    staleCount:0,
+    aapCount:activeJPlusOne.filter(a=>String(a.kind||'').includes('AAP')||String(a.kind||'').includes('AMI')).length,
+    verifiedCount:activeJPlusOne.filter(a=>a.verification?.status==='VERIFIE').length,
+    withCdc:activeJPlusOne.filter(a=>(a.cdcLinks||[]).length).length,
+    withDeadline:activeJPlusOne.filter(a=>a.permanent||a.closingDate||a.finalClosingDate||(a.deadlines||[]).length).length,
     sourceCount:cfg.sources.length,
-    verifiedCount:active.filter(a=>a.verification?.status==='VERIFIE').length,
+    activeCollectionSourceCount:Array.isArray(lock.allowedSourceIds)?lock.allowedSourceIds.length:0,
+    libraryInstruments,
+    recommendationInstruments,
+    targetInstrumentCount,
+    directLinkCount,
+    missingDirectLinkCount:active.length-directLinkCount,
+    categoryCounts,
+    scopeCounts,
+    instrumentCounts,
+    targetRule:'ACTIVE_SANS_ECHEANCE_OU_PERMANENT_OU_CLOTURE_GTE_J_PLUS_1',
+    targetCount:null,
+    targetReached:null,
+    coverageGap:null,
     coverageCertified:false,
     collectionLock
   };
