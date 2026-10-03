@@ -111,6 +111,15 @@ export function sourceConfigFingerprint(cfg,sourceIds=[]){
   return createHash('sha256').update(JSON.stringify({version:cfg?.version||null,sources})).digest('hex');
 }
 
+export function sourceDataFingerprint(records=[],sourceIds=[]){
+  const wanted=new Set(sourceIds);
+  const selected=(Array.isArray(records)?records:[])
+    .filter(a=>wanted.has(a?.sourceId))
+    .sort((a,b)=>String(a?.id||'').localeCompare(String(b?.id||''))||String(a?.officialPage||'').localeCompare(String(b?.officialPage||'')))
+    .map(stableSourceValue);
+  return createHash('sha256').update(JSON.stringify(selected)).digest('hex');
+}
+
 const STRATEGY_IMPLEMENTATIONS={
   'bpifrance-aap':'scripts/connectors/bpifrance.mjs',
   'bpifrance-aides':'scripts/connectors/bpifrance.mjs',
@@ -125,6 +134,7 @@ const CERTIFICATION_CORE_FILES=[
   'package.json',
   'package-lock.json',
   'schemas/aid.schema.json',
+  '.github/workflows/update-and-deploy.yml',
   'scripts/update-library.mjs',
   'scripts/purge-indirect-sources.mjs',
   'scripts/certify-active-source.mjs',
@@ -167,6 +177,8 @@ export async function certificationBasisFingerprint(root,cfg,sourceIds=[]){
 
 export async function buildCertificationLedger(dataDir,cfg,{root=path.resolve(dataDir,'../..')}={}){
   const sourceIds=new Set((cfg.sources||[]).map(s=>s.id));
+  let currentLibrary={aaps:[]};
+  try{currentLibrary=JSON.parse(await fs.readFile(path.join(dataDir,'library.json'),'utf8'))}catch{}
   let names=[];try{names=await fs.readdir(dataDir)}catch{}
   const files=names.filter(n=>/^[a-z0-9-]+-certification\.json$/i.test(n)&&n!=='active-source-certification.json');
   const bestBySource=new Map(),certifications=[],rejectedCertifications=[];
@@ -212,11 +224,30 @@ export async function buildCertificationLedger(dataDir,cfg,{root=path.resolve(da
       });
       continue;
     }
+    const currentDataFingerprint=sourceDataFingerprint(currentLibrary?.aaps||[],configured);
+    const certifiedDataFingerprint=String(report.certifiedDataFingerprint||'');
+    if(!certifiedDataFingerprint){
+      rejectedCertifications.push({
+        file,name:report.lock?.name||file.replace(/-certification\.json$/,''),
+        generatedAt,sourceIds:configured,reason:'CERTIFIED_DATA_FINGERPRINT_MISSING',
+        certifiedDataFingerprint:null,currentDataFingerprint
+      });
+      continue;
+    }
+    if(certifiedDataFingerprint!==currentDataFingerprint){
+      rejectedCertifications.push({
+        file,name:report.lock?.name||file.replace(/-certification\.json$/,''),
+        generatedAt,sourceIds:configured,reason:'CERTIFIED_DATA_CHANGED',
+        certifiedDataFingerprint,currentDataFingerprint
+      });
+      continue;
+    }
     certifications.push({
       file,name:report.lock?.name||file.replace(/-certification\.json$/,''),
       generatedAt,status:'PASS',sourceIds:configured,libraryRecords:Number(report.libraryRecords||0),
       fingerprintStatus:'MATCH',sourceConfigFingerprint:certifiedFingerprint,currentSourceConfigFingerprint:currentFingerprint,
-      certificationBasisFingerprint:certifiedBasisFingerprint,currentCertificationBasisFingerprint:currentBasisFingerprint
+      certificationBasisFingerprint:certifiedBasisFingerprint,currentCertificationBasisFingerprint:currentBasisFingerprint,
+      certifiedDataFingerprint,currentDataFingerprint
     });
     for(const id of configured){
       const prev=bestBySource.get(id);
