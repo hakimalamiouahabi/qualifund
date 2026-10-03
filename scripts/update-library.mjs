@@ -169,7 +169,112 @@ if(collectionLock.locked){
   const frozenAfterSha=frozenDigest(aids);
   if(frozenBeforeSha!==frozenAfterSha)throw new Error(`LOCK SAFETY: un guichet/région non sélectionné a été modifié (${frozenBeforeSha} != ${frozenAfterSha})`);
 }
-const now=new Date(),todayParis=parisDate(now);for(const a of aids){if(collectionLock.locked&&!selectedIds.has(a?.sourceId))continue;const final=a.finalClosingDate||a.closingDate;if(!a.permanent&&final&&String(final).slice(0,10)<todayParis&&a.lifecycleStatus!=='STALE')a.lifecycleStatus='ARCHIVE';else if(!a.lifecycleStatus)a.lifecycleStatus='ACTIVE';a.qaFlags=qaAid(a);a.verification={...(a.verification||{}),status:verificationStatus(a),lastChecked:a.verification?.lastChecked||null,completeness:completenessScore(a),confidence:confidenceScore(a),coverage:evidenceCoverage(a)};a.attentionPoints=uniq([...(a.attentionPoints||[]),...a.qaFlags.map(f=>({MISSING_DEADLINE:'Date/relèves non documentées.',MISSING_CDC:'Cahier des charges / règlement non rattaché.',MISSING_ELIGIBLE_EXPENSES:'Dépenses éligibles non documentées.',MISSING_PREREQUISITES:'Pré-requis non documentés.',MISSING_AID_TYPE:'Type d’aide à vérifier.',MISSING_BENEFICIARIES:'Bénéficiaires à vérifier.',MISSING_FINANCIAL_TERMS:'Modalités financières à vérifier.'}[f])).filter(Boolean)]);a.contentHash=sha256(JSON.stringify({...a,contentHash:undefined,verification:{...a.verification,lastChecked:undefined},lastSeenAt:undefined}))}aids.sort((a,b)=>String(a.title).localeCompare(String(b.title),'fr'));
+const now=new Date(),todayParis=parisDate(now);
+for(const a of aids){
+  if(collectionLock.locked&&!selectedIds.has(a?.sourceId))continue;
+  const final=a.finalClosingDate||a.closingDate;
+  if(!a.permanent&&final&&String(final).slice(0,10)<todayParis&&a.lifecycleStatus!=='STALE')a.lifecycleStatus='ARCHIVE';
+  else if(!a.lifecycleStatus)a.lifecycleStatus='ACTIVE';
+  a.qaFlags=qaAid(a);
+  a.verification={
+    ...(a.verification||{}),
+    status:verificationStatus(a),
+    lastChecked:a.verification?.lastChecked||null,
+    completeness:completenessScore(a),
+    confidence:confidenceScore(a),
+    coverage:evidenceCoverage(a)
+  };
+  a.attentionPoints=uniq([
+    ...(a.attentionPoints||[]),
+    ...a.qaFlags.map(f=>({
+      MISSING_DEADLINE:'Date/relèves non documentées.',
+      MISSING_CDC:'Cahier des charges / règlement non rattaché.',
+      MISSING_ELIGIBLE_EXPENSES:'Dépenses éligibles non documentées.',
+      MISSING_PREREQUISITES:'Pré-requis non documentés.',
+      MISSING_AID_TYPE:'Type d’aide à vérifier.',
+      MISSING_BENEFICIARIES:'Bénéficiaires à vérifier.',
+      MISSING_FINANCIAL_TERMS:'Modalités financières à vérifier.'
+    }[f])).filter(Boolean)
+  ]);
+  a.contentHash=sha256(JSON.stringify({
+    ...a,
+    contentHash:undefined,
+    verification:{...a.verification,lastChecked:undefined},
+    lastSeenAt:undefined
+  }));
+}
+
+// Une fiche qui devient expirée seulement après enrichissement n'est jamais certifiée.
+// Elle est reclassée comme exclusion comptable de la source avant le gate final.
+if(collectionLock.locked){
+  for(const source of sourcesToRun){
+    if(source.strategy==='control-only')continue;
+    const row=coverage.find(x=>x.id===source.id);
+    if(!row)continue;
+
+    const sourceRows=aids.filter(a=>a?.sourceId===source.id);
+    const expired=sourceRows.filter(a=>String(a.lifecycleStatus||'').toUpperCase()==='ARCHIVE');
+    const retained=sourceRows.filter(a=>!['ARCHIVE','STALE','CLOSED','CLOS','EXPIRED'].includes(String(a.lifecycleStatus||'').toUpperCase()));
+
+    if(expired.length){
+      const exclusions=expired.map(a=>({
+        url:a.officialPage||null,
+        label:a.title||'',
+        reason:'EXPIRED_AFTER_ENRICHMENT'
+      }));
+      row.imported=retained.length;
+      if(row.audit){
+        const oldExcluded=Array.isArray(row.audit.excluded)?row.audit.excluded:[];
+        const errors=Array.isArray(row.audit.errors)?row.audit.errors:[];
+        row.audit={
+          ...row.audit,
+          imported:retained.length,
+          excluded:[...oldExcluded,...exclusions],
+          accounted:retained.length+oldExcluded.length+exclusions.length+errors.length
+        };
+      }
+      row.message=`${source.name}: ${row.discovered} découverte(s), ${retained.length} retenue(s), ${expired.length} expiration(s) exclue(s) après enrichissement.`;
+    }
+
+    const finalAssessment=assessCollection(source,{discovered:Number(row.discovered||0),aids:retained});
+    if(!finalAssessment.success){
+      const previousRows=(previous.aaps||[]).filter(a=>a?.sourceId===source.id);
+      aids=[
+        ...aids.filter(a=>a?.sourceId!==source.id),
+        ...previousRows
+      ];
+      const oldRow=prevCov.get(source.id);
+      Object.assign(row,{
+        success:false,
+        lifecycleSafe:false,
+        emptyIngestion:finalAssessment.emptyIngestion,
+        suspiciousVolume:finalAssessment.suspiciousVolume,
+        lowImportedCount:finalAssessment.lowImportedCount,
+        lowImportRatio:finalAssessment.lowImportRatio,
+        importRatio:finalAssessment.importRatio,
+        imported:retained.length,
+        lastSuccessfulAt:oldRow?.lastSuccessfulAt||null,
+        consecutiveFailures:(oldRow?.consecutiveFailures||0)+1,
+        message:`${finalAssessment.reasons.join(' ; ')} — snapshot précédent restauré après finalisation.`
+      });
+      continue;
+    }
+
+    // Le snapshot validé de la source ne contient que les fiches opérationnelles finales.
+    aids=[
+      ...aids.filter(a=>a?.sourceId!==source.id),
+      ...retained
+    ];
+    Object.assign(row,{
+      success:true,
+      lifecycleSafe:true,
+      imported:retained.length,
+      importRatio:finalAssessment.importRatio
+    });
+  }
+}
+
+aids.sort((a,b)=>String(a.title).localeCompare(String(b.title),'fr'));
 const oldBy=new Map((previous.aaps||[]).map(a=>[canonicalKey(a),a])),newBy=new Map(aids.map(a=>[canonicalKey(a),a]));for(const[k,a]of newBy){const old=oldBy.get(k);if(!old)changes.push({type:'CREATION',id:a.id,title:a.title,at:nowIso()});else if(old.contentHash&&a.contentHash!==old.contentHash){const fields=['objective','themes','beneficiaries','aidTypes','aidSplit','aidRate','aidAmount','minimumProjectCost','maximumProjectCost','eligibleExpenses','excludedExpenses','prerequisites','selectionCriteria','deadlines','closingDate','finalClosingDate','disbursementTerms','repaymentTerms','stateAidRules','cdcLinks'];const changed=fields.filter(f=>JSON.stringify(old[f]??null)!==JSON.stringify(a[f]??null));changes.push({type:'MODIFICATION',id:a.id,title:a.title,fields:changed,at:nowIso()})}}for(const[k,a]of oldBy)if(!newBy.has(k))changes.push({type:'SORTIE_PERIMETRE',id:a.id,title:a.title,at:nowIso()});
 const active=aids.filter(a=>String(a.lifecycleStatus||'').toUpperCase()==='ACTIVE');
 const activeJPlusOne=active.filter(a=>isActiveAtJPlusOne(a));
