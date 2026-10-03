@@ -58,7 +58,7 @@
       }
     }
   },
-  "notes": "Recertification ADEME v13 sur le socle official-only 12.9.3 durci. Référentiel maître : catalogue officiel ADEME Entreprises ; si son HTML est indisponible ou incomplet, inventaire actif reconstruit exclusivement depuis le RSS officiel ADEME et ses échéances. Aucune source agrégée, aucun LLM, aucune API payante, aucun moteur d’audit externe. Bpifrance reste gelé sur son certificat PASS ; AURA demeure gelée jusqu’au PASS ADEME. Les mises à jour automatiques restent limitées au 1er et au 15 du mois.",
+  "notes": "Recertification ADEME v13 official-only. Inventaire live du 03/10/2026 : 68 dispositifs actifs dans le RSS officiel (16 AAP/AMI, 52 Aides). Les fiches directes sont protégées côté runner GitHub par HTTP 403 / challenge Cloudflare ; le RSS ne prouve pas l’instrument financier des 52 Aides. Elles restent donc fail-closed, sans baisse artificielle des seuils. Bpifrance est recertifié PASS sur le noyau courant ; AURA demeure gelée jusqu’au PASS ADEME. Mises à jour automatiques : 1er et 15 uniquement.",
   "foundationBaseline": {
     "version": "Foundation v3.3 / ADEME official-only recertification",
     "status": "HARDENING",
