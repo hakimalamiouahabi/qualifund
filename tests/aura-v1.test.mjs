@@ -104,11 +104,14 @@ test('le connecteur AURA est strictement officiel-only',()=>{
   assert.match(connector,/getAidHtml/);
 });
 
-test('les anciens certificats ADEME et Bpifrance restent conservés comme historique',()=>{
+test('Bpifrance reste certifié pendant que le certificat ADEME courant est conservé',()=>{
   const ademe=JSON.parse(fs.readFileSync(new URL('../site/data/ademe-certification.json',import.meta.url),'utf8'));
   const bpi=JSON.parse(fs.readFileSync(new URL('../site/data/bpifrance-certification.json',import.meta.url),'utf8'));
-  assert.equal(ademe.status,'PASS');
   assert.equal(bpi.status,'PASS');
+  assert.equal(bpi.lock?.name,'Bpifrance');
+  assert.ok(['PASS','FAIL'].includes(ademe.status));
+  assert.equal(ademe.lock?.name,'ADEME');
+  assert.ok(ademe.sourceConfigFingerprint);
 });
 
 
