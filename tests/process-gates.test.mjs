@@ -18,3 +18,14 @@ test('gate 10 depends on all gates 1-9',()=>{
   assert.match(src,/const preProductionPass=gates\.every\(g=>g\.status==='PASS'\)/);
   assert.match(src,/id:10,name:'Recette production',status:preProductionPass\?'PASS':'NOT_STARTED'/);
 });
+
+
+test('Gate 3 exige un coverage rattaché au même cycle de collecte',()=>{
+  const gates=fs.readFileSync(new URL('../scripts/production-gates.mjs',import.meta.url),'utf8');
+  const update=fs.readFileSync(new URL('../scripts/update-library.mjs',import.meta.url),'utf8');
+  assert.match(update,/collectionCycleId:cycleId/);
+  assert.match(update,/coverage\.push\(\{cycleId,/);
+  assert.match(gates,/coverageIsFresh/);
+  assert.match(gates,/row\.cycleId/);
+  assert.match(gates,/freshExecuted/);
+});
