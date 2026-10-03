@@ -3,7 +3,7 @@ import { fetchText } from '../lib/http.mjs';
 import { browserHtml } from '../lib/browser.mjs';
 import { extractFromHtml } from '../lib/extract.mjs';
 import { directPageId } from '../lib/direct-sources.mjs';
-import { canonicalUrl, cleanTitle, detectDates, norm, safeUrl, uniq } from '../lib/utils.mjs';
+import { canonicalUrl, cleanTitle, detectDates, norm, safeUrl, sleep, uniq } from '../lib/utils.mjs';
 
 const REGION='Auvergne-Rhône-Alpes';
 const PATH_PREFIX='/aides/';
@@ -49,22 +49,30 @@ async function getListingHtml(url,{log=console.log}={}){
   return loaded||{html:'',finalUrl:url,via:'empty'};
 }
 
-async function getAidHtml(url,{log=console.log}={}){
-  let loaded=null;
-  try{loaded=await getHtml(url)}catch{}
+async function getAidHtml(url,{log=console.log,browserAttempts=2}={}){
+  let loaded=null,lastError=null;
+  try{loaded=await getHtml(url)}catch(e){lastError=e}
   if(loaded&&looksLikeAidPage(loaded.html))return loaded;
-  try{
-    const rendered=await browserHtml(url,{
-      timeoutMs:25000,
-      waitForSelector:'article.node--type-aid.node--view-mode-full',
-      waitAfterMs:350
-    });
-    if(looksLikeAidPage(rendered.html)){
-      return{html:rendered.html,finalUrl:rendered.url||url,via:'browser-forced'};
+  for(let attempt=1;attempt<=browserAttempts;attempt++){
+    try{
+      const rendered=await browserHtml(url,{
+        timeoutMs:30000,
+        waitForSelector:'article.node--type-aid.node--view-mode-full',
+        waitAfterMs:450
+      });
+      if(looksLikeAidPage(rendered.html)){
+        return{html:rendered.html,finalUrl:rendered.url||url,via:attempt===1?'browser-forced':`browser-retry-${attempt}`};
+      }
+      lastError=new Error('FICHE_AURA_RENDERED_BUT_UNRECOGNIZED');
+    }catch(e){
+      lastError=e;
+      if(attempt<browserAttempts){
+        await sleep(900*attempt);
+        continue;
+      }
     }
-  }catch(e){
-    log(`[aura] rendu navigateur fiche indisponible ${url}: ${e.message}`);
   }
+  if(lastError)log(`[aura] rendu navigateur fiche indisponible ${url}: ${lastError.message}`);
   return loaded||{html:'',finalUrl:url,via:'empty'};
 }
 
@@ -247,7 +255,7 @@ async function extractOne(source,link){
   return{aid:a,excluded:null};
 }
 
-async function extractMany(source,links,{log=console.log,workers=12}={}){
+async function extractMany(source,links,{log=console.log,workers=2}={}){
   const aids=[],excluded=[],errors=[];let cursor=0;
   const pool=Array.from({length:workers},async()=>{
     while(true){
@@ -276,7 +284,7 @@ export async function collectAura(source,{log=console.log}={}){
   const discovered=await discoverAura(source,{log});
   const nonEuropean=discovered.links.filter(x=>!isEuropeanFundAid(x));
   const european=discovered.links.filter(isEuropeanFundAid);
-  const out=await extractMany(source,nonEuropean,{log,workers:12});
+  const out=await extractMany(source,nonEuropean,{log,workers:2});
   const excluded=[...european.map(x=>({url:x.url,label:x.label||'',reason:'FONDS_EUROPEEN_CYCLE_DEDIE'})),...out.excluded];
   return{
     aids:out.aids,
