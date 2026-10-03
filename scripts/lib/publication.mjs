@@ -27,6 +27,32 @@ export function targetFunding(a){
   const types=Array.isArray(a?.aidTypes)?a.aidTypes:[];
   return types.some(x=>TARGET_PUBLIC_INSTRUMENTS.has(x));
 }
+
+function evidence(a,field){
+  return (Array.isArray(a?.verification?.fieldEvidence)?a.verification.fieldEvidence:[])
+    .filter(e=>e?.field===field&&['A','B'].includes(e?.sourceTier)&&/^https?:\/\//i.test(String(e?.sourceUrl||'')));
+}
+export function hasGuichetEvidence(a){
+  return evidence(a,'guichet').length>0;
+}
+export function hasStatusEvidence(a){
+  return evidence(a,'sourceStatus').length>0||evidence(a,'calendar').length>0;
+}
+export function hasTargetInstrumentEvidence(a){
+  if(String(a?.kind||'').toUpperCase().includes('AAP')||String(a?.kind||'').toUpperCase().includes('AMI')){
+    return evidence(a,'catalogueKind').length>0||evidence(a,'instrument').length>0;
+  }
+  return evidence(a,'instrument').length>0;
+}
+export function hasEnterpriseEvidence(a){
+  if(a?.enterpriseEligible===true&&evidence(a,'enterpriseEligibility').length>0)return true;
+  if(evidence(a,'enterpriseEligibility').length>0)return true;
+  const companyWords=/\b(?:entreprises?|tpe|pme|eti|grandes? entreprises?|start[- ]?ups?|soci[eé]t[eé]s?|artisans?|commer[cç]ants?|exploitations? agricoles?)\b/i;
+  const beneficiaryProof=evidence(a,'beneficiaries');
+  if(beneficiaryProof.some(e=>companyWords.test(String(e.evidenceText||''))))return true;
+  if(Array.isArray(a?.companyCategories)&&a.companyCategories.length&&beneficiaryProof.length)return true;
+  return false;
+}
 export function recentOrActive(a,{now=new Date(),recentDays=60}={}){
   const lifecycle=String(a?.lifecycleStatus||'ACTIVE').toUpperCase();
   if(CLOSED_STATES.has(lifecycle))return false;
@@ -46,6 +72,10 @@ export function publicationReason(a,{configuredSourceIds=null,unlockedSourceIds=
   if(unlockedSourceIds&& !unlockedSourceIds.has(a.sourceId))return'SOURCE_NOT_CERTIFIED';
   if(!recentOrActive(a,{now,recentDays}))return'INACTIVE_OR_STALE';
   if(!targetFunding(a))return'OUT_OF_TARGET_INSTRUMENT';
+  if(!hasGuichetEvidence(a))return'MISSING_GUICHET_EVIDENCE';
+  if(!hasStatusEvidence(a))return'MISSING_STATUS_EVIDENCE';
+  if(!hasTargetInstrumentEvidence(a))return'MISSING_INSTRUMENT_EVIDENCE';
+  if(!hasEnterpriseEvidence(a))return'MISSING_ENTERPRISE_EVIDENCE';
   const title=String(a.title||'').replace(/\s+/g,' ').trim();
   if(!title||title.length<4||generic.test(title))return'GENERIC_TITLE';
   const url=String(a.officialPage||'');
