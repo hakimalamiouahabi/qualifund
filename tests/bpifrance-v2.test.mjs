@@ -116,6 +116,16 @@ test('le verrou Bpifrance exige désormais un corpus publication-ready et autori
   assert.ok(lock.certification.sourceRules.bpifrance_aap.minRetained>=20);
 });
 
+test('Rebond Industriel est certifié comme page directe sans fausse exigence de catalogue maître',()=>{
+  const lock=JSON.parse(fs.readFileSync(new URL('../config/collection-lock.json',import.meta.url),'utf8'));
+  assert.equal(lock.certification.sourceRules.bpifrance_aap.requireMasterMembership,true);
+  assert.equal(lock.certification.sourceRules.bpifrance_aides.requireMasterMembership,true);
+  assert.equal(lock.certification.sourceRules.bpifrance_rebond_industriel.requireMasterMembership,undefined);
+  const cert=fs.readFileSync(new URL('../scripts/certify-active-source.mjs',import.meta.url),'utf8');
+  assert.match(cert,/const requireMasterMembership=Boolean/);
+  assert.doesNotMatch(cert,/requireMasterMembership\|\|rule\.requireGuichetEvidence/);
+});
+
 test('Rebond Industriel force uniquement les deux instruments prouvés sur sa page officielle',()=>{
   const cfg=JSON.parse(fs.readFileSync(new URL('../config/sources.json',import.meta.url),'utf8'));
   const source=cfg.sources.find(x=>x.id==='bpifrance_rebond_industriel');
