@@ -5,13 +5,13 @@ import fsp from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { buildCertificationLedger, publicationReason, targetFunding, hasEnterpriseEvidence, hasTargetInstrumentEvidence, sourceConfigFingerprint } from '../scripts/lib/publication.mjs';
+import { buildCertificationLedger, publicationReason, targetFunding, hasEnterpriseEvidence, hasTargetInstrumentEvidence, sourceConfigFingerprint, certificationBasisFingerprint } from '../scripts/lib/publication.mjs';
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 
 test('les preuves métier de publication peuvent réutiliser les bénéficiaires officiels',()=>{
   const base={
-    id:'x',sourceId:'bpi',title:'Aide innovation',kind:'AIDE',aidTypes:['SUBVENTION'],
+    id:'x',sourceId:'bpi',title:'Aide innovation',kind:'AIDE',aidTypes:['SUBVENTION'],lifecycleStatus:'ACTIVE',
     officialPage:'https://example.fr/aide/x',
     verification:{fieldEvidence:[
       {field:'guichet',sourceTier:'B',sourceUrl:'https://example.fr/catalogue',evidenceText:'catalogue officiel'},
@@ -26,7 +26,7 @@ test('les preuves métier de publication peuvent réutiliser les bénéficiaires
 });
 
 test('une certification de source ne remplace pas les preuves métier minimales de la fiche',()=>{
-  const base={id:'x',sourceId:'bpi',title:'Aide',kind:'AIDE',aidTypes:['SUBVENTION'],officialPage:'https://example.fr/aide/x',verification:{fieldEvidence:[]}};
+  const base={id:'x',sourceId:'bpi',title:'Aide',kind:'AIDE',aidTypes:['SUBVENTION'],lifecycleStatus:'ACTIVE',officialPage:'https://example.fr/aide/x',verification:{fieldEvidence:[]}};
   assert.equal(publicationReason(base,{configuredSourceIds:new Set(['bpi']),unlockedSourceIds:new Set(['bpi'])}),'MISSING_GUICHET_EVIDENCE');
 });
 
@@ -59,10 +59,11 @@ test('une date de clôture ancienne prime sur un lifecycle ACTIVE obsolète',()=
     {field:'beneficiaries',sourceTier:'B',sourceUrl:'https://example.fr/aide/x',evidenceText:'PME françaises'}
   ]}};
   assert.equal(publicationReason({...base,closingDate:'2026-06-01'},opts),'INACTIVE_OR_STALE');
-  assert.equal(publicationReason({...base,closingDate:'2026-09-20'},opts),null);
+  assert.equal(publicationReason({...base,closingDate:'2026-09-20'},opts),'INACTIVE_OR_STALE');
+  assert.equal(publicationReason({...base,closingDate:'2026-10-04'},opts),null);
 });
 
-test('une archive ancienne n’est pas publiée mais une clôture J-60 peut l’être',()=>{
+test('une archive n’est jamais publiée, même avec une clôture récente',()=>{
   const opts={configuredSourceIds:new Set(['s']),unlockedSourceIds:new Set(['s']),now:new Date('2026-10-03T00:00:00Z')};
   const base={id:'x',sourceId:'s',title:'Dispositif test',officialPage:'https://example.fr/aide/x',aidTypes:['SUBVENTION'],lifecycleStatus:'ARCHIVE',verification:{fieldEvidence:[
     {field:'guichet',sourceTier:'B',sourceUrl:'https://example.fr/source',evidenceText:'source'},
@@ -71,16 +72,25 @@ test('une archive ancienne n’est pas publiée mais une clôture J-60 peut l’
     {field:'beneficiaries',sourceTier:'B',sourceUrl:'https://example.fr/aide/x',evidenceText:'PME françaises'}
   ]}};
   assert.equal(publicationReason({...base,closingDate:'2026-06-01'},opts),'INACTIVE_OR_STALE');
-  assert.equal(publicationReason({...base,closingDate:'2026-09-20'},opts),null);
+  assert.equal(publicationReason({...base,closingDate:'2026-09-20'},opts),'INACTIVE_OR_STALE');
 });
 
-test('le ledger ne déverrouille que les certificats PASS encore présents dans le registre',async()=>{
+test('le ledger ne déverrouille que les certificats PASS liés au registre et au code courants',async()=>{
   const dir=await fsp.mkdtemp(path.join(os.tmpdir(),'qf-ledger-'));
   try{
-    await fsp.writeFile(path.join(dir,'ademe-certification.json'),JSON.stringify({status:'PASS',generatedAt:'2026-10-01T00:00:00Z',lock:{name:'ADEME'},configuredSources:['ademe']}));
+    const cfg={version:'x',sources:[
+      {id:'ademe',official:true,strategy:'official-page',url:'https://example.fr/ademe'},
+      {id:'aura',official:true,strategy:'official-page',url:'https://example.fr/aura'}
+    ]};
+    const fp=sourceConfigFingerprint(cfg,['ademe']);
+    const basis=await certificationBasisFingerprint(ROOT,cfg,['ademe']);
+    await fsp.writeFile(path.join(dir,'ademe-certification.json'),JSON.stringify({
+      status:'PASS',generatedAt:'2026-10-01T00:00:00Z',lock:{name:'ADEME'},configuredSources:['ademe'],
+      sourceConfigFingerprint:fp,certificationBasisFingerprint:basis
+    }));
     await fsp.writeFile(path.join(dir,'aura-certification.json'),JSON.stringify({status:'FAIL',generatedAt:'2026-10-02T00:00:00Z',lock:{name:'Auvergne-Rhône-Alpes'},configuredSources:['aura']}));
     await fsp.writeFile(path.join(dir,'legacy-certification.json'),JSON.stringify({status:'PASS',generatedAt:'2026-10-01T00:00:00Z',lock:{name:'Legacy'},configuredSources:['removed']}));
-    const ledger=await buildCertificationLedger(dir,{version:'x',sources:[{id:'ademe'},{id:'aura'}]});
+    const ledger=await buildCertificationLedger(dir,cfg,{root:ROOT});
     assert.deepEqual(ledger.unlockedSourceIds,['ademe']);
     assert.deepEqual(ledger.guichets,['ADEME']);
   }finally{await fsp.rm(dir,{recursive:true,force:true})}
@@ -149,14 +159,16 @@ test('le certificat actif reflète toujours le verrou courant au lieu d’un anc
 });
 
 
-test('la purge ne conserve que les sources certifiées et le verrou courant',async()=>{
+test('la purge conserve les snapshots historiques rejetés mais ne les certifie pas',async()=>{
   const purge=fs.readFileSync(new URL('../scripts/purge-indirect-sources.mjs',import.meta.url),'utf8');
   assert.match(purge,/buildCertificationLedger/);
-  assert.match(purge,/retainedSourceIds/);
+  assert.match(purge,/historicalRejectedSourceIds/);
+  assert.match(purge,/ledger\.rejectedCertifications/);
   assert.match(purge,/ledger\.unlockedSourceIds/);
   assert.match(purge,/lock\.allowedSourceIds/);
   assert.match(purge,/filter\(a=>retainedSourceIds\.has\(a\?\.sourceId\)\)/);
-  assert.match(purge,/filter\(x=>retainedSourceIds\.has\(x\.id\)\)/);
+  assert.match(purge,/certification-ledger\.json/);
+  assert.match(purge,/status:'PENDING'/);
 });
 
 
@@ -257,29 +269,58 @@ test('le workflow Cloudflare ne conserve pas la permission GitHub Pages obsolèt
 });
 
 
-test('un certificat fingerprinté est rejeté si la configuration de sa source change',async()=>{
+test('un certificat est rejeté si sa configuration ou sa base technique change',async()=>{
   const dir=await fsp.mkdtemp(path.join(os.tmpdir(),'qf-fingerprint-'));
   try{
     const cfgA={version:'x',sources:[{id:'s',official:true,strategy:'official-page',url:'https://example.fr/a'}]};
     const fp=sourceConfigFingerprint(cfgA,['s']);
-    await fsp.writeFile(path.join(dir,'s-certification.json'),JSON.stringify({status:'PASS',generatedAt:'2026-10-03T00:00:00Z',lock:{name:'S'},configuredSources:['s'],sourceConfigFingerprint:fp}));
-    const ok=await buildCertificationLedger(dir,cfgA);
+    const basis=await certificationBasisFingerprint(ROOT,cfgA,['s']);
+    await fsp.writeFile(path.join(dir,'s-certification.json'),JSON.stringify({
+      status:'PASS',generatedAt:'2026-10-03T00:00:00Z',lock:{name:'S'},configuredSources:['s'],
+      sourceConfigFingerprint:fp,certificationBasisFingerprint:basis
+    }));
+    const ok=await buildCertificationLedger(dir,cfgA,{root:ROOT});
     assert.deepEqual(ok.unlockedSourceIds,['s']);
     assert.equal(ok.certifications[0].fingerprintStatus,'MATCH');
+
     const cfgB={...cfgA,sources:[{...cfgA.sources[0],url:'https://example.fr/b'}]};
-    const changed=await buildCertificationLedger(dir,cfgB);
+    const changed=await buildCertificationLedger(dir,cfgB,{root:ROOT});
     assert.deepEqual(changed.unlockedSourceIds,[]);
     assert.equal(changed.rejectedCertifications[0].reason,'SOURCE_CONFIG_CHANGED');
+
+    await fsp.writeFile(path.join(dir,'s-certification.json'),JSON.stringify({
+      status:'PASS',generatedAt:'2026-10-03T00:00:00Z',lock:{name:'S'},configuredSources:['s'],
+      sourceConfigFingerprint:fp,certificationBasisFingerprint:'0'.repeat(64)
+    }));
+    const codeChanged=await buildCertificationLedger(dir,cfgA,{root:ROOT});
+    assert.deepEqual(codeChanged.unlockedSourceIds,[]);
+    assert.equal(codeChanged.rejectedCertifications[0].reason,'CERTIFICATION_BASIS_CHANGED');
+  }finally{await fsp.rm(dir,{recursive:true,force:true})}
+});
+
+test('un ancien PASS sans fingerprints est fail-closed',async()=>{
+  const dir=await fsp.mkdtemp(path.join(os.tmpdir(),'qf-legacy-cert-'));
+  try{
+    const cfg={version:'x',sources:[{id:'s',official:true,strategy:'official-page',url:'https://example.fr/a'}]};
+    await fsp.writeFile(path.join(dir,'s-certification.json'),JSON.stringify({
+      status:'PASS',generatedAt:'2026-10-01T00:00:00Z',lock:{name:'S'},configuredSources:['s']
+    }));
+    const ledger=await buildCertificationLedger(dir,cfg,{root:ROOT});
+    assert.deepEqual(ledger.unlockedSourceIds,[]);
+    assert.equal(ledger.rejectedCertifications[0].reason,'SOURCE_CONFIG_FINGERPRINT_MISSING');
   }finally{await fsp.rm(dir,{recursive:true,force:true})}
 });
 
 
-test('la purge précède toujours la lecture du snapshot de collecte, même sous verrou',()=>{
+test('la collecte exige un verrou et préserve le dernier snapshot valide du guichet actif',()=>{
   const update=fs.readFileSync(path.join(ROOT,'scripts/update-library.mjs'),'utf8');
   const purge=update.indexOf('await purgeIndirectSources()');
   const previous=update.indexOf("const previous=await readJson(path.join(DATA,'library.json')");
   assert.ok(purge>=0&&previous>purge);
   assert.doesNotMatch(update,/if\(!collectionLock\.locked\)await purgeIndirectSources/);
+  assert.match(update,/requireCollectionLock\(collectionLock\)/);
+  assert.match(update,/const current=new Map\(prevMap\)/);
+  assert.doesNotMatch(update,/new Map\(\(previous\.aaps\|\|\[\]\)\.filter\(a=>!selectedIds\.has/);
   const wf=fs.readFileSync(path.join(ROOT,'.github/workflows/update-and-deploy.yml'),'utf8');
   assert.match(wf,/Purger et persister le stock hors sources certifiées \/ cycle courant/);
   assert.doesNotMatch(wf,/Purger et persister[^\n]*\n\s*if:\s*\$\{\{ steps\.lock\.outputs\.locked != 'true' \}\}/);
