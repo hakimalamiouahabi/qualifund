@@ -1,6 +1,6 @@
 {
   "name": "funding-radar",
-  "version": "12.9.2",
+  "version": "12.9.3",
   "private": true,
   "type": "module",
   "description": "FUNDING RADAR | Leyton — collecte directe, qualification et veille des financements publics",
