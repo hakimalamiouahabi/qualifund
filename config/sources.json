@@ -83,7 +83,7 @@
       "webEvidenceUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue",
       "minImported": 50,
       "minImportRatio": 0.8,
-      "notes": "ADEME v5 officiel-only : le catalogue officiel Entreprises est la référence. Si son HTML bloque l'automatisation, l'inventaire actif est reconstruit exclusivement depuis le flux RSS officiel ADEME ; les fiches directes officielles servent à la vérification du type, du statut et des critères.",
+      "notes": "ADEME official-only : le catalogue Entreprises est la référence ; le RSS officiel sert de miroir actif déterministe si le HTML du catalogue est indisponible. Constat live GitHub du 03/10/2026 : les fiches directes peuvent répondre HTTP 403 / challenge Cloudflare ; le RSS confirme l’inventaire et les échéances mais ne suffit pas à prouver l’instrument financier des fiches AIDE. Aucune qualification n’est inventée en cas de blocage.",
       "closedCatalogueUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue-aides-closes",
       "inventoryFallback": "rss-active-deadlines",
       "rssRole": "official-active-inventory-fallback"

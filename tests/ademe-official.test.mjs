@@ -8,7 +8,8 @@ import {
   ademeKindFromOfficialUrl,
   selectAdemeInventory,
   ademeInstrumentEvidence,
-  ademeAttributionEvidence
+  ademeAttributionEvidence,
+  ademeAccessBlockReason
 } from '../scripts/connectors/ademe.mjs';
 
 const NOW=new Date('2026-09-30T18:30:00Z');
@@ -174,4 +175,16 @@ test('la preuve de guichet ADEME exige une attribution explicite sur la fiche di
   const proof=ademeAttributionEvidence("Cette aide est accordée par l’ADEME aux entreprises éligibles.");
   assert.ok(proof);
   assert.equal(ademeAttributionEvidence("Ce dispositif est référencé sur le portail ADEME Entreprises."),null);
+});
+
+test('ADEME identifie explicitement le challenge Cloudflare sans le contourner',()=>{
+  assert.equal(ademeAccessBlockReason('<html><title>Un instant…</title><div id="challenge-platform"></div></html>'),'CLOUDFLARE_CHALLENGE');
+  assert.equal(ademeAccessBlockReason('<html><title>Aide ADEME</title><main>Aide en cours</main></html>','Aide ADEME'),null);
+});
+
+test('le collecteur ADEME comptabilise les motifs de non-lecture des fiches directes',()=>{
+  const connector=fs.readFileSync(new URL('../scripts/connectors/ademe.mjs',import.meta.url),'utf8');
+  assert.match(connector,/FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE/);
+  assert.match(connector,/detailWarningReasons/);
+  assert.match(connector,/accès fiches directes/);
 });
