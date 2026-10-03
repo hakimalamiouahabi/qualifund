@@ -1,92 +1,66 @@
 {
-  "version": 12,
+  "version": 13,
   "locked": true,
   "mode": "GUICHET",
-  "name": "Bpifrance",
+  "name": "ADEME",
   "allowedSourceIds": [
-    "bpifrance_aap",
-    "bpifrance_aides",
-    "bpifrance_rebond_industriel"
+    "ademe"
   ],
   "preserveUnselectedSources": true,
   "preserveUnselectedCoverage": true,
   "freezeUnselectedLifecycle": true,
   "enrichSelectedOnly": true,
-  "next": "ADEME",
+  "next": "AURA",
   "certification": {
     "primarySourceIds": [
-      "bpifrance_aap",
-      "bpifrance_aides",
-      "bpifrance_rebond_industriel"
+      "ademe"
     ],
     "allowedHosts": [
-      "www.bpifrance.fr",
-      "bpifrance.fr",
-      "rebond-industriel.bpifrance.fr"
+      "agirpourlatransition.ademe.fr"
+    ],
+    "forbiddenPathFragments": [
+      "/catalogue-rex/",
+      "/accessibilite",
+      "/mentions-legales",
+      "/politique-",
+      "/conditions-generales"
     ],
     "requireAuditAccounting": true,
     "requireZeroExtractionErrors": true,
     "requireDirectOfficialUrl": true,
     "forbidGenericTitles": true,
+    "requireCatalogueDiscovery": true,
+    "requireCatalogueCompleteness": true,
+    "requireCatalogueClassification": true,
+    "requireRssDiscovery": true,
+    "requireGuichetEvidence": true,
+    "requireCurrentStatusEvidence": true,
+    "requireEnterpriseScope": true,
+    "allowedSourceStates": [
+      "OPEN"
+    ],
+    "requirePublicationReady": true,
     "sourceRules": {
-      "bpifrance_aap": {
-        "master": "ACTIVE_AAP_LISTING",
-        "requireListingDiscovery": true,
+      "ademe": {
+        "master": "ADEME_ENTERPRISES_ACTIVE_INVENTORY",
+        "requireMasterMembership": true,
         "requireGuichetEvidence": true,
         "requireCurrentStatusEvidence": true,
         "allowedSourceStates": [
-          "OPEN",
-          "OPEN_UNDATED"
+          "OPEN"
         ],
         "allowedKinds": [
-          "AAP / AMI"
-        ],
-        "requiredPathPrefix": "/nos-appels-a-projets-concours/",
-        "requireAuditAccounting": true,
-        "minRetained": 17,
-        "requireMasterMembership": true
-      },
-      "bpifrance_aides": {
-        "master": "CATALOGUE_SECTION_SUB_AR",
-        "requireCatalogueSectionDiscovery": true,
-        "requireGuichetEvidence": true,
-        "requireCurrentStatusEvidence": true,
-        "allowedSourceStates": [
-          "OPEN_UNDATED"
-        ],
-        "allowedKinds": [
+          "AAP / AMI",
           "AIDE"
         ],
-        "allowedAidTypes": [
-          "SUBVENTION",
-          "AVANCE_REMBOURSABLE",
-          "PRET_TAUX_ZERO"
-        ],
-        "requiredPathPrefix": "/catalogue-offres/",
-        "requireAuditAccounting": true,
-        "minRetained": 15,
-        "requireMasterMembership": true
-      },
-      "bpifrance_rebond_industriel": {
-        "master": "DIRECT_OFFICIAL_PAGE",
-        "minRetained": 1,
-        "requireAuditAccounting": false,
-        "allowedKinds": [
-          "AIDE"
-        ],
-        "allowedAidTypes": [
-          "SUBVENTION",
-          "AVANCE_REMBOURSABLE"
-        ],
-        "requireGuichetEvidence": true,
-        "requireCurrentStatusEvidence": false
+        "requiredPathPrefix": "/entreprises/aides-financieres/catalogue/",
+        "requireAuditAccounting": true
       }
-    },
-    "requirePublicationReady": true
+    }
   },
-  "notes": "Recertification Bpifrance v12.9.3 publication-ready. Baseline officielle observée le 03/10/2026 : 27 AAP/AMI au listing maître, 17 fiches conservées après preuves métier et exclusions comptabilisées. Le listing reste protégé par minExpected=20 ; le corpus publiable par minImported/minRetained=17. ADEME est le cycle suivant ; AURA reste gelée jusqu’aux PASS Bpifrance puis ADEME.",
+  "notes": "Recertification ADEME v13 sur l’architecture official-only 12.9.3. Référentiel maître : catalogue officiel ADEME Entreprises ; si le HTML du catalogue est indisponible ou incomplet, inventaire actif reconstruit exclusivement depuis le RSS officiel ADEME et ses échéances. Aucune source agrégée, aucun LLM, aucune API payante, aucun moteur d’audit externe. Bpifrance reste gelé sur son certificat PASS ; AURA demeure gelée jusqu’au PASS ADEME.",
   "foundationBaseline": {
-    "version": "Foundation v3.2 / 12.9.3 Bpifrance publication-ready",
+    "version": "Foundation v3.3 / ADEME official-only recertification",
     "status": "HARDENING",
     "validatedAt": null,
     "p0": null
