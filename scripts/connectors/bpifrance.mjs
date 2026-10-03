@@ -279,10 +279,7 @@ async function extractDirect(source,link,kind,{requireTargetInstrument=false}={}
   const role=bpifranceRoleEvidence(text);
   if(role&&!a.operator)a.operator='Bpifrance';
   const enterpriseProof=bpifranceEnterpriseEvidence(text);
-  if(!enterpriseProof){
-    return{aid:null,excluded:{url:requested,title:a.title,reason:'ENTREPRISE_NON_PROUVEE'}};
-  }
-  a.enterpriseEligible=true;
+  if(enterpriseProof)a.enterpriseEligible=true;
   a.sourceLinks=[{label:'Page officielle Bpifrance',url:requested},...(a.sourceLinks||[]).filter(x=>x?.url&&canonicalUrl(x.url)!==requested)];
   const masterSource=kind==='AAP / AMI'
     ?'https://www.bpifrance.fr/nos-appels-a-projets-concours'
