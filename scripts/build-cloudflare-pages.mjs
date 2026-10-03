@@ -16,7 +16,6 @@ const excluded=new Set([
   'data/bootstrap.js',
   'data/library.json',
   'data/library.previous.json',
-  'bibliotheque/qualifund-library.json',
   'bibliotheque/radar-library.json'
 ]);
 
@@ -69,7 +68,7 @@ for(const a of records)csvRows.push([
   a.id,a.title,a.kind,a.scope,arr(a.regions).join(' | '),arr(a.funder).join(' | '),arr(a.aidTypes).join(' | '),
   arr(a.companyCategories).join(' | '),a.finalClosingDate||a.closingDate||'',a.permanent?'oui':'non',a.officialPage||''
 ].map(csvEsc).join(','));
-for(const name of ['radar-library.csv','qualifund-library.csv'])await fs.writeFile(path.join(pubDir,name),csvRows.join('\n'),'utf8');
+await fs.writeFile(path.join(pubDir,'radar-library.csv'),csvRows.join('\n'),'utf8');
 await fs.writeFile(path.join(pubDir,'status.json'),JSON.stringify({
   version:cfg.version||null,
   publicationPolicy:'CERTIFIED_SOURCE_ONLY',
