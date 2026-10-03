@@ -58,6 +58,23 @@ function sourceUrlSet(cfg,{genericOnly=false}={}){
 function excludedSourceIds(cfg){
   return new Set((cfg.excludedSources||[]).map(String));
 }
+function aliasId(x){
+  return typeof x==='string'?x:(x?.id||x?.sourceId||'');
+}
+function aidHasForbiddenProvenance(a){
+  if(!a||typeof a!=='object')return false;
+  if(forbiddenMarker.test(String(a.sourceId||'')))return true;
+  if((a.sourceAliases||[]).some(x=>forbiddenMarker.test(String(aliasId(x)))))return true;
+  const urls=[
+    a.officialPage,
+    ...(a.sourceLinks||[]).map(x=>typeof x==='string'?x:x?.url),
+    ...(a.cdcLinks||[]).map(x=>typeof x==='string'?x:x?.url),
+    ...(a.regulationLinks||[]).map(x=>typeof x==='string'?x:x?.url),
+    ...(a.formLinks||[]).map(x=>typeof x==='string'?x:x?.url),
+    ...((a.verification?.fieldEvidence)||[]).map(x=>x?.sourceUrl)
+  ].filter(Boolean);
+  return urls.some(isForbiddenAggregatorUrl);
+}
 
 export function assertDirectSources(cfg){
   if(cfg.sourcePolicy!=='DIRECT_OFFICIAL_ONLY')throw new Error('Politique de sources directes manquante');
@@ -101,7 +118,10 @@ export function sanitizeAidLinks(a,cfg){
   if(Array.isArray(a.regulationLinks))out.regulationLinks=sanitizeLinkArray(a.regulationLinks,{cfg});
   if(Array.isArray(a.formLinks))out.formLinks=sanitizeLinkArray(a.formLinks,{cfg});
 
-  if(Array.isArray(a.sourceAliases))out.sourceAliases=a.sourceAliases.filter(x=>x&&!excluded.has(String(x))&&!forbiddenMarker.test(String(x)));
+  if(Array.isArray(a.sourceAliases))out.sourceAliases=a.sourceAliases.filter(x=>{
+    const id=aliasId(x);
+    return Boolean(id)&&!excluded.has(String(id))&&!forbiddenMarker.test(String(id));
+  });
 
   if(Array.isArray(a.verification?.fieldEvidence)){
     const evidence=a.verification.fieldEvidence.filter(e=>!e?.sourceUrl||(!isForbiddenAggregatorUrl(e.sourceUrl)&&/^https:\/\//i.test(e.sourceUrl)));
@@ -121,8 +141,8 @@ export function sanitizeAidLinks(a,cfg){
 }
 
 export function isDirectAid(a,cfg){
-  if(!a||containsForbiddenAggregator(a)||/^ae_|^qf_ae_/.test(a.id||''))return false;
-  if(a.lifecycleStatus==='STALE')return false;
+  if(!a||aidHasForbiddenProvenance(a)||/^ae_|^qf_ae_/.test(a.id||''))return false;
+  if(['STALE','CLOSED','CLOS','EXPIRED'].includes(String(a.lifecycleStatus||'').toUpperCase()))return false;
   const source=(cfg.sources||[]).find(s=>s.id===a.sourceId);
   if(!source||source.strategy==='control-only'||containsForbiddenAggregator(source))return false;
   try{
@@ -138,13 +158,16 @@ export function isDirectAid(a,cfg){
 }
 
 export function filterDirectLibrary(records,cfg){
-  const out=[],seen=new Set();
+  const out=[],seenIds=new Set(),seenUrls=new Set();
   for(const raw of records||[]){
     const clean=sanitizeAidLinks(raw,cfg);
     if(!isDirectAid(clean,cfg))continue;
-    const key=clean.id||normalizedUrl(clean.officialPage);
-    if(!key||seen.has(key))continue;
-    seen.add(key);out.push(clean);
+    const id=String(clean.id||'');
+    const url=normalizedUrl(clean.officialPage);
+    if((id&&seenIds.has(id))||(url&&seenUrls.has(url)))continue;
+    if(id)seenIds.add(id);
+    if(url)seenUrls.add(url);
+    out.push(clean);
   }
   return out;
 }
