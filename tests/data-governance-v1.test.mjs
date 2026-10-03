@@ -179,3 +179,30 @@ test('une mention entreprise non contextuelle dans un objectif ne suffit pas',as
   };
   assert.equal(hasEnterpriseEvidence(aid),false);
 });
+
+
+test('la page Bibliothèque n’utilise plus de contrôles DOM inexistants ni le branding historique',()=>{
+  const html=fs.readFileSync(path.join(ROOT,'site/bibliotheque/index.html'),'utf8');
+  assert.doesNotMatch(html,/verified\.textContent/);
+  assert.doesNotMatch(html,/verification\.value/);
+  assert.doesNotMatch(html,/qualifund-library/i);
+  assert.match(html,/radar-library\.csv/);
+  assert.match(html,/CERTIFIED_SOURCE_ONLY|sources certifiées|corpus certifié/i);
+  const headers=(html.match(/<th>/g)||[]).length;
+  const rowTemplate=(html.match(/<td>/g)||[]).length;
+  assert.equal(headers,8);
+  assert.equal(rowTemplate,8);
+});
+
+test('les duplications JSON publiques monolithiques et documents historiques ont disparu',()=>{
+  for(const p of [
+    'site/bibliotheque/radar-library.json',
+    'site/bibliotheque/qualifund-library.json',
+    'site/bibliotheque/qualifund-library.csv',
+    'Cahier_des_charges_QUALIFUND_FINAL.md',
+    'POLITIQUE_COUVERTURE_2026-09-28.md',
+    'REVUE_CODIR_2026-09-29.md',
+    'QA_REPORT.md',
+    'SOURCE_LINK_AUDIT.md'
+  ])assert.equal(fs.existsSync(path.join(ROOT,p)),false,p);
+});
