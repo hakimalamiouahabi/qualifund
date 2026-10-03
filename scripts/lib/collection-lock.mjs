@@ -29,6 +29,10 @@ export function sourceCalibration(source){
   };
 }
 
+export function requireCollectionLock(lock){
+  if(!lock?.locked)throw new Error('COLLECTION_LOCK_REQUIRED: un guichet ou une région doit être verrouillé avant toute collecte de production');
+}
+
 export function validateCollectionLock(cfg,lock){
   if(!lock?.locked)return;
   if(!Array.isArray(lock.allowedSourceIds)||!lock.allowedSourceIds.length)throw new Error('Collection lock actif sans allowedSourceIds');
