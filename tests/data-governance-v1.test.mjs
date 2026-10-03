@@ -5,7 +5,7 @@ import fsp from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { buildCertificationLedger, publicationReason, targetFunding, hasEnterpriseEvidence, hasTargetInstrumentEvidence } from '../scripts/lib/publication.mjs';
+import { buildCertificationLedger, publicationReason, targetFunding, hasEnterpriseEvidence, hasTargetInstrumentEvidence, sourceConfigFingerprint } from '../scripts/lib/publication.mjs';
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 
@@ -254,4 +254,21 @@ test('le client ne conserve plus l’ancien cache IndexedDB ni la pseudo-collect
 test('le workflow Cloudflare ne conserve pas la permission GitHub Pages obsolète',()=>{
   const wf=fs.readFileSync(path.join(ROOT,'.github/workflows/update-and-deploy.yml'),'utf8');
   assert.doesNotMatch(wf,/^\s+pages:\s+read\s*$/m);
+});
+
+
+test('un certificat fingerprinté est rejeté si la configuration de sa source change',async()=>{
+  const dir=await fsp.mkdtemp(path.join(os.tmpdir(),'qf-fingerprint-'));
+  try{
+    const cfgA={version:'x',sources:[{id:'s',official:true,strategy:'official-page',url:'https://example.fr/a'}]};
+    const fp=sourceConfigFingerprint(cfgA,['s']);
+    await fsp.writeFile(path.join(dir,'s-certification.json'),JSON.stringify({status:'PASS',generatedAt:'2026-10-03T00:00:00Z',lock:{name:'S'},configuredSources:['s'],sourceConfigFingerprint:fp}));
+    const ok=await buildCertificationLedger(dir,cfgA);
+    assert.deepEqual(ok.unlockedSourceIds,['s']);
+    assert.equal(ok.certifications[0].fingerprintStatus,'MATCH');
+    const cfgB={...cfgA,sources:[{...cfgA.sources[0],url:'https://example.fr/b'}]};
+    const changed=await buildCertificationLedger(dir,cfgB);
+    assert.deepEqual(changed.unlockedSourceIds,[]);
+    assert.equal(changed.rejectedCertifications[0].reason,'SOURCE_CONFIG_CHANGED');
+  }finally{await fsp.rm(dir,{recursive:true,force:true})}
 });
