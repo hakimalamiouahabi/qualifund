@@ -40,11 +40,20 @@ const ingestive=(cfg.sources||[]).filter(s=>s.official&&s.strategy!=='control-on
 const controls=(cfg.sources||[]).filter(s=>s.strategy==='control-only');
 const currentIds=new Set(lock.locked?(lock.allowedSourceIds||[]):ingestive.map(s=>s.id));
 const evaluated=ingestive.filter(s=>currentIds.has(s.id));
+const cycleId=lib.meta?.collectionCycleId||null;
+const libraryGeneratedAt=Date.parse(lib.meta?.generatedAt||'');
+const coverageIsFresh=row=>{
+  if(!row)return false;
+  if(cycleId&&row.cycleId)return String(row.cycleId)===String(cycleId);
+  const checked=Date.parse(row.checkedAt||'');
+  return Number.isFinite(checked)&&Number.isFinite(libraryGeneratedAt)&&Math.abs(libraryGeneratedAt-checked)<=6*3600*1000;
+};
 const executed=evaluated.filter(s=>covById.has(s.id));
-const successful=evaluated.filter(s=>covById.get(s.id)?.success);
-const imported=evaluated.reduce((n,s)=>n+Number(covById.get(s.id)?.imported||0),0);
+const freshExecuted=evaluated.filter(s=>coverageIsFresh(covById.get(s.id)));
+const successful=evaluated.filter(s=>coverageIsFresh(covById.get(s.id))&&covById.get(s.id)?.success);
+const imported=evaluated.reduce((n,s)=>n+(coverageIsFresh(covById.get(s.id))?Number(covById.get(s.id)?.imported||0):0),0);
 const controlExecuted=controls.filter(s=>covById.has(s.id)).length;
-const cycleComplete=evaluated.length>0&&executed.length===evaluated.length;
+const cycleComplete=evaluated.length>0&&freshExecuted.length===evaluated.length;
 const cycleSuccess=evaluated.length>0&&successful.length===evaluated.length;
 const globalSuccess=ingestive.length>0&&ingestive.filter(s=>covById.get(s.id)?.success).length>=Math.ceil(ingestive.length*.9);
 const gate3Pass=lock.locked?(cycleComplete&&cycleSuccess):globalSuccess;
@@ -75,7 +84,7 @@ const gates=[
   {id:1,name:'Dépôt GitHub et versionnement',status:repo?'PASS':'BLOCKED',detail:repo||'Aucun dépôt GitHub accessible/configuré.'},
   {id:2,name:'URL permanente',status:deployed?'PASS':configuredPublicUrl?'READY':'BLOCKED',detail:deployed?`${deployedUrl} — smoke HTTP concluant.`:configuredPublicUrl?`${configuredPublicUrl} configurée mais non encore validée par smoke HTTP.`:'Déploiement permanent non confirmé.'},
   {id:3,name:lock.locked?`Cycle de collecte — ${lock.name||'verrou courant'}`:'Collecte réelle des sources',status:gate3Status,detail:lock.locked
-    ?`${successful.length}/${evaluated.length} source(s) du verrou courant en succès ; ${imported} imports bruts. Les autres sources restent gelées.`
+    ?`${successful.length}/${evaluated.length} source(s) du verrou courant en succès sur le cycle ${cycleId||'non identifié'} ; ${freshExecuted.length}/${evaluated.length} ligne(s) coverage fraîches ; ${imported} imports bruts. Les autres sources restent gelées.`
     :`${ingestive.filter(s=>covById.has(s.id)).length}/${ingestive.length} sources officielles exécutées ; ${ingestive.filter(s=>covById.get(s.id)?.success).length} succès. Contrôles: ${controlExecuted}/${controls.length}.`},
   {id:4,name:'Bibliothèque certifiée publiable',status:gate4Pass?'PASS':gate3Pass?(verified?'PARTIAL':'FAIL'):(verified?'PARTIAL':'WAIT_LIVE'),detail:`${activeJPlusOne.length} fiches publiables J+1 sur ${raw.length} fiches brutes ; ${raw.length-published.length} en quarantaine. ${verified} strictement VÉRIFIÉES au ${jPlusOneDate()}. Intégrité recalculée ${verifiedIntegrity}/${verified}.`},
   {id:5,name:'Preuves documentaires par champ',status:gate5Pass?'PASS':gate3Pass?(verified?'PARTIAL':'FAIL'):'WAIT_LIVE',detail:`Preuves A/B complètes sur les champs critiques : ${verifiedEvidenceIntegrity}/${verified||0} fiches VÉRIFIÉES. File de remédiation synchronisée : ${remediationFresh?'oui':'non'}. CdC/règlement : ${withCdc}/${activeJPlusOne.length}.`},
@@ -101,7 +110,9 @@ const summary={
     certifiedSources:unlockedSourceIds.size,
     evaluatedSources:evaluated.length,
     executedSources:executed.length,
+    freshExecutedSources:freshExecuted.length,
     successfulSources:successful.length,
+    collectionCycleId:cycleId,
     rawLibrary:raw.length,
     publishedLibrary:published.length,
     quarantinedLibrary:raw.length-published.length,
