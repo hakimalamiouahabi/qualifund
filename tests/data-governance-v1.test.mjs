@@ -134,3 +134,14 @@ test('la collecte interne ne publie jamais directement le stock brut',()=>{
   assert.match(sync,/CERTIFIED_SOURCE_ONLY/);
   assert.match(sync,/isPublishableAid/);
 });
+
+
+test('le certificat actif reflète toujours le verrou courant au lieu d’un ancien guichet',()=>{
+  const sync=fs.readFileSync(path.join(ROOT,'scripts/sync-static-metadata.mjs'),'utf8');
+  assert.match(sync,/status:'PENDING'/);
+  assert.match(sync,/matchingCert/);
+  assert.match(sync,/active-source-certification\.json/);
+  const app=fs.readFileSync(path.join(ROOT,'site/app.js'),'utf8');
+  assert.match(app,/Référentiel officiel/);
+  assert.doesNotMatch(app,/Canal RSS<\/span>/);
+});
