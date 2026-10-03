@@ -152,8 +152,7 @@ export async function certificationBasisFingerprint(root,cfg,sourceIds=[]){
   return createHash('sha256').update(JSON.stringify(parts)).digest('hex');
 }
 
-export async function buildCertificationLedger(dataDir,cfg){
-  const root=path.resolve(dataDir,'../..');
+export async function buildCertificationLedger(dataDir,cfg,{root=path.resolve(dataDir,'../..')}={}){
   const sourceIds=new Set((cfg.sources||[]).map(s=>s.id));
   let names=[];try{names=await fs.readdir(dataDir)}catch{}
   const files=names.filter(n=>/^[a-z0-9-]+-certification\.json$/i.test(n)&&n!=='active-source-certification.json');
