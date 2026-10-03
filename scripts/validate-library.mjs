@@ -27,8 +27,8 @@ function basicValidate(a){
 
 let validate=null, engine='BASIC_FALLBACK';
 try{
-  const {default:Ajv}=await import('ajv');
-  const ajv=new Ajv({allErrors:true,strict:false});
+  const {default:Ajv2020}=await import('ajv/dist/2020.js');
+  const ajv=new Ajv2020({allErrors:true,strict:false});
   validate=ajv.compile(schema);
   engine='AJV';
 }catch(e){
