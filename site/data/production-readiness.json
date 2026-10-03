@@ -1,15 +1,13 @@
 {
-  "generatedAt": "2026-10-03T12:44:28.149Z",
+  "generatedAt": "2026-10-03T15:04:39.064Z",
   "version": "12.9.3",
   "mode": "LOCKED_CYCLE",
   "currentLock": {
     "locked": true,
-    "name": "Bpifrance",
+    "name": "ADEME",
     "mode": "GUICHET",
     "allowedSourceIds": [
-      "bpifrance_aap",
-      "bpifrance_aides",
-      "bpifrance_rebond_industriel"
+      "ademe"
     ]
   },
   "publicationPolicy": "CERTIFIED_SOURCE_ONLY",
@@ -28,21 +26,21 @@
     },
     {
       "id": 3,
-      "name": "Cycle de collecte — Bpifrance",
+      "name": "Cycle de collecte — ADEME",
       "status": "PASS",
-      "detail": "3/3 source(s) du verrou courant en succès sur le cycle non identifié ; 3/3 ligne(s) coverage fraîches ; 36 imports bruts. Les autres sources restent gelées."
+      "detail": "1/1 source(s) du verrou courant en succès sur le cycle non identifié ; 1/1 ligne(s) coverage fraîches ; 68 imports bruts. Les autres sources restent gelées."
     },
     {
       "id": 4,
       "name": "Bibliothèque certifiée publiable",
       "status": "PASS",
-      "detail": "35 fiches publiables J+1 sur 54 fiches brutes ; 19 en quarantaine. Certificat Bpifrance : PASS — fingerprints MATCH."
+      "detail": "104 fiches publiables J+1 sur 104 fiches brutes ; 0 en quarantaine. Certificat ADEME : PASS — fingerprints MATCH."
     },
     {
       "id": 5,
       "name": "Preuves obligatoires de publication",
       "status": "FAIL",
-      "detail": "Preuves A/B obligatoires (guichet, statut/calendrier, instrument, entreprise) : 35/35. File de remédiation synchronisée : non. CdC/règlement : 27/35."
+      "detail": "Preuves A/B obligatoires (guichet, statut/calendrier, instrument, entreprise) : 104/104. File de remédiation synchronisée : non. CdC/règlement : 28/104."
     },
     {
       "id": 6,
@@ -65,8 +63,8 @@
     {
       "id": 9,
       "name": "Exploitation automatisée",
-      "status": "PASS",
-      "detail": "Chaîne GitHub Actions exécutée sur push avec le verrou courant."
+      "status": "PARTIAL",
+      "detail": "Workflow quinzaine configuré ; exécution live du cycle courant à finaliser."
     },
     {
       "id": 10,
@@ -79,25 +77,25 @@
     "sourcesConfigured": 118,
     "ingestiveSources": 102,
     "controlSources": 16,
-    "certifiedSources": 3,
-    "evaluatedSources": 3,
-    "executedSources": 3,
-    "freshExecutedSources": 3,
-    "successfulSources": 3,
+    "certifiedSources": 4,
+    "evaluatedSources": 1,
+    "executedSources": 1,
+    "freshExecutedSources": 1,
+    "successfulSources": 1,
     "collectionCycleId": null,
-    "rawLibrary": 54,
-    "publishedLibrary": 35,
-    "quarantinedLibrary": 19,
-    "activeFiches": 35,
+    "rawLibrary": 104,
+    "publishedLibrary": 104,
+    "quarantinedLibrary": 0,
+    "activeFiches": 104,
     "jPlusOneDate": "2026-10-04",
-    "jPlusOneActiveFiches": 35,
+    "jPlusOneActiveFiches": 104,
     "verifiedFiches": 0,
     "verifiedIntegrity": 0,
     "verifiedEvidenceIntegrity": 0,
-    "publicationEvidenceIntegrity": 35,
+    "publicationEvidenceIntegrity": 104,
     "lockedCertificationMatch": true,
-    "withCdc": 27,
-    "withDeadline": 17,
+    "withCdc": 28,
+    "withDeadline": 85,
     "consultantCases": 10,
     "uatTotal": 10,
     "companySmokeOk": true,

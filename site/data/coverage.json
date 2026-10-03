@@ -203,289 +203,28 @@
     "consecutiveFailures": 0
   },
   {
-    "cycleId": "37128699003",
+    "cycleId": "37131410029",
     "id": "ademe",
     "name": "ADEME — aides financières et appels à projets entreprises",
     "scope": "France",
-    "success": false,
-    "lifecycleSafe": false,
+    "success": true,
+    "lifecycleSafe": true,
     "emptyIngestion": false,
     "suspiciousVolume": false,
-    "lowImportedCount": true,
-    "lowImportRatio": true,
-    "importRatio": 0.23529411764705882,
+    "lowImportedCount": false,
+    "lowImportRatio": false,
+    "importRatio": 1,
     "discovered": 68,
-    "imported": 16,
+    "imported": 68,
     "audit": {
       "discovered": 68,
-      "imported": 16,
-      "excluded": [
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/operations-collectives-pour-la-decarbonation-des-entreprises-0",
-          "label": "Opérations collectives pour la décarbonation des entreprises",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/offres-integrees-pompes-chaleur",
-          "label": "Offres intégrées pompes à chaleur",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/engins-de-chantier-electriques-2026-programme-cee-e-trans",
-          "label": "Engins de chantier électriques 2026 – Programme CEE E-Trans",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/extreme-defi-textile-responsable",
-          "label": "Extrême défi - Textile responsable",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/fonds-economie-circulaire-ormat-2026-objectif-recyclage-matieres",
-          "label": "Fonds Économie Circulaire - ORMAT 2026 (Objectif Recyclage MATières)",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/oreno-hebergement-social-et-medico-social",
-          "label": "ORENO - Hébergement social et médico-social",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/amelioration-de-la-qualite-de-lair-dans-les-territoires-en-ppa-ou-dans-ceux-concernes-par-des-depassements-actuels-ou-previsionnels-2030",
-          "label": "Amélioration de la qualité de l’air dans les territoires en PPA ou dans ceux concernés par des dépassements actuels ou prévisionnels 2030",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
-          "label": "Émergence et consolidation d'une économie circulaire en Outre-mer et Corse",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-pour-la-creation-lextension-ou-la-modernisation-de-centres-de-tri-des-dechets-dactivites-economiques-et-de-decheteries-pour-professionnels",
-          "label": "Études pour la création, l'extension ou la modernisation de centres de tri des déchets d’activités économiques et de déchèteries pour professionnels",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse",
-          "label": "Études et investissements structurants pour la gestion des déchets en Outre-mer et Corse",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-des-projets-de-chaufferie-biomasse",
-          "label": "Études des projets de chaufferie biomasse",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/soutien-leconomie-de-la-fonctionnalite-et-de-la-cooperation",
-          "label": "Soutien à l’économie de la fonctionnalité et de la coopération",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/realisation-dinstallations-de-methanisation",
-          "label": "Réalisation d’installations de méthanisation",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-pour-une-installation-hydroelectrique",
-          "label": "Études pour une installation hydroélectrique",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/installations-de-production-de-chaleur-et-de-froid-renouvelable-partir-de-geothermie-de-surface-daerothermie-ou-de-thalassothermie",
-          "label": "Installations de production de chaleur et de froid renouvelable à partir de géothermie de surface, d’aérothermie ou de thalassothermie",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/creation-extension-ou-modernisation-dun-centre-de-tri-de-dechets-dactivite-economique-et-decheteries-pour-professionnels",
-          "label": "Création, extension ou modernisation d’un centre de tri de déchets d’activité économique et déchèteries pour professionnels",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/installations-de-systemes-solaires-combines",
-          "label": "Installations de systèmes solaires combinés",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/mon-parcours-economies-denergie-audit-energetique-volontaire-en-industrie",
-          "label": "Mon parcours économies d'énergie - Audit énergétique volontaire en industrie",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/installation-de-production-deau-chaude-solaire-thermique",
-          "label": "Installation de production d'eau chaude solaire thermique",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/diagnostic-energetique-et-etude-dopportunite-multi-enr-pour-les-serres",
-          "label": "Diagnostic énergétique et étude d'opportunité multi-EnR pour les serres",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/installation-de-pompes-chaleur-solaire-pour-la-production-deau-chaude",
-          "label": "Installation de pompes à chaleur solaire pour la production d’eau chaude",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-et-travaux-de-depollution-dune-friche-fonds-vert",
-          "label": "Études et travaux de dépollution d’une friche – Fonds vert",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/installations-de-production-de-chaleur-partir-de-geothermie-profonde",
-          "label": "Installations de production de chaleur à partir de géothermie profonde",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etude-de-faisabilite-dinstallation-solaire-thermique",
-          "label": "Étude de faisabilité d'installation solaire thermique",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/aides-au-reemploi-des-emballages",
-          "label": "Aides au réemploi des emballages",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/pacte-industrie-parcours-accompagnement-et-competences-pour-la-transition-energetique-de-lindustrie",
-          "label": "PACTE Industrie - Parcours Accompagnement et Compétences pour la Transition Énergétique de l’Industrie",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-de-diagnostic-et-daccompagnement-de-projet-dune-installation-de-methanisation",
-          "label": "Études de diagnostic et d'accompagnement de projet d’une installation de méthanisation",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/installations-de-production-de-chaleur-et-de-froid-partir-de-boucle-deau-temperee-geothermique",
-          "label": "Installations de production de chaleur et de froid à partir de boucle d’eau tempérée géothermique",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-decoconception-des-produits-et-des-services",
-          "label": "Études d’écoconception des produits et des services",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/aides-au-changement-de-comportement",
-          "label": "Aides au changement de comportement",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-de-faisabilite-de-projet-de-production-delectricite-renouvelable-en-outre-mer-et-corse",
-          "label": "Études de faisabilité de projet de production d'électricité renouvelable en outre-mer et Corse",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/mon-parcours-economies-denergie-accompagnements-actr-pas-pas-et-actr-evaluation-des-structures-non-industrielles",
-          "label": "Mon parcours économies d'énergie - Accompagnements ACT® Pas-à-Pas et ACT® Évaluation des structures non industrielles",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/mon-parcours-economies-denergie-booster-reduire-votre-facture-energetique-et-gagner-en-valeur-verte",
-          "label": "Mon parcours économies d'énergie - Booster : réduire votre facture énergétique et gagner en valeur verte",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etude-daide-la-decision-pour-les-projets-de-geothermie-de-surface-daerothermie-ou-de-thalassothermie",
-          "label": "Étude d'aide à la décision pour les projets de géothermie de surface, d'aérothermie ou de thalassothermie",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/gestion-des-biodechets-des-acteurs-economiques",
-          "label": "Gestion des biodéchets des acteurs économiques",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/realisation-dinstallations-de-production-de-chaleur-biomassebois",
-          "label": "Réalisation d'installations de production de chaleur biomasse/bois",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etude-dopportunite-multi-enrr",
-          "label": "Étude d'opportunité multi-EnR&R",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-sur-les-reseaux-de-chaleur-ou-de-froid-alimentes-par-des-enr-etou-enrr",
-          "label": "Études sur les réseaux de chaleur ou de froid alimentés par des EnR et/ou EnR&R",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/investissements-decoconception-pour-ameliorer-la-performance-environnementale",
-          "label": "Investissements d’écoconception pour améliorer la performance environnementale",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/aide-la-creation-et-au-fonctionnement-des-observatoires-territoriaux",
-          "label": "Aide à la création et au fonctionnement des observatoires territoriaux",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/soutien-aux-investissements-pour-le-reemploi-reutilisation-et-la-reparation-hors-emballages",
-          "label": "Soutien aux investissements pour le réemploi-réutilisation et la réparation (hors emballages)",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/soutien-aux-etudes-et-diagnostics-pour-le-reemploi-reutilisation-et-la-reparation-hors-emballages",
-          "label": "Soutien aux études et diagnostics pour le réemploi-réutilisation et la réparation (hors emballages)",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-de-faisabilite-pour-linstallation-de-recuperation-de-chaleur-fatale",
-          "label": "Études de faisabilité pour l'installation de récupération de chaleur fatale",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etude-daide-la-decision-pour-les-projets-de-geothermie-profonde",
-          "label": "Étude d'aide à la décision pour les projets de géothermie profonde",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-de-faisabilite-de-performance-energetique-ou-de-decarbonation-dentreprises-industrielles",
-          "label": "Études de faisabilité de performance énergétique ou de décarbonation d'entreprises industrielles",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-pour-la-gestion-des-biodechets-par-des-acteurs-economiques",
-          "label": "Études pour la gestion des biodéchets par des acteurs économiques",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/aact-air-aide-laction-des-collectivites-territoriales-en-faveur-de-la-qualite-de-lair",
-          "label": "AACT-AIR – Aide à l’action des collectivités territoriales en faveur de la qualité de l’air",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/contrat-chaleur-renouvelable",
-          "label": "Contrat Chaleur Renouvelable",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/extension-et-creation-de-reseaux-de-chaleur-ou-de-froid",
-          "label": "Extension et création de réseaux de chaleur ou de froid",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/realisation-dinstallations-de-recuperation-de-chaleur-fatale",
-          "label": "Réalisation d'installations de récupération de chaleur fatale",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/audit-et-rehabilitation-dinstallations-solaires-thermiques-collectives",
-          "label": "Audit et réhabilitation d'installations solaires thermiques collectives",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/equipements-pour-lapprovisionnement-de-chaufferies-bois-du-fonds-chaleur-etou-plan-de-relance-etou-france-2030",
-          "label": "Équipements pour l’approvisionnement de chaufferies bois du Fonds chaleur et/ou Plan de relance et/ou France 2030",
-          "reason": "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE"
-        }
-      ],
+      "imported": 68,
+      "excluded": [],
       "errors": [],
       "detailWarnings": [
         {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/fonds-local-pour-ladaptation-en-guadeloupe-flag-20",
-          "label": "Fonds local pour l’adaptation en Guadeloupe (FLAG) 2.0",
+          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/fonds-vert-territoires-dindustrie-en-transition-ecologique-0",
+          "label": "Fonds vert – Territoires d’industrie en transition écologique",
           "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
@@ -496,26 +235,14 @@
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
         {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/fonds-vert-territoires-dindustrie-en-transition-ecologique-0",
-          "label": "Fonds vert – Territoires d’industrie en transition écologique",
-          "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
-          "accessReason": "CLOUDFLARE_CHALLENGE"
-        },
-        {
           "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/operations-collectives-pour-la-decarbonation-des-entreprises-0",
           "label": "Opérations collectives pour la décarbonation des entreprises",
           "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
         {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/infrastructures-de-donnees-et-equipements-numeriques-resilients-et-durables",
-          "label": "Infrastructures de données et équipements numériques résilients et durables",
-          "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
-          "accessReason": "CLOUDFLARE_CHALLENGE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/ami-low-tech-2026",
-          "label": "AMI Low-tech 2026",
+          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/fonds-local-pour-ladaptation-en-guadeloupe-flag-20",
+          "label": "Fonds local pour l’adaptation en Guadeloupe (FLAG) 2.0",
           "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
@@ -526,8 +253,8 @@
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
         {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/aqacia-2026-particules-ozone-produits-phytopharmaceutiques-et-pollutions-sectorielles",
-          "label": "AQACIA 2026 – Particules, ozone, produits phytopharmaceutiques et pollutions sectorielles",
+          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/ami-low-tech-2026",
+          "label": "AMI Low-tech 2026",
           "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
@@ -544,14 +271,26 @@
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
         {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/mobilipro-optimisation-des-deplacements-professionnels",
-          "label": "Mobili'Pro : optimisation des déplacements professionnels",
+          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/engins-de-chantier-electriques-2026-programme-cee-e-trans",
+          "label": "Engins de chantier électriques 2026 – Programme CEE E-Trans",
           "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
         {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/engins-de-chantier-electriques-2026-programme-cee-e-trans",
-          "label": "Engins de chantier électriques 2026 – Programme CEE E-Trans",
+          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/infrastructures-de-donnees-et-equipements-numeriques-resilients-et-durables",
+          "label": "Infrastructures de données et équipements numériques résilients et durables",
+          "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
+          "accessReason": "CLOUDFLARE_CHALLENGE"
+        },
+        {
+          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/aqacia-2026-particules-ozone-produits-phytopharmaceutiques-et-pollutions-sectorielles",
+          "label": "AQACIA 2026 – Particules, ozone, produits phytopharmaceutiques et pollutions sectorielles",
+          "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
+          "accessReason": "CLOUDFLARE_CHALLENGE"
+        },
+        {
+          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/mobilipro-optimisation-des-deplacements-professionnels",
+          "label": "Mobili'Pro : optimisation des déplacements professionnels",
           "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
@@ -574,14 +313,14 @@
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
         {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/systemes-performants-de-production-de-froid-en-outre-mer-et-corse",
-          "label": "Systèmes performants de production de froid en Outre-mer et Corse",
+          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/amelioration-de-la-qualite-de-lair-dans-les-territoires-en-ppa-ou-dans-ceux-concernes-par-des-depassements-actuels-ou-previsionnels-2030",
+          "label": "Amélioration de la qualité de l’air dans les territoires en PPA ou dans ceux concernés par des dépassements actuels ou prévisionnels 2030",
           "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
         {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/amelioration-de-la-qualite-de-lair-dans-les-territoires-en-ppa-ou-dans-ceux-concernes-par-des-depassements-actuels-ou-previsionnels-2030",
-          "label": "Amélioration de la qualité de l’air dans les territoires en PPA ou dans ceux concernés par des dépassements actuels ou prévisionnels 2030",
+          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/systemes-performants-de-production-de-froid-en-outre-mer-et-corse",
+          "label": "Systèmes performants de production de froid en Outre-mer et Corse",
           "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
@@ -592,26 +331,8 @@
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
         {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-pour-la-creation-lextension-ou-la-modernisation-de-centres-de-tri-des-dechets-dactivites-economiques-et-de-decheteries-pour-professionnels",
-          "label": "Études pour la création, l'extension ou la modernisation de centres de tri des déchets d’activités économiques et de déchèteries pour professionnels",
-          "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
-          "accessReason": "CLOUDFLARE_CHALLENGE"
-        },
-        {
           "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse",
           "label": "Études et investissements structurants pour la gestion des déchets en Outre-mer et Corse",
-          "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
-          "accessReason": "CLOUDFLARE_CHALLENGE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-des-projets-de-chaufferie-biomasse",
-          "label": "Études des projets de chaufferie biomasse",
-          "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
-          "accessReason": "CLOUDFLARE_CHALLENGE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/soutien-leconomie-de-la-fonctionnalite-et-de-la-cooperation",
-          "label": "Soutien à l’économie de la fonctionnalité et de la coopération",
           "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
@@ -622,14 +343,32 @@
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
         {
+          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-des-projets-de-chaufferie-biomasse",
+          "label": "Études des projets de chaufferie biomasse",
+          "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
+          "accessReason": "CLOUDFLARE_CHALLENGE"
+        },
+        {
+          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-pour-la-creation-lextension-ou-la-modernisation-de-centres-de-tri-des-dechets-dactivites-economiques-et-de-decheteries-pour-professionnels",
+          "label": "Études pour la création, l'extension ou la modernisation de centres de tri des déchets d’activités économiques et de déchèteries pour professionnels",
+          "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
+          "accessReason": "CLOUDFLARE_CHALLENGE"
+        },
+        {
           "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-pour-une-installation-hydroelectrique",
           "label": "Études pour une installation hydroélectrique",
           "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
         {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/installations-de-production-de-chaleur-et-de-froid-renouvelable-partir-de-geothermie-de-surface-daerothermie-ou-de-thalassothermie",
-          "label": "Installations de production de chaleur et de froid renouvelable à partir de géothermie de surface, d’aérothermie ou de thalassothermie",
+          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/soutien-leconomie-de-la-fonctionnalite-et-de-la-cooperation",
+          "label": "Soutien à l’économie de la fonctionnalité et de la coopération",
+          "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
+          "accessReason": "CLOUDFLARE_CHALLENGE"
+        },
+        {
+          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/installations-de-systemes-solaires-combines",
+          "label": "Installations de systèmes solaires combinés",
           "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
@@ -640,8 +379,8 @@
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
         {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/installations-de-systemes-solaires-combines",
-          "label": "Installations de systèmes solaires combinés",
+          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/installations-de-production-de-chaleur-et-de-froid-renouvelable-partir-de-geothermie-de-surface-daerothermie-ou-de-thalassothermie",
+          "label": "Installations de production de chaleur et de froid renouvelable à partir de géothermie de surface, d’aérothermie ou de thalassothermie",
           "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
@@ -664,8 +403,8 @@
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
         {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/installation-de-pompes-chaleur-solaire-pour-la-production-deau-chaude",
-          "label": "Installation de pompes à chaleur solaire pour la production d’eau chaude",
+          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/installations-de-production-de-chaleur-partir-de-geothermie-profonde",
+          "label": "Installations de production de chaleur à partir de géothermie profonde",
           "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
@@ -676,8 +415,14 @@
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
         {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/installations-de-production-de-chaleur-partir-de-geothermie-profonde",
-          "label": "Installations de production de chaleur à partir de géothermie profonde",
+          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/pacte-industrie-parcours-accompagnement-et-competences-pour-la-transition-energetique-de-lindustrie",
+          "label": "PACTE Industrie - Parcours Accompagnement et Compétences pour la Transition Énergétique de l’Industrie",
+          "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
+          "accessReason": "CLOUDFLARE_CHALLENGE"
+        },
+        {
+          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/installation-de-pompes-chaleur-solaire-pour-la-production-deau-chaude",
+          "label": "Installation de pompes à chaleur solaire pour la production d’eau chaude",
           "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
@@ -694,20 +439,8 @@
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
         {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/pacte-industrie-parcours-accompagnement-et-competences-pour-la-transition-energetique-de-lindustrie",
-          "label": "PACTE Industrie - Parcours Accompagnement et Compétences pour la Transition Énergétique de l’Industrie",
-          "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
-          "accessReason": "CLOUDFLARE_CHALLENGE"
-        },
-        {
           "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-de-diagnostic-et-daccompagnement-de-projet-dune-installation-de-methanisation",
           "label": "Études de diagnostic et d'accompagnement de projet d’une installation de méthanisation",
-          "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
-          "accessReason": "CLOUDFLARE_CHALLENGE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/installations-de-production-de-chaleur-et-de-froid-partir-de-boucle-deau-temperee-geothermique",
-          "label": "Installations de production de chaleur et de froid à partir de boucle d’eau tempérée géothermique",
           "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
@@ -718,14 +451,20 @@
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
         {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/aides-au-changement-de-comportement",
-          "label": "Aides au changement de comportement",
+          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/installations-de-production-de-chaleur-et-de-froid-partir-de-boucle-deau-temperee-geothermique",
+          "label": "Installations de production de chaleur et de froid à partir de boucle d’eau tempérée géothermique",
           "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
         {
           "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-de-faisabilite-de-projet-de-production-delectricite-renouvelable-en-outre-mer-et-corse",
           "label": "Études de faisabilité de projet de production d'électricité renouvelable en outre-mer et Corse",
+          "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
+          "accessReason": "CLOUDFLARE_CHALLENGE"
+        },
+        {
+          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/aides-au-changement-de-comportement",
+          "label": "Aides au changement de comportement",
           "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
@@ -742,20 +481,8 @@
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
         {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etude-daide-la-decision-pour-les-projets-de-geothermie-de-surface-daerothermie-ou-de-thalassothermie",
-          "label": "Étude d'aide à la décision pour les projets de géothermie de surface, d'aérothermie ou de thalassothermie",
-          "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
-          "accessReason": "CLOUDFLARE_CHALLENGE"
-        },
-        {
           "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/gestion-des-biodechets-des-acteurs-economiques",
           "label": "Gestion des biodéchets des acteurs économiques",
-          "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
-          "accessReason": "CLOUDFLARE_CHALLENGE"
-        },
-        {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/realisation-dinstallations-de-production-de-chaleur-biomassebois",
-          "label": "Réalisation d'installations de production de chaleur biomasse/bois",
           "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
@@ -772,6 +499,18 @@
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
         {
+          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/realisation-dinstallations-de-production-de-chaleur-biomassebois",
+          "label": "Réalisation d'installations de production de chaleur biomasse/bois",
+          "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
+          "accessReason": "CLOUDFLARE_CHALLENGE"
+        },
+        {
+          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etude-daide-la-decision-pour-les-projets-de-geothermie-de-surface-daerothermie-ou-de-thalassothermie",
+          "label": "Étude d'aide à la décision pour les projets de géothermie de surface, d'aérothermie ou de thalassothermie",
+          "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
+          "accessReason": "CLOUDFLARE_CHALLENGE"
+        },
+        {
           "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/investissements-decoconception-pour-ameliorer-la-performance-environnementale",
           "label": "Investissements d’écoconception pour améliorer la performance environnementale",
           "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
@@ -780,6 +519,12 @@
         {
           "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/aide-la-creation-et-au-fonctionnement-des-observatoires-territoriaux",
           "label": "Aide à la création et au fonctionnement des observatoires territoriaux",
+          "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
+          "accessReason": "CLOUDFLARE_CHALLENGE"
+        },
+        {
+          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-de-faisabilite-pour-linstallation-de-recuperation-de-chaleur-fatale",
+          "label": "Études de faisabilité pour l'installation de récupération de chaleur fatale",
           "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
@@ -796,12 +541,6 @@
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
         {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-de-faisabilite-pour-linstallation-de-recuperation-de-chaleur-fatale",
-          "label": "Études de faisabilité pour l'installation de récupération de chaleur fatale",
-          "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
-          "accessReason": "CLOUDFLARE_CHALLENGE"
-        },
-        {
           "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etude-daide-la-decision-pour-les-projets-de-geothermie-profonde",
           "label": "Étude d'aide à la décision pour les projets de géothermie profonde",
           "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
@@ -814,20 +553,20 @@
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
         {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-pour-la-gestion-des-biodechets-par-des-acteurs-economiques",
-          "label": "Études pour la gestion des biodéchets par des acteurs économiques",
-          "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
-          "accessReason": "CLOUDFLARE_CHALLENGE"
-        },
-        {
           "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/aact-air-aide-laction-des-collectivites-territoriales-en-faveur-de-la-qualite-de-lair",
           "label": "AACT-AIR – Aide à l’action des collectivités territoriales en faveur de la qualité de l’air",
           "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
         {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/contrat-chaleur-renouvelable",
-          "label": "Contrat Chaleur Renouvelable",
+          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-pour-la-gestion-des-biodechets-par-des-acteurs-economiques",
+          "label": "Études pour la gestion des biodéchets par des acteurs économiques",
+          "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
+          "accessReason": "CLOUDFLARE_CHALLENGE"
+        },
+        {
+          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/realisation-dinstallations-de-recuperation-de-chaleur-fatale",
+          "label": "Réalisation d'installations de récupération de chaleur fatale",
           "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
@@ -838,8 +577,8 @@
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
         {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/realisation-dinstallations-de-recuperation-de-chaleur-fatale",
-          "label": "Réalisation d'installations de récupération de chaleur fatale",
+          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/contrat-chaleur-renouvelable",
+          "label": "Contrat Chaleur Renouvelable",
           "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
@@ -868,14 +607,14 @@
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
         {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/decarb-flash-2025-2027",
-          "label": "DECARB FLASH 2025-2027",
+          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/developpement-de-briques-technologiques-et-services-par-des-pme-pour-la-decarbonation-de-lindustrie-ibac-pme",
+          "label": "Développement de briques technologiques et services par des PME pour la décarbonation de l’industrie (IBaC PME)",
           "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
         {
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/developpement-de-briques-technologiques-et-services-par-des-pme-pour-la-decarbonation-de-lindustrie-ibac-pme",
-          "label": "Développement de briques technologiques et services par des PME pour la décarbonation de l’industrie (IBaC PME)",
+          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/decarb-flash-2025-2027",
+          "label": "DECARB FLASH 2025-2027",
           "reason": "FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE",
           "accessReason": "CLOUDFLARE_CHALLENGE"
         },
@@ -916,16 +655,14 @@
       "controlGaps": {
         "rssOutsideCatalogue": []
       },
-      "publicationRetained": 16,
+      "publicationRetained": 68,
       "publicationDiscovered": 68,
-      "publicationExclusionCounts": {
-        "PUBLICATION_GATE_MISSING_INSTRUMENT_EVIDENCE": 52
-      }
+      "publicationExclusionCounts": {}
     },
-    "message": "volume importé suspect (16 < 50) ; rendement d'extraction suspect (16/68 = 23.5 % < 80.0 %) — snapshot précédent restauré après gate publication-ready.",
-    "durationMs": 55658,
-    "checkedAt": "2026-10-03T14:11:53.155Z",
-    "lastSuccessfulAt": "2026-09-30T18:56:37.298Z",
-    "consecutiveFailures": 1
+    "message": "ADEME RSS_ACTIVE_MIRROR: 68 dispositif(s) actifs, 16 AAP, 52 aides, 68 fiche(s) importée(s), 0 exclusion(s), 0 erreur(s), 68 fiche(s) non enrichie(s)",
+    "durationMs": 55278,
+    "checkedAt": "2026-10-03T14:57:38.414Z",
+    "lastSuccessfulAt": "2026-10-03T14:57:38.414Z",
+    "consecutiveFailures": 0
   }
 ]

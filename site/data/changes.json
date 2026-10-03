@@ -190,20 +190,8 @@
   },
   {
     "type": "CREATION",
-    "id": "ademe_1c32b0a2a3e5838fafe6c36ee7fcbea625a1f7781d35274b54ec314784aeee5d",
-    "title": "Planisols : aides en faveur de la sobriété foncière et de la limitation de l’artificialisation des sols dans les stratégies territoriales",
-    "at": "2026-09-30T18:57:23.533Z"
-  },
-  {
-    "type": "CREATION",
     "id": "ademe_d9427ca755dd4d5c2dc1a522fb8fb0961e3c064d50314c3fcd4631a91078b7d0",
     "title": "Promouvoir des solutions de mobilité à forts co-bénéfices qualité de l’air et santé en Occitanie - Dépôt",
-    "at": "2026-09-30T18:57:23.533Z"
-  },
-  {
-    "type": "CREATION",
-    "id": "ademe_952c7c158c36e7bc308b6121868b06991120f9c2bde212aba43fa5e6a290d310",
-    "title": "Soutien à la production d'hydrogène électrolytique renouvelable ou bas-carbone 2026 - Phase de sélection des candidatures",
     "at": "2026-09-30T18:57:23.533Z"
   },
   {
@@ -1418,5 +1406,429 @@
     "title": "Vous développez des solutions de biocontrôle ou de biostimulation pour l’agriculture ? Déposez votre candidature avant le 9 septembre 2027 à 12h. Cet ...",
     "fields": [],
     "at": "2026-10-03T12:31:55.996Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_8c8a291c0a1e03c28352de9331a8e469db6bf5220a547f249de9d1e414a69c66",
+    "title": "AACT-AIR – Aide à l’action des collectivités territoriales en faveur de la qualité de l’air",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "MODIFICATION",
+    "id": "ademe_70dbf42c2ff2a29e70e2b6cd80dd3862ba164201902ed994e0526e8cfaab86e9",
+    "title": "Acquisition de données Géologiques vers des Industries Bas Carbone (AGIBaC)",
+    "fields": [],
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_6b8156486b6e56c87e22d55a7b085d10bc833a9a982b4f4d1e4535c7377923bd",
+    "title": "Aide à la création et au fonctionnement des observatoires territoriaux",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_1f91ec87aa5c7152836f30820397b2def1a2476ceb3473a3c27579d7cf46f784",
+    "title": "Aides au changement de comportement",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_13ebd98f6d4417a273a2e6cef41c7b7c850182abc37b90770e951127f423d9f9",
+    "title": "Aides au réemploi des emballages",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_680e808fe8a95e6ed29b31f7974bcc5c40fdb528c41cecca4f1553d43f09e457",
+    "title": "Amélioration de la qualité de l’air dans les territoires en PPA ou dans ceux concernés par des dépassements actuels ou prévisionnels 2030",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "MODIFICATION",
+    "id": "ademe_1dc26899bf6a8255c6c378eb9b177a03a060d8cfd37eaad7648ee68d0f72cb3b",
+    "title": "AMI Low-tech 2026",
+    "fields": [],
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "MODIFICATION",
+    "id": "ademe_c48cc10ec1a72e5e359f8db8c1a07464e1eeb40a7bf61095bb9eb7f034c219f7",
+    "title": "AQACIA 2026 – Particules, ozone, produits phytopharmaceutiques et pollutions sectorielles",
+    "fields": [],
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_494b9f9bd2703c0139a63aa120cb33c3b55c4628450a2a744894d6053d984c97",
+    "title": "Audit et réhabilitation d'installations solaires thermiques collectives",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_43c25362e43ca0a32ee7512e342761d39a97f2851c558148d6de4a26d382d7bb",
+    "title": "Contrat Chaleur Renouvelable",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_65482feb3c9bf96e0c1ac787d10be3c87898bb5bbf7f842d6cdaf2115b4f083a",
+    "title": "Création, extension ou modernisation d’un centre de tri de déchets d’activité économique et déchèteries pour professionnels",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "MODIFICATION",
+    "id": "ademe_4bcc8e980a10675fc0b69624bf6d551654c130b782a868a611081bd5bc103905",
+    "title": "DECARB FLASH 2025-2027",
+    "fields": [],
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "MODIFICATION",
+    "id": "ademe_d1a653cad878dafd0cde571ad3a6b445a60f73ed34d6920ab733493ced00fcce",
+    "title": "Decarb Flash Artisan",
+    "fields": [],
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "MODIFICATION",
+    "id": "ademe_6613b3fc9af3350d119843ff57c6e06ce62a7356559e9faa7cc7a7198b092826",
+    "title": "DÉTER - DÉcarboner le TERtiaire",
+    "fields": [],
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "MODIFICATION",
+    "id": "ademe_b560455b7e6f876f5dccdd74f3ec69d2945ce4bcc163f1f9ecc54556bb5ccdf6",
+    "title": "Développement de briques technologiques et démonstrateurs - Réalisations de premières industrielles associant l'offre et la demande (DEMIBaC)",
+    "fields": [],
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "MODIFICATION",
+    "id": "ademe_91d48a13944f2049d277528f42910ad0af150b70ba80e80499d3427c49f96eab",
+    "title": "Développement de briques technologiques et services par des PME pour la décarbonation de l’industrie (IBaC PME)",
+    "fields": [],
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_2ad5c5e68cdd9a5128f64be826a01b2f3b3c18bb989bdd4fd2a6f71b3973bb09",
+    "title": "Diagnostic énergétique et étude d'opportunité multi-EnR pour les serres",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_c25746780d4fc5d08263cf71eeac960cfd169ea1b9508f5bd0756823c10ef0b8",
+    "title": "Émergence et consolidation d'une économie circulaire en Outre-mer et Corse",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_b0326313e4f848ff92b99e97abca534127525bf83234aaf05dcc6d9ad46877b2",
+    "title": "Engins de chantier électriques 2026 – Programme CEE E-Trans",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_6c7e408db130206201b445d6aac17bbfe249ea1b397c6e8878b6991557c34ecd",
+    "title": "Équipements pour l’approvisionnement de chaufferies bois du Fonds chaleur et/ou Plan de relance et/ou France 2030",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_80e598917a965f4fcb3a91b94b2325f5f4400029866c12aca95cf722391d268a",
+    "title": "Étude d'aide à la décision pour les projets de géothermie de surface, d'aérothermie ou de thalassothermie",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_269efaed6ae386522217398a1f8be92659287d1941f1395d210ecab83e4457f1",
+    "title": "Étude d'aide à la décision pour les projets de géothermie profonde",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_9b5dc219b7ccedd3c08d2e5e7fec152ac314399ee1b71bb656e366ce5ff773dd",
+    "title": "Étude d'opportunité multi-EnR&R",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_33a2601c831fc79c036c0b800cff2c2ace8b814496e30e05f8deaa842b3df740",
+    "title": "Étude de faisabilité d'installation solaire thermique",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_e8fc5039dc6ec54192adbf616948575d8866c16968a0b91459f761adec9fa96a",
+    "title": "Études d’écoconception des produits et des services",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_13f26679edcc74e5c08ebb3f53cb549184ef268ab49212f7b09aa9723ba8528f",
+    "title": "Études de diagnostic et d'accompagnement de projet d’une installation de méthanisation",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_f5d2203f453dd823f9c6577853951a9807602ee348e8c479d34db9ffa4c4ae29",
+    "title": "Études de faisabilité de performance énergétique ou de décarbonation d'entreprises industrielles",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_b971cca8c4cc0e459f9e72cdc54aa79724a28470df23a62beb77e7880f50a245",
+    "title": "Études de faisabilité de projet de production d'électricité renouvelable en outre-mer et Corse",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_5bd5763b7bda7442b3e83e3dde610dec3269dcfc1a43a2ed1a3b7df4fed0c95d",
+    "title": "Études de faisabilité pour l'installation de récupération de chaleur fatale",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_3b7a04bc2b910b2b041fc3e68e30c35b0a287a25bfe7ca2eae5cc873ad4b8885",
+    "title": "Études des projets de chaufferie biomasse",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_c253a846fdb7bddb063d9e4cd76a175bb8a856656bc272f651cabbb12990e14a",
+    "title": "Études et investissements structurants pour la gestion des déchets en Outre-mer et Corse",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_1cff0564d4098ca82d9267c20df145ed0d235abb34b07fa79445f053f8049f3b",
+    "title": "Études et travaux de dépollution d’une friche – Fonds vert",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_48b68be4a7633f6136792eb0967d360f59f8d33b20482aa1d4263051dd31121d",
+    "title": "Études pour la création, l'extension ou la modernisation de centres de tri des déchets d’activités économiques et de déchèteries pour professionnels",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_befb384ca7e842b239252f98fbbe2d4187d11da79fde5af5b69c539468581ce4",
+    "title": "Études pour la gestion des biodéchets par des acteurs économiques",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_4a52b2ea23c3612fd658a611b6beabe63c76ddbadbd1e349a66207bb6a8c831e",
+    "title": "Études pour une installation hydroélectrique",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_552b8782c4b803189fff4fceb0e3c57431c0c79dd344f0f3cfdf9eb548e6592f",
+    "title": "Études sur les réseaux de chaleur ou de froid alimentés par des EnR et/ou EnR&R",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_6f1832d42d2c0d9a68737f84150bc7f2d233659f1f1d632da39cb64f8ead1f3b",
+    "title": "Extension et création de réseaux de chaleur ou de froid",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_6c3442eaf96661198e2924237d8f1369e8a188fa171396f82c70c78878b42555",
+    "title": "Extrême défi - Textile responsable",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "MODIFICATION",
+    "id": "ademe_8cfcb67831f4037a0cb4ac8b57e9178dd04fda455959ef46607396cab94c1d94",
+    "title": "Favoriser le développement de Zones Industrielles Bas Carbone (ZIBaC) Phase 2 : accompagnement",
+    "fields": [],
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_994f1fbdc924f032c21d4d14de54a9406f60a333b2712467b2215c6a70822d75",
+    "title": "Fonds Économie Circulaire - ORMAT 2026 (Objectif Recyclage MATières)",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "MODIFICATION",
+    "id": "ademe_58970fd417057887da031dfff747cee0d8779d6a6c12fbd8fad9efceec0184d1",
+    "title": "Fonds local pour l’adaptation en Guadeloupe (FLAG) 2.0",
+    "fields": [],
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "MODIFICATION",
+    "id": "ademe_c82221811ed8498d794b347968a609629dab9d9aac13030b01f1f0cfd7ec9671",
+    "title": "Fonds vert – Territoires d’industrie en transition écologique",
+    "fields": [],
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_87bc09dbff8fae82e1443f3a80bc698352b526b1a0027334fec4d2aa85b98a6b",
+    "title": "Gestion des biodéchets des acteurs économiques",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "MODIFICATION",
+    "id": "ademe_86bc49446d91a9b5275ad03235f4e8a9b5ea79c120478220fdacca947bf08b59",
+    "title": "Infrastructures de données et équipements numériques résilients et durables",
+    "fields": [],
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_e0b30d98c8aec43b5f2a3a910d9bf5944ff9fd6c244d2d7c394c3b590db54c48",
+    "title": "Installation de pompes à chaleur solaire pour la production d’eau chaude",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_8def0ece9f00877c3fbc13d11491ff5c4b4a1087c02b33977bd43f2d0be1be22",
+    "title": "Installation de production d'eau chaude solaire thermique",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_be961f9cb993b619d60b230d978738a95e104c81c24a40df6d090d4c8a43cdde",
+    "title": "Installations de production de chaleur à partir de géothermie profonde",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_ccf3796fcf03111b7000bbcd2d1e53fcc69f0bc69e7562486889a250877c841b",
+    "title": "Installations de production de chaleur et de froid à partir de boucle d’eau tempérée géothermique",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_0d9161468d563d803e7e104202d2efff874656f9315c1b3a04ec8a62a2c25599",
+    "title": "Installations de production de chaleur et de froid renouvelable à partir de géothermie de surface, d’aérothermie ou de thalassothermie",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_85ff98f7c78f66be7882b9dd0a3a638f5145c070fbfd3efbc280ea43106e6107",
+    "title": "Installations de systèmes solaires combinés",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_00210b719cef353044352858b9daf3796174ea3cebd96280cfe09ef28ef8e031",
+    "title": "Investissements d’écoconception pour améliorer la performance environnementale",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "MODIFICATION",
+    "id": "ademe_947a613dda9eabaf876a70de7b269d69ba65ddc0ce5404ddef39512b0a19a3f4",
+    "title": "Mobili'Pro : optimisation des déplacements professionnels",
+    "fields": [],
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_262799eb2237ae09ec800afe442e7d0b5b4053be5aeafbd10778468f0a98c4a7",
+    "title": "Mon parcours économies d'énergie - Accompagnements ACT® Pas-à-Pas et ACT® Évaluation des structures non industrielles",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_694ebeb85447fed36426a72457e526d26a8ed20a6f05f7d04c67f8269f52817d",
+    "title": "Mon parcours économies d'énergie - Audit énergétique volontaire en industrie",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_369ec702fe28a573814fed5ed80b9e2b834fd2de558635e68541067f4b121a85",
+    "title": "Mon parcours économies d'énergie - Booster : réduire votre facture énergétique et gagner en valeur verte",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_ba9aa5a70f7918056cb5d841b6a6e5ef3f13352ccf0fe3a1ac24f0e6993dd7a0",
+    "title": "Offres intégrées pompes à chaleur",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_373578231f33e11b81818471bb4a705d1fdfa665f1f8b36953a3ff442e683ecb",
+    "title": "Opérations collectives pour la décarbonation des entreprises",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_31d5ce31d775ceb03e6ed55f375796d5f001fefc5a3a363eba415dd7a8f63fa5",
+    "title": "ORENO - Hébergement social et médico-social",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_f70d3fd04156203ebec027d3bef8cf1c36284bd14df5defe734ecb3d2fa5839e",
+    "title": "PACTE Industrie - Parcours Accompagnement et Compétences pour la Transition Énergétique de l’Industrie",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "MODIFICATION",
+    "id": "ademe_e2a707273a0b537ce7158c746a91357ee0d322f5c10cec005eb1bc2054eac45e",
+    "title": "Plan d’aides à la modernisation et à l’innovation de la flotte (PAMI)",
+    "fields": [],
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "MODIFICATION",
+    "id": "ademe_d9427ca755dd4d5c2dc1a522fb8fb0961e3c064d50314c3fcd4631a91078b7d0",
+    "title": "Promouvoir des solutions de mobilité à forts co-bénéfices qualité de l’air et santé en Occitanie - Dépôt",
+    "fields": [],
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_eee8df8afea672e03cd5814b349377f077c0b066c56c9e1f65b34228e5cbf814",
+    "title": "Réalisation d’installations de méthanisation",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_d2ffdb68ae6505874538bff60655a759310da69ce7b0ab88c2d135153c94124c",
+    "title": "Réalisation d'installations de production de chaleur biomasse/bois",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_746c12a2c9e834e23dc84510c2eb0dbd0adc717b1a01fd488833e8ba2aebb67f",
+    "title": "Réalisation d'installations de récupération de chaleur fatale",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_12411678538d1fa7cbc26cd8e6c8e6fc08cbe166b91d4a6d756f8cf050b6ad75",
+    "title": "Soutien à l’économie de la fonctionnalité et de la coopération",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_320bdd4cb02feb9c30e5a423adbfb5373dfaf38732225c663215115a84ca665c",
+    "title": "Soutien aux études et diagnostics pour le réemploi-réutilisation et la réparation (hors emballages)",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "CREATION",
+    "id": "ademe_5d14eddc86f2e1efd4f9dde0c186df3a3a8e0ad9f99f53a55a0fab3561a0842b",
+    "title": "Soutien aux investissements pour le réemploi-réutilisation et la réparation (hors emballages)",
+    "at": "2026-10-03T14:58:21.693Z"
+  },
+  {
+    "type": "MODIFICATION",
+    "id": "ademe_f718d9114d92a75d69528b8ad5c50ab619be41e46b7105afa719b3d6639b8b09",
+    "title": "Systèmes performants de production de froid en Outre-mer et Corse",
+    "fields": [],
+    "at": "2026-10-03T14:58:21.693Z"
   }
 ]

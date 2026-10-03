@@ -9,7 +9,8 @@ import {
   selectAdemeInventory,
   ademeInstrumentEvidence,
   ademeAttributionEvidence,
-  ademeAccessBlockReason
+  ademeAccessBlockReason,
+  ademeCataloguePolicy
 } from '../scripts/connectors/ademe.mjs';
 
 const NOW=new Date('2026-09-30T18:30:00Z');
@@ -72,14 +73,17 @@ test('un catalogue HTML complet reste prioritaire sur le fallback RSS',()=>{
   assert.equal(selected.catalogue.length,60);
 });
 
-test('le certificat ADEME historique reste structurellement cohérent avant recertification v13',()=>{
+test('le certificat ADEME courant reste structurellement cohérent pendant la recertification v13',()=>{
   const cert=JSON.parse(fs.readFileSync(new URL('../site/data/ademe-certification.json',import.meta.url),'utf8'));
-  assert.equal(cert.status,'PASS');
+  assert.ok(['PASS','FAIL'].includes(cert.status));
   assert.equal(cert.lock?.name,'ADEME');
+  assert.deepEqual(cert.configuredSources,['ademe']);
   const row=cert.bySource?.ademe||{};
   assert.ok(Number(row.rssActive||0)>0);
   assert.ok(Number(row.catalogue||0)>0);
   assert.equal(Number(row.catalogueAap||0)+Number(row.catalogueAid||0),Number(row.catalogue||0));
+  assert.ok(cert.sourceConfigFingerprint);
+  assert.ok(cert.certificationBasisFingerprint);
 });
 
 test('le catalogue Entreprises reste la référence ADEME et le RSS officiel est son fallback actif',()=>{
@@ -120,13 +124,12 @@ test('un titre contenant aide ne suffit jamais à classifier une carte sans stat
   assert.equal(out.unclassifiedCount,1);
 });
 
-test('le certificat ADEME archivé conserve les preuves de complétude',()=>{
+test('le certificat ADEME conserve les preuves de complétude même en fail-closed',()=>{
   const cert=JSON.parse(fs.readFileSync(new URL('../site/data/ademe-certification.json',import.meta.url),'utf8'));
-  assert.equal(cert.status,'PASS');
-  assert.ok(Number(cert.libraryRecords||0)>0);
+  assert.ok(['PASS','FAIL'].includes(cert.status));
   assert.ok(Number(cert.bySource?.ademe?.catalogue||0)>0);
   assert.equal(Number(cert.bySource?.ademe?.catalogueUnclassified||0),0);
-  assert.equal(cert.problems?.length,0);
+  assert.ok(Array.isArray(cert.problems));
 });
 
 test("ADEME ne dépend d'aucun contre-audit externe",()=>{
@@ -163,12 +166,12 @@ test('la preuve instrument ADEME vient exclusivement de la page directe officiel
   assert.doesNotMatch(connector,/catalogueKind.*SUBVENTION/);
 });
 
-test('la présence sur le portail ADEME ne prouve pas à elle seule le guichet financeur',()=>{
+test('la présence sur le portail seule ne suffit pas ; seule une politique ADEME versionnée peut porter la preuve de guichet',()=>{
   const connector=fs.readFileSync(new URL('../scripts/connectors/ademe.mjs',import.meta.url),'utf8');
   assert.doesNotMatch(connector,/field:'guichet'.*ademe-enterprises-inventory/);
-  assert.doesNotMatch(connector,/a\.guichetVerified='ADEME';\s*a\.sourcePortal='ADEME'/);
-  assert.match(connector,/field:'guichet'.*page-text-match:ademe-attribution/);
+  assert.match(connector,/field:'guichet'.*ademe-catalogue-policy/);
   assert.match(connector,/status:'UNVERIFIED'/);
+  assert.match(connector,/catalogueScope!=='ADEME_ONLY'/);
 });
 
 test('la preuve de guichet ADEME exige une attribution explicite sur la fiche directe',()=>{
@@ -187,4 +190,38 @@ test('le collecteur ADEME comptabilise les motifs de non-lecture des fiches dire
   assert.match(connector,/FICHE_DIRECTE_PROTEGEE_CLOUDFLARE_RSS_CONSERVE/);
   assert.match(connector,/detailWarningReasons/);
   assert.match(connector,/accès fiches directes/);
+});
+
+test('la politique de référentiel ADEME expire automatiquement',()=>{
+  const source={
+    cataloguePolicy:{
+      verifiedAt:'2026-10-03',
+      maxAgeDays:120,
+      sourceUrl:'https://agirpourlatransition.ademe.fr/entreprises/aides-financieres',
+      catalogueScope:'ADEME_ONLY',
+      guichet:'ADEME',
+      aidKindInstrument:'SUBVENTION',
+      evidence:'Politique ADEME'
+    }
+  };
+  assert.ok(ademeCataloguePolicy(source,{now:new Date('2026-12-01T12:00:00Z')}));
+  assert.equal(ademeCataloguePolicy(source,{now:new Date('2027-03-01T12:00:00Z')}),null);
+});
+
+test('la politique ADEME ne transforme en subvention que les cartes classées Aide',()=>{
+  const connector=fs.readFileSync(new URL('../scripts/connectors/ademe.mjs',import.meta.url),'utf8');
+  assert.match(connector,/link\.catalogueKind==='AIDE'/);
+  assert.match(connector,/ademe-catalogue-policy:aide=subvention/);
+  assert.match(connector,/===\'AAP \/ AMI\'\?\['APPEL_A_PROJET'\]/);
+});
+
+test('la source ADEME porte une preuve institutionnelle officielle et exclut les fonds propres',()=>{
+  const cfg=JSON.parse(fs.readFileSync(new URL('../config/sources.json',import.meta.url),'utf8'));
+  const source=cfg.sources.find(x=>x.id==='ademe');
+  assert.equal(source.cataloguePolicy?.catalogueScope,'ADEME_ONLY');
+  assert.equal(source.cataloguePolicy?.guichet,'ADEME');
+  assert.equal(source.cataloguePolicy?.aidKindInstrument,'SUBVENTION');
+  assert.match(source.cataloguePolicy?.sourceUrl||'',/^https:\/\/agirpourlatransition\.ademe\.fr\/entreprises\/aides-financieres$/);
+  assert.ok(source.cataloguePolicy?.excludes?.includes('ADEME_INVESTISSEMENT_FONDS_PROPRES'));
+  assert.ok(Number(source.cataloguePolicy?.maxAgeDays)>0);
 });

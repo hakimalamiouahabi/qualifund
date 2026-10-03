@@ -1,145 +1,32 @@
 {
-  "generatedAt": "2026-10-03T12:35:45.702Z",
+  "generatedAt": "2026-10-03T15:04:42.790Z",
   "version": "12.9.3",
   "currentLock": {
-    "name": "Bpifrance",
+    "name": "ADEME",
     "mode": "GUICHET",
     "allowedSourceIds": [
-      "bpifrance_aap",
-      "bpifrance_aides",
-      "bpifrance_rebond_industriel"
+      "ademe"
     ]
   },
   "publication": {
     "policy": "CERTIFIED_SOURCE_ONLY",
     "certifiedSourceIds": [
+      "ademe",
       "bpifrance_aap",
       "bpifrance_aides",
       "bpifrance_rebond_industriel"
     ],
     "certifiedGuichets": [
+      "ADEME",
       "Bpifrance"
     ],
-    "reasons": {
-      "SOURCE_NOT_CERTIFIED": 18
-    },
-    "reasonSamples": {
-      "SOURCE_NOT_CERTIFIED": [
-        {
-          "id": "ademe_70dbf42c2ff2a29e70e2b6cd80dd3862ba164201902ed994e0526e8cfaab86e9",
-          "title": "Acquisition de données Géologiques vers des Industries Bas Carbone (AGIBaC)",
-          "sourceId": "ademe",
-          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/acquisition-de-donnees-geologiques-vers-des-industries-bas-carbone-agibac"
-        },
-        {
-          "id": "ademe_1dc26899bf6a8255c6c378eb9b177a03a060d8cfd37eaad7648ee68d0f72cb3b",
-          "title": "AMI Low-tech 2026",
-          "sourceId": "ademe",
-          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/ami-low-tech-2026"
-        },
-        {
-          "id": "ademe_c48cc10ec1a72e5e359f8db8c1a07464e1eeb40a7bf61095bb9eb7f034c219f7",
-          "title": "AQACIA 2026 – Particules, ozone, produits phytopharmaceutiques et pollutions sectorielles",
-          "sourceId": "ademe",
-          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/aqacia-2026-particules-ozone-produits-phytopharmaceutiques-et-pollutions-sectorielles"
-        },
-        {
-          "id": "ademe_4bcc8e980a10675fc0b69624bf6d551654c130b782a868a611081bd5bc103905",
-          "title": "DECARB FLASH 2025-2027",
-          "sourceId": "ademe",
-          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/decarb-flash-2025-2027"
-        },
-        {
-          "id": "ademe_d1a653cad878dafd0cde571ad3a6b445a60f73ed34d6920ab733493ced00fcce",
-          "title": "Decarb Flash Artisan",
-          "sourceId": "ademe",
-          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/decarb-flash-artisan"
-        },
-        {
-          "id": "ademe_6613b3fc9af3350d119843ff57c6e06ce62a7356559e9faa7cc7a7198b092826",
-          "title": "DÉTER - DÉcarboner le TERtiaire",
-          "sourceId": "ademe",
-          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/deter-decarboner-le-tertiaire"
-        },
-        {
-          "id": "ademe_b560455b7e6f876f5dccdd74f3ec69d2945ce4bcc163f1f9ecc54556bb5ccdf6",
-          "title": "Développement de briques technologiques et démonstrateurs - Réalisations de premières industrielles associant l'offre et la demande (DEMIBaC)",
-          "sourceId": "ademe",
-          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/developpement-de-briques-technologiques-et-demonstrateurs-realisations-de-premieres-industrielles-associant-loffre-et-la-demande-demibac"
-        },
-        {
-          "id": "ademe_91d48a13944f2049d277528f42910ad0af150b70ba80e80499d3427c49f96eab",
-          "title": "Développement de briques technologiques et services par des PME pour la décarbonation de l’industrie (IBaC PME)",
-          "sourceId": "ademe",
-          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/developpement-de-briques-technologiques-et-services-par-des-pme-pour-la-decarbonation-de-lindustrie-ibac-pme"
-        },
-        {
-          "id": "ademe_8cfcb67831f4037a0cb4ac8b57e9178dd04fda455959ef46607396cab94c1d94",
-          "title": "Favoriser le développement de Zones Industrielles Bas Carbone (ZIBaC) Phase 2 : accompagnement",
-          "sourceId": "ademe",
-          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/favoriser-le-developpement-de-zones-industrielles-bas-carbone-zibac-phase-2-accompagnement"
-        },
-        {
-          "id": "ademe_58970fd417057887da031dfff747cee0d8779d6a6c12fbd8fad9efceec0184d1",
-          "title": "Fonds local pour l’adaptation en Guadeloupe (FLAG) 2.0",
-          "sourceId": "ademe",
-          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/fonds-local-pour-ladaptation-en-guadeloupe-flag-20"
-        },
-        {
-          "id": "ademe_c82221811ed8498d794b347968a609629dab9d9aac13030b01f1f0cfd7ec9671",
-          "title": "Fonds vert – Territoires d’industrie en transition écologique",
-          "sourceId": "ademe",
-          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/fonds-vert-territoires-dindustrie-en-transition-ecologique-0"
-        },
-        {
-          "id": "ademe_86bc49446d91a9b5275ad03235f4e8a9b5ea79c120478220fdacca947bf08b59",
-          "title": "Infrastructures de données et équipements numériques résilients et durables",
-          "sourceId": "ademe",
-          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/infrastructures-de-donnees-et-equipements-numeriques-resilients-et-durables"
-        },
-        {
-          "id": "ademe_947a613dda9eabaf876a70de7b269d69ba65ddc0ce5404ddef39512b0a19a3f4",
-          "title": "Mobili'Pro : optimisation des déplacements professionnels",
-          "sourceId": "ademe",
-          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/mobilipro-optimisation-des-deplacements-professionnels"
-        },
-        {
-          "id": "ademe_e2a707273a0b537ce7158c746a91357ee0d322f5c10cec005eb1bc2054eac45e",
-          "title": "Plan d’aides à la modernisation et à l’innovation de la flotte (PAMI)",
-          "sourceId": "ademe",
-          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/plan-daides-la-modernisation-et-linnovation-de-la-flotte-pami"
-        },
-        {
-          "id": "ademe_1c32b0a2a3e5838fafe6c36ee7fcbea625a1f7781d35274b54ec314784aeee5d",
-          "title": "Planisols : aides en faveur de la sobriété foncière et de la limitation de l’artificialisation des sols dans les stratégies territoriales",
-          "sourceId": "ademe",
-          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/planisols-aides-en-faveur-de-la-sobriete-fonciere-et-de-la-limitation-de-lartificialisation-des-sols-dans-les-strategies-territoriales"
-        },
-        {
-          "id": "ademe_d9427ca755dd4d5c2dc1a522fb8fb0961e3c064d50314c3fcd4631a91078b7d0",
-          "title": "Promouvoir des solutions de mobilité à forts co-bénéfices qualité de l’air et santé en Occitanie - Dépôt",
-          "sourceId": "ademe",
-          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/promouvoir-des-solutions-de-mobilite-forts-co-benefices-qualite-de-lair-et-sante-en-occitanie-depot"
-        },
-        {
-          "id": "ademe_952c7c158c36e7bc308b6121868b06991120f9c2bde212aba43fa5e6a290d310",
-          "title": "Soutien à la production d'hydrogène électrolytique renouvelable ou bas-carbone 2026 - Phase de sélection des candidatures",
-          "sourceId": "ademe",
-          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/soutien-la-production-dhydrogene-electrolytique-renouvelable-ou-bas-carbone-2026-phase-de-selection-des-candidatures"
-        },
-        {
-          "id": "ademe_f718d9114d92a75d69528b8ad5c50ab619be41e46b7105afa719b3d6639b8b09",
-          "title": "Systèmes performants de production de froid en Outre-mer et Corse",
-          "sourceId": "ademe",
-          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/systemes-performants-de-production-de-froid-en-outre-mer-et-corse"
-        }
-      ]
-    }
+    "reasons": {},
+    "reasonSamples": {}
   },
   "library": {
-    "raw": 54,
-    "publishable": 36,
-    "quarantined": 18,
+    "raw": 104,
+    "publishable": 104,
+    "quarantined": 0,
     "orphanSource": 0,
     "duplicateOfficialUrl": 0,
     "missingOfficialUrl": 0,
@@ -870,31 +757,29 @@
     "failed": []
   },
   "metadata": {
-    "manifestGeneratedAt": "2026-10-03T12:31:55.998Z",
+    "manifestGeneratedAt": "2026-10-03T14:58:21.695Z",
     "manifestSourceCount": 118,
     "manifestLock": {
       "locked": true,
       "mode": "GUICHET",
-      "name": "Bpifrance",
+      "name": "ADEME",
       "allowedSourceIds": [
-        "bpifrance_aap",
-        "bpifrance_aides",
-        "bpifrance_rebond_industriel"
+        "ademe"
       ],
-      "next": "ADEME",
-      "frozenUnselectedSha": "98b67062ebc7fb87821c37fcbfd1a597b3ea1f46ba828b295288bd7d22ad652e"
+      "next": "AURA",
+      "frozenUnselectedSha": "d31c4291c0d439df7b0a15ab6436a45e4440010f5fb9da677ce1d828666624bd"
     }
   },
   "historicalCertifications": {
     "ademe-certification.json": {
       "status": "PASS",
-      "generatedAt": "2026-09-30T19:00:06.821Z",
+      "generatedAt": "2026-10-03T15:04:41.233Z",
       "problems": [],
-      "libraryRecords": 70
+      "libraryRecords": 68
     },
     "bpifrance-certification.json": {
       "status": "PASS",
-      "generatedAt": "2026-10-03T12:35:43.964Z",
+      "generatedAt": "2026-10-03T14:03:03.341Z",
       "problems": [],
       "libraryRecords": 36
     }
@@ -903,36 +788,31 @@
     "freshnessWarningHours": 72,
     "freshness": [
       {
+        "file": "ademe-certification.json",
+        "name": "ADEME",
+        "generatedAt": "2026-10-03T15:04:41.233Z",
+        "ageHours": 0,
+        "status": "FRESH"
+      },
+      {
         "file": "bpifrance-certification.json",
         "name": "Bpifrance",
-        "generatedAt": "2026-10-03T12:35:43.964Z",
-        "ageHours": 0,
+        "generatedAt": "2026-10-03T14:03:03.341Z",
+        "ageHours": 1,
         "status": "FRESH"
       }
     ],
     "active": {
       "present": true,
       "status": "PASS",
-      "lockName": "Bpifrance",
-      "expectedLockName": "Bpifrance",
+      "lockName": "ADEME",
+      "expectedLockName": "ADEME",
       "sourceIdsMatch": true,
       "sourceFingerprintMatch": true,
       "basisFingerprintMatch": true,
       "dataFingerprintMatch": true
     },
-    "rejected": [
-      {
-        "file": "ademe-certification.json",
-        "name": "ADEME",
-        "generatedAt": "2026-09-30T19:00:06.821Z",
-        "sourceIds": [
-          "ademe"
-        ],
-        "reason": "SOURCE_CONFIG_FINGERPRINT_MISSING",
-        "certifiedFingerprint": null,
-        "currentFingerprint": "c6cf4a82a42773708c9d3c5f1dcc8ecd24e8c95046aa4e7440fd165c8f39877a"
-      }
-    ]
+    "rejected": []
   },
   "certifiedEvidenceDebt": {
     "missingGuichet": 0,
@@ -952,12 +832,10 @@
   },
   "severity": {
     "p0": [],
-    "p1": [
-      "1 certificat(s) historique(s) ne déverrouillent plus la publication et doivent être recertifiés (SOURCE_CONFIG_FINGERPRINT_MISSING: 1)"
-    ],
+    "p1": [],
     "p2": [
       "92 source(s) future(s) non calibrée(s), bloquées automatiquement jusqu’à mesure du référentiel officiel",
-      "18 fiche(s) brutes en quarantaine de publication"
+      "0 fiche(s) brutes en quarantaine de publication"
     ]
   },
   "samples": {

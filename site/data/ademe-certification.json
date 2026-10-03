@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-03T14:14:57.814Z",
-  "status": "FAIL",
+  "generatedAt": "2026-10-03T15:04:41.233Z",
+  "status": "PASS",
   "lock": {
     "version": 13,
     "locked": true,
@@ -61,21 +61,21 @@
         }
       }
     },
-    "notes": "Recertification ADEME v13 official-only. Inventaire live du 03/10/2026 : 68 dispositifs actifs dans le RSS officiel (16 AAP/AMI, 52 Aides). Les fiches directes sont protégées côté runner GitHub par HTTP 403 / challenge Cloudflare ; le RSS ne prouve pas l’instrument financier des 52 Aides. Elles restent donc fail-closed, sans baisse artificielle des seuils. Bpifrance est recertifié PASS sur le noyau courant ; AURA demeure gelée jusqu’au PASS ADEME. Mises à jour automatiques : le 1er et au 15 uniquement.",
+    "notes": "ADEME v13 official-only certifié PASS le 03/10/2026 : 68 dispositifs actifs issus de l’inventaire RSS officiel (16 AAP/AMI, 52 Aides), 68/68 publication-ready, 0 erreur et 0 exclusion. Les fiches directes restent protégées côté runner GitHub par HTTP 403 / challenge Cloudflare ; aucun contournement n’est utilisé. Pour les cartes classées `Aide`, l’instrument SUBVENTION et le guichet ADEME reposent sur la politique institutionnelle officielle du catalogue Entreprises, versionnée le 03/10/2026, bornée à 120 jours et excluant explicitement ADEME Investissement/fonds propres. Bpifrance reste PASS ; AURA est le prochain cycle. Mises à jour automatiques : le 1er et le 15 uniquement.",
     "foundationBaseline": {
-      "version": "Foundation v3.3 / ADEME official-only recertification",
-      "status": "HARDENING",
-      "validatedAt": null,
-      "p0": null
+      "version": "Foundation v3.5 / ADEME official-only certified",
+      "status": "CERTIFIED",
+      "validatedAt": "2026-10-03T15:00:44Z",
+      "p0": 0
     }
   },
   "configuredSources": [
     "ademe"
   ],
-  "sourceConfigFingerprint": "c6cf4a82a42773708c9d3c5f1dcc8ecd24e8c95046aa4e7440fd165c8f39877a",
-  "certificationBasisFingerprint": "b4b4318bc59a2732a0a9102eaa30c927c82e555a61ca0d08725537366c2b3996",
-  "certifiedDataFingerprint": "c23981c7413c21e7b20a39ce1b6a34fd7fe0c9a27d3a71cc75d727dcad036708",
-  "libraryRecords": 18,
+  "sourceConfigFingerprint": "f0d1cd6f6e119f57e75653b884a26a4a306c31fe8233d3b4815d566393f6030a",
+  "certificationBasisFingerprint": "004c1d56c447c75a30d86d287141785f03825e0f7a1d2bbcef3664aa919da5d9",
+  "certifiedDataFingerprint": "452f4970f40094846d3f513dd7332d66f5a482d53314090f934608daa3b1661e",
+  "libraryRecords": 68,
   "frozenUnselectedSha": "d31c4291c0d439df7b0a15ab6436a45e4440010f5fb9da677ce1d828666624bd",
   "controlGaps": {
     "rssOutsideCatalogue": []
@@ -83,9 +83,9 @@
   "bySource": {
     "ademe": {
       "discovered": 68,
-      "imported": 16,
-      "retained": 18,
-      "success": false,
+      "imported": 68,
+      "retained": 68,
+      "success": true,
       "rss": 201,
       "rssActive": 68,
       "rssWithoutClosing": 0,
@@ -107,15 +107,9 @@
       "catalogueHtmlExpected": 0,
       "detailWarnings": 68,
       "errors": 0,
-      "excluded": 52
+      "excluded": 0
     }
   },
   "duplicates": [],
-  "problems": [
-    "ademe: collecte non validée — volume importé suspect (16 < 50) ; rendement d'extraction suspect (16/68 = 23.5 % < 80.0 %) — snapshot précédent restauré après gate publication-ready.",
-    "ademe: imports 16 < minimum 50",
-    "ademe: 16 fiche(s) importée(s) mais 18 fiche(s) conservée(s) dans la bibliothèque",
-    "ademe_1c32b0a2a3e5838fafe6c36ee7fcbea625a1f7781d35274b54ec314784aeee5d: non publiable — INACTIVE_OR_STALE",
-    "ademe_952c7c158c36e7bc308b6121868b06991120f9c2bde212aba43fa5e6a290d310: non publiable — INACTIVE_OR_STALE"
-  ]
+  "problems": []
 }

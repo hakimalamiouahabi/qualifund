@@ -1,6 +1,6 @@
 {
   "version": "12.9.3",
-  "generatedAt": "2026-10-03T12:35:44.638Z",
+  "generatedAt": "2026-10-03T15:04:41.783Z",
   "sourcePolicy": "CERTIFIED_SOURCE_ONLY",
   "sources": [
     {
@@ -30,6 +30,16 @@
       "type": "web",
       "strategy": "official-page",
       "url": "https://rebond-industriel.bpifrance.fr/",
+      "official": true,
+      "priority": 0
+    },
+    {
+      "id": "ademe",
+      "name": "ADEME — aides financières et appels à projets entreprises",
+      "scope": "France",
+      "type": "web",
+      "strategy": "ademe-official",
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue",
       "official": true,
       "priority": 0
     }
