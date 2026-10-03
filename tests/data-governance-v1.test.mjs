@@ -52,14 +52,24 @@ test('la publication refuse une source non certifiée et un instrument hors pér
 
 test('une date de clôture ancienne prime sur un lifecycle ACTIVE obsolète',()=>{
   const opts={configuredSourceIds:new Set(['s']),unlockedSourceIds:new Set(['s']),now:new Date('2026-10-03T00:00:00Z')};
-  const base={id:'x',sourceId:'s',title:'Dispositif test',officialPage:'https://example.fr/aide/x',aidTypes:['SUBVENTION'],lifecycleStatus:'ACTIVE'};
+  const base={id:'x',sourceId:'s',title:'Dispositif test',officialPage:'https://example.fr/aide/x',aidTypes:['SUBVENTION'],lifecycleStatus:'ACTIVE',verification:{fieldEvidence:[
+    {field:'guichet',sourceTier:'B',sourceUrl:'https://example.fr/source',evidenceText:'source'},
+    {field:'sourceStatus',sourceTier:'B',sourceUrl:'https://example.fr/aide/x',evidenceText:'open'},
+    {field:'instrument',sourceTier:'B',sourceUrl:'https://example.fr/aide/x',evidenceText:'subvention'},
+    {field:'beneficiaries',sourceTier:'B',sourceUrl:'https://example.fr/aide/x',evidenceText:'PME françaises'}
+  ]}};
   assert.equal(publicationReason({...base,closingDate:'2026-06-01'},opts),'INACTIVE_OR_STALE');
   assert.equal(publicationReason({...base,closingDate:'2026-09-20'},opts),null);
 });
 
 test('une archive ancienne n’est pas publiée mais une clôture J-60 peut l’être',()=>{
   const opts={configuredSourceIds:new Set(['s']),unlockedSourceIds:new Set(['s']),now:new Date('2026-10-03T00:00:00Z')};
-  const base={id:'x',sourceId:'s',title:'Dispositif test',officialPage:'https://example.fr/aide/x',aidTypes:['SUBVENTION'],lifecycleStatus:'ARCHIVE'};
+  const base={id:'x',sourceId:'s',title:'Dispositif test',officialPage:'https://example.fr/aide/x',aidTypes:['SUBVENTION'],lifecycleStatus:'ARCHIVE',verification:{fieldEvidence:[
+    {field:'guichet',sourceTier:'B',sourceUrl:'https://example.fr/source',evidenceText:'source'},
+    {field:'sourceStatus',sourceTier:'B',sourceUrl:'https://example.fr/aide/x',evidenceText:'open'},
+    {field:'instrument',sourceTier:'B',sourceUrl:'https://example.fr/aide/x',evidenceText:'subvention'},
+    {field:'beneficiaries',sourceTier:'B',sourceUrl:'https://example.fr/aide/x',evidenceText:'PME françaises'}
+  ]}};
   assert.equal(publicationReason({...base,closingDate:'2026-06-01'},opts),'INACTIVE_OR_STALE');
   assert.equal(publicationReason({...base,closingDate:'2026-09-20'},opts),null);
 });
