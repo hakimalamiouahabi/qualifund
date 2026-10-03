@@ -8,7 +8,7 @@ import { assessCollection } from '../scripts/lib/source-cycle.mjs';
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 
-const calibrated={id:'aura',official:true,strategy:'aura-official',minExpected:175,minImported:20,minImportRatio:0.1};
+const calibrated={id:'aura',official:true,strategy:'aura-official',minExpected:175,minImported:55,minImportRatio:0.30};
 const pending={id:'bfc',official:true,strategy:'catalog-html'};
 const control={id:'control',official:true,strategy:'control-only'};
 
@@ -72,4 +72,12 @@ test('le compteur officiel dynamique prime sur le seuil historique sans perdre l
   assert.equal(incompleteRise.dynamicExpected,200);
   assert.equal(incompleteRise.suspiciousVolume,true);
   assert.equal(incompleteRise.success,false);
+});
+
+test('la calibration AURA du registre reflète la baseline live 175/60',()=>{
+  const cfg=JSON.parse(fs.readFileSync(path.join(ROOT,'config','sources.json'),'utf8'));
+  const aura=cfg.sources.find(x=>x.id==='aura');
+  assert.equal(aura.minExpected,175);
+  assert.equal(aura.minImported,55);
+  assert.equal(aura.minImportRatio,0.30);
 });
