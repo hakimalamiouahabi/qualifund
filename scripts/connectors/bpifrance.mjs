@@ -178,6 +178,15 @@ async function externalAuditLinks(source,family,{log=console.log}={}){
   }
 }
 
+function bpifranceEnterpriseEvidence(text=''){
+  const raw=cleanTitle(text);
+  const company=/\b(?:entreprises?|tpe|pme|eti|start[- ]?ups?|soci[eé]t[eé]s?|industriels?)\b/i;
+  const cue=/\b(?:vous [eê]tes|votre profil|[eé]ligib|candidat|porteur|b[eé]n[eé]ficiaire|consortium|partenariats?|projets? port[eé]s?|doivent [eê]tre|peuvent candidater)\b/i;
+  const sentences=raw.split(/(?<=[.!?;:])\s+/).map(x=>x.trim()).filter(Boolean);
+  const hit=sentences.find(s=>company.test(s)&&cue.test(s));
+  return hit?hit.slice(0,850):null;
+}
+
 function bpifranceRoleEvidence(text=''){
   const raw=String(text||'');
   const patterns=[
@@ -260,6 +269,8 @@ async function extractDirect(source,link,kind,{requireTargetInstrument=false}={}
   if(!Array.isArray(a.funder))a.funder=[];
   const role=bpifranceRoleEvidence(text);
   if(role&&!a.operator)a.operator='Bpifrance';
+  const enterpriseProof=bpifranceEnterpriseEvidence(text);
+  if(enterpriseProof)a.enterpriseEligible=true;
   a.sourceLinks=[{label:'Page officielle Bpifrance',url:requested},...(a.sourceLinks||[]).filter(x=>x?.url&&canonicalUrl(x.url)!==requested)];
   const masterSource=kind==='AAP / AMI'
     ?'https://www.bpifrance.fr/nos-appels-a-projets-concours'
@@ -271,6 +282,7 @@ async function extractDirect(source,link,kind,{requireTargetInstrument=false}={}
     {field:'catalogueKind',sourceUrl:masterSource,sourceTier:'B',locator:kind==='AAP / AMI'?'aap-listing':'catalogue-section',evidenceText:kind,checkedAt}
   ];
   if(financial.evidence)extra.push({field:'instrument',sourceUrl:requested,sourceTier:'B',locator:'direct-page-financial-terms',evidenceText:financial.evidence.slice(0,850),checkedAt});
+  if(enterpriseProof)extra.push({field:'enterpriseEligibility',sourceUrl:requested,sourceTier:'B',locator:'direct-page-enterprise-eligibility',evidenceText:enterpriseProof,checkedAt});
   if(role)extra.push({field:'operator',sourceUrl:requested,sourceTier:'B',locator:'direct-page-role',evidenceText:role.slice(0,850),checkedAt});
   a.verification={...(a.verification||{}),fieldEvidence:[...(a.verification?.fieldEvidence||[]),...extra]};
   a.guichetVerification={status:'VERIFIED',sourceUrl:masterSource,evidenceText:extra[0].evidenceText,checkedAt};
