@@ -3,7 +3,12 @@ export function assessCollection(source,result={}){
   const discovered=Number(result?.discovered||0);
   const imported=Array.isArray(result?.aids)?result.aids.length:Number(result?.imported||0);
   const importRatio=discovered>0?imported/discovered:(imported>0?1:0);
-  const suspiciousVolume=!isControl && source?.minExpected!=null && discovered<Number(source.minExpected);
+  const dynamicExpected=[
+    result?.audit?.channels?.enterpriseExpected,
+    result?.audit?.channels?.catalogueExpected
+  ].map(Number).find(x=>Number.isFinite(x)&&x>0);
+  const expectedFloor=dynamicExpected||Number(source?.minExpected||0);
+  const suspiciousVolume=!isControl && expectedFloor>0 && discovered<expectedFloor;
   const lowImportedCount=!isControl && source?.minImported!=null && imported<Number(source.minImported);
   const lowImportRatio=!isControl && source?.minImportRatio!=null && discovered>0 && importRatio<Number(source.minImportRatio);
   // Un scan d'ingestion vide ou très incomplet n'est jamais assez probant pour invalider l'historique.
@@ -16,10 +21,10 @@ export function assessCollection(source,result={}){
     : (!suspiciousVolume && !emptyIngestion && !lowImportedCount && !lowImportRatio);
   const lifecycleSafe=success && !isControl && imported>0;
   const reasons=[];
-  if(suspiciousVolume)reasons.push(`volume découvert suspect (${discovered} < ${source.minExpected})`);
+  if(suspiciousVolume)reasons.push(`volume découvert suspect (${discovered} < ${expectedFloor}${dynamicExpected?' compteur officiel':' seuil calibré'})`);
   if(lowImportedCount)reasons.push(`volume importé suspect (${imported} < ${source.minImported})`);
   if(lowImportRatio)reasons.push(`rendement d'extraction suspect (${imported}/${discovered} = ${(importRatio*100).toFixed(1)} % < ${(Number(source.minImportRatio)*100).toFixed(1)} %)`);
   if(emptyIngestion)reasons.push('scan d’ingestion vide');
   if(isControl&&!controlReachable)reasons.push('source de contrôle inaccessible lors du dernier cycle');
-  return {isControl,discovered,imported,importRatio,suspiciousVolume,lowImportedCount,lowImportRatio,emptyIngestion,success,lifecycleSafe,reasons};
+  return {isControl,discovered,imported,importRatio,dynamicExpected:dynamicExpected||null,expectedFloor,suspiciousVolume,lowImportedCount,lowImportRatio,emptyIngestion,success,lifecycleSafe,reasons};
 }

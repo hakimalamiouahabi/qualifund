@@ -1,5 +1,5 @@
 {
-  "version": "12.7.0",
+  "version": "12.8.0",
   "sources": [
     {
       "id": "bpifrance_aap",
@@ -33,8 +33,8 @@
       "priority": 0,
       "browserFallback": true,
       "minExpected": 20,
-      "minImported": 5,
-      "minImportRatio": 0.1,
+      "minImported": 15,
+      "minImportRatio": 0.5,
       "webVerifiedAt": "2026-09-30",
       "webEvidenceUrl": "https://www.bpifrance.fr/catalogue-offres",
       "notes": "Bpifrance v2 : la section officielle « Subventions et avances remboursables » du catalogue est le référentiel maître. Les pages sont lues directement et seules les subventions, avances remboursables/récupérables et prêts à taux zéro sont conservés. Le sitemap et les moteurs externes sont des contre-audits uniquement.",
@@ -60,7 +60,10 @@
       "notes": "Source officielle Bpifrance : Bpifrance est opérateur du volet soutien aux investissements ; subventions et avances remboursables selon le projet.",
       "webVerifiedAt": "2026-09-30",
       "webEvidenceUrl": "https://rebond-industriel.bpifrance.fr/",
-      "guichetVerified": "Bpifrance"
+      "guichetVerified": "Bpifrance",
+      "minExpected": 1,
+      "minImported": 1,
+      "minImportRatio": 1
     },
     {
       "id": "ademe",
@@ -76,8 +79,8 @@
       "browserFallback": true,
       "webVerifiedAt": "2026-09-30",
       "webEvidenceUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue",
-      "minImported": 1,
-      "minImportRatio": 0,
+      "minImported": 50,
+      "minImportRatio": 0.8,
       "notes": "ADEME v4 : le catalogue officiel Entreprises reste la référence fonctionnelle. Si son HTML bloque l'automatisation, l'inventaire actif est reconstruit exclusivement depuis le flux RSS officiel ADEME en conservant les entrées dont la période de dépôt est ouverte. La classification AAP/AIDE est issue de la structure officielle des URLs et contrôlée sur la fiche directe quand elle est lisible. Exa, Tavily, Parallel Search et Firecrawl restent des contre-audits uniquement.",
       "externalAuditFile": "config/ademe-v2-external-audit.json",
       "closedCatalogueUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue-aides-closes",

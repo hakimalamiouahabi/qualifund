@@ -1,57 +1,68 @@
 {
-  "version": 8,
+  "version": 9,
   "locked": true,
-  "mode": "REGION",
-  "name": "Auvergne-Rhône-Alpes",
+  "mode": "GUICHET",
+  "name": "Bpifrance",
   "allowedSourceIds": [
-    "aura"
+    "bpifrance_aap",
+    "bpifrance_aides",
+    "bpifrance_rebond_industriel"
   ],
   "preserveUnselectedSources": true,
   "preserveUnselectedCoverage": true,
   "freezeUnselectedLifecycle": true,
   "enrichSelectedOnly": true,
-  "next": "Bourgogne-Franche-Comté",
+  "next": "ADEME",
   "certification": {
     "primarySourceIds": [
-      "aura"
+      "bpifrance_aap",
+      "bpifrance_aides",
+      "bpifrance_rebond_industriel"
     ],
     "allowedHosts": [
-      "www.auvergnerhonealpes.fr",
-      "auvergnerhonealpes.fr"
+      "www.bpifrance.fr",
+      "bpifrance.fr",
+      "rebond-industriel.bpifrance.fr"
     ],
     "requireAuditAccounting": true,
     "requireZeroExtractionErrors": true,
     "requireDirectOfficialUrl": true,
     "forbidGenericTitles": true,
     "requireExternalAuditDiscovery": true,
-    "externalAuditFile": "config/aura-v1-external-audit.json",
+    "externalAuditFile": "config/bpifrance-v2-external-audit.json",
     "externalAuditMaxAgeHours": 72,
-    "requireCatalogueMasterMembership": true,
-    "requireEnterpriseScope": true,
-    "requireCurrentStatusEvidence": true,
-    "allowedSourceStates": [
-      "OPEN",
-      "OPEN_UNDATED",
-      "PERMANENT"
-    ],
     "sourceRules": {
-      "aura": {
-        "master": "ENTERPRISE_FILTERED_REGIONAL_CATALOGUE",
-        "requireEnterpriseCatalogueDiscovery": true,
-        "requireExpectedCount": true,
-        "expectedCount": 175,
-        "requireAuditAccounting": true,
+      "bpifrance_aap": {
+        "master": "ACTIVE_AAP_LISTING",
+        "requireListingDiscovery": true,
+        "requireImportedEqualsDiscovered": true,
         "requireExternalDisposition": true,
+        "forbidActiveExternalGaps": true,
+        "forbidUnknownExternalGaps": true,
         "requireGuichetEvidence": true,
         "requireCurrentStatusEvidence": true,
-        "requireEnterpriseScope": true,
         "allowedSourceStates": [
           "OPEN",
-          "OPEN_UNDATED",
-          "PERMANENT"
+          "OPEN_UNDATED"
         ],
         "allowedKinds": [
-          "AAP / AMI",
+          "AAP / AMI"
+        ],
+        "requiredPathPrefix": "/nos-appels-a-projets-concours/",
+        "requireAuditAccounting": true
+      },
+      "bpifrance_aides": {
+        "master": "CATALOGUE_SECTION_SUB_AR",
+        "requireCatalogueSectionDiscovery": true,
+        "requireExternalDisposition": true,
+        "forbidTargetExternalGaps": true,
+        "forbidUnknownExternalGaps": true,
+        "requireGuichetEvidence": true,
+        "requireCurrentStatusEvidence": true,
+        "allowedSourceStates": [
+          "OPEN_UNDATED"
+        ],
+        "allowedKinds": [
           "AIDE"
         ],
         "allowedAidTypes": [
@@ -59,25 +70,21 @@
           "AVANCE_REMBOURSABLE",
           "PRET_TAUX_ZERO"
         ],
-        "requiredPathPrefix": "/aides/",
-        "forbiddenTitleFragments": [
-          "FEADER",
-          "FEDER",
-          "FSE",
-          "FTJ",
-          "LEADER",
-          "PEI"
-        ],
-        "forbidActiveExternalGaps": true,
-        "forbidUnknownExternalGaps": true
+        "requiredPathPrefix": "/catalogue-offres/",
+        "requireAuditAccounting": true
+      },
+      "bpifrance_rebond_industriel": {
+        "master": "DIRECT_OFFICIAL_PAGE",
+        "minRetained": 1,
+        "requireAuditAccounting": false
       }
     }
   },
-  "notes": "Verrou Région Auvergne-Rhône-Alpes v1 : catalogue officiel filtré Entreprise comme référentiel maître. FEDER/FEADER/FSE+/FTJ sont exclus du cycle régional et restent gelés pour leurs cycles dédiés. Les moteurs externes servent uniquement au contre-audit. ADEME et Bpifrance restent figés sur leurs certificats PASS. Cycle AURA repris après validation Foundation v2 (P0=0, AJV 2020-12, purge/quarantaine et calibration guard actifs).",
+  "notes": "Recertification Foundation v3 / v12.8 : Bpifrance est repris en premier sur un pipeline fail-closed. ADEME sera recertifié ensuite. Auvergne-Rhône-Alpes reste gelée jusqu'aux deux PASS v12.8. Les certificats historiques antérieurs restent conservés comme preuves mais ne déverrouillent plus la publication sans fingerprints de configuration et de base technique.",
   "foundationBaseline": {
-    "version": "Foundation v2",
-    "sha": "121e2638a83eb65ef758729b20b5897ea3f90cf2",
-    "validatedAt": "2026-10-03T09:10:49Z",
-    "p0": 0
+    "version": "Foundation v3 / 12.8",
+    "status": "HARDENING",
+    "validatedAt": null,
+    "p0": null
   }
 }

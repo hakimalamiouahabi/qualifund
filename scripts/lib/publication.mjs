@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { isForbiddenAggregatorUrl } from './direct-sources.mjs';
+import { jPlusOneDate } from './jplus1.mjs';
 
 export const TARGET_PUBLIC_INSTRUMENTS=new Set([
   'SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO','APPEL_A_PROJET'
@@ -63,17 +64,12 @@ export function hasEnterpriseEvidence(a){
   if(Array.isArray(a?.companyCategories)&&a.companyCategories.length&&beneficiaryProof.length)return true;
   return false;
 }
-export function recentOrActive(a,{now=new Date(),recentDays=60}={}){
-  const lifecycle=String(a?.lifecycleStatus||'ACTIVE').toUpperCase();
-  if(CLOSED_STATES.has(lifecycle))return false;
-  if(a?.permanent===true&&lifecycle!=='ARCHIVE')return true;
-  const d=day(closingDate(a));
-  if(d!=null){
-    // La date officielle prévaut sur un statut technique ancien : au-delà de J-60,
-    // une fiche n'est plus publiable même si lifecycleStatus est resté ACTIVE.
-    return d>=now.getTime()-recentDays*86400000;
-  }
-  if(lifecycle==='ARCHIVE')return false;
+export function recentOrActive(a,{now=new Date()}={}){
+  const lifecycle=String(a?.lifecycleStatus||'').toUpperCase();
+  if(lifecycle!=='ACTIVE'||CLOSED_STATES.has(lifecycle))return false;
+  if(a?.permanent===true)return true;
+  const closing=String(closingDate(a)||'').slice(0,10);
+  if(closing)return closing>=jPlusOneDate(now);
   return true;
 }
 export function publicationReason(a,{configuredSourceIds=null,unlockedSourceIds=null,now=new Date(),recentDays=60}={}){
@@ -99,6 +95,13 @@ export function isPublishableAid(a,opts={}){
 }
 
 const FINGERPRINT_IGNORED_SOURCE_KEYS=new Set(['notes','webVerifiedAt','webEvidenceUrl','observedCatalogCount','observedOpenCount']);
+function stableValue(value){
+  if(Array.isArray(value))return value.map(stableValue);
+  if(value&&typeof value==='object'){
+    return Object.fromEntries(Object.keys(value).sort().map(k=>[k,stableValue(value[k])]));
+  }
+  return value;
+}
 function stableSourceValue(value){
   if(Array.isArray(value))return value.map(stableSourceValue);
   if(value&&typeof value==='object'){
@@ -112,11 +115,77 @@ export function sourceConfigFingerprint(cfg,sourceIds=[]){
     .filter(s=>wanted.has(s.id))
     .sort((a,b)=>String(a.id).localeCompare(String(b.id)))
     .map(stableSourceValue);
-  return createHash('sha256').update(JSON.stringify(sources)).digest('hex');
+  return createHash('sha256').update(JSON.stringify({version:cfg?.version||null,sources})).digest('hex');
 }
 
-export async function buildCertificationLedger(dataDir,cfg){
+export function sourceDataFingerprint(records=[],sourceIds=[]){
+  const wanted=new Set(sourceIds);
+  const selected=(Array.isArray(records)?records:[])
+    .filter(a=>wanted.has(a?.sourceId))
+    .sort((a,b)=>String(a?.id||'').localeCompare(String(b?.id||''))||String(a?.officialPage||'').localeCompare(String(b?.officialPage||'')))
+    .map(stableValue);
+  return createHash('sha256').update(JSON.stringify(selected)).digest('hex');
+}
+
+const STRATEGY_IMPLEMENTATIONS={
+  'bpifrance-aap':'scripts/connectors/bpifrance.mjs',
+  'bpifrance-aides':'scripts/connectors/bpifrance.mjs',
+  'ademe-official':'scripts/connectors/ademe.mjs',
+  'aura-official':'scripts/connectors/aura.mjs',
+  'official-page':'scripts/connectors/official-page.mjs',
+  'catalog-html':'scripts/connectors/web-catalog.mjs',
+  'opendatasoft':'scripts/connectors/opendatasoft.mjs',
+  'control-only':'scripts/connectors/control.mjs'
+};
+const CERTIFICATION_CORE_FILES=[
+  'package.json',
+  'package-lock.json',
+  'schemas/aap.schema.json',
+  '.github/workflows/update-and-deploy.yml',
+  'scripts/update-library.mjs',
+  'scripts/purge-indirect-sources.mjs',
+  'scripts/certify-active-source.mjs',
+  'scripts/sync-static-metadata.mjs',
+  'scripts/build-cloudflare-pages.mjs',
+  'scripts/lib/publication.mjs',
+  'scripts/lib/direct-sources.mjs',
+  'scripts/lib/collection-lock.mjs',
+  'scripts/lib/source-cycle.mjs',
+  'scripts/lib/lifecycle.mjs',
+  'scripts/lib/jplus1.mjs',
+  'scripts/lib/enrich.mjs',
+  'scripts/lib/merge.mjs',
+  'scripts/lib/dedupe.mjs',
+  'scripts/lib/qa.mjs',
+  'scripts/lib/browser.mjs',
+  'scripts/lib/utils.mjs'
+];
+
+export async function certificationBasisFingerprint(root,cfg,sourceIds=[]){
+  const wanted=new Set(sourceIds);
+  const selected=(cfg?.sources||[]).filter(s=>wanted.has(s.id));
+  const files=new Set(CERTIFICATION_CORE_FILES);
+  for(const source of selected){
+    const impl=STRATEGY_IMPLEMENTATIONS[source.strategy];
+    if(impl)files.add(impl);
+    if(source.externalAuditFile)files.add(source.externalAuditFile);
+  }
+  const parts=[['source-config',sourceConfigFingerprint(cfg,sourceIds)]];
+  for(const rel of [...files].sort()){
+    try{
+      const content=await fs.readFile(path.join(root,rel));
+      parts.push([rel,createHash('sha256').update(content).digest('hex')]);
+    }catch(e){
+      parts.push([rel,'MISSING:'+String(e?.code||e?.message||e)]);
+    }
+  }
+  return createHash('sha256').update(JSON.stringify(parts)).digest('hex');
+}
+
+export async function buildCertificationLedger(dataDir,cfg,{root=path.resolve(dataDir,'../..')}={}){
   const sourceIds=new Set((cfg.sources||[]).map(s=>s.id));
+  let currentLibrary={aaps:[]};
+  try{currentLibrary=JSON.parse(await fs.readFile(path.join(dataDir,'library.json'),'utf8'))}catch{}
   let names=[];try{names=await fs.readdir(dataDir)}catch{}
   const files=names.filter(n=>/^[a-z0-9-]+-certification\.json$/i.test(n)&&n!=='active-source-certification.json');
   const bestBySource=new Map(),certifications=[],rejectedCertifications=[];
@@ -128,7 +197,17 @@ export async function buildCertificationLedger(dataDir,cfg){
     if(!configured.length)continue;
     const currentFingerprint=sourceConfigFingerprint(cfg,configured);
     const certifiedFingerprint=String(report.sourceConfigFingerprint||'');
-    if(certifiedFingerprint&&certifiedFingerprint!==currentFingerprint){
+    const currentBasisFingerprint=await certificationBasisFingerprint(root,cfg,configured);
+    const certifiedBasisFingerprint=String(report.certificationBasisFingerprint||'');
+    if(!certifiedFingerprint){
+      rejectedCertifications.push({
+        file,name:report.lock?.name||file.replace(/-certification\.json$/,''),
+        generatedAt,sourceIds:configured,reason:'SOURCE_CONFIG_FINGERPRINT_MISSING',
+        certifiedFingerprint:null,currentFingerprint
+      });
+      continue;
+    }
+    if(certifiedFingerprint!==currentFingerprint){
       rejectedCertifications.push({
         file,name:report.lock?.name||file.replace(/-certification\.json$/,''),
         generatedAt,sourceIds:configured,reason:'SOURCE_CONFIG_CHANGED',
@@ -136,11 +215,46 @@ export async function buildCertificationLedger(dataDir,cfg){
       });
       continue;
     }
-    const fingerprintStatus=certifiedFingerprint?'MATCH':'LEGACY_UNBOUND';
+    if(!certifiedBasisFingerprint){
+      rejectedCertifications.push({
+        file,name:report.lock?.name||file.replace(/-certification\.json$/,''),
+        generatedAt,sourceIds:configured,reason:'CERTIFICATION_BASIS_MISSING',
+        certifiedBasisFingerprint:null,currentBasisFingerprint
+      });
+      continue;
+    }
+    if(certifiedBasisFingerprint!==currentBasisFingerprint){
+      rejectedCertifications.push({
+        file,name:report.lock?.name||file.replace(/-certification\.json$/,''),
+        generatedAt,sourceIds:configured,reason:'CERTIFICATION_BASIS_CHANGED',
+        certifiedBasisFingerprint,currentBasisFingerprint
+      });
+      continue;
+    }
+    const currentDataFingerprint=sourceDataFingerprint(currentLibrary?.aaps||[],configured);
+    const certifiedDataFingerprint=String(report.certifiedDataFingerprint||'');
+    if(!certifiedDataFingerprint){
+      rejectedCertifications.push({
+        file,name:report.lock?.name||file.replace(/-certification\.json$/,''),
+        generatedAt,sourceIds:configured,reason:'CERTIFIED_DATA_FINGERPRINT_MISSING',
+        certifiedDataFingerprint:null,currentDataFingerprint
+      });
+      continue;
+    }
+    if(certifiedDataFingerprint!==currentDataFingerprint){
+      rejectedCertifications.push({
+        file,name:report.lock?.name||file.replace(/-certification\.json$/,''),
+        generatedAt,sourceIds:configured,reason:'CERTIFIED_DATA_CHANGED',
+        certifiedDataFingerprint,currentDataFingerprint
+      });
+      continue;
+    }
     certifications.push({
       file,name:report.lock?.name||file.replace(/-certification\.json$/,''),
       generatedAt,status:'PASS',sourceIds:configured,libraryRecords:Number(report.libraryRecords||0),
-      fingerprintStatus,sourceConfigFingerprint:certifiedFingerprint||null,currentSourceConfigFingerprint:currentFingerprint
+      fingerprintStatus:'MATCH',sourceConfigFingerprint:certifiedFingerprint,currentSourceConfigFingerprint:currentFingerprint,
+      certificationBasisFingerprint:certifiedBasisFingerprint,currentCertificationBasisFingerprint:currentBasisFingerprint,
+      certifiedDataFingerprint,currentDataFingerprint
     });
     for(const id of configured){
       const prev=bestBySource.get(id);

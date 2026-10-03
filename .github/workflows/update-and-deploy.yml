@@ -58,21 +58,6 @@ jobs:
         with:
           node-version: '22'
           package-manager-cache: false
-      - name: Purger et persister le stock hors sources certifiées / cycle courant
-        shell: bash
-        run: |
-          set -euo pipefail
-          node scripts/purge-indirect-sources.mjs
-          git config user.name "funding-radar-bot"
-          git config user.email "funding-radar-bot@users.noreply.github.com"
-          git add -A site/data site/bibliotheque
-          if git ls-files --error-unmatch LEYTON-RADAR-v12.2.0-AUTONOME-LIVE.html >/dev/null 2>&1; then
-            git add -u -- LEYTON-RADAR-v12.2.0-AUTONOME-LIVE.html
-          fi
-          if ! git diff --cached --quiet; then
-            git commit -m "chore(data): purge du stock hors périmètre certifié [skip ci]"
-            git push origin HEAD:main
-          fi
       - name: Installer les dépendances de façon reproductible
         shell: bash
         run: |
@@ -94,6 +79,28 @@ jobs:
             git add package-lock.json
             git commit -m "chore(deps): bootstrap package-lock [skip ci]"
             git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - name: Gate statique avant toute mutation des données
+        shell: bash
+        run: |
+          set -euo pipefail
+          find scripts tests -type f -name '*.mjs' -print0 | xargs -0 -n1 node --check
+          npm test
+          npm run validate
+      - name: Purger et persister le stock hors sources certifiées / cycle courant
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/purge-indirect-sources.mjs
+          git config user.name "funding-radar-bot"
+          git config user.email "funding-radar-bot@users.noreply.github.com"
+          git add -A site/data site/bibliotheque
+          if git ls-files --error-unmatch LEYTON-RADAR-v12.2.0-AUTONOME-LIVE.html >/dev/null 2>&1; then
+            git add -u -- LEYTON-RADAR-v12.2.0-AUTONOME-LIVE.html
+          fi
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(data): purge du stock hors périmètre certifié [skip ci]"
             git push origin HEAD:main
           fi
       - name: Installer Chromium Playwright

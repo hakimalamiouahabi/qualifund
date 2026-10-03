@@ -5,7 +5,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execSync } from 'node:child_process';
-import { buildCertificationLedger, isPublishableAid } from './lib/publication.mjs';
+import { buildCertificationLedger, isPublishableAid, sourceConfigFingerprint, certificationBasisFingerprint, sourceDataFingerprint } from './lib/publication.mjs';
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const SITE=path.join(ROOT,'site');
@@ -26,9 +26,8 @@ await fs.cp(SITE,DIST,{recursive:true,filter:src=>!excluded.has(rel(src))});
 const library=JSON.parse(await fs.readFile(path.join(DATA,'library.json'),'utf8'));
 const cfg=JSON.parse(await fs.readFile(path.join(ROOT,'config','sources.json'),'utf8'));
 const lock=JSON.parse(await fs.readFile(path.join(ROOT,'config','collection-lock.json'),'utf8'));
-let ledger;
-try{ledger=JSON.parse(await fs.readFile(path.join(DATA,'certification-ledger.json'),'utf8'))}
-catch{ledger=await buildCertificationLedger(DATA,cfg)}
+const ledger=await buildCertificationLedger(DATA,cfg,{root:ROOT});
+await fs.writeFile(path.join(DATA,'certification-ledger.json'),JSON.stringify(ledger,null,2)+'\n','utf8');
 const configuredSourceIds=new Set((cfg.sources||[]).map(s=>s.id));
 const unlockedSourceIds=new Set(ledger.unlockedSourceIds||[]);
 const records=(Array.isArray(library.aaps)?library.aaps:[])
@@ -75,6 +74,9 @@ if(!activeCertification){
     status:'PENDING',
     lock:{locked:Boolean(lock.locked),mode:lock.mode||null,name:lock.name||null,allowedSourceIds:currentIds,next:lock.next||null},
     configuredSources:currentIds,
+    sourceConfigFingerprint:sourceConfigFingerprint(cfg,currentIds),
+    certificationBasisFingerprint:await certificationBasisFingerprint(ROOT,cfg,currentIds),
+    certifiedDataFingerprint:sourceDataFingerprint(library.aaps||[],currentIds),
     libraryRecords:0,
     bySource,duplicates:[],
     problems:['Certification du cycle courant non acquise. Les données de ce guichet/région restent hors publication tant que le statut PASS n’est pas généré.']

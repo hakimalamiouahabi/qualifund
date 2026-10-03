@@ -18,7 +18,7 @@ import { closeBrowser } from './lib/browser.mjs';
 import { arr, nowIso, readJson, sha256, uniq, writeJsonAtomic } from './lib/utils.mjs';
 import { assessCollection } from './lib/source-cycle.mjs';
 import { shouldMarkStale } from './lib/lifecycle.mjs';
-import { loadCollectionLock, validateCollectionLock, selectSources, selectedSourceSet, lockSummary } from './lib/collection-lock.mjs';
+import { loadCollectionLock, requireCollectionLock, validateCollectionLock, selectSources, selectedSourceSet, lockSummary } from './lib/collection-lock.mjs';
 import { isActiveAtJPlusOne, jPlusOneDate, parisDate } from './lib/jplus1.mjs';
 const KNOWN_AID_TYPES=new Set(['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO','PRET','BONIFICATION_INTERET','GARANTIE','ALLEGEMENT_FISCAL','PARTICIPATION_CAPITAL','APPEL_A_PROJET','ACCOMPAGNEMENT_GRATUIT','CREDIT_BAIL','AUTRE']);
 function sanitizeAidTypes(xs=[]){const vals=arr(xs).filter(x=>typeof x==='string'&&x);const known=vals.filter(x=>KNOWN_AID_TYPES.has(x));return uniq(known.length?known:['AUTRE']);}
@@ -61,9 +61,9 @@ function directOfficialUrl(a){
   return null;
 }
 
-const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'),SITE=path.join(ROOT,'site'),DATA=path.join(SITE,'data'),FULL=process.argv.includes('--full')||(process.env.FUNDING_RADAR_FULL_REFRESH==='1'||process.env.FUNDING_RADAR_FULL_REFRESH==='1');const log=(...x)=>console.log(new Date().toISOString(),...x);
+const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'),SITE=path.join(ROOT,'site'),DATA=path.join(SITE,'data'),FULL=process.argv.includes('--full')||process.env.FUNDING_RADAR_FULL_REFRESH==='1';const log=(...x)=>console.log(new Date().toISOString(),...x);
 const cfg=await readJson(path.join(ROOT,'config','sources.json'),{sources:[]});
-const collectionLock=await loadCollectionLock(ROOT);validateCollectionLock(cfg,collectionLock);
+const collectionLock=await loadCollectionLock(ROOT);requireCollectionLock(collectionLock);validateCollectionLock(cfg,collectionLock);
 await purgeIndirectSources();
 const previous=await readJson(path.join(DATA,'library.json'),{meta:{},aaps:[]});
 const previousCoverage=await readJson(path.join(DATA,'coverage.json'),[]);
@@ -73,9 +73,9 @@ const sourcesToRun=selectSources(cfg,collectionLock),selectedIds=selectedSourceS
 const cycleId=String(process.env.FUNDING_RADAR_CYCLE_ID||process.env.GITHUB_RUN_ID||('local-'+nowIso()));
 const frozenDigest=list=>sha256(JSON.stringify(arr(list).filter(a=>!selectedIds.has(a?.sourceId)).map(a=>a).sort((a,b)=>String(a.id||'').localeCompare(String(b.id||'')))));
 const frozenBeforeSha=collectionLock.locked?frozenDigest(previous.aaps||[]):null;
-const current=collectionLock.locked
-  ? new Map((previous.aaps||[]).filter(a=>!selectedIds.has(a?.sourceId)).map(a=>[canonicalKey(a),a]))
-  : new Map(prevMap);
+// Toujours partir du dernier snapshot valide. Les fiches du cycle actif ne sont remplacées
+// qu'après une collecte sûre ; en cas d'échec ou de volume suspect, le snapshot précédent reste intact.
+const current=new Map(prevMap);
 const cycleSeenKeys=new Set();
 log('Collection lock',lockSummary(collectionLock));
 function withTimeout(p,ms,label){return Promise.race([p,new Promise((_,rej)=>setTimeout(()=>rej(new Error(`timeout ${label} ${ms}ms`)),ms))])}
@@ -139,7 +139,7 @@ candidates.sort((a,b)=>{
   if(at!==bt)return at-bt;
   return completenessScore(b)-completenessScore(a);
 });
-const enrichLimit=collectionLock.locked?candidates.length:Math.max(0,Number(process.env.FUNDING_RADAR_ENRICH_LIMIT||process.env.FUNDING_RADAR_ENRICH_LIMIT||(FULL?180:80)));
+const enrichLimit=collectionLock.locked?candidates.length:Math.max(0,Number(process.env.FUNDING_RADAR_ENRICH_LIMIT||(FULL?180:80)));
 const batch=candidates.slice(0,enrichLimit);
 log(`Enrichissement officiel borné: ${batch.length}/${candidates.length} (limite ${enrichLimit})`);const enriched=new Map();let cursor=0;const workers=Array.from({length:6},async()=>{while(true){const i=cursor++;if(i>=batch.length)return;const a=batch[i];try{const e=await withTimeout(enrichAid(a,{log}),120000,`enrich ${a.id}`);enriched.set(canonicalKey(e),e)}catch(err){log(`Enrichissement ignoré ${a.title}: ${err.message}`)}}});await Promise.all(workers);for(const[k,a]of enriched)current.set(k,a);
 const processedSelected=dedupe(filterDirectLibrary([...current.values()].filter(a=>aidIsInActiveLock(a)&&a.lifecycleStatus!=='STALE'),cfg)).map(repairAidTitle)

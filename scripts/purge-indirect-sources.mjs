@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { assertDirectSources, filterDirectLibrary } from './lib/direct-sources.mjs';
-import { buildCertificationLedger, targetFunding, publicationReason } from './lib/publication.mjs';
+import { buildCertificationLedger, targetFunding, publicationReason, sourceConfigFingerprint, certificationBasisFingerprint, sourceDataFingerprint } from './lib/publication.mjs';
 import { isActiveAtJPlusOne, jPlusOneDate } from './lib/jplus1.mjs';
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
@@ -16,9 +16,11 @@ export async function purgeIndirectSources(root=ROOT){
   assertDirectSources(cfg);
 
   const lib=await read(path.join(data,'library.json'),{meta:{},aaps:[]});
-  const ledger=await buildCertificationLedger(data,cfg);
+  const ledger=await buildCertificationLedger(data,cfg,{root});
+  const historicalRejectedSourceIds=(ledger.rejectedCertifications||[]).flatMap(x=>x.sourceIds||[]);
   const retainedSourceIds=new Set([
     ...(ledger.unlockedSourceIds||[]),
+    ...historicalRejectedSourceIds,
     ...(lock.locked&&Array.isArray(lock.allowedSourceIds)?lock.allowedSourceIds:[])
   ]);
   const beforeRecords=Array.isArray(lib.aaps)?lib.aaps:[];
@@ -143,12 +145,50 @@ export async function purgeIndirectSources(root=ROOT){
   if(changed){
     for(const name of [
       'search-index.json','criteria-audit.json','remediation.json','source-health.json',
-      'production-readiness.json','link-audit.json','certification-ledger.json','deep-audit.json'
+      'production-readiness.json','link-audit.json','deep-audit.json'
     ])await fs.rm(path.join(data,name),{force:true});
+    for(const name of ['PRODUCTION_READINESS.md','REMEDIATION_REPORT.md','DATA_QUALITY_AUDIT.md']){
+      await fs.rm(path.join(root,name),{force:true});
+    }
     await fs.rm(path.join(pub,'rapports'),{recursive:true,force:true});
     await fs.rm(path.join(data,'library-parts'),{recursive:true,force:true});
     await fs.rm(path.join(data,'library-manifest.json'),{force:true});
     await fs.rm(path.join(root,'LEYTON-RADAR-v12.2.0-AUTONOME-LIVE.html'),{force:true});
+  }
+
+  // Le ledger est toujours reconstruit depuis les certificats + la configuration + le code
+  // courant : aucun artefact de déverrouillage périmé ne survit à une purge sans changement de données.
+  await write(path.join(data,'certification-ledger.json'),ledger);
+
+  const activePath=path.join(data,'active-source-certification.json');
+  const active=await read(activePath,null);
+  const currentIds=Array.isArray(lock.allowedSourceIds)?[...lock.allowedSourceIds].sort():[];
+  const activeIds=Array.isArray(active?.configuredSources)?[...active.configuredSources].sort():[];
+  const sameIds=currentIds.length===activeIds.length&&currentIds.every((x,i)=>x===activeIds[i]);
+  const currentSourceFingerprint=sourceConfigFingerprint(cfg,currentIds);
+  const currentBasisFingerprint=await certificationBasisFingerprint(root,cfg,currentIds);
+  const currentDataFingerprint=sourceDataFingerprint(aaps,currentIds);
+  const activeIsCurrent=Boolean(
+    lock.locked
+    && active?.status==='PASS'
+    && active?.lock?.name===lock.name
+    && sameIds
+    && active?.sourceConfigFingerprint===currentSourceFingerprint
+    && active?.certificationBasisFingerprint===currentBasisFingerprint
+    && active?.certifiedDataFingerprint===currentDataFingerprint
+  );
+  if(!activeIsCurrent){
+    await write(activePath,{
+      generatedAt:new Date().toISOString(),
+      status:'PENDING',
+      lock,
+      configuredSources:currentIds,
+      sourceConfigFingerprint:currentSourceFingerprint,
+      certificationBasisFingerprint:currentBasisFingerprint,
+      certifiedDataFingerprint:currentDataFingerprint,
+      libraryRecords:aaps.filter(a=>currentLockIds.has(a?.sourceId)).length,
+      problems:['Recertification requise sur la configuration et le code courants avant déverrouillage de publication.']
+    });
   }
 
   console.log(JSON.stringify({
