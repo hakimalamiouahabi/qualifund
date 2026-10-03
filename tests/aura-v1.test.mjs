@@ -105,3 +105,13 @@ test('une fiche Drupal AURA complète est reconnue sans fallback navigateur',()=
   assert.match(connector,/waitForSelector:'article\.node--type-aid\.node--view-mode-full'/);
   assert.doesNotMatch(connector,/timeoutMs:65000,\s*waitForSelector:'h1'/);
 });
+
+
+test('AURA ne cumule pas retries HTTP longs et double fallback Playwright',()=>{
+  const connector=fs.readFileSync(new URL('../scripts/connectors/aura.mjs',import.meta.url),'utf8');
+  assert.match(connector,/fetchText\(url,\{timeoutMs:8000,retries:0/);
+  const getHtmlBlock=connector.match(/async function getHtml\(url\)\{[\s\S]*?\n\}/)?.[0]||'';
+  assert.doesNotMatch(getHtmlBlock,/browserHtml/);
+  assert.match(connector,/async function getListingHtml/);
+  assert.match(connector,/async function getAidHtml/);
+});
