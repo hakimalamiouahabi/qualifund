@@ -1,0 +1,22 @@
+name: AURA — probe HTTP brut ponctuel
+on:
+  push:
+    branches: [maintenance/aura-live-probe-once]
+    paths:
+      - '.github/workflows/aura-http-probe-once.yml'
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Lire la vue officielle Entreprise
+        shell: bash
+        run: |
+          set -euo pipefail
+          url='https://www.auvergnerhonealpes.fr/aides?f%5B0%5D=profil%3A3'
+          curl -LfsS --max-time 30 -A 'Mozilla/5.0' "$url" -o /tmp/aura.html
+          echo "BYTES=$(wc -c </tmp/aura.html)"
+          echo "CARDS=$(grep -o 'node--type-aid node--view-mode-search-result' /tmp/aura.html | wc -l)"
+          grep -Eo '[0-9]+[[:space:]]+Résultat\(s\)' /tmp/aura.html | head -5 || true
+          grep -oE 'href="[^"]*/aides/[^"]+"' /tmp/aura.html | head -20 || true
+          grep -oE 'Entreprise \([0-9]+\)' /tmp/aura.html | head -10 || true
