@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T10:47:09.457Z",
+  "generatedAt": "2026-10-03T10:56:38.743Z",
   "version": "12.9.2",
   "mode": "LOCKED_CYCLE",
   "currentLock": {
@@ -36,13 +36,13 @@
       "id": 4,
       "name": "Bibliothèque certifiée publiable",
       "status": "FAIL",
-      "detail": "30 fiches publiables J+1 sur 66 fiches brutes ; 36 en quarantaine. 0 strictement VÉRIFIÉES au 2026-10-04. Intégrité recalculée 0/0."
+      "detail": "0 fiches publiables J+1 sur 66 fiches brutes ; 66 en quarantaine. 0 strictement VÉRIFIÉES au 2026-10-04. Intégrité recalculée 0/0."
     },
     {
       "id": 5,
       "name": "Preuves documentaires par champ",
       "status": "FAIL",
-      "detail": "Preuves A/B complètes sur les champs critiques : 0/0 fiches VÉRIFIÉES. File de remédiation synchronisée : non. CdC/règlement : 23/30."
+      "detail": "Preuves A/B complètes sur les champs critiques : 0/0 fiches VÉRIFIÉES. File de remédiation synchronisée : non. CdC/règlement : 0/0."
     },
     {
       "id": 6,
@@ -79,23 +79,23 @@
     "sourcesConfigured": 118,
     "ingestiveSources": 102,
     "controlSources": 16,
-    "certifiedSources": 3,
+    "certifiedSources": 0,
     "evaluatedSources": 3,
     "executedSources": 3,
     "freshExecutedSources": 3,
     "successfulSources": 3,
     "collectionCycleId": null,
     "rawLibrary": 66,
-    "publishedLibrary": 30,
-    "quarantinedLibrary": 36,
-    "activeFiches": 30,
+    "publishedLibrary": 0,
+    "quarantinedLibrary": 66,
+    "activeFiches": 0,
     "jPlusOneDate": "2026-10-04",
-    "jPlusOneActiveFiches": 30,
+    "jPlusOneActiveFiches": 0,
     "verifiedFiches": 0,
     "verifiedIntegrity": 0,
     "verifiedEvidenceIntegrity": 0,
-    "withCdc": 23,
-    "withDeadline": 13,
+    "withCdc": 0,
+    "withDeadline": 0,
     "consultantCases": 10,
     "uatTotal": 10,
     "companySmokeOk": true,

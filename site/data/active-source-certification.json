@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T10:47:11.526Z",
+  "generatedAt": "2026-10-03T10:56:40.743Z",
   "status": "PENDING",
   "lock": {
     "version": 11,
@@ -46,7 +46,8 @@
           ],
           "requiredPathPrefix": "/nos-appels-a-projets-concours/",
           "requireAuditAccounting": true,
-          "minRetained": 20
+          "minRetained": 20,
+          "requireMasterMembership": true
         },
         "bpifrance_aides": {
           "master": "CATALOGUE_SECTION_SUB_AR",
@@ -66,7 +67,8 @@
           ],
           "requiredPathPrefix": "/catalogue-offres/",
           "requireAuditAccounting": true,
-          "minRetained": 15
+          "minRetained": 15,
+          "requireMasterMembership": true
         },
         "bpifrance_rebond_industriel": {
           "master": "DIRECT_OFFICIAL_PAGE",
@@ -83,10 +85,9 @@
           "requireCurrentStatusEvidence": false
         }
       },
-      "requirePublicationReady": true,
-      "requireEnterpriseScope": true
+      "requirePublicationReady": true
     },
-    "notes": "Recertification Bpifrance v12.9.2 publication-ready : seules les fiches officielles directes avec preuves minimales de guichet, instrument, statut lorsque requis et éligibilité entreprise peuvent être certifiées. ADEME reste le cycle suivant ; AURA reste gelée jusqu’aux PASS Bpifrance puis ADEME.",
+    "notes": "Recertification Bpifrance v12.9.2 publication-ready : la collecte est enrichie puis filtrée par les mêmes critères que la publication ; seules les fiches officielles directes publiables peuvent être certifiées. ADEME reste le cycle suivant ; AURA reste gelée jusqu’aux PASS Bpifrance puis ADEME.",
     "foundationBaseline": {
       "version": "Foundation v3.2 / 12.9.2 Bpifrance publication-ready",
       "status": "HARDENING",
@@ -100,7 +101,7 @@
     "bpifrance_rebond_industriel"
   ],
   "sourceConfigFingerprint": "91e4d7c50ae7504b5b21826d5b993316ec49f1916541ef32e365678ea5db0e38",
-  "certificationBasisFingerprint": "2284b0909fd2ce614fdb8686b10817f59ea9682bfdf1e9e056a3f8fd5331500e",
+  "certificationBasisFingerprint": "37074bd17a7ce3a6b0de448a9b3c669498040074d8caa4e20cfebdf32dfce59c",
   "certifiedDataFingerprint": "fbe349e6f5e9e6cd5c2d61511673420f72a8ecf416aaf495ad32d3f77a2e6fe1",
   "libraryRecords": 48,
   "problems": [
