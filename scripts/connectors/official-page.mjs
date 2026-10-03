@@ -17,7 +17,8 @@ export async function collectOfficialPage(source,{log=console.log}={}){
   const scope=source.scope==='France'?'NATIONAL':'REGIONAL';
   const rec=extractFromHtml(html,{url:source.url,sourceTier:'B',scope,region:scope==='REGIONAL'?source.scope:null});
   if(source.titleOverride)rec.title=source.titleOverride;
-  if(source.forceAidType)rec.aidTypes=uniq([...(rec.aidTypes||[]),source.forceAidType]);
+  const forcedAidTypes=uniq([...(Array.isArray(source.forceAidTypes)?source.forceAidTypes:[]),source.forceAidType].filter(Boolean));
+  if(forcedAidTypes.length)rec.aidTypes=uniq([...(rec.aidTypes||[]),...forcedAidTypes]);
   if(source.forceCompanyCategories)rec.companyCategories=uniq([...(rec.companyCategories||[]),...source.forceCompanyCategories]);
   if(source.operator)rec.operator=source.operator;
   rec.id=`${source.id}_official`;
@@ -30,6 +31,17 @@ export async function collectOfficialPage(source,{log=console.log}={}){
   rec.sourceLinks=uniq([source.url,...(rec.sourceLinks||[]).map(x=>x?.url).filter(Boolean)]).map((url,i)=>({label:i?'Source officielle complémentaire':'Page officielle',url}));
   const checkedAt=new Date().toISOString();
   const extra=[];
+  const instrumentPatterns={
+    SUBVENTION:/\bsubventions?\b/i,
+    AVANCE_REMBOURSABLE:/\bavance(?:s)?\s+(?:remboursable|r[eé]cup[eé]rable)s?\b/i,
+    PRET_TAUX_ZERO:/\bpr[êe]t[^.;]{0,60}(?:taux\s*(?:0|z[eé]ro)|sans\s+int[eé]r[êe]t)\b/i
+  };
+  for(const type of forcedAidTypes){
+    const rx=instrumentPatterns[type];if(!rx)continue;
+    const m=pageText.match(rx);if(!m)continue;
+    const i=Math.max(0,(m.index||0)-180),j=Math.min(pageText.length,(m.index||0)+m[0].length+300);
+    extra.push({field:'instrument',sourceUrl:source.url,sourceTier:'B',locator:'official-page-instrument',evidenceText:pageText.slice(i,j),checkedAt});
+  }
   if(source.guichetVerified){
     const needle=String(source.guichetVerified);
     const idx=pageText.toLowerCase().indexOf(needle.toLowerCase());
