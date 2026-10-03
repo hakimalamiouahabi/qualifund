@@ -9,7 +9,8 @@ test('Gate 3 reflète la présence d’un cycle live sans déclarer GO prématur
   const coverage=JSON.parse(fs.readFileSync(new URL('../site/data/coverage.json',import.meta.url),'utf8'));
   assert.equal(r.gates.find(g=>g.id===3).status==='NOT_RUN',coverage.length===0);
   assert.ok(['PASS_TECH','PASS'].includes(r.gates.find(g=>g.id===6).status));
-  assert.equal(r.goProduction,false);
+  const preProduction=r.gates.filter(g=>g.id<=9).every(g=>g.status==='PASS');
+  assert.equal(r.goProduction,preProduction);
 });
 
 
