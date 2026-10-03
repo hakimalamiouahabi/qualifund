@@ -140,7 +140,7 @@ const STRATEGY_IMPLEMENTATIONS={
 const CERTIFICATION_CORE_FILES=[
   'package.json',
   'package-lock.json',
-  'schemas/aid.schema.json',
+  'schemas/aap.schema.json',
   '.github/workflows/update-and-deploy.yml',
   'scripts/update-library.mjs',
   'scripts/purge-indirect-sources.mjs',
