@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { isForbiddenAggregatorUrl } from './lib/direct-sources.mjs';
+import { sourceCalibration } from './lib/collection-lock.mjs';
 import { buildCertificationLedger, publicationReason, targetFunding, hasEnterpriseEvidence, hasGuichetEvidence, hasStatusEvidence, hasTargetInstrumentEvidence } from './lib/publication.mjs';
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
@@ -136,6 +137,11 @@ for(const rel of forbiddenArtifacts){try{await fs.access(path.join(ROOT,rel));pr
 const lockIds=new Set(lock.allowedSourceIds||[]);
 const missingLockSources=[...lockIds].filter(id=>!configured.has(id));
 const controlOnlyIds=new Set((cfg.sources||[]).filter(s=>s.strategy==='control-only'||s.type==='control').map(s=>s.id));
+const currentLockIds=new Set(lock.allowedSourceIds||[]);
+const pendingCalibration=(cfg.sources||[])
+  .filter(s=>!controlOnlyIds.has(s.id)&&!sourceCalibration(s).calibrated)
+  .map(s=>({id:s.id,name:s.name||s.id,scope:s.scope||null,strategy:s.strategy||null,currentLock:currentLockIds.has(s.id)}));
+const activeUncalibrated=pendingCalibration.filter(s=>s.currentLock);
 const controlSourcesInLock=[...lockIds].filter(id=>controlOnlyIds.has(id));
 const primaryIds=new Set(lock.certification?.primarySourceIds||[]);
 const primaryOutsideLock=[...primaryIds].filter(id=>!lockIds.has(id));
@@ -159,6 +165,7 @@ if(presentForbiddenArtifacts.length)p0.push(`Artefact(s) legacy présent(s): ${p
 if(missingLockSources.length)p0.push(`Source(s) du verrou absente(s) du registre: ${missingLockSources.join(', ')}`);
 if(controlSourcesInLock.length)p0.push(`Source(s) de contrôle utilisée(s) pour ingestion dans le verrou: ${controlSourcesInLock.join(', ')}`);
 if(primaryOutsideLock.length)p0.push(`Source(s) primaire(s) de certification hors verrou: ${primaryOutsideLock.join(', ')}`);
+if(activeUncalibrated.length)p0.push(`Source(s) du verrou non calibrée(s): ${activeUncalibrated.map(x=>x.id).join(', ')}`);
 if(coverageOrphans.length)p0.push(`${coverageOrphans.length} ligne(s) coverage pour des sources supprimées`);
 if(manifest?.sourceCount!=null&&Number(manifest.sourceCount)!==(cfg.sources||[]).length)p0.push(`manifest.sourceCount=${manifest.sourceCount} ≠ config=${(cfg.sources||[]).length}`);
 const actualActive=rows.filter(a=>String(a?.lifecycleStatus||'').toUpperCase()==='ACTIVE').length;
@@ -214,6 +221,7 @@ if(publishedQuality.regionalWithoutRegion)p1.push(`${publishedQuality.regionalWi
 if(publishedQuality.invalidCompanyCategory)p1.push(`${publishedQuality.invalidCompanyCategory} fiche(s) publiable(s) avec catégorie entreprise invalide`);
 
 const p2=[];
+if(pendingCalibration.length)p2.push(`${pendingCalibration.length} source(s) future(s) non calibrée(s), bloquées automatiquement jusqu’à mesure du référentiel officiel`);
 if(counters.outOfTargetInstrument)p2.push(`${counters.outOfTargetInstrument} fiche(s) hors instrument cible conservées uniquement dans le stock brut`);
 if(counters.expiredButActive)p2.push(`${counters.expiredButActive} fiche(s) brutes anciennes gardent un statut technique actif`);
 if(counters.noStatusEvidence)p2.push(`${counters.noStatusEvidence} fiche(s) brutes sans preuve A/B de statut`);
@@ -233,7 +241,8 @@ const report={
     configured:(cfg.sources||[]).length,
     duplicateUrls:sourceDuplicates,
     excludedStillConfigured:(cfg.sources||[]).filter(s=>(cfg.excludedSources||[]).includes(s.id)).map(s=>s.id),
-    lock:{missingSources:missingLockSources,controlSources:controlSourcesInLock,primaryOutsideLock}
+    lock:{missingSources:missingLockSources,controlSources:controlSourcesInLock,primaryOutsideLock},
+    pendingCalibration
   },
   architecture:{
     packageScriptTargets:scriptTargets,
