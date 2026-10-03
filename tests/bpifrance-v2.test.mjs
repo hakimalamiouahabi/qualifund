@@ -80,3 +80,17 @@ test('l’ancien slug ADD est déclaré comme alias du référentiel maître',()
     'https://www.bpifrance.fr/catalogue-offres/aide-au-developpement-deeptech'
   );
 });
+
+
+test('le connecteur Bpifrance matérialise la preuve entreprise depuis la page directe',()=>{
+  const connector=fs.readFileSync(new URL('../scripts/connectors/bpifrance.mjs',import.meta.url),'utf8');
+  assert.match(connector,/bpifranceEnterpriseEvidence/);
+  assert.match(connector,/field:'enterpriseEligibility'/);
+  assert.match(connector,/a\.enterpriseEligible=true/);
+});
+
+test('Rebond Industriel déclare explicitement Bpifrance comme guichet vérifié',()=>{
+  const cfg=JSON.parse(fs.readFileSync(new URL('../config/sources.json',import.meta.url),'utf8'));
+  const source=cfg.sources.find(x=>x.id==='bpifrance_rebond_industriel');
+  assert.equal(source.guichetVerified,'Bpifrance');
+});
