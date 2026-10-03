@@ -68,7 +68,7 @@ test('le collecteur AURA matérialise explicitement l’éligibilité entreprise
   assert.match(connector,/field:'enterpriseEligibility'/);
 });
 
-test('AURA reste gelée pendant la recertification ADEME',()=>{
+test('AURA devient le prochain cycle après le PASS ADEME',()=>{
   const lock=JSON.parse(fs.readFileSync(new URL('../config/collection-lock.json',import.meta.url),'utf8'));
   const bpi=JSON.parse(fs.readFileSync(new URL('../site/data/bpifrance-certification.json',import.meta.url),'utf8'));
   assert.equal(lock.locked,true);
@@ -78,7 +78,7 @@ test('AURA reste gelée pendant la recertification ADEME',()=>{
   assert.deepEqual(lock.allowedSourceIds,['ademe']);
   assert.equal(lock.next,'AURA');
   assert.equal(lock.allowedSourceIds.includes('aura'),false);
-  assert.match(lock.notes,/AURA demeure gelée jusqu.au PASS ADEME/i);
+  assert.match(lock.notes,/AURA est le prochain cycle/i);
   assert.equal(bpi.status,'PASS');
   assert.equal(bpi.lock?.name,'Bpifrance');
   assert.ok(bpi.sourceConfigFingerprint);
