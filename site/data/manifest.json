@@ -1,33 +1,24 @@
 {
   "version": "12.7.0",
   "generatedAt": "2026-09-30T20:25:33.273Z",
+  "purgedAt": null,
   "repositoryUrl": "https://github.com/hakimalamiouahabi/qualifund",
-  "sourceCount": 118,
-  "sourcesOk": 91,
-  "sourcesFailed": 28,
-  "activeCollectionSourceCount": 3,
-  "collectionLock": {
-    "locked": true,
-    "mode": "REGION",
-    "name": "Auvergne-Rhône-Alpes",
-    "allowedSourceIds": [
-      "aura"
-    ],
-    "next": "Bourgogne-Franche-Comté",
-    "frozenUnselectedSha": "8dc40e3411b739e4e58b79448dab3be0f871302c95f31952a052dfb73d9d089a"
-  },
-  "libraryCount": 215,
-  "activeCount": 213,
-  "jPlusOneDate": "2026-10-01",
-  "jPlusOneActiveCount": 2102,
-  "archivedCount": 2,
-  "aapCount": 260,
-  "verifiedCount": 0,
-  "withCdc": 817,
-  "withDeadline": 528,
-  "fullRefresh": true,
-  "libraryMode": "DIRECT_OFFICIAL_CATALOG",
   "sourcePolicy": "DIRECT_OFFICIAL_ONLY",
+  "libraryMode": "DIRECT_OFFICIAL_CATALOG",
+  "count": 215,
+  "libraryCount": 215,
+  "rawLibraryCount": 215,
+  "activeCount": 213,
+  "jPlusOneDate": "2026-10-04",
+  "jPlusOneActiveCount": 210,
+  "archivedCount": 2,
+  "staleCount": 0,
+  "aapCount": 48,
+  "verifiedCount": 0,
+  "withCdc": 36,
+  "withDeadline": 99,
+  "sourceCount": 118,
+  "activeCollectionSourceCount": 1,
   "libraryInstruments": [
     "APPEL_A_PROJET",
     "AUTRE",
@@ -40,32 +31,39 @@
     "AVANCE_REMBOURSABLE",
     "PRET_TAUX_ZERO"
   ],
-  "targetInstrumentCount": 750,
-  "directLinkCount": 2115,
-  "missingDirectLinkCount": 1,
+  "targetInstrumentCount": 43,
+  "directLinkCount": 213,
+  "missingDirectLinkCount": 0,
   "categoryCounts": {
-    "STARTUP": 46,
-    "PME": 326,
-    "ETI": 97,
-    "GE": 106
+    "STARTUP": 11,
+    "PME": 39,
+    "ETI": 28,
+    "GE": 6
   },
   "scopeCounts": {
-    "NATIONAL": 128,
-    "REGIONAL": 1988
+    "NATIONAL": 118,
+    "REGIONAL": 95
   },
   "instrumentCounts": {
     "APPEL_A_PROJET": 45,
-    "AUTRE": 1383,
-    "AVANCE_REMBOURSABLE": 48,
-    "PRET_TAUX_ZERO": 29,
-    "SUBVENTION": 720
+    "AUTRE": 146,
+    "AVANCE_REMBOURSABLE": 11,
+    "PRET_TAUX_ZERO": 2,
+    "SUBVENTION": 40
   },
   "targetRule": "ACTIVE_SANS_ECHEANCE_OU_PERMANENT_OU_CLOTURE_GTE_J_PLUS_1",
   "targetCount": null,
   "targetReached": null,
   "coverageGap": null,
-  "contentSha256": "89e3be05ba05b7bb67f97c283b98fa0eec52fccfccfd862bf9c29bae5c5d6845",
-  "count": 215,
   "coverageCertified": false,
-  "rawLibraryCount": 215
+  "collectionLock": {
+    "locked": true,
+    "mode": "REGION",
+    "name": "Auvergne-Rhône-Alpes",
+    "allowedSourceIds": [
+      "aura"
+    ],
+    "next": "Bourgogne-Franche-Comté",
+    "frozenUnselectedSha": "8dc40e3411b739e4e58b79448dab3be0f871302c95f31952a052dfb73d9d089a"
+  }
 }
