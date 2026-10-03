@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { isForbiddenAggregatorUrl } from './lib/direct-sources.mjs';
-import { buildCertificationLedger, publicationReason, targetFunding } from './lib/publication.mjs';
+import { buildCertificationLedger, publicationReason, targetFunding, hasEnterpriseEvidence, hasGuichetEvidence, hasStatusEvidence, hasTargetInstrumentEvidence } from './lib/publication.mjs';
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const DATA=path.join(ROOT,'site','data');
@@ -81,10 +81,10 @@ for(const a of rows){
 
   const ev=Array.isArray(a?.verification?.fieldEvidence)?a.verification.fieldEvidence:[];
   const noEvidence=!ev.length;
-  const noGuichet=!ev.some(e=>e?.field==='guichet'&&['A','B'].includes(e?.sourceTier));
-  const noStatus=!ev.some(e=>e?.field==='sourceStatus'&&['A','B'].includes(e?.sourceTier));
-  const noInstrument=!ev.some(e=>e?.field==='instrument'&&['A','B'].includes(e?.sourceTier));
-  const noEnterprise=!ev.some(e=>e?.field==='enterpriseEligibility'&&['A','B'].includes(e?.sourceTier));
+  const noGuichet=!hasGuichetEvidence(a);
+  const noStatus=!hasStatusEvidence(a);
+  const noInstrument=!hasTargetInstrumentEvidence(a);
+  const noEnterprise=!hasEnterpriseEvidence(a);
   if(noEvidence)put('noEvidence',ref);
   if(noGuichet)put('noGuichetEvidence',ref);
   if(noStatus)put('noStatusEvidence',ref);
