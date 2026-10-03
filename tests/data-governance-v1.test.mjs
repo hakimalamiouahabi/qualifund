@@ -263,6 +263,17 @@ test('le client ne conserve plus l’ancien cache IndexedDB ni la pseudo-collect
   assert.doesNotMatch(app,/function sourceAliasId/);
 });
 
+test('la CI de pull request est non destructive et bloque les régressions avant main',()=>{
+  const ci=fs.readFileSync(path.join(ROOT,'.github/workflows/ci.yml'),'utf8');
+  assert.match(ci,/pull_request:/);
+  assert.match(ci,/permissions:\s*\n\s*contents: read/);
+  assert.match(ci,/npm test/);
+  assert.match(ci,/npm run validate/);
+  assert.match(ci,/npm run audit:deep:strict/);
+  assert.doesNotMatch(ci,/npm run update(?::full)?/);
+  assert.doesNotMatch(ci,/wrangler|cloudflare|git push/i);
+});
+
 test('le workflow Cloudflare ne conserve pas la permission GitHub Pages obsolète',()=>{
   const wf=fs.readFileSync(path.join(ROOT,'.github/workflows/update-and-deploy.yml'),'utf8');
   assert.doesNotMatch(wf,/^\s+pages:\s+read\s*$/m);
