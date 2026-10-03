@@ -156,3 +156,26 @@ test('la purge ne conserve que les sources certifiées et le verrou courant',asy
   assert.match(purge,/filter\(a=>retainedSourceIds\.has\(a\?\.sourceId\)\)/);
   assert.match(purge,/filter\(x=>retainedSourceIds\.has\(x\.id\)\)/);
 });
+
+
+test('une preuve entreprise peut venir d’un objectif officiel contextualisé',async()=>{
+  const {hasEnterpriseEvidence}=await import('../scripts/lib/publication.mjs');
+  const aid={
+    verification:{fieldEvidence:[{
+      field:'objective',sourceTier:'B',sourceUrl:'https://www.bpifrance.fr/test',
+      evidenceText:'Bpifrance soutient des partenariats en innovation entre entreprises françaises et japonaises.'
+    }]}
+  };
+  assert.equal(hasEnterpriseEvidence(aid),true);
+});
+
+test('une mention entreprise non contextuelle dans un objectif ne suffit pas',async()=>{
+  const {hasEnterpriseEvidence}=await import('../scripts/lib/publication.mjs');
+  const aid={
+    verification:{fieldEvidence:[{
+      field:'objective',sourceTier:'B',sourceUrl:'https://www.bpifrance.fr/test',
+      evidenceText:'Le marché concerne de nombreuses entreprises du secteur.'
+    }]}
+  };
+  assert.equal(hasEnterpriseEvidence(aid),false);
+});
