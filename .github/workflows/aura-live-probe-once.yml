@@ -25,6 +25,7 @@ jobs:
           node --input-type=module <<'NODE'
           import fs from 'node:fs';
           import {discoverAura,collectAura} from './scripts/connectors/aura.mjs';
+          import {closeBrowser} from './scripts/lib/browser.mjs';
           const cfg=JSON.parse(fs.readFileSync('./config/sources.json','utf8'));
           const source=cfg.sources.find(s=>s.id==='aura');
           const d=await discoverAura(source,{log:console.log});
@@ -45,4 +46,5 @@ jobs:
             byReason,
             channels:c.audit.channels
           }));
+          await closeBrowser();
           NODE
