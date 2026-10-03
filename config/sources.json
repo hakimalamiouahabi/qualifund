@@ -129,7 +129,7 @@
       "minExpected": 175,
       "minImported": 20,
       "minImportRatio": 0.1,
-      "notes": "AURA v2 officiel-only : le catalogue officiel Région filtré sur le profil Entreprise est le référentiel maître. Les fiches FEADER/FEDER/FSE+/FTJ sont exclues de ce cycle et traitées dans leurs cycles dédiés. Seuls subventions, avances remboursables/récupérables, prêts à taux zéro et AAP/AMI du périmètre sont conservés."
+      "notes": "AURA v14 official-only : catalogue officiel Région filtré profil Entreprise comme référentiel maître. Compteur live revalidé le 03/10/2026 : 175 résultats. HTML brut sans cartes, rendu Playwright nécessaire. FEADER/FEDER/FSE+/FTJ/LEADER/PEI exclus et réservés aux cycles dédiés. Seuls subventions, avances remboursables/récupérables, PTZ et AAP/AMI publication-ready sont conservés."
     },
     {
       "id": "bfc",
