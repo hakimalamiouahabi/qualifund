@@ -34,6 +34,41 @@ const collectionLock={
   next:lock.next||null,
   frozenUnselectedSha:priorFrozen
 };
+
+const currentIds=new Set(collectionLock.allowedSourceIds);
+const matchingCert=(ledger.certifications||[])
+  .filter(c=>c?.status==='PASS'&&c?.sourceIds?.length&&c.sourceIds.every(id=>currentIds.has(id))&&currentIds.size===c.sourceIds.length)
+  .sort((a,b)=>Date.parse(b.generatedAt||0)-Date.parse(a.generatedAt||0))[0]||null;
+let activeCertification;
+if(matchingCert){
+  try{activeCertification=JSON.parse(await fs.readFile(path.join(DATA,matchingCert.file),'utf8'))}
+  catch{activeCertification=null}
+}
+if(!activeCertification){
+  const coverage=JSON.parse(await fs.readFile(path.join(DATA,'coverage.json'),'utf8').catch(()=> '[]'));
+  const bySource={};
+  for(const id of collectionLock.allowedSourceIds){
+    const row=(coverage||[]).find(x=>x.id===id);
+    if(row)bySource[id]={
+      discovered:Number(row.discovered||0),imported:Number(row.imported||0),
+      retained:Number(row.imported||0),errors:Number(row.audit?.errors?.length||0),
+      excluded:Number(row.audit?.excluded?.length||0),
+      rss:Number(row.audit?.channels?.rss||0),
+      catalogue:Number(row.audit?.channels?.catalogue||row.audit?.channels?.enterpriseCatalogue||row.audit?.channels?.catalogueSection||row.audit?.channels?.listing||0)
+    };
+  }
+  activeCertification={
+    generatedAt:new Date().toISOString(),
+    status:'PENDING',
+    lock:collectionLock,
+    configuredSources:collectionLock.allowedSourceIds,
+    libraryRecords:0,
+    bySource,
+    duplicates:[],
+    problems:['Certification du cycle courant non acquise. Les données de ce guichet/région restent hors publication tant que le statut PASS n’est pas généré.']
+  };
+}
+await fs.writeFile(path.join(DATA,'active-source-certification.json'),JSON.stringify(activeCertification,null,2)+'\n','utf8');
 const meta={
   ...(library.meta||{}),
   version,
