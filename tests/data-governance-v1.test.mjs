@@ -5,15 +5,43 @@ import fsp from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { buildCertificationLedger, publicationReason, targetFunding } from '../scripts/lib/publication.mjs';
+import { buildCertificationLedger, publicationReason, targetFunding, hasEnterpriseEvidence, hasTargetInstrumentEvidence } from '../scripts/lib/publication.mjs';
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+
+test('les preuves métier de publication peuvent réutiliser les bénéficiaires officiels',()=>{
+  const base={
+    id:'x',sourceId:'bpi',title:'Aide innovation',kind:'AIDE',aidTypes:['SUBVENTION'],
+    officialPage:'https://example.fr/aide/x',
+    verification:{fieldEvidence:[
+      {field:'guichet',sourceTier:'B',sourceUrl:'https://example.fr/catalogue',evidenceText:'catalogue officiel'},
+      {field:'sourceStatus',sourceTier:'B',sourceUrl:'https://example.fr/aide/x',evidenceText:'ouvert'},
+      {field:'instrument',sourceTier:'B',sourceUrl:'https://example.fr/aide/x',evidenceText:'subvention'},
+      {field:'beneficiaries',sourceTier:'B',sourceUrl:'https://example.fr/aide/x',evidenceText:'PME et ETI françaises'}
+    ]}
+  };
+  assert.equal(hasEnterpriseEvidence(base),true);
+  assert.equal(hasTargetInstrumentEvidence(base),true);
+  assert.equal(publicationReason(base,{configuredSourceIds:new Set(['bpi']),unlockedSourceIds:new Set(['bpi'])}),null);
+});
+
+test('une certification de source ne remplace pas les preuves métier minimales de la fiche',()=>{
+  const base={id:'x',sourceId:'bpi',title:'Aide',kind:'AIDE',aidTypes:['SUBVENTION'],officialPage:'https://example.fr/aide/x',verification:{fieldEvidence:[]}};
+  assert.equal(publicationReason(base,{configuredSourceIds:new Set(['bpi']),unlockedSourceIds:new Set(['bpi'])}),'MISSING_GUICHET_EVIDENCE');
+});
 
 test('la publication refuse une source non certifiée et un instrument hors périmètre',()=>{
   const base={
     id:'x',sourceId:'aura',title:'Aide à l’investissement',lifecycleStatus:'ACTIVE',
     officialPage:'https://www.auvergnerhonealpes.fr/aides/demo',
-    aidTypes:['SUBVENTION']
+    aidTypes:['SUBVENTION'],
+    enterpriseEligible:true,
+    verification:{fieldEvidence:[
+      {field:'guichet',sourceTier:'B',sourceUrl:'https://example.fr/source',evidenceText:'source'},
+      {field:'sourceStatus',sourceTier:'B',sourceUrl:'https://example.fr/aide/x',evidenceText:'open'},
+      {field:'instrument',sourceTier:'B',sourceUrl:'https://example.fr/aide/x',evidenceText:'subvention'},
+      {field:'enterpriseEligibility',sourceTier:'B',sourceUrl:'https://example.fr/source',evidenceText:'entreprise'}
+    ]}
   };
   const configured=new Set(['aura']);
   assert.equal(publicationReason(base,{configuredSourceIds:configured,unlockedSourceIds:new Set()}),'SOURCE_NOT_CERTIFIED');
