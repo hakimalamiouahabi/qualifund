@@ -20,6 +20,9 @@ test('purge cleans internal data without republishing raw exports and is repeata
  try{
   await fs.mkdir(path.join(root,'config'),{recursive:true});await fs.mkdir(path.join(root,'site/data'),{recursive:true});
   await fs.writeFile(path.join(root,'config/sources.json'),JSON.stringify(cfg));
+  await fs.writeFile(path.join(root,'config/collection-lock.json'),JSON.stringify({
+   locked:true,mode:'GUICHET',name:'Bpifrance test',allowedSourceIds:['bpifrance']
+  }));
   await fs.writeFile(path.join(root,'site/data/library.json'),JSON.stringify({meta:{generatedAt:'2026-09-28'},aaps:[valid,{...valid,id:'ae_1',sourceId:'aides_entreprises'}]}));
   await fs.writeFile(path.join(root,'site/data/changes.json'),JSON.stringify([{id:'bpi1'},{id:'ae_1'}]));
   const first=await purgeIndirectSources(root),second=await purgeIndirectSources(root);
