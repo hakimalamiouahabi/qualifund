@@ -75,16 +75,7 @@
       ],
       "next": "ADEME",
       "frozenUnselectedSha": "98b67062ebc7fb87821c37fcbfd1a597b3ea1f46ba828b295288bd7d22ad652e"
-    },
-    "publishedCount": 36,
-    "publishedActiveCount": 36,
-    "quarantinedCount": 18,
-    "certifiedSourceCount": 3,
-    "certifiedSources": [
-      "bpifrance_aap",
-      "bpifrance_aides",
-      "bpifrance_rebond_industriel"
-    ]
+    }
   },
   "aaps": [
     {
