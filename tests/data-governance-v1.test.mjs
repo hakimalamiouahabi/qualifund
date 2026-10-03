@@ -127,6 +127,14 @@ test('les audits d’ingestion n’utilisent plus les stratégies tierces histor
 });
 
 
+test('le commit final de données déclenche Cloudflare tandis que les états intermédiaires restent ignorés',()=>{
+  const wf=fs.readFileSync(path.join(ROOT,'.github/workflows/update-and-deploy.yml'),'utf8');
+  assert.match(wf,/purge du stock hors périmètre certifié \[skip ci\]/i);
+  assert.match(wf,/actualisation FUNDING RADAR"/);
+  assert.doesNotMatch(wf,/actualisation FUNDING RADAR \[skip ci\]/i);
+  assert.match(wf,/Ce commit DOIT déclencher Cloudflare Pages/);
+});
+
 test('le workflow construit l’artefact certifié puis vérifie le SHA réellement publié sur Cloudflare',()=>{
   const wf=fs.readFileSync(path.join(ROOT,'.github/workflows/update-and-deploy.yml'),'utf8');
   assert.match(wf,/Construire l'artefact public certifié/);
