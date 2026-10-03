@@ -145,3 +145,14 @@ test('le certificat actif reflète toujours le verrou courant au lieu d’un anc
   assert.match(app,/Référentiel officiel/);
   assert.doesNotMatch(app,/Canal RSS<\/span>/);
 });
+
+
+test('la purge ne conserve que les sources certifiées et le verrou courant',async()=>{
+  const purge=fs.readFileSync(new URL('../scripts/purge-indirect-sources.mjs',import.meta.url),'utf8');
+  assert.match(purge,/buildCertificationLedger/);
+  assert.match(purge,/retainedSourceIds/);
+  assert.match(purge,/ledger\.unlockedSourceIds/);
+  assert.match(purge,/lock\.allowedSourceIds/);
+  assert.match(purge,/filter\(a=>retainedSourceIds\.has\(a\?\.sourceId\)\)/);
+  assert.match(purge,/filter\(x=>retainedSourceIds\.has\(x\.id\)\)/);
+});
