@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": "12.9.0",
+    "version": "12.9.1",
     "generatedAt": "2026-10-03T10:11:02.972Z",
     "purgedAt": "2026-10-03T10:14:45.945Z",
     "repositoryUrl": "https://github.com/hakimalamiouahabi/qualifund",
@@ -75,12 +75,7 @@
       ],
       "next": "ADEME",
       "frozenUnselectedSha": "98b67062ebc7fb87821c37fcbfd1a597b3ea1f46ba828b295288bd7d22ad652e"
-    },
-    "publishedCount": 0,
-    "publishedActiveCount": 0,
-    "quarantinedCount": 66,
-    "certifiedSourceCount": 0,
-    "certifiedSources": []
+    }
   },
   "aaps": [
     {

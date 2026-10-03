@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-03T10:14:46.018Z",
-  "version": "12.9.0",
+  "generatedAt": "2026-10-03T10:24:08.443Z",
+  "version": "12.9.1",
   "policy": "CERTIFIED_SOURCE_ONLY",
   "unlockedSourceIds": [],
   "guichets": [],
@@ -15,7 +15,7 @@
       ],
       "reason": "SOURCE_CONFIG_FINGERPRINT_MISSING",
       "certifiedFingerprint": null,
-      "currentFingerprint": "f4ce4cef6964f3667cc4a96b5f5b330ccd3aa54c6d6199d04de0257fc46c41ba"
+      "currentFingerprint": "5b4357a5e45403256bac07955dc7a79fc359c18c27dfeddc71dee8f5c4c8271a"
     },
     {
       "file": "bpifrance-certification.json",
@@ -26,9 +26,9 @@
         "bpifrance_aides",
         "bpifrance_rebond_industriel"
       ],
-      "reason": "CERTIFIED_DATA_CHANGED",
-      "certifiedDataFingerprint": "62ee1302d6acdb2362b6c5d2769d33fcfcbdfd6b86810960f2d6425080656fa6",
-      "currentDataFingerprint": "4d9c885e5c0768d95cabd2dac980227eac30c8fe7a6f3f51c0e57c481e321c21"
+      "reason": "SOURCE_CONFIG_CHANGED",
+      "certifiedFingerprint": "84605ce57eee65cb8110296fff7be3d0090966c45304ac53f39145f2acd6a3e2",
+      "currentFingerprint": "87fa5e908ff2d72f08555584467227cb2c30cd8e7d147091d326ca6db8370ef8"
     }
   ]
 }
