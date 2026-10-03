@@ -185,22 +185,7 @@ await writeJsonAtomic(path.join(DATA,'bpifrance-audit.json'),{
   }
 });
 await writeJsonAtomic(path.join(DATA,'library.json'),{meta:manifest,aaps:aids});await writeJsonAtomic(path.join(DATA,'link-audit.json'),{generatedAt:manifest.generatedAt,total:active.length,directLinkCount,missingDirectLinkCount:missingDirectLinks.length,missing:missingDirectLinks});await writeJsonAtomic(path.join(DATA,'coverage.json'),coverageFinal);const oldChanges=await readJson(path.join(DATA,'changes.json'),[]);await writeJsonAtomic(path.join(DATA,'changes.json'),[...oldChanges,...changes].slice(-1200));await writeJsonAtomic(path.join(DATA,'manifest.json'),manifest);await writeJsonAtomic(path.join(DATA,'sources.json'),{version:cfg.version||'unknown',sources:cfg.sources.map(({id,name,scope,type,strategy,url,official,priority,coveredBy,notes})=>({id,name,scope,type,strategy,url,official,priority,coveredBy:arr(coveredBy),notes:notes||null}))});
-const PUBLIC_DIR=path.join(ROOT,'site','bibliotheque');await fs.mkdir(PUBLIC_DIR,{recursive:true});
-const csvEsc=v=>`"${String(v??'').replaceAll('"','""')}"`;
-const csvRows=[['id','titre','type','portee','regions','financeurs','instruments','beneficiaires','thematiques','assiette_min','assiette_max','aide_min','aide_max','taux_min','taux_max','taux_montants_par_taille','projets_attendus','depenses_eligibles','prerequis','criteres_selection','releves','cloture','permanent','page_officielle_directe','statut_lien_direct','cdc','statut_verification','completude','confiance'].join(',')];
-for(const a of aids)csvRows.push([
-  a.id,a.title,a.kind,a.scope,arr(a.regions).join(' | '),arr(a.funder).join(' | '),arr(a.aidTypes).join(' | '),arr(a.companyCategories).join(' | '),arr(a.themes).join(' | '),
-  a.minimumProjectCost??'',a.maximumProjectCost??'',a.aidAmount?.min??'',a.aidAmount?.max??'',a.aidRate?.min??'',a.aidRate?.max??'',
-  arr(a.aidAmount?.byCompanySize).concat(arr(a.aidRate?.byCompanySize)).map(x=>[x.category,x.rateMin??x.min??'',x.rateMax??x.max??'',x.amountMin??'',x.amountMax??''].join(':')).join(' | '),
-  arr(a.projectsExpected).join(' | '),a.eligibleExpenses||'',a.prerequisites||'',a.selectionCriteria||'',
-  arr(a.deadlines).map(x=>typeof x==='string'?x:(x?.date||'')).filter(Boolean).join(' | '),
-  a.finalClosingDate||a.closingDate||'',a.permanent?'oui':'non',directOfficialUrl(a)||'',directOfficialUrl(a)?'LIEN_DIRECT':'A_RATTACHER',arr(a.cdcLinks).map(x=>x?.url||x).filter(Boolean).join(' | '),
-  a.verification?.status||'',a.verification?.completeness??'',a.verification?.confidence??''
-].map(csvEsc).join(','));
-await fs.writeFile(path.join(PUBLIC_DIR,'radar-library.csv'),csvRows.join('\n'),'utf8');
-await writeJsonAtomic(path.join(PUBLIC_DIR,'radar-library.json'),{meta:manifest,aaps:aids});
-// Compatibilité v9 : conserver les anciens noms pendant la transition.
-await fs.writeFile(path.join(PUBLIC_DIR,'qualifund-library.csv'),csvRows.join('\n'),'utf8');
-await writeJsonAtomic(path.join(PUBLIC_DIR,'qualifund-library.json'),{meta:manifest,aaps:aids});
-await writeJsonAtomic(path.join(PUBLIC_DIR,'status.json'),{...manifest,recommendationRule:'fiche ACTIVE sans échéance publiée, ou permanente, ou clôture >= J+1 ; STALE et ARCHIVE exclues',relevanceRule:'classement multi-critères des dispositifs ; éligibilité réglementaire et adéquation projet présentées séparément ; aucune probabilité d’obtention',libraryInstruments,recommendationInstruments});log('Terminé',manifest);await closeBrowser();
+// La collecte ne publie aucun export client. La publication est centralisée dans
+// sync-static-metadata / build-cloudflare-pages et filtre uniquement le corpus certifié.
+log('Terminé',manifest);await closeBrowser();
 
