@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { assertDirectSources, filterDirectLibrary } from './lib/direct-sources.mjs';
-import { buildCertificationLedger, targetFunding, publicationReason, sourceConfigFingerprint, certificationBasisFingerprint } from './lib/publication.mjs';
+import { buildCertificationLedger, targetFunding, publicationReason, sourceConfigFingerprint, certificationBasisFingerprint, sourceDataFingerprint } from './lib/publication.mjs';
 import { isActiveAtJPlusOne, jPlusOneDate } from './lib/jplus1.mjs';
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
@@ -167,6 +167,7 @@ export async function purgeIndirectSources(root=ROOT){
   const sameIds=currentIds.length===activeIds.length&&currentIds.every((x,i)=>x===activeIds[i]);
   const currentSourceFingerprint=sourceConfigFingerprint(cfg,currentIds);
   const currentBasisFingerprint=await certificationBasisFingerprint(root,cfg,currentIds);
+  const currentDataFingerprint=sourceDataFingerprint(aaps,currentIds);
   const activeIsCurrent=Boolean(
     lock.locked
     && active?.status==='PASS'
@@ -174,6 +175,7 @@ export async function purgeIndirectSources(root=ROOT){
     && sameIds
     && active?.sourceConfigFingerprint===currentSourceFingerprint
     && active?.certificationBasisFingerprint===currentBasisFingerprint
+    && active?.certifiedDataFingerprint===currentDataFingerprint
   );
   if(!activeIsCurrent){
     await write(activePath,{
@@ -183,6 +185,7 @@ export async function purgeIndirectSources(root=ROOT){
       configuredSources:currentIds,
       sourceConfigFingerprint:currentSourceFingerprint,
       certificationBasisFingerprint:currentBasisFingerprint,
+      certifiedDataFingerprint:currentDataFingerprint,
       libraryRecords:aaps.filter(a=>currentLockIds.has(a?.sourceId)).length,
       problems:['Recertification requise sur la configuration et le code courants avant déverrouillage de publication.']
     });
