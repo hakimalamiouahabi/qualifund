@@ -332,7 +332,7 @@ function reporting(){
 }
 
 function certification(){
-  const c=state.certification,lock=c?.lock||state.meta?.collectionLock||{},srcId=lock?.allowedSourceIds?.[0],row=c?.bySource?.[srcId]||{};
+  const c=currentLockCertification(),lock=state.meta?.collectionLock||c?.lock||{},srcId=lock?.allowedSourceIds?.[0],row=c?.bySource?.[srcId]||{};
   const discovered=Number(row.discovered||0),imported=Number(row.imported||0),retained=Number(row.retained||0),errors=Number(row.errors||0),excluded=Number(row.excluded||0);
   const officialInventory=Number(row.enterpriseCatalogue||row.catalogueSection||row.listing||row.catalogue||row.rssActive||row.rss||discovered||0);
   const max=Math.max(1,discovered,imported,retained),status=c?.status||'NON GÉNÉRÉ';
