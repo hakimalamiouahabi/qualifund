@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { isActiveAtJPlusOne, jPlusOneDate } from '../scripts/lib/jplus1.mjs';
+import { isActiveAtJPlusOne, jPlusOneDate, parisDate } from '../scripts/lib/jplus1.mjs';
 
 const now=new Date('2026-09-28T12:00:00Z');
 
