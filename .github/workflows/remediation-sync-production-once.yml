@@ -59,7 +59,7 @@ jobs:
           set -euo pipefail
           git config user.name "funding-radar-bot"
           git config user.email "funding-radar-bot@users.noreply.github.com"
-          git add site/data/remediation.json site/data/live-smoke.json site/data/uat-results.json site/data/production-readiness.json REMEDIATION_REPORT.md PRODUCTION_READINESS.md
+          git add site/data site/bibliotheque site/runtime-config.js site/sw.js REMEDIATION_REPORT.md PRODUCTION_READINESS.md DATA_QUALITY_AUDIT.md || true
           if ! git diff --cached --quiet; then
             git commit -m "chore(validation): synchroniser les preuves ADEME production"
             git pull --rebase origin main
