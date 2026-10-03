@@ -112,6 +112,20 @@ for(let i=0;i<sourceRuns.length;i++){
   }
   const directAids=(r.aids||[]).filter(a0=>a0?.title&&isDirectAid(a0,cfg));
   const assessment=assessCollection(source,{...r,aids:directAids});
+  if(!assessment.success){
+    const caution=`${assessment.reasons.join(' ; ')} — snapshot précédent conservé sans aucune fusion partielle. `;
+    coverage.push({
+      cycleId,id:source.id,name:source.name,scope:source.scope,
+      success:false,lifecycleSafe:false,
+      emptyIngestion:assessment.emptyIngestion,suspiciousVolume:assessment.suspiciousVolume,
+      lowImportedCount:assessment.lowImportedCount,lowImportRatio:assessment.lowImportRatio,
+      importRatio:assessment.importRatio,discovered:assessment.discovered,imported:assessment.imported,
+      audit:r.audit||null,message:caution+(r.message||'Collecte rejetée'),
+      durationMs,checkedAt:nowIso(),lastSuccessfulAt:old?.lastSuccessfulAt||null,
+      consecutiveFailures:(old?.consecutiveFailures||0)+1
+    });
+    continue;
+  }
   const seen=new Set();
   for(const a0 of directAids){
     const a={...a0,lastSeenAt:nowIso(),sourceId:a0.sourceId||source.id,lifecycleStatus:a0.lifecycleStatus||'ACTIVE'};
