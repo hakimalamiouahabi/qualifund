@@ -229,6 +229,8 @@ console.log(JSON.stringify({
   samples:{
     outOfTargetCertified:reasonSamples.OUT_OF_TARGET_INSTRUMENT||[],
     inactiveCertified:reasonSamples.INACTIVE_OR_STALE||[],
+    missingGuichetCertified:reasonSamples.MISSING_GUICHET_EVIDENCE||[],
+    missingEnterpriseCertified:reasonSamples.MISSING_ENTERPRISE_EVIDENCE||[],
     expiredButActive:sample.expiredButActive||[],
     published:publishedQualitySamples
   }
