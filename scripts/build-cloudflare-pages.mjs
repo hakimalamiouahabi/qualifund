@@ -5,7 +5,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execSync } from 'node:child_process';
-import { buildCertificationLedger, isPublishableAid } from './lib/publication.mjs';
+import { buildCertificationLedger, isPublishableAid, sourceConfigFingerprint, certificationBasisFingerprint } from './lib/publication.mjs';
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const SITE=path.join(ROOT,'site');
@@ -74,6 +74,8 @@ if(!activeCertification){
     status:'PENDING',
     lock:{locked:Boolean(lock.locked),mode:lock.mode||null,name:lock.name||null,allowedSourceIds:currentIds,next:lock.next||null},
     configuredSources:currentIds,
+    sourceConfigFingerprint:sourceConfigFingerprint(cfg,currentIds),
+    certificationBasisFingerprint:await certificationBasisFingerprint(ROOT,cfg,currentIds),
     libraryRecords:0,
     bySource,duplicates:[],
     problems:['Certification du cycle courant non acquise. Les données de ce guichet/région restent hors publication tant que le statut PASS n’est pas généré.']
