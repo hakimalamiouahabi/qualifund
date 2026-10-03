@@ -1,0 +1,47 @@
+name: ADEME — vérification production finale
+on:
+  push:
+    branches: [maintenance/ademe-production-verify-once]
+    paths:
+      - '.github/workflows/ademe-production-final-once.yml'
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      RADAR_PUBLIC_URL: https://qualifund.pages.dev
+      EXPECTED_SHA: 70c51de4ddb4e2a400f8a653e87b15c7966d50f8
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: Node 22
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - name: Dépendances
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Attendre Cloudflare
+        shell: bash
+        run: |
+          set -euo pipefail
+          for i in $(seq 1 60); do
+            payload="$(curl -fsS --max-time 15 "$RADAR_PUBLIC_URL/data/build-info.json?ts=$(date +%s)" || true)"
+            live_sha="$(printf '%s' "$payload" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{try{const j=JSON.parse(s);console.error('PUBLIC_COUNT='+String(j.publishedCount||''));process.stdout.write(j.commitSha||'')}catch{}})")"
+            if [ "$live_sha" = "$EXPECTED_SHA" ]; then
+              echo "Cloudflare synchronisé sur $live_sha"
+              printf '%s' "$payload" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const j=JSON.parse(s);if(Number(j.publishedCount)!==104)process.exit(2);if(!j.certifiedSources?.includes('ademe'))process.exit(3);console.log(JSON.stringify(j,null,2));})"
+              exit 0
+            fi
+            echo "Tentative $i/60 — SHA public: ${live_sha:-indisponible}"
+            sleep 10
+          done
+          exit 1
+      - name: Smoke public + SIREN
+        run: node scripts/live-smoke.mjs --strict-company --strict-public
+      - name: UAT
+        run: npm run uat
+      - name: Readiness
+        run: GITHUB_EVENT_NAME=workflow_dispatch npm run production:gates
+      - name: Certification production stricte
+        run: npm run certify:production
