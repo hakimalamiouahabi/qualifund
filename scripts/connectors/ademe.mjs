@@ -436,8 +436,23 @@ async function getDetailHtml(url){
   return{html:null,finalUrl:url,via:null,unavailableReason:browserReason||httpReason||'DETAIL_UNAVAILABLE',httpReason};
 }
 
+
+function parisDateOnly(now=new Date()){
+  return new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Paris',year:'numeric',month:'2-digit',day:'2-digit'}).format(now);
+}
+export function ademeCataloguePolicy(source,{now=new Date()}={}){
+  const p=source?.cataloguePolicy;
+  if(!p||p.catalogueScope!=='ADEME_ONLY'||p.guichet!=='ADEME'||p.aidKindInstrument!=='SUBVENTION')return null;
+  if(!/^https:\/\/agirpourlatransition\.ademe\.fr\/entreprises\/aides-financieres(?:$|[/?#])/i.test(String(p.sourceUrl||'')))return null;
+  const verified=Date.parse(String(p.verifiedAt||'')+'T12:00:00Z');
+  const ageDays=Number.isFinite(verified)?Math.floor((now.getTime()-verified)/86400000):Infinity;
+  const maxAge=Math.max(1,Number(p.maxAgeDays||0));
+  if(!Number.isFinite(ageDays)||ageDays<0||ageDays>maxAge)return null;
+  return {...p,ageDays,checkedDate:parisDateOnly(now)};
+}
+
 function baseAidFromInventory(source,link){
-  const url=canonicalUrl(link.url),now=new Date().toISOString();
+  const url=canonicalUrl(link.url),now=new Date().toISOString(),policy=ademeCataloguePolicy(source);
   return{
     id:directPageId(source.id,url),
     canonicalId:directPageId(source.id,url),
@@ -453,7 +468,7 @@ function baseAidFromInventory(source,link){
     themes:[],
     scope:'NATIONAL',
     regions:[],
-    aidTypes:(link.catalogueKind||ademeKindFromOfficialUrl(url))==='AAP / AMI'?['APPEL_A_PROJET']:['AUTRE'],
+    aidTypes:(link.catalogueKind||ademeKindFromOfficialUrl(url))==='AAP / AMI'?['APPEL_A_PROJET']:(policy?.aidKindInstrument?[policy.aidKindInstrument]:['AUTRE']),
     openingDate:link.rssOpeningDate||null,
     closingDate:link.catalogueClosingDate||link.rssClosingDate||null,
     finalClosingDate:link.catalogueClosingDate||link.rssClosingDate||null,
@@ -557,18 +572,28 @@ async function extractOne(source,link){
   const checkedAt=new Date().toISOString();
   const membershipSource=(link.inventoryMode==='RSS_ACTIVE_MIRROR'?source.rssUrl:source.url);
   const membershipEvidence=link.catalogueEvidence||(`Inventaire officiel ADEME Entreprises — ${link.catalogueKind}`);
+  const policy=ademeCataloguePolicy(source);
   const extra=[
     {field:'catalogueMembership',sourceUrl:membershipSource,sourceTier:'B',locator:link.inventoryMode==='RSS_ACTIVE_MIRROR'?'rss-active-item':'catalogue-card',evidenceText:membershipEvidence.slice(0,850),checkedAt},
     {field:'sourceStatus',sourceUrl:membershipSource,sourceTier:'B',locator:link.inventoryMode==='RSS_ACTIVE_MIRROR'?'rss-deadline':'catalogue-card-status',evidenceText:(link.catalogueEvidence||(`Échéance officielle ${closing||'active'}`)).slice(0,850),checkedAt},
     {field:'enterpriseEligibility',sourceUrl:source.url,sourceTier:'B',locator:'catalogue-entreprises',evidenceText:'Référencé dans le catalogue ADEME Entreprises',checkedAt},
     {field:'catalogueKind',sourceUrl:loaded?requested:membershipSource,sourceTier:'B',locator:loaded?'direct-page-type':'official-url-taxonomy',evidenceText:link.catalogueKind,checkedAt}
   ];
+  if(policy){
+    extra.push({field:'guichet',sourceUrl:policy.sourceUrl,sourceTier:'B',locator:'ademe-catalogue-policy',evidenceText:policy.evidence.slice(0,850),checkedAt});
+    if(link.catalogueKind==='AIDE'){
+      extra.push({field:'instrument',sourceUrl:policy.sourceUrl,sourceTier:'B',locator:'ademe-catalogue-policy:aide=subvention',evidenceText:policy.evidence.slice(0,850),checkedAt});
+      if(!a.aidTypes.includes('SUBVENTION'))a.aidTypes=uniq([...a.aidTypes.filter(x=>x!=='AUTRE'),'SUBVENTION']);
+    }
+    a.guichetVerified='ADEME';
+    if(!a.funder.includes('ADEME'))a.funder=uniq([...a.funder,'ADEME']);
+  }
   if(territory.evidence)extra.push({field:'territory',sourceUrl:requested,sourceTier:'B',locator:'page-text-match:territory',evidenceText:territory.evidence.slice(0,850),checkedAt});
   const instrumentEvidence=loaded?ademeInstrumentEvidence(text,a.aidTypes):null;
   if(instrumentEvidence)extra.push({field:'instrument',sourceUrl:requested,sourceTier:'B',locator:'page-text-match:instrument',evidenceText:instrumentEvidence,checkedAt});
   if(attribution)extra.push({field:'guichet',sourceUrl:requested,sourceTier:'B',locator:'page-text-match:ademe-attribution',evidenceText:attribution.slice(0,850),checkedAt});
   a.verification={...(a.verification||{}),status:loaded?'VERIFIE':'A_REVERIFIER',sourceTier:'B',lastChecked:checkedAt,fieldEvidence:[...(a.verification?.fieldEvidence||[]),...extra]};
-  a.guichetVerification=attribution?{status:'VERIFIED',sourceUrl:requested,evidenceText:attribution.slice(0,850),checkedAt}:{status:'UNVERIFIED',sourceUrl:membershipSource,evidenceText:'Présence sur le portail ADEME Entreprises : hébergement officiel, sans preuve suffisante du financeur/opérateur du dispositif.',checkedAt};
+  a.guichetVerification=attribution?{status:'VERIFIED',sourceUrl:requested,evidenceText:attribution.slice(0,850),checkedAt}:policy?{status:'VERIFIED',sourceUrl:policy.sourceUrl,evidenceText:policy.evidence.slice(0,850),checkedAt}:{status:'UNVERIFIED',sourceUrl:membershipSource,evidenceText:'Présence sur le portail ADEME Entreprises : hébergement officiel, sans preuve suffisante du financeur/opérateur du dispositif.',checkedAt};
   return{aid:a,excluded:null,detailWarning};
 }
 
