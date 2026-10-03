@@ -118,7 +118,8 @@ const STRATEGY_IMPLEMENTATIONS={
   'aura-official':'scripts/connectors/aura.mjs',
   'official-page':'scripts/connectors/official-page.mjs',
   'catalog-html':'scripts/connectors/web-catalog.mjs',
-  'opendatasoft':'scripts/connectors/opendatasoft.mjs'
+  'opendatasoft':'scripts/connectors/opendatasoft.mjs',
+  'control-only':'scripts/connectors/control.mjs'
 };
 const CERTIFICATION_CORE_FILES=[
   'package.json',
