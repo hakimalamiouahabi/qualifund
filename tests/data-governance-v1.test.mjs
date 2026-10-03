@@ -116,13 +116,15 @@ test('les audits d’ingestion n’utilisent plus les stratégies tierces histor
 });
 
 
-test('le workflow de production publie l’artefact dist certifié pendant un cycle verrouillé',()=>{
+test('le workflow construit l’artefact certifié puis vérifie le SHA réellement publié sur Cloudflare',()=>{
   const wf=fs.readFileSync(path.join(ROOT,'.github/workflows/update-and-deploy.yml'),'utf8');
   assert.match(wf,/Construire l'artefact public certifié/);
   assert.match(wf,/run: npm run build:cloudflare/);
-  assert.match(wf,/path: dist/);
-  assert.doesNotMatch(wf,/deploy:\n\s+needs: build\n\s+if:.*collection_locked/);
-  assert.doesNotMatch(wf,/verify-production:\n\s+needs: \[build, deploy\]\n\s+if:.*collection_locked/);
+  assert.match(wf,/RADAR_PUBLIC_URL: https:\/\/qualifund\.pages\.dev/);
+  assert.match(wf,/build-info\.json/);
+  assert.match(wf,/EXPECTED_SHA/);
+  assert.doesNotMatch(wf,/actions\/deploy-pages/);
+  assert.doesNotMatch(wf,/actions\/upload-pages-artifact/);
 });
 
 
@@ -213,7 +215,7 @@ test('un ancien certificat PASS ne peut pas être affiché comme PASS du verrou 
   assert.match(app,/function currentLockCertification\(\)/);
   assert.match(app,/certLock\.name===current\.name/);
   assert.match(app,/activeCert=currentCert\?\.status\|\|'PENDING'/);
-  assert.match(app,/const c=currentLockCertification\(\)/);
+  assert.match(app,/function certification\(\)\{\s*const c=currentLockCertification\(\)/);
 });
 
 test('le build Cloudflare régénère le certificat actif du verrou courant',()=>{
