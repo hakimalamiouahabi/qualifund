@@ -30,9 +30,15 @@ export function targetFunding(a){
 export function recentOrActive(a,{now=new Date(),recentDays=60}={}){
   const lifecycle=String(a?.lifecycleStatus||'ACTIVE').toUpperCase();
   if(CLOSED_STATES.has(lifecycle))return false;
-  if(lifecycle!=='ARCHIVE')return true;
-  const d=day(closingDate(a));if(d==null)return false;
-  return d>=now.getTime()-recentDays*86400000;
+  if(a?.permanent===true&&lifecycle!=='ARCHIVE')return true;
+  const d=day(closingDate(a));
+  if(d!=null){
+    // La date officielle prévaut sur un statut technique ancien : au-delà de J-60,
+    // une fiche n'est plus publiable même si lifecycleStatus est resté ACTIVE.
+    return d>=now.getTime()-recentDays*86400000;
+  }
+  if(lifecycle==='ARCHIVE')return false;
+  return true;
 }
 export function publicationReason(a,{configuredSourceIds=null,unlockedSourceIds=null,now=new Date(),recentDays=60}={}){
   if(!a||typeof a!=='object')return'INVALID_RECORD';
