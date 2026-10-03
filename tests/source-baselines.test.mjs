@@ -6,7 +6,7 @@ const by=new Map(cfg.sources.map(s=>[s.id,s]));
 test('planchers Web officiels des sources prioritaires',()=>{
   assert.ok(by.get('ademe').minExpected>=60);
   assert.ok(by.get('ademe').minImported>=1);
-  assert.match(by.get('ademe').externalAuditFile||'',/ademe-v2-external-audit\.json$/);
+  assert.equal(by.get('ademe').externalAuditFile,undefined);
   assert.equal(by.get('ademe').strategy,'ademe-official');
   assert.ok(by.get('bpifrance_aap').minExpected>=20);
   assert.ok(by.get('bpifrance_aides').minExpected>=20);
