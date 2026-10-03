@@ -1,0 +1,88 @@
+name: ADEME — synchroniser remédiation et certifier production
+
+on:
+  push:
+    branches: [maintenance/remediation-sync-production-once]
+    paths:
+      - '.github/workflows/remediation-sync-production-once.yml'
+
+jobs:
+  sync-and-certify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    permissions:
+      contents: write
+    env:
+      RADAR_PUBLIC_URL: https://qualifund.pages.dev
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Node 22
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - name: Dépendances
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Audit final du corpus certifié
+        run: |
+          set -euo pipefail
+          npm test
+          npm run validate
+          npm run audit:deep:strict
+          npm run uat
+      - name: Resynchroniser la file de remédiation
+        run: npm run remediation
+      - name: Smoke production courant
+        run: node scripts/live-smoke.mjs --strict-company --strict-public
+      - name: Recalculer la readiness complète
+        run: GITHUB_EVENT_NAME=workflow_dispatch npm run production:gates
+      - name: Vérifier GO PRODUCTION avant mutation
+        shell: bash
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const r=JSON.parse(fs.readFileSync('site/data/production-readiness.json','utf8'));
+          if(!r.goProduction){
+            console.error(r.gates.filter(g=>g.status!=='PASS'));
+            process.exit(1);
+          }
+          console.log('GO PRODUCTION = OUI');
+          NODE
+      - name: Publier les preuves synchronisées sur main
+        id: publish
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "funding-radar-bot"
+          git config user.email "funding-radar-bot@users.noreply.github.com"
+          git add site/data/remediation.json site/data/live-smoke.json site/data/uat-results.json site/data/production-readiness.json REMEDIATION_REPORT.md PRODUCTION_READINESS.md
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(validation): synchroniser les preuves ADEME production"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Attendre la publication Cloudflare du SHA de preuves
+        shell: bash
+        env:
+          EXPECTED_SHA: ${{ steps.publish.outputs.sha }}
+        run: |
+          set -euo pipefail
+          for i in $(seq 1 60); do
+            payload="$(curl -fsS --max-time 15 "$RADAR_PUBLIC_URL/data/build-info.json?ts=$(date +%s)" || true)"
+            live_sha="$(printf '%s' "$payload" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{try{process.stdout.write(JSON.parse(s).commitSha||'')}catch{}})")"
+            if [ "$live_sha" = "$EXPECTED_SHA" ]; then
+              echo "Cloudflare synchronisé sur $live_sha"
+              printf '%s' "$payload"
+              exit 0
+            fi
+            echo "Tentative $i/60 — SHA public: ${live_sha:-indisponible}"
+            sleep 10
+          done
+          exit 1
+      - name: Certification production stricte
+        run: npm run certify:production
