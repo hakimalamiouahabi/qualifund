@@ -1,6 +1,6 @@
 # FUNDING RADAR — Rapport de remédiation v12.9.3
 
-Généré : 2026-10-03T11:09:53.640Z
+Généré : 2026-10-03T12:35:52.587Z
 
 - Stock brut conservé : **54**
 - Corpus certifié publiable : **36**

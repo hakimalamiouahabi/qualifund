@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T12:31:13.305Z",
+  "generatedAt": "2026-10-03T12:35:44.638Z",
   "version": "12.9.3",
   "policy": "CERTIFIED_SOURCE_ONLY",
   "unlockedSourceIds": [
@@ -14,7 +14,7 @@
     {
       "file": "bpifrance-certification.json",
       "name": "Bpifrance",
-      "generatedAt": "2026-10-03T11:09:45.351Z",
+      "generatedAt": "2026-10-03T12:35:43.964Z",
       "status": "PASS",
       "sourceIds": [
         "bpifrance_aap",
@@ -27,8 +27,8 @@
       "currentSourceConfigFingerprint": "ab4073aae0857eb20f56359e7a92cb124144594cf28cfbd14a77132e3947a6ae",
       "certificationBasisFingerprint": "6d4831132105d95d3fe6bbd324d6206426e02c747e5fae478d3f9a0754c0e2a9",
       "currentCertificationBasisFingerprint": "6d4831132105d95d3fe6bbd324d6206426e02c747e5fae478d3f9a0754c0e2a9",
-      "certifiedDataFingerprint": "d6c0c3c4de8812ae5c553c08b651a6cd81b1a2b198150e2f58f08fc72bf281c3",
-      "currentDataFingerprint": "d6c0c3c4de8812ae5c553c08b651a6cd81b1a2b198150e2f58f08fc72bf281c3"
+      "certifiedDataFingerprint": "5bd3e28a7e3f5443050e0a5ec16af2f47d5fb41fe28ab49dd44a759277a41ed9",
+      "currentDataFingerprint": "5bd3e28a7e3f5443050e0a5ec16af2f47d5fb41fe28ab49dd44a759277a41ed9"
     }
   ],
   "rejectedCertifications": [

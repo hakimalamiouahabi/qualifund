@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-03T11:09:45.470Z",
+  "generatedAt": "2026-10-03T12:35:44.085Z",
   "date": "2026-10-03",
   "baselineInitialized": false,
   "totals": {
-    "before": 66,
+    "before": 54,
     "after": 54,
     "new": 0,
     "modified": 5,
-    "obsolete": 12
+    "obsolete": 0
   },
   "nouvellesAides": [],
   "aidesModifiees": [
@@ -17,7 +17,7 @@
         "titre": "CONDITIONS PARTICULIÈRES BPIFRANCE",
         "statut": "ACTIVE",
         "echeance": "",
-        "source": "https://rebond-industriel.bpifrance.fr/storage/sites/7/2023/02/Conditions_particulieres_Bpifrance.pdf",
+        "source": "https://rebond-industriel.bpifrance.fr",
         "verification": "A_REVERIFIER",
         "confiance": 63
       },
@@ -112,114 +112,5 @@
       }
     }
   ],
-  "aidesObsoletes": [
-    {
-      "id": "bpifrance_aides_323a03e84018a6bd6610b7833a0a3dbb5258fef1c568aeebb9ff866da9b109e7",
-      "titre": "BOURSE FRENCH TECH LAB",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.bpifrance.fr/catalogue-offres/bourse-french-tech-lab",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "bpifrance_aap_2b547e756e34ba42ac5839c25a1a7a994da2ca5fb36821400660bc29ba33c5e8",
-      "titre": "Ce dispositif vise à favoriser les nouveaux équipements ou solutions technologiques permettant une amélioration à court terme de la performance énergé...",
-      "statut": "ACTIVE",
-      "echeance": "2026-12-10",
-      "source": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-decarbonation-des-navires-de-peche",
-      "verification": "A_REVERIFIER",
-      "confiance": 38
-    },
-    {
-      "id": "bpifrance_aap_9e1d837375dec1e329a6a9eef2c5368f7ef454da48a802da2a18aa9a87e9fe87",
-      "titre": "Cet Appel à projets vise à soutenir le développement de sous-systèmes avancés et souverains pour des solutions en robotique, machines intelligentes et...",
-      "statut": "ACTIVE",
-      "echeance": "2027-04-06",
-      "source": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-defi-flagships",
-      "verification": "A_REVERIFIER",
-      "confiance": 19
-    },
-    {
-      "id": "bpifrance_aides_7445758aaacd772e3c4ce3ad7469d56bc736db5c66ef4d98bbb1cf32433dec19",
-      "titre": "FRENCH TECH TREMPLIN",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.bpifrance.fr/catalogue-offres/french-tech-tremplin",
-      "verification": "A_REVERIFIER",
-      "confiance": 9
-    },
-    {
-      "id": "bpifrance_aap_dcd37621494f1511a6f683cb87c1c69001d4537f73c776c90d236c2a23c53d49",
-      "titre": "L’appel à projets « Challenge prévention : démontrer la valeur des innovations en vie réelle » doit permettre de soutenir des projets d’envergure auto...",
-      "statut": "ACTIVE",
-      "echeance": "2028-12-31",
-      "source": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-challenge-prevention-demontrer-la-valeur-des-innovations-en-vie-reelle",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "bpifrance_aap_6e8de1721c63acc4f7f6e2f784c4f6bff05ed07b9815447b49475322caf2590f",
-      "titre": "L’appel à projets «Démonstration de la valeur des organoïdes et organes sur puce» vise à financer des démonstrateurs de valeur (preuves de concept) qu...",
-      "statut": "ACTIVE",
-      "echeance": "2027-06-10",
-      "source": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-demonstration-de-la-valeur-des-organoides-et-organes-sur-puce",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "bpifrance_aap_be284d777230fbf1e4d5d20df1634c0efce8dbe53ec2e1c4e9ef734761e64709",
-      "titre": "L’appel à projets Grands Défis « Soutien aux innovations de rupture dans la filière DM implantable et robotique chirurgicale » vise deux objectifs : s...",
-      "statut": "ACTIVE",
-      "echeance": "2026-10-06",
-      "source": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-grands-defis-soutien-aux-innovations-de-rupture-dans-la-filiere-dm-implantable-et-robotique-chirurgicale",
-      "verification": "A_REVERIFIER",
-      "confiance": 9
-    },
-    {
-      "id": "bpifrance_aap_a8a386c0cd2e461567f9447a4dd02030748d60f2940cdad3c196374201b50674",
-      "titre": "Le Fonds de Fonds Entrepreneuriat Quartiers 2030 (EQ30), d’une taille de 60 M€, a été constitué en 2024 dans le cadre du programme Entrepreneuriat Qua...",
-      "statut": "ACTIVE",
-      "echeance": "2029-04-17",
-      "source": "https://www.bpifrance.fr/nos-appels-a-projets-concours/fonds-de-fonds-entrepreneuriat-quartiers-2030-eq30",
-      "verification": "A_REVERIFIER",
-      "confiance": 19
-    },
-    {
-      "id": "bpifrance_aap_1764bdb7c865d8132b517938a6a5d7a499eb94d1a42a394e0f3a7b1e6d744386",
-      "titre": "Le fonds de fonds Multicap croissance N°4 (MC4) s'inscrit dans le cadre du plan France 2030 mis en place par l’Etat en octobre 2021.",
-      "statut": "ACTIVE",
-      "echeance": "2026-12-07",
-      "source": "https://www.bpifrance.fr/nos-appels-a-projets-concours/multicap-croissance-ndeg4-mc4",
-      "verification": "A_REVERIFIER",
-      "confiance": 19
-    },
-    {
-      "id": "bpifrance_aap_e1656f9666c4844dfe4fe6534dfc72d2e92300badfa7eb7d25aaeb262528b435",
-      "titre": "Le Fonds Industries Agroalimentaires (I2A) vise à dynamiser l’écosystème des fonds d’investissement ciblant les PME et ETI industrielles françaises su...",
-      "statut": "ACTIVE",
-      "echeance": "2029-04-24",
-      "source": "https://www.bpifrance.fr/nos-appels-a-projets-concours/fonds-industries-agroalimentaires-i2a",
-      "verification": "A_REVERIFIER",
-      "confiance": 19
-    },
-    {
-      "id": "bpifrance_aap_9942172975b6931b2cc5f868f2832b30f8b5eaca25f92fe9d5f07c9fab90694e",
-      "titre": "Le Fonds national d’amorçage 3 (FNA 3) est une action de France 2030.",
-      "statut": "ACTIVE",
-      "echeance": "2028-02-29",
-      "source": "https://www.bpifrance.fr/nos-appels-a-projets-concours/fonds-national-damorcage-3-fna-3",
-      "verification": "A_REVERIFIER",
-      "confiance": 19
-    },
-    {
-      "id": "bpifrance_aap_652e7ead773b7f27d9e2733abf6e832b648a102ed82ec23ec2da886b67d959c7",
-      "titre": "Le Fonds National de Venture Industriel (FNVI) s'inscrit dans le cadre du plan France 2030 mis en place par l’Etat en octobre 2021.",
-      "statut": "ACTIVE",
-      "echeance": "2027-06-06",
-      "source": "https://www.bpifrance.fr/nos-appels-a-projets-concours/fonds-national-de-venture-industriel-fnvi",
-      "verification": "A_REVERIFIER",
-      "confiance": 19
-    }
-  ]
+  "aidesObsoletes": []
 }

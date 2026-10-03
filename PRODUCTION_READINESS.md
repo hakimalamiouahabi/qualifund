@@ -1,6 +1,6 @@
 # FUNDING RADAR — Production Readiness v12.9.3
 
-Généré : 2026-10-03T11:09:53.908Z
+Généré : 2026-10-03T12:35:52.830Z
 
 - **Gate 1 — Dépôt GitHub et versionnement** : PASS — hakimalamiouahabi/qualifund
 - **Gate 2 — URL permanente** : BLOCKED — Déploiement permanent non confirmé.

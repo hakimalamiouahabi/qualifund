@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generatedAt": "2026-10-03T11:05:44.037Z",
+    "generatedAt": "2026-10-03T12:31:42.622Z",
     "version": "12.9.3",
     "collectionLock": {
       "locked": true,
@@ -48,8 +48,8 @@
       "httpStatus": 403,
       "finalUrl": "https://www.bpifrance.fr/nos-appels-a-projets-concours",
       "contentType": "text/html",
-      "durationMs": 996,
-      "checkedAt": "2026-10-03T11:05:42.850Z",
+      "durationMs": 1152,
+      "checkedAt": "2026-10-03T12:31:41.675Z",
       "note": "Source protégée/anti-bot/quota : collecteur navigateur ou stratégie spécialisée requise."
     },
     {
@@ -66,8 +66,8 @@
       "httpStatus": 403,
       "finalUrl": "https://www.bpifrance.fr/catalogue-offres",
       "contentType": "text/html",
-      "durationMs": 950,
-      "checkedAt": "2026-10-03T11:05:42.851Z",
+      "durationMs": 1107,
+      "checkedAt": "2026-10-03T12:31:41.674Z",
       "note": "Source protégée/anti-bot/quota : collecteur navigateur ou stratégie spécialisée requise."
     },
     {
@@ -84,8 +84,8 @@
       "httpStatus": 200,
       "finalUrl": "https://rebond-industriel.bpifrance.fr/",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 2127,
-      "checkedAt": "2026-10-03T11:05:44.029Z",
+      "durationMs": 2047,
+      "checkedAt": "2026-10-03T12:31:42.615Z",
       "note": null
     }
   ]

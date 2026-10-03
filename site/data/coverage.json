@@ -1,6 +1,6 @@
 [
   {
-    "cycleId": "37118496467",
+    "cycleId": "37123117386",
     "id": "bpifrance_aap",
     "name": "Bpifrance — appels à projets, AMI et concours",
     "scope": "France",
@@ -18,6 +18,11 @@
       "imported": 17,
       "excluded": [
         {
+          "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-grands-defis-soutien-aux-innovations-de-rupture-dans-la-filiere-dm-implantable-et-robotique-chirurgicale",
+          "label": "L’appel à projets Grands Défis « Soutien aux innovations de rupture dans la filière DM implantable et robotique chirurgicale » vise deux objectifs : s...",
+          "reason": "PUBLICATION_GATE_MISSING_ENTERPRISE_EVIDENCE"
+        },
+        {
           "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-decarbonation-des-navires-de-peche",
           "label": "Ce dispositif vise à favoriser les nouveaux équipements ou solutions technologiques permettant une amélioration à court terme de la performance énergé...",
           "reason": "PUBLICATION_GATE_MISSING_ENTERPRISE_EVIDENCE"
@@ -28,8 +33,8 @@
           "reason": "PUBLICATION_GATE_MISSING_ENTERPRISE_EVIDENCE"
         },
         {
-          "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-challenge-prevention-demontrer-la-valeur-des-innovations-en-vie-reelle",
-          "label": "L’appel à projets « Challenge prévention : démontrer la valeur des innovations en vie réelle » doit permettre de soutenir des projets d’envergure auto...",
+          "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/fonds-national-de-venture-industriel-fnvi",
+          "label": "Le Fonds National de Venture Industriel (FNVI) s'inscrit dans le cadre du plan France 2030 mis en place par l’Etat en octobre 2021.",
           "reason": "PUBLICATION_GATE_MISSING_ENTERPRISE_EVIDENCE"
         },
         {
@@ -38,13 +43,13 @@
           "reason": "PUBLICATION_GATE_MISSING_ENTERPRISE_EVIDENCE"
         },
         {
-          "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-grands-defis-soutien-aux-innovations-de-rupture-dans-la-filiere-dm-implantable-et-robotique-chirurgicale",
-          "label": "L’appel à projets Grands Défis « Soutien aux innovations de rupture dans la filière DM implantable et robotique chirurgicale » vise deux objectifs : s...",
+          "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/fonds-national-damorcage-3-fna-3",
+          "label": "Le Fonds national d’amorçage 3 (FNA 3) est une action de France 2030.",
           "reason": "PUBLICATION_GATE_MISSING_ENTERPRISE_EVIDENCE"
         },
         {
-          "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/fonds-de-fonds-entrepreneuriat-quartiers-2030-eq30",
-          "label": "Le Fonds de Fonds Entrepreneuriat Quartiers 2030 (EQ30), d’une taille de 60 M€, a été constitué en 2024 dans le cadre du programme Entrepreneuriat Qua...",
+          "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-challenge-prevention-demontrer-la-valeur-des-innovations-en-vie-reelle",
+          "label": "L’appel à projets « Challenge prévention : démontrer la valeur des innovations en vie réelle » doit permettre de soutenir des projets d’envergure auto...",
           "reason": "PUBLICATION_GATE_MISSING_ENTERPRISE_EVIDENCE"
         },
         {
@@ -53,18 +58,13 @@
           "reason": "PUBLICATION_GATE_MISSING_ENTERPRISE_EVIDENCE"
         },
         {
+          "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/fonds-de-fonds-entrepreneuriat-quartiers-2030-eq30",
+          "label": "Le Fonds de Fonds Entrepreneuriat Quartiers 2030 (EQ30), d’une taille de 60 M€, a été constitué en 2024 dans le cadre du programme Entrepreneuriat Qua...",
+          "reason": "PUBLICATION_GATE_MISSING_ENTERPRISE_EVIDENCE"
+        },
+        {
           "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/fonds-industries-agroalimentaires-i2a",
           "label": "Le Fonds Industries Agroalimentaires (I2A) vise à dynamiser l’écosystème des fonds d’investissement ciblant les PME et ETI industrielles françaises su...",
-          "reason": "PUBLICATION_GATE_MISSING_ENTERPRISE_EVIDENCE"
-        },
-        {
-          "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/fonds-national-damorcage-3-fna-3",
-          "label": "Le Fonds national d’amorçage 3 (FNA 3) est une action de France 2030.",
-          "reason": "PUBLICATION_GATE_MISSING_ENTERPRISE_EVIDENCE"
-        },
-        {
-          "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/fonds-national-de-venture-industriel-fnvi",
-          "label": "Le Fonds National de Venture Industriel (FNVI) s'inscrit dans le cadre du plan France 2030 mis en place par l’Etat en octobre 2021.",
           "reason": "PUBLICATION_GATE_MISSING_ENTERPRISE_EVIDENCE"
         }
       ],
@@ -76,13 +76,13 @@
       }
     },
     "message": "Bpifrance — appels à projets, AMI et concours: 27 découverte(s), 17 retenue(s), 10 exclusion(s) après enrichissement/publication.",
-    "durationMs": 8341,
-    "checkedAt": "2026-10-03T11:05:53.169Z",
-    "lastSuccessfulAt": "2026-10-03T11:05:53.169Z",
+    "durationMs": 5884,
+    "checkedAt": "2026-10-03T12:31:50.327Z",
+    "lastSuccessfulAt": "2026-10-03T12:31:50.327Z",
     "consecutiveFailures": 0
   },
   {
-    "cycleId": "37118496467",
+    "cycleId": "37123117386",
     "id": "bpifrance_aides",
     "name": "Bpifrance — subventions, avances remboursables et aides à l'innovation",
     "scope": "France",
@@ -92,11 +92,11 @@
     "suspiciousVolume": false,
     "lowImportedCount": false,
     "lowImportRatio": false,
-    "importRatio": 0.6666666666666666,
-    "discovered": 27,
+    "importRatio": 0.6428571428571429,
+    "discovered": 28,
     "imported": 18,
     "audit": {
-      "discovered": 27,
+      "discovered": 28,
       "imported": 18,
       "excluded": [
         {
@@ -112,14 +112,20 @@
           "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
         },
         {
-          "url": "https://www.bpifrance.fr/catalogue-offres/les-formations-en-presentiel",
-          "title": "Les formations en présentiel",
+          "url": "https://www.bpifrance.fr/catalogue-offres/pi-rd-bonifie-nouvelle-industrie-0",
+          "title": "PI R&D BONIFIE NOUVELLE INDUSTRIE",
           "aidTypes": [],
           "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
         },
         {
-          "url": "https://www.bpifrance.fr/catalogue-offres/pi-rd-bonifie-nouvelle-industrie-0",
-          "title": "PI R&D BONIFIE NOUVELLE INDUSTRIE",
+          "url": "https://www.bpifrance.fr/catalogue-offres/horizon-europe",
+          "title": "Horizon Europe",
+          "aidTypes": [],
+          "reason": "BPIFRANCE_NON_FINANCEUR_DIRECT"
+        },
+        {
+          "url": "https://www.bpifrance.fr/catalogue-offres/pret-innovation-rd-innovation-creative",
+          "title": "PRÊT INNOVATION R&D - INNOVATION CREATIVE",
           "aidTypes": [],
           "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
         },
@@ -130,8 +136,8 @@
           "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
         },
         {
-          "url": "https://www.bpifrance.fr/catalogue-offres/pret-innovation-rd-innovation-creative",
-          "title": "PRÊT INNOVATION R&D - INNOVATION CREATIVE",
+          "url": "https://www.bpifrance.fr/catalogue-offres/les-formations-en-presentiel",
+          "title": "Les formations en présentiel",
           "aidTypes": [],
           "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
         },
@@ -152,20 +158,20 @@
         }
       ],
       "errors": [],
-      "accounted": 27,
+      "accounted": 28,
       "channels": {
-        "catalogueSection": 27,
+        "catalogueSection": 28,
         "sitemap": 354
       }
     },
-    "message": "Bpifrance — subventions, avances remboursables et aides à l'innovation: 27 découverte(s), 18 retenue(s), 3 exclusion(s) après enrichissement/publication.",
-    "durationMs": 5780,
-    "checkedAt": "2026-10-03T11:05:53.177Z",
-    "lastSuccessfulAt": "2026-10-03T11:05:53.177Z",
+    "message": "Bpifrance — subventions, avances remboursables et aides à l'innovation: 28 découverte(s), 18 retenue(s), 3 exclusion(s) après enrichissement/publication.",
+    "durationMs": 6850,
+    "checkedAt": "2026-10-03T12:31:50.334Z",
+    "lastSuccessfulAt": "2026-10-03T12:31:50.334Z",
     "consecutiveFailures": 0
   },
   {
-    "cycleId": "37118496467",
+    "cycleId": "37123117386",
     "id": "bpifrance_rebond_industriel",
     "name": "Bpifrance — France 2030 Rebond Industriel",
     "scope": "France",
@@ -180,9 +186,9 @@
     "imported": 1,
     "audit": null,
     "message": "Page officielle analysée: France 2030 — Rebond Industriel — soutien à l’investissement industriel",
-    "durationMs": 3437,
-    "checkedAt": "2026-10-03T11:05:53.178Z",
-    "lastSuccessfulAt": "2026-10-03T11:05:53.178Z",
+    "durationMs": 2444,
+    "checkedAt": "2026-10-03T12:31:50.336Z",
+    "lastSuccessfulAt": "2026-10-03T12:31:50.336Z",
     "consecutiveFailures": 0
   },
   {

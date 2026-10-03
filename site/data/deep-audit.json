@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T11:09:47.059Z",
+  "generatedAt": "2026-10-03T12:35:45.702Z",
   "version": "12.9.3",
   "currentLock": {
     "name": "Bpifrance",
@@ -870,7 +870,7 @@
     "failed": []
   },
   "metadata": {
-    "manifestGeneratedAt": "2026-10-03T11:05:57.444Z",
+    "manifestGeneratedAt": "2026-10-03T12:31:55.998Z",
     "manifestSourceCount": 118,
     "manifestLock": {
       "locked": true,
@@ -894,7 +894,7 @@
     },
     "bpifrance-certification.json": {
       "status": "PASS",
-      "generatedAt": "2026-10-03T11:09:45.351Z",
+      "generatedAt": "2026-10-03T12:35:43.964Z",
       "problems": [],
       "libraryRecords": 36
     }
@@ -905,7 +905,7 @@
       {
         "file": "bpifrance-certification.json",
         "name": "Bpifrance",
-        "generatedAt": "2026-10-03T11:09:45.351Z",
+        "generatedAt": "2026-10-03T12:35:43.964Z",
         "ageHours": 0,
         "status": "FRESH"
       }
