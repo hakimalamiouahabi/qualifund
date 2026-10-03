@@ -6,11 +6,11 @@ import path from 'node:path';
 const ROOT=path.resolve(new URL('..',import.meta.url).pathname);
 const read=p=>fs.readFileSync(path.join(ROOT,p),'utf8');
 
-test('bibliothèque exhaustive large et recommandation strictement SUB/AR/PTZ',()=>{
+test('bibliothèque opérationnelle limitée aux instruments cibles dont AAP',()=>{
   const upd=read('scripts/update-library.mjs');
   assert.match(upd,/DIRECT_OFFICIAL_CATALOG/);
   for(const token of ['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO','PRET','GARANTIE','ALLEGEMENT_FISCAL'])assert.ok(upd.includes(token),token);
-  assert.match(upd,/recommendationInstruments=\['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO'\]/);
+  assert.match(upd,/recommendationInstruments=\['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO','APPEL_A_PROJET'\]/);
   const cfg=JSON.parse(read('config/sources.json'));
   for(const id of ['occitanie_foster','paca_feder_loan']){const s=cfg.sources.find(x=>x.id===id);assert.equal(s?.strategy,'official-page');assert.equal(s?.forceAidType,'PRET_TAUX_ZERO');}
 });
