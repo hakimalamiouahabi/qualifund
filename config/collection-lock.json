@@ -43,7 +43,8 @@
         ],
         "requiredPathPrefix": "/nos-appels-a-projets-concours/",
         "requireAuditAccounting": true,
-        "minRetained": 20
+        "minRetained": 20,
+        "requireMasterMembership": true
       },
       "bpifrance_aides": {
         "master": "CATALOGUE_SECTION_SUB_AR",
@@ -63,7 +64,8 @@
         ],
         "requiredPathPrefix": "/catalogue-offres/",
         "requireAuditAccounting": true,
-        "minRetained": 15
+        "minRetained": 15,
+        "requireMasterMembership": true
       },
       "bpifrance_rebond_industriel": {
         "master": "DIRECT_OFFICIAL_PAGE",
