@@ -32,8 +32,14 @@ const counters={
 };
 const reasons={};
 const reasonSamples={};
+const publishedQuality={
+  noEvidence:0,noGuichetEvidence:0,noStatusEvidence:0,noInstrumentEvidence:0,noEnterpriseEvidence:0,
+  expiredButActive:0,invalidCompanyCategory:0,regionalWithoutRegion:0
+};
+const publishedQualitySamples={};
 const sample={};
 const put=(key,item)=>{counters[key]++;(sample[key]??=[]);if(sample[key].length<20)sample[key].push(item)};
+const putPublished=(key,item)=>{publishedQuality[key]++;(publishedQualitySamples[key]??=[]);if(publishedQualitySamples[key].length<20)publishedQualitySamples[key].push(item)};
 const officialSeen=new Map(),publishedOfficialSeen=new Map(),publishedIdSeen=new Set();
 const publishedDuplicates=[];
 const now=Date.now();
@@ -74,11 +80,26 @@ for(const a of rows){
   if(badCat)put('invalidCompanyCategory',{...ref,category:badCat});
 
   const ev=Array.isArray(a?.verification?.fieldEvidence)?a.verification.fieldEvidence:[];
-  if(!ev.length)put('noEvidence',ref);
-  if(!ev.some(e=>e?.field==='guichet'&&['A','B'].includes(e?.sourceTier)))put('noGuichetEvidence',ref);
-  if(!ev.some(e=>e?.field==='sourceStatus'&&['A','B'].includes(e?.sourceTier)))put('noStatusEvidence',ref);
-  if(!ev.some(e=>e?.field==='instrument'&&['A','B'].includes(e?.sourceTier)))put('noInstrumentEvidence',ref);
-  if(!ev.some(e=>e?.field==='enterpriseEligibility'&&['A','B'].includes(e?.sourceTier)))put('noEnterpriseEvidence',ref);
+  const noEvidence=!ev.length;
+  const noGuichet=!ev.some(e=>e?.field==='guichet'&&['A','B'].includes(e?.sourceTier));
+  const noStatus=!ev.some(e=>e?.field==='sourceStatus'&&['A','B'].includes(e?.sourceTier));
+  const noInstrument=!ev.some(e=>e?.field==='instrument'&&['A','B'].includes(e?.sourceTier));
+  const noEnterprise=!ev.some(e=>e?.field==='enterpriseEligibility'&&['A','B'].includes(e?.sourceTier));
+  if(noEvidence)put('noEvidence',ref);
+  if(noGuichet)put('noGuichetEvidence',ref);
+  if(noStatus)put('noStatusEvidence',ref);
+  if(noInstrument)put('noInstrumentEvidence',ref);
+  if(noEnterprise)put('noEnterpriseEvidence',ref);
+  if(!reason){
+    if(noEvidence)putPublished('noEvidence',ref);
+    if(noGuichet)putPublished('noGuichetEvidence',ref);
+    if(noStatus)putPublished('noStatusEvidence',ref);
+    if(noInstrument)putPublished('noInstrumentEvidence',ref);
+    if(noEnterprise)putPublished('noEnterpriseEvidence',ref);
+    if(dateRx.test(end)&&Date.parse(end+'T23:59:59Z')<now-60*86400000&&life!=='ARCHIVE')putPublished('expiredButActive',{...ref,closingDate:end,lifecycleStatus:life});
+    if(a?.scope==='REGIONAL'&&(!Array.isArray(a?.regions)||!a.regions.length))putPublished('regionalWithoutRegion',ref);
+    if(badCat)putPublished('invalidCompanyCategory',{...ref,category:badCat});
+  }
 
   const links=[...(a?.sourceLinks||[]),...(a?.cdcLinks||[]),...(a?.regulationLinks||[]),...(a?.formLinks||[])];
   const seen=new Set();
@@ -123,12 +144,21 @@ if(counters.orphanSource)p0.push(`${counters.orphanSource} fiche(s) rattachée(s
 if(publishedDuplicates.length)p0.push(`${publishedDuplicates.length} doublon(s) dans le corpus certifié publiable`);
 
 const p1=[];
-if(counters.outOfTargetInstrument)p1.push(`${counters.outOfTargetInstrument} fiche(s) hors instrument cible conservées en stock brut`);
-if(counters.expiredButActive)p1.push(`${counters.expiredButActive} fiche(s) anciennes restent actives techniquement`);
-if(counters.noStatusEvidence)p1.push(`${counters.noStatusEvidence} fiche(s) sans preuve A/B de statut`);
-if(counters.noInstrumentEvidence)p1.push(`${counters.noInstrumentEvidence} fiche(s) sans preuve A/B d’instrument`);
-if(counters.noEnterpriseEvidence)p1.push(`${counters.noEnterpriseEvidence} fiche(s) sans preuve A/B d’éligibilité entreprise`);
-if(failedCoverage.length)p1.push(`${failedCoverage.length} source(s) en échec dans le coverage conservé`);
+if(publishedQuality.expiredButActive)p1.push(`${publishedQuality.expiredButActive} fiche(s) publiable(s) ont une clôture ancienne malgré un statut actif`);
+if(publishedQuality.noGuichetEvidence)p1.push(`${publishedQuality.noGuichetEvidence} fiche(s) publiable(s) sans preuve A/B de guichet`);
+if(publishedQuality.noStatusEvidence)p1.push(`${publishedQuality.noStatusEvidence} fiche(s) publiable(s) sans preuve A/B de statut`);
+if(publishedQuality.noEnterpriseEvidence)p1.push(`${publishedQuality.noEnterpriseEvidence} fiche(s) publiable(s) sans preuve A/B d’éligibilité entreprise`);
+if(publishedQuality.regionalWithoutRegion)p1.push(`${publishedQuality.regionalWithoutRegion} fiche(s) régionale(s) publiable(s) sans région`);
+if(publishedQuality.invalidCompanyCategory)p1.push(`${publishedQuality.invalidCompanyCategory} fiche(s) publiable(s) avec catégorie entreprise invalide`);
+
+const p2=[];
+if(counters.outOfTargetInstrument)p2.push(`${counters.outOfTargetInstrument} fiche(s) hors instrument cible conservées uniquement dans le stock brut`);
+if(counters.expiredButActive)p2.push(`${counters.expiredButActive} fiche(s) brutes anciennes gardent un statut technique actif`);
+if(counters.noStatusEvidence)p2.push(`${counters.noStatusEvidence} fiche(s) brutes sans preuve A/B de statut`);
+if(counters.noInstrumentEvidence)p2.push(`${counters.noInstrumentEvidence} fiche(s) brutes sans preuve A/B d’instrument`);
+if(counters.noEnterpriseEvidence)p2.push(`${counters.noEnterpriseEvidence} fiche(s) brutes sans preuve A/B d’éligibilité entreprise`);
+if(failedCoverage.length)p2.push(`${failedCoverage.length} source(s) historiques en échec dans le coverage conservé`);
+p2.push(`${counters.quarantined} fiche(s) brutes en quarantaine de publication`);
 
 const report={
   generatedAt:new Date().toISOString(),
@@ -149,8 +179,9 @@ const report={
     manifestLock:manifest?.collectionLock||null
   },
   historicalCertifications,
-  severity:{p0,p1,p2:[`${counters.quarantined} fiche(s) brutes mises en quarantaine de publication`]},
-  samples:sample
+  publishedQuality,
+  severity:{p0,p1,p2},
+  samples:{raw:sample,published:publishedQualitySamples}
 };
 await fs.writeFile(path.join(DATA,'deep-audit.json'),JSON.stringify(report,null,2)+'\n','utf8');
 const md=[
@@ -165,6 +196,8 @@ const md=[
   ...(p0.length?p0.map(x=>'- '+x):['- Aucune']),
   '','## P1 — dette de qualité à remédier','',
   ...(p1.length?p1.map(x=>'- '+x):['- Aucune']),
+  '','## P2 — dette historique en quarantaine','',
+  ...(p2.length?p2.map(x=>'- '+x):['- Aucune']),
   '','## Quarantaine par motif','',
   ...Object.entries(reasons).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`- ${k}: ${v}`)
 ].join('\n');
@@ -172,7 +205,8 @@ await fs.writeFile(path.join(ROOT,'DATA_QUALITY_AUDIT.md'),md+'\n','utf8');
 console.log(JSON.stringify({
   generatedAt:report.generatedAt,
   raw:counters.raw,publishable:counters.publishable,quarantined:counters.quarantined,
-  p0,p1,
+  p0,p1,p2,
+  publishedQuality,
   reasons,
   keyCounters:{
     orphanSource:counters.orphanSource,duplicateOfficialUrl:counters.duplicateOfficialUrl,
@@ -183,7 +217,8 @@ console.log(JSON.stringify({
   samples:{
     outOfTargetCertified:reasonSamples.OUT_OF_TARGET_INSTRUMENT||[],
     inactiveCertified:reasonSamples.INACTIVE_OR_STALE||[],
-    expiredButActive:sample.expiredButActive||[]
+    expiredButActive:sample.expiredButActive||[],
+    published:publishedQualitySamples
   }
 },null,2));
 if(process.argv.includes('--strict')&&p0.length)process.exitCode=1;
