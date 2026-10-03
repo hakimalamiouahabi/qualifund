@@ -16,7 +16,6 @@ const excluded=new Set([
   'data/bootstrap.js',
   'data/library.json',
   'data/library.previous.json',
-  'bibliotheque/radar-library.json'
 ]);
 
 const rel=p=>path.relative(SITE,p).split(path.sep).join('/');
