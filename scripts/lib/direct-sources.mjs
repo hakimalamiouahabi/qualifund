@@ -142,7 +142,7 @@ export function sanitizeAidLinks(a,cfg){
 
 export function isDirectAid(a,cfg){
   if(!a||aidHasForbiddenProvenance(a)||/^ae_|^qf_ae_/.test(a.id||''))return false;
-  if(['STALE','CLOSED','CLOS','EXPIRED'].includes(String(a.lifecycleStatus||'').toUpperCase()))return false;
+  if(['STALE','CLOSED','CLOS','EXPIRED','ARCHIVE'].includes(String(a.lifecycleStatus||'').toUpperCase()))return false;
   const source=(cfg.sources||[]).find(s=>s.id===a.sourceId);
   if(!source||source.strategy==='control-only'||containsForbiddenAggregator(source))return false;
   try{
