@@ -168,3 +168,11 @@ test('AURA conserve le libellé régional officiel tout en certifiant le guichet
   assert.match(connector,/const GUICHET='AURA'/);
   assert.match(connector,/a\.sourcePortal=REGION;a\.guichetVerified=GUICHET/);
 });
+
+test('le verrou AURA autorise explicitement le marqueur APPEL_A_PROJET sans élargir les instruments financiers',()=>{
+  const lock=JSON.parse(fs.readFileSync(new URL('../config/collection-lock.json',import.meta.url),'utf8'));
+  assert.deepEqual(
+    lock.certification.sourceRules.aura.allowedAidTypes,
+    ['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO','APPEL_A_PROJET']
+  );
+});
