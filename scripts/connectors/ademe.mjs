@@ -401,7 +401,7 @@ function hasUsefulAidDetail(html=''){
   return /(?:appel\s+[àa]\s+projets?|aide|dispositif)[^.;]{0,140}(?:clos|cl[oô]tur[eé]|ouvert|en\s+cours)|d[eé]lai\s+de\s+d[eé]p[oô]t|heure\s+de\s+cl[oô]ture|b[eé]n[eé]ficiaires?|[êe]tes-vous\s+concern[eé]s?/i.test(text);
 }
 
-function ademeAccessBlockReason(html='',title=''){
+export function ademeAccessBlockReason(html='',title=''){
   const sample=(String(title||'')+' '+String(html||'').slice(0,12000)).toLowerCase();
   if(/un instant|just a moment|cf-chl|challenge-platform|verify you are human|verification en cours/.test(sample))return 'CLOUDFLARE_CHALLENGE';
   return null;
