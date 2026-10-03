@@ -13,6 +13,8 @@ const lib=await read(path.join(DATA,'library.json'),{meta:{},aaps:[]});
 const coverage=await read(path.join(DATA,'coverage.json'),[]);
 const manifest=await read(path.join(DATA,'manifest.json'),{});
 const ledger=await buildCertificationLedger(DATA,cfg);
+const pkg=await read(path.join(ROOT,'package.json'),{scripts:{}});
+let workflow='';try{workflow=await fs.readFile(path.join(ROOT,'.github','workflows','update-and-deploy.yml'),'utf8')}catch{}
 
 const rows=Array.isArray(lib.aaps)?lib.aaps:[];
 const configured=new Set((cfg.sources||[]).map(s=>s.id));
@@ -121,6 +123,23 @@ for(const s of cfg.sources||[]){
   try{const u=new URL(k);u.hash='';u.pathname=u.pathname.replace(/\/+$/,'')||'/';k=u.href.replace(/\/$/,'')}catch{}
   if(sourceUrlSeen.has(k))sourceDuplicates.push({url:k,a:sourceUrlSeen.get(k),b:s.id});else sourceUrlSeen.set(k,s.id);
 }
+const scriptTargets=[...new Set(Object.values(pkg.scripts||{}).flatMap(cmd=>[...String(cmd).matchAll(/\bnode\s+(scripts\/[^\s;&|]+\.mjs)\b/g)].map(m=>m[1])))];
+const missingScriptTargets=[];
+for(const rel of scriptTargets){try{await fs.access(path.join(ROOT,rel))}catch{missingScriptTargets.push(rel)}}
+const workflowNpmScripts=[...new Set([...workflow.matchAll(/\bnpm\s+run\s+([a-zA-Z0-9:._-]+)/g)].map(m=>m[1]))];
+const missingWorkflowScripts=workflowNpmScripts.filter(name=>!pkg.scripts?.[name]);
+const forbiddenArtifacts=[
+  'site/data/bootstrap.js','site/data/library.previous.json','LEYTON-RADAR-v12.2.0-AUTONOME-LIVE.html'
+];
+const presentForbiddenArtifacts=[];
+for(const rel of forbiddenArtifacts){try{await fs.access(path.join(ROOT,rel));presentForbiddenArtifacts.push(rel)}catch{}}
+const lockIds=new Set(lock.allowedSourceIds||[]);
+const missingLockSources=[...lockIds].filter(id=>!configured.has(id));
+const controlOnlyIds=new Set((cfg.sources||[]).filter(s=>s.strategy==='control-only'||s.type==='control').map(s=>s.id));
+const controlSourcesInLock=[...lockIds].filter(id=>controlOnlyIds.has(id));
+const primaryIds=new Set(lock.certification?.primarySourceIds||[]);
+const primaryOutsideLock=[...primaryIds].filter(id=>!lockIds.has(id));
+
 const coverageIds=new Set((coverage||[]).map(x=>x.id));
 const coverageOrphans=(coverage||[]).filter(x=>!configured.has(x.id)).map(x=>x.id);
 const missingCurrentCoverage=(lock.allowedSourceIds||[]).filter(id=>!coverageIds.has(id));
@@ -134,6 +153,12 @@ for(const file of certFiles){
 }
 const p0=[];
 if(sourceDuplicates.length)p0.push(`${sourceDuplicates.length} URL(s) de source dupliquée(s)`);
+if(missingScriptTargets.length)p0.push(`${missingScriptTargets.length} script(s) package.json introuvable(s): ${missingScriptTargets.join(', ')}`);
+if(missingWorkflowScripts.length)p0.push(`${missingWorkflowScripts.length} commande(s) npm du workflow absente(s) de package.json: ${missingWorkflowScripts.join(', ')}`);
+if(presentForbiddenArtifacts.length)p0.push(`Artefact(s) legacy présent(s): ${presentForbiddenArtifacts.join(', ')}`);
+if(missingLockSources.length)p0.push(`Source(s) du verrou absente(s) du registre: ${missingLockSources.join(', ')}`);
+if(controlSourcesInLock.length)p0.push(`Source(s) de contrôle utilisée(s) pour ingestion dans le verrou: ${controlSourcesInLock.join(', ')}`);
+if(primaryOutsideLock.length)p0.push(`Source(s) primaire(s) de certification hors verrou: ${primaryOutsideLock.join(', ')}`);
 if(coverageOrphans.length)p0.push(`${coverageOrphans.length} ligne(s) coverage pour des sources supprimées`);
 if(manifest?.sourceCount!=null&&Number(manifest.sourceCount)!==(cfg.sources||[]).length)p0.push(`manifest.sourceCount=${manifest.sourceCount} ≠ config=${(cfg.sources||[]).length}`);
 const actualActive=rows.filter(a=>String(a?.lifecycleStatus||'').toUpperCase()==='ACTIVE').length;
@@ -150,6 +175,13 @@ if(historicalCertifications['ademe-certification.json']?.status!=='PASS')p0.push
 if(historicalCertifications['bpifrance-certification.json']?.status!=='PASS')p0.push('Certification Bpifrance non PASS');
 if(counters.forbiddenAggregator)p0.push(`${counters.forbiddenAggregator} page(s) officielle(s) pointent vers un agrégateur interdit`);
 if(counters.orphanSource)p0.push(`${counters.orphanSource} fiche(s) rattachée(s) à une source absente du registre`);
+if(counters.outOfTargetInstrument)p0.push(`${counters.outOfTargetInstrument} fiche(s) hors instrument cible encore présentes dans library.json`);
+if(counters.staleOrInactive)p0.push(`${counters.staleOrInactive} fiche(s) avec lifecycle non opérationnel encore présentes dans library.json`);
+if(counters.duplicateOfficialUrl)p0.push(`${counters.duplicateOfficialUrl} doublon(s) d’URL officielle dans library.json`);
+if(counters.missingOfficialUrl||counters.invalidOfficialUrl)p0.push(`${counters.missingOfficialUrl+counters.invalidOfficialUrl} fiche(s) sans URL officielle HTTPS valide`);
+if(counters.genericTitle)p0.push(`${counters.genericTitle} titre(s) générique(s) dans le stock opérationnel`);
+if(counters.sourceLinksAggregator)p0.push(`${counters.sourceLinksAggregator} fiche(s) avec lien imbriqué vers un agrégateur interdit`);
+if(counters.sourceLinksDuplicate)p0.push(`${counters.sourceLinksDuplicate} fiche(s) avec liens imbriqués dupliqués`);
 if(publishedDuplicates.length)p0.push(`${publishedDuplicates.length} doublon(s) dans le corpus certifié publiable`);
 
 const p1=[];
@@ -200,7 +232,15 @@ const report={
   sourceRegistry:{
     configured:(cfg.sources||[]).length,
     duplicateUrls:sourceDuplicates,
-    excludedStillConfigured:(cfg.sources||[]).filter(s=>(cfg.excludedSources||[]).includes(s.id)).map(s=>s.id)
+    excludedStillConfigured:(cfg.sources||[]).filter(s=>(cfg.excludedSources||[]).includes(s.id)).map(s=>s.id),
+    lock:{missingSources:missingLockSources,controlSources:controlSourcesInLock,primaryOutsideLock}
+  },
+  architecture:{
+    packageScriptTargets:scriptTargets,
+    missingScriptTargets,
+    workflowNpmScripts,
+    missingWorkflowScripts,
+    forbiddenArtifactsPresent:presentForbiddenArtifacts
   },
   coverage:{rows:(coverage||[]).length,orphans:coverageOrphans,missingCurrentCoverage,failedCount:failedCoverage.length,failed:failedCoverage.slice(0,80)},
   metadata:{
