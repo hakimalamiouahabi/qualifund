@@ -284,3 +284,12 @@ test('la purge précède toujours la lecture du snapshot de collecte, même sous
   assert.match(wf,/Purger et persister le stock hors sources certifiées \/ cycle courant/);
   assert.doesNotMatch(wf,/Purger et persister[^\n]*\n\s*if:\s*\$\{\{ steps\.lock\.outputs\.locked != 'true' \}\}/);
 });
+
+
+test('l’interface échoue fermée si le ledger de certification est indisponible',()=>{
+  const app=fs.readFileSync(path.join(ROOT,'site/app.js'),'utf8');
+  assert.match(app,/const PUBLIC_UNLOCKED_SOURCE_IDS=new Set\(\)/);
+  assert.match(app,/const PUBLIC_UNLOCKED_GUICHETS=\[\]/);
+  assert.match(app,/const CERTIFIED_SOURCE_NAMES=new Map\(\)/);
+  assert.doesNotMatch(app,/FALLBACK_UNLOCKED_SOURCE_IDS/);
+});
