@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { assertDirectSources, filterDirectLibrary } from './lib/direct-sources.mjs';
-import { buildCertificationLedger, targetFunding } from './lib/publication.mjs';
+import { buildCertificationLedger, targetFunding, publicationReason } from './lib/publication.mjs';
 import { isActiveAtJPlusOne, jPlusOneDate } from './lib/jplus1.mjs';
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
@@ -33,9 +33,22 @@ export async function purgeIndirectSources(root=ROOT){
   };
   const scoped=direct.filter(a=>retainedSourceIds.has(a?.sourceId));
   const outOfTarget=scoped.filter(a=>!targetFunding(a));
-  const aaps=scoped
-    .filter(targetFunding)
-    .map(normalizeOperationalAid)
+  const configuredSourceIds=new Set((cfg.sources||[]).map(s=>s.id));
+  const certifiedSourceIds=new Set(ledger.unlockedSourceIds||[]);
+  const currentLockIds=new Set(lock.locked&&Array.isArray(lock.allowedSourceIds)?lock.allowedSourceIds:[]);
+  const targetScoped=scoped.filter(targetFunding).map(normalizeOperationalAid);
+  const certifiedQuarantine=targetScoped.filter(a=>
+    certifiedSourceIds.has(a?.sourceId)
+    && !currentLockIds.has(a?.sourceId)
+    && publicationReason(a,{configuredSourceIds,unlockedSourceIds:certifiedSourceIds})!==null
+  );
+  const aaps=targetScoped
+    .filter(a=>
+      currentLockIds.has(a?.sourceId)
+      || !certifiedSourceIds.has(a?.sourceId)
+      || publicationReason(a,{configuredSourceIds,unlockedSourceIds:certifiedSourceIds})===null
+    )
+    .map(a=>a)
     .map(a=>lib.meta?.sourcePolicy==='DIRECT_OFFICIAL_ONLY'
       ?a
       :{...a,verification:{...(a.verification||{}),status:'A_REVERIFIER'}}
@@ -58,6 +71,7 @@ export async function purgeIndirectSources(root=ROOT){
     afterDirectSanitization:direct.length,
     afterCertifiedScope:scoped.length,
     removedOutOfTarget:outOfTarget.length,
+    removedCertifiedQuarantine:certifiedQuarantine.length,
     retainedOperational:aaps.length
   };
   const purgeStats=changed?currentPurgeStats:(lib.meta?.purgeStats||currentPurgeStats);
@@ -143,6 +157,7 @@ export async function purgeIndirectSources(root=ROOT){
     retained:aaps.length,
     removed:beforeRecords.length-aaps.length,
     removedOutOfTarget:outOfTarget.length,
+    removedCertifiedQuarantine:certifiedQuarantine.length,
     coverageRows:coverage.length,
     certifiedSources:(ledger.unlockedSourceIds||[]).length,
     retainedSources:retainedSourceIds.size,
