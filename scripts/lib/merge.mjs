@@ -3,7 +3,7 @@ const tierRank={A:4,B:3,C:2,D:1,'?':0};
 function bestScalar(a,b,ta='?',tb='?'){if(b==null||b==='')return a;if(a==null||a==='')return b;return (tierRank[tb]||0)>(tierRank[ta]||0)?b:a}
 function genericTitle(v=''){
   const t=String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[’']/g,"'").replace(/\s+/g,' ').trim();
-  return !t||t.length<4||/(document officiel|desole.*offre.*plus disponible|offre.*plus disponible|page introuvable|page non trouvee|erreur 404|404 not found|access denied|forbidden|service indisponible|site en maintenance)/i.test(t);
+  return !t||t.length<4||/(document officiel|conditions particulieres(?: bpifrance)?|desole.*offre.*plus disponible|offre.*plus disponible|page introuvable|page non trouvee|erreur 404|404 not found|access denied|forbidden|service indisponible|site en maintenance)/i.test(t);
 }
 function officialUrlRank(raw=''){
   if(!/^https?:/i.test(String(raw||'')))return 0;

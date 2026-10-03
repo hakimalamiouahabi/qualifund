@@ -224,5 +224,4 @@ jobs:
           fi
           echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
       - name: Certification production stricte
-        if: ${{ needs.build.outputs.collection_locked != 'true' }}
         run: npm run certify:production

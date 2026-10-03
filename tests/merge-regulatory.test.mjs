@@ -46,6 +46,23 @@ test('un PDF nommé Conditions particulières ne remplace jamais le titre ni la 
   assert.equal(out.objective,'Preuve documentaire');
 });
 
+
+test('un ancien titre documentaire Bpifrance est remplacé par le titre frais du dispositif',()=>{
+  const stale={
+    title:'CONDITIONS PARTICULIÈRES BPIFRANCE',
+    officialPage:'https://rebond-industriel.bpifrance.fr/',
+    verification:{sourceTier:'A',fieldEvidence:[]}
+  };
+  const fresh={
+    title:'France 2030 — Rebond Industriel — soutien à l’investissement industriel',
+    officialPage:'https://rebond-industriel.bpifrance.fr/',
+    verification:{sourceTier:'B',fieldEvidence:[]}
+  };
+  const out=mergeAid(stale,fresh);
+  assert.equal(out.title,fresh.title);
+  assert.equal(out.officialPage,fresh.officialPage);
+});
+
 test('un lien officiel spécifique remplace un lien générique lors de la fusion',()=>{
   const base={title:'Aide innovation',officialPage:'https://data.aides-entreprises.fr/stock',verification:{sourceTier:'C',fieldEvidence:[]}};
   const inc={title:'Aide innovation',officialPage:'https://www.bpifrance.fr/catalogue-offres/aide-pour-le-developpement-de-linnovation',verification:{sourceTier:'B',fieldEvidence:[]}};
