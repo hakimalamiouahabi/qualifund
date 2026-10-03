@@ -429,7 +429,7 @@ function eligibility(a,p){
   const confirmed=criteria.length>0&&criteria.every(x=>x.status==='CONFORME');
   return{eligible:block.length===0,status:block.length?'NON CONFORME':confirmed?'CONFORME':'À VÉRIFIER',criteria,next:nd,blocking:block};
 }
-function relevance(a,p){if(window.LEYTON_SCORING?.relevance)return window.LEYTON_SCORING.relevance(a,p);throw new Error('Moteur de pertinence partagé indisponible.')}
+function relevance(a,p){if(window.FUNDING_RADAR_SCORING?.relevance)return window.FUNDING_RADAR_SCORING.relevance(a,p);throw new Error('Moteur de pertinence partagé indisponible.')}
 function validateProjectForStudy(p){
   const anchors=[
     String(p.summary||'').trim(),
@@ -454,7 +454,7 @@ async function runFeasibility(){
   const started=performance.now(),corpus=state.lib.filter(usableAid),scored=[],rejected=[];
   root.innerHTML=`<div class="analysis-progress"><div class="row between"><b>Cartographie en cours</b><span id="analysisProgressLabel">0 / ${corpus.length}</span></div><div class="progress"><i id="analysisProgressBar" style="width:0%"></i></div><p class="mini">Étape 1 : incompatibilités réglementaires explicites. Étape 2 : analyse structurée des critères. Étape 3 : classement documentaire BM25F et fusion des rangs.</p></div>`;
 
-  const bm25=window.LEYTON_SCORING?.bm25fRank?window.LEYTON_SCORING.bm25fRank(corpus,p):new Map();
+  const bm25=window.FUNDING_RADAR_SCORING?.bm25fRank?window.FUNDING_RADAR_SCORING.bm25fRank(corpus,p):new Map();
   for(let i=0;i<corpus.length;i++){
     const a=corpus[i],e=eligibility(a,p);
     if(e.eligible){
