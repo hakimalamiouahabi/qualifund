@@ -1,110 +1,36 @@
 {
-  "generatedAt": "2026-10-03T12:44:29.290Z",
+  "generatedAt": "2026-10-03T14:14:58.146Z",
   "status": "PENDING",
   "lock": {
-    "version": 12,
     "locked": true,
     "mode": "GUICHET",
-    "name": "Bpifrance",
+    "name": "ADEME",
     "allowedSourceIds": [
-      "bpifrance_aap",
-      "bpifrance_aides",
-      "bpifrance_rebond_industriel"
+      "ademe"
     ],
-    "preserveUnselectedSources": true,
-    "preserveUnselectedCoverage": true,
-    "freezeUnselectedLifecycle": true,
-    "enrichSelectedOnly": true,
-    "next": "ADEME",
-    "certification": {
-      "primarySourceIds": [
-        "bpifrance_aap",
-        "bpifrance_aides",
-        "bpifrance_rebond_industriel"
-      ],
-      "allowedHosts": [
-        "www.bpifrance.fr",
-        "bpifrance.fr",
-        "rebond-industriel.bpifrance.fr"
-      ],
-      "requireAuditAccounting": true,
-      "requireZeroExtractionErrors": true,
-      "requireDirectOfficialUrl": true,
-      "forbidGenericTitles": true,
-      "sourceRules": {
-        "bpifrance_aap": {
-          "master": "ACTIVE_AAP_LISTING",
-          "requireListingDiscovery": true,
-          "requireGuichetEvidence": true,
-          "requireCurrentStatusEvidence": true,
-          "allowedSourceStates": [
-            "OPEN",
-            "OPEN_UNDATED"
-          ],
-          "allowedKinds": [
-            "AAP / AMI"
-          ],
-          "requiredPathPrefix": "/nos-appels-a-projets-concours/",
-          "requireAuditAccounting": true,
-          "minRetained": 17,
-          "requireMasterMembership": true
-        },
-        "bpifrance_aides": {
-          "master": "CATALOGUE_SECTION_SUB_AR",
-          "requireCatalogueSectionDiscovery": true,
-          "requireGuichetEvidence": true,
-          "requireCurrentStatusEvidence": true,
-          "allowedSourceStates": [
-            "OPEN_UNDATED"
-          ],
-          "allowedKinds": [
-            "AIDE"
-          ],
-          "allowedAidTypes": [
-            "SUBVENTION",
-            "AVANCE_REMBOURSABLE",
-            "PRET_TAUX_ZERO"
-          ],
-          "requiredPathPrefix": "/catalogue-offres/",
-          "requireAuditAccounting": true,
-          "minRetained": 15,
-          "requireMasterMembership": true
-        },
-        "bpifrance_rebond_industriel": {
-          "master": "DIRECT_OFFICIAL_PAGE",
-          "minRetained": 1,
-          "requireAuditAccounting": false,
-          "allowedKinds": [
-            "AIDE"
-          ],
-          "allowedAidTypes": [
-            "SUBVENTION",
-            "AVANCE_REMBOURSABLE"
-          ],
-          "requireGuichetEvidence": true,
-          "requireCurrentStatusEvidence": false
-        }
-      },
-      "requirePublicationReady": true
-    },
-    "notes": "Recertification Bpifrance v12.9.3 publication-ready. Baseline officielle observée le 03/10/2026 : 27 AAP/AMI au listing maître, 17 fiches conservées après preuves métier et exclusions comptabilisées. Le listing reste protégé par minExpected=20 ; le corpus publiable par minImported/minRetained=17. ADEME est le cycle suivant ; AURA reste gelée jusqu’aux PASS Bpifrance puis ADEME.",
-    "foundationBaseline": {
-      "version": "Foundation v3.2 / 12.9.3 Bpifrance publication-ready",
-      "status": "HARDENING",
-      "validatedAt": null,
-      "p0": null
-    }
+    "next": "AURA",
+    "frozenUnselectedSha": "d31c4291c0d439df7b0a15ab6436a45e4440010f5fb9da677ce1d828666624bd"
   },
   "configuredSources": [
-    "bpifrance_aap",
-    "bpifrance_aides",
-    "bpifrance_rebond_industriel"
+    "ademe"
   ],
-  "sourceConfigFingerprint": "ab4073aae0857eb20f56359e7a92cb124144594cf28cfbd14a77132e3947a6ae",
-  "certificationBasisFingerprint": "ea5236dacc66d7a67e3ffc44f844cbf801377193bf3a97e7f0da1628328d644a",
-  "certifiedDataFingerprint": "5bd3e28a7e3f5443050e0a5ec16af2f47d5fb41fe28ab49dd44a759277a41ed9",
-  "libraryRecords": 36,
+  "sourceConfigFingerprint": "c6cf4a82a42773708c9d3c5f1dcc8ecd24e8c95046aa4e7440fd165c8f39877a",
+  "certificationBasisFingerprint": "b4b4318bc59a2732a0a9102eaa30c927c82e555a61ca0d08725537366c2b3996",
+  "certifiedDataFingerprint": "c23981c7413c21e7b20a39ce1b6a34fd7fe0c9a27d3a71cc75d727dcad036708",
+  "libraryRecords": 0,
+  "bySource": {
+    "ademe": {
+      "discovered": 68,
+      "imported": 16,
+      "retained": 16,
+      "errors": 0,
+      "excluded": 52,
+      "rss": 201,
+      "catalogue": 68
+    }
+  },
+  "duplicates": [],
   "problems": [
-    "Recertification requise sur la configuration et le code courants avant déverrouillage de publication."
+    "Certification du cycle courant non acquise. Les données de ce guichet/région restent hors publication tant que le statut PASS n’est pas généré."
   ]
 }

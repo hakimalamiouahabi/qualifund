@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T14:03:03.925Z",
+  "generatedAt": "2026-10-03T14:14:58.142Z",
   "version": "12.9.3",
   "policy": "CERTIFIED_SOURCE_ONLY",
   "unlockedSourceIds": [
@@ -31,17 +31,5 @@
       "currentDataFingerprint": "c5dcd6cc14ea0e82c3660e35a3645132c53536f15d5f660ec44cf17656dd9b62"
     }
   ],
-  "rejectedCertifications": [
-    {
-      "file": "ademe-certification.json",
-      "name": "ADEME",
-      "generatedAt": "2026-09-30T19:00:06.821Z",
-      "sourceIds": [
-        "ademe"
-      ],
-      "reason": "SOURCE_CONFIG_FINGERPRINT_MISSING",
-      "certifiedFingerprint": null,
-      "currentFingerprint": "c6cf4a82a42773708c9d3c5f1dcc8ecd24e8c95046aa4e7440fd165c8f39877a"
-    }
-  ]
+  "rejectedCertifications": []
 }

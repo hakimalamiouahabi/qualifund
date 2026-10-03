@@ -1,6 +1,6 @@
 {
   "version": "12.9.3",
-  "generatedAt": "2026-10-03T12:31:55.998Z",
+  "generatedAt": "2026-10-03T14:12:36.289Z",
   "purgedAt": null,
   "repositoryUrl": "https://github.com/hakimalamiouahabi/qualifund",
   "sourcePolicy": "DIRECT_OFFICIAL_ONLY",
@@ -18,7 +18,7 @@
   "withCdc": 28,
   "withDeadline": 33,
   "sourceCount": 118,
-  "activeCollectionSourceCount": 3,
+  "activeCollectionSourceCount": 1,
   "libraryInstruments": [
     "APPEL_A_PROJET",
     "AVANCE_REMBOURSABLE",
@@ -66,13 +66,20 @@
   "collectionLock": {
     "locked": true,
     "mode": "GUICHET",
-    "name": "Bpifrance",
+    "name": "ADEME",
     "allowedSourceIds": [
-      "bpifrance_aap",
-      "bpifrance_aides",
-      "bpifrance_rebond_industriel"
+      "ademe"
     ],
-    "next": "ADEME",
-    "frozenUnselectedSha": "98b67062ebc7fb87821c37fcbfd1a597b3ea1f46ba828b295288bd7d22ad652e"
-  }
+    "next": "AURA",
+    "frozenUnselectedSha": "d31c4291c0d439df7b0a15ab6436a45e4440010f5fb9da677ce1d828666624bd"
+  },
+  "publishedCount": 36,
+  "publishedActiveCount": 36,
+  "quarantinedCount": 18,
+  "certifiedSourceCount": 3,
+  "certifiedSources": [
+    "bpifrance_aap",
+    "bpifrance_aides",
+    "bpifrance_rebond_industriel"
+  ]
 }
