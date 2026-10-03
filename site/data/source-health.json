@@ -1,0 +1,92 @@
+{
+  "summary": {
+    "generatedAt": "2026-10-03T10:24:37.259Z",
+    "version": "12.9.1",
+    "collectionLock": {
+      "locked": true,
+      "mode": "GUICHET",
+      "name": "Bpifrance",
+      "allowedSourceIds": [
+        "bpifrance_aap",
+        "bpifrance_aides",
+        "bpifrance_rebond_industriel"
+      ],
+      "next": "ADEME"
+    },
+    "total": 3,
+    "probed": 3,
+    "conclusive": 3,
+    "ok": 3,
+    "failed": 0,
+    "protected": 2,
+    "unprobed": 0,
+    "timeouts": 0,
+    "networkErrors": 0,
+    "ingestion": {
+      "total": 3,
+      "ok": 3
+    },
+    "controls": {
+      "total": 0,
+      "ok": 0
+    },
+    "environmentSuspect": false,
+    "liveCycleExecuted": false
+  },
+  "results": [
+    {
+      "id": "bpifrance_aap",
+      "name": "Bpifrance — appels à projets, AMI et concours",
+      "scope": "France",
+      "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours",
+      "official": true,
+      "priority": 0,
+      "strategy": "bpifrance-aap",
+      "role": "INGESTION",
+      "ok": true,
+      "probeState": "PROTECTED",
+      "httpStatus": 403,
+      "finalUrl": "https://www.bpifrance.fr/nos-appels-a-projets-concours",
+      "contentType": "text/html",
+      "durationMs": 1538,
+      "checkedAt": "2026-10-03T10:24:35.152Z",
+      "note": "Source protégée/anti-bot/quota : collecteur navigateur ou stratégie spécialisée requise."
+    },
+    {
+      "id": "bpifrance_aides",
+      "name": "Bpifrance — subventions, avances remboursables et aides à l'innovation",
+      "scope": "France",
+      "url": "https://www.bpifrance.fr/catalogue-offres",
+      "official": true,
+      "priority": 0,
+      "strategy": "bpifrance-aides",
+      "role": "INGESTION",
+      "ok": true,
+      "probeState": "PROTECTED",
+      "httpStatus": 403,
+      "finalUrl": "https://www.bpifrance.fr/catalogue-offres",
+      "contentType": "text/html",
+      "durationMs": 1108,
+      "checkedAt": "2026-10-03T10:24:34.765Z",
+      "note": "Source protégée/anti-bot/quota : collecteur navigateur ou stratégie spécialisée requise."
+    },
+    {
+      "id": "bpifrance_rebond_industriel",
+      "name": "Bpifrance — France 2030 Rebond Industriel",
+      "scope": "France",
+      "url": "https://rebond-industriel.bpifrance.fr/",
+      "official": true,
+      "priority": 0,
+      "strategy": "official-page",
+      "role": "INGESTION",
+      "ok": true,
+      "probeState": "OK",
+      "httpStatus": 200,
+      "finalUrl": "https://rebond-industriel.bpifrance.fr/",
+      "contentType": "text/html; charset=UTF-8",
+      "durationMs": 3594,
+      "checkedAt": "2026-10-03T10:24:37.252Z",
+      "note": null
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "generatedAt": "2026-10-03T10:28:38.662Z",
+  "date": "2026-10-03",
+  "baselineInitialized": false,
+  "totals": {
+    "before": 66,
+    "after": 66,
+    "new": 0,
+    "modified": 5,
+    "obsolete": 0
+  },
+  "nouvellesAides": [],
+  "aidesModifiees": [
+    {
+      "avant": {
+        "id": "bpifrance_rebond_industriel_official",
+        "titre": "CONDITIONS PARTICULIÈRES BPIFRANCE",
+        "statut": "ACTIVE",
+        "echeance": "",
+        "source": "https://rebond-industriel.bpifrance.fr/storage/sites/7/2023/02/Conditions_particulieres_Bpifrance.pdf",
+        "verification": "A_REVERIFIER",
+        "confiance": 63
+      },
+      "apres": {
+        "id": "bpifrance_rebond_industriel_official",
+        "titre": "CONDITIONS PARTICULIÈRES BPIFRANCE",
+        "statut": "ACTIVE",
+        "echeance": "",
+        "source": "https://rebond-industriel.bpifrance.fr/storage/sites/7/2023/02/Conditions_particulieres_Bpifrance.pdf",
+        "verification": "A_REVERIFIER",
+        "confiance": 63
+      }
+    },
+    {
+      "avant": {
+        "id": "bpifrance_aides_e89abc54ba05a1c454fe834e17e3e35c835af305edcb6e0788129ddfd342e6d9",
+        "titre": "INNOVATION COLLABORATIVE",
+        "statut": "ACTIVE",
+        "echeance": "",
+        "source": "https://www.bpifrance.fr/catalogue-offres/clusters-eureka",
+        "verification": "A_REVERIFIER",
+        "confiance": 75
+      },
+      "apres": {
+        "id": "bpifrance_aides_e89abc54ba05a1c454fe834e17e3e35c835af305edcb6e0788129ddfd342e6d9",
+        "titre": "INNOVATION COLLABORATIVE",
+        "statut": "ACTIVE",
+        "echeance": "",
+        "source": "https://www.bpifrance.fr/catalogue-offres/clusters-eureka",
+        "verification": "A_REVERIFIER",
+        "confiance": 75
+      }
+    },
+    {
+      "avant": {
+        "id": "bpifrance_aides_80e0c4ca16e1be279bebd64fe10a6186e015d70a6a3ef53b8fe8e0a1a11225f6",
+        "titre": "INNOVATION COLLABORATIVE",
+        "statut": "ACTIVE",
+        "echeance": "",
+        "source": "https://www.bpifrance.fr/catalogue-offres/globalstars-eureka",
+        "verification": "A_REVERIFIER",
+        "confiance": 75
+      },
+      "apres": {
+        "id": "bpifrance_aides_80e0c4ca16e1be279bebd64fe10a6186e015d70a6a3ef53b8fe8e0a1a11225f6",
+        "titre": "INNOVATION COLLABORATIVE",
+        "statut": "ACTIVE",
+        "echeance": "",
+        "source": "https://www.bpifrance.fr/catalogue-offres/globalstars-eureka",
+        "verification": "A_REVERIFIER",
+        "confiance": 75
+      }
+    },
+    {
+      "avant": {
+        "id": "bpifrance_aides_87a462aad2c134ab4d3ab3f52066632f1476a63bde17af0d772d068507760575",
+        "titre": "INNOVATION COLLABORATIVE",
+        "statut": "ACTIVE",
+        "echeance": "",
+        "source": "https://www.bpifrance.fr/catalogue-offres/eurostars-3",
+        "verification": "A_REVERIFIER",
+        "confiance": 75
+      },
+      "apres": {
+        "id": "bpifrance_aides_87a462aad2c134ab4d3ab3f52066632f1476a63bde17af0d772d068507760575",
+        "titre": "INNOVATION COLLABORATIVE",
+        "statut": "ACTIVE",
+        "echeance": "",
+        "source": "https://www.bpifrance.fr/catalogue-offres/eurostars-3",
+        "verification": "A_REVERIFIER",
+        "confiance": 75
+      }
+    },
+    {
+      "avant": {
+        "id": "bpifrance_aides_11796e8fb68e40bfa9087c7655ae8b0364475f94f146864fc252e22ff5de9dbf",
+        "titre": "INNOVATION COLLABORATIVE",
+        "statut": "ACTIVE",
+        "echeance": "",
+        "source": "https://www.bpifrance.fr/catalogue-offres/network-projects-eureka",
+        "verification": "A_REVERIFIER",
+        "confiance": 75
+      },
+      "apres": {
+        "id": "bpifrance_aides_11796e8fb68e40bfa9087c7655ae8b0364475f94f146864fc252e22ff5de9dbf",
+        "titre": "INNOVATION COLLABORATIVE",
+        "statut": "ACTIVE",
+        "echeance": "",
+        "source": "https://www.bpifrance.fr/catalogue-offres/network-projects-eureka",
+        "verification": "A_REVERIFIER",
+        "confiance": 75
+      }
+    }
+  ],
+  "aidesObsoletes": []
+}

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-03T10:14:46.859Z",
-  "version": "12.9.0",
+  "generatedAt": "2026-10-03T10:28:40.212Z",
+  "version": "12.9.1",
   "currentLock": {
     "name": "Bpifrance",
     "mode": "GUICHET",
@@ -12,10 +12,18 @@
   },
   "publication": {
     "policy": "CERTIFIED_SOURCE_ONLY",
-    "certifiedSourceIds": [],
-    "certifiedGuichets": [],
+    "certifiedSourceIds": [
+      "bpifrance_aap",
+      "bpifrance_aides",
+      "bpifrance_rebond_industriel"
+    ],
+    "certifiedGuichets": [
+      "Bpifrance"
+    ],
     "reasons": {
-      "SOURCE_NOT_CERTIFIED": 66
+      "SOURCE_NOT_CERTIFIED": 18,
+      "MISSING_ENTERPRISE_EVIDENCE": 17,
+      "MISSING_INSTRUMENT_EVIDENCE": 1
     },
     "reasonSamples": {
       "SOURCE_NOT_CERTIFIED": [
@@ -24,12 +32,6 @@
           "title": "Acquisition de données Géologiques vers des Industries Bas Carbone (AGIBaC)",
           "sourceId": "ademe",
           "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/acquisition-de-donnees-geologiques-vers-des-industries-bas-carbone-agibac"
-        },
-        {
-          "id": "bpifrance_aides_1c9f2eadbc578633515c2ee2b39148cc3ca83a0912c7e4464f5f094c31c0f3ab",
-          "title": "AIDE AU DEVELOPPEMENT DEEPTECH",
-          "sourceId": "bpifrance_aides",
-          "officialPage": "https://www.bpifrance.fr/catalogue-offres/aide-au-developpement-deeptech"
         },
         {
           "id": "ademe_1dc26899bf6a8255c6c378eb9b177a03a060d8cfd37eaad7648ee68d0f72cb3b",
@@ -44,90 +46,6 @@
           "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/aqacia-2026-particules-ozone-produits-phytopharmaceutiques-et-pollutions-sectorielles"
         },
         {
-          "id": "bpifrance_aides_8fb6599ddd818269121e1c4629f14670a304a001e1e491488dac52959e7c2cb9",
-          "title": "AVANCE INNOVATION CLASSIQUE",
-          "sourceId": "bpifrance_aides",
-          "officialPage": "https://www.bpifrance.fr/catalogue-offres/avance-innovation-classique"
-        },
-        {
-          "id": "bpifrance_aides_911764c5160af779287c4f25eafd2d01c81464707c2a26d8b2ac6ab5bf82bbd7",
-          "title": "BOURSE FRENCH TECH",
-          "sourceId": "bpifrance_aides",
-          "officialPage": "https://www.bpifrance.fr/catalogue-offres/bourse-french-tech"
-        },
-        {
-          "id": "bpifrance_aides_855a6c73e18caebd3f6a54b9009c5d7c5dd4d7ef6304bc9b9ca7935722587982",
-          "title": "BOURSE FRENCH TECH EMERGENCE",
-          "sourceId": "bpifrance_aides",
-          "officialPage": "https://www.bpifrance.fr/catalogue-offres/bourse-french-tech-emergence"
-        },
-        {
-          "id": "bpifrance_aides_323a03e84018a6bd6610b7833a0a3dbb5258fef1c568aeebb9ff866da9b109e7",
-          "title": "BOURSE FRENCH TECH LAB",
-          "sourceId": "bpifrance_aides",
-          "officialPage": "https://www.bpifrance.fr/catalogue-offres/bourse-french-tech-lab"
-        },
-        {
-          "id": "bpifrance_aap_2d3ae5c397bbbe5b06c4eb947ad53894bb4d1cf3f88737903e94b2d99316c13f",
-          "title": "Bpifrance et NEDO s’allient pour promouvoir et soutenir financièrement des partenariats en innovation entre entreprises françaises et japonaises. Prép...",
-          "sourceId": "bpifrance_aap",
-          "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-eureka-france-japon"
-        },
-        {
-          "id": "bpifrance_aap_ff32ef41aba364a34dc810bb89c620c9ceec782d820a596d73d21ef379f1d146",
-          "title": "Bpifrance et Taïwan s’allient pour promouvoir et soutenir financièrement des partenariats en innovation entre entreprises françaises et taïwanaises. P...",
-          "sourceId": "bpifrance_aap",
-          "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/partenariats-en-innovation-france-taiwan-nouvel-appel-a-projets"
-        },
-        {
-          "id": "bpifrance_aap_2b547e756e34ba42ac5839c25a1a7a994da2ca5fb36821400660bc29ba33c5e8",
-          "title": "Ce dispositif vise à favoriser les nouveaux équipements ou solutions technologiques permettant une amélioration à court terme de la performance énergé...",
-          "sourceId": "bpifrance_aap",
-          "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-decarbonation-des-navires-de-peche"
-        },
-        {
-          "id": "bpifrance_aap_41b991a76312e50da7ca3a8e26cd30f07965c305b758e0006b404e7b1a7bd4cd",
-          "title": "Ce nouvel appel vise à promouvoir et financer les collaborations internationales ayant comme objet l’innovation logicielle.",
-          "sourceId": "bpifrance_aap",
-          "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-du-cluster-eureka-itea"
-        },
-        {
-          "id": "bpifrance_aap_b4a42221a4b39f1714b9dfcc36f4bf403433dfeaaa4ad3cf4b8afd67f06c4a15",
-          "title": "Ce nouvel appel vise à promouvoir et financer les collaborations internationales ayant comme objet la fabrication avancée.",
-          "sourceId": "bpifrance_aap",
-          "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-du-cluster-eureka-smart"
-        },
-        {
-          "id": "bpifrance_aap_325fd2cf78d1e69b6afbe96b509ab958f281d4bff30e50996b7713250d3ec9b3",
-          "title": "Ce nouvel appel vise à promouvoir et financer les collaborations internationales ayant comme objet les composants et systèmes électroniques.",
-          "sourceId": "bpifrance_aap",
-          "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-du-cluster-eureka-xecs"
-        },
-        {
-          "id": "bpifrance_aap_7476b30bbd237ff26c2d5fe5d85c4e454f9824060d78af08c1556bb59ed1a712",
-          "title": "Ce nouvel appel vise à promouvoir et financer les collaborations internationales ayant comme objet les technologies de l'information et de la communic...",
-          "sourceId": "bpifrance_aap",
-          "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-du-cluster-eureka-celtic-next"
-        },
-        {
-          "id": "bpifrance_aap_9e1d837375dec1e329a6a9eef2c5368f7ef454da48a802da2a18aa9a87e9fe87",
-          "title": "Cet Appel à projets vise à soutenir le développement de sous-systèmes avancés et souverains pour des solutions en robotique, machines intelligentes et...",
-          "sourceId": "bpifrance_aap",
-          "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-defi-flagships"
-        },
-        {
-          "id": "bpifrance_rebond_industriel_official",
-          "title": "CONDITIONS PARTICULIÈRES BPIFRANCE",
-          "sourceId": "bpifrance_rebond_industriel",
-          "officialPage": "https://rebond-industriel.bpifrance.fr/storage/sites/7/2023/02/Conditions_particulieres_Bpifrance.pdf"
-        },
-        {
-          "id": "bpifrance_aides_f2687e4f85e00c1a14def0eecd18f2e3adb4ba80e190a1bdc2365ddc824af252",
-          "title": "Conseil européen de l’innovation (EIC)",
-          "sourceId": "bpifrance_aides",
-          "officialPage": "https://www.bpifrance.fr/catalogue-offres/conseil-europeen-de-linnovation-eic-0"
-        },
-        {
           "id": "ademe_4bcc8e980a10675fc0b69624bf6d551654c130b782a868a611081bd5bc103905",
           "title": "DECARB FLASH 2025-2027",
           "sourceId": "ademe",
@@ -138,14 +56,204 @@
           "title": "Decarb Flash Artisan",
           "sourceId": "ademe",
           "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/decarb-flash-artisan"
+        },
+        {
+          "id": "ademe_6613b3fc9af3350d119843ff57c6e06ce62a7356559e9faa7cc7a7198b092826",
+          "title": "DÉTER - DÉcarboner le TERtiaire",
+          "sourceId": "ademe",
+          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/deter-decarboner-le-tertiaire"
+        },
+        {
+          "id": "ademe_b560455b7e6f876f5dccdd74f3ec69d2945ce4bcc163f1f9ecc54556bb5ccdf6",
+          "title": "Développement de briques technologiques et démonstrateurs - Réalisations de premières industrielles associant l'offre et la demande (DEMIBaC)",
+          "sourceId": "ademe",
+          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/developpement-de-briques-technologiques-et-demonstrateurs-realisations-de-premieres-industrielles-associant-loffre-et-la-demande-demibac"
+        },
+        {
+          "id": "ademe_91d48a13944f2049d277528f42910ad0af150b70ba80e80499d3427c49f96eab",
+          "title": "Développement de briques technologiques et services par des PME pour la décarbonation de l’industrie (IBaC PME)",
+          "sourceId": "ademe",
+          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/developpement-de-briques-technologiques-et-services-par-des-pme-pour-la-decarbonation-de-lindustrie-ibac-pme"
+        },
+        {
+          "id": "ademe_8cfcb67831f4037a0cb4ac8b57e9178dd04fda455959ef46607396cab94c1d94",
+          "title": "Favoriser le développement de Zones Industrielles Bas Carbone (ZIBaC) Phase 2 : accompagnement",
+          "sourceId": "ademe",
+          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/favoriser-le-developpement-de-zones-industrielles-bas-carbone-zibac-phase-2-accompagnement"
+        },
+        {
+          "id": "ademe_58970fd417057887da031dfff747cee0d8779d6a6c12fbd8fad9efceec0184d1",
+          "title": "Fonds local pour l’adaptation en Guadeloupe (FLAG) 2.0",
+          "sourceId": "ademe",
+          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/fonds-local-pour-ladaptation-en-guadeloupe-flag-20"
+        },
+        {
+          "id": "ademe_c82221811ed8498d794b347968a609629dab9d9aac13030b01f1f0cfd7ec9671",
+          "title": "Fonds vert – Territoires d’industrie en transition écologique",
+          "sourceId": "ademe",
+          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/fonds-vert-territoires-dindustrie-en-transition-ecologique-0"
+        },
+        {
+          "id": "ademe_86bc49446d91a9b5275ad03235f4e8a9b5ea79c120478220fdacca947bf08b59",
+          "title": "Infrastructures de données et équipements numériques résilients et durables",
+          "sourceId": "ademe",
+          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/infrastructures-de-donnees-et-equipements-numeriques-resilients-et-durables"
+        },
+        {
+          "id": "ademe_947a613dda9eabaf876a70de7b269d69ba65ddc0ce5404ddef39512b0a19a3f4",
+          "title": "Mobili'Pro : optimisation des déplacements professionnels",
+          "sourceId": "ademe",
+          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/mobilipro-optimisation-des-deplacements-professionnels"
+        },
+        {
+          "id": "ademe_e2a707273a0b537ce7158c746a91357ee0d322f5c10cec005eb1bc2054eac45e",
+          "title": "Plan d’aides à la modernisation et à l’innovation de la flotte (PAMI)",
+          "sourceId": "ademe",
+          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/plan-daides-la-modernisation-et-linnovation-de-la-flotte-pami"
+        },
+        {
+          "id": "ademe_1c32b0a2a3e5838fafe6c36ee7fcbea625a1f7781d35274b54ec314784aeee5d",
+          "title": "Planisols : aides en faveur de la sobriété foncière et de la limitation de l’artificialisation des sols dans les stratégies territoriales",
+          "sourceId": "ademe",
+          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/planisols-aides-en-faveur-de-la-sobriete-fonciere-et-de-la-limitation-de-lartificialisation-des-sols-dans-les-strategies-territoriales"
+        },
+        {
+          "id": "ademe_d9427ca755dd4d5c2dc1a522fb8fb0961e3c064d50314c3fcd4631a91078b7d0",
+          "title": "Promouvoir des solutions de mobilité à forts co-bénéfices qualité de l’air et santé en Occitanie - Dépôt",
+          "sourceId": "ademe",
+          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/promouvoir-des-solutions-de-mobilite-forts-co-benefices-qualite-de-lair-et-sante-en-occitanie-depot"
+        },
+        {
+          "id": "ademe_952c7c158c36e7bc308b6121868b06991120f9c2bde212aba43fa5e6a290d310",
+          "title": "Soutien à la production d'hydrogène électrolytique renouvelable ou bas-carbone 2026 - Phase de sélection des candidatures",
+          "sourceId": "ademe",
+          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/soutien-la-production-dhydrogene-electrolytique-renouvelable-ou-bas-carbone-2026-phase-de-selection-des-candidatures"
+        },
+        {
+          "id": "ademe_f718d9114d92a75d69528b8ad5c50ab619be41e46b7105afa719b3d6639b8b09",
+          "title": "Systèmes performants de production de froid en Outre-mer et Corse",
+          "sourceId": "ademe",
+          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/systemes-performants-de-production-de-froid-en-outre-mer-et-corse"
+        }
+      ],
+      "MISSING_ENTERPRISE_EVIDENCE": [
+        {
+          "id": "bpifrance_aides_323a03e84018a6bd6610b7833a0a3dbb5258fef1c568aeebb9ff866da9b109e7",
+          "title": "BOURSE FRENCH TECH LAB",
+          "sourceId": "bpifrance_aides",
+          "officialPage": "https://www.bpifrance.fr/catalogue-offres/bourse-french-tech-lab"
+        },
+        {
+          "id": "bpifrance_aap_2b547e756e34ba42ac5839c25a1a7a994da2ca5fb36821400660bc29ba33c5e8",
+          "title": "Ce dispositif vise à favoriser les nouveaux équipements ou solutions technologiques permettant une amélioration à court terme de la performance énergé...",
+          "sourceId": "bpifrance_aap",
+          "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-decarbonation-des-navires-de-peche"
+        },
+        {
+          "id": "bpifrance_aap_9e1d837375dec1e329a6a9eef2c5368f7ef454da48a802da2a18aa9a87e9fe87",
+          "title": "Cet Appel à projets vise à soutenir le développement de sous-systèmes avancés et souverains pour des solutions en robotique, machines intelligentes et...",
+          "sourceId": "bpifrance_aap",
+          "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-defi-flagships"
+        },
+        {
+          "id": "bpifrance_aides_7445758aaacd772e3c4ce3ad7469d56bc736db5c66ef4d98bbb1cf32433dec19",
+          "title": "FRENCH TECH TREMPLIN",
+          "sourceId": "bpifrance_aides",
+          "officialPage": "https://www.bpifrance.fr/catalogue-offres/french-tech-tremplin"
+        },
+        {
+          "id": "bpifrance_aides_62e1303a83de83dc3595d50a46e2d36d52506eafb90fd3eb041b436cfae19e25",
+          "title": "Innowwide",
+          "sourceId": "bpifrance_aides",
+          "officialPage": "https://www.bpifrance.fr/catalogue-offres/innowwide-0"
+        },
+        {
+          "id": "bpifrance_aap_dcd37621494f1511a6f683cb87c1c69001d4537f73c776c90d236c2a23c53d49",
+          "title": "L’appel à projets « Challenge prévention : démontrer la valeur des innovations en vie réelle » doit permettre de soutenir des projets d’envergure auto...",
+          "sourceId": "bpifrance_aap",
+          "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-challenge-prevention-demontrer-la-valeur-des-innovations-en-vie-reelle"
+        },
+        {
+          "id": "bpifrance_aap_6e8de1721c63acc4f7f6e2f784c4f6bff05ed07b9815447b49475322caf2590f",
+          "title": "L’appel à projets «Démonstration de la valeur des organoïdes et organes sur puce» vise à financer des démonstrateurs de valeur (preuves de concept) qu...",
+          "sourceId": "bpifrance_aap",
+          "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-demonstration-de-la-valeur-des-organoides-et-organes-sur-puce"
+        },
+        {
+          "id": "bpifrance_aap_be284d777230fbf1e4d5d20df1634c0efce8dbe53ec2e1c4e9ef734761e64709",
+          "title": "L’appel à projets Grands Défis « Soutien aux innovations de rupture dans la filière DM implantable et robotique chirurgicale » vise deux objectifs : s...",
+          "sourceId": "bpifrance_aap",
+          "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-grands-defis-soutien-aux-innovations-de-rupture-dans-la-filiere-dm-implantable-et-robotique-chirurgicale"
+        },
+        {
+          "id": "bpifrance_aap_a8a386c0cd2e461567f9447a4dd02030748d60f2940cdad3c196374201b50674",
+          "title": "Le Fonds de Fonds Entrepreneuriat Quartiers 2030 (EQ30), d’une taille de 60 M€, a été constitué en 2024 dans le cadre du programme Entrepreneuriat Qua...",
+          "sourceId": "bpifrance_aap",
+          "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/fonds-de-fonds-entrepreneuriat-quartiers-2030-eq30"
+        },
+        {
+          "id": "bpifrance_aap_1764bdb7c865d8132b517938a6a5d7a499eb94d1a42a394e0f3a7b1e6d744386",
+          "title": "Le fonds de fonds Multicap croissance N°4 (MC4) s'inscrit dans le cadre du plan France 2030 mis en place par l’Etat en octobre 2021.",
+          "sourceId": "bpifrance_aap",
+          "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/multicap-croissance-ndeg4-mc4"
+        },
+        {
+          "id": "bpifrance_aap_e1656f9666c4844dfe4fe6534dfc72d2e92300badfa7eb7d25aaeb262528b435",
+          "title": "Le Fonds Industries Agroalimentaires (I2A) vise à dynamiser l’écosystème des fonds d’investissement ciblant les PME et ETI industrielles françaises su...",
+          "sourceId": "bpifrance_aap",
+          "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/fonds-industries-agroalimentaires-i2a"
+        },
+        {
+          "id": "bpifrance_aap_9942172975b6931b2cc5f868f2832b30f8b5eaca25f92fe9d5f07c9fab90694e",
+          "title": "Le Fonds national d’amorçage 3 (FNA 3) est une action de France 2030.",
+          "sourceId": "bpifrance_aap",
+          "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/fonds-national-damorcage-3-fna-3"
+        },
+        {
+          "id": "bpifrance_aap_652e7ead773b7f27d9e2733abf6e832b648a102ed82ec23ec2da886b67d959c7",
+          "title": "Le Fonds National de Venture Industriel (FNVI) s'inscrit dans le cadre du plan France 2030 mis en place par l’Etat en octobre 2021.",
+          "sourceId": "bpifrance_aap",
+          "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/fonds-national-de-venture-industriel-fnvi"
+        },
+        {
+          "id": "bpifrance_aap_ed586215293372cbc98bc48b2d806f0a0d679be595a9eb7c153e4a95fb13886a",
+          "title": "Le Gouvernement a mis en place une politique ambitieuse de soutien à l’innovation, en particulier à destination des acteurs émergents. Dans le cadre d...",
+          "sourceId": "bpifrance_aap",
+          "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/france-2030-appel-a-projets-premiere-usine"
+        },
+        {
+          "id": "bpifrance_aap_b641e0309ad5ca9d3495e7c4c94a152eaced7cdfe30db88c7c503522a30af35e",
+          "title": "Le présent AAP vise à soutenir des projets de recherche et de développement, portés par des entreprises de la filière automobile et les acteurs de l’...",
+          "sourceId": "bpifrance_aap",
+          "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-coram-2025-2026"
+        },
+        {
+          "id": "bpifrance_aap_45d44a292f043ed36a4a696c834290f5e1fead50b27d40865378f2aa4eac26c2",
+          "title": "Rendre la filière automobile plus vertueuse à horizon 2030, de la conception à l'industrialisation des composants.",
+          "sourceId": "bpifrance_aap",
+          "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-soutien-aux-projets-dinvestissements-pour-produire-en-france-les-vehicules-routiers-de-demain-et-leurs-composants"
+        },
+        {
+          "id": "bpifrance_aap_d6cb0773f6afe2537b42db441e0389488a364357fdeda64dc4ea3c00eced8207",
+          "title": "Vous développez des solutions de biocontrôle ou de biostimulation pour l’agriculture ? Déposez votre candidature avant le 9 septembre 2027 à 12h. Cet ...",
+          "sourceId": "bpifrance_aap",
+          "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-grand-defi-biocontrole-et-biostimulation-pour-lagroecologie"
+        }
+      ],
+      "MISSING_INSTRUMENT_EVIDENCE": [
+        {
+          "id": "bpifrance_rebond_industriel_official",
+          "title": "CONDITIONS PARTICULIÈRES BPIFRANCE",
+          "sourceId": "bpifrance_rebond_industriel",
+          "officialPage": "https://rebond-industriel.bpifrance.fr/storage/sites/7/2023/02/Conditions_particulieres_Bpifrance.pdf"
         }
       ]
     }
   },
   "library": {
     "raw": 66,
-    "publishable": 0,
-    "quarantined": 66,
+    "publishable": 30,
+    "quarantined": 36,
     "orphanSource": 0,
     "duplicateOfficialUrl": 0,
     "missingOfficialUrl": 0,
@@ -876,7 +984,7 @@
     "failed": []
   },
   "metadata": {
-    "manifestGeneratedAt": "2026-10-03T10:11:02.972Z",
+    "manifestGeneratedAt": "2026-10-03T10:24:52.745Z",
     "manifestSourceCount": 118,
     "manifestLock": {
       "locked": true,
@@ -900,17 +1008,25 @@
     },
     "bpifrance-certification.json": {
       "status": "PASS",
-      "generatedAt": "2026-10-03T10:14:45.507Z",
+      "generatedAt": "2026-10-03T10:28:38.498Z",
       "problems": [],
-      "libraryRecords": 49
+      "libraryRecords": 48
     }
   },
   "certificationIntegrity": {
     "freshnessWarningHours": 72,
-    "freshness": [],
+    "freshness": [
+      {
+        "file": "bpifrance-certification.json",
+        "name": "Bpifrance",
+        "generatedAt": "2026-10-03T10:28:38.498Z",
+        "ageHours": 0,
+        "status": "FRESH"
+      }
+    ],
     "active": {
       "present": true,
-      "status": "PENDING",
+      "status": "PASS",
       "lockName": "Bpifrance",
       "expectedLockName": "Bpifrance",
       "sourceIdsMatch": true,
@@ -928,28 +1044,15 @@
         ],
         "reason": "SOURCE_CONFIG_FINGERPRINT_MISSING",
         "certifiedFingerprint": null,
-        "currentFingerprint": "f4ce4cef6964f3667cc4a96b5f5b330ccd3aa54c6d6199d04de0257fc46c41ba"
-      },
-      {
-        "file": "bpifrance-certification.json",
-        "name": "Bpifrance",
-        "generatedAt": "2026-10-03T10:14:45.507Z",
-        "sourceIds": [
-          "bpifrance_aap",
-          "bpifrance_aides",
-          "bpifrance_rebond_industriel"
-        ],
-        "reason": "CERTIFIED_DATA_CHANGED",
-        "certifiedDataFingerprint": "62ee1302d6acdb2362b6c5d2769d33fcfcbdfd6b86810960f2d6425080656fa6",
-        "currentDataFingerprint": "4d9c885e5c0768d95cabd2dac980227eac30c8fe7a6f3f51c0e57c481e321c21"
+        "currentFingerprint": "5b4357a5e45403256bac07955dc7a79fc359c18c27dfeddc71dee8f5c4c8271a"
       }
     ]
   },
   "certifiedEvidenceDebt": {
     "missingGuichet": 0,
     "missingStatus": 0,
-    "missingInstrument": 0,
-    "missingEnterprise": 0
+    "missingInstrument": 1,
+    "missingEnterprise": 17
   },
   "publishedQuality": {
     "noEvidence": 0,
@@ -964,14 +1067,15 @@
   "severity": {
     "p0": [],
     "p1": [
-      "2 certificat(s) historique(s) ne déverrouillent plus la publication et doivent être recertifiés (SOURCE_CONFIG_FINGERPRINT_MISSING: 1, CERTIFIED_DATA_CHANGED: 1)",
-      "Cycle courant Bpifrance non certifié : statut PENDING"
+      "1 certificat(s) historique(s) ne déverrouillent plus la publication et doivent être recertifiés (SOURCE_CONFIG_FINGERPRINT_MISSING: 1)",
+      "1 fiche(s) de sources certifiées restent en quarantaine faute de preuve instrument",
+      "17 fiche(s) de sources certifiées restent en quarantaine faute de preuve entreprise"
     ],
     "p2": [
       "92 source(s) future(s) non calibrée(s), bloquées automatiquement jusqu’à mesure du référentiel officiel",
       "1 fiche(s) brutes sans preuve A/B d’instrument",
       "17 fiche(s) brutes sans preuve A/B d’éligibilité entreprise",
-      "66 fiche(s) brutes en quarantaine de publication"
+      "36 fiche(s) brutes en quarantaine de publication"
     ]
   },
   "samples": {

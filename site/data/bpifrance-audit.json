@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T10:11:02.972Z",
+  "generatedAt": "2026-10-03T10:24:52.745Z",
   "collectionLock": {
     "locked": true,
     "mode": "GUICHET",
@@ -13,7 +13,7 @@
   },
   "sources": [
     {
-      "cycleId": "37115488704",
+      "cycleId": "37116250674",
       "id": "bpifrance_aap",
       "name": "Bpifrance — appels à projets, AMI et concours",
       "scope": "France",
@@ -38,13 +38,13 @@
         }
       },
       "message": "Bpifrance AAP v2: 27 actif(s) au listing maître, 27 importé(s), 0 exclusion(s), 0 erreur(s)",
-      "durationMs": 9630,
-      "checkedAt": "2026-10-03T10:10:57.233Z",
-      "lastSuccessfulAt": "2026-10-03T10:10:57.233Z",
+      "durationMs": 8703,
+      "checkedAt": "2026-10-03T10:24:46.647Z",
+      "lastSuccessfulAt": "2026-10-03T10:24:46.647Z",
       "consecutiveFailures": 0
     },
     {
-      "cycleId": "37115488704",
+      "cycleId": "37116250674",
       "id": "bpifrance_aides",
       "name": "Bpifrance — subventions, avances remboursables et aides à l'innovation",
       "scope": "France",
@@ -54,12 +54,12 @@
       "suspiciousVolume": false,
       "lowImportedCount": false,
       "lowImportRatio": false,
-      "importRatio": 0.7777777777777778,
+      "importRatio": 0.7407407407407407,
       "discovered": 27,
-      "imported": 21,
+      "imported": 20,
       "audit": {
         "discovered": 27,
-        "imported": 21,
+        "imported": 20,
         "excluded": [
           {
             "url": "https://www.bpifrance.fr/catalogue-offres/appel-a-projets-evaluation-du-benefice-medico-economique-des-dispositifs-medicaux-numeriques-et-des-dispositifs-medicaux-dequipement-0",
@@ -96,6 +96,11 @@
             "title": "PRÊT INNOVATION R&D - INNOVATION CREATIVE",
             "aidTypes": [],
             "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+          },
+          {
+            "url": "https://www.bpifrance.fr/catalogue-offres/concours-innovation-i-lab",
+            "label": "CONCOURS INNOVATION I-LAB",
+            "reason": "EXPIRED_AFTER_ENRICHMENT"
           }
         ],
         "errors": [],
@@ -105,14 +110,14 @@
           "sitemap": 354
         }
       },
-      "message": "Bpifrance aides v2: 27 offre(s) dans la section maître, 21 aide(s) cible(s), 6 exclusion(s), 0 erreur(s)",
-      "durationMs": 11975,
-      "checkedAt": "2026-10-03T10:10:57.240Z",
-      "lastSuccessfulAt": "2026-10-03T10:10:57.240Z",
+      "message": "Bpifrance — subventions, avances remboursables et aides à l'innovation: 27 découverte(s), 20 retenue(s), 1 expiration(s) exclue(s) après enrichissement.",
+      "durationMs": 8442,
+      "checkedAt": "2026-10-03T10:24:46.654Z",
+      "lastSuccessfulAt": "2026-10-03T10:24:46.654Z",
       "consecutiveFailures": 0
     },
     {
-      "cycleId": "37115488704",
+      "cycleId": "37116250674",
       "id": "bpifrance_rebond_industriel",
       "name": "Bpifrance — France 2030 Rebond Industriel",
       "scope": "France",
@@ -127,9 +132,9 @@
       "imported": 1,
       "audit": null,
       "message": "Page officielle analysée: France 2030 — Rebond Industriel — soutien à l’investissement industriel",
-      "durationMs": 1853,
-      "checkedAt": "2026-10-03T10:10:57.241Z",
-      "lastSuccessfulAt": "2026-10-03T10:10:57.241Z",
+      "durationMs": 1877,
+      "checkedAt": "2026-10-03T10:24:46.655Z",
+      "lastSuccessfulAt": "2026-10-03T10:24:46.655Z",
       "consecutiveFailures": 0
     }
   ],
@@ -137,8 +142,8 @@
     "sources": 3,
     "success": 3,
     "discovered": 55,
-    "imported": 49,
+    "imported": 48,
     "errors": 0,
-    "excluded": 6
+    "excluded": 7
   }
 }

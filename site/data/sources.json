@@ -1,6 +1,37 @@
 {
-  "version": "12.9.0",
-  "generatedAt": "2026-10-03T10:14:46.018Z",
+  "version": "12.9.1",
+  "generatedAt": "2026-10-03T10:28:39.191Z",
   "sourcePolicy": "CERTIFIED_SOURCE_ONLY",
-  "sources": []
+  "sources": [
+    {
+      "id": "bpifrance_aap",
+      "name": "Bpifrance — appels à projets, AMI et concours",
+      "scope": "France",
+      "type": "web",
+      "strategy": "bpifrance-aap",
+      "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours",
+      "official": true,
+      "priority": 0
+    },
+    {
+      "id": "bpifrance_aides",
+      "name": "Bpifrance — subventions, avances remboursables et aides à l'innovation",
+      "scope": "France",
+      "type": "web",
+      "strategy": "bpifrance-aides",
+      "url": "https://www.bpifrance.fr/catalogue-offres",
+      "official": true,
+      "priority": 0
+    },
+    {
+      "id": "bpifrance_rebond_industriel",
+      "name": "Bpifrance — France 2030 Rebond Industriel",
+      "scope": "France",
+      "type": "web",
+      "strategy": "official-page",
+      "url": "https://rebond-industriel.bpifrance.fr/",
+      "official": true,
+      "priority": 0
+    }
+  ]
 }

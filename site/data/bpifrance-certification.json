@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T10:14:45.507Z",
+  "generatedAt": "2026-10-03T10:28:38.498Z",
   "status": "PASS",
   "lock": {
     "version": 10,
@@ -87,10 +87,10 @@
     "bpifrance_aides",
     "bpifrance_rebond_industriel"
   ],
-  "sourceConfigFingerprint": "84605ce57eee65cb8110296fff7be3d0090966c45304ac53f39145f2acd6a3e2",
-  "certificationBasisFingerprint": "320f0b2f00c417eaf1efa9b502cdc84508e9d84f3a0a014c139cf47fb49d4810",
-  "certifiedDataFingerprint": "62ee1302d6acdb2362b6c5d2769d33fcfcbdfd6b86810960f2d6425080656fa6",
-  "libraryRecords": 49,
+  "sourceConfigFingerprint": "87fa5e908ff2d72f08555584467227cb2c30cd8e7d147091d326ca6db8370ef8",
+  "certificationBasisFingerprint": "fe7be247882651657a0c344348dfc89f9ff2e13e536ad5d4df1d42d9ed4f763c",
+  "certifiedDataFingerprint": "fbe349e6f5e9e6cd5c2d61511673420f72a8ecf416aaf495ad32d3f77a2e6fe1",
+  "libraryRecords": 48,
   "frozenUnselectedSha": "98b67062ebc7fb87821c37fcbfd1a597b3ea1f46ba828b295288bd7d22ad652e",
   "controlGaps": {
     "rssOutsideCatalogue": []
@@ -126,8 +126,8 @@
     },
     "bpifrance_aides": {
       "discovered": 27,
-      "imported": 21,
-      "retained": 21,
+      "imported": 20,
+      "retained": 20,
       "success": true,
       "rss": 0,
       "rssActive": 0,
@@ -150,7 +150,7 @@
       "catalogueHtmlExpected": 0,
       "detailWarnings": 0,
       "errors": 0,
-      "excluded": 6
+      "excluded": 7
     },
     "bpifrance_rebond_industriel": {
       "discovered": 1,

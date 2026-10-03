@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T10:24:06.689Z",
+  "generatedAt": "2026-10-03T10:28:47.516Z",
   "version": "12.9.1",
   "mode": "LOCKED_CYCLE",
   "currentLock": {
@@ -30,19 +30,19 @@
       "id": 3,
       "name": "Cycle de collecte — Bpifrance",
       "status": "PASS",
-      "detail": "3/3 source(s) du verrou courant en succès sur le cycle non identifié ; 3/3 ligne(s) coverage fraîches ; 49 imports bruts. Les autres sources restent gelées."
+      "detail": "3/3 source(s) du verrou courant en succès sur le cycle non identifié ; 3/3 ligne(s) coverage fraîches ; 48 imports bruts. Les autres sources restent gelées."
     },
     {
       "id": 4,
       "name": "Bibliothèque certifiée publiable",
       "status": "FAIL",
-      "detail": "0 fiches publiables J+1 sur 66 fiches brutes ; 66 en quarantaine. 0 strictement VÉRIFIÉES au 2026-10-04. Intégrité recalculée 0/0."
+      "detail": "30 fiches publiables J+1 sur 66 fiches brutes ; 36 en quarantaine. 0 strictement VÉRIFIÉES au 2026-10-04. Intégrité recalculée 0/0."
     },
     {
       "id": 5,
       "name": "Preuves documentaires par champ",
       "status": "FAIL",
-      "detail": "Preuves A/B complètes sur les champs critiques : 0/0 fiches VÉRIFIÉES. File de remédiation synchronisée : non. CdC/règlement : 0/0."
+      "detail": "Preuves A/B complètes sur les champs critiques : 0/0 fiches VÉRIFIÉES. File de remédiation synchronisée : oui. CdC/règlement : 23/30."
     },
     {
       "id": 6,
@@ -79,30 +79,30 @@
     "sourcesConfigured": 118,
     "ingestiveSources": 102,
     "controlSources": 16,
-    "certifiedSources": 0,
+    "certifiedSources": 3,
     "evaluatedSources": 3,
     "executedSources": 3,
     "freshExecutedSources": 3,
     "successfulSources": 3,
     "collectionCycleId": null,
     "rawLibrary": 66,
-    "publishedLibrary": 0,
-    "quarantinedLibrary": 66,
-    "activeFiches": 0,
+    "publishedLibrary": 30,
+    "quarantinedLibrary": 36,
+    "activeFiches": 30,
     "jPlusOneDate": "2026-10-04",
-    "jPlusOneActiveFiches": 0,
+    "jPlusOneActiveFiches": 30,
     "verifiedFiches": 0,
     "verifiedIntegrity": 0,
     "verifiedEvidenceIntegrity": 0,
-    "withCdc": 0,
-    "withDeadline": 0,
+    "withCdc": 23,
+    "withDeadline": 13,
     "consultantCases": 10,
     "uatTotal": 10,
     "companySmokeOk": true,
     "publicSmokeOk": false,
     "workflowEvent": "push",
     "inActions": true,
-    "remediationFresh": false,
+    "remediationFresh": true,
     "deepAuditP0": 0
   },
   "goProduction": false
