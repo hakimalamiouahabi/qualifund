@@ -5,6 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { assertDirectSources, filterDirectLibrary, directPageId, sanitizeAidLinks } from '../scripts/lib/direct-sources.mjs';
 import { purgeIndirectSources } from '../scripts/purge-indirect-sources.mjs';
+import { sourceConfigFingerprint, certificationBasisFingerprint, sourceDataFingerprint } from '../scripts/lib/publication.mjs';
 const cfg={version:'test',sourcePolicy:'DIRECT_OFFICIAL_ONLY',sourceSelectionPolicy:'GUICHET_OR_REGION_OFFICIAL_ONLY',sources:[{id:'bpifrance',official:true,strategy:'catalog-html',url:'https://www.bpifrance.fr/nos-appels-a-projets-concours'}]};
 const valid={id:'bpi1',sourceId:'bpifrance',title:'AAP',kind:'AAP / AMI',aidTypes:['APPEL_A_PROJET'],companyCategories:[],regions:[],scope:'NATIONAL',officialPage:'https://www.bpifrance.fr/nos-appels-a-projets-concours/aap-1',lifecycleStatus:'ACTIVE'};
 test('distinct pages cannot collapse to the same identifier',()=>{
@@ -158,9 +159,6 @@ test('une fiche quarantinée d’une source déjà certifiée quitte le stock op
   await fs.writeFile(path.join(root,'config/collection-lock.json'),JSON.stringify({
    locked:true,mode:'REGION',name:'AURA test',allowedSourceIds:['aura']
   }));
-  await fs.writeFile(path.join(root,'site/data/bpifrance-certification.json'),JSON.stringify({
-   status:'PASS',generatedAt:'2026-10-03T00:00:00Z',configuredSources:['bpifrance'],lock:{name:'Bpifrance'}
-  }));
   const evidence=[
    {field:'guichet',sourceTier:'B',sourceUrl:'https://www.bpifrance.fr/catalogue-offres/offre-test'},
    {field:'sourceStatus',sourceTier:'B',sourceUrl:'https://www.bpifrance.fr/catalogue-offres/offre-test'},
@@ -173,7 +171,17 @@ test('une fiche quarantinée d’une source déjà certifiée quitte le stock op
    verification:{status:'A_REVERIFIER',fieldEvidence:evidence.filter(e=>e.field!=='enterpriseEligibility')}};
   const aura={...clean,id:'aura-current',sourceId:'aura',officialPage:'https://www.auvergnerhonealpes.fr/aides/test',
    verification:{status:'A_REVERIFIER',fieldEvidence:[]}};
-  await fs.writeFile(path.join(root,'site/data/library.json'),JSON.stringify({meta:{generatedAt:'2026-10-03'},aaps:[clean,quarantined,aura]}));
+  const initialLibrary={meta:{generatedAt:'2026-10-03'},aaps:[clean,quarantined,aura]};
+  await fs.writeFile(path.join(root,'site/data/library.json'),JSON.stringify(initialLibrary));
+  await fs.writeFile(path.join(root,'site/data/bpifrance-certification.json'),JSON.stringify({
+   status:'PASS',
+   generatedAt:'2026-10-03T00:00:00Z',
+   configuredSources:['bpifrance'],
+   lock:{name:'Bpifrance'},
+   sourceConfigFingerprint:sourceConfigFingerprint(localCfg,['bpifrance']),
+   certificationBasisFingerprint:await certificationBasisFingerprint(root,localCfg,['bpifrance']),
+   certifiedDataFingerprint:sourceDataFingerprint(initialLibrary.aaps,['bpifrance'])
+  }));
   const out=await purgeIndirectSources(root);
   assert.deepEqual(out.aaps.map(x=>x.id).sort(),['aura-current','bpi-clean']);
   assert.equal(out.meta.purgeStats.removedCertifiedQuarantine,1);

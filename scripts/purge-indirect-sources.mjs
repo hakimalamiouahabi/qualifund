@@ -161,21 +161,21 @@ export async function purgeIndirectSources(root=ROOT){
   await write(path.join(data,'certification-ledger.json'),ledger);
 
   const activePath=path.join(data,'active-source-certification.json');
-  const active=await read(activePath,null);
+  const activeCertification=await read(activePath,null);
   const currentIds=Array.isArray(lock.allowedSourceIds)?[...lock.allowedSourceIds].sort():[];
-  const activeIds=Array.isArray(active?.configuredSources)?[...active.configuredSources].sort():[];
+  const activeIds=Array.isArray(activeCertification?.configuredSources)?[...activeCertification.configuredSources].sort():[];
   const sameIds=currentIds.length===activeIds.length&&currentIds.every((x,i)=>x===activeIds[i]);
   const currentSourceFingerprint=sourceConfigFingerprint(cfg,currentIds);
   const currentBasisFingerprint=await certificationBasisFingerprint(root,cfg,currentIds);
   const currentDataFingerprint=sourceDataFingerprint(aaps,currentIds);
   const activeIsCurrent=Boolean(
     lock.locked
-    && active?.status==='PASS'
-    && active?.lock?.name===lock.name
+    && activeCertification?.status==='PASS'
+    && activeCertification?.lock?.name===lock.name
     && sameIds
-    && active?.sourceConfigFingerprint===currentSourceFingerprint
-    && active?.certificationBasisFingerprint===currentBasisFingerprint
-    && active?.certifiedDataFingerprint===currentDataFingerprint
+    && activeCertification?.sourceConfigFingerprint===currentSourceFingerprint
+    && activeCertification?.certificationBasisFingerprint===currentBasisFingerprint
+    && activeCertification?.certifiedDataFingerprint===currentDataFingerprint
   );
   if(!activeIsCurrent){
     await write(activePath,{
