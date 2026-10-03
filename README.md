@@ -19,12 +19,12 @@ Les autres guichets sont cryptographiquement gelés pendant le cycle actif.
 
 ## État du chantier
 
-- **ADEME : certifié** au 30/09/2026 selon le référentiel officiel entreprises.
-- **Bpifrance v2 : certifié** au 30/09/2026 selon les référentiels maîtres officiels et le contre-audit multi-moteurs.
-- **Prochain cycle : Auvergne-Rhône-Alpes**, puis les autres régions une à une.
-- FEDER/FEADER et ANR restent gelés jusqu’à leur cycle dédié.
+- **ADEME : certifié PASS** selon le référentiel officiel Entreprises.
+- **Bpifrance v2 : certifié PASS** selon les référentiels maîtres officiels et le contre-audit multi-moteurs.
+- **Auvergne-Rhône-Alpes : cycle régional actif** sur le catalogue officiel filtré Entreprise ; certification bloquante avant passage à la région suivante.
+- **FEDER / FEADER / FSE+ / FTJ / ANR** restent séparés et gelés jusqu’à leur cycle dédié.
 
-Dernière synchronisation de déploiement : 30/09/2026.
+La publication publique suit la règle **CERTIFIED_SOURCE_ONLY** : une source non certifiée PASS et une fiche insuffisamment prouvée restent en quarantaine. Le stock brut interne n’est pas exposé directement ; le build produit un corpus segmenté certifié et un export CSV.
 
 ## Politique source
 
