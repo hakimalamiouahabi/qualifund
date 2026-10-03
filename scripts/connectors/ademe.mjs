@@ -259,7 +259,7 @@ function evidence(text,patterns=[]){
 export function ademeAttributionEvidence(text=''){
   return evidence(text,[
     /l['’]\s*ADEME\s+(?:vous\s+)?(?:accompagne|soutient|finance|cofinance|attribue|accorde|lance|pilote|instruit|juge)/i,
-    /(?:aide|soutien|financement)s?\s+(?:accord[eé]s?\s+)?(?:par|de)\s+l['’]\s*ADEME/i,
+    /(?:aide|soutien|financement)s?\s+(?:(?:est|sont)\s+)?(?:accord[eé]s?\s+)?(?:par|de)\s+l['’]\s*ADEME/i,
     /(?:pilot[eé]|op[eé]r[eé]|g[eé]r[eé]|instruit)\s+par\s+(?:l['’]\s*)?ADEME/i,
     /(?:contrat|convention)\s+d['’]\s*aide[^.;]{0,160}\bADEME\b/i,
     /fonds[^.;]{0,120}\bde\s+l['’]\s*ADEME\b/i,
