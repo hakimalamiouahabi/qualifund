@@ -5,7 +5,7 @@ import fsp from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { buildCertificationLedger, publicationReason, targetFunding, hasEnterpriseEvidence, hasTargetInstrumentEvidence, sourceConfigFingerprint, certificationBasisFingerprint } from '../scripts/lib/publication.mjs';
+import { buildCertificationLedger, publicationReason, targetFunding, hasEnterpriseEvidence, hasTargetInstrumentEvidence, sourceConfigFingerprint, certificationBasisFingerprint, sourceDataFingerprint } from '../scripts/lib/publication.mjs';
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 
@@ -84,9 +84,10 @@ test('le ledger ne déverrouille que les certificats PASS liés au registre et a
     ]};
     const fp=sourceConfigFingerprint(cfg,['ademe']);
     const basis=await certificationBasisFingerprint(ROOT,cfg,['ademe']);
+    const dataFp=sourceDataFingerprint([],['ademe']);
     await fsp.writeFile(path.join(dir,'ademe-certification.json'),JSON.stringify({
       status:'PASS',generatedAt:'2026-10-01T00:00:00Z',lock:{name:'ADEME'},configuredSources:['ademe'],
-      sourceConfigFingerprint:fp,certificationBasisFingerprint:basis
+      sourceConfigFingerprint:fp,certificationBasisFingerprint:basis,certifiedDataFingerprint:dataFp
     }));
     await fsp.writeFile(path.join(dir,'aura-certification.json'),JSON.stringify({status:'FAIL',generatedAt:'2026-10-02T00:00:00Z',lock:{name:'Auvergne-Rhône-Alpes'},configuredSources:['aura']}));
     await fsp.writeFile(path.join(dir,'legacy-certification.json'),JSON.stringify({status:'PASS',generatedAt:'2026-10-01T00:00:00Z',lock:{name:'Legacy'},configuredSources:['removed']}));
@@ -169,6 +170,7 @@ test('la purge conserve les snapshots historiques rejetés mais ne les certifie 
   assert.match(purge,/filter\(a=>retainedSourceIds\.has\(a\?\.sourceId\)\)/);
   assert.match(purge,/certification-ledger\.json/);
   assert.match(purge,/status:'PENDING'/);
+  assert.match(purge,/certifiedDataFingerprint/);
 });
 
 
@@ -286,9 +288,10 @@ test('un certificat est rejeté si sa configuration ou sa base technique change'
     const cfgA={version:'x',sources:[{id:'s',official:true,strategy:'official-page',url:'https://example.fr/a'}]};
     const fp=sourceConfigFingerprint(cfgA,['s']);
     const basis=await certificationBasisFingerprint(ROOT,cfgA,['s']);
+    const dataFp=sourceDataFingerprint([],['s']);
     await fsp.writeFile(path.join(dir,'s-certification.json'),JSON.stringify({
       status:'PASS',generatedAt:'2026-10-03T00:00:00Z',lock:{name:'S'},configuredSources:['s'],
-      sourceConfigFingerprint:fp,certificationBasisFingerprint:basis
+      sourceConfigFingerprint:fp,certificationBasisFingerprint:basis,certifiedDataFingerprint:dataFp
     }));
     const ok=await buildCertificationLedger(dir,cfgA,{root:ROOT});
     assert.deepEqual(ok.unlockedSourceIds,['s']);
@@ -301,11 +304,35 @@ test('un certificat est rejeté si sa configuration ou sa base technique change'
 
     await fsp.writeFile(path.join(dir,'s-certification.json'),JSON.stringify({
       status:'PASS',generatedAt:'2026-10-03T00:00:00Z',lock:{name:'S'},configuredSources:['s'],
-      sourceConfigFingerprint:fp,certificationBasisFingerprint:'0'.repeat(64)
+      sourceConfigFingerprint:fp,certificationBasisFingerprint:'0'.repeat(64),certifiedDataFingerprint:dataFp
     }));
     const codeChanged=await buildCertificationLedger(dir,cfgA,{root:ROOT});
     assert.deepEqual(codeChanged.unlockedSourceIds,[]);
     assert.equal(codeChanged.rejectedCertifications[0].reason,'CERTIFICATION_BASIS_CHANGED');
+  }finally{await fsp.rm(dir,{recursive:true,force:true})}
+});
+
+test('une modification du snapshot certifié invalide immédiatement le PASS',async()=>{
+  const dir=await fsp.mkdtemp(path.join(os.tmpdir(),'qf-data-fingerprint-'));
+  try{
+    const cfg={version:'x',sources:[{id:'s',official:true,strategy:'official-page',url:'https://example.fr/a'}]};
+    const original=[{id:'x',sourceId:'s',title:'Aide A',officialPage:'https://example.fr/a/x'}];
+    await fsp.writeFile(path.join(dir,'library.json'),JSON.stringify({aaps:original}));
+    const fp=sourceConfigFingerprint(cfg,['s']);
+    const basis=await certificationBasisFingerprint(ROOT,cfg,['s']);
+    const dataFp=sourceDataFingerprint(original,['s']);
+    await fsp.writeFile(path.join(dir,'s-certification.json'),JSON.stringify({
+      status:'PASS',generatedAt:'2026-10-03T00:00:00Z',lock:{name:'S'},configuredSources:['s'],
+      sourceConfigFingerprint:fp,certificationBasisFingerprint:basis,certifiedDataFingerprint:dataFp
+    }));
+    const ok=await buildCertificationLedger(dir,cfg,{root:ROOT});
+    assert.deepEqual(ok.unlockedSourceIds,['s']);
+
+    const altered=[{...original[0],title:'Aide B'}];
+    await fsp.writeFile(path.join(dir,'library.json'),JSON.stringify({aaps:altered}));
+    const changed=await buildCertificationLedger(dir,cfg,{root:ROOT});
+    assert.deepEqual(changed.unlockedSourceIds,[]);
+    assert.equal(changed.rejectedCertifications[0].reason,'CERTIFIED_DATA_CHANGED');
   }finally{await fsp.rm(dir,{recursive:true,force:true})}
 });
 
@@ -367,6 +394,15 @@ test('le deep audit bloque les compteurs de manifeste impossibles',()=>{
   assert.match(audit,/jPlusOneActiveCount=.*> ACTIVE réels/);
 });
 
+
+test('le workflow de production valide le code avant toute purge ou collecte',()=>{
+  const wf=fs.readFileSync(path.join(ROOT,'.github/workflows/update-and-deploy.yml'),'utf8');
+  const gate=wf.indexOf('Gate statique avant toute mutation des données');
+  const purge=wf.indexOf('Purger et persister le stock hors sources certifiées / cycle courant');
+  const collect=wf.indexOf('Collecte complète quotidienne / manuelle');
+  assert.ok(gate>=0&&purge>gate&&collect>purge);
+  assert.match(wf,/find scripts tests -type f -name '\*\.mjs'.*node --check/s);
+});
 
 test('le deep audit mesure la fraîcheur des certificats sans en faire un faux P0',()=>{
   const audit=fs.readFileSync(path.join(ROOT,'scripts/deep-audit.mjs'),'utf8');
