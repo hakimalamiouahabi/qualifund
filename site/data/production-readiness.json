@@ -1,0 +1,109 @@
+{
+  "generatedAt": "2026-10-03T10:10:19.214Z",
+  "version": "12.9.0",
+  "mode": "LOCKED_CYCLE",
+  "currentLock": {
+    "locked": true,
+    "name": "Bpifrance",
+    "mode": "GUICHET",
+    "allowedSourceIds": [
+      "bpifrance_aap",
+      "bpifrance_aides",
+      "bpifrance_rebond_industriel"
+    ]
+  },
+  "publicationPolicy": "CERTIFIED_SOURCE_ONLY",
+  "gates": [
+    {
+      "id": 1,
+      "name": "Dépôt GitHub et versionnement",
+      "status": "PASS",
+      "detail": "hakimalamiouahabi/qualifund"
+    },
+    {
+      "id": 2,
+      "name": "URL permanente",
+      "status": "BLOCKED",
+      "detail": "Déploiement permanent non confirmé."
+    },
+    {
+      "id": 3,
+      "name": "Cycle de collecte — Bpifrance",
+      "status": "PASS",
+      "detail": "3/3 source(s) du verrou courant en succès sur le cycle non identifié ; 3/3 ligne(s) coverage fraîches ; 50 imports bruts. Les autres sources restent gelées."
+    },
+    {
+      "id": 4,
+      "name": "Bibliothèque certifiée publiable",
+      "status": "FAIL",
+      "detail": "0 fiches publiables J+1 sur 35 fiches brutes ; 35 en quarantaine. 0 strictement VÉRIFIÉES au 2026-10-04. Intégrité recalculée 0/0."
+    },
+    {
+      "id": 5,
+      "name": "Preuves documentaires par champ",
+      "status": "FAIL",
+      "detail": "Preuves A/B complètes sur les champs critiques : 0/0 fiches VÉRIFIÉES. File de remédiation synchronisée : non. CdC/règlement : 0/0."
+    },
+    {
+      "id": 6,
+      "name": "Intégrité, déduplication et périmètre",
+      "status": "PASS",
+      "detail": "Aucune anomalie P0 détectée par l’audit approfondi."
+    },
+    {
+      "id": 7,
+      "name": "Enrichissement SIREN/SIRET",
+      "status": "PASS",
+      "detail": "API Recherche d’entreprises DINUM validée par smoke live."
+    },
+    {
+      "id": 8,
+      "name": "Qualification projet multi-financeurs",
+      "status": "PASS",
+      "detail": "Cas UAT réussis : 5/5. Les résultats orientent l’instruction sans conclure à l’attribution."
+    },
+    {
+      "id": 9,
+      "name": "Exploitation automatisée",
+      "status": "PASS",
+      "detail": "Chaîne GitHub Actions exécutée sur push avec le verrou courant."
+    },
+    {
+      "id": 10,
+      "name": "Recette production",
+      "status": "NOT_STARTED",
+      "detail": "Autorisation uniquement lorsque les Gates 1–9 sont PASS."
+    }
+  ],
+  "counts": {
+    "sourcesConfigured": 118,
+    "ingestiveSources": 102,
+    "controlSources": 16,
+    "certifiedSources": 0,
+    "evaluatedSources": 3,
+    "executedSources": 3,
+    "freshExecutedSources": 3,
+    "successfulSources": 3,
+    "collectionCycleId": null,
+    "rawLibrary": 35,
+    "publishedLibrary": 0,
+    "quarantinedLibrary": 35,
+    "activeFiches": 0,
+    "jPlusOneDate": "2026-10-04",
+    "jPlusOneActiveFiches": 0,
+    "verifiedFiches": 0,
+    "verifiedIntegrity": 0,
+    "verifiedEvidenceIntegrity": 0,
+    "withCdc": 0,
+    "withDeadline": 0,
+    "consultantCases": 5,
+    "uatTotal": 5,
+    "companySmokeOk": true,
+    "publicSmokeOk": false,
+    "workflowEvent": "push",
+    "inActions": true,
+    "remediationFresh": false,
+    "deepAuditP0": 0
+  },
+  "goProduction": false
+}

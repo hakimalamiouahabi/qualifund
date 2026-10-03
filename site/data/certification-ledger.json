@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-03T09:55:04.439Z",
-  "version": "12.8.0",
+  "generatedAt": "2026-10-03T10:10:20.751Z",
+  "version": "12.9.0",
   "policy": "CERTIFIED_SOURCE_ONLY",
   "unlockedSourceIds": [],
   "guichets": [],
@@ -15,7 +15,7 @@
       ],
       "reason": "SOURCE_CONFIG_FINGERPRINT_MISSING",
       "certifiedFingerprint": null,
-      "currentFingerprint": "d21b13160a8110d3fde0cb057916bfe3982dc9c39f047aa50630281aed61e490"
+      "currentFingerprint": "f4ce4cef6964f3667cc4a96b5f5b330ccd3aa54c6d6199d04de0257fc46c41ba"
     },
     {
       "file": "bpifrance-certification.json",
@@ -28,7 +28,7 @@
       ],
       "reason": "SOURCE_CONFIG_FINGERPRINT_MISSING",
       "certifiedFingerprint": null,
-      "currentFingerprint": "4548fa3e62e884f922c61dc2eac32eda8eaea160c6ab14b06aebfea7b046b223"
+      "currentFingerprint": "84605ce57eee65cb8110296fff7be3d0090966c45304ac53f39145f2acd6a3e2"
     }
   ]
 }
