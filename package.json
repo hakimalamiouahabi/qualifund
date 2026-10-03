@@ -19,7 +19,7 @@
     "sync:metadata": "node scripts/sync-static-metadata.mjs",
     "uat": "node scripts/uat-relevance.mjs",
     "smoke:live": "node scripts/live-smoke.mjs",
-    "release:verify": "npm run sync:metadata && npm run build:index && npm run audit:sources && npm run audit:ingestion && npm test && npm run validate && npm run uat && npm run qa && npm run remediation && npm run production:gates",
+    "release:verify": "npm run sync:metadata && npm run build:index && npm run audit:sources && npm run audit:ingestion && npm test && npm run validate && npm run uat && npm run qa && npm run remediation && npm run audit:deep:strict && npm run production:gates",
     "remediation": "node scripts/remediation-report.mjs",
     "certify:local": "npm run release:verify",
     "certify:production": "node scripts/certify-production.mjs",
