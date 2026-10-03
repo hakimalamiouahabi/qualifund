@@ -77,7 +77,7 @@ test('AURA reste gelée tant que Bpifrance puis ADEME ne sont pas recertifiés v
   assert.deepEqual(lock.allowedSourceIds,['bpifrance_aap','bpifrance_aides','bpifrance_rebond_industriel']);
   assert.equal(lock.next,'ADEME');
   assert.equal(lock.allowedSourceIds.includes('aura'),false);
-  assert.match(lock.notes,/Auvergne-Rhône-Alpes reste gelée/i);
+  assert.match(lock.notes,/AURA reste gelée/i);
 });
 
 test('la source AURA est filtrée Entreprise et les sources fonds européens restent hors verrou',()=>{
