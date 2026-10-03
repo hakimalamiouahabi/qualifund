@@ -34,13 +34,24 @@ const reasons={};
 const reasonSamples={};
 const sample={};
 const put=(key,item)=>{counters[key]++;(sample[key]??=[]);if(sample[key].length<20)sample[key].push(item)};
-const officialSeen=new Map();
+const officialSeen=new Map(),publishedOfficialSeen=new Map(),publishedIdSeen=new Set();
+const publishedDuplicates=[];
 const now=Date.now();
 for(const a of rows){
   const id=a?.id||null,title=String(a?.title||''),sourceId=a?.sourceId||null,url=String(a?.officialPage||'');
   const ref={id,title,sourceId,officialPage:url||null};
   const reason=publicationReason(a,{configuredSourceIds:configured,unlockedSourceIds:unlocked});
-  if(reason){counters.quarantined++;reasons[reason]=(reasons[reason]||0)+1;(reasonSamples[reason]??=[]);if(reasonSamples[reason].length<20)reasonSamples[reason].push(ref)}else counters.publishable++;
+  if(reason){
+    counters.quarantined++;reasons[reason]=(reasons[reason]||0)+1;(reasonSamples[reason]??=[]);
+    if(reasonSamples[reason].length<20)reasonSamples[reason].push(ref);
+  }else{
+    counters.publishable++;
+    const pu=String(url||'').replace(/\/$/,'');
+    if(id&&publishedIdSeen.has(id))publishedDuplicates.push({type:'ID',value:id});
+    else if(id)publishedIdSeen.add(id);
+    if(pu&&publishedOfficialSeen.has(pu))publishedDuplicates.push({type:'URL',value:pu,otherId:publishedOfficialSeen.get(pu),id});
+    else if(pu)publishedOfficialSeen.set(pu,id);
+  }
 
   if(!configured.has(sourceId))put('orphanSource',ref);
   if(!url)put('missingOfficialUrl',ref);
@@ -109,6 +120,7 @@ if(historicalCertifications['ademe-certification.json']?.status!=='PASS')p0.push
 if(historicalCertifications['bpifrance-certification.json']?.status!=='PASS')p0.push('Certification Bpifrance non PASS');
 if(counters.forbiddenAggregator)p0.push(`${counters.forbiddenAggregator} page(s) officielle(s) pointent vers un agrégateur interdit`);
 if(counters.orphanSource)p0.push(`${counters.orphanSource} fiche(s) rattachée(s) à une source absente du registre`);
+if(publishedDuplicates.length)p0.push(`${publishedDuplicates.length} doublon(s) dans le corpus certifié publiable`);
 
 const p1=[];
 if(counters.outOfTargetInstrument)p1.push(`${counters.outOfTargetInstrument} fiche(s) hors instrument cible conservées en stock brut`);
@@ -124,6 +136,7 @@ const report={
   currentLock:{name:lock.name||null,mode:lock.mode||null,allowedSourceIds:lock.allowedSourceIds||[]},
   publication:{policy:'CERTIFIED_SOURCE_ONLY',certifiedSourceIds:ledger.unlockedSourceIds||[],certifiedGuichets:ledger.guichets||[],reasons,reasonSamples},
   library:counters,
+  publicationDuplicates:publishedDuplicates.slice(0,50),
   sourceRegistry:{
     configured:(cfg.sources||[]).length,
     duplicateUrls:sourceDuplicates,
