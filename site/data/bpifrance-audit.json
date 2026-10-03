@@ -1,19 +1,17 @@
 {
-  "generatedAt": "2026-10-03T12:31:55.998Z",
+  "generatedAt": "2026-10-03T14:58:21.695Z",
   "collectionLock": {
     "locked": true,
     "mode": "GUICHET",
-    "name": "Bpifrance",
+    "name": "ADEME",
     "allowedSourceIds": [
-      "bpifrance_aap",
-      "bpifrance_aides",
-      "bpifrance_rebond_industriel"
+      "ademe"
     ],
-    "next": "ADEME"
+    "next": "AURA"
   },
   "sources": [
     {
-      "cycleId": "37123117386",
+      "cycleId": "37127964210",
       "id": "bpifrance_aap",
       "name": "Bpifrance — appels à projets, AMI et concours",
       "scope": "France",
@@ -41,8 +39,8 @@
             "reason": "PUBLICATION_GATE_MISSING_ENTERPRISE_EVIDENCE"
           },
           {
-            "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-defi-flagships",
-            "label": "Cet Appel à projets vise à soutenir le développement de sous-systèmes avancés et souverains pour des solutions en robotique, machines intelligentes et...",
+            "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/multicap-croissance-ndeg4-mc4",
+            "label": "Le fonds de fonds Multicap croissance N°4 (MC4) s'inscrit dans le cadre du plan France 2030 mis en place par l’Etat en octobre 2021.",
             "reason": "PUBLICATION_GATE_MISSING_ENTERPRISE_EVIDENCE"
           },
           {
@@ -51,8 +49,8 @@
             "reason": "PUBLICATION_GATE_MISSING_ENTERPRISE_EVIDENCE"
           },
           {
-            "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-demonstration-de-la-valeur-des-organoides-et-organes-sur-puce",
-            "label": "L’appel à projets «Démonstration de la valeur des organoïdes et organes sur puce» vise à financer des démonstrateurs de valeur (preuves de concept) qu...",
+            "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-challenge-prevention-demontrer-la-valeur-des-innovations-en-vie-reelle",
+            "label": "L’appel à projets « Challenge prévention : démontrer la valeur des innovations en vie réelle » doit permettre de soutenir des projets d’envergure auto...",
             "reason": "PUBLICATION_GATE_MISSING_ENTERPRISE_EVIDENCE"
           },
           {
@@ -61,18 +59,18 @@
             "reason": "PUBLICATION_GATE_MISSING_ENTERPRISE_EVIDENCE"
           },
           {
-            "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-challenge-prevention-demontrer-la-valeur-des-innovations-en-vie-reelle",
-            "label": "L’appel à projets « Challenge prévention : démontrer la valeur des innovations en vie réelle » doit permettre de soutenir des projets d’envergure auto...",
-            "reason": "PUBLICATION_GATE_MISSING_ENTERPRISE_EVIDENCE"
-          },
-          {
-            "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/multicap-croissance-ndeg4-mc4",
-            "label": "Le fonds de fonds Multicap croissance N°4 (MC4) s'inscrit dans le cadre du plan France 2030 mis en place par l’Etat en octobre 2021.",
+            "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-demonstration-de-la-valeur-des-organoides-et-organes-sur-puce",
+            "label": "L’appel à projets «Démonstration de la valeur des organoïdes et organes sur puce» vise à financer des démonstrateurs de valeur (preuves de concept) qu...",
             "reason": "PUBLICATION_GATE_MISSING_ENTERPRISE_EVIDENCE"
           },
           {
             "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/fonds-de-fonds-entrepreneuriat-quartiers-2030-eq30",
             "label": "Le Fonds de Fonds Entrepreneuriat Quartiers 2030 (EQ30), d’une taille de 60 M€, a été constitué en 2024 dans le cadre du programme Entrepreneuriat Qua...",
+            "reason": "PUBLICATION_GATE_MISSING_ENTERPRISE_EVIDENCE"
+          },
+          {
+            "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-defi-flagships",
+            "label": "Cet Appel à projets vise à soutenir le développement de sous-systèmes avancés et souverains pour des solutions en robotique, machines intelligentes et...",
             "reason": "PUBLICATION_GATE_MISSING_ENTERPRISE_EVIDENCE"
           },
           {
@@ -86,16 +84,21 @@
         "channels": {
           "listing": 27,
           "sitemap": 540
+        },
+        "publicationRetained": 17,
+        "publicationDiscovered": 27,
+        "publicationExclusionCounts": {
+          "PUBLICATION_GATE_MISSING_ENTERPRISE_EVIDENCE": 10
         }
       },
       "message": "Bpifrance — appels à projets, AMI et concours: 27 découverte(s), 17 retenue(s), 10 exclusion(s) après enrichissement/publication.",
-      "durationMs": 5884,
-      "checkedAt": "2026-10-03T12:31:50.327Z",
-      "lastSuccessfulAt": "2026-10-03T12:31:50.327Z",
+      "durationMs": 6393,
+      "checkedAt": "2026-10-03T13:59:09.476Z",
+      "lastSuccessfulAt": "2026-10-03T13:59:09.476Z",
       "consecutiveFailures": 0
     },
     {
-      "cycleId": "37123117386",
+      "cycleId": "37127964210",
       "id": "bpifrance_aides",
       "name": "Bpifrance — subventions, avances remboursables et aides à l'innovation",
       "scope": "France",
@@ -137,6 +140,12 @@
             "reason": "BPIFRANCE_NON_FINANCEUR_DIRECT"
           },
           {
+            "url": "https://www.bpifrance.fr/catalogue-offres/les-formations-en-presentiel",
+            "title": "Les formations en présentiel",
+            "aidTypes": [],
+            "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
+          },
+          {
             "url": "https://www.bpifrance.fr/catalogue-offres/pret-innovation-rd-innovation-creative",
             "title": "PRÊT INNOVATION R&D - INNOVATION CREATIVE",
             "aidTypes": [],
@@ -145,12 +154,6 @@
           {
             "url": "https://www.bpifrance.fr/catalogue-offres/pret-innovation-rd-classique-0",
             "title": "PRÊT INNOVATION R&D CLASSIQUE",
-            "aidTypes": [],
-            "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
-          },
-          {
-            "url": "https://www.bpifrance.fr/catalogue-offres/les-formations-en-presentiel",
-            "title": "Les formations en présentiel",
             "aidTypes": [],
             "reason": "INSTRUMENT_HORS_PERIMETRE_SUB_AR_PTZ"
           },
@@ -175,16 +178,22 @@
         "channels": {
           "catalogueSection": 28,
           "sitemap": 354
+        },
+        "publicationRetained": 18,
+        "publicationDiscovered": 28,
+        "publicationExclusionCounts": {
+          "EXPIRED_AFTER_ENRICHMENT": 1,
+          "PUBLICATION_GATE_MISSING_ENTERPRISE_EVIDENCE": 2
         }
       },
       "message": "Bpifrance — subventions, avances remboursables et aides à l'innovation: 28 découverte(s), 18 retenue(s), 3 exclusion(s) après enrichissement/publication.",
-      "durationMs": 6850,
-      "checkedAt": "2026-10-03T12:31:50.334Z",
-      "lastSuccessfulAt": "2026-10-03T12:31:50.334Z",
+      "durationMs": 6604,
+      "checkedAt": "2026-10-03T13:59:09.484Z",
+      "lastSuccessfulAt": "2026-10-03T13:59:09.484Z",
       "consecutiveFailures": 0
     },
     {
-      "cycleId": "37123117386",
+      "cycleId": "37127964210",
       "id": "bpifrance_rebond_industriel",
       "name": "Bpifrance — France 2030 Rebond Industriel",
       "scope": "France",
@@ -199,9 +208,9 @@
       "imported": 1,
       "audit": null,
       "message": "Page officielle analysée: France 2030 — Rebond Industriel — soutien à l’investissement industriel",
-      "durationMs": 2444,
-      "checkedAt": "2026-10-03T12:31:50.336Z",
-      "lastSuccessfulAt": "2026-10-03T12:31:50.336Z",
+      "durationMs": 2020,
+      "checkedAt": "2026-10-03T13:59:09.485Z",
+      "lastSuccessfulAt": "2026-10-03T13:59:09.485Z",
       "consecutiveFailures": 0
     }
   ],

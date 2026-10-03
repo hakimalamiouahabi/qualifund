@@ -1,16 +1,35 @@
 {
-  "generatedAt": "2026-10-03T14:14:58.142Z",
+  "generatedAt": "2026-10-03T15:00:43.901Z",
   "version": "12.9.3",
   "policy": "CERTIFIED_SOURCE_ONLY",
   "unlockedSourceIds": [
+    "ademe",
     "bpifrance_aap",
     "bpifrance_aides",
     "bpifrance_rebond_industriel"
   ],
   "guichets": [
+    "ADEME",
     "Bpifrance"
   ],
   "certifications": [
+    {
+      "file": "ademe-certification.json",
+      "name": "ADEME",
+      "generatedAt": "2026-10-03T15:00:43.516Z",
+      "status": "PASS",
+      "sourceIds": [
+        "ademe"
+      ],
+      "libraryRecords": 68,
+      "fingerprintStatus": "MATCH",
+      "sourceConfigFingerprint": "f0d1cd6f6e119f57e75653b884a26a4a306c31fe8233d3b4815d566393f6030a",
+      "currentSourceConfigFingerprint": "f0d1cd6f6e119f57e75653b884a26a4a306c31fe8233d3b4815d566393f6030a",
+      "certificationBasisFingerprint": "004c1d56c447c75a30d86d287141785f03825e0f7a1d2bbcef3664aa919da5d9",
+      "currentCertificationBasisFingerprint": "004c1d56c447c75a30d86d287141785f03825e0f7a1d2bbcef3664aa919da5d9",
+      "certifiedDataFingerprint": "452f4970f40094846d3f513dd7332d66f5a482d53314090f934608daa3b1661e",
+      "currentDataFingerprint": "452f4970f40094846d3f513dd7332d66f5a482d53314090f934608daa3b1661e"
+    },
     {
       "file": "bpifrance-certification.json",
       "name": "Bpifrance",

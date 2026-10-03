@@ -1,30 +1,28 @@
 {
   "summary": {
-    "generatedAt": "2026-10-03T12:31:42.622Z",
+    "generatedAt": "2026-10-03T14:56:41.410Z",
     "version": "12.9.3",
     "collectionLock": {
       "locked": true,
       "mode": "GUICHET",
-      "name": "Bpifrance",
+      "name": "ADEME",
       "allowedSourceIds": [
-        "bpifrance_aap",
-        "bpifrance_aides",
-        "bpifrance_rebond_industriel"
+        "ademe"
       ],
-      "next": "ADEME"
+      "next": "AURA"
     },
-    "total": 3,
-    "probed": 3,
-    "conclusive": 3,
-    "ok": 3,
+    "total": 1,
+    "probed": 1,
+    "conclusive": 1,
+    "ok": 1,
     "failed": 0,
-    "protected": 2,
+    "protected": 1,
     "unprobed": 0,
     "timeouts": 0,
     "networkErrors": 0,
     "ingestion": {
-      "total": 3,
-      "ok": 3
+      "total": 1,
+      "ok": 1
     },
     "controls": {
       "total": 0,
@@ -35,58 +33,22 @@
   },
   "results": [
     {
-      "id": "bpifrance_aap",
-      "name": "Bpifrance — appels à projets, AMI et concours",
+      "id": "ademe",
+      "name": "ADEME — aides financières et appels à projets entreprises",
       "scope": "France",
-      "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours",
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue",
       "official": true,
       "priority": 0,
-      "strategy": "bpifrance-aap",
+      "strategy": "ademe-official",
       "role": "INGESTION",
       "ok": true,
       "probeState": "PROTECTED",
       "httpStatus": 403,
-      "finalUrl": "https://www.bpifrance.fr/nos-appels-a-projets-concours",
-      "contentType": "text/html",
-      "durationMs": 1152,
-      "checkedAt": "2026-10-03T12:31:41.675Z",
-      "note": "Source protégée/anti-bot/quota : collecteur navigateur ou stratégie spécialisée requise."
-    },
-    {
-      "id": "bpifrance_aides",
-      "name": "Bpifrance — subventions, avances remboursables et aides à l'innovation",
-      "scope": "France",
-      "url": "https://www.bpifrance.fr/catalogue-offres",
-      "official": true,
-      "priority": 0,
-      "strategy": "bpifrance-aides",
-      "role": "INGESTION",
-      "ok": true,
-      "probeState": "PROTECTED",
-      "httpStatus": 403,
-      "finalUrl": "https://www.bpifrance.fr/catalogue-offres",
-      "contentType": "text/html",
-      "durationMs": 1107,
-      "checkedAt": "2026-10-03T12:31:41.674Z",
-      "note": "Source protégée/anti-bot/quota : collecteur navigateur ou stratégie spécialisée requise."
-    },
-    {
-      "id": "bpifrance_rebond_industriel",
-      "name": "Bpifrance — France 2030 Rebond Industriel",
-      "scope": "France",
-      "url": "https://rebond-industriel.bpifrance.fr/",
-      "official": true,
-      "priority": 0,
-      "strategy": "official-page",
-      "role": "INGESTION",
-      "ok": true,
-      "probeState": "OK",
-      "httpStatus": 200,
-      "finalUrl": "https://rebond-industriel.bpifrance.fr/",
+      "finalUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue",
       "contentType": "text/html; charset=UTF-8",
-      "durationMs": 2047,
-      "checkedAt": "2026-10-03T12:31:42.615Z",
-      "note": null
+      "durationMs": 349,
+      "checkedAt": "2026-10-03T14:56:41.409Z",
+      "note": "Source protégée/anti-bot/quota : collecteur navigateur ou stratégie spécialisée requise."
     }
   ]
 }

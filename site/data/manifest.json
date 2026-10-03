@@ -1,22 +1,22 @@
 {
   "version": "12.9.3",
-  "generatedAt": "2026-10-03T14:12:36.289Z",
+  "generatedAt": "2026-10-03T14:58:21.695Z",
   "purgedAt": null,
   "repositoryUrl": "https://github.com/hakimalamiouahabi/qualifund",
   "sourcePolicy": "DIRECT_OFFICIAL_ONLY",
   "libraryMode": "DIRECT_OFFICIAL_CATALOG",
-  "count": 54,
-  "libraryCount": 54,
-  "rawLibraryCount": 54,
-  "activeCount": 54,
+  "count": 104,
+  "libraryCount": 104,
+  "rawLibraryCount": 104,
+  "activeCount": 104,
   "jPlusOneDate": "2026-10-04",
-  "jPlusOneActiveCount": 52,
+  "jPlusOneActiveCount": 104,
   "archivedCount": 0,
   "staleCount": 0,
   "aapCount": 33,
   "verifiedCount": 0,
   "withCdc": 28,
-  "withDeadline": 33,
+  "withDeadline": 85,
   "sourceCount": 118,
   "activeCollectionSourceCount": 1,
   "libraryInstruments": [
@@ -31,8 +31,8 @@
     "PRET_TAUX_ZERO",
     "APPEL_A_PROJET"
   ],
-  "targetInstrumentCount": 54,
-  "directLinkCount": 54,
+  "targetInstrumentCount": 104,
+  "directLinkCount": 104,
   "missingDirectLinkCount": 0,
   "categoryCounts": {
     "STARTUP": 7,
@@ -41,14 +41,14 @@
     "GE": 5
   },
   "scopeCounts": {
-    "NATIONAL": 54,
+    "NATIONAL": 104,
     "REGIONAL": 0
   },
   "instrumentCounts": {
-    "APPEL_A_PROJET": 35,
+    "APPEL_A_PROJET": 33,
     "AVANCE_REMBOURSABLE": 12,
     "PRET_TAUX_ZERO": 2,
-    "SUBVENTION": 33
+    "SUBVENTION": 85
   },
   "targetRule": "ACTIVE_SANS_ECHEANCE_OU_PERMANENT_OU_CLOTURE_GTE_J_PLUS_1",
   "targetCount": null,
@@ -56,12 +56,12 @@
   "coverageGap": null,
   "coverageCertified": false,
   "purgeStats": {
-    "input": 54,
-    "afterDirectSanitization": 54,
-    "afterCertifiedScope": 54,
+    "input": 104,
+    "afterDirectSanitization": 104,
+    "afterCertifiedScope": 104,
     "removedOutOfTarget": 0,
     "removedCertifiedQuarantine": 0,
-    "retainedOperational": 54
+    "retainedOperational": 104
   },
   "collectionLock": {
     "locked": true,
@@ -73,11 +73,12 @@
     "next": "AURA",
     "frozenUnselectedSha": "d31c4291c0d439df7b0a15ab6436a45e4440010f5fb9da677ce1d828666624bd"
   },
-  "publishedCount": 36,
-  "publishedActiveCount": 36,
-  "quarantinedCount": 18,
-  "certifiedSourceCount": 3,
+  "publishedCount": 104,
+  "publishedActiveCount": 104,
+  "quarantinedCount": 0,
+  "certifiedSourceCount": 4,
   "certifiedSources": [
+    "ademe",
     "bpifrance_aap",
     "bpifrance_aides",
     "bpifrance_rebond_industriel"
