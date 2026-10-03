@@ -1,9 +1,9 @@
 # FUNDING RADAR — Production Readiness v12.9.3
 
-Généré : 2026-10-03T12:35:52.830Z
+Généré : 2026-10-03T12:36:23.727Z
 
 - **Gate 1 — Dépôt GitHub et versionnement** : PASS — hakimalamiouahabi/qualifund
-- **Gate 2 — URL permanente** : BLOCKED — Déploiement permanent non confirmé.
+- **Gate 2 — URL permanente** : PASS — https://qualifund.pages.dev — smoke HTTP concluant.
 - **Gate 3 — Cycle de collecte — Bpifrance** : PASS — 3/3 source(s) du verrou courant en succès sur le cycle non identifié ; 3/3 ligne(s) coverage fraîches ; 36 imports bruts. Les autres sources restent gelées.
 - **Gate 4 — Bibliothèque certifiée publiable** : FAIL — 36 fiches publiables J+1 sur 54 fiches brutes ; 18 en quarantaine. 0 strictement VÉRIFIÉES au 2026-10-04. Intégrité recalculée 0/0.
 - **Gate 5 — Preuves documentaires par champ** : FAIL — Preuves A/B complètes sur les champs critiques : 0/0 fiches VÉRIFIÉES. File de remédiation synchronisée : oui. CdC/règlement : 28/36.
