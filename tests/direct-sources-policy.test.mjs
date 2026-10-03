@@ -138,3 +138,44 @@ test('les doublons de liens entre familles sont éliminés avec priorité aux li
  assert.equal(out.cdcLinks.length,1);
  assert.equal(out.sourceLinks.some(x=>(typeof x==='string'?x:x.url).includes('cdc.pdf')),false);
 });
+
+
+test('une fiche quarantinée d’une source déjà certifiée quitte le stock opérationnel',async()=>{
+ const root=await fs.mkdtemp(path.join(os.tmpdir(),'certified-quarantine-test-'));
+ try{
+  const localCfg={
+   version:'test',
+   sourcePolicy:'DIRECT_OFFICIAL_ONLY',
+   sourceSelectionPolicy:'GUICHET_OR_REGION_OFFICIAL_ONLY',
+   sources:[
+    {id:'bpifrance',official:true,strategy:'official-page',url:'https://www.bpifrance.fr/offre-test'},
+    {id:'aura',official:true,strategy:'official-page',url:'https://www.auvergnerhonealpes.fr/aides/test'}
+   ]
+  };
+  await fs.mkdir(path.join(root,'config'),{recursive:true});
+  await fs.mkdir(path.join(root,'site/data'),{recursive:true});
+  await fs.writeFile(path.join(root,'config/sources.json'),JSON.stringify(localCfg));
+  await fs.writeFile(path.join(root,'config/collection-lock.json'),JSON.stringify({
+   locked:true,mode:'REGION',name:'AURA test',allowedSourceIds:['aura']
+  }));
+  await fs.writeFile(path.join(root,'site/data/bpifrance-certification.json'),JSON.stringify({
+   status:'PASS',generatedAt:'2026-10-03T00:00:00Z',configuredSources:['bpifrance'],lock:{name:'Bpifrance'}
+  }));
+  const evidence=[
+   {field:'guichet',sourceTier:'B',sourceUrl:'https://www.bpifrance.fr/offre-test'},
+   {field:'sourceStatus',sourceTier:'B',sourceUrl:'https://www.bpifrance.fr/offre-test'},
+   {field:'instrument',sourceTier:'B',sourceUrl:'https://www.bpifrance.fr/offre-test'},
+   {field:'enterpriseEligibility',sourceTier:'B',sourceUrl:'https://www.bpifrance.fr/offre-test'}
+  ];
+  const clean={...valid,id:'bpi-clean',sourceId:'bpifrance',officialPage:'https://www.bpifrance.fr/offre-test',
+   verification:{status:'VERIFIE',fieldEvidence:evidence}};
+  const quarantined={...clean,id:'bpi-bad',officialPage:'https://www.bpifrance.fr/offre-bad',
+   verification:{status:'A_REVERIFIER',fieldEvidence:evidence.filter(e=>e.field!=='enterpriseEligibility')}};
+  const aura={...clean,id:'aura-current',sourceId:'aura',officialPage:'https://www.auvergnerhonealpes.fr/aides/test',
+   verification:{status:'A_REVERIFIER',fieldEvidence:[]}};
+  await fs.writeFile(path.join(root,'site/data/library.json'),JSON.stringify({meta:{generatedAt:'2026-10-03'},aaps:[clean,quarantined,aura]}));
+  const out=await purgeIndirectSources(root);
+  assert.deepEqual(out.aaps.map(x=>x.id).sort(),['aura-current','bpi-clean']);
+  assert.equal(out.meta.purgeStats.removedCertifiedQuarantine,1);
+ }finally{await fs.rm(root,{recursive:true,force:true})}
+});
