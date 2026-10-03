@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T14:56:18.612Z",
+  "generatedAt": "2026-10-03T15:04:39.064Z",
   "version": "12.9.3",
   "mode": "LOCKED_CYCLE",
   "currentLock": {
@@ -27,20 +27,20 @@
     {
       "id": 3,
       "name": "Cycle de collecte — ADEME",
-      "status": "PARTIAL",
-      "detail": "0/1 source(s) du verrou courant en succès sur le cycle non identifié ; 1/1 ligne(s) coverage fraîches ; 16 imports bruts. Les autres sources restent gelées."
+      "status": "PASS",
+      "detail": "1/1 source(s) du verrou courant en succès sur le cycle non identifié ; 1/1 ligne(s) coverage fraîches ; 68 imports bruts. Les autres sources restent gelées."
     },
     {
       "id": 4,
       "name": "Bibliothèque certifiée publiable",
-      "status": "WAIT_LIVE",
-      "detail": "36 fiches publiables J+1 sur 54 fiches brutes ; 18 en quarantaine. Certificat ADEME : ABSENT, REJETÉ OU OBSOLÈTE."
+      "status": "PASS",
+      "detail": "104 fiches publiables J+1 sur 104 fiches brutes ; 0 en quarantaine. Certificat ADEME : PASS — fingerprints MATCH."
     },
     {
       "id": 5,
       "name": "Preuves obligatoires de publication",
-      "status": "WAIT_LIVE",
-      "detail": "Preuves A/B obligatoires (guichet, statut/calendrier, instrument, entreprise) : 36/36. File de remédiation synchronisée : oui. CdC/règlement : 28/36."
+      "status": "FAIL",
+      "detail": "Preuves A/B obligatoires (guichet, statut/calendrier, instrument, entreprise) : 104/104. File de remédiation synchronisée : non. CdC/règlement : 28/104."
     },
     {
       "id": 6,
@@ -77,32 +77,32 @@
     "sourcesConfigured": 118,
     "ingestiveSources": 102,
     "controlSources": 16,
-    "certifiedSources": 3,
+    "certifiedSources": 4,
     "evaluatedSources": 1,
     "executedSources": 1,
     "freshExecutedSources": 1,
-    "successfulSources": 0,
+    "successfulSources": 1,
     "collectionCycleId": null,
-    "rawLibrary": 54,
-    "publishedLibrary": 36,
-    "quarantinedLibrary": 18,
-    "activeFiches": 36,
+    "rawLibrary": 104,
+    "publishedLibrary": 104,
+    "quarantinedLibrary": 0,
+    "activeFiches": 104,
     "jPlusOneDate": "2026-10-04",
-    "jPlusOneActiveFiches": 36,
+    "jPlusOneActiveFiches": 104,
     "verifiedFiches": 0,
     "verifiedIntegrity": 0,
     "verifiedEvidenceIntegrity": 0,
-    "publicationEvidenceIntegrity": 36,
-    "lockedCertificationMatch": false,
+    "publicationEvidenceIntegrity": 104,
+    "lockedCertificationMatch": true,
     "withCdc": 28,
-    "withDeadline": 17,
+    "withDeadline": 85,
     "consultantCases": 10,
     "uatTotal": 10,
     "companySmokeOk": true,
     "publicSmokeOk": true,
     "workflowEvent": "push",
     "inActions": true,
-    "remediationFresh": true,
+    "remediationFresh": false,
     "deepAuditP0": 0
   },
   "goProduction": false

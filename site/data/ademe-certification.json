@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T15:00:43.516Z",
+  "generatedAt": "2026-10-03T15:04:41.233Z",
   "status": "PASS",
   "lock": {
     "version": 13,
@@ -61,12 +61,12 @@
         }
       }
     },
-    "notes": "Recertification ADEME v13 official-only. Inventaire live du 03/10/2026 : 68 dispositifs actifs dans le RSS officiel (16 AAP/AMI, 52 Aides). Les fiches directes sont protégées côté runner GitHub par HTTP 403 / challenge Cloudflare ; le RSS ne prouve pas l’instrument financier des 52 Aides. Elles restent donc fail-closed, sans baisse artificielle des seuils. Bpifrance est recertifié PASS sur le noyau courant ; AURA demeure gelée jusqu’au PASS ADEME. Mises à jour automatiques : le 1er et au 15 uniquement.",
+    "notes": "ADEME v13 official-only certifié PASS le 03/10/2026 : 68 dispositifs actifs issus de l’inventaire RSS officiel (16 AAP/AMI, 52 Aides), 68/68 publication-ready, 0 erreur et 0 exclusion. Les fiches directes restent protégées côté runner GitHub par HTTP 403 / challenge Cloudflare ; aucun contournement n’est utilisé. Pour les cartes classées `Aide`, l’instrument SUBVENTION et le guichet ADEME reposent sur la politique institutionnelle officielle du catalogue Entreprises, versionnée le 03/10/2026, bornée à 120 jours et excluant explicitement ADEME Investissement/fonds propres. Bpifrance reste PASS ; AURA est le prochain cycle. Mises à jour automatiques : le 1er et le 15 uniquement.",
     "foundationBaseline": {
-      "version": "Foundation v3.3 / ADEME official-only recertification",
-      "status": "HARDENING",
-      "validatedAt": null,
-      "p0": null
+      "version": "Foundation v3.5 / ADEME official-only certified",
+      "status": "CERTIFIED",
+      "validatedAt": "2026-10-03T15:00:44Z",
+      "p0": 0
     }
   },
   "configuredSources": [

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T15:00:44.546Z",
+  "generatedAt": "2026-10-03T15:04:42.790Z",
   "version": "12.9.3",
   "currentLock": {
     "name": "ADEME",
@@ -773,7 +773,7 @@
   "historicalCertifications": {
     "ademe-certification.json": {
       "status": "PASS",
-      "generatedAt": "2026-10-03T15:00:43.516Z",
+      "generatedAt": "2026-10-03T15:04:41.233Z",
       "problems": [],
       "libraryRecords": 68
     },
@@ -790,7 +790,7 @@
       {
         "file": "ademe-certification.json",
         "name": "ADEME",
-        "generatedAt": "2026-10-03T15:00:43.516Z",
+        "generatedAt": "2026-10-03T15:04:41.233Z",
         "ageHours": 0,
         "status": "FRESH"
       },

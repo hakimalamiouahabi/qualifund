@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T15:00:43.901Z",
+  "generatedAt": "2026-10-03T15:04:41.783Z",
   "version": "12.9.3",
   "policy": "CERTIFIED_SOURCE_ONLY",
   "unlockedSourceIds": [
@@ -16,7 +16,7 @@
     {
       "file": "ademe-certification.json",
       "name": "ADEME",
-      "generatedAt": "2026-10-03T15:00:43.516Z",
+      "generatedAt": "2026-10-03T15:04:41.233Z",
       "status": "PASS",
       "sourceIds": [
         "ademe"

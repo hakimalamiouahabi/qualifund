@@ -1,6 +1,6 @@
 # FUNDING RADAR — Audit approfondi de qualité des données
 
-Généré : 2026-10-03T15:00:44.546Z
+Généré : 2026-10-03T15:04:42.790Z
 
 - Stock brut : **104**
 - Corpus publiable certifié : **104**
