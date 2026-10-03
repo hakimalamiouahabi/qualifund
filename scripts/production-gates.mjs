@@ -3,7 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { CRITICAL_FIELDS, evidenceCoverage, verificationStatus } from './lib/qa.mjs';
 import { isActiveAtJPlusOne, jPlusOneDate } from './lib/jplus1.mjs';
-import { buildCertificationLedger, isPublishableAid } from './lib/publication.mjs';
+import { buildCertificationLedger, isPublishableAid, hasGuichetEvidence, hasStatusEvidence, hasTargetInstrumentEvidence, hasEnterpriseEvidence } from './lib/publication.mjs';
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const DATA=path.join(ROOT,'site','data');
@@ -64,14 +64,29 @@ const verifiedEvidenceIntegrity=verifiedActive.filter(a=>{
   const coverage=evidenceCoverage(a);
   return CRITICAL_FIELDS.every(field=>['A','B'].includes(coverage[field]));
 }).length;
+const lockSourceIds=[...(lock.allowedSourceIds||[])].sort();
+const lockedLedgerCertification=lock.locked?(ledger.certifications||[]).find(c=>{
+  const ids=[...(c.sourceIds||[])].sort();
+  return c.name===lock.name&&c.fingerprintStatus==='MATCH'&&ids.length===lockSourceIds.length&&ids.every((id,i)=>id===lockSourceIds[i]);
+}):null;
+const lockedCertificationMatch=Boolean(lock.locked&&lockedLedgerCertification&&lockSourceIds.every(id=>unlockedSourceIds.has(id)));
+const publicationEvidenceIntegrity=activeJPlusOne.filter(a=>
+  hasGuichetEvidence(a)&&hasStatusEvidence(a)&&hasTargetInstrumentEvidence(a)&&hasEnterpriseEvidence(a)
+).length;
 const remediationFresh=Boolean(
   remediation&&
   remediation.version===(cfg.version||lib.meta?.version)&&
   remediation.activeFiches===active.length&&
   remediation.generatedAt
 );
-const gate4Pass=gate3Pass&&activeJPlusOne.length>0&&verified>0&&verifiedIntegrity===verified;
-const gate5Pass=gate4Pass&&verifiedEvidenceIntegrity===verified&&remediationFresh;
+const gate4Pass=lock.locked
+  ? gate3Pass&&activeJPlusOne.length>0&&lockedCertificationMatch
+  : gate3Pass&&activeJPlusOne.length>0&&verified>0&&verifiedIntegrity===verified;
+const gate5Pass=lock.locked
+  ? gate4Pass&&publicationEvidenceIntegrity===activeJPlusOne.length&&remediationFresh
+  : gate4Pass&&verifiedEvidenceIntegrity===verified&&remediationFresh;
+const gate4Status=gate4Pass?'PASS':gate3Pass?(lock.locked?'FAIL':verified?'PARTIAL':'FAIL'):(verified?'PARTIAL':'WAIT_LIVE');
+const gate5Status=gate5Pass?'PASS':gate3Pass?(lock.locked?'FAIL':verified?'PARTIAL':'FAIL'):'WAIT_LIVE';
 const companyLiveOk=Boolean(smoke.companyApi?.ok);
 const consultantCases=Number(uat.passed||0);
 const p0=Array.isArray(deepAudit?.severity?.p0)?deepAudit.severity.p0:[];
@@ -86,8 +101,12 @@ const gates=[
   {id:3,name:lock.locked?`Cycle de collecte — ${lock.name||'verrou courant'}`:'Collecte réelle des sources',status:gate3Status,detail:lock.locked
     ?`${successful.length}/${evaluated.length} source(s) du verrou courant en succès sur le cycle ${cycleId||'non identifié'} ; ${freshExecuted.length}/${evaluated.length} ligne(s) coverage fraîches ; ${imported} imports bruts. Les autres sources restent gelées.`
     :`${ingestive.filter(s=>covById.has(s.id)).length}/${ingestive.length} sources officielles exécutées ; ${ingestive.filter(s=>covById.get(s.id)?.success).length} succès. Contrôles: ${controlExecuted}/${controls.length}.`},
-  {id:4,name:'Bibliothèque certifiée publiable',status:gate4Pass?'PASS':gate3Pass?(verified?'PARTIAL':'FAIL'):(verified?'PARTIAL':'WAIT_LIVE'),detail:`${activeJPlusOne.length} fiches publiables J+1 sur ${raw.length} fiches brutes ; ${raw.length-published.length} en quarantaine. ${verified} strictement VÉRIFIÉES au ${jPlusOneDate()}. Intégrité recalculée ${verifiedIntegrity}/${verified}.`},
-  {id:5,name:'Preuves documentaires par champ',status:gate5Pass?'PASS':gate3Pass?(verified?'PARTIAL':'FAIL'):'WAIT_LIVE',detail:`Preuves A/B complètes sur les champs critiques : ${verifiedEvidenceIntegrity}/${verified||0} fiches VÉRIFIÉES. File de remédiation synchronisée : ${remediationFresh?'oui':'non'}. CdC/règlement : ${withCdc}/${activeJPlusOne.length}.`},
+  {id:4,name:'Bibliothèque certifiée publiable',status:gate4Status,detail:lock.locked
+    ?`${activeJPlusOne.length} fiches publiables J+1 sur ${raw.length} fiches brutes ; ${raw.length-published.length} en quarantaine. Certificat ${lock.name||'courant'} : ${lockedCertificationMatch?'PASS — fingerprints MATCH':'ABSENT, REJETÉ OU OBSOLÈTE'}.`
+    :`${activeJPlusOne.length} fiches publiables J+1 sur ${raw.length} fiches brutes ; ${raw.length-published.length} en quarantaine. ${verified} strictement VÉRIFIÉES au ${jPlusOneDate()}. Intégrité recalculée ${verifiedIntegrity}/${verified}.`},
+  {id:5,name:lock.locked?'Preuves obligatoires de publication':'Preuves documentaires par champ',status:gate5Status,detail:lock.locked
+    ?`Preuves A/B obligatoires (guichet, statut/calendrier, instrument, entreprise) : ${publicationEvidenceIntegrity}/${activeJPlusOne.length}. File de remédiation synchronisée : ${remediationFresh?'oui':'non'}. CdC/règlement : ${withCdc}/${activeJPlusOne.length}.`
+    :`Preuves A/B complètes sur les champs critiques : ${verifiedEvidenceIntegrity}/${verified||0} fiches VÉRIFIÉES. File de remédiation synchronisée : ${remediationFresh?'oui':'non'}. CdC/règlement : ${withCdc}/${activeJPlusOne.length}.`},
   {id:6,name:'Intégrité, déduplication et périmètre',status:gate6Pass?'PASS':'FAIL',detail:gate6Pass?'Aucune anomalie P0 détectée par l’audit approfondi.':`${p0.length} anomalie(s) P0 : ${p0.join(' ; ')}`},
   {id:7,name:'Enrichissement SIREN/SIRET',status:companyLiveOk?'PASS':'READY',detail:companyLiveOk?'API Recherche d’entreprises DINUM validée par smoke live.':'Endpoint officiel disponible ; smoke live à confirmer.'},
   {id:8,name:'Qualification projet multi-financeurs',status:consultantCases>=5&&uat.total>=5?'PASS':'PARTIAL',detail:`Cas UAT réussis : ${consultantCases}/${uat.total||0}. Les résultats orientent l’instruction sans conclure à l’attribution.`},
@@ -122,6 +141,8 @@ const summary={
     verifiedFiches:verified,
     verifiedIntegrity,
     verifiedEvidenceIntegrity,
+    publicationEvidenceIntegrity,
+    lockedCertificationMatch,
     withCdc,
     withDeadline,
     consultantCases,
