@@ -273,7 +273,8 @@ export async function discoverAura(source,{log=console.log}={}){
 }
 
 export async function collectAura(source,{log=console.log}={}){
-  const discovered=await discoverAura(source,{log});
+  try{
+    const discovered=await discoverAura(source,{log});
   const nonEuropean=discovered.links.filter(x=>!isEuropeanFundAid(x));
   const european=discovered.links.filter(isEuropeanFundAid);
   const out=await extractMany(source,nonEuropean,{log,workers:12});
