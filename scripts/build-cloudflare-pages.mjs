@@ -24,6 +24,7 @@ await fs.cp(SITE,DIST,{recursive:true,filter:src=>!excluded.has(rel(src))});
 
 const library=JSON.parse(await fs.readFile(path.join(DATA,'library.json'),'utf8'));
 const cfg=JSON.parse(await fs.readFile(path.join(ROOT,'config','sources.json'),'utf8'));
+const lock=JSON.parse(await fs.readFile(path.join(ROOT,'config','collection-lock.json'),'utf8'));
 let ledger;
 try{ledger=JSON.parse(await fs.readFile(path.join(DATA,'certification-ledger.json'),'utf8'))}
 catch{ledger=await buildCertificationLedger(DATA,cfg)}
@@ -45,6 +46,40 @@ if(publicationDuplicates.length)throw new Error('Doublons dans le corpus certifi
 const distData=path.join(DIST,'data');
 await fs.mkdir(distData,{recursive:true});
 await fs.writeFile(path.join(distData,'certification-ledger.json'),JSON.stringify(ledger,null,2),'utf8');
+const currentIds=[...new Set(Array.isArray(lock.allowedSourceIds)?lock.allowedSourceIds:[])].sort();
+const matchingCert=(ledger.certifications||[])
+  .filter(c=>c?.status==='PASS')
+  .find(c=>{
+    const ids=[...new Set(Array.isArray(c.sourceIds)?c.sourceIds:[])].sort();
+    return c.name===lock.name&&ids.length===currentIds.length&&ids.every((x,i)=>x===currentIds[i]);
+  })||null;
+let activeCertification=null;
+if(matchingCert){
+  try{activeCertification=JSON.parse(await fs.readFile(path.join(DATA,matchingCert.file),'utf8'))}catch{}
+}
+if(!activeCertification){
+  let coverage=[];
+  try{coverage=JSON.parse(await fs.readFile(path.join(DATA,'coverage.json'),'utf8'))}catch{}
+  const bySource={};
+  for(const id of currentIds){
+    const row=(coverage||[]).find(x=>x.id===id);
+    if(row)bySource[id]={
+      discovered:Number(row.discovered||0),imported:Number(row.imported||0),
+      retained:Number(row.imported||0),errors:Number(row.audit?.errors?.length||0),
+      excluded:Number(row.audit?.excluded?.length||0)
+    };
+  }
+  activeCertification={
+    generatedAt:new Date().toISOString(),
+    status:'PENDING',
+    lock:{locked:Boolean(lock.locked),mode:lock.mode||null,name:lock.name||null,allowedSourceIds:currentIds,next:lock.next||null},
+    configuredSources:currentIds,
+    libraryRecords:0,
+    bySource,duplicates:[],
+    problems:['Certification du cycle courant non acquise. Les données de ce guichet/région restent hors publication tant que le statut PASS n’est pas généré.']
+  };
+}
+await fs.writeFile(path.join(distData,'active-source-certification.json'),JSON.stringify(activeCertification,null,2),'utf8');
 const publicSources={
   version:cfg.version||null,
   sourcePolicy:'CERTIFIED_SOURCE_ONLY',
