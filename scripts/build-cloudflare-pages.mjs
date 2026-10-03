@@ -33,6 +33,16 @@ const configuredSourceIds=new Set((cfg.sources||[]).map(s=>s.id));
 const unlockedSourceIds=new Set(ledger.unlockedSourceIds||[]);
 const records=(Array.isArray(library.aaps)?library.aaps:[])
   .filter(a=>isPublishableAid(a,{configuredSourceIds,unlockedSourceIds}));
+const seenIds=new Set(),seenUrls=new Set(),publicationDuplicates=[];
+for(const a of records){
+  const id=String(a.id||'');
+  const url=String(a.officialPage||'').replace(/\/$/,'');
+  if(id&&seenIds.has(id))publicationDuplicates.push({type:'ID',value:id});
+  else if(id)seenIds.add(id);
+  if(url&&seenUrls.has(url))publicationDuplicates.push({type:'URL',value:url});
+  else if(url)seenUrls.add(url);
+}
+if(publicationDuplicates.length)throw new Error('Doublons dans le corpus certifié publié: '+JSON.stringify(publicationDuplicates.slice(0,20)));
 
 const distData=path.join(DIST,'data');
 await fs.mkdir(distData,{recursive:true});
