@@ -304,3 +304,13 @@ test('la purge reconstruit les agrégats du manifeste au lieu de recopier les an
   const update=fs.readFileSync(path.join(ROOT,'scripts/update-library.mjs'),'utf8');
   assert.match(update,/const active=aids\.filter\(a=>String\(a\.lifecycleStatus\|\|'\'\)\.toUpperCase\(\)==='ACTIVE'\)/);
 });
+
+
+test('le deep audit bloque les compteurs de manifeste impossibles',()=>{
+  const audit=fs.readFileSync(path.join(ROOT,'scripts/deep-audit.mjs'),'utf8');
+  assert.match(audit,/manifest\.libraryCount/);
+  assert.match(audit,/manifest\.rawLibraryCount/);
+  assert.match(audit,/manifest\.activeCount/);
+  assert.match(audit,/manifest\.jPlusOneActiveCount/);
+  assert.match(audit,/jPlusOneActiveCount=.*> ACTIVE réels/);
+});
