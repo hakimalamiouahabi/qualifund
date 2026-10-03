@@ -22,6 +22,13 @@ test('la publication refuse une source non certifiée et un instrument hors pér
   assert.equal(targetFunding({...base,kind:'AAP / AMI',aidTypes:['AUTRE']}),true);
 });
 
+test('une date de clôture ancienne prime sur un lifecycle ACTIVE obsolète',()=>{
+  const opts={configuredSourceIds:new Set(['s']),unlockedSourceIds:new Set(['s']),now:new Date('2026-10-03T00:00:00Z')};
+  const base={id:'x',sourceId:'s',title:'Dispositif test',officialPage:'https://example.fr/aide/x',aidTypes:['SUBVENTION'],lifecycleStatus:'ACTIVE'};
+  assert.equal(publicationReason({...base,closingDate:'2026-06-01'},opts),'INACTIVE_OR_STALE');
+  assert.equal(publicationReason({...base,closingDate:'2026-09-20'},opts),null);
+});
+
 test('une archive ancienne n’est pas publiée mais une clôture J-60 peut l’être',()=>{
   const opts={configuredSourceIds:new Set(['s']),unlockedSourceIds:new Set(['s']),now:new Date('2026-10-03T00:00:00Z')};
   const base={id:'x',sourceId:'s',title:'Dispositif test',officialPage:'https://example.fr/aide/x',aidTypes:['SUBVENTION'],lifecycleStatus:'ARCHIVE'};
