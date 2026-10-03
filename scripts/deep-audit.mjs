@@ -144,6 +144,9 @@ if(counters.orphanSource)p0.push(`${counters.orphanSource} fiche(s) rattachée(s
 if(publishedDuplicates.length)p0.push(`${publishedDuplicates.length} doublon(s) dans le corpus certifié publiable`);
 
 const p1=[];
+const legacyUnboundCertifications=(ledger.certifications||[]).filter(c=>c.fingerprintStatus==='LEGACY_UNBOUND');
+if(legacyUnboundCertifications.length)p1.push(`${legacyUnboundCertifications.length} certificat(s) PASS historique(s) sans fingerprint de configuration — à recertifier lors de leur prochain cycle`);
+if((ledger.rejectedCertifications||[]).length)p0.push(`${ledger.rejectedCertifications.length} certificat(s) PASS rejeté(s) car la configuration source a changé`);
 const certifiedEvidenceDebt={
   missingGuichet:Number(reasons.MISSING_GUICHET_EVIDENCE||0),
   missingStatus:Number(reasons.MISSING_STATUS_EVIDENCE||0),
@@ -189,6 +192,7 @@ const report={
     manifestLock:manifest?.collectionLock||null
   },
   historicalCertifications,
+  certificationIntegrity:{legacyUnbound:legacyUnboundCertifications,rejected:ledger.rejectedCertifications||[]},
   certifiedEvidenceDebt,
   publishedQuality,
   severity:{p0,p1,p2},
