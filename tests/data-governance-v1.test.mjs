@@ -428,7 +428,7 @@ test('le workflow de production valide le code avant toute purge ou collecte',()
   const wf=fs.readFileSync(path.join(ROOT,'.github/workflows/update-and-deploy.yml'),'utf8');
   const gate=wf.indexOf('Gate statique avant toute mutation des données');
   const purge=wf.indexOf('Purger et persister le stock hors sources certifiées / cycle courant');
-  const collect=wf.indexOf('Collecte complète quotidienne / manuelle');
+  const collect=wf.indexOf('Collecte complète quinzaine / manuelle');
   assert.ok(gate>=0&&purge>gate&&collect>purge);
   assert.match(wf,/find scripts tests -type f -name '\*\.mjs'.*node --check/s);
 });

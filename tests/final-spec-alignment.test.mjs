@@ -37,7 +37,7 @@ test('restitution finale : priorités, approfondissement et fusion de rangs',()=
 
 test('workflow : SHA pinning, corpus publié et cron Europe\/Paris',()=>{
   const y=read('.github/workflows/update-and-deploy.yml');
-  assert.match(y,/cron: '0 2 \* \* \*'/);assert.match(y,/timezone: 'Europe\/Paris'/);
+  assert.match(y,/cron: '0 2 1,15 \* \*'/);assert.match(y,/timezone: 'Europe\/Paris'/);
   assert.match(y,/ref: \$\{\{ needs\.build\.outputs\.data_sha \}\}/);
   assert.doesNotMatch(y,/uses:\s*[^\n]+@v\d/);
   const uses=[...y.matchAll(/uses:\s*([^@\n]+)@([^\s#]+)/g)];

@@ -2,7 +2,7 @@
 
 ## Cycle actif
 
-La collecte planifiée s’exécute chaque jour à 02:00 Europe/Paris, **uniquement sur le guichet ou la région défini dans `config/collection-lock.json`**.
+La collecte planifiée s’exécute **deux fois par mois, le 1er et le 15 à 02:00 Europe/Paris**, uniquement sur le guichet ou la région défini dans `config/collection-lock.json`. **Aucun push GitHub ne déclenche de collecte.** Le lancement manuel reste réservé à une maintenance ou une recertification exceptionnelle.
 
 Le chemin de production est :
 
