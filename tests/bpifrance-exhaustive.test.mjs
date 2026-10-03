@@ -18,10 +18,10 @@ test('Bpifrance utilise des collecteurs directs dédiés et des sources complém
   assert.doesNotThrow(()=>assertDirectSources(cfg));
 });
 
-test('le collecteur Bpifrance utilise le listing/section officiels et garde sitemap + moteurs en contre-audit',()=>{
+test('le collecteur Bpifrance utilise exclusivement listing section sitemap et fiches officiels',()=>{
   assert.match(connector,/page='\+page/);
   assert.match(connector,/sitemapUrls/);
-  assert.match(connector,/externalAuditLinks/);
+  assert.doesNotMatch(connector,/externalAudit|Exa|Tavily|Parallel|Firecrawl/i);
   assert.match(connector,/listing maître Bpifrance/);
   assert.match(connector,/section maître/);
   assert.match(connector,/Subventions et avances remboursables/);
