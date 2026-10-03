@@ -1,6 +1,6 @@
 import * as cheerio from 'cheerio';
 import { fetchText } from '../lib/http.mjs';
-import { browserHtml } from '../lib/browser.mjs';
+import { browserHtml, closeBrowser } from '../lib/browser.mjs';
 import { extractFromHtml } from '../lib/extract.mjs';
 import { directPageId } from '../lib/direct-sources.mjs';
 import { canonicalUrl, cleanTitle, detectDates, norm, safeUrl, uniq } from '../lib/utils.mjs';
