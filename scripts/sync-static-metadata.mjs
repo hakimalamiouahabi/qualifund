@@ -4,7 +4,7 @@ await purgeIndirectSources();
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { buildCertificationLedger, isPublishableAid } from './lib/publication.mjs';
+import { buildCertificationLedger, isPublishableAid, sourceConfigFingerprint, certificationBasisFingerprint } from './lib/publication.mjs';
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const DATA=path.join(ROOT,'site','data');
@@ -17,7 +17,7 @@ const library=JSON.parse(await fs.readFile(libraryPath,'utf8'));
 const all=Array.isArray(library.aaps)?library.aaps:[];
 const configuredSourceIds=new Set((cfg.sources||[]).map(s=>s.id));
 
-const ledger=await buildCertificationLedger(DATA,cfg);
+const ledger=await buildCertificationLedger(DATA,cfg,{root:ROOT});
 await fs.writeFile(path.join(DATA,'certification-ledger.json'),JSON.stringify(ledger,null,2)+'\n','utf8');
 const unlockedSourceIds=new Set(ledger.unlockedSourceIds);
 const published=all.filter(a=>isPublishableAid(a,{configuredSourceIds,unlockedSourceIds}));
@@ -62,6 +62,8 @@ if(!activeCertification){
     status:'PENDING',
     lock:collectionLock,
     configuredSources:collectionLock.allowedSourceIds,
+    sourceConfigFingerprint:sourceConfigFingerprint(cfg,collectionLock.allowedSourceIds),
+    certificationBasisFingerprint:await certificationBasisFingerprint(ROOT,cfg,collectionLock.allowedSourceIds),
     libraryRecords:0,
     bySource,
     duplicates:[],
