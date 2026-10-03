@@ -22,8 +22,9 @@ await fs.writeFile(path.join(DATA,'certification-ledger.json'),JSON.stringify(le
 const unlockedSourceIds=new Set(ledger.unlockedSourceIds);
 const published=all.filter(a=>isPublishableAid(a,{configuredSourceIds,unlockedSourceIds}));
 
-const rawActive=all.filter(a=>a.lifecycleStatus!=='ARCHIVE');
-const publishedActive=published.filter(a=>a.lifecycleStatus!=='ARCHIVE');
+const rawActive=all.filter(a=>a.lifecycleStatus==='ACTIVE');
+const rawStale=all.filter(a=>a.lifecycleStatus==='STALE');
+const publishedActive=published.filter(a=>a.lifecycleStatus==='ACTIVE');
 const priorFrozen=library.meta?.collectionLock?.frozenUnselectedSha||null;
 const collectionLock={
   locked:Boolean(lock.locked),
@@ -41,7 +42,8 @@ const meta={
   libraryCount:all.length,
   rawLibraryCount:all.length,
   activeCount:rawActive.length,
-  archivedCount:all.length-rawActive.length,
+  archivedCount:all.filter(a=>a.lifecycleStatus==='ARCHIVE').length,
+  staleCount:rawStale.length,
   publishedCount:published.length,
   publishedActiveCount:publishedActive.length,
   quarantinedCount:all.length-published.length,
