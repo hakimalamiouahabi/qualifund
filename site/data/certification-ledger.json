@@ -1,0 +1,34 @@
+{
+  "generatedAt": "2026-10-03T09:55:04.439Z",
+  "version": "12.8.0",
+  "policy": "CERTIFIED_SOURCE_ONLY",
+  "unlockedSourceIds": [],
+  "guichets": [],
+  "certifications": [],
+  "rejectedCertifications": [
+    {
+      "file": "ademe-certification.json",
+      "name": "ADEME",
+      "generatedAt": "2026-09-30T19:00:06.821Z",
+      "sourceIds": [
+        "ademe"
+      ],
+      "reason": "SOURCE_CONFIG_FINGERPRINT_MISSING",
+      "certifiedFingerprint": null,
+      "currentFingerprint": "d21b13160a8110d3fde0cb057916bfe3982dc9c39f047aa50630281aed61e490"
+    },
+    {
+      "file": "bpifrance-certification.json",
+      "name": "Bpifrance",
+      "generatedAt": "2026-09-30T20:29:18.428Z",
+      "sourceIds": [
+        "bpifrance_aap",
+        "bpifrance_aides",
+        "bpifrance_rebond_industriel"
+      ],
+      "reason": "SOURCE_CONFIG_FINGERPRINT_MISSING",
+      "certifiedFingerprint": null,
+      "currentFingerprint": "4548fa3e62e884f922c61dc2eac32eda8eaea160c6ab14b06aebfea7b046b223"
+    }
+  ]
+}

@@ -1,24 +1,24 @@
 {
-  "version": "12.7.0",
+  "version": "12.8.0",
   "generatedAt": "2026-09-30T20:25:33.273Z",
-  "purgedAt": "2026-10-03T09:15:51.305Z",
+  "purgedAt": "2026-10-03T09:55:04.495Z",
   "repositoryUrl": "https://github.com/hakimalamiouahabi/qualifund",
   "sourcePolicy": "DIRECT_OFFICIAL_ONLY",
   "libraryMode": "DIRECT_OFFICIAL_CATALOG",
-  "count": 41,
-  "libraryCount": 41,
-  "rawLibraryCount": 41,
-  "activeCount": 41,
+  "count": 35,
+  "libraryCount": 35,
+  "rawLibraryCount": 35,
+  "activeCount": 35,
   "jPlusOneDate": "2026-10-04",
-  "jPlusOneActiveCount": 38,
+  "jPlusOneActiveCount": 33,
   "archivedCount": 0,
   "staleCount": 0,
-  "aapCount": 33,
+  "aapCount": 28,
   "verifiedCount": 0,
-  "withCdc": 13,
+  "withCdc": 12,
   "withDeadline": 28,
   "sourceCount": 118,
-  "activeCollectionSourceCount": 1,
+  "activeCollectionSourceCount": 3,
   "libraryInstruments": [
     "APPEL_A_PROJET",
     "AVANCE_REMBOURSABLE",
@@ -30,8 +30,8 @@
     "PRET_TAUX_ZERO",
     "APPEL_A_PROJET"
   ],
-  "targetInstrumentCount": 41,
-  "directLinkCount": 41,
+  "targetInstrumentCount": 35,
+  "directLinkCount": 35,
   "missingDirectLinkCount": 0,
   "categoryCounts": {
     "STARTUP": 3,
@@ -41,12 +41,12 @@
   },
   "scopeCounts": {
     "NATIONAL": 35,
-    "REGIONAL": 6
+    "REGIONAL": 0
   },
   "instrumentCounts": {
-    "APPEL_A_PROJET": 35,
+    "APPEL_A_PROJET": 30,
     "AVANCE_REMBOURSABLE": 5,
-    "SUBVENTION": 18
+    "SUBVENTION": 17
   },
   "targetRule": "ACTIVE_SANS_ECHEANCE_OU_PERMANENT_OU_CLOTURE_GTE_J_PLUS_1",
   "targetCount": null,
@@ -54,21 +54,23 @@
   "coverageGap": null,
   "coverageCertified": false,
   "purgeStats": {
-    "input": 215,
-    "afterDirectSanitization": 213,
-    "afterCertifiedScope": 213,
-    "removedOutOfTarget": 141,
-    "removedCertifiedQuarantine": 31,
-    "retainedOperational": 41
+    "input": 41,
+    "afterDirectSanitization": 41,
+    "afterCertifiedScope": 35,
+    "removedOutOfTarget": 0,
+    "removedCertifiedQuarantine": 0,
+    "retainedOperational": 35
   },
   "collectionLock": {
     "locked": true,
-    "mode": "REGION",
-    "name": "Auvergne-Rhône-Alpes",
+    "mode": "GUICHET",
+    "name": "Bpifrance",
     "allowedSourceIds": [
-      "aura"
+      "bpifrance_aap",
+      "bpifrance_aides",
+      "bpifrance_rebond_industriel"
     ],
-    "next": "Bourgogne-Franche-Comté",
+    "next": "ADEME",
     "frozenUnselectedSha": "8dc40e3411b739e4e58b79448dab3be0f871302c95f31952a052dfb73d9d089a"
   }
 }

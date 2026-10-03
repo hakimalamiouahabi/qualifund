@@ -1137,24 +1137,5 @@
     "checkedAt": "2026-09-30T18:56:37.298Z",
     "lastSuccessfulAt": "2026-09-30T18:56:37.298Z",
     "consecutiveFailures": 0
-  },
-  {
-    "id": "aura",
-    "name": "Région Auvergne-Rhône-Alpes — catalogue des aides",
-    "scope": "Auvergne-Rhône-Alpes",
-    "success": true,
-    "lifecycleSafe": true,
-    "emptyIngestion": false,
-    "suspiciousVolume": false,
-    "lowImportedCount": false,
-    "lowImportRatio": false,
-    "importRatio": 0.4260089686098655,
-    "discovered": 223,
-    "imported": 95,
-    "message": "223 pages candidates, 144 fiches extraites",
-    "durationMs": 120082,
-    "checkedAt": "2026-09-30T08:49:20.060Z",
-    "lastSuccessfulAt": "2026-09-30T08:49:20.060Z",
-    "consecutiveFailures": 0
   }
 ]

@@ -1,25 +1,25 @@
 {
   "meta": {
-    "version": "12.7.0",
+    "version": "12.8.0",
     "generatedAt": "2026-09-30T20:25:33.273Z",
-    "purgedAt": "2026-10-03T09:15:51.305Z",
+    "purgedAt": "2026-10-03T09:55:04.495Z",
     "repositoryUrl": "https://github.com/hakimalamiouahabi/qualifund",
     "sourcePolicy": "DIRECT_OFFICIAL_ONLY",
     "libraryMode": "DIRECT_OFFICIAL_CATALOG",
-    "count": 41,
-    "libraryCount": 41,
-    "rawLibraryCount": 41,
-    "activeCount": 41,
+    "count": 35,
+    "libraryCount": 35,
+    "rawLibraryCount": 35,
+    "activeCount": 35,
     "jPlusOneDate": "2026-10-04",
-    "jPlusOneActiveCount": 38,
+    "jPlusOneActiveCount": 33,
     "archivedCount": 0,
     "staleCount": 0,
-    "aapCount": 33,
+    "aapCount": 28,
     "verifiedCount": 0,
-    "withCdc": 13,
+    "withCdc": 12,
     "withDeadline": 28,
     "sourceCount": 118,
-    "activeCollectionSourceCount": 1,
+    "activeCollectionSourceCount": 3,
     "libraryInstruments": [
       "APPEL_A_PROJET",
       "AVANCE_REMBOURSABLE",
@@ -31,8 +31,8 @@
       "PRET_TAUX_ZERO",
       "APPEL_A_PROJET"
     ],
-    "targetInstrumentCount": 41,
-    "directLinkCount": 41,
+    "targetInstrumentCount": 35,
+    "directLinkCount": 35,
     "missingDirectLinkCount": 0,
     "categoryCounts": {
       "STARTUP": 3,
@@ -42,12 +42,12 @@
     },
     "scopeCounts": {
       "NATIONAL": 35,
-      "REGIONAL": 6
+      "REGIONAL": 0
     },
     "instrumentCounts": {
-      "APPEL_A_PROJET": 35,
+      "APPEL_A_PROJET": 30,
       "AVANCE_REMBOURSABLE": 5,
-      "SUBVENTION": 18
+      "SUBVENTION": 17
     },
     "targetRule": "ACTIVE_SANS_ECHEANCE_OU_PERMANENT_OU_CLOTURE_GTE_J_PLUS_1",
     "targetCount": null,
@@ -55,21 +55,23 @@
     "coverageGap": null,
     "coverageCertified": false,
     "purgeStats": {
-      "input": 215,
-      "afterDirectSanitization": 213,
-      "afterCertifiedScope": 213,
-      "removedOutOfTarget": 141,
-      "removedCertifiedQuarantine": 31,
-      "retainedOperational": 41
+      "input": 41,
+      "afterDirectSanitization": 41,
+      "afterCertifiedScope": 35,
+      "removedOutOfTarget": 0,
+      "removedCertifiedQuarantine": 0,
+      "retainedOperational": 35
     },
     "collectionLock": {
       "locked": true,
-      "mode": "REGION",
-      "name": "Auvergne-Rhône-Alpes",
+      "mode": "GUICHET",
+      "name": "Bpifrance",
       "allowedSourceIds": [
-        "aura"
+        "bpifrance_aap",
+        "bpifrance_aides",
+        "bpifrance_rebond_industriel"
       ],
-      "next": "Bourgogne-Franche-Comté",
+      "next": "ADEME",
       "frozenUnselectedSha": "8dc40e3411b739e4e58b79448dab3be0f871302c95f31952a052dfb73d9d089a"
     }
   },
@@ -405,111 +407,6 @@
         "MISSING_DISBURSEMENT_TERMS"
       ],
       "contentHash": "df044aa7c6a97ad4f2747cf53d38a34c3220977da48d10c5b762940fa9be9792"
-    },
-    {
-      "title": "Appel à manifestation d’intérêt pour « Développer des formations innovantes en coopération avec l'Académie de l'Organisation Mondiale de la Santé »",
-      "objective": null,
-      "themes": [],
-      "beneficiaries": null,
-      "projectsExpected": [],
-      "eligibleExpenses": null,
-      "excludedExpenses": null,
-      "prerequisites": null,
-      "selectionCriteria": null,
-      "disbursementTerms": null,
-      "repaymentTerms": null,
-      "stateAidRules": null,
-      "companyCategories": [],
-      "scope": "REGIONAL",
-      "regions": [
-        "Auvergne-Rhône-Alpes"
-      ],
-      "aidTypes": [
-        "APPEL_A_PROJET"
-      ],
-      "aidSplit": null,
-      "aidRate": {
-        "min": null,
-        "max": null,
-        "raw": null,
-        "byCompanySize": []
-      },
-      "aidAmount": {
-        "min": null,
-        "max": null,
-        "raw": null,
-        "byCompanySize": []
-      },
-      "minimumProjectCost": null,
-      "maximumProjectCost": null,
-      "openingDate": null,
-      "closingDate": null,
-      "finalClosingDate": null,
-      "deadlines": [],
-      "permanent": false,
-      "programme": null,
-      "applicationProcess": null,
-      "contact": null,
-      "attentionPoints": [
-        "Bénéficiaires à vérifier.",
-        "Date/relèves non documentées.",
-        "Dépenses éligibles non documentées.",
-        "Pré-requis non documentés.",
-        "Cahier des charges / règlement non rattaché.",
-        "Modalités financières à vérifier."
-      ],
-      "cdcLinks": [],
-      "sourceLinks": [
-        {
-          "label": "Page officielle",
-          "url": "https://www.auvergnerhonealpes.fr/aides/appel-manifestation-dinteret-pour-developper-des-formations-innovantes-en-cooperation-avec"
-        }
-      ],
-      "regulationLinks": [],
-      "officialPage": "https://www.auvergnerhonealpes.fr/aides/appel-manifestation-dinteret-pour-developper-des-formations-innovantes-en-cooperation-avec",
-      "verification": {
-        "status": "A_REVERIFIER",
-        "sourceTier": "B",
-        "fieldEvidence": [],
-        "lastChecked": null,
-        "completeness": 19,
-        "confidence": 0,
-        "coverage": {
-          "objective": null,
-          "beneficiaries": null,
-          "financialTerms": null,
-          "projectsExpected": null,
-          "eligibleExpenses": null,
-          "calendar": null,
-          "prerequisites": null,
-          "selectionCriteria": null
-        }
-      },
-      "id": "aura_63568dab0a754a13662a49e73491c706bfb3afc7cf4b2c494b4238494df3be46",
-      "canonicalId": "aura_63568dab0a754a13662a49e73491c706bfb3afc7cf4b2c494b4238494df3be46",
-      "sourceId": "aura",
-      "kind": "AAP / AMI",
-      "funder": [
-        "Région Auvergne-Rhône-Alpes"
-      ],
-      "lastSeenAt": "2026-09-30T08:49:20.060Z",
-      "lifecycleStatus": "ACTIVE",
-      "sourceAliases": [
-        "aura"
-      ],
-      "qaFlags": [
-        "MISSING_OBJECTIVE",
-        "MISSING_BENEFICIARIES",
-        "MISSING_DEADLINE",
-        "MISSING_ELIGIBLE_EXPENSES",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_COMPANY_CATEGORY",
-        "MISSING_FINANCIAL_TERMS",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "contentHash": "52c252ab41f187326e7fc165ccdcdcdf97d5d229fdcaaf3d011763abbadb07ec"
     },
     {
       "id": "ademe_c48cc10ec1a72e5e359f8db8c1a07464e1eeb40a7bf61095bb9eb7f034c219f7",
@@ -2748,138 +2645,6 @@
       "contentHash": "61bfdcc42e909d1161d50ef33c102caacca352ce111b2aa8dac6e2849c88dcb9"
     },
     {
-      "title": "Demander un agrément pour réaliser l’accompagnement des exploitations agricoles au titre de la MAEC forfaitaire du programme FEADER 2023-2027 (appel à candidatures)",
-      "objective": null,
-      "themes": [
-        "Emploi / compétences"
-      ],
-      "beneficiaries": "La demande d’agrément peut être présentée par : une structure régionale ou interdépartementale chef de file, une structure indépendante (régionale, départementale ou territoriale) La structure candidate : doit être en mesure de réaliser les diagnostics individuels d’exploitation, de construire un plan d’action permettant à l’exploitation d’atteindre le résultat attendu, et de proposer un accompagnement et un suivi aux agriculteurs tout au long des cinq années d’engagement. peut demander l’agrément pour une ou plusieurs options de transition.Pour chacune des options de transition, elle doit présenter les outils qu’elle veut utiliser ainsi que l’accompagnement associé proposé. \n Modalités de sélection des structures candidates à l’agrément :Le choix des prestataires agréés se fera au regard de : l’adéquation des compétences et expériences de la structure à l’accompagnement des exploitations agricoles ; l’efficience de l’offre de service proposée aux exploitants agricoles ; la stratégie d’accompagnement mise en place, notamment si elle intègre une démarche collective de territoire ou de filière permettant une mutualisation des moyens d’accompagnement sur des temps collectifs et d’échanges de pratiques entre les exploitants agricoles engagés ; la couverture territoriale de l’offre de service ; la cohérence de l’accompagnement proposé avec les autres outils de soutien et d’accompagnement déjà existants. Document à télécharger et à joindre à la demande d’agrément : Le formulaire de demande d’agrément complété, daté et signé. Le dossier complet et signé doit être transmis à l'adresse e-mail suivante : agroenvironnement@auvergnerhonealpes.fr",
-      "projectsExpected": [],
-      "eligibleExpenses": null,
-      "excludedExpenses": null,
-      "prerequisites": null,
-      "selectionCriteria": null,
-      "disbursementTerms": null,
-      "repaymentTerms": null,
-      "stateAidRules": null,
-      "companyCategories": [],
-      "scope": "REGIONAL",
-      "regions": [
-        "Auvergne-Rhône-Alpes"
-      ],
-      "aidTypes": [
-        "APPEL_A_PROJET"
-      ],
-      "aidSplit": null,
-      "aidRate": {
-        "min": null,
-        "max": null,
-        "raw": "Conditions d'attribution de l'aide",
-        "byCompanySize": []
-      },
-      "aidAmount": {
-        "min": null,
-        "max": null,
-        "raw": "Conditions d'attribution de l'aide",
-        "byCompanySize": []
-      },
-      "minimumProjectCost": null,
-      "maximumProjectCost": null,
-      "openingDate": null,
-      "closingDate": null,
-      "finalClosingDate": null,
-      "deadlines": [],
-      "permanent": false,
-      "programme": "Le présent appel à candidatures vise à agréer des structures pouvant réaliser l’accompagnement des exploitations agricoles qui souhaitent s’engager dans le dispositif de MAEC forfaitaire du programme FEADER 2023-2027",
-      "applicationProcess": null,
-      "contact": "Région Auvergne-Rhône-AlpesService Transitions, Agricoles et Forestières : agroenvironnement@auvergnerhonealpes.fr",
-      "attentionPoints": [
-        "Date/relèves non documentées.",
-        "Dépenses éligibles non documentées.",
-        "Pré-requis non documentés."
-      ],
-      "cdcLinks": [
-        {
-          "url": "https://www.auvergnerhonealpes.fr/media/8111/download?inline",
-          "label": "formulaire de demande d’agrément",
-          "type": "DOCUMENT"
-        }
-      ],
-      "sourceLinks": [
-        {
-          "label": "Page officielle",
-          "url": "https://www.auvergnerhonealpes.fr/aides/demander-un-agrement-pour-realiser-laccompagnement-des-exploitations-agricoles-au-titre-de-la"
-        }
-      ],
-      "regulationLinks": [],
-      "officialPage": "https://www.auvergnerhonealpes.fr/aides/demander-un-agrement-pour-realiser-laccompagnement-des-exploitations-agricoles-au-titre-de-la",
-      "verification": {
-        "status": "A_REVERIFIER",
-        "sourceTier": "B",
-        "fieldEvidence": [
-          {
-            "field": "themes",
-            "sourceUrl": "https://www.auvergnerhonealpes.fr/aides/demander-un-agrement-pour-realiser-laccompagnement-des-exploitations-agricoles-au-titre-de-la",
-            "sourceTier": "B",
-            "locator": "page-text-match:themes",
-            "evidenceText": "Emploi / compétences",
-            "checkedAt": "2026-09-30T08:40:55.281Z"
-          },
-          {
-            "field": "beneficiaries",
-            "sourceUrl": "https://www.auvergnerhonealpes.fr/aides/demander-un-agrement-pour-realiser-laccompagnement-des-exploitations-agricoles-au-titre-de-la",
-            "sourceTier": "B",
-            "locator": "section:beneficiaries",
-            "evidenceText": "La demande d’agrément peut être présentée par : une structure régionale ou interdépartementale chef de file, une structure indépendante (régionale, départementale ou territoriale) La structure candidate : doit être en mesure de réaliser les diagnostics individuels d’exploitation, de construire un plan d’action permettant à l’exploitation d’atteindre le résultat attendu, et de proposer un accompagnement et un suivi aux agriculteurs tout au long des cinq années d’engagement. peut demander l’agrément pour une ou plusieurs options de transition.Pour chacune des options de transition, elle doit présenter les outils qu’elle veut utiliser ainsi que l’accompagnement associé proposé. \n Modalités de sélection des structures candidates à l’agrément :Le choix des prestataires agréés se fera au regard de : l’adéquation des compétences et expériences d",
-            "checkedAt": "2026-09-30T08:40:55.281Z"
-          },
-          {
-            "field": "financialTerms",
-            "sourceUrl": "https://www.auvergnerhonealpes.fr/aides/demander-un-agrement-pour-realiser-laccompagnement-des-exploitations-agricoles-au-titre-de-la",
-            "sourceTier": "B",
-            "locator": "section:financial",
-            "evidenceText": "Conditions d'attribution de l'aide",
-            "checkedAt": "2026-09-30T08:40:55.281Z"
-          }
-        ],
-        "lastChecked": null,
-        "completeness": 44,
-        "confidence": 19,
-        "coverage": {
-          "objective": null,
-          "beneficiaries": "B",
-          "financialTerms": "B",
-          "projectsExpected": null,
-          "eligibleExpenses": null,
-          "calendar": null,
-          "prerequisites": null,
-          "selectionCriteria": null
-        }
-      },
-      "id": "aura_eae6d4ab20aba01ae08913d3824272fe224ea692caca5a440345b789ddb8d3c8",
-      "canonicalId": "aura_eae6d4ab20aba01ae08913d3824272fe224ea692caca5a440345b789ddb8d3c8",
-      "sourceId": "aura",
-      "kind": "AAP / AMI",
-      "funder": [
-        "Région Auvergne-Rhône-Alpes"
-      ],
-      "lastSeenAt": "2026-09-30T08:49:20.060Z",
-      "lifecycleStatus": "ACTIVE",
-      "sourceAliases": [
-        "aura"
-      ],
-      "qaFlags": [
-        "MISSING_OBJECTIVE",
-        "MISSING_DEADLINE",
-        "MISSING_ELIGIBLE_EXPENSES",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_COMPANY_CATEGORY",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "contentHash": "23fb0b86815ce3f3ba136148e310e607b92f912216fec5340da6ac95cdb5db89"
-    },
-    {
       "id": "ademe_6613b3fc9af3350d119843ff57c6e06ce62a7356559e9faa7cc7a7198b092826",
       "canonicalId": "ademe_6613b3fc9af3350d119843ff57c6e06ce62a7356559e9faa7cc7a7198b092826",
       "sourceId": "ademe",
@@ -3376,159 +3141,6 @@
         "MISSING_DISBURSEMENT_TERMS"
       ],
       "contentHash": "ec0550fc540bfa20dbd54e9fd944e5a25f3b655fae896f7ed61fb9215aa62051"
-    },
-    {
-      "title": "Être labellisé \"formations du Campus Région du numérique\"",
-      "objective": "Date limite du dépôt : 01/10/2026 \n Former aux métiers du numérique. Plus précisément, vous souhaitez candidater à l'appel à manifestation d'intérêt (AMI) pour présenter votre offre de formations, contribuer à les faire connaître sur les territoires régional, national et international et éventuellement faire héberger vos formations dans les locaux du Campus Région du numérique.",
-      "themes": [
-        "R&D / Innovation",
-        "Transition numérique",
-        "Transition écologique",
-        "Emploi / compétences",
-        "Export / international"
-      ],
-      "beneficiaries": "Les candidats peuvent être :​ des établissements d’enseignement supérieur et de recherche, des groupements et des réseaux inter-écoles pluridisciplinaires, des organismes de formation continue, des centres de formation des apprentis,des RTO, des espaces de fabrication numérique de type FabLab s’ils ont une activité de formation, et toute structure ayant une activité de formation ou d’enseignement autorisée, reconnue ou en cours de reconnaissance par l’Etat. L’obtention du Label dépend de l’engagement du candidat dans la durée, de la pertinence de son offre de valeur, et du respect des critères suivants :​ une réponse aux besoins en compétences de l’économie régionale, une employabilité avérée et vérifiable, i.e. supé­rieure à 80 % à 6 mois ou en poursuite d’études qualifiées et de niveau supérieur, une cible large des publics tant en termes sociologiques qu’au regard de la mixité et de l’insertion des femmes dans ces métiers et compétences, une méthodologie innovante et adaptable, un modèle économique viable. Un même porteur peut candidater pour la labellisation de plusieurs dispositifs de formation mais devra dans ce cas démontrer leur articulation, leur cohérence et leur pertinence. D’autre part, l’obtention du Label ne constitue ni un préalable, ni un déterminant au financement ou à la subvention par la Région de tout ou partie du projet de formation soumis par le candidat. Le label n’est pas financièrement doté, et toute demande éventuelle de financement doit s’inscrire au préalable dans les dispositifs de droit commun de la Région. \n Étape 1 Je dépose une demande d’agrément ou de labellisation auprès de la Région. Étape 2 Ma demande est instruite. Si elle est recevable ou sélectionnée, elle est validée. Étape 3 Je bénéficie des ressources liées à l’agrément ou à la labellisation. \n ​Les dates limites de dépôt des dossiers de candidature sont fixées, chaque année, au : 1er mars et 1er octobre. Déposer une candidature Cahier des charges de l’Appel à Manifestation d'Intérêt Formulaire du candidat à l'Appel à Manifestation d'intérêt Modèle économique du projet",
-      "projectsExpected": [],
-      "eligibleExpenses": null,
-      "excludedExpenses": null,
-      "prerequisites": null,
-      "selectionCriteria": null,
-      "disbursementTerms": null,
-      "repaymentTerms": null,
-      "stateAidRules": null,
-      "companyCategories": [],
-      "scope": "REGIONAL",
-      "regions": [
-        "Auvergne-Rhône-Alpes"
-      ],
-      "aidTypes": [
-        "SUBVENTION"
-      ],
-      "aidSplit": null,
-      "aidRate": {
-        "min": null,
-        "max": null,
-        "raw": "Cet Appel à Manifestation d'Intérêt a pour objectif l’installation de la composante « formations » du Campus Région du numérique sur le site de Charbonnières-les-Bains, et l’extension territoriale de la labellisation hors-les-murs. Les précédentes campagnes ont permis la labellisation d'une centaine de formations, logées au sein du Campus ou réparties hors-les-murs sur l'ensemble du territoire de la Région.​ Le Label concrétise la reconnaissance de la Région pour des initiatives qui correspondent aux objectifs poursuivis par le Campus dans son ensemble, soit l’employabilité, la culture numérique, l’innovation pédagogique, la transformation des organisations via le numérique, l’industrie du futur, le transfert de technologies, le développement de l’esprit d’entrepreneuriat et la croissance économique des entreprises. Les formations labellisées intègrent un réseau et bénéficient de l’effet de levier de la Région et d’une animation structurée. La Région octroie le label \"Campus Région du numérique\" aux formations répondant aux critères figurant dans l'AMI et héberge celles qui le souhaitent dans les locaux du Campus Région du numérique situé à Charbonnières-les-Bains",
-        "byCompanySize": []
-      },
-      "aidAmount": {
-        "min": null,
-        "max": null,
-        "raw": "Cet Appel à Manifestation d'Intérêt a pour objectif l’installation de la composante « formations » du Campus Région du numérique sur le site de Charbonnières-les-Bains, et l’extension territoriale de la labellisation hors-les-murs. Les précédentes campagnes ont permis la labellisation d'une centaine de formations, logées au sein du Campus ou réparties hors-les-murs sur l'ensemble du territoire de la Région.​ Le Label concrétise la reconnaissance de la Région pour des initiatives qui correspondent aux objectifs poursuivis par le Campus dans son ensemble, soit l’employabilité, la culture numérique, l’innovation pédagogique, la transformation des organisations via le numérique, l’industrie du futur, le transfert de technologies, le développement de l’esprit d’entrepreneuriat et la croissance économique des entreprises. Les formations labellisées intègrent un réseau et bénéficient de l’effet de levier de la Région et d’une animation structurée. La Région octroie le label \"Campus Région du numérique\" aux formations répondant aux critères figurant dans l'AMI et héberge celles qui le souhaitent dans les locaux du Campus Région du numérique situé à Charbonnières-les-Bains",
-        "byCompanySize": []
-      },
-      "minimumProjectCost": null,
-      "maximumProjectCost": null,
-      "openingDate": null,
-      "closingDate": "2026-10-01",
-      "finalClosingDate": "2026-10-01",
-      "deadlines": [
-        "2026-10-01"
-      ],
-      "permanent": false,
-      "programme": null,
-      "applicationProcess": null,
-      "contact": "Région Auvergne-Rhône-Alpes Campus Région du numérique claire.ruffin@auvergnerhonealpes.fr",
-      "attentionPoints": [
-        "Dépenses éligibles non documentées.",
-        "Pré-requis non documentés."
-      ],
-      "cdcLinks": [
-        {
-          "url": "https://depot.auvergnerhonealpes.fr/AMIFORMACAMPUS",
-          "label": "Déposer une candidature",
-          "type": "DOCUMENT"
-        },
-        {
-          "url": "https://www.auvergnerhonealpes.fr/media/477/download?inline",
-          "label": "Cahier des charges de l’Appel à Manifestation d'I",
-          "type": "REGLEMENT"
-        },
-        {
-          "url": "https://www.auvergnerhonealpes.fr/media/480/download?inline",
-          "label": "Formulaire du candidat à l'Appel à Manifestation d'intérêt",
-          "type": "DOCUMENT"
-        }
-      ],
-      "sourceLinks": [
-        {
-          "label": "Page officielle",
-          "url": "https://www.auvergnerhonealpes.fr/aides/etre-labellise-formations-du-campus-region-du-numerique"
-        }
-      ],
-      "regulationLinks": [],
-      "officialPage": "https://www.auvergnerhonealpes.fr/aides/etre-labellise-formations-du-campus-region-du-numerique",
-      "verification": {
-        "status": "A_REVERIFIER",
-        "sourceTier": "B",
-        "fieldEvidence": [
-          {
-            "field": "objective",
-            "sourceUrl": "https://www.auvergnerhonealpes.fr/aides/etre-labellise-formations-du-campus-region-du-numerique",
-            "sourceTier": "B",
-            "locator": "section:objective",
-            "evidenceText": "Date limite du dépôt : 01/10/2026 \n Former aux métiers du numérique. Plus précisément, vous souhaitez candidater à l'appel à manifestation d'intérêt (AMI) pour présenter votre offre de formations, contribuer à les faire connaître sur les territoires régional, national et international et éventuellement faire héberger vos formations dans les locaux du Campus Région du numérique.",
-            "checkedAt": "2026-09-30T08:41:32.409Z"
-          },
-          {
-            "field": "themes",
-            "sourceUrl": "https://www.auvergnerhonealpes.fr/aides/etre-labellise-formations-du-campus-region-du-numerique",
-            "sourceTier": "B",
-            "locator": "page-text-match:themes",
-            "evidenceText": "R&D / Innovation • Transition numérique • Transition écologique • Emploi / compétences • Export / international",
-            "checkedAt": "2026-09-30T08:41:32.409Z"
-          },
-          {
-            "field": "beneficiaries",
-            "sourceUrl": "https://www.auvergnerhonealpes.fr/aides/etre-labellise-formations-du-campus-region-du-numerique",
-            "sourceTier": "B",
-            "locator": "section:beneficiaries",
-            "evidenceText": "Les candidats peuvent être :​ des établissements d’enseignement supérieur et de recherche, des groupements et des réseaux inter-écoles pluridisciplinaires, des organismes de formation continue, des centres de formation des apprentis,des RTO, des espaces de fabrication numérique de type FabLab s’ils ont une activité de formation, et toute structure ayant une activité de formation ou d’enseignement autorisée, reconnue ou en cours de reconnaissance par l’Etat. L’obtention du Label dépend de l’engagement du candidat dans la durée, de la pertinence de son offre de valeur, et du respect des critères suivants :​ une réponse aux besoins en compétences de l’économie régionale, une employabilité avérée et vérifiable, i.e. supé­rieure à 80 % à 6 mois ou en poursuite d’études qualifiées et de niveau supérieur, une cible large des publics tant en term",
-            "checkedAt": "2026-09-30T08:41:32.409Z"
-          },
-          {
-            "field": "financialTerms",
-            "sourceUrl": "https://www.auvergnerhonealpes.fr/aides/etre-labellise-formations-du-campus-region-du-numerique",
-            "sourceTier": "B",
-            "locator": "section:financial",
-            "evidenceText": "Cet Appel à Manifestation d'Intérêt a pour objectif l’installation de la composante « formations » du Campus Région du numérique sur le site de Charbonnières-les-Bains, et l’extension territoriale de la labellisation hors-les-murs. Les précédentes campagnes ont permis la labellisation d'une centaine de formations, logées au sein du Campus ou réparties hors-les-murs sur l'ensemble du territoire de la Région.​ Le Label concrétise la reconnaissance de la Région pour des initiatives qui correspondent aux objectifs poursuivis par le Campus dans son ensemble, soit l’employabilité, la culture numérique, l’innovation pédagogique, la transformation des organisations via le numérique, l’industrie du futur, le transfert de technologies, le développement de l’esprit d’entrepreneuriat et la croissance économique des entreprises. Les formations labelli",
-            "checkedAt": "2026-09-30T08:41:32.409Z"
-          }
-        ],
-        "lastChecked": null,
-        "completeness": 56,
-        "confidence": 28,
-        "coverage": {
-          "objective": "B",
-          "beneficiaries": "B",
-          "financialTerms": "B",
-          "projectsExpected": null,
-          "eligibleExpenses": null,
-          "calendar": null,
-          "prerequisites": null,
-          "selectionCriteria": null
-        }
-      },
-      "id": "aura_91f4ec55477bdd155142b4b1f6aac971dc3e89e7371396b6dffc89e25870ee50",
-      "canonicalId": "aura_91f4ec55477bdd155142b4b1f6aac971dc3e89e7371396b6dffc89e25870ee50",
-      "sourceId": "aura",
-      "kind": "AIDE",
-      "funder": [
-        "Région Auvergne-Rhône-Alpes"
-      ],
-      "lastSeenAt": "2026-09-30T08:49:20.060Z",
-      "lifecycleStatus": "ACTIVE",
-      "sourceAliases": [
-        "aura"
-      ],
-      "qaFlags": [
-        "MISSING_ELIGIBLE_EXPENSES",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_COMPANY_CATEGORY",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "contentHash": "0b2449ab174a855fe1882ef5b5fa5fc7704c65adb45d48af19f8ff00b571a77f"
     },
     {
       "id": "ademe_8cfcb67831f4037a0cb4ac8b57e9178dd04fda455959ef46607396cab94c1d94",
@@ -7409,332 +7021,6 @@
         "MISSING_DISBURSEMENT_TERMS"
       ],
       "contentHash": "90012e43edf3fc715054cb53f69322f372efd1423d8da8464424f7e01d0baf34"
-    },
-    {
-      "title": "Porter un projet collaboratif d’expérimentations ou de recherche appliquée en agriculture avec le dispositif PEPIT (Pôles d'Expérimentations agricoles Partenariales pour l'Innovation et le Transfert) - Etape AAP 2026",
-      "objective": null,
-      "themes": [],
-      "beneficiaries": null,
-      "projectsExpected": [],
-      "eligibleExpenses": null,
-      "excludedExpenses": null,
-      "prerequisites": null,
-      "selectionCriteria": null,
-      "disbursementTerms": null,
-      "repaymentTerms": null,
-      "stateAidRules": null,
-      "companyCategories": [],
-      "scope": "REGIONAL",
-      "regions": [
-        "Auvergne-Rhône-Alpes"
-      ],
-      "aidTypes": [
-        "APPEL_A_PROJET"
-      ],
-      "aidSplit": null,
-      "aidRate": {
-        "min": null,
-        "max": null,
-        "raw": null,
-        "byCompanySize": []
-      },
-      "aidAmount": {
-        "min": null,
-        "max": null,
-        "raw": null,
-        "byCompanySize": []
-      },
-      "minimumProjectCost": null,
-      "maximumProjectCost": null,
-      "openingDate": null,
-      "closingDate": null,
-      "finalClosingDate": null,
-      "deadlines": [],
-      "permanent": false,
-      "programme": null,
-      "applicationProcess": null,
-      "contact": null,
-      "attentionPoints": [
-        "Bénéficiaires à vérifier.",
-        "Date/relèves non documentées.",
-        "Dépenses éligibles non documentées.",
-        "Pré-requis non documentés.",
-        "Cahier des charges / règlement non rattaché.",
-        "Modalités financières à vérifier."
-      ],
-      "cdcLinks": [],
-      "sourceLinks": [
-        {
-          "label": "Page officielle",
-          "url": "https://www.auvergnerhonealpes.fr/aides/porter-un-projet-collaboratif-dexperimentations-ou-de-recherche-appliquee-en-agriculture-0"
-        }
-      ],
-      "regulationLinks": [],
-      "officialPage": "https://www.auvergnerhonealpes.fr/aides/porter-un-projet-collaboratif-dexperimentations-ou-de-recherche-appliquee-en-agriculture-0",
-      "verification": {
-        "status": "A_REVERIFIER",
-        "sourceTier": "B",
-        "fieldEvidence": [],
-        "lastChecked": null,
-        "completeness": 19,
-        "confidence": 0,
-        "coverage": {
-          "objective": null,
-          "beneficiaries": null,
-          "financialTerms": null,
-          "projectsExpected": null,
-          "eligibleExpenses": null,
-          "calendar": null,
-          "prerequisites": null,
-          "selectionCriteria": null
-        }
-      },
-      "id": "aura_8f5a024861427fdaf3876edd7b8c2739fd9f47f55663ccb3c69743d651781d40",
-      "canonicalId": "aura_8f5a024861427fdaf3876edd7b8c2739fd9f47f55663ccb3c69743d651781d40",
-      "sourceId": "aura",
-      "kind": "AAP / AMI",
-      "funder": [
-        "Région Auvergne-Rhône-Alpes"
-      ],
-      "lastSeenAt": "2026-09-30T08:49:20.060Z",
-      "lifecycleStatus": "ACTIVE",
-      "sourceAliases": [
-        "aura"
-      ],
-      "qaFlags": [
-        "MISSING_OBJECTIVE",
-        "MISSING_BENEFICIARIES",
-        "MISSING_DEADLINE",
-        "MISSING_ELIGIBLE_EXPENSES",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_COMPANY_CATEGORY",
-        "MISSING_FINANCIAL_TERMS",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "contentHash": "fe56b6f9829f906d620ff01f292c060a83425864cecfa6717f095ae0e3ee714c"
-    },
-    {
-      "title": "Porter un projet européen d’innovation (agri- forêt) - PEI (FEADER - Dispositif 601) - AAP 2025 | Région Auvergne-Rhône-Alpes",
-      "objective": null,
-      "themes": [
-        "R&D / Innovation"
-      ],
-      "beneficiaries": null,
-      "projectsExpected": [],
-      "eligibleExpenses": null,
-      "excludedExpenses": null,
-      "prerequisites": null,
-      "selectionCriteria": null,
-      "disbursementTerms": null,
-      "repaymentTerms": null,
-      "stateAidRules": null,
-      "companyCategories": [],
-      "scope": "REGIONAL",
-      "regions": [
-        "Auvergne-Rhône-Alpes"
-      ],
-      "aidTypes": [
-        "APPEL_A_PROJET"
-      ],
-      "aidSplit": null,
-      "aidRate": {
-        "min": null,
-        "max": null,
-        "raw": null,
-        "byCompanySize": []
-      },
-      "aidAmount": {
-        "min": null,
-        "max": null,
-        "raw": null,
-        "byCompanySize": []
-      },
-      "minimumProjectCost": null,
-      "maximumProjectCost": null,
-      "openingDate": null,
-      "closingDate": null,
-      "finalClosingDate": null,
-      "deadlines": [],
-      "permanent": false,
-      "programme": null,
-      "applicationProcess": null,
-      "contact": null,
-      "attentionPoints": [
-        "Bénéficiaires à vérifier.",
-        "Date/relèves non documentées.",
-        "Dépenses éligibles non documentées.",
-        "Pré-requis non documentés.",
-        "Cahier des charges / règlement non rattaché.",
-        "Modalités financières à vérifier."
-      ],
-      "cdcLinks": [],
-      "sourceLinks": [
-        {
-          "label": "Page officielle",
-          "url": "https://www.auvergnerhonealpes.fr/aides/porter-un-projet-europeen-dinnovation-agri-foret-pei-feader-dispositif-601-aap-2025"
-        }
-      ],
-      "regulationLinks": [],
-      "officialPage": "https://www.auvergnerhonealpes.fr/aides/porter-un-projet-europeen-dinnovation-agri-foret-pei-feader-dispositif-601-aap-2025",
-      "verification": {
-        "status": "A_REVERIFIER",
-        "sourceTier": "B",
-        "fieldEvidence": [
-          {
-            "field": "themes",
-            "sourceUrl": "https://www.auvergnerhonealpes.fr/aides/porter-un-projet-europeen-dinnovation-agri-foret-pei-feader-dispositif-601-aap-2025",
-            "sourceTier": "B",
-            "locator": "page-text-match:themes",
-            "evidenceText": "R&D / Innovation",
-            "checkedAt": "2026-09-30T08:40:54.373Z"
-          }
-        ],
-        "lastChecked": null,
-        "completeness": 25,
-        "confidence": 0,
-        "coverage": {
-          "objective": null,
-          "beneficiaries": null,
-          "financialTerms": null,
-          "projectsExpected": null,
-          "eligibleExpenses": null,
-          "calendar": null,
-          "prerequisites": null,
-          "selectionCriteria": null
-        }
-      },
-      "id": "aura_84922b323d913023a16f7efbf86f327177f7c897990e35f8bc8e456ab48f1d9e",
-      "canonicalId": "aura_84922b323d913023a16f7efbf86f327177f7c897990e35f8bc8e456ab48f1d9e",
-      "sourceId": "aura",
-      "kind": "AAP / AMI",
-      "funder": [
-        "Région Auvergne-Rhône-Alpes"
-      ],
-      "lastSeenAt": "2026-09-30T08:49:20.060Z",
-      "lifecycleStatus": "ACTIVE",
-      "sourceAliases": [
-        "aura"
-      ],
-      "qaFlags": [
-        "MISSING_OBJECTIVE",
-        "MISSING_BENEFICIARIES",
-        "MISSING_DEADLINE",
-        "MISSING_ELIGIBLE_EXPENSES",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_COMPANY_CATEGORY",
-        "MISSING_FINANCIAL_TERMS",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "contentHash": "faa283dc1523bd0055b94b908d824c3e6f2a714b110ac194adf59d00d22bed49"
-    },
-    {
-      "title": "Porter un Projet Européen d’Innovation (agri-forêt) - PEI (FEADER - Dispositif 601) - étape AMI 2025",
-      "objective": null,
-      "themes": [],
-      "beneficiaries": null,
-      "projectsExpected": [],
-      "eligibleExpenses": null,
-      "excludedExpenses": null,
-      "prerequisites": null,
-      "selectionCriteria": null,
-      "disbursementTerms": null,
-      "repaymentTerms": null,
-      "stateAidRules": null,
-      "companyCategories": [],
-      "scope": "REGIONAL",
-      "regions": [
-        "Auvergne-Rhône-Alpes"
-      ],
-      "aidTypes": [
-        "APPEL_A_PROJET"
-      ],
-      "aidSplit": null,
-      "aidRate": {
-        "min": null,
-        "max": null,
-        "raw": null,
-        "byCompanySize": []
-      },
-      "aidAmount": {
-        "min": null,
-        "max": null,
-        "raw": null,
-        "byCompanySize": []
-      },
-      "minimumProjectCost": null,
-      "maximumProjectCost": null,
-      "openingDate": null,
-      "closingDate": null,
-      "finalClosingDate": null,
-      "deadlines": [],
-      "permanent": false,
-      "programme": null,
-      "applicationProcess": null,
-      "contact": null,
-      "attentionPoints": [
-        "Bénéficiaires à vérifier.",
-        "Date/relèves non documentées.",
-        "Dépenses éligibles non documentées.",
-        "Pré-requis non documentés.",
-        "Cahier des charges / règlement non rattaché.",
-        "Modalités financières à vérifier."
-      ],
-      "cdcLinks": [],
-      "sourceLinks": [
-        {
-          "label": "Page officielle",
-          "url": "https://www.auvergnerhonealpes.fr/aides/porter-un-projet-europeen-dinnovation-agri-foret-pei-feader-dispositif-601-etape-ami-2025"
-        }
-      ],
-      "regulationLinks": [],
-      "officialPage": "https://www.auvergnerhonealpes.fr/aides/porter-un-projet-europeen-dinnovation-agri-foret-pei-feader-dispositif-601-etape-ami-2025",
-      "verification": {
-        "status": "A_REVERIFIER",
-        "sourceTier": "B",
-        "fieldEvidence": [],
-        "lastChecked": null,
-        "completeness": 19,
-        "confidence": 0,
-        "coverage": {
-          "objective": null,
-          "beneficiaries": null,
-          "financialTerms": null,
-          "projectsExpected": null,
-          "eligibleExpenses": null,
-          "calendar": null,
-          "prerequisites": null,
-          "selectionCriteria": null
-        }
-      },
-      "id": "aura_c823925659d9cafb8548a24d8d938352b458c81c508d8d07025d210261fc324e",
-      "canonicalId": "aura_c823925659d9cafb8548a24d8d938352b458c81c508d8d07025d210261fc324e",
-      "sourceId": "aura",
-      "kind": "AAP / AMI",
-      "funder": [
-        "Région Auvergne-Rhône-Alpes"
-      ],
-      "lastSeenAt": "2026-09-30T08:49:20.060Z",
-      "lifecycleStatus": "ACTIVE",
-      "sourceAliases": [
-        "aura"
-      ],
-      "qaFlags": [
-        "MISSING_OBJECTIVE",
-        "MISSING_BENEFICIARIES",
-        "MISSING_DEADLINE",
-        "MISSING_ELIGIBLE_EXPENSES",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_COMPANY_CATEGORY",
-        "MISSING_FINANCIAL_TERMS",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "contentHash": "d32fe33f74bdce4d22e72cbd66525f21d5b443ac501e65570945d730613b3e03"
     },
     {
       "id": "ademe_d9427ca755dd4d5c2dc1a522fb8fb0961e3c064d50314c3fcd4631a91078b7d0",
