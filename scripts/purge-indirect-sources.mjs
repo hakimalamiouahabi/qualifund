@@ -53,6 +53,14 @@ export async function purgeIndirectSources(root=ROOT){
   const directLinkCount=active.filter(a=>/^https:\/\//i.test(String(a.officialPage||''))).length;
   const migrated=lib.meta?.sourcePolicy==='DIRECT_OFFICIAL_ONLY';
   const changed=!migrated||aaps.length!==beforeRecords.length||JSON.stringify(aaps)!==JSON.stringify(beforeRecords);
+  const currentPurgeStats={
+    input:beforeRecords.length,
+    afterDirectSanitization:direct.length,
+    afterCertifiedScope:scoped.length,
+    removedOutOfTarget:outOfTarget.length,
+    retainedOperational:aaps.length
+  };
+  const purgeStats=changed?currentPurgeStats:(lib.meta?.purgeStats||currentPurgeStats);
   const collectionLock={
     locked:Boolean(lock.locked),
     mode:lock.mode||null,
@@ -95,13 +103,7 @@ export async function purgeIndirectSources(root=ROOT){
     targetReached:null,
     coverageGap:null,
     coverageCertified:false,
-    purgeStats:{
-      input:beforeRecords.length,
-      afterDirectSanitization:direct.length,
-      afterCertifiedScope:scoped.length,
-      removedOutOfTarget:outOfTarget.length,
-      retainedOperational:aaps.length
-    },
+    purgeStats,
     collectionLock
   };
   if(lib.meta?.sourcePolicy!=='DIRECT_OFFICIAL_ONLY')meta.sourcePolicyAppliedAt=new Date().toISOString();
