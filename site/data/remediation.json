@@ -1,22 +1,19 @@
 {
-  "generatedAt": "2026-10-03T10:28:47.245Z",
-  "version": "12.9.1",
+  "generatedAt": "2026-10-03T11:09:53.640Z",
+  "version": "12.9.3",
   "policy": "CERTIFIED_SOURCE_ONLY",
-  "rawFiches": 66,
-  "publishedFiches": 30,
-  "quarantinedFiches": 36,
-  "activeFiches": 30,
+  "rawFiches": 54,
+  "publishedFiches": 36,
+  "quarantinedFiches": 18,
+  "activeFiches": 36,
   "verifiedFiches": 0,
   "certifiedSources": [
     "bpifrance_aap",
     "bpifrance_aides",
     "bpifrance_rebond_industriel"
   ],
-  "certifiedQuarantineCount": 18,
-  "certifiedQuarantineByReason": {
-    "MISSING_ENTERPRISE_EVIDENCE": 17,
-    "MISSING_INSTRUMENT_EVIDENCE": 1
-  },
+  "certifiedQuarantineCount": 0,
+  "certifiedQuarantineByReason": {},
   "criticalFields": [
     "objective",
     "beneficiaries",
@@ -29,318 +26,31 @@
   ],
   "missingEvidenceABByField": {
     "objective": 0,
-    "beneficiaries": 26,
-    "financialTerms": 5,
-    "projectsExpected": 27,
-    "eligibleExpenses": 26,
-    "calendar": 23,
-    "prerequisites": 5,
-    "selectionCriteria": 29
+    "beneficiaries": 32,
+    "financialTerms": 9,
+    "projectsExpected": 30,
+    "eligibleExpenses": 32,
+    "calendar": 25,
+    "prerequisites": 10,
+    "selectionCriteria": 34
   },
   "qaFlags": {
-    "MISSING_BENEFICIARIES": 26,
-    "MISSING_DEADLINE": 17,
-    "MISSING_ELIGIBLE_EXPENSES": 26,
-    "MISSING_SELECTION_CRITERIA": 29,
-    "MISSING_DISBURSEMENT_TERMS": 30,
-    "MISSING_REPAYMENT_TERMS": 5,
-    "MISSING_CDC": 7,
-    "MISSING_PREREQUISITES": 5,
-    "MISSING_FINANCIAL_TERMS": 2
+    "MISSING_BENEFICIARIES": 32,
+    "MISSING_DEADLINE": 19,
+    "MISSING_ELIGIBLE_EXPENSES": 32,
+    "MISSING_SELECTION_CRITERIA": 34,
+    "MISSING_DISBURSEMENT_TERMS": 36,
+    "MISSING_REPAYMENT_TERMS": 8,
+    "MISSING_CDC": 8,
+    "MISSING_PREREQUISITES": 10,
+    "MISSING_FINANCIAL_TERMS": 4,
+    "MISSING_COMPANY_CATEGORY": 1
   },
   "permanentUnverified": 0,
-  "advancesMissingRepayment": 5,
-  "missingCriticalDocs": 7,
-  "remediationQueueCount": 48,
+  "advancesMissingRepayment": 8,
+  "missingCriticalDocs": 8,
+  "remediationQueueCount": 36,
   "topPriority": [
-    {
-      "id": "bpifrance_aides_323a03e84018a6bd6610b7833a0a3dbb5258fef1c568aeebb9ff866da9b109e7",
-      "title": "BOURSE FRENCH TECH LAB",
-      "sourceId": "bpifrance_aides",
-      "severity": 200,
-      "verification": "A_REVERIFIER",
-      "publicationBlocker": "MISSING_ENTERPRISE_EVIDENCE",
-      "missingEvidence": [
-        "enterpriseEligibility"
-      ],
-      "qaFlags": [
-        "CERTIFIED_BUT_QUARANTINED"
-      ],
-      "officialPage": "https://www.bpifrance.fr/catalogue-offres/bourse-french-tech-lab",
-      "hasCriticalDoc": true
-    },
-    {
-      "id": "bpifrance_aap_2b547e756e34ba42ac5839c25a1a7a994da2ca5fb36821400660bc29ba33c5e8",
-      "title": "Ce dispositif vise à favoriser les nouveaux équipements ou solutions technologiques permettant une amélioration à court terme de la performance énergé...",
-      "sourceId": "bpifrance_aap",
-      "severity": 200,
-      "verification": "A_REVERIFIER",
-      "publicationBlocker": "MISSING_ENTERPRISE_EVIDENCE",
-      "missingEvidence": [
-        "enterpriseEligibility"
-      ],
-      "qaFlags": [
-        "CERTIFIED_BUT_QUARANTINED"
-      ],
-      "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-decarbonation-des-navires-de-peche",
-      "hasCriticalDoc": true
-    },
-    {
-      "id": "bpifrance_aap_9e1d837375dec1e329a6a9eef2c5368f7ef454da48a802da2a18aa9a87e9fe87",
-      "title": "Cet Appel à projets vise à soutenir le développement de sous-systèmes avancés et souverains pour des solutions en robotique, machines intelligentes et...",
-      "sourceId": "bpifrance_aap",
-      "severity": 200,
-      "verification": "A_REVERIFIER",
-      "publicationBlocker": "MISSING_ENTERPRISE_EVIDENCE",
-      "missingEvidence": [
-        "enterpriseEligibility"
-      ],
-      "qaFlags": [
-        "CERTIFIED_BUT_QUARANTINED"
-      ],
-      "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-defi-flagships",
-      "hasCriticalDoc": true
-    },
-    {
-      "id": "bpifrance_rebond_industriel_official",
-      "title": "CONDITIONS PARTICULIÈRES BPIFRANCE",
-      "sourceId": "bpifrance_rebond_industriel",
-      "severity": 200,
-      "verification": "A_REVERIFIER",
-      "publicationBlocker": "MISSING_INSTRUMENT_EVIDENCE",
-      "missingEvidence": [
-        "instrument"
-      ],
-      "qaFlags": [
-        "CERTIFIED_BUT_QUARANTINED"
-      ],
-      "officialPage": "https://rebond-industriel.bpifrance.fr/storage/sites/7/2023/02/Conditions_particulieres_Bpifrance.pdf",
-      "hasCriticalDoc": true
-    },
-    {
-      "id": "bpifrance_aides_7445758aaacd772e3c4ce3ad7469d56bc736db5c66ef4d98bbb1cf32433dec19",
-      "title": "FRENCH TECH TREMPLIN",
-      "sourceId": "bpifrance_aides",
-      "severity": 200,
-      "verification": "A_REVERIFIER",
-      "publicationBlocker": "MISSING_ENTERPRISE_EVIDENCE",
-      "missingEvidence": [
-        "enterpriseEligibility"
-      ],
-      "qaFlags": [
-        "CERTIFIED_BUT_QUARANTINED"
-      ],
-      "officialPage": "https://www.bpifrance.fr/catalogue-offres/french-tech-tremplin",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "bpifrance_aides_62e1303a83de83dc3595d50a46e2d36d52506eafb90fd3eb041b436cfae19e25",
-      "title": "Innowwide",
-      "sourceId": "bpifrance_aides",
-      "severity": 200,
-      "verification": "A_REVERIFIER",
-      "publicationBlocker": "MISSING_ENTERPRISE_EVIDENCE",
-      "missingEvidence": [
-        "enterpriseEligibility"
-      ],
-      "qaFlags": [
-        "CERTIFIED_BUT_QUARANTINED"
-      ],
-      "officialPage": "https://www.bpifrance.fr/catalogue-offres/innowwide-0",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "bpifrance_aap_dcd37621494f1511a6f683cb87c1c69001d4537f73c776c90d236c2a23c53d49",
-      "title": "L’appel à projets « Challenge prévention : démontrer la valeur des innovations en vie réelle » doit permettre de soutenir des projets d’envergure auto...",
-      "sourceId": "bpifrance_aap",
-      "severity": 200,
-      "verification": "A_REVERIFIER",
-      "publicationBlocker": "MISSING_ENTERPRISE_EVIDENCE",
-      "missingEvidence": [
-        "enterpriseEligibility"
-      ],
-      "qaFlags": [
-        "CERTIFIED_BUT_QUARANTINED"
-      ],
-      "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-challenge-prevention-demontrer-la-valeur-des-innovations-en-vie-reelle",
-      "hasCriticalDoc": true
-    },
-    {
-      "id": "bpifrance_aap_6e8de1721c63acc4f7f6e2f784c4f6bff05ed07b9815447b49475322caf2590f",
-      "title": "L’appel à projets «Démonstration de la valeur des organoïdes et organes sur puce» vise à financer des démonstrateurs de valeur (preuves de concept) qu...",
-      "sourceId": "bpifrance_aap",
-      "severity": 200,
-      "verification": "A_REVERIFIER",
-      "publicationBlocker": "MISSING_ENTERPRISE_EVIDENCE",
-      "missingEvidence": [
-        "enterpriseEligibility"
-      ],
-      "qaFlags": [
-        "CERTIFIED_BUT_QUARANTINED"
-      ],
-      "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-demonstration-de-la-valeur-des-organoides-et-organes-sur-puce",
-      "hasCriticalDoc": true
-    },
-    {
-      "id": "bpifrance_aap_be284d777230fbf1e4d5d20df1634c0efce8dbe53ec2e1c4e9ef734761e64709",
-      "title": "L’appel à projets Grands Défis « Soutien aux innovations de rupture dans la filière DM implantable et robotique chirurgicale » vise deux objectifs : s...",
-      "sourceId": "bpifrance_aap",
-      "severity": 200,
-      "verification": "A_REVERIFIER",
-      "publicationBlocker": "MISSING_ENTERPRISE_EVIDENCE",
-      "missingEvidence": [
-        "enterpriseEligibility"
-      ],
-      "qaFlags": [
-        "CERTIFIED_BUT_QUARANTINED"
-      ],
-      "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-grands-defis-soutien-aux-innovations-de-rupture-dans-la-filiere-dm-implantable-et-robotique-chirurgicale",
-      "hasCriticalDoc": true
-    },
-    {
-      "id": "bpifrance_aap_a8a386c0cd2e461567f9447a4dd02030748d60f2940cdad3c196374201b50674",
-      "title": "Le Fonds de Fonds Entrepreneuriat Quartiers 2030 (EQ30), d’une taille de 60 M€, a été constitué en 2024 dans le cadre du programme Entrepreneuriat Qua...",
-      "sourceId": "bpifrance_aap",
-      "severity": 200,
-      "verification": "A_REVERIFIER",
-      "publicationBlocker": "MISSING_ENTERPRISE_EVIDENCE",
-      "missingEvidence": [
-        "enterpriseEligibility"
-      ],
-      "qaFlags": [
-        "CERTIFIED_BUT_QUARANTINED"
-      ],
-      "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/fonds-de-fonds-entrepreneuriat-quartiers-2030-eq30",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "bpifrance_aap_1764bdb7c865d8132b517938a6a5d7a499eb94d1a42a394e0f3a7b1e6d744386",
-      "title": "Le fonds de fonds Multicap croissance N°4 (MC4) s'inscrit dans le cadre du plan France 2030 mis en place par l’Etat en octobre 2021.",
-      "sourceId": "bpifrance_aap",
-      "severity": 200,
-      "verification": "A_REVERIFIER",
-      "publicationBlocker": "MISSING_ENTERPRISE_EVIDENCE",
-      "missingEvidence": [
-        "enterpriseEligibility"
-      ],
-      "qaFlags": [
-        "CERTIFIED_BUT_QUARANTINED"
-      ],
-      "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/multicap-croissance-ndeg4-mc4",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "bpifrance_aap_e1656f9666c4844dfe4fe6534dfc72d2e92300badfa7eb7d25aaeb262528b435",
-      "title": "Le Fonds Industries Agroalimentaires (I2A) vise à dynamiser l’écosystème des fonds d’investissement ciblant les PME et ETI industrielles françaises su...",
-      "sourceId": "bpifrance_aap",
-      "severity": 200,
-      "verification": "A_REVERIFIER",
-      "publicationBlocker": "MISSING_ENTERPRISE_EVIDENCE",
-      "missingEvidence": [
-        "enterpriseEligibility"
-      ],
-      "qaFlags": [
-        "CERTIFIED_BUT_QUARANTINED"
-      ],
-      "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/fonds-industries-agroalimentaires-i2a",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "bpifrance_aap_9942172975b6931b2cc5f868f2832b30f8b5eaca25f92fe9d5f07c9fab90694e",
-      "title": "Le Fonds national d’amorçage 3 (FNA 3) est une action de France 2030.",
-      "sourceId": "bpifrance_aap",
-      "severity": 200,
-      "verification": "A_REVERIFIER",
-      "publicationBlocker": "MISSING_ENTERPRISE_EVIDENCE",
-      "missingEvidence": [
-        "enterpriseEligibility"
-      ],
-      "qaFlags": [
-        "CERTIFIED_BUT_QUARANTINED"
-      ],
-      "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/fonds-national-damorcage-3-fna-3",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "bpifrance_aap_652e7ead773b7f27d9e2733abf6e832b648a102ed82ec23ec2da886b67d959c7",
-      "title": "Le Fonds National de Venture Industriel (FNVI) s'inscrit dans le cadre du plan France 2030 mis en place par l’Etat en octobre 2021.",
-      "sourceId": "bpifrance_aap",
-      "severity": 200,
-      "verification": "A_REVERIFIER",
-      "publicationBlocker": "MISSING_ENTERPRISE_EVIDENCE",
-      "missingEvidence": [
-        "enterpriseEligibility"
-      ],
-      "qaFlags": [
-        "CERTIFIED_BUT_QUARANTINED"
-      ],
-      "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/fonds-national-de-venture-industriel-fnvi",
-      "hasCriticalDoc": false
-    },
-    {
-      "id": "bpifrance_aap_ed586215293372cbc98bc48b2d806f0a0d679be595a9eb7c153e4a95fb13886a",
-      "title": "Le Gouvernement a mis en place une politique ambitieuse de soutien à l’innovation, en particulier à destination des acteurs émergents. Dans le cadre d...",
-      "sourceId": "bpifrance_aap",
-      "severity": 200,
-      "verification": "A_REVERIFIER",
-      "publicationBlocker": "MISSING_ENTERPRISE_EVIDENCE",
-      "missingEvidence": [
-        "enterpriseEligibility"
-      ],
-      "qaFlags": [
-        "CERTIFIED_BUT_QUARANTINED"
-      ],
-      "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/france-2030-appel-a-projets-premiere-usine",
-      "hasCriticalDoc": true
-    },
-    {
-      "id": "bpifrance_aap_b641e0309ad5ca9d3495e7c4c94a152eaced7cdfe30db88c7c503522a30af35e",
-      "title": "Le présent AAP vise à soutenir des projets de recherche et de développement, portés par des entreprises de la filière automobile et les acteurs de l’...",
-      "sourceId": "bpifrance_aap",
-      "severity": 200,
-      "verification": "A_REVERIFIER",
-      "publicationBlocker": "MISSING_ENTERPRISE_EVIDENCE",
-      "missingEvidence": [
-        "enterpriseEligibility"
-      ],
-      "qaFlags": [
-        "CERTIFIED_BUT_QUARANTINED"
-      ],
-      "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-coram-2025-2026",
-      "hasCriticalDoc": true
-    },
-    {
-      "id": "bpifrance_aap_45d44a292f043ed36a4a696c834290f5e1fead50b27d40865378f2aa4eac26c2",
-      "title": "Rendre la filière automobile plus vertueuse à horizon 2030, de la conception à l'industrialisation des composants.",
-      "sourceId": "bpifrance_aap",
-      "severity": 200,
-      "verification": "A_REVERIFIER",
-      "publicationBlocker": "MISSING_ENTERPRISE_EVIDENCE",
-      "missingEvidence": [
-        "enterpriseEligibility"
-      ],
-      "qaFlags": [
-        "CERTIFIED_BUT_QUARANTINED"
-      ],
-      "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-soutien-aux-projets-dinvestissements-pour-produire-en-france-les-vehicules-routiers-de-demain-et-leurs-composants",
-      "hasCriticalDoc": true
-    },
-    {
-      "id": "bpifrance_aap_d6cb0773f6afe2537b42db441e0389488a364357fdeda64dc4ea3c00eced8207",
-      "title": "Vous développez des solutions de biocontrôle ou de biostimulation pour l’agriculture ? Déposez votre candidature avant le 9 septembre 2027 à 12h. Cet ...",
-      "sourceId": "bpifrance_aap",
-      "severity": 200,
-      "verification": "A_REVERIFIER",
-      "publicationBlocker": "MISSING_ENTERPRISE_EVIDENCE",
-      "missingEvidence": [
-        "enterpriseEligibility"
-      ],
-      "qaFlags": [
-        "CERTIFIED_BUT_QUARANTINED"
-      ],
-      "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-grand-defi-biocontrole-et-biostimulation-pour-lagroecologie",
-      "hasCriticalDoc": true
-    },
     {
       "id": "bpifrance_aides_f2687e4f85e00c1a14def0eecd18f2e3adb4ba80e190a1bdc2365ddc824af252",
       "title": "Conseil européen de l’innovation (EIC)",
@@ -397,6 +107,32 @@
       "hasCriticalDoc": true
     },
     {
+      "id": "bpifrance_aap_b641e0309ad5ca9d3495e7c4c94a152eaced7cdfe30db88c7c503522a30af35e",
+      "title": "Le présent AAP vise à soutenir des projets de recherche et de développement, portés par des entreprises de la filière automobile et les acteurs de l’...",
+      "sourceId": "bpifrance_aap",
+      "severity": 76,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "beneficiaries",
+        "financialTerms",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_DISBURSEMENT_TERMS",
+        "MISSING_REPAYMENT_TERMS"
+      ],
+      "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-coram-2025-2026",
+      "hasCriticalDoc": true
+    },
+    {
       "id": "bpifrance_aap_b86c09a6cb41847d1cdc1406b4f3af5493f594f4c34fcc00b52d5f4796d9e01d",
       "title": "L’appel à projets Bpifrance / Invitalia vise à promouvoir et soutenir financièrement des partenariats en innovation entre entreprises françaises et it...",
       "sourceId": "bpifrance_aap",
@@ -420,6 +156,32 @@
       ],
       "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-france-italie",
       "hasCriticalDoc": true
+    },
+    {
+      "id": "bpifrance_aides_62e1303a83de83dc3595d50a46e2d36d52506eafb90fd3eb041b436cfae19e25",
+      "title": "Innowwide",
+      "sourceId": "bpifrance_aides",
+      "severity": 72,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "beneficiaries",
+        "projectsExpected",
+        "eligibleExpenses",
+        "calendar",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_CDC",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://www.bpifrance.fr/catalogue-offres/innowwide-0",
+      "hasCriticalDoc": false
     },
     {
       "id": "bpifrance_aides_193d491f32deeb6f2ffddef37f99e546b382642b677193f3fed7bf6c772cd9ed",
@@ -589,6 +351,31 @@
       "hasCriticalDoc": false
     },
     {
+      "id": "bpifrance_aap_d6cb0773f6afe2537b42db441e0389488a364357fdeda64dc4ea3c00eced8207",
+      "title": "Vous développez des solutions de biocontrôle ou de biostimulation pour l’agriculture ? Déposez votre candidature avant le 9 septembre 2027 à 12h. Cet ...",
+      "sourceId": "bpifrance_aap",
+      "severity": 57,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "beneficiaries",
+        "financialTerms",
+        "eligibleExpenses",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_COMPANY_CATEGORY",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-grand-defi-biocontrole-et-biostimulation-pour-lagroecologie",
+      "hasCriticalDoc": true
+    },
+    {
       "id": "bpifrance_aides_1c9f2eadbc578633515c2ee2b39148cc3ca83a0912c7e4464f5f094c31c0f3ab",
       "title": "AIDE AU DEVELOPPEMENT DEEPTECH",
       "sourceId": "bpifrance_aides",
@@ -634,6 +421,54 @@
         "MISSING_REPAYMENT_TERMS"
       ],
       "officialPage": "https://www.bpifrance.fr/catalogue-offres/avance-innovation-classique",
+      "hasCriticalDoc": true
+    },
+    {
+      "id": "bpifrance_aap_ed586215293372cbc98bc48b2d806f0a0d679be595a9eb7c153e4a95fb13886a",
+      "title": "Le Gouvernement a mis en place une politique ambitieuse de soutien à l’innovation, en particulier à destination des acteurs émergents. Dans le cadre d...",
+      "sourceId": "bpifrance_aap",
+      "severity": 56,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "beneficiaries",
+        "financialTerms",
+        "eligibleExpenses",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_FINANCIAL_TERMS",
+        "MISSING_DISBURSEMENT_TERMS"
+      ],
+      "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/france-2030-appel-a-projets-premiere-usine",
+      "hasCriticalDoc": true
+    },
+    {
+      "id": "bpifrance_aap_45d44a292f043ed36a4a696c834290f5e1fead50b27d40865378f2aa4eac26c2",
+      "title": "Rendre la filière automobile plus vertueuse à horizon 2030, de la conception à l'industrialisation des composants.",
+      "sourceId": "bpifrance_aap",
+      "severity": 56,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "beneficiaries",
+        "financialTerms",
+        "eligibleExpenses",
+        "prerequisites",
+        "selectionCriteria"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_PREREQUISITES",
+        "MISSING_SELECTION_CRITERIA",
+        "MISSING_DISBURSEMENT_TERMS",
+        "MISSING_REPAYMENT_TERMS"
+      ],
+      "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-soutien-aux-projets-dinvestissements-pour-produire-en-france-les-vehicules-routiers-de-demain-et-leurs-composants",
       "hasCriticalDoc": true
     },
     {
@@ -926,6 +761,27 @@
         "MISSING_REPAYMENT_TERMS"
       ],
       "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-transition-numerique-de-la-culture-et-appropriation-de-lintelligence-artificielle",
+      "hasCriticalDoc": true
+    },
+    {
+      "id": "bpifrance_rebond_industriel_official",
+      "title": "CONDITIONS PARTICULIÈRES BPIFRANCE",
+      "sourceId": "bpifrance_rebond_industriel",
+      "severity": 35,
+      "verification": "A_REVERIFIER",
+      "missingEvidence": [
+        "beneficiaries",
+        "projectsExpected",
+        "eligibleExpenses"
+      ],
+      "qaFlags": [
+        "MISSING_BENEFICIARIES",
+        "MISSING_DEADLINE",
+        "MISSING_ELIGIBLE_EXPENSES",
+        "MISSING_DISBURSEMENT_TERMS",
+        "MISSING_REPAYMENT_TERMS"
+      ],
+      "officialPage": "https://rebond-industriel.bpifrance.fr",
       "hasCriticalDoc": true
     },
     {

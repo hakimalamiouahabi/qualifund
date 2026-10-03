@@ -1,7 +1,20 @@
 {
-  "generatedAt": "2026-10-03T10:24:52.745Z",
-  "total": 66,
-  "directLinkCount": 66,
-  "missingDirectLinkCount": 0,
-  "missing": []
+  "generatedAt": "2026-10-03T11:05:57.444Z",
+  "total": 54,
+  "directLinkCount": 53,
+  "missingDirectLinkCount": 1,
+  "missing": [
+    {
+      "id": "bpifrance_rebond_industriel_official",
+      "title": "CONDITIONS PARTICULIÈRES BPIFRANCE",
+      "funder": [
+        "État · France 2030 · Bpifrance"
+      ],
+      "scope": "NATIONAL",
+      "regions": [
+        "Toutes les Régions"
+      ],
+      "sourceId": "bpifrance_rebond_industriel"
+    }
+  ]
 }

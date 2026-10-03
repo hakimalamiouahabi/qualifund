@@ -1,10 +1,36 @@
 {
-  "generatedAt": "2026-10-03T11:05:16.522Z",
+  "generatedAt": "2026-10-03T11:09:45.957Z",
   "version": "12.9.3",
   "policy": "CERTIFIED_SOURCE_ONLY",
-  "unlockedSourceIds": [],
-  "guichets": [],
-  "certifications": [],
+  "unlockedSourceIds": [
+    "bpifrance_aap",
+    "bpifrance_aides",
+    "bpifrance_rebond_industriel"
+  ],
+  "guichets": [
+    "Bpifrance"
+  ],
+  "certifications": [
+    {
+      "file": "bpifrance-certification.json",
+      "name": "Bpifrance",
+      "generatedAt": "2026-10-03T11:09:45.351Z",
+      "status": "PASS",
+      "sourceIds": [
+        "bpifrance_aap",
+        "bpifrance_aides",
+        "bpifrance_rebond_industriel"
+      ],
+      "libraryRecords": 36,
+      "fingerprintStatus": "MATCH",
+      "sourceConfigFingerprint": "ab4073aae0857eb20f56359e7a92cb124144594cf28cfbd14a77132e3947a6ae",
+      "currentSourceConfigFingerprint": "ab4073aae0857eb20f56359e7a92cb124144594cf28cfbd14a77132e3947a6ae",
+      "certificationBasisFingerprint": "6d4831132105d95d3fe6bbd324d6206426e02c747e5fae478d3f9a0754c0e2a9",
+      "currentCertificationBasisFingerprint": "6d4831132105d95d3fe6bbd324d6206426e02c747e5fae478d3f9a0754c0e2a9",
+      "certifiedDataFingerprint": "d6c0c3c4de8812ae5c553c08b651a6cd81b1a2b198150e2f58f08fc72bf281c3",
+      "currentDataFingerprint": "d6c0c3c4de8812ae5c553c08b651a6cd81b1a2b198150e2f58f08fc72bf281c3"
+    }
+  ],
   "rejectedCertifications": [
     {
       "file": "ademe-certification.json",
@@ -16,19 +42,6 @@
       "reason": "SOURCE_CONFIG_FINGERPRINT_MISSING",
       "certifiedFingerprint": null,
       "currentFingerprint": "c6cf4a82a42773708c9d3c5f1dcc8ecd24e8c95046aa4e7440fd165c8f39877a"
-    },
-    {
-      "file": "bpifrance-certification.json",
-      "name": "Bpifrance",
-      "generatedAt": "2026-10-03T10:28:38.498Z",
-      "sourceIds": [
-        "bpifrance_aap",
-        "bpifrance_aides",
-        "bpifrance_rebond_industriel"
-      ],
-      "reason": "SOURCE_CONFIG_CHANGED",
-      "certifiedFingerprint": "87fa5e908ff2d72f08555584467227cb2c30cd8e7d147091d326ca6db8370ef8",
-      "currentFingerprint": "ab4073aae0857eb20f56359e7a92cb124144594cf28cfbd14a77132e3947a6ae"
     }
   ]
 }

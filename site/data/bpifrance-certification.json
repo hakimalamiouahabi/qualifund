@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-03T10:28:38.498Z",
+  "generatedAt": "2026-10-03T11:09:45.351Z",
   "status": "PASS",
   "lock": {
-    "version": 10,
+    "version": 12,
     "locked": true,
     "mode": "GUICHET",
     "name": "Bpifrance",
@@ -35,7 +35,6 @@
         "bpifrance_aap": {
           "master": "ACTIVE_AAP_LISTING",
           "requireListingDiscovery": true,
-          "requireImportedEqualsDiscovered": true,
           "requireGuichetEvidence": true,
           "requireCurrentStatusEvidence": true,
           "allowedSourceStates": [
@@ -46,7 +45,9 @@
             "AAP / AMI"
           ],
           "requiredPathPrefix": "/nos-appels-a-projets-concours/",
-          "requireAuditAccounting": true
+          "requireAuditAccounting": true,
+          "minRetained": 17,
+          "requireMasterMembership": true
         },
         "bpifrance_aides": {
           "master": "CATALOGUE_SECTION_SUB_AR",
@@ -65,18 +66,30 @@
             "PRET_TAUX_ZERO"
           ],
           "requiredPathPrefix": "/catalogue-offres/",
-          "requireAuditAccounting": true
+          "requireAuditAccounting": true,
+          "minRetained": 15,
+          "requireMasterMembership": true
         },
         "bpifrance_rebond_industriel": {
           "master": "DIRECT_OFFICIAL_PAGE",
           "minRetained": 1,
-          "requireAuditAccounting": false
+          "requireAuditAccounting": false,
+          "allowedKinds": [
+            "AIDE"
+          ],
+          "allowedAidTypes": [
+            "SUBVENTION",
+            "AVANCE_REMBOURSABLE"
+          ],
+          "requireGuichetEvidence": true,
+          "requireCurrentStatusEvidence": false
         }
-      }
+      },
+      "requirePublicationReady": true
     },
-    "notes": "Recertification Foundation v3.1 / v12.9 officiel-only : Bpifrance est repris en premier sans aucun contre-audit externe payant/LLM. ADEME sera recertifié ensuite sur catalogue/RSS officiels, puis Auvergne-Rhône-Alpes sur son catalogue officiel Entreprise. AURA reste gelée jusqu'aux deux PASS v12.9.",
+    "notes": "Recertification Bpifrance v12.9.3 publication-ready. Baseline officielle observée le 03/10/2026 : 27 AAP/AMI au listing maître, 17 fiches conservées après preuves métier et exclusions comptabilisées. Le listing reste protégé par minExpected=20 ; le corpus publiable par minImported/minRetained=17. ADEME est le cycle suivant ; AURA reste gelée jusqu’aux PASS Bpifrance puis ADEME.",
     "foundationBaseline": {
-      "version": "Foundation v3.1 / 12.9 official-only",
+      "version": "Foundation v3.2 / 12.9.3 Bpifrance publication-ready",
       "status": "HARDENING",
       "validatedAt": null,
       "p0": null
@@ -87,10 +100,10 @@
     "bpifrance_aides",
     "bpifrance_rebond_industriel"
   ],
-  "sourceConfigFingerprint": "87fa5e908ff2d72f08555584467227cb2c30cd8e7d147091d326ca6db8370ef8",
-  "certificationBasisFingerprint": "fe7be247882651657a0c344348dfc89f9ff2e13e536ad5d4df1d42d9ed4f763c",
-  "certifiedDataFingerprint": "fbe349e6f5e9e6cd5c2d61511673420f72a8ecf416aaf495ad32d3f77a2e6fe1",
-  "libraryRecords": 48,
+  "sourceConfigFingerprint": "ab4073aae0857eb20f56359e7a92cb124144594cf28cfbd14a77132e3947a6ae",
+  "certificationBasisFingerprint": "6d4831132105d95d3fe6bbd324d6206426e02c747e5fae478d3f9a0754c0e2a9",
+  "certifiedDataFingerprint": "d6c0c3c4de8812ae5c553c08b651a6cd81b1a2b198150e2f58f08fc72bf281c3",
+  "libraryRecords": 36,
   "frozenUnselectedSha": "98b67062ebc7fb87821c37fcbfd1a597b3ea1f46ba828b295288bd7d22ad652e",
   "controlGaps": {
     "rssOutsideCatalogue": []
@@ -98,8 +111,8 @@
   "bySource": {
     "bpifrance_aap": {
       "discovered": 27,
-      "imported": 27,
-      "retained": 27,
+      "imported": 17,
+      "retained": 17,
       "success": true,
       "rss": 0,
       "rssActive": 0,
@@ -122,12 +135,12 @@
       "catalogueHtmlExpected": 0,
       "detailWarnings": 0,
       "errors": 0,
-      "excluded": 0
+      "excluded": 10
     },
     "bpifrance_aides": {
       "discovered": 27,
-      "imported": 20,
-      "retained": 20,
+      "imported": 18,
+      "retained": 18,
       "success": true,
       "rss": 0,
       "rssActive": 0,
@@ -150,7 +163,7 @@
       "catalogueHtmlExpected": 0,
       "detailWarnings": 0,
       "errors": 0,
-      "excluded": 7
+      "excluded": 9
     },
     "bpifrance_rebond_industriel": {
       "discovered": 1,

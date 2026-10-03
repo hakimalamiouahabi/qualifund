@@ -1,44 +1,43 @@
-# FUNDING RADAR — Rapport de remédiation v12.9.1
+# FUNDING RADAR — Rapport de remédiation v12.9.3
 
-Généré : 2026-10-03T10:28:47.245Z
+Généré : 2026-10-03T11:09:53.640Z
 
-- Stock brut conservé : **66**
-- Corpus certifié publiable : **30**
-- Quarantaine : **36**
-- Fiches actives publiables : **30**
+- Stock brut conservé : **54**
+- Corpus certifié publiable : **36**
+- Quarantaine : **18**
+- Fiches actives publiables : **36**
 - Fiches VÉRIFIÉES : **0**
-- File de remédiation : **48**
-- Sources certifiées mais fiches bloquées pour preuve manquante : **18**
+- File de remédiation : **36**
+- Sources certifiées mais fiches bloquées pour preuve manquante : **0**
 - Permanences sans preuve calendrier A/B : **0**
-- Avances remboursables / PTZ sans modalités de remboursement : **5**
-- Fiches sans CdC/règlement rattaché : **7**
+- Avances remboursables / PTZ sans modalités de remboursement : **8**
+- Fiches sans CdC/règlement rattaché : **8**
 
 ## Blocages de publication des sources certifiées
 
-- MISSING_ENTERPRISE_EVIDENCE: 17
-- MISSING_INSTRUMENT_EVIDENCE: 1
 
 ## Preuves A/B manquantes par champ
 
 - objective: 0
-- beneficiaries: 26
-- financialTerms: 5
-- projectsExpected: 27
-- eligibleExpenses: 26
-- calendar: 23
-- prerequisites: 5
-- selectionCriteria: 29
+- beneficiaries: 32
+- financialTerms: 9
+- projectsExpected: 30
+- eligibleExpenses: 32
+- calendar: 25
+- prerequisites: 10
+- selectionCriteria: 34
 
 ## Principaux drapeaux QA
 
-- MISSING_DISBURSEMENT_TERMS: 30
-- MISSING_SELECTION_CRITERIA: 29
-- MISSING_BENEFICIARIES: 26
-- MISSING_ELIGIBLE_EXPENSES: 26
-- MISSING_DEADLINE: 17
-- MISSING_CDC: 7
-- MISSING_REPAYMENT_TERMS: 5
-- MISSING_PREREQUISITES: 5
-- MISSING_FINANCIAL_TERMS: 2
+- MISSING_DISBURSEMENT_TERMS: 36
+- MISSING_SELECTION_CRITERIA: 34
+- MISSING_BENEFICIARIES: 32
+- MISSING_ELIGIBLE_EXPENSES: 32
+- MISSING_DEADLINE: 19
+- MISSING_PREREQUISITES: 10
+- MISSING_REPAYMENT_TERMS: 8
+- MISSING_CDC: 8
+- MISSING_FINANCIAL_TERMS: 4
+- MISSING_COMPANY_CATEGORY: 1
 
 La file détaillée priorisée est publiée dans `site/data/remediation.json`.

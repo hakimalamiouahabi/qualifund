@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-03T10:28:39.913Z",
-  "corpusGeneratedAt": "2026-10-03T10:24:52.745Z",
+  "generatedAt": "2026-10-03T11:09:46.754Z",
+  "corpusGeneratedAt": "2026-10-03T11:05:57.444Z",
   "policy": "CERTIFIED_SOURCE_ONLY",
-  "rawTotal": 66,
-  "publishedTotal": 30,
-  "quarantinedTotal": 36,
+  "rawTotal": 54,
+  "publishedTotal": 36,
+  "quarantinedTotal": 18,
   "certifiedSources": [
     "bpifrance_aap",
     "bpifrance_aides",
@@ -14,9 +14,9 @@
   "sourcesSucceeded": 3,
   "sourcesFailed": 0,
   "overall": {
-    "total": 30,
+    "total": 36,
     "verified": 0,
-    "active": 30,
+    "active": 36,
     "fields": {
       "beneficiaries": {
         "present": 4,
@@ -27,27 +27,27 @@
         "officialProof": 4
       },
       "prerequisites": {
-        "present": 25,
-        "officialProof": 25
+        "present": 26,
+        "officialProof": 26
       },
       "selectionCriteria": {
-        "present": 1,
-        "officialProof": 1
+        "present": 2,
+        "officialProof": 2
       },
       "financialTerms": {
-        "present": 28,
-        "officialProof": 25
+        "present": 32,
+        "officialProof": 27
       },
       "calendar": {
-        "present": 13,
-        "officialProof": 7
+        "present": 17,
+        "officialProof": 11
       }
     }
   },
   "aapAmi": {
-    "total": 13,
+    "total": 17,
     "verified": 0,
-    "active": 13,
+    "active": 17,
     "fields": {
       "beneficiaries": {
         "present": 0,
@@ -66,20 +66,20 @@
         "officialProof": 1
       },
       "financialTerms": {
-        "present": 12,
+        "present": 14,
         "officialProof": 10
       },
       "calendar": {
-        "present": 13,
-        "officialProof": 3
+        "present": 17,
+        "officialProof": 6
       }
     }
   },
   "byInstrument": {
     "SUBVENTION": {
-      "total": 27,
+      "total": 33,
       "verified": 0,
-      "active": 27,
+      "active": 33,
       "fields": {
         "beneficiaries": {
           "present": 4,
@@ -90,27 +90,27 @@
           "officialProof": 4
         },
         "prerequisites": {
-          "present": 22,
-          "officialProof": 22
+          "present": 23,
+          "officialProof": 23
         },
         "selectionCriteria": {
-          "present": 1,
-          "officialProof": 1
+          "present": 2,
+          "officialProof": 2
         },
         "financialTerms": {
-          "present": 25,
-          "officialProof": 22
+          "present": 29,
+          "officialProof": 24
         },
         "calendar": {
-          "present": 13,
-          "officialProof": 7
+          "present": 17,
+          "officialProof": 11
         }
       }
     },
     "AVANCE_REMBOURSABLE": {
-      "total": 9,
+      "total": 12,
       "verified": 0,
-      "active": 9,
+      "active": 12,
       "fields": {
         "beneficiaries": {
           "present": 4,
@@ -121,20 +121,20 @@
           "officialProof": 4
         },
         "prerequisites": {
-          "present": 8,
-          "officialProof": 8
+          "present": 9,
+          "officialProof": 9
         },
         "selectionCriteria": {
-          "present": 1,
-          "officialProof": 1
+          "present": 2,
+          "officialProof": 2
         },
         "financialTerms": {
-          "present": 9,
-          "officialProof": 7
+          "present": 12,
+          "officialProof": 8
         },
         "calendar": {
-          "present": 2,
-          "officialProof": 6
+          "present": 4,
+          "officialProof": 8
         }
       }
     },
@@ -172,6 +172,99 @@
   },
   "byCompanyCategory": {
     "STARTUP": {
+      "total": 7,
+      "verified": 0,
+      "active": 7,
+      "fields": {
+        "beneficiaries": {
+          "present": 0,
+          "officialProof": 0
+        },
+        "eligibleExpenses": {
+          "present": 0,
+          "officialProof": 0
+        },
+        "prerequisites": {
+          "present": 3,
+          "officialProof": 3
+        },
+        "selectionCriteria": {
+          "present": 1,
+          "officialProof": 1
+        },
+        "financialTerms": {
+          "present": 5,
+          "officialProof": 4
+        },
+        "calendar": {
+          "present": 4,
+          "officialProof": 2
+        }
+      }
+    },
+    "PME": {
+      "total": 34,
+      "verified": 0,
+      "active": 34,
+      "fields": {
+        "beneficiaries": {
+          "present": 4,
+          "officialProof": 4
+        },
+        "eligibleExpenses": {
+          "present": 4,
+          "officialProof": 4
+        },
+        "prerequisites": {
+          "present": 25,
+          "officialProof": 25
+        },
+        "selectionCriteria": {
+          "present": 2,
+          "officialProof": 2
+        },
+        "financialTerms": {
+          "present": 31,
+          "officialProof": 26
+        },
+        "calendar": {
+          "present": 16,
+          "officialProof": 10
+        }
+      }
+    },
+    "ETI": {
+      "total": 25,
+      "verified": 0,
+      "active": 25,
+      "fields": {
+        "beneficiaries": {
+          "present": 4,
+          "officialProof": 4
+        },
+        "eligibleExpenses": {
+          "present": 4,
+          "officialProof": 4
+        },
+        "prerequisites": {
+          "present": 18,
+          "officialProof": 18
+        },
+        "selectionCriteria": {
+          "present": 1,
+          "officialProof": 1
+        },
+        "financialTerms": {
+          "present": 23,
+          "officialProof": 18
+        },
+        "calendar": {
+          "present": 14,
+          "officialProof": 9
+        }
+      }
+    },
+    "GE": {
       "total": 5,
       "verified": 0,
       "active": 5,
@@ -189,117 +282,24 @@
           "officialProof": 3
         },
         "selectionCriteria": {
-          "present": 1,
-          "officialProof": 1
+          "present": 0,
+          "officialProof": 0
         },
         "financialTerms": {
+          "present": 4,
+          "officialProof": 1
+        },
+        "calendar": {
           "present": 4,
           "officialProof": 3
-        },
-        "calendar": {
-          "present": 3,
-          "officialProof": 1
-        }
-      }
-    },
-    "PME": {
-      "total": 29,
-      "verified": 0,
-      "active": 29,
-      "fields": {
-        "beneficiaries": {
-          "present": 4,
-          "officialProof": 4
-        },
-        "eligibleExpenses": {
-          "present": 4,
-          "officialProof": 4
-        },
-        "prerequisites": {
-          "present": 24,
-          "officialProof": 24
-        },
-        "selectionCriteria": {
-          "present": 1,
-          "officialProof": 1
-        },
-        "financialTerms": {
-          "present": 27,
-          "officialProof": 24
-        },
-        "calendar": {
-          "present": 13,
-          "officialProof": 7
-        }
-      }
-    },
-    "ETI": {
-      "total": 20,
-      "verified": 0,
-      "active": 20,
-      "fields": {
-        "beneficiaries": {
-          "present": 4,
-          "officialProof": 4
-        },
-        "eligibleExpenses": {
-          "present": 4,
-          "officialProof": 4
-        },
-        "prerequisites": {
-          "present": 17,
-          "officialProof": 17
-        },
-        "selectionCriteria": {
-          "present": 0,
-          "officialProof": 0
-        },
-        "financialTerms": {
-          "present": 19,
-          "officialProof": 16
-        },
-        "calendar": {
-          "present": 11,
-          "officialProof": 6
-        }
-      }
-    },
-    "GE": {
-      "total": 3,
-      "verified": 0,
-      "active": 3,
-      "fields": {
-        "beneficiaries": {
-          "present": 0,
-          "officialProof": 0
-        },
-        "eligibleExpenses": {
-          "present": 0,
-          "officialProof": 0
-        },
-        "prerequisites": {
-          "present": 3,
-          "officialProof": 3
-        },
-        "selectionCriteria": {
-          "present": 0,
-          "officialProof": 0
-        },
-        "financialTerms": {
-          "present": 2,
-          "officialProof": 1
-        },
-        "calendar": {
-          "present": 2,
-          "officialProof": 2
         }
       }
     }
   },
   "unknownCompanyCategory": {
-    "total": 0,
+    "total": 1,
     "verified": 0,
-    "active": 0,
+    "active": 1,
     "fields": {
       "beneficiaries": {
         "present": 0,
@@ -322,8 +322,8 @@
         "officialProof": 0
       },
       "calendar": {
-        "present": 0,
-        "officialProof": 0
+        "present": 1,
+        "officialProof": 1
       }
     }
   },
@@ -441,6 +441,13 @@
       "selectionTextPresent": false
     },
     {
+      "id": "bpifrance_aides_62e1303a83de83dc3595d50a46e2d36d52506eafb90fd3eb041b436cfae19e25",
+      "title": "Innowwide",
+      "sourceId": "bpifrance_aides",
+      "officialPage": "https://www.bpifrance.fr/catalogue-offres/innowwide-0",
+      "selectionTextPresent": false
+    },
+    {
       "id": "bpifrance_aap_03a3043a72b22e911dda3f6dbd6345b53a1aa4afb8ad9fa13f6e6a9c4a98087b",
       "title": "L’appel à projets « Espace de données » a pour objectif de soutenir la création d‘espaces de données permettant la circulation de données dans un cadr...",
       "sourceId": "bpifrance_aap",
@@ -476,6 +483,20 @@
       "selectionTextPresent": false
     },
     {
+      "id": "bpifrance_aap_ed586215293372cbc98bc48b2d806f0a0d679be595a9eb7c153e4a95fb13886a",
+      "title": "Le Gouvernement a mis en place une politique ambitieuse de soutien à l’innovation, en particulier à destination des acteurs émergents. Dans le cadre d...",
+      "sourceId": "bpifrance_aap",
+      "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/france-2030-appel-a-projets-premiere-usine",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "bpifrance_aap_b641e0309ad5ca9d3495e7c4c94a152eaced7cdfe30db88c7c503522a30af35e",
+      "title": "Le présent AAP vise à soutenir des projets de recherche et de développement, portés par des entreprises de la filière automobile et les acteurs de l’...",
+      "sourceId": "bpifrance_aap",
+      "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-coram-2025-2026",
+      "selectionTextPresent": false
+    },
+    {
       "id": "bpifrance_aides_0fe8e9160668d10e9162bc495f625dc6b5c18eb2b92a121af91e319945b0dc52",
       "title": "PRÊT A TAUX ZERO POUR L’INNOVATION - PTZI",
       "sourceId": "bpifrance_aides",
@@ -487,6 +508,13 @@
       "title": "PRÊT INNOVATION R&D FEDER - PI R&D FEDER",
       "sourceId": "bpifrance_aides",
       "officialPage": "https://www.bpifrance.fr/catalogue-offres/pret-innovation-rd-feder-pi-rd-feder",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "bpifrance_aap_45d44a292f043ed36a4a696c834290f5e1fead50b27d40865378f2aa4eac26c2",
+      "title": "Rendre la filière automobile plus vertueuse à horizon 2030, de la conception à l'industrialisation des composants.",
+      "sourceId": "bpifrance_aap",
+      "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-soutien-aux-projets-dinvestissements-pour-produire-en-france-les-vehicules-routiers-de-demain-et-leurs-composants",
       "selectionTextPresent": false
     },
     {
@@ -529,6 +557,13 @@
       "title": "Vous avez jusqu'au 1er décembre 2026 pour participer au programme Innowwide et être soutenu dans votre développement sur des territoires extra-europée...",
       "sourceId": "bpifrance_aap",
       "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/innowwide-accelerer-votre-developpement-a-linternational",
+      "selectionTextPresent": false
+    },
+    {
+      "id": "bpifrance_aap_d6cb0773f6afe2537b42db441e0389488a364357fdeda64dc4ea3c00eced8207",
+      "title": "Vous développez des solutions de biocontrôle ou de biostimulation pour l’agriculture ? Déposez votre candidature avant le 9 septembre 2027 à 12h. Cet ...",
+      "sourceId": "bpifrance_aap",
+      "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-grand-defi-biocontrole-et-biostimulation-pour-lagroecologie",
       "selectionTextPresent": false
     }
   ]
