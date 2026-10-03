@@ -80,10 +80,9 @@
         "requireCurrentStatusEvidence": false
       }
     },
-    "requirePublicationReady": true,
-    "requireEnterpriseScope": true
+    "requirePublicationReady": true
   },
-  "notes": "Recertification Bpifrance v12.9.2 publication-ready : seules les fiches officielles directes avec preuves minimales de guichet, instrument, statut lorsque requis et éligibilité entreprise peuvent être certifiées. ADEME reste le cycle suivant ; AURA reste gelée jusqu’aux PASS Bpifrance puis ADEME.",
+  "notes": "Recertification Bpifrance v12.9.2 publication-ready : la collecte est enrichie puis filtrée par les mêmes critères que la publication ; seules les fiches officielles directes publiables peuvent être certifiées. ADEME reste le cycle suivant ; AURA reste gelée jusqu’aux PASS Bpifrance puis ADEME.",
   "foundationBaseline": {
     "version": "Foundation v3.2 / 12.9.2 Bpifrance publication-ready",
     "status": "HARDENING",
