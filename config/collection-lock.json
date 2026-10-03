@@ -58,7 +58,7 @@
       }
     }
   },
-  "notes": "Recertification ADEME v13 official-only. Inventaire live du 03/10/2026 : 68 dispositifs actifs dans le RSS officiel (16 AAP/AMI, 52 Aides). Les fiches directes sont protégées côté runner GitHub par HTTP 403 / challenge Cloudflare ; le RSS ne prouve pas l’instrument financier des 52 Aides. Elles restent donc fail-closed, sans baisse artificielle des seuils. Bpifrance est recertifié PASS sur le noyau courant ; AURA demeure gelée jusqu’au PASS ADEME. Mises à jour automatiques : 1er et 15 uniquement.",
+  "notes": "Recertification ADEME v13 official-only. Inventaire live du 03/10/2026 : 68 dispositifs actifs dans le RSS officiel (16 AAP/AMI, 52 Aides). Les fiches directes sont protégées côté runner GitHub par HTTP 403 / challenge Cloudflare ; le RSS ne prouve pas l’instrument financier des 52 Aides. Elles restent donc fail-closed, sans baisse artificielle des seuils. Bpifrance est recertifié PASS sur le noyau courant ; AURA demeure gelée jusqu’au PASS ADEME. Mises à jour automatiques : le 1er et au 15 uniquement.",
   "foundationBaseline": {
     "version": "Foundation v3.3 / ADEME official-only recertification",
     "status": "HARDENING",
