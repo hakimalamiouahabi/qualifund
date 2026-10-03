@@ -1,61 +1,66 @@
 {
   "version": "12.7.0",
   "generatedAt": "2026-09-30T20:25:33.273Z",
-  "purgedAt": null,
+  "purgedAt": "2026-10-03T09:15:51.305Z",
   "repositoryUrl": "https://github.com/hakimalamiouahabi/qualifund",
   "sourcePolicy": "DIRECT_OFFICIAL_ONLY",
   "libraryMode": "DIRECT_OFFICIAL_CATALOG",
-  "count": 215,
-  "libraryCount": 215,
-  "rawLibraryCount": 215,
-  "activeCount": 213,
+  "count": 41,
+  "libraryCount": 41,
+  "rawLibraryCount": 41,
+  "activeCount": 41,
   "jPlusOneDate": "2026-10-04",
-  "jPlusOneActiveCount": 210,
-  "archivedCount": 2,
+  "jPlusOneActiveCount": 38,
+  "archivedCount": 0,
   "staleCount": 0,
-  "aapCount": 48,
+  "aapCount": 33,
   "verifiedCount": 0,
-  "withCdc": 36,
-  "withDeadline": 99,
+  "withCdc": 13,
+  "withDeadline": 28,
   "sourceCount": 118,
   "activeCollectionSourceCount": 1,
   "libraryInstruments": [
     "APPEL_A_PROJET",
-    "AUTRE",
     "AVANCE_REMBOURSABLE",
-    "PRET_TAUX_ZERO",
     "SUBVENTION"
   ],
   "recommendationInstruments": [
     "SUBVENTION",
     "AVANCE_REMBOURSABLE",
-    "PRET_TAUX_ZERO"
+    "PRET_TAUX_ZERO",
+    "APPEL_A_PROJET"
   ],
-  "targetInstrumentCount": 43,
-  "directLinkCount": 213,
+  "targetInstrumentCount": 41,
+  "directLinkCount": 41,
   "missingDirectLinkCount": 0,
   "categoryCounts": {
-    "STARTUP": 11,
-    "PME": 39,
-    "ETI": 28,
-    "GE": 6
+    "STARTUP": 3,
+    "PME": 17,
+    "ETI": 15,
+    "GE": 2
   },
   "scopeCounts": {
-    "NATIONAL": 118,
-    "REGIONAL": 95
+    "NATIONAL": 35,
+    "REGIONAL": 6
   },
   "instrumentCounts": {
-    "APPEL_A_PROJET": 45,
-    "AUTRE": 146,
-    "AVANCE_REMBOURSABLE": 11,
-    "PRET_TAUX_ZERO": 2,
-    "SUBVENTION": 40
+    "APPEL_A_PROJET": 35,
+    "AVANCE_REMBOURSABLE": 5,
+    "SUBVENTION": 18
   },
   "targetRule": "ACTIVE_SANS_ECHEANCE_OU_PERMANENT_OU_CLOTURE_GTE_J_PLUS_1",
   "targetCount": null,
   "targetReached": null,
   "coverageGap": null,
   "coverageCertified": false,
+  "purgeStats": {
+    "input": 215,
+    "afterDirectSanitization": 213,
+    "afterCertifiedScope": 213,
+    "removedOutOfTarget": 141,
+    "removedCertifiedQuarantine": 31,
+    "retainedOperational": 41
+  },
   "collectionLock": {
     "locked": true,
     "mode": "REGION",
