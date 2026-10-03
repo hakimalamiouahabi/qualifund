@@ -121,14 +121,26 @@ const STRATEGY_IMPLEMENTATIONS={
   'opendatasoft':'scripts/connectors/opendatasoft.mjs'
 };
 const CERTIFICATION_CORE_FILES=[
+  'package.json',
+  'package-lock.json',
+  'schemas/aid.schema.json',
   'scripts/update-library.mjs',
+  'scripts/purge-indirect-sources.mjs',
   'scripts/certify-active-source.mjs',
+  'scripts/sync-static-metadata.mjs',
+  'scripts/build-cloudflare-pages.mjs',
   'scripts/lib/publication.mjs',
   'scripts/lib/direct-sources.mjs',
   'scripts/lib/collection-lock.mjs',
   'scripts/lib/source-cycle.mjs',
   'scripts/lib/lifecycle.mjs',
-  'scripts/lib/jplus1.mjs'
+  'scripts/lib/jplus1.mjs',
+  'scripts/lib/enrich.mjs',
+  'scripts/lib/merge.mjs',
+  'scripts/lib/dedupe.mjs',
+  'scripts/lib/qa.mjs',
+  'scripts/lib/browser.mjs',
+  'scripts/lib/utils.mjs'
 ];
 
 export async function certificationBasisFingerprint(root,cfg,sourceIds=[]){
