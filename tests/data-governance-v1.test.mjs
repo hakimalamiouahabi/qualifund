@@ -300,7 +300,7 @@ test('la purge reconstruit les agrégats du manifeste au lieu de recopier les an
   assert.doesNotMatch(purge,/\.\.\.\(migrated\?lib\.meta/);
   assert.match(purge,/jPlusOneActiveCount:activeJPlusOne\.length/);
   assert.match(purge,/instrumentCounts/);
-  assert.match(purge,/purgedAt:new Date\(\)\.toISOString\(\)/);
+  assert.match(purge,/purgedAt:changed\?new Date\(\)\.toISOString\(\):\(lib\.meta\?\.purgedAt\|\|null\)/);
   const update=fs.readFileSync(path.join(ROOT,'scripts/update-library.mjs'),'utf8');
   assert.match(update,/const active=aids\.filter\(a=>String\(a\.lifecycleStatus\|\|'\'\)\.toUpperCase\(\)==='ACTIVE'\)/);
 });
