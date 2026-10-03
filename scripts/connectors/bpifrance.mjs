@@ -162,22 +162,6 @@ async function catalogueMaster(source,{log=console.log}={}){
   return links;
 }
 
-async function externalAuditLinks(source,family,{log=console.log}={}){
-  if(!source.externalAuditFile)return[];
-  try{
-    const root=new URL('../../',import.meta.url);
-    const file=new URL(source.externalAuditFile,root);
-    const {readFile}=await import('node:fs/promises');
-    const audit=JSON.parse(await readFile(file,'utf8'));
-    const links=uniqueLinks((audit.candidates||[]).filter(x=>x.family===family).map(x=>({url:x.url,label:x.title||'',engines:x.engines||[]})));
-    log(`[${source.id}] contre-audit ${family}: ${links.length} URL(s) candidate(s)`);
-    return links;
-  }catch(e){
-    log(`[${source.id}] contre-audit externe indisponible: ${e.message}`);
-    return[];
-  }
-}
-
 function bpifranceEnterpriseEvidence(text=''){
   const raw=cleanTitle(text);
   const company=/\b(?:entreprises?|tpe|pme|eti|start[- ]?ups?|soci[eé]t[eé]s?|industriels?)\b/i;
@@ -310,82 +294,22 @@ async function extractMany(source,links,kind,{log=console.log,workers=10,require
   return{aids,excluded,errors};
 }
 
-async function classifyExternalAapGaps(source,master,external,{log=console.log}={}){
-  const known=new Set(master.map(x=>canonicalUrl(x.url)));
-  const pending=external.filter(x=>!known.has(canonicalUrl(x.url)));
-  const active=[],closed=[],notCurrent=[],unknown=[];let cursor=0;
-  const pool=Array.from({length:10},async()=>{
-    while(true){
-      const i=cursor++;if(i>=pending.length)return;
-      const x=pending[i];
-      try{
-        const loaded=await getHtml(x.url),text=pageText(loaded.html);
-        const a=extractFromHtml(loaded.html,{url:x.url,sourceTier:'B',scope:'NATIONAL',region:null});
-        const st=directStatus(a,text);
-        if(st.state==='CLOSED')closed.push({url:x.url,title:a.title||x.label||'',reason:st.evidence});
-        else if(st.state==='OPEN')active.push({url:x.url,title:a.title||x.label||'',reason:st.evidence});
-        else notCurrent.push({url:x.url,title:a.title||x.label||'',reason:'ABSENT_DU_LISTING_ACTIF_ET_AUCUNE_ECHEANCE_FUTURE_PROUVEE'});
-      }catch(e){unknown.push({url:x.url,title:x.label||'',reason:String(e?.message||e)})}
-    }
-  });
-  await Promise.all(pool);
-  log(`[${source.id}] audit externe AAP: ${active.length} actif(s) hors listing, ${closed.length} clos, ${notCurrent.length} non courants, ${unknown.length} erreur(s)/indéterminé(s)`);
-  return{active,closed,notCurrent,unknown};
-}
-
-async function classifyExternalCatalogueGaps(source,master,external,{log=console.log}={}){
-  const known=new Set(master.map(x=>canonicalUrl(x.url)));
-  const aliases=new Map(Object.entries(source.canonicalAliases||{}).map(([alias,canonical])=>[canonicalUrl(alias),canonicalUrl(canonical)]));
-  const duplicateAliases=[];
-  const pending=external.filter(x=>{
-    const u=canonicalUrl(x.url);
-    if(known.has(u))return false;
-    const canonical=aliases.get(u);
-    if(canonical&&known.has(canonical)){
-      duplicateAliases.push({url:x.url,title:x.label||'',canonicalUrl:canonical,reason:'ALIAS_D_UNE_OFFRE_DU_REFERENTIEL_MAITRE'});
-      return false;
-    }
-    return true;
-  });
-  const target=[],nonTarget=[],unknown=[];let cursor=0;
-  const pool=Array.from({length:10},async()=>{
-    while(true){
-      const i=cursor++;if(i>=pending.length)return;
-      const x=pending[i];
-      try{
-        const loaded=await getHtml(x.url),text=pageText(loaded.html);
-        const title=cleanTitle(cheerio.load(loaded.html)('h1').first().text()||x.label||'');
-        const fin=classifyBpifranceInstrument(text,title);
-        if(fin.aidTypes.length)target.push({url:x.url,title,aidTypes:fin.aidTypes});
-        else nonTarget.push({url:x.url,title,reason:fin.reason});
-      }catch(e){unknown.push({url:x.url,title:x.label||'',reason:String(e?.message||e)})}
-    }
-  });
-  await Promise.all(pool);
-  log(`[${source.id}] audit externe catalogue: ${target.length} cible(s) hors section, ${nonTarget.length} hors périmètre, ${duplicateAliases.length} alias connu(s), ${unknown.length} indéterminée(s)`);
-  return{target,nonTarget,duplicateAliases,unknown};
-}
-
 export async function discoverBpifranceCurrentAaps(source,{log=console.log}={}){
-  const [listing,sitemap,external]=await Promise.all([
+  const [listing,sitemap]=await Promise.all([
     activeAapListing(source,{log}),
-    sitemapUrls(source,{log}),
-    externalAuditLinks(source,'aap',{log})
+    sitemapUrls(source,{log})
   ]);
   const sitemapAap=sitemap.filter(u=>{try{return new URL(u).pathname.startsWith(AAP_PREFIX+'/')}catch{return false}});
-  const externalDisposition=await classifyExternalAapGaps(source,listing,external,{log});
-  return{links:listing,sitemapCount:sitemapAap.length,external,externalDisposition};
+  return{links:listing,sitemapCount:sitemapAap.length};
 }
 
 export async function discoverBpifranceCatalogueAids(source,{log=console.log}={}){
-  const [master,sitemap,external]=await Promise.all([
+  const [master,sitemap]=await Promise.all([
     catalogueMaster(source,{log}),
-    sitemapUrls(source,{log}),
-    externalAuditLinks(source,'catalogue',{log})
+    sitemapUrls(source,{log})
   ]);
   const sitemapCatalogue=sitemap.filter(u=>{try{return new URL(u).pathname.startsWith(CATALOGUE_PREFIX+'/')}catch{return false}});
-  const externalDisposition=await classifyExternalCatalogueGaps(source,master,external,{log});
-  return{links:master,sitemapCount:sitemapCatalogue.length,external,externalDisposition};
+  return{links:master,sitemapCount:sitemapCatalogue.length};
 }
 
 export async function collectBpifranceAaps(source,{log=console.log}={}){
@@ -397,8 +321,7 @@ export async function collectBpifranceAaps(source,{log=console.log}={}){
     audit:{
       discovered:discovered.links.length,imported:out.aids.length,excluded:out.excluded,errors:out.errors,
       accounted:out.aids.length+out.excluded.length+out.errors.length,
-      channels:{listing:discovered.links.length,sitemap:discovered.sitemapCount,externalAudit:discovered.external.length},
-      externalDisposition:discovered.externalDisposition
+      channels:{listing:discovered.links.length,sitemap:discovered.sitemapCount}
     },
     message:`Bpifrance AAP v2: ${discovered.links.length} actif(s) au listing maître, ${out.aids.length} importé(s), ${out.excluded.length} exclusion(s), ${out.errors.length} erreur(s)`
   };
@@ -413,8 +336,7 @@ export async function collectBpifranceAids(source,{log=console.log}={}){
     audit:{
       discovered:discovered.links.length,imported:out.aids.length,excluded:out.excluded,errors:out.errors,
       accounted:out.aids.length+out.excluded.length+out.errors.length,
-      channels:{catalogueSection:discovered.links.length,sitemap:discovered.sitemapCount,externalAudit:discovered.external.length},
-      externalDisposition:discovered.externalDisposition
+      channels:{catalogueSection:discovered.links.length,sitemap:discovered.sitemapCount}
     },
     message:`Bpifrance aides v2: ${discovered.links.length} offre(s) dans la section maître, ${out.aids.length} aide(s) cible(s), ${out.excluded.length} exclusion(s), ${out.errors.length} erreur(s)`
   };
