@@ -114,3 +114,13 @@ test('le workflow de production publie l’artefact dist certifié pendant un cy
   assert.doesNotMatch(wf,/deploy:\n\s+needs: build\n\s+if:.*collection_locked/);
   assert.doesNotMatch(wf,/verify-production:\n\s+needs: \[build, deploy\]\n\s+if:.*collection_locked/);
 });
+
+
+test('la collecte interne ne publie jamais directement le stock brut',()=>{
+  const update=fs.readFileSync(path.join(ROOT,'scripts/update-library.mjs'),'utf8');
+  assert.doesNotMatch(update,/writeJsonAtomic\(path\.join\(PUBLIC_DIR/);
+  assert.doesNotMatch(update,/radar-library\.json/);
+  const sync=fs.readFileSync(path.join(ROOT,'scripts/sync-static-metadata.mjs'),'utf8');
+  assert.match(sync,/CERTIFIED_SOURCE_ONLY/);
+  assert.match(sync,/isPublishableAid/);
+});
