@@ -136,6 +136,15 @@ const p0=[];
 if(sourceDuplicates.length)p0.push(`${sourceDuplicates.length} URL(s) de source dupliquée(s)`);
 if(coverageOrphans.length)p0.push(`${coverageOrphans.length} ligne(s) coverage pour des sources supprimées`);
 if(manifest?.sourceCount!=null&&Number(manifest.sourceCount)!==(cfg.sources||[]).length)p0.push(`manifest.sourceCount=${manifest.sourceCount} ≠ config=${(cfg.sources||[]).length}`);
+const actualActive=rows.filter(a=>String(a?.lifecycleStatus||'').toUpperCase()==='ACTIVE').length;
+const actualArchived=rows.filter(a=>String(a?.lifecycleStatus||'').toUpperCase()==='ARCHIVE').length;
+if(manifest?.libraryCount!=null&&Number(manifest.libraryCount)!==rows.length)p0.push(`manifest.libraryCount=${manifest.libraryCount} ≠ library.json=${rows.length}`);
+if(manifest?.rawLibraryCount!=null&&Number(manifest.rawLibraryCount)!==rows.length)p0.push(`manifest.rawLibraryCount=${manifest.rawLibraryCount} ≠ library.json=${rows.length}`);
+if(manifest?.activeCount!=null&&Number(manifest.activeCount)!==actualActive)p0.push(`manifest.activeCount=${manifest.activeCount} ≠ ACTIVE réels=${actualActive}`);
+if(manifest?.archivedCount!=null&&Number(manifest.archivedCount)!==actualArchived)p0.push(`manifest.archivedCount=${manifest.archivedCount} ≠ ARCHIVE réels=${actualArchived}`);
+if(Number(manifest?.jPlusOneActiveCount||0)>actualActive)p0.push(`manifest.jPlusOneActiveCount=${manifest.jPlusOneActiveCount} > ACTIVE réels=${actualActive}`);
+if(Number(manifest?.aapCount||0)>Number(manifest?.jPlusOneActiveCount||actualActive))p0.push(`manifest.aapCount=${manifest.aapCount} incohérent avec J+1=${manifest.jPlusOneActiveCount??actualActive}`);
+if(Number(manifest?.verifiedCount||0)>Number(manifest?.jPlusOneActiveCount||actualActive))p0.push(`manifest.verifiedCount=${manifest.verifiedCount} incohérent avec J+1=${manifest.jPlusOneActiveCount??actualActive}`);
 if(manifest?.collectionLock?.name&&manifest.collectionLock.name!==lock.name)p0.push(`manifest verrouillé sur "${manifest.collectionLock.name}" au lieu de "${lock.name}"`);
 if(historicalCertifications['ademe-certification.json']?.status!=='PASS')p0.push('Certification ADEME non PASS');
 if(historicalCertifications['bpifrance-certification.json']?.status!=='PASS')p0.push('Certification Bpifrance non PASS');
@@ -144,6 +153,14 @@ if(counters.orphanSource)p0.push(`${counters.orphanSource} fiche(s) rattachée(s
 if(publishedDuplicates.length)p0.push(`${publishedDuplicates.length} doublon(s) dans le corpus certifié publiable`);
 
 const p1=[];
+const CERT_FRESHNESS_WARN_HOURS=72;
+const certificationFreshness=(ledger.certifications||[]).map(c=>{
+  const generated=Date.parse(c.generatedAt||'');
+  const ageHours=Number.isFinite(generated)?Math.max(0,(Date.now()-generated)/3600000):null;
+  return{file:c.file,name:c.name,generatedAt:c.generatedAt||null,ageHours:ageHours==null?null:Math.round(ageHours*10)/10,status:ageHours!=null&&ageHours>CERT_FRESHNESS_WARN_HOURS?'STALE':'FRESH'};
+});
+const staleCertifications=certificationFreshness.filter(c=>c.status==='STALE');
+if(staleCertifications.length)p1.push(`${staleCertifications.length} certificat(s) PASS datent de plus de ${CERT_FRESHNESS_WARN_HOURS} h — maintenance opérationnelle à rafraîchir`);
 const legacyUnboundCertifications=(ledger.certifications||[]).filter(c=>c.fingerprintStatus==='LEGACY_UNBOUND');
 if(legacyUnboundCertifications.length)p1.push(`${legacyUnboundCertifications.length} certificat(s) PASS historique(s) sans fingerprint de configuration — à recertifier lors de leur prochain cycle`);
 if((ledger.rejectedCertifications||[]).length)p0.push(`${ledger.rejectedCertifications.length} certificat(s) PASS rejeté(s) car la configuration source a changé`);
@@ -192,7 +209,7 @@ const report={
     manifestLock:manifest?.collectionLock||null
   },
   historicalCertifications,
-  certificationIntegrity:{legacyUnbound:legacyUnboundCertifications,rejected:ledger.rejectedCertifications||[]},
+  certificationIntegrity:{freshnessWarningHours:CERT_FRESHNESS_WARN_HOURS,freshness:certificationFreshness,legacyUnbound:legacyUnboundCertifications,rejected:ledger.rejectedCertifications||[]},
   certifiedEvidenceDebt,
   publishedQuality,
   severity:{p0,p1,p2},

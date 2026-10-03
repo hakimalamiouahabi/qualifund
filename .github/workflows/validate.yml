@@ -27,6 +27,8 @@ jobs:
             npm install --ignore-scripts --no-audit --no-fund
           fi
       - run: npm test
+      - name: Appliquer la purge déterministe avant les audits de données
+        run: npm run purge:indirect
       - run: npm run validate
       - run: npm run audit:sources
       - run: npm run audit:ingestion

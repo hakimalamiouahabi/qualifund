@@ -17,7 +17,7 @@ export function jPlusOneDate(now=new Date()){
 }
 
 export function aidClosingDate(a={}){
-  const raw=a.finalClosingDate||a.closingDate||(Array.isArray(a.deadlines)?a.deadlines.map(x=>typeof x==='string'?x:x?.date).filter(Boolean).sort()[0]:null);
+  const raw=a.finalClosingDate||a.closingDate||(Array.isArray(a.deadlines)?a.deadlines.map(x=>typeof x==='string'?x:x?.date).filter(Boolean).sort().at(-1):null);
   const m=String(raw||'').match(/^\d{4}-\d{2}-\d{2}/);
   return m?m[0]:null;
 }

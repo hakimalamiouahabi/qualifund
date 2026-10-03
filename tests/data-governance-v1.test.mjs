@@ -293,3 +293,32 @@ test('l’interface échoue fermée si le ledger de certification est indisponib
   assert.match(app,/const CERTIFIED_SOURCE_NAMES=new Map\(\)/);
   assert.doesNotMatch(app,/FALLBACK_UNLOCKED_SOURCE_IDS/);
 });
+
+
+test('la purge reconstruit les agrégats du manifeste au lieu de recopier les anciens compteurs',()=>{
+  const purge=fs.readFileSync(path.join(ROOT,'scripts/purge-indirect-sources.mjs'),'utf8');
+  assert.doesNotMatch(purge,/\.\.\.\(migrated\?lib\.meta/);
+  assert.match(purge,/jPlusOneActiveCount:activeJPlusOne\.length/);
+  assert.match(purge,/instrumentCounts/);
+  assert.match(purge,/purgedAt:changed\?new Date\(\)\.toISOString\(\):\(lib\.meta\?\.purgedAt\|\|null\)/);
+  const update=fs.readFileSync(path.join(ROOT,'scripts/update-library.mjs'),'utf8');
+  assert.match(update,/const active=aids\.filter\(a=>String\(a\.lifecycleStatus\|\|'\'\)\.toUpperCase\(\)==='ACTIVE'\)/);
+});
+
+
+test('le deep audit bloque les compteurs de manifeste impossibles',()=>{
+  const audit=fs.readFileSync(path.join(ROOT,'scripts/deep-audit.mjs'),'utf8');
+  assert.match(audit,/manifest\.libraryCount/);
+  assert.match(audit,/manifest\.rawLibraryCount/);
+  assert.match(audit,/manifest\.activeCount/);
+  assert.match(audit,/manifest\.jPlusOneActiveCount/);
+  assert.match(audit,/jPlusOneActiveCount=.*> ACTIVE réels/);
+});
+
+
+test('le deep audit mesure la fraîcheur des certificats sans en faire un faux P0',()=>{
+  const audit=fs.readFileSync(path.join(ROOT,'scripts/deep-audit.mjs'),'utf8');
+  assert.match(audit,/CERT_FRESHNESS_WARN_HOURS=72/);
+  assert.match(audit,/maintenance opérationnelle à rafraîchir/);
+  assert.match(audit,/certificationFreshness/);
+});
