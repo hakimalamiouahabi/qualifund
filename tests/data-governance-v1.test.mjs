@@ -467,3 +467,11 @@ test('le deep audit mesure la fraîcheur des certificats sans en faire un faux P
   assert.match(audit,/maintenance opérationnelle à rafraîchir/);
   assert.match(audit,/certificationFreshness/);
 });
+
+test('le gate publication-ready expose les motifs d’exclusion sans les masquer',()=>{
+  const update=fs.readFileSync(path.join(ROOT,'scripts','update-library.mjs'),'utf8');
+  assert.match(update,/publicationExclusionCounts/);
+  assert.match(update,/publicationRetained:retained\.length/);
+  assert.match(update,/publicationDiscovered:Number\(row\.discovered\|\|0\)/);
+  assert.match(update,/gate publication-ready:/);
+});
