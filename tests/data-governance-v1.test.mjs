@@ -206,3 +206,20 @@ test('les duplications JSON publiques monolithiques et documents historiques ont
     'SOURCE_LINK_AUDIT.md'
   ])assert.equal(fs.existsSync(path.join(ROOT,p)),false,p);
 });
+
+
+test('un ancien certificat PASS ne peut pas être affiché comme PASS du verrou courant',()=>{
+  const app=fs.readFileSync(path.join(ROOT,'site/app.js'),'utf8');
+  assert.match(app,/function currentLockCertification\(\)/);
+  assert.match(app,/certLock\.name===current\.name/);
+  assert.match(app,/activeCert=currentCert\?\.status\|\|'PENDING'/);
+  assert.match(app,/const c=currentLockCertification\(\)/);
+});
+
+test('le build Cloudflare régénère le certificat actif du verrou courant',()=>{
+  const build=fs.readFileSync(path.join(ROOT,'scripts/build-cloudflare-pages.mjs'),'utf8');
+  assert.match(build,/config','collection-lock\.json/);
+  assert.match(build,/status:'PENDING'/);
+  assert.match(build,/active-source-certification\.json/);
+  assert.match(build,/c\.name===lock\.name/);
+});
