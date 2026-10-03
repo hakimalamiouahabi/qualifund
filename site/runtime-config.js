@@ -6,6 +6,6 @@
     sirenApi:'https://recherche-entreprises.api.gouv.fr/search',
     companyEndpoint:server.companyEndpoint||null,
     minRelevance:85,
-    version:'12.9.1'
+    version:'12.9.2'
   };
 })();
