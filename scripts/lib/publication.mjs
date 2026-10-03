@@ -95,6 +95,13 @@ export function isPublishableAid(a,opts={}){
 }
 
 const FINGERPRINT_IGNORED_SOURCE_KEYS=new Set(['notes','webVerifiedAt','webEvidenceUrl','observedCatalogCount','observedOpenCount']);
+function stableValue(value){
+  if(Array.isArray(value))return value.map(stableValue);
+  if(value&&typeof value==='object'){
+    return Object.fromEntries(Object.keys(value).sort().map(k=>[k,stableValue(value[k])]));
+  }
+  return value;
+}
 function stableSourceValue(value){
   if(Array.isArray(value))return value.map(stableSourceValue);
   if(value&&typeof value==='object'){
@@ -116,7 +123,7 @@ export function sourceDataFingerprint(records=[],sourceIds=[]){
   const selected=(Array.isArray(records)?records:[])
     .filter(a=>wanted.has(a?.sourceId))
     .sort((a,b)=>String(a?.id||'').localeCompare(String(b?.id||''))||String(a?.officialPage||'').localeCompare(String(b?.officialPage||'')))
-    .map(stableSourceValue);
+    .map(stableValue);
   return createHash('sha256').update(JSON.stringify(selected)).digest('hex');
 }
 
