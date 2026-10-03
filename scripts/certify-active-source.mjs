@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { loadCollectionLock, validateCollectionLock } from './lib/collection-lock.mjs';
-import { sourceConfigFingerprint, certificationBasisFingerprint } from './lib/publication.mjs';
+import { sourceConfigFingerprint, certificationBasisFingerprint, sourceDataFingerprint } from './lib/publication.mjs';
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const DATA=path.join(ROOT,'site','data');
@@ -205,6 +205,7 @@ const report={
   configuredSources:lockedCfg.map(s=>s.id),
   sourceConfigFingerprint:sourceConfigFingerprint(cfg,lockedCfg.map(s=>s.id)),
   certificationBasisFingerprint:await certificationBasisFingerprint(ROOT,cfg,lockedCfg.map(s=>s.id)),
+  certifiedDataFingerprint:sourceDataFingerprint(lib.aaps||[],lockedCfg.map(s=>s.id)),
   libraryRecords:records.length,
   frozenUnselectedSha:manifest?.collectionLock?.frozenUnselectedSha||null,
   externalAudit:externalAudit?{generatedAt:externalAudit.generatedAt||null,engines:externalAudit.engines||[],...externalCoverage}:null,
