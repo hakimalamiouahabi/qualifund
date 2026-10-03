@@ -42,6 +42,10 @@ test('la preuve entreprise Bpifrance est positive uniquement quand la page relie
     bpifranceEnterpriseEvidence("Ce dispositif ne vise pas à financer une entreprise, mais à soutenir le développement business d'un projet deeptech."),
     null
   );
+  assert.equal(
+    bpifranceEnterpriseEvidence("Ce fonds de fonds réalise des investissements dans des fonds ciblant des PME et ETI industrielles."),
+    null
+  );
 });
 
 test('le certificat historique Bpifrance reste cohérent avec les seuils calibrés',()=>{
