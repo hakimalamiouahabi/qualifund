@@ -119,3 +119,22 @@ test('la purge retire physiquement les instruments hors périmètre du stock op�
   assert.ok(!clean.meta.libraryInstruments.includes('AUTRE'));
  }finally{await fs.rm(root,{recursive:true,force:true})}
 });
+
+
+test('les doublons de liens entre familles sont éliminés avec priorité aux liens spécialisés',()=>{
+ const row={...valid,
+   sourceLinks:[
+     {label:'page',url:'https://www.bpifrance.fr/nos-appels-a-projets-concours/aap-1'},
+     {label:'pdf dupliqué',url:'https://media.bpifrance.fr/cdc.pdf'}
+   ],
+   cdcLinks:[{label:'CdC',url:'https://media.bpifrance.fr/cdc.pdf'}],
+   regulationLinks:[{label:'Règlement',url:'https://media.bpifrance.fr/reglement.pdf'}],
+   formLinks:[{label:'Formulaire',url:'https://media.bpifrance.fr/formulaire.pdf'}]
+ };
+ const out=sanitizeAidLinks(row,cfg);
+ const urls=[...(out.sourceLinks||[]),...(out.cdcLinks||[]),...(out.regulationLinks||[]),...(out.formLinks||[])]
+  .map(x=>typeof x==='string'?x:x.url);
+ assert.equal(new Set(urls).size,urls.length);
+ assert.equal(out.cdcLinks.length,1);
+ assert.equal(out.sourceLinks.some(x=>(typeof x==='string'?x:x.url).includes('cdc.pdf')),false);
+});
