@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 import { isForbiddenAggregatorUrl } from './direct-sources.mjs';
 
 export const TARGET_PUBLIC_INSTRUMENTS=new Set([
@@ -97,20 +98,49 @@ export function isPublishableAid(a,opts={}){
   return publicationReason(a,opts)==null;
 }
 
+const FINGERPRINT_IGNORED_SOURCE_KEYS=new Set(['notes','webVerifiedAt','webEvidenceUrl','observedCatalogCount','observedOpenCount']);
+function stableSourceValue(value){
+  if(Array.isArray(value))return value.map(stableSourceValue);
+  if(value&&typeof value==='object'){
+    return Object.fromEntries(Object.keys(value).sort().filter(k=>!FINGERPRINT_IGNORED_SOURCE_KEYS.has(k)).map(k=>[k,stableSourceValue(value[k])]));
+  }
+  return value;
+}
+export function sourceConfigFingerprint(cfg,sourceIds=[]){
+  const wanted=new Set(sourceIds);
+  const sources=(cfg?.sources||[])
+    .filter(s=>wanted.has(s.id))
+    .sort((a,b)=>String(a.id).localeCompare(String(b.id)))
+    .map(stableSourceValue);
+  return createHash('sha256').update(JSON.stringify(sources)).digest('hex');
+}
+
 export async function buildCertificationLedger(dataDir,cfg){
   const sourceIds=new Set((cfg.sources||[]).map(s=>s.id));
   let names=[];try{names=await fs.readdir(dataDir)}catch{}
   const files=names.filter(n=>/^[a-z0-9-]+-certification\.json$/i.test(n)&&n!=='active-source-certification.json');
-  const bestBySource=new Map(),certifications=[];
+  const bestBySource=new Map(),certifications=[],rejectedCertifications=[];
   for(const file of files){
     let report;try{report=JSON.parse(await fs.readFile(path.join(dataDir,file),'utf8'))}catch{continue}
     if(report?.status!=='PASS')continue;
     const generatedAt=report.generatedAt||null;
     const configured=(report.configuredSources||[]).filter(id=>sourceIds.has(id));
     if(!configured.length)continue;
+    const currentFingerprint=sourceConfigFingerprint(cfg,configured);
+    const certifiedFingerprint=String(report.sourceConfigFingerprint||'');
+    if(certifiedFingerprint&&certifiedFingerprint!==currentFingerprint){
+      rejectedCertifications.push({
+        file,name:report.lock?.name||file.replace(/-certification\.json$/,''),
+        generatedAt,sourceIds:configured,reason:'SOURCE_CONFIG_CHANGED',
+        certifiedFingerprint,currentFingerprint
+      });
+      continue;
+    }
+    const fingerprintStatus=certifiedFingerprint?'MATCH':'LEGACY_UNBOUND';
     certifications.push({
       file,name:report.lock?.name||file.replace(/-certification\.json$/,''),
-      generatedAt,status:'PASS',sourceIds:configured,libraryRecords:Number(report.libraryRecords||0)
+      generatedAt,status:'PASS',sourceIds:configured,libraryRecords:Number(report.libraryRecords||0),
+      fingerprintStatus,sourceConfigFingerprint:certifiedFingerprint||null,currentSourceConfigFingerprint:currentFingerprint
     });
     for(const id of configured){
       const prev=bestBySource.get(id);
@@ -124,6 +154,7 @@ export async function buildCertificationLedger(dataDir,cfg){
     version:cfg.version||null,
     policy:'CERTIFIED_SOURCE_ONLY',
     unlockedSourceIds,guichets,
-    certifications:certifications.sort((a,b)=>String(a.name).localeCompare(String(b.name),'fr'))
+    certifications:certifications.sort((a,b)=>String(a.name).localeCompare(String(b.name),'fr')),
+    rejectedCertifications
   };
 }
