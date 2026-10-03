@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { assertDirectSources, filterDirectLibrary } from './lib/direct-sources.mjs';
-import { buildCertificationLedger } from './lib/publication.mjs';
+import { buildCertificationLedger, targetFunding } from './lib/publication.mjs';
 import { isActiveAtJPlusOne, jPlusOneDate } from './lib/jplus1.mjs';
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
@@ -21,9 +21,21 @@ export async function purgeIndirectSources(root=ROOT){
     ...(ledger.unlockedSourceIds||[]),
     ...(lock.locked&&Array.isArray(lock.allowedSourceIds)?lock.allowedSourceIds:[])
   ]);
-  const direct=filterDirectLibrary(lib.aaps,cfg);
-  const aaps=direct
-    .filter(a=>retainedSourceIds.has(a?.sourceId))
+  const beforeRecords=Array.isArray(lib.aaps)?lib.aaps:[];
+  const direct=filterDirectLibrary(beforeRecords,cfg);
+  const normalizeOperationalAid=a=>{
+    const kind=String(a?.kind||'').toUpperCase();
+    const isAap=kind.includes('AAP')||kind.includes('AMI');
+    const allowed=new Set(['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO','APPEL_A_PROJET']);
+    const aidTypes=(Array.isArray(a?.aidTypes)?a.aidTypes:[]).filter(x=>allowed.has(x));
+    if(isAap&&!aidTypes.includes('APPEL_A_PROJET'))aidTypes.push('APPEL_A_PROJET');
+    return {...a,aidTypes:[...new Set(aidTypes)]};
+  };
+  const scoped=direct.filter(a=>retainedSourceIds.has(a?.sourceId));
+  const outOfTarget=scoped.filter(a=>!targetFunding(a));
+  const aaps=scoped
+    .filter(targetFunding)
+    .map(normalizeOperationalAid)
     .map(a=>lib.meta?.sourcePolicy==='DIRECT_OFFICIAL_ONLY'
       ?a
       :{...a,verification:{...(a.verification||{}),status:'A_REVERIFIER'}}
@@ -32,15 +44,14 @@ export async function purgeIndirectSources(root=ROOT){
   const active=aaps.filter(a=>String(a.lifecycleStatus||'').toUpperCase()==='ACTIVE');
   const activeJPlusOne=active.filter(a=>isActiveAtJPlusOne(a));
   const archived=aaps.filter(a=>String(a.lifecycleStatus||'').toUpperCase()==='ARCHIVE');
-  const recommendationInstruments=['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO'];
+  const recommendationInstruments=['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO','APPEL_A_PROJET'];
   const libraryInstruments=[...new Set(active.flatMap(a=>Array.isArray(a.aidTypes)?a.aidTypes:[]))].sort();
   const categoryCounts=Object.fromEntries(['STARTUP','PME','ETI','GE'].map(c=>[c,active.filter(a=>(a.companyCategories||[]).includes(c)).length]));
   const scopeCounts={NATIONAL:active.filter(a=>a.scope==='NATIONAL').length,REGIONAL:active.filter(a=>a.scope==='REGIONAL').length};
   const instrumentCounts=Object.fromEntries(libraryInstruments.map(t=>[t,active.filter(a=>(a.aidTypes||[]).includes(t)).length]));
-  const targetInstrumentCount=active.filter(a=>(a.aidTypes||[]).some(x=>recommendationInstruments.includes(x))).length;
+  const targetInstrumentCount=active.filter(targetFunding).length;
   const directLinkCount=active.filter(a=>/^https:\/\//i.test(String(a.officialPage||''))).length;
   const migrated=lib.meta?.sourcePolicy==='DIRECT_OFFICIAL_ONLY';
-  const beforeRecords=lib.aaps||[];
   const changed=!migrated||aaps.length!==beforeRecords.length||JSON.stringify(aaps)!==JSON.stringify(beforeRecords);
   const collectionLock={
     locked:Boolean(lock.locked),
@@ -84,6 +95,13 @@ export async function purgeIndirectSources(root=ROOT){
     targetReached:null,
     coverageGap:null,
     coverageCertified:false,
+    purgeStats:{
+      input:beforeRecords.length,
+      afterDirectSanitization:direct.length,
+      afterCertifiedScope:scoped.length,
+      removedOutOfTarget:outOfTarget.length,
+      retainedOperational:aaps.length
+    },
     collectionLock
   };
   if(lib.meta?.sourcePolicy!=='DIRECT_OFFICIAL_ONLY')meta.sourcePolicyAppliedAt=new Date().toISOString();
@@ -121,7 +139,8 @@ export async function purgeIndirectSources(root=ROOT){
     sourcePolicy:cfg.sourcePolicy,
     before:lib.aaps?.length||0,
     retained:aaps.length,
-    removed:(lib.aaps?.length||0)-aaps.length,
+    removed:beforeRecords.length-aaps.length,
+    removedOutOfTarget:outOfTarget.length,
     coverageRows:coverage.length,
     certifiedSources:(ledger.unlockedSourceIds||[]).length,
     retainedSources:retainedSourceIds.size,
