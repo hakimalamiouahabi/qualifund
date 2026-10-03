@@ -441,14 +441,16 @@ test('la certification normalise le corpus final avant de calculer ses empreinte
   assert.ok(purge>=0&&coverageRead>purge,'la purge finale doit précéder la lecture des données à certifier');
 });
 
-test('les expirations découvertes après enrichissement sont comptées avant certification',()=>{
+test('le gate final retire expirations et fiches non publiables avant certification',()=>{
   const update=fs.readFileSync(path.join(ROOT,'scripts/update-library.mjs'),'utf8');
   assert.match(update,/EXPIRED_AFTER_ENRICHMENT/);
-  assert.match(update,/snapshot précédent restauré après finalisation/);
-  assert.match(update,/accounted:retained\.length\+oldExcluded\.length\+exclusions\.length\+errors\.length/);
-  const finalGate=update.indexOf('const finalAssessment=assessCollection');
+  assert.match(update,/PUBLICATION_GATE_/);
+  assert.match(update,/publicationReason/);
+  assert.match(update,/snapshot précédent restauré après gate publication-ready/);
+  assert.match(update,/accounted:retained\.length\+oldExcluded\.length\+finalExclusions\.length\+errors\.length/);
+  const finalGate=update.indexOf('publicationReason');
   const write=update.indexOf("writeJsonAtomic(path.join(DATA,'library.json')");
-  assert.ok(finalGate>=0&&write>finalGate,'le gate final doit précéder toute écriture de library.json');
+  assert.ok(finalGate>=0&&write>finalGate,'le gate publication-ready doit précéder toute écriture de library.json');
 });
 
 test('un certificat publication-ready utilise exactement les mêmes critères métier que la publication',()=>{
