@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { assertDirectSources, filterDirectLibrary } from './lib/direct-sources.mjs';
-import { buildCertificationLedger, targetFunding } from './lib/publication.mjs';
+import { buildCertificationLedger } from './lib/publication.mjs';
 import { isActiveAtJPlusOne, jPlusOneDate } from './lib/jplus1.mjs';
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
@@ -37,7 +37,7 @@ export async function purgeIndirectSources(root=ROOT){
   const categoryCounts=Object.fromEntries(['STARTUP','PME','ETI','GE'].map(c=>[c,active.filter(a=>(a.companyCategories||[]).includes(c)).length]));
   const scopeCounts={NATIONAL:active.filter(a=>a.scope==='NATIONAL').length,REGIONAL:active.filter(a=>a.scope==='REGIONAL').length};
   const instrumentCounts=Object.fromEntries(libraryInstruments.map(t=>[t,active.filter(a=>(a.aidTypes||[]).includes(t)).length]));
-  const targetInstrumentCount=active.filter(a=>targetFunding(a)).length;
+  const targetInstrumentCount=active.filter(a=>(a.aidTypes||[]).some(x=>recommendationInstruments.includes(x))).length;
   const directLinkCount=active.filter(a=>/^https:\/\//i.test(String(a.officialPage||''))).length;
   const migrated=lib.meta?.sourcePolicy==='DIRECT_OFFICIAL_ONLY';
   const beforeRecords=lib.aaps||[];
