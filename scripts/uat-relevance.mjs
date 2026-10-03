@@ -6,7 +6,7 @@ import {fileURLToPath} from 'node:url';
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const core=await fs.readFile(path.join(ROOT,'site','scoring-core.js'),'utf8');
 const ctx={};ctx.globalThis=ctx;vm.createContext(ctx);vm.runInContext(core,ctx,{filename:'scoring-core.js'});
-const score=ctx.LEYTON_SCORING?.relevance;if(typeof score!=='function')throw new Error('Moteur partagé de pertinence indisponible');
+const score=ctx.FUNDING_RADAR_SCORING?.relevance;if(typeof score!=='function')throw new Error('Moteur partagé de pertinence indisponible');
 
 const CASES=[
   {
@@ -83,9 +83,9 @@ const negativeCeiling=Math.max(...negativeResults.map(x=>x.score));
 const separation=positiveFloor-negativeCeiling;
 const separationPass=separation>=20;
 const output={
-  version:ctx.LEYTON_SCORING.version,
+  version:ctx.FUNDING_RADAR_SCORING.version,
   generatedAt:new Date().toISOString(),
-  engineVersion:ctx.LEYTON_SCORING.version,
+  engineVersion:ctx.FUNDING_RADAR_SCORING.version,
   total:results.length+1,
   passed:passed+(separationPass?1:0),
   positive:{total:positiveResults.length,passed:positivePassed,minScore:positiveFloor},
