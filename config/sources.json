@@ -1,5 +1,5 @@
 {
-  "version": "12.6.0",
+  "version": "12.7.0",
   "sources": [
     {
       "id": "bpifrance_aap",
@@ -59,7 +59,8 @@
       "operator": "Bpifrance",
       "notes": "Source officielle Bpifrance : Bpifrance est opérateur du volet soutien aux investissements ; subventions et avances remboursables selon le projet.",
       "webVerifiedAt": "2026-09-30",
-      "webEvidenceUrl": "https://rebond-industriel.bpifrance.fr/"
+      "webEvidenceUrl": "https://rebond-industriel.bpifrance.fr/",
+      "guichetVerified": "Bpifrance"
     },
     {
       "id": "ademe",

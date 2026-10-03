@@ -97,3 +97,11 @@ test('ADEME et Bpifrance restent certifiés PASS avant le cycle régional',()=>{
   assert.equal(ademe.status,'PASS');
   assert.equal(bpi.status,'PASS');
 });
+
+
+test('une fiche Drupal AURA complète est reconnue sans fallback navigateur',()=>{
+  const connector=fs.readFileSync(new URL('../scripts/connectors/aura.mjs',import.meta.url),'utf8');
+  assert.match(connector,/node--type-aid\\s\+node--view-mode-full/);
+  assert.match(connector,/waitForSelector:'article\.node--type-aid\.node--view-mode-full'/);
+  assert.doesNotMatch(connector,/timeoutMs:65000,\s*waitForSelector:'h1'/);
+});

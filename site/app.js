@@ -21,10 +21,23 @@ const DEFAULT_PROJECT={company:'',siren:'',category:'À préciser',startup:false
 const STORAGE='leyton-as-project-v12.6';
 const LEGACY_STORAGES=['funding-radar-project-v12.5','qualifund-project-v12.4','leyton-radar-project-v12.3','leyton-radar-project-v12.2','leyton-radar-project-v12.1','leyton-radar-project-v12'];
 const LIVE_DB='funding-direct-sources-v1',LIVE_STORE='kv',LIVE_LIBRARY_KEY='library',LIVE_REFRESH_KEY='last-refresh';
-const PUBLIC_UNLOCKED_SOURCE_IDS=new Set(['bpifrance_aap','bpifrance_aides','bpifrance_rebond_industriel','ademe']);
+const FALLBACK_UNLOCKED_SOURCE_IDS=['bpifrance_aap','bpifrance_aides','bpifrance_rebond_industriel','ademe'];
+const PUBLIC_UNLOCKED_SOURCE_IDS=new Set(FALLBACK_UNLOCKED_SOURCE_IDS);
 const PUBLIC_UNLOCKED_GUICHETS=['Bpifrance','ADEME'];
+const CERTIFIED_SOURCE_NAMES=new Map([
+  ['bpifrance_aap','Bpifrance'],['bpifrance_aides','Bpifrance'],['bpifrance_rebond_industriel','Bpifrance'],['ademe','ADEME']
+]);
+const TARGET_PUBLIC_INSTRUMENTS=new Set(['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO','APPEL_A_PROJET']);
+function applyCertificationLedger(ledger){
+  if(!ledger||!Array.isArray(ledger.unlockedSourceIds))return;
+  PUBLIC_UNLOCKED_SOURCE_IDS.clear();for(const id of ledger.unlockedSourceIds)PUBLIC_UNLOCKED_SOURCE_IDS.add(id);
+  PUBLIC_UNLOCKED_GUICHETS.splice(0,PUBLIC_UNLOCKED_GUICHETS.length,...uniq(arr(ledger.guichets)));
+  CERTIFIED_SOURCE_NAMES.clear();
+  for(const cert of arr(ledger.certifications))for(const id of arr(cert.sourceIds))CERTIFIED_SOURCE_NAMES.set(id,cert.name||id);
+}
 function sourceAliasId(x){return typeof x==='string'?x:(x?.id||x?.sourceId||null)}
-function publicAidUnlocked(a){return [a?.sourceId,...arr(a?.sourceAliases).map(sourceAliasId)].filter(Boolean).some(id=>PUBLIC_UNLOCKED_SOURCE_IDS.has(id))}
+function publicAidUnlocked(a){return Boolean(a?.sourceId&&PUBLIC_UNLOCKED_SOURCE_IDS.has(a.sourceId))}
+function targetFundingAid(a){return String(a?.kind||'').toUpperCase().includes('AAP')||String(a?.kind||'').toUpperCase().includes('AMI')||arr(a?.aidTypes).some(x=>TARGET_PUBLIC_INSTRUMENTS.has(x))}
 function loadProjectState(){
   try{
     const current=localStorage.getItem(STORAGE);
@@ -39,9 +52,14 @@ function loadProjectState(){
   }catch{}
   return{...DEFAULT_PROJECT};
 }
-const state={route:'home',studyStep:1,lib:[],meta:{},coverage:[],changes:[],sources:[],readiness:null,certification:null,bpifranceCertification:null,dailyReport:null,project:loadProjectState(),lastResults:[]};
-const today=()=>new Date().toISOString().slice(0,10);
-const daysUntil=v=>v?Math.floor((new Date(v+'T23:59:59')-new Date(today()+'T00:00:00'))/86400000):null;
+const state={route:'home',studyStep:1,lib:[],meta:{},coverage:[],changes:[],sources:[],readiness:null,certification:null,bpifranceCertification:null,certificationLedger:null,dailyReport:null,project:loadProjectState(),lastResults:[]};
+const today=()=>new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Paris',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+function isoDayNumber(v){
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(String(v||'')))return null;
+  const [y,m,d]=String(v).split('-').map(Number);
+  return Math.floor(Date.UTC(y,m-1,d)/86400000);
+}
+const daysUntil=v=>{const target=isoDayNumber(v),base=isoDayNumber(today());return target==null||base==null?null:target-base};
 const bootstrap=()=>window.__LEYTON_RADAR_BOOTSTRAP__||window.__QUALIFUND_BOOTSTRAP__||null;
 async function fetchJsonStrict(url){
   const r=await fetch(url,{cache:'no-store',headers:{Accept:'application/json'}});
@@ -117,7 +135,7 @@ function derivedAidTitle(a){
   return current||'Intitulé à rattacher à la source officielle';
 }
 function usableAid(a){
-  if(!a||['ARCHIVE','STALE','CLOSED','CLOS','EXPIRED'].includes(a.lifecycleStatus))return false;
+  if(!a||!targetFundingAid(a)||['ARCHIVE','STALE','CLOSED','CLOS','EXPIRED'].includes(a.lifecycleStatus))return false;
   const t=norm(derivedAidTitle(a));
   if(!t||t.length<4)return false;
   if(/^(appels a projets et concours(?: bpifrance)?|contact et aide|accueil|nos aides|toutes nos aides)$/.test(t))return false;
@@ -126,7 +144,7 @@ function usableAid(a){
   return true;
 }
 function libraryAid(a){
-  if(!a||['STALE','CLOSED','CLOS','EXPIRED'].includes(a.lifecycleStatus))return false;
+  if(!a||!targetFundingAid(a)||['STALE','CLOSED','CLOS','EXPIRED'].includes(a.lifecycleStatus))return false;
   if(a?.sourceId==='ademe'&&!ademeVerified(a))return false;
   if(isGenericAidTitle(derivedAidTitle(a))||/^(appels a projets et concours(?: bpifrance)?|contact et aide|accueil|nos aides|toutes nos aides)$/.test(norm(derivedAidTitle(a))))return false;
   if(a.lifecycleStatus==='ARCHIVE'){
@@ -139,6 +157,7 @@ function guichetLabels(a){
   const provenance=norm([a?.sourceId,...arr(a?.sourceAliases)].filter(Boolean).join(' '));
   const t=norm([...arr(a?.funder),a?.operator,a?.programme,a?.sourceId].filter(Boolean).join(' ')),out=[];
   const add=x=>{if(x&&!out.includes(x))out.push(x)};
+  add(CERTIFIED_SOURCE_NAMES.get(a?.sourceId));
   let bpiHost=false;try{bpiHost=/bpifrance\.fr$/i.test(new URL(a?.officialPage||'').hostname)}catch{}
   if(/\bbpifrance(?:_|\b)/.test(provenance)||norm(a?.operator)==='bpifrance'||(bpiHost&&/bpifrance|bpi france/.test(t)))add('Bpifrance');
   if(ademeVerified(a))add('ADEME');
@@ -163,7 +182,31 @@ function displayAidTitle(a){
   return ambiguous&&funders.length?title+' — '+funders[0]:title;
 }
 
-async function loadAll(){const j=await api('./data/library.json');state.lib=(j.meta?.sourcePolicy==='DIRECT_OFFICIAL_ONLY'?j.aaps||[]:[]).filter(a=>!/(?:aides[-_]entreprises|aides[-_]territoires)/i.test(JSON.stringify(a))).map(a=>{const b={...a};for(const k of ['title','objective','beneficiaries','eligibleExpenses','excludedExpenses','prerequisites','selectionCriteria','programme','operator'])if(typeof b[k]==='string')b[k]=decodeEntities(b[k]);return b}).filter(publicAidUnlocked);state.meta=j.meta||{};for(const[k,p]of[['coverage','./data/coverage.json'],['changes','./data/changes.json'],['certification','./data/active-source-certification.json'],['bpifranceCertification','./data/bpifrance-certification.json'],['dailyReport','./bibliotheque/rapports/latest.json']])try{state[k]=await api(p)}catch{};try{state.sources=((await api('./data/sources.json')).sources||[]).filter(s=>PUBLIC_UNLOCKED_SOURCE_IDS.has(s.id))}catch{};state.coverage=arr(state.coverage).filter(x=>PUBLIC_UNLOCKED_SOURCE_IDS.has(x?.id));const visibleIds=new Set(state.lib.map(a=>a.id));state.changes=arr(state.changes).filter(x=>visibleIds.has(x?.id));try{state.readiness=await api('./data/production-readiness.json')}catch{};await loadClientLibrary();render();const deep=new URLSearchParams(location.search).get('aid');if(deep&&state.lib.some(a=>a.id===deep))openAid(deep)}
+async function loadAll(){
+  try{state.certificationLedger=await fetchJsonStrict('./data/certification-ledger.json');applyCertificationLedger(state.certificationLedger)}catch{}
+  const j=await api('./data/library.json');
+  state.lib=(j.meta?.sourcePolicy==='DIRECT_OFFICIAL_ONLY'?j.aaps||[]:[])
+    .filter(a=>!/(?:aides[-_]entreprises|aides[-_]territoires)/i.test(JSON.stringify(a)))
+    .map(a=>{const b={...a};for(const k of ['title','objective','beneficiaries','eligibleExpenses','excludedExpenses','prerequisites','selectionCriteria','programme','operator'])if(typeof b[k]==='string')b[k]=decodeEntities(b[k]);return b})
+    .filter(publicAidUnlocked)
+    .filter(targetFundingAid);
+  state.meta=j.meta||{};
+  for(const[k,p]of[
+    ['coverage','./data/coverage.json'],
+    ['changes','./data/changes.json'],
+    ['certification','./data/active-source-certification.json'],
+    ['bpifranceCertification','./data/bpifrance-certification.json'],
+    ['dailyReport','./bibliotheque/rapports/latest.json']
+  ])try{state[k]=await api(p)}catch{}
+  try{state.sources=((await api('./data/sources.json')).sources||[]).filter(s=>PUBLIC_UNLOCKED_SOURCE_IDS.has(s.id))}catch{}
+  state.coverage=arr(state.coverage).filter(x=>PUBLIC_UNLOCKED_SOURCE_IDS.has(x?.id));
+  const visibleIds=new Set(state.lib.map(a=>a.id));
+  state.changes=arr(state.changes).filter(x=>visibleIds.has(x?.id));
+  try{state.readiness=await api('./data/production-readiness.json')}catch{}
+  await loadClientLibrary();render();
+  const deep=new URLSearchParams(location.search).get('aid');
+  if(deep&&state.lib.some(a=>a.id===deep))openAid(deep)
+}
 function route(r){clearTimeout(window.__libSearchTimer);state.route=r;$$('.nav[data-route]').forEach(x=>x.classList.toggle('active',x.dataset.route===r));$('#sidebar')?.classList.remove('open');render()}
 document.querySelectorAll('.nav[data-route]').forEach(b=>b.onclick=()=>route(b.dataset.route));
 const globalSearch=$('#globalSearch');
@@ -279,6 +322,7 @@ function reporting(){
 function certification(){
   const c=state.certification,lock=c?.lock||state.meta?.collectionLock||{},srcId=lock?.allowedSourceIds?.[0],row=c?.bySource?.[srcId]||{};
   const discovered=Number(row.discovered||0),imported=Number(row.imported||0),retained=Number(row.retained||0),errors=Number(row.errors||0),excluded=Number(row.excluded||0);
+  const officialInventory=Number(row.enterpriseCatalogue||row.catalogueSection||row.listing||row.catalogue||row.rssActive||row.rss||discovered||0);
   const max=Math.max(1,discovered,imported,retained),status=c?.status||'NON GÉNÉRÉ';
   const problems=arr(c?.problems);
   const done=status==='PASS';
@@ -291,7 +335,7 @@ function certification(){
     <article class="premium-card"><h3>Contrôles d’intégrité</h3><div class="check-list"><div class="check-row"><span class="check-icon ${errors?'warn':''}">✓</span><span>Erreurs d’extraction</span><strong>${errors}</strong></div><div class="check-row"><span class="check-icon ${imported===retained&&imported>0?'':'warn'}">✓</span><span>Importés = conservés</span><strong>${imported===retained&&imported>0?'OK':'À vérifier'}</strong></div><div class="check-row"><span class="check-icon ${c?.frozenUnselectedSha?'':'warn'}">✓</span><span>Sources gelées</span><strong>${c?.frozenUnselectedSha?'OK':'—'}</strong></div><div class="check-row"><span class="check-icon ${done?'':'warn'}">✓</span><span>Statut final</span><strong>${esc(status)}</strong></div></div></article>
   </section>
 
-  <section class="grid g2" style="margin-top:10px"><article class="premium-card"><h3>Anomalies identifiées</h3><div class="anomaly-list">${problems.length?problems.map(p=>`<div class="anomaly"><span class="check-icon warn">!</span><div><strong>${esc(p)}</strong><span>Le cycle reste non certifié tant que ce point subsiste.</span></div></div>`).join(''):'<div class="callout ok"><b>Aucune anomalie bloquante dans le certificat courant.</b></div>'}</div></article><article class="premium-card"><h3>Preuves officielles</h3><div class="check-list"><div class="check-row"><span class="check-icon">✓</span><span>Canal RSS</span><strong>${Number(row.rss||0)}</strong></div><div class="check-row"><span class="check-icon ${Number(row.catalogue||0)>0?'':'warn'}">✓</span><span>Catalogue officiel</span><strong>${Number(row.catalogue||0)}</strong></div><div class="check-row"><span class="check-icon">✓</span><span>Doublons URL</span><strong>${arr(c?.duplicates).length}</strong></div><div class="check-row"><span class="check-icon">✓</span><span>Empreinte gel</span><strong>${c?.frozenUnselectedSha?'Présente':'Absente'}</strong></div></div></article></section>
+  <section class="grid g2" style="margin-top:10px"><article class="premium-card"><h3>Anomalies identifiées</h3><div class="anomaly-list">${problems.length?problems.map(p=>`<div class="anomaly"><span class="check-icon warn">!</span><div><strong>${esc(p)}</strong><span>Le cycle reste non certifié tant que ce point subsiste.</span></div></div>`).join(''):'<div class="callout ok"><b>Aucune anomalie bloquante dans le certificat courant.</b></div>'}</div></article><article class="premium-card"><h3>Preuves officielles</h3><div class="check-list"><div class="check-row"><span class="check-icon ${officialInventory>0?'':'warn'}">✓</span><span>Référentiel officiel</span><strong>${officialInventory}</strong></div><div class="check-row"><span class="check-icon ${discovered>0?'':'warn'}">✓</span><span>Fiches découvertes</span><strong>${discovered}</strong></div><div class="check-row"><span class="check-icon">✓</span><span>Doublons URL</span><strong>${arr(c?.duplicates).length}</strong></div><div class="check-row"><span class="check-icon ${done?'':'warn'}">✓</span><span>Certification</span><strong>${done?'PASS':'En cours'}</strong></div></div></article></section>
 
   <h2 class="section-title">Livrables générés</h2><section class="delivery-grid"><a class="delivery-card" href="./data/active-source-certification.json" target="_blank"><div class="delivery-icon">JSON</div><b>Certificat actif</b><span>Statut, contrôles et anomalies</span></a><a class="delivery-card" href="./data/coverage.json" target="_blank"><div class="delivery-icon">◎</div><b>Journal de couverture</b><span>Résultats des sources contrôlées</span></a><a class="delivery-card" href="./bibliotheque/rapports/latest.md" target="_blank"><div class="delivery-icon">R</div><b>Rapport du cycle</b><span>Créations, modifications et sorties</span></a><a class="delivery-card" href="./bibliotheque/radar-library.csv"><div class="delivery-icon">CSV</div><b>Bibliothèque publiée</b><span>Export exploitable du corpus</span></a></section>`;
 }

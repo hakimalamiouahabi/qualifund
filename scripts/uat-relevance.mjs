@@ -36,10 +36,66 @@ const CASES=[
   }
 ];
 
-const results=CASES.map(c=>{const r=score(c.aid,c.project);return{id:c.id,name:c.name,score:r.score,min:c.min,pass:r.score>=c.min,dims:r.dims};});
+const NEGATIVE_CASES=[
+  {
+    id:'negative-culture-vs-ai',name:'Contrôle négatif — culture vs IA industrielle',max:45,project:CASES[0].project,
+    aid:{scope:'REGIONAL',regions:['Bretagne'],aidTypes:['SUBVENTION'],minimumProjectCost:1000,maximumProjectCost:100000,closingDate:'2027-12-31',
+      title:'Soutien aux festivals et manifestations culturelles',objective:'Soutenir les festivals, expositions, spectacles, patrimoine et diffusion artistique',
+      themes:['culture','patrimoine','spectacle'],projectsExpected:['festival exposition programmation artistique'],
+      eligibleExpenses:'cachets artistiques diffusion communication culturelle',selectionCriteria:'rayonnement culturel fréquentation des publics qualité artistique',
+      beneficiaries:'associations culturelles et collectivités',prerequisites:'porter une manifestation culturelle ouverte au public'}
+  },
+  {
+    id:'negative-agri-vs-cyber',name:'Contrôle négatif — agriculture vs cybersécurité',max:45,project:CASES[2].project,
+    aid:{scope:'REGIONAL',regions:['Nouvelle-Aquitaine'],aidTypes:['SUBVENTION'],minimumProjectCost:5000,maximumProjectCost:150000,closingDate:'2027-12-31',
+      title:'Modernisation des exploitations agricoles',objective:'Soutenir élevage agriculture bâtiments agricoles matériel de production végétale',
+      themes:['agriculture','élevage'],projectsExpected:['investissement exploitation agricole matériel élevage'],
+      eligibleExpenses:'tracteurs équipements élevage bâtiments agricoles',selectionCriteria:'performance agricole installation exploitant',
+      beneficiaries:'agriculteurs exploitants agricoles',prerequisites:'être exploitant agricole'}
+  },
+  {
+    id:'negative-tourism-vs-carbon',name:'Contrôle négatif — tourisme vs décarbonation industrielle',max:45,project:CASES[3].project,
+    aid:{scope:'REGIONAL',regions:['Corse'],aidTypes:['SUBVENTION'],minimumProjectCost:10000,maximumProjectCost:200000,closingDate:'2027-12-31',
+      title:'Développement de l’offre touristique et culturelle',objective:'Améliorer hébergements touristiques accueil visiteurs patrimoine et loisirs',
+      themes:['tourisme','culture'],projectsExpected:['hébergement touristique animation loisirs visiteurs'],
+      eligibleExpenses:'aménagement chambres accueil signalétique touristique',selectionCriteria:'attractivité touristique fréquentation saisonnalité',
+      beneficiaries:'opérateurs touristiques associations',prerequisites:'projet implanté en Corse'}
+  }
+];
+
+const SPARSE_CASE={
+  id:'sparse-evidence-guard',name:'Garde-fou — aide très peu documentée',project:CASES[0].project,
+  aid:{scope:'NATIONAL',regions:['Toutes les Régions'],aidTypes:['SUBVENTION'],closingDate:'2027-12-31',
+    title:'Innovation IA',objective:'Soutenir innovation intelligence artificielle prototype logiciel'}
+};
+
+const positiveResults=CASES.map(c=>{const r=score(c.aid,c.project);return{id:c.id,name:c.name,type:'positive',score:r.score,min:c.min,pass:r.score>=c.min,documentedWeight:r.documentedWeight,dims:r.dims};});
+const negativeResults=NEGATIVE_CASES.map(c=>{const r=score(c.aid,c.project);return{id:c.id,name:c.name,type:'negative',score:r.score,max:c.max,pass:r.score<=c.max,documentedWeight:r.documentedWeight,dims:r.dims};});
+const sparse=score(SPARSE_CASE.aid,SPARSE_CASE.project);
+const sparseStrong=(sparse.dims||[]).filter(d=>d.documented&&(d.ratio??0)>=65).length;
+const sparseGuard={id:SPARSE_CASE.id,name:SPARSE_CASE.name,type:'evidence-guard',score:sparse.score,documentedWeight:sparse.documentedWeight,strongDimensions:sparseStrong,pass:sparse.documentedWeight<5,dims:sparse.dims};
+const results=[...positiveResults,...negativeResults,sparseGuard];
 const passed=results.filter(x=>x.pass).length;
-const output={version:ctx.LEYTON_SCORING.version,generatedAt:new Date().toISOString(),engineVersion:ctx.LEYTON_SCORING.version,total:results.length,passed,threshold:'profil métier — seuils de recette par cas',results};
+const positivePassed=positiveResults.filter(x=>x.pass).length;
+const negativePassed=negativeResults.filter(x=>x.pass).length;
+const positiveFloor=Math.min(...positiveResults.map(x=>x.score));
+const negativeCeiling=Math.max(...negativeResults.map(x=>x.score));
+const separation=positiveFloor-negativeCeiling;
+const separationPass=separation>=20;
+const output={
+  version:ctx.LEYTON_SCORING.version,
+  generatedAt:new Date().toISOString(),
+  engineVersion:ctx.LEYTON_SCORING.version,
+  total:results.length+1,
+  passed:passed+(separationPass?1:0),
+  positive:{total:positiveResults.length,passed:positivePassed,minScore:positiveFloor},
+  negative:{total:negativeResults.length,passed:negativePassed,maxScore:negativeCeiling},
+  sparseEvidenceGuard:{pass:sparseGuard.pass,documentedWeight:sparseGuard.documentedWeight,score:sparseGuard.score},
+  separation:{points:separation,minRequired:20,pass:separationPass},
+  threshold:'tests positifs, contrôles négatifs, séparation des scores et garde-fou documentaire',
+  results
+};
 await fs.mkdir(path.join(ROOT,'site','data'),{recursive:true});
 await fs.writeFile(path.join(ROOT,'site','data','uat-results.json'),JSON.stringify(output,null,2),'utf8');
 console.log(JSON.stringify(output,null,2));
-if(passed!==results.length)process.exitCode=1;
+if(passed!==results.length||!separationPass)process.exitCode=1;

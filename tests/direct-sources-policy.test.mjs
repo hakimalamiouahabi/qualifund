@@ -15,16 +15,20 @@ test('stock, mixed provenance, foreign domains and catalog pages are rejected',(
  assert.deepEqual(filterDirectLibrary(rows,cfg),[valid]);
  assert.throws(()=>assertDirectSources({...cfg,sources:[...cfg.sources,{id:'aides_entreprises',official:true,url:'https://data.aides-entreprises.fr/stock',strategy:'aides-entreprises'}]}));
 });
-test('purge covers exports, fallback, previous records and changes; is repeatable',async()=>{
+test('purge cleans internal data without republishing raw exports and is repeatable',async()=>{
  const root=await fs.mkdtemp(path.join(os.tmpdir(),'direct-source-test-'));
  try{
   await fs.mkdir(path.join(root,'config'),{recursive:true});await fs.mkdir(path.join(root,'site/data'),{recursive:true});
   await fs.writeFile(path.join(root,'config/sources.json'),JSON.stringify(cfg));
+  await fs.writeFile(path.join(root,'config/collection-lock.json'),JSON.stringify({
+   locked:true,mode:'GUICHET',name:'Bpifrance test',allowedSourceIds:['bpifrance']
+  }));
   await fs.writeFile(path.join(root,'site/data/library.json'),JSON.stringify({meta:{generatedAt:'2026-09-28'},aaps:[valid,{...valid,id:'ae_1',sourceId:'aides_entreprises'}]}));
   await fs.writeFile(path.join(root,'site/data/changes.json'),JSON.stringify([{id:'bpi1'},{id:'ae_1'}]));
   const first=await purgeIndirectSources(root),second=await purgeIndirectSources(root);
   assert.deepEqual(first,second);assert.equal(second.meta.generatedAt,'2026-09-28');assert.equal(second.aaps.length,1);
-  for(const f of ['site/data/library.json','site/data/bootstrap.js','site/data/library.previous.json','site/data/changes.json','site/bibliotheque/radar-library.json','site/bibliotheque/radar-library.csv'])assert.doesNotMatch(await fs.readFile(path.join(root,f),'utf8'),/ae_1|aides_entreprises/);
+  for(const f of ['site/data/library.json','site/data/changes.json'])assert.doesNotMatch(await fs.readFile(path.join(root,f),'utf8'),/ae_1|aides_entreprises/);
+  for(const obsolete of ['site/data/bootstrap.js','site/data/library.previous.json','site/bibliotheque/radar-library.json','site/bibliotheque/radar-library.csv'])assert.equal(await fs.stat(path.join(root,obsolete)).then(()=>true).catch(()=>false),false,obsolete);
  }finally{await fs.rm(root,{recursive:true,force:true})}
 });
 

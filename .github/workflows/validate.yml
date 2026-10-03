@@ -33,4 +33,6 @@ jobs:
       - run: npm run uat
       - run: npm run sync:metadata
       - run: npm run build:index
+      - run: npm run audit:deep:strict
       - run: npm run production:gates
+      - run: npm run build:cloudflare
