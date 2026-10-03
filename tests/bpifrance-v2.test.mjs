@@ -111,7 +111,7 @@ test('le verrou Bpifrance exige désormais un corpus publication-ready et autori
   const lock=JSON.parse(fs.readFileSync(new URL('../config/collection-lock.json',import.meta.url),'utf8'));
   assert.equal(lock.version,11);
   assert.equal(lock.certification.requirePublicationReady,true);
-  assert.equal(lock.certification.requireEnterpriseScope,true);
+  assert.equal(lock.certification.requireEnterpriseScope,undefined);
   assert.equal(lock.certification.sourceRules.bpifrance_aap.requireImportedEqualsDiscovered,undefined);
   assert.ok(lock.certification.sourceRules.bpifrance_aap.minRetained>=20);
 });
