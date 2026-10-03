@@ -243,3 +243,15 @@ test('le build Cloudflare publie un marqueur de SHA vérifiable',()=>{
   assert.match(build,/build-info\.json/);
   assert.match(build,/deployment:'cloudflare-pages'/);
 });
+
+
+test('le client ne conserve plus l’ancien cache IndexedDB ni la pseudo-collecte locale',()=>{
+  const app=fs.readFileSync(path.join(ROOT,'site/app.js'),'utf8');
+  assert.doesNotMatch(app,/funding-direct-sources-v1|LIVE_STORE|LIVE_REFRESH_KEY|idbOpen|liveGet\(|liveSet\(|loadClientLibrary|maybeAutoClientRefresh|scheduleClientDailyRefresh/);
+  assert.doesNotMatch(app,/function sourceAliasId/);
+});
+
+test('le workflow Cloudflare ne conserve pas la permission GitHub Pages obsolète',()=>{
+  const wf=fs.readFileSync(path.join(ROOT,'.github/workflows/update-and-deploy.yml'),'utf8');
+  assert.doesNotMatch(wf,/^\s+pages:\s+read\s*$/m);
+});
