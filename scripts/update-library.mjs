@@ -241,6 +241,12 @@ if(collectionLock.locked){
       })),
       ...publicationExcluded
     ];
+    const publicationExclusionCounts=finalExclusions.reduce((acc,item)=>{
+      const reason=String(item?.reason||'UNKNOWN');
+      acc[reason]=(acc[reason]||0)+1;
+      return acc;
+    },{});
+    log(`[${source.id}] gate publication-ready: ${retained.length}/${Number(row.discovered||0)} retenue(s) ; exclusions ${JSON.stringify(publicationExclusionCounts)}`);
 
     row.imported=retained.length;
     if(row.audit){
@@ -249,6 +255,9 @@ if(collectionLock.locked){
       row.audit={
         ...row.audit,
         imported:retained.length,
+        publicationRetained:retained.length,
+        publicationDiscovered:Number(row.discovered||0),
+        publicationExclusionCounts,
         excluded:[...oldExcluded,...finalExclusions],
         accounted:retained.length+oldExcluded.length+finalExclusions.length+errors.length
       };
