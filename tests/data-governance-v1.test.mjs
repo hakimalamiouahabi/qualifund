@@ -265,15 +265,32 @@ test('le client ne conserve plus l’ancien cache IndexedDB ni la pseudo-collect
   assert.doesNotMatch(app,/function sourceAliasId/);
 });
 
-test('la CI de pull request est non destructive et bloque les régressions avant main',()=>{
-  const ci=fs.readFileSync(path.join(ROOT,'.github/workflows/ci.yml'),'utf8');
+test('le workflow PR unique est non destructif et bloque les régressions avant main',()=>{
+  const ci=fs.readFileSync(path.join(ROOT,'.github/workflows/validate.yml'),'utf8');
   assert.match(ci,/pull_request:/);
   assert.match(ci,/permissions:\s*\n\s*contents: read/);
+  assert.match(ci,/node --check/);
   assert.match(ci,/npm test/);
+  assert.match(ci,/npm run purge:indirect/);
   assert.match(ci,/npm run validate/);
   assert.match(ci,/npm run audit:deep:strict/);
   assert.doesNotMatch(ci,/npm run update(?::full)?/);
-  assert.doesNotMatch(ci,/wrangler|cloudflare|git push/i);
+  assert.doesNotMatch(ci,/wrangler|git push/i);
+  assert.equal(fs.existsSync(path.join(ROOT,'.github/workflows/ci.yml')),false);
+});
+
+test('Bpifrance ADEME et AURA ne dépendent d’aucun fichier de contre-audit externe',()=>{
+  const cfg=JSON.parse(fs.readFileSync(path.join(ROOT,'config','sources.json'),'utf8'));
+  for(const id of ['bpifrance_aap','bpifrance_aides','ademe','aura']){
+    assert.equal(cfg.sources.find(x=>x.id===id)?.externalAuditFile,undefined,id);
+  }
+  for(const p of ['scripts/connectors/bpifrance.mjs','scripts/connectors/ademe.mjs','scripts/connectors/aura.mjs','scripts/certify-active-source.mjs']){
+    const src=fs.readFileSync(path.join(ROOT,p),'utf8');
+    assert.doesNotMatch(src,/externalAudit|Exa|Tavily|Parallel Search|Firecrawl/i,p);
+  }
+  for(const p of ['config/bpifrance-v2-external-audit.json','config/ademe-v2-external-audit.json','config/aura-v1-external-audit.json']){
+    assert.equal(fs.existsSync(path.join(ROOT,p)),false,p);
+  }
 });
 
 test('le workflow Cloudflare ne conserve pas la permission GitHub Pages obsolète',()=>{
@@ -358,6 +375,10 @@ test('la collecte exige un verrou et préserve le dernier snapshot valide du gui
   assert.doesNotMatch(update,/if\(!collectionLock\.locked\)await purgeIndirectSources/);
   assert.match(update,/requireCollectionLock\(collectionLock\)/);
   assert.match(update,/const current=new Map\(prevMap\)/);
+  const assessmentGuard=update.indexOf('if(!assessment.success)');
+  const mergeLoop=update.indexOf('for(const a0 of directAids)');
+  assert.ok(assessmentGuard>=0&&mergeLoop>assessmentGuard,'une collecte invalide doit être rejetée avant toute fusion');
+  assert.match(update,/snapshot précédent conservé sans aucune fusion partielle/);
   assert.doesNotMatch(update,/new Map\(\(previous\.aaps\|\|\[\]\)\.filter\(a=>!selectedIds\.has/);
   const wf=fs.readFileSync(path.join(ROOT,'.github/workflows/update-and-deploy.yml'),'utf8');
   assert.match(wf,/Purger et persister le stock hors sources certifiées \/ cycle courant/);
