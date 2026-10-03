@@ -168,6 +168,11 @@ export function bpifranceEnterpriseEvidence(text=''){
   // Cas explicitement hors cible entreprise : ne jamais transformer une mention secondaire
   // d'entreprise en preuve d'éligibilité.
   if(/\bne vise pas [àa] financer une entreprise\b/i.test(raw))return null;
+  // Les fonds de fonds / véhicules d'investissement ne constituent pas une aide
+  // directe à l'entreprise même si leur portefeuille cible des PME/ETI.
+  if(/\bfonds?\s+de\s+fonds?\b/i.test(raw)
+    ||/\binvest(?:it|issement(?:s)?)[^.;]{0,80}\bdans\s+des\s+fonds\b/i.test(raw)
+    ||/\bparticipe[^.;]{0,100}\b(?:création|constitution)\s+de\s+fonds\b/i.test(raw))return null;
 
   const patterns=[
     /\bprojets?[^.;]{0,180}port[eé]s?\s+par\s+(?:des|les|une?)\s+(?:tpe|pme|eti|start[- ]?ups?|entreprises?|soci[eé]t[eé]s?|industriels?)/i,
