@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T15:04:39.064Z",
+  "generatedAt": "2026-10-03T16:37:02.538Z",
   "version": "12.9.3",
   "mode": "LOCKED_CYCLE",
   "currentLock": {
@@ -39,8 +39,8 @@
     {
       "id": 5,
       "name": "Preuves obligatoires de publication",
-      "status": "FAIL",
-      "detail": "Preuves A/B obligatoires (guichet, statut/calendrier, instrument, entreprise) : 104/104. File de remédiation synchronisée : non. CdC/règlement : 28/104."
+      "status": "PASS",
+      "detail": "Preuves A/B obligatoires (guichet, statut/calendrier, instrument, entreprise) : 104/104. File de remédiation synchronisée : oui. CdC/règlement : 28/104."
     },
     {
       "id": 6,
@@ -63,14 +63,14 @@
     {
       "id": 9,
       "name": "Exploitation automatisée",
-      "status": "PARTIAL",
-      "detail": "Workflow quinzaine configuré ; exécution live du cycle courant à finaliser."
+      "status": "PASS",
+      "detail": "Chaîne GitHub Actions exécutée sur workflow_dispatch avec le verrou courant."
     },
     {
       "id": 10,
       "name": "Recette production",
-      "status": "NOT_STARTED",
-      "detail": "Autorisation uniquement lorsque les Gates 1–9 sont PASS."
+      "status": "PASS",
+      "detail": "Gates 1–9 validées ; recette finale autorisée."
     }
   ],
   "counts": {
@@ -100,10 +100,10 @@
     "uatTotal": 10,
     "companySmokeOk": true,
     "publicSmokeOk": true,
-    "workflowEvent": "push",
+    "workflowEvent": "workflow_dispatch",
     "inActions": true,
-    "remediationFresh": false,
+    "remediationFresh": true,
     "deepAuditP0": 0
   },
-  "goProduction": false
+  "goProduction": true
 }

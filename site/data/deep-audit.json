@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T15:04:42.790Z",
+  "generatedAt": "2026-10-03T16:37:01.098Z",
   "version": "12.9.3",
   "currentLock": {
     "name": "ADEME",
@@ -791,14 +791,14 @@
         "file": "ademe-certification.json",
         "name": "ADEME",
         "generatedAt": "2026-10-03T15:04:41.233Z",
-        "ageHours": 0,
+        "ageHours": 1.5,
         "status": "FRESH"
       },
       {
         "file": "bpifrance-certification.json",
         "name": "Bpifrance",
         "generatedAt": "2026-10-03T14:03:03.341Z",
-        "ageHours": 1,
+        "ageHours": 2.6,
         "status": "FRESH"
       }
     ],
