@@ -153,6 +153,14 @@ if(counters.orphanSource)p0.push(`${counters.orphanSource} fiche(s) rattachée(s
 if(publishedDuplicates.length)p0.push(`${publishedDuplicates.length} doublon(s) dans le corpus certifié publiable`);
 
 const p1=[];
+const CERT_FRESHNESS_WARN_HOURS=72;
+const certificationFreshness=(ledger.certifications||[]).map(c=>{
+  const generated=Date.parse(c.generatedAt||'');
+  const ageHours=Number.isFinite(generated)?Math.max(0,(Date.now()-generated)/3600000):null;
+  return{file:c.file,name:c.name,generatedAt:c.generatedAt||null,ageHours:ageHours==null?null:Math.round(ageHours*10)/10,status:ageHours!=null&&ageHours>CERT_FRESHNESS_WARN_HOURS?'STALE':'FRESH'};
+});
+const staleCertifications=certificationFreshness.filter(c=>c.status==='STALE');
+if(staleCertifications.length)p1.push(`${staleCertifications.length} certificat(s) PASS datent de plus de ${CERT_FRESHNESS_WARN_HOURS} h — maintenance opérationnelle à rafraîchir`);
 const legacyUnboundCertifications=(ledger.certifications||[]).filter(c=>c.fingerprintStatus==='LEGACY_UNBOUND');
 if(legacyUnboundCertifications.length)p1.push(`${legacyUnboundCertifications.length} certificat(s) PASS historique(s) sans fingerprint de configuration — à recertifier lors de leur prochain cycle`);
 if((ledger.rejectedCertifications||[]).length)p0.push(`${ledger.rejectedCertifications.length} certificat(s) PASS rejeté(s) car la configuration source a changé`);
@@ -201,7 +209,7 @@ const report={
     manifestLock:manifest?.collectionLock||null
   },
   historicalCertifications,
-  certificationIntegrity:{legacyUnbound:legacyUnboundCertifications,rejected:ledger.rejectedCertifications||[]},
+  certificationIntegrity:{freshnessWarningHours:CERT_FRESHNESS_WARN_HOURS,freshness:certificationFreshness,legacyUnbound:legacyUnboundCertifications,rejected:ledger.rejectedCertifications||[]},
   certifiedEvidenceDebt,
   publishedQuality,
   severity:{p0,p1,p2},
