@@ -425,6 +425,24 @@ test('le workflow de production valide le code avant toute purge ou collecte',()
   assert.match(wf,/find scripts tests -type f -name '\*\.mjs'.*node --check/s);
 });
 
+test('la certification normalise le corpus final avant de calculer ses empreintes',()=>{
+  const cert=fs.readFileSync(path.join(ROOT,'scripts/certify-active-source.mjs'),'utf8');
+  const purge=cert.indexOf('await purgeIndirectSources(ROOT)');
+  const libraryRead=cert.indexOf("site','data");
+  const coverageRead=cert.indexOf("coverage.json");
+  assert.ok(purge>=0&&coverageRead>purge,'la purge finale doit précéder la lecture des données à certifier');
+});
+
+test('les expirations découvertes après enrichissement sont comptées avant certification',()=>{
+  const update=fs.readFileSync(path.join(ROOT,'scripts/update-library.mjs'),'utf8');
+  assert.match(update,/EXPIRED_AFTER_ENRICHMENT/);
+  assert.match(update,/snapshot précédent restauré après finalisation/);
+  assert.match(update,/accounted:retained\.length\+oldExcluded\.length\+exclusions\.length\+errors\.length/);
+  const finalGate=update.indexOf('const finalAssessment=assessCollection');
+  const write=update.indexOf("writeJsonAtomic(path.join(DATA,'library.json')");
+  assert.ok(finalGate>=0&&write>finalGate,'le gate final doit précéder toute écriture de library.json');
+});
+
 test('le deep audit mesure la fraîcheur des certificats sans en faire un faux P0',()=>{
   const audit=fs.readFileSync(path.join(ROOT,'scripts/deep-audit.mjs'),'utf8');
   assert.match(audit,/CERT_FRESHNESS_WARN_HOURS=72/);
