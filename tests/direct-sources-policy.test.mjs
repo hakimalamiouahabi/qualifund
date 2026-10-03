@@ -148,7 +148,7 @@ test('une fiche quarantinée d’une source déjà certifiée quitte le stock op
    sourcePolicy:'DIRECT_OFFICIAL_ONLY',
    sourceSelectionPolicy:'GUICHET_OR_REGION_OFFICIAL_ONLY',
    sources:[
-    {id:'bpifrance',official:true,strategy:'official-page',url:'https://www.bpifrance.fr/offre-test'},
+    {id:'bpifrance',official:true,strategy:'catalog-html',url:'https://www.bpifrance.fr/catalogue-offres'},
     {id:'aura',official:true,strategy:'official-page',url:'https://www.auvergnerhonealpes.fr/aides/test'}
    ]
   };
@@ -162,14 +162,14 @@ test('une fiche quarantinée d’une source déjà certifiée quitte le stock op
    status:'PASS',generatedAt:'2026-10-03T00:00:00Z',configuredSources:['bpifrance'],lock:{name:'Bpifrance'}
   }));
   const evidence=[
-   {field:'guichet',sourceTier:'B',sourceUrl:'https://www.bpifrance.fr/offre-test'},
-   {field:'sourceStatus',sourceTier:'B',sourceUrl:'https://www.bpifrance.fr/offre-test'},
-   {field:'instrument',sourceTier:'B',sourceUrl:'https://www.bpifrance.fr/offre-test'},
-   {field:'enterpriseEligibility',sourceTier:'B',sourceUrl:'https://www.bpifrance.fr/offre-test'}
+   {field:'guichet',sourceTier:'B',sourceUrl:'https://www.bpifrance.fr/catalogue-offres/offre-test'},
+   {field:'sourceStatus',sourceTier:'B',sourceUrl:'https://www.bpifrance.fr/catalogue-offres/offre-test'},
+   {field:'instrument',sourceTier:'B',sourceUrl:'https://www.bpifrance.fr/catalogue-offres/offre-test'},
+   {field:'enterpriseEligibility',sourceTier:'B',sourceUrl:'https://www.bpifrance.fr/catalogue-offres/offre-test'}
   ];
-  const clean={...valid,id:'bpi-clean',sourceId:'bpifrance',officialPage:'https://www.bpifrance.fr/offre-test',
+  const clean={...valid,id:'bpi-clean',sourceId:'bpifrance',officialPage:'https://www.bpifrance.fr/catalogue-offres/offre-test',
    verification:{status:'VERIFIE',fieldEvidence:evidence}};
-  const quarantined={...clean,id:'bpi-bad',officialPage:'https://www.bpifrance.fr/offre-bad',
+  const quarantined={...clean,id:'bpi-bad',officialPage:'https://www.bpifrance.fr/catalogue-offres/offre-bad',
    verification:{status:'A_REVERIFIER',fieldEvidence:evidence.filter(e=>e.field!=='enterpriseEligibility')}};
   const aura={...clean,id:'aura-current',sourceId:'aura',officialPage:'https://www.auvergnerhonealpes.fr/aides/test',
    verification:{status:'A_REVERIFIER',fieldEvidence:[]}};
