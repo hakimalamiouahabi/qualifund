@@ -7,7 +7,9 @@ test('Gate 3 reflète la présence d’un cycle live sans déclarer GO prématur
   execFileSync(process.execPath,['scripts/production-gates.mjs'],{cwd:new URL('..',import.meta.url),stdio:'ignore'});
   const r=JSON.parse(fs.readFileSync(new URL('../site/data/production-readiness.json',import.meta.url),'utf8'));
   const coverage=JSON.parse(fs.readFileSync(new URL('../site/data/coverage.json',import.meta.url),'utf8'));
-  assert.equal(r.gates.find(g=>g.id===3).status==='NOT_RUN',coverage.length===0);
+  const lock=JSON.parse(fs.readFileSync(new URL('../config/collection-lock.json',import.meta.url),'utf8'));
+  const currentCoverage=coverage.filter(x=>(lock.allowedSourceIds||[]).includes(x.id));
+  assert.equal(r.gates.find(g=>g.id===3).status==='NOT_RUN',currentCoverage.length===0);
   assert.ok(['PASS_TECH','PASS'].includes(r.gates.find(g=>g.id===6).status));
   const preProduction=r.gates.filter(g=>g.id<=9).every(g=>g.status==='PASS');
   assert.equal(r.goProduction,preProduction);
