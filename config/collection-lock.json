@@ -59,7 +59,8 @@
         "allowedAidTypes": [
           "SUBVENTION",
           "AVANCE_REMBOURSABLE",
-          "PRET_TAUX_ZERO"
+          "PRET_TAUX_ZERO",
+          "APPEL_A_PROJET"
         ],
         "requiredPathPrefix": "/aides/",
         "forbiddenTitleFragments": [
@@ -74,7 +75,7 @@
       }
     }
   },
-  "notes": "AURA v14 official-only. Baseline live du 04/10/2026 : compteur maître Entreprise 175/175, 60 dispositifs cibles prouvés, 115 exclusions comptabilisées (26 fonds européens dédiés, 21 clos, 16 instruments hors périmètre, 52 instruments non suffisamment prouvés), 0 erreur. Le lecteur navigateur est limité à 2 workers avec retry contrôlé et fermeture explicite de Chromium. Bpifrance et ADEME restent gelés sur leurs certificats PASS. Aucune source agrégée, aucun LLM, aucune API payante, aucun moteur externe. Mise à jour automatique uniquement le 1er et le 15.",
+  "notes": "AURA v14 official-only. Baseline live du 04/10/2026 : compteur maître Entreprise 175/175, 60 dispositifs cibles prouvés (aides financières et AAP/AMI), 115 exclusions comptabilisées (26 fonds européens dédiés, 21 clos, 16 instruments hors périmètre, 52 instruments non suffisamment prouvés), 0 erreur. Le lecteur navigateur est limité à 2 workers avec retry contrôlé et fermeture explicite de Chromium. Bpifrance et ADEME restent gelés sur leurs certificats PASS. Aucune source agrégée, aucun LLM, aucune API payante, aucun moteur externe. Mise à jour automatique uniquement le 1er et le 15.",
   "foundationBaseline": {
     "version": "Foundation v3.6 / AURA official-only hardening",
     "status": "HARDENING",
