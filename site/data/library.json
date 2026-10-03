@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": "12.9.1",
+    "version": "12.9.2",
     "generatedAt": "2026-10-03T10:24:52.745Z",
     "purgedAt": null,
     "repositoryUrl": "https://github.com/hakimalamiouahabi/qualifund",
@@ -75,16 +75,7 @@
       ],
       "next": "ADEME",
       "frozenUnselectedSha": "98b67062ebc7fb87821c37fcbfd1a597b3ea1f46ba828b295288bd7d22ad652e"
-    },
-    "publishedCount": 30,
-    "publishedActiveCount": 30,
-    "quarantinedCount": 36,
-    "certifiedSourceCount": 3,
-    "certifiedSources": [
-      "bpifrance_aap",
-      "bpifrance_aides",
-      "bpifrance_rebond_industriel"
-    ]
+    }
   },
   "aaps": [
     {

@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-03T10:28:38.498Z",
-  "status": "PASS",
+  "generatedAt": "2026-10-03T10:47:11.526Z",
+  "status": "PENDING",
   "lock": {
-    "version": 10,
+    "version": 11,
     "locked": true,
     "mode": "GUICHET",
     "name": "Bpifrance",
@@ -35,7 +35,6 @@
         "bpifrance_aap": {
           "master": "ACTIVE_AAP_LISTING",
           "requireListingDiscovery": true,
-          "requireImportedEqualsDiscovered": true,
           "requireGuichetEvidence": true,
           "requireCurrentStatusEvidence": true,
           "allowedSourceStates": [
@@ -46,7 +45,8 @@
             "AAP / AMI"
           ],
           "requiredPathPrefix": "/nos-appels-a-projets-concours/",
-          "requireAuditAccounting": true
+          "requireAuditAccounting": true,
+          "minRetained": 20
         },
         "bpifrance_aides": {
           "master": "CATALOGUE_SECTION_SUB_AR",
@@ -65,18 +65,30 @@
             "PRET_TAUX_ZERO"
           ],
           "requiredPathPrefix": "/catalogue-offres/",
-          "requireAuditAccounting": true
+          "requireAuditAccounting": true,
+          "minRetained": 15
         },
         "bpifrance_rebond_industriel": {
           "master": "DIRECT_OFFICIAL_PAGE",
           "minRetained": 1,
-          "requireAuditAccounting": false
+          "requireAuditAccounting": false,
+          "allowedKinds": [
+            "AIDE"
+          ],
+          "allowedAidTypes": [
+            "SUBVENTION",
+            "AVANCE_REMBOURSABLE"
+          ],
+          "requireGuichetEvidence": true,
+          "requireCurrentStatusEvidence": false
         }
-      }
+      },
+      "requirePublicationReady": true,
+      "requireEnterpriseScope": true
     },
-    "notes": "Recertification Foundation v3.1 / v12.9 officiel-only : Bpifrance est repris en premier sans aucun contre-audit externe payant/LLM. ADEME sera recertifié ensuite sur catalogue/RSS officiels, puis Auvergne-Rhône-Alpes sur son catalogue officiel Entreprise. AURA reste gelée jusqu'aux deux PASS v12.9.",
+    "notes": "Recertification Bpifrance v12.9.2 publication-ready : seules les fiches officielles directes avec preuves minimales de guichet, instrument, statut lorsque requis et éligibilité entreprise peuvent être certifiées. ADEME reste le cycle suivant ; AURA reste gelée jusqu’aux PASS Bpifrance puis ADEME.",
     "foundationBaseline": {
-      "version": "Foundation v3.1 / 12.9 official-only",
+      "version": "Foundation v3.2 / 12.9.2 Bpifrance publication-ready",
       "status": "HARDENING",
       "validatedAt": null,
       "p0": null
@@ -87,100 +99,11 @@
     "bpifrance_aides",
     "bpifrance_rebond_industriel"
   ],
-  "sourceConfigFingerprint": "87fa5e908ff2d72f08555584467227cb2c30cd8e7d147091d326ca6db8370ef8",
-  "certificationBasisFingerprint": "fe7be247882651657a0c344348dfc89f9ff2e13e536ad5d4df1d42d9ed4f763c",
+  "sourceConfigFingerprint": "91e4d7c50ae7504b5b21826d5b993316ec49f1916541ef32e365678ea5db0e38",
+  "certificationBasisFingerprint": "2284b0909fd2ce614fdb8686b10817f59ea9682bfdf1e9e056a3f8fd5331500e",
   "certifiedDataFingerprint": "fbe349e6f5e9e6cd5c2d61511673420f72a8ecf416aaf495ad32d3f77a2e6fe1",
   "libraryRecords": 48,
-  "frozenUnselectedSha": "98b67062ebc7fb87821c37fcbfd1a597b3ea1f46ba828b295288bd7d22ad652e",
-  "controlGaps": {
-    "rssOutsideCatalogue": []
-  },
-  "bySource": {
-    "bpifrance_aap": {
-      "discovered": 27,
-      "imported": 27,
-      "retained": 27,
-      "success": true,
-      "rss": 0,
-      "rssActive": 0,
-      "rssWithoutClosing": 0,
-      "catalogue": 0,
-      "catalogueMode": "",
-      "listing": 27,
-      "catalogueSection": 0,
-      "sitemap": 540,
-      "enterpriseCatalogue": 0,
-      "enterpriseExpected": 0,
-      "enterprisePagesScanned": 0,
-      "europeanExcluded": 0,
-      "catalogueExpected": 0,
-      "catalogueAap": 0,
-      "catalogueAid": 0,
-      "catalogueUnclassified": 0,
-      "cataloguePagesScanned": 0,
-      "catalogueHtmlFound": 0,
-      "catalogueHtmlExpected": 0,
-      "detailWarnings": 0,
-      "errors": 0,
-      "excluded": 0
-    },
-    "bpifrance_aides": {
-      "discovered": 27,
-      "imported": 20,
-      "retained": 20,
-      "success": true,
-      "rss": 0,
-      "rssActive": 0,
-      "rssWithoutClosing": 0,
-      "catalogue": 0,
-      "catalogueMode": "",
-      "listing": 0,
-      "catalogueSection": 27,
-      "sitemap": 354,
-      "enterpriseCatalogue": 0,
-      "enterpriseExpected": 0,
-      "enterprisePagesScanned": 0,
-      "europeanExcluded": 0,
-      "catalogueExpected": 0,
-      "catalogueAap": 0,
-      "catalogueAid": 0,
-      "catalogueUnclassified": 0,
-      "cataloguePagesScanned": 0,
-      "catalogueHtmlFound": 0,
-      "catalogueHtmlExpected": 0,
-      "detailWarnings": 0,
-      "errors": 0,
-      "excluded": 7
-    },
-    "bpifrance_rebond_industriel": {
-      "discovered": 1,
-      "imported": 1,
-      "retained": 1,
-      "success": true,
-      "rss": 0,
-      "rssActive": 0,
-      "rssWithoutClosing": 0,
-      "catalogue": 0,
-      "catalogueMode": "",
-      "listing": 0,
-      "catalogueSection": 0,
-      "sitemap": 0,
-      "enterpriseCatalogue": 0,
-      "enterpriseExpected": 0,
-      "enterprisePagesScanned": 0,
-      "europeanExcluded": 0,
-      "catalogueExpected": 0,
-      "catalogueAap": 0,
-      "catalogueAid": 0,
-      "catalogueUnclassified": 0,
-      "cataloguePagesScanned": 0,
-      "catalogueHtmlFound": 0,
-      "catalogueHtmlExpected": 0,
-      "detailWarnings": 0,
-      "errors": 0,
-      "excluded": 0
-    }
-  },
-  "duplicates": [],
-  "problems": []
+  "problems": [
+    "Recertification requise sur la configuration et le code courants avant déverrouillage de publication."
+  ]
 }

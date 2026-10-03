@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-03T10:28:47.516Z",
-  "version": "12.9.1",
+  "generatedAt": "2026-10-03T10:47:09.457Z",
+  "version": "12.9.2",
   "mode": "LOCKED_CYCLE",
   "currentLock": {
     "locked": true,
@@ -42,7 +42,7 @@
       "id": 5,
       "name": "Preuves documentaires par champ",
       "status": "FAIL",
-      "detail": "Preuves A/B complètes sur les champs critiques : 0/0 fiches VÉRIFIÉES. File de remédiation synchronisée : oui. CdC/règlement : 23/30."
+      "detail": "Preuves A/B complètes sur les champs critiques : 0/0 fiches VÉRIFIÉES. File de remédiation synchronisée : non. CdC/règlement : 23/30."
     },
     {
       "id": 6,
@@ -102,7 +102,7 @@
     "publicSmokeOk": false,
     "workflowEvent": "push",
     "inActions": true,
-    "remediationFresh": true,
+    "remediationFresh": false,
     "deepAuditP0": 0
   },
   "goProduction": false

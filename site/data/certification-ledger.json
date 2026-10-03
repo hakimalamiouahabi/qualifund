@@ -1,36 +1,10 @@
 {
-  "generatedAt": "2026-10-03T10:28:39.191Z",
-  "version": "12.9.1",
+  "generatedAt": "2026-10-03T10:47:11.325Z",
+  "version": "12.9.2",
   "policy": "CERTIFIED_SOURCE_ONLY",
-  "unlockedSourceIds": [
-    "bpifrance_aap",
-    "bpifrance_aides",
-    "bpifrance_rebond_industriel"
-  ],
-  "guichets": [
-    "Bpifrance"
-  ],
-  "certifications": [
-    {
-      "file": "bpifrance-certification.json",
-      "name": "Bpifrance",
-      "generatedAt": "2026-10-03T10:28:38.498Z",
-      "status": "PASS",
-      "sourceIds": [
-        "bpifrance_aap",
-        "bpifrance_aides",
-        "bpifrance_rebond_industriel"
-      ],
-      "libraryRecords": 48,
-      "fingerprintStatus": "MATCH",
-      "sourceConfigFingerprint": "87fa5e908ff2d72f08555584467227cb2c30cd8e7d147091d326ca6db8370ef8",
-      "currentSourceConfigFingerprint": "87fa5e908ff2d72f08555584467227cb2c30cd8e7d147091d326ca6db8370ef8",
-      "certificationBasisFingerprint": "fe7be247882651657a0c344348dfc89f9ff2e13e536ad5d4df1d42d9ed4f763c",
-      "currentCertificationBasisFingerprint": "fe7be247882651657a0c344348dfc89f9ff2e13e536ad5d4df1d42d9ed4f763c",
-      "certifiedDataFingerprint": "fbe349e6f5e9e6cd5c2d61511673420f72a8ecf416aaf495ad32d3f77a2e6fe1",
-      "currentDataFingerprint": "fbe349e6f5e9e6cd5c2d61511673420f72a8ecf416aaf495ad32d3f77a2e6fe1"
-    }
-  ],
+  "unlockedSourceIds": [],
+  "guichets": [],
+  "certifications": [],
   "rejectedCertifications": [
     {
       "file": "ademe-certification.json",
@@ -41,7 +15,20 @@
       ],
       "reason": "SOURCE_CONFIG_FINGERPRINT_MISSING",
       "certifiedFingerprint": null,
-      "currentFingerprint": "5b4357a5e45403256bac07955dc7a79fc359c18c27dfeddc71dee8f5c4c8271a"
+      "currentFingerprint": "95b82887d0945df2c5a277c8b8d59800856bfc2b61e0ee4ebb8d85660a7fb7d7"
+    },
+    {
+      "file": "bpifrance-certification.json",
+      "name": "Bpifrance",
+      "generatedAt": "2026-10-03T10:28:38.498Z",
+      "sourceIds": [
+        "bpifrance_aap",
+        "bpifrance_aides",
+        "bpifrance_rebond_industriel"
+      ],
+      "reason": "SOURCE_CONFIG_CHANGED",
+      "certifiedFingerprint": "87fa5e908ff2d72f08555584467227cb2c30cd8e7d147091d326ca6db8370ef8",
+      "currentFingerprint": "91e4d7c50ae7504b5b21826d5b993316ec49f1916541ef32e365678ea5db0e38"
     }
   ]
 }
