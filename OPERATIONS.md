@@ -28,4 +28,4 @@ Le verrou ne change qu’après :
 - audit profond sans P0 ;
 - tests et build de production réussis.
 
-**Ordre actuel : Bpifrance → ADEME → Auvergne-Rhône-Alpes.** AURA reste gelée jusqu’aux PASS Bpifrance et ADEME sur le socle v12.9 official-only.
+**Ordre actuel : Bpifrance PASS → ADEME PASS → Auvergne-Rhône-Alpes (cycle actif).** Les autres régions et fonds restent gelés jusqu’au PASS AURA sur le socle official-only.
