@@ -272,3 +272,15 @@ test('un certificat fingerprinté est rejeté si la configuration de sa source c
     assert.equal(changed.rejectedCertifications[0].reason,'SOURCE_CONFIG_CHANGED');
   }finally{await fsp.rm(dir,{recursive:true,force:true})}
 });
+
+
+test('la purge précède toujours la lecture du snapshot de collecte, même sous verrou',()=>{
+  const update=fs.readFileSync(path.join(ROOT,'scripts/update-library.mjs'),'utf8');
+  const purge=update.indexOf('await purgeIndirectSources()');
+  const previous=update.indexOf("const previous=await readJson(path.join(DATA,'library.json')");
+  assert.ok(purge>=0&&previous>purge);
+  assert.doesNotMatch(update,/if\(!collectionLock\.locked\)await purgeIndirectSources/);
+  const wf=fs.readFileSync(path.join(ROOT,'.github/workflows/update-and-deploy.yml'),'utf8');
+  assert.match(wf,/Purger et persister le stock hors sources certifiées \/ cycle courant/);
+  assert.doesNotMatch(wf,/Purger et persister[^\n]*\n\s*if:\s*\$\{\{ steps\.lock\.outputs\.locked != 'true' \}\}/);
+});
