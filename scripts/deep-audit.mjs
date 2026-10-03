@@ -3,7 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { isForbiddenAggregatorUrl } from './lib/direct-sources.mjs';
 import { sourceCalibration } from './lib/collection-lock.mjs';
-import { buildCertificationLedger, publicationReason, targetFunding, hasEnterpriseEvidence, hasGuichetEvidence, hasStatusEvidence, hasTargetInstrumentEvidence, sourceConfigFingerprint, certificationBasisFingerprint } from './lib/publication.mjs';
+import { buildCertificationLedger, publicationReason, targetFunding, hasEnterpriseEvidence, hasGuichetEvidence, hasStatusEvidence, hasTargetInstrumentEvidence, sourceConfigFingerprint, certificationBasisFingerprint, sourceDataFingerprint } from './lib/publication.mjs';
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const DATA=path.join(ROOT,'site','data');
@@ -162,6 +162,7 @@ const expectedActiveIds=[...(lock.allowedSourceIds||[])].sort();
 const activeIds=[...(activeCertification?.configuredSources||[])].sort();
 const expectedSourceFingerprint=sourceConfigFingerprint(cfg,expectedActiveIds);
 const expectedBasisFingerprint=await certificationBasisFingerprint(ROOT,cfg,expectedActiveIds);
+const expectedDataFingerprint=sourceDataFingerprint(rows,expectedActiveIds);
 const activeCertificationIntegrity={
   present:Boolean(activeCertification),
   status:activeCertification?.status||null,
@@ -169,7 +170,8 @@ const activeCertificationIntegrity={
   expectedLockName:lock.name||null,
   sourceIdsMatch:expectedActiveIds.length===activeIds.length&&expectedActiveIds.every((x,i)=>x===activeIds[i]),
   sourceFingerprintMatch:activeCertification?.sourceConfigFingerprint===expectedSourceFingerprint,
-  basisFingerprintMatch:activeCertification?.certificationBasisFingerprint===expectedBasisFingerprint
+  basisFingerprintMatch:activeCertification?.certificationBasisFingerprint===expectedBasisFingerprint,
+  dataFingerprintMatch:activeCertification?.certifiedDataFingerprint===expectedDataFingerprint
 };
 const p0=[];
 if(sourceDuplicates.length)p0.push(`${sourceDuplicates.length} URL(s) de source dupliquée(s)`);
@@ -208,7 +210,8 @@ if(activeCertification?.status==='PASS'){
   if(activeCertificationIntegrity.lockName!==activeCertificationIntegrity.expectedLockName
     || !activeCertificationIntegrity.sourceIdsMatch
     || !activeCertificationIntegrity.sourceFingerprintMatch
-    || !activeCertificationIntegrity.basisFingerprintMatch){
+    || !activeCertificationIntegrity.basisFingerprintMatch
+    || !activeCertificationIntegrity.dataFingerprintMatch){
     p0.push('Le certificat actif PASS ne correspond pas exactement au verrou, à la configuration et au code courants');
   }
   const allCurrentUnlocked=expectedActiveIds.every(id=>unlocked.has(id));
