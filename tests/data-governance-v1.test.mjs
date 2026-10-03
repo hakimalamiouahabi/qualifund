@@ -5,7 +5,7 @@ import fsp from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { buildCertificationLedger, publicationReason, targetFunding, hasEnterpriseEvidence, hasTargetInstrumentEvidence } from '../scripts/lib/publication.mjs';
+import { buildCertificationLedger, publicationReason, targetFunding, hasEnterpriseEvidence, hasTargetInstrumentEvidence, sourceConfigFingerprint } from '../scripts/lib/publication.mjs';
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 
@@ -116,13 +116,15 @@ test('les audits d’ingestion n’utilisent plus les stratégies tierces histor
 });
 
 
-test('le workflow de production publie l’artefact dist certifié pendant un cycle verrouillé',()=>{
+test('le workflow construit l’artefact certifié puis vérifie le SHA réellement publié sur Cloudflare',()=>{
   const wf=fs.readFileSync(path.join(ROOT,'.github/workflows/update-and-deploy.yml'),'utf8');
   assert.match(wf,/Construire l'artefact public certifié/);
   assert.match(wf,/run: npm run build:cloudflare/);
-  assert.match(wf,/path: dist/);
-  assert.doesNotMatch(wf,/deploy:\n\s+needs: build\n\s+if:.*collection_locked/);
-  assert.doesNotMatch(wf,/verify-production:\n\s+needs: \[build, deploy\]\n\s+if:.*collection_locked/);
+  assert.match(wf,/RADAR_PUBLIC_URL: https:\/\/qualifund\.pages\.dev/);
+  assert.match(wf,/build-info\.json/);
+  assert.match(wf,/EXPECTED_SHA/);
+  assert.doesNotMatch(wf,/actions\/deploy-pages/);
+  assert.doesNotMatch(wf,/actions\/upload-pages-artifact/);
 });
 
 
@@ -178,4 +180,116 @@ test('une mention entreprise non contextuelle dans un objectif ne suffit pas',as
     }]}
   };
   assert.equal(hasEnterpriseEvidence(aid),false);
+});
+
+
+test('la page Bibliothèque n’utilise plus de contrôles DOM inexistants ni le branding historique',()=>{
+  const html=fs.readFileSync(path.join(ROOT,'site/bibliotheque/index.html'),'utf8');
+  assert.doesNotMatch(html,/verified\.textContent/);
+  assert.doesNotMatch(html,/verification\.value/);
+  assert.doesNotMatch(html,/qualifund-library/i);
+  assert.match(html,/radar-library\.csv/);
+  assert.match(html,/CERTIFIED_SOURCE_ONLY|sources certifiées|corpus certifié/i);
+  const headers=(html.match(/<th>/g)||[]).length;
+  const rowTemplate=(html.match(/<td>/g)||[]).length;
+  assert.equal(headers,8);
+  assert.equal(rowTemplate,8);
+});
+
+test('les duplications JSON publiques monolithiques et documents historiques ont disparu',()=>{
+  for(const p of [
+    'site/bibliotheque/radar-library.json',
+    'site/bibliotheque/qualifund-library.json',
+    'site/bibliotheque/qualifund-library.csv',
+    'Cahier_des_charges_QUALIFUND_FINAL.md',
+    'POLITIQUE_COUVERTURE_2026-09-28.md',
+    'REVUE_CODIR_2026-09-29.md',
+    'QA_REPORT.md',
+    'SOURCE_LINK_AUDIT.md'
+  ])assert.equal(fs.existsSync(path.join(ROOT,p)),false,p);
+});
+
+
+test('un ancien certificat PASS ne peut pas être affiché comme PASS du verrou courant',()=>{
+  const app=fs.readFileSync(path.join(ROOT,'site/app.js'),'utf8');
+  assert.match(app,/function currentLockCertification\(\)/);
+  assert.match(app,/certLock\.name===current\.name/);
+  assert.match(app,/activeCert=currentCert\?\.status\|\|'PENDING'/);
+  assert.match(app,/function certification\(\)\{\s*const c=currentLockCertification\(\)/);
+});
+
+test('le build Cloudflare régénère le certificat actif du verrou courant',()=>{
+  const build=fs.readFileSync(path.join(ROOT,'scripts/build-cloudflare-pages.mjs'),'utf8');
+  assert.match(build,/config','collection-lock\.json/);
+  assert.match(build,/status:'PENDING'/);
+  assert.match(build,/active-source-certification\.json/);
+  assert.match(build,/c\.name===lock\.name/);
+});
+
+
+test('la chaîne de production valide Cloudflare Pages et non un site GitHub Pages parallèle',()=>{
+  const wf=fs.readFileSync(path.join(ROOT,'.github/workflows/update-and-deploy.yml'),'utf8');
+  assert.match(wf,/RADAR_PUBLIC_URL: https:\/\/qualifund\.pages\.dev/);
+  assert.match(wf,/build-info\.json/);
+  assert.match(wf,/EXPECTED_SHA/);
+  assert.doesNotMatch(wf,/actions\/deploy-pages/);
+  assert.doesNotMatch(wf,/actions\/upload-pages-artifact/);
+  assert.doesNotMatch(wf,/environment:\s*\n\s*name: github-pages/);
+});
+
+test('le build Cloudflare publie un marqueur de SHA vérifiable',()=>{
+  const build=fs.readFileSync(path.join(ROOT,'scripts/build-cloudflare-pages.mjs'),'utf8');
+  assert.match(build,/CF_PAGES_COMMIT_SHA/);
+  assert.match(build,/build-info\.json/);
+  assert.match(build,/deployment:'cloudflare-pages'/);
+});
+
+
+test('le client ne conserve plus l’ancien cache IndexedDB ni la pseudo-collecte locale',()=>{
+  const app=fs.readFileSync(path.join(ROOT,'site/app.js'),'utf8');
+  assert.doesNotMatch(app,/funding-direct-sources-v1|LIVE_STORE|LIVE_REFRESH_KEY|idbOpen|liveGet\(|liveSet\(|loadClientLibrary|maybeAutoClientRefresh|scheduleClientDailyRefresh/);
+  assert.doesNotMatch(app,/function sourceAliasId/);
+});
+
+test('le workflow Cloudflare ne conserve pas la permission GitHub Pages obsolète',()=>{
+  const wf=fs.readFileSync(path.join(ROOT,'.github/workflows/update-and-deploy.yml'),'utf8');
+  assert.doesNotMatch(wf,/^\s+pages:\s+read\s*$/m);
+});
+
+
+test('un certificat fingerprinté est rejeté si la configuration de sa source change',async()=>{
+  const dir=await fsp.mkdtemp(path.join(os.tmpdir(),'qf-fingerprint-'));
+  try{
+    const cfgA={version:'x',sources:[{id:'s',official:true,strategy:'official-page',url:'https://example.fr/a'}]};
+    const fp=sourceConfigFingerprint(cfgA,['s']);
+    await fsp.writeFile(path.join(dir,'s-certification.json'),JSON.stringify({status:'PASS',generatedAt:'2026-10-03T00:00:00Z',lock:{name:'S'},configuredSources:['s'],sourceConfigFingerprint:fp}));
+    const ok=await buildCertificationLedger(dir,cfgA);
+    assert.deepEqual(ok.unlockedSourceIds,['s']);
+    assert.equal(ok.certifications[0].fingerprintStatus,'MATCH');
+    const cfgB={...cfgA,sources:[{...cfgA.sources[0],url:'https://example.fr/b'}]};
+    const changed=await buildCertificationLedger(dir,cfgB);
+    assert.deepEqual(changed.unlockedSourceIds,[]);
+    assert.equal(changed.rejectedCertifications[0].reason,'SOURCE_CONFIG_CHANGED');
+  }finally{await fsp.rm(dir,{recursive:true,force:true})}
+});
+
+
+test('la purge précède toujours la lecture du snapshot de collecte, même sous verrou',()=>{
+  const update=fs.readFileSync(path.join(ROOT,'scripts/update-library.mjs'),'utf8');
+  const purge=update.indexOf('await purgeIndirectSources()');
+  const previous=update.indexOf("const previous=await readJson(path.join(DATA,'library.json')");
+  assert.ok(purge>=0&&previous>purge);
+  assert.doesNotMatch(update,/if\(!collectionLock\.locked\)await purgeIndirectSources/);
+  const wf=fs.readFileSync(path.join(ROOT,'.github/workflows/update-and-deploy.yml'),'utf8');
+  assert.match(wf,/Purger et persister le stock hors sources certifiées \/ cycle courant/);
+  assert.doesNotMatch(wf,/Purger et persister[^\n]*\n\s*if:\s*\$\{\{ steps\.lock\.outputs\.locked != 'true' \}\}/);
+});
+
+
+test('l’interface échoue fermée si le ledger de certification est indisponible',()=>{
+  const app=fs.readFileSync(path.join(ROOT,'site/app.js'),'utf8');
+  assert.match(app,/const PUBLIC_UNLOCKED_SOURCE_IDS=new Set\(\)/);
+  assert.match(app,/const PUBLIC_UNLOCKED_GUICHETS=\[\]/);
+  assert.match(app,/const CERTIFIED_SOURCE_NAMES=new Map\(\)/);
+  assert.doesNotMatch(app,/FALLBACK_UNLOCKED_SOURCE_IDS/);
 });

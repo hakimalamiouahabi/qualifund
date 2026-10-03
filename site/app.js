@@ -20,13 +20,9 @@ const MATURITY=['À préciser','Faisabilité','PoC','Prototype','Démonstrateur 
 const DEFAULT_PROJECT={company:'',siren:'',category:'À préciser',startup:false,region:'À préciser',projectSite:'',sector:'',naf:'',employees:'',turnover:'',balanceSheet:'',group:'À vérifier',creationDate:'',legalForm:'',name:'',budget:'',types:[],summary:'',expenses:'',startDate:'',endDate:'',maturity:'À préciser',partners:'',impacts:'',jobs:'',environment:'',digital:'',financing:'',otherAids:''};
 const STORAGE='leyton-as-project-v12.6';
 const LEGACY_STORAGES=['funding-radar-project-v12.5','qualifund-project-v12.4','leyton-radar-project-v12.3','leyton-radar-project-v12.2','leyton-radar-project-v12.1','leyton-radar-project-v12'];
-const LIVE_DB='funding-direct-sources-v1',LIVE_STORE='kv',LIVE_LIBRARY_KEY='library',LIVE_REFRESH_KEY='last-refresh';
-const FALLBACK_UNLOCKED_SOURCE_IDS=['bpifrance_aap','bpifrance_aides','bpifrance_rebond_industriel','ademe'];
-const PUBLIC_UNLOCKED_SOURCE_IDS=new Set(FALLBACK_UNLOCKED_SOURCE_IDS);
-const PUBLIC_UNLOCKED_GUICHETS=['Bpifrance','ADEME'];
-const CERTIFIED_SOURCE_NAMES=new Map([
-  ['bpifrance_aap','Bpifrance'],['bpifrance_aides','Bpifrance'],['bpifrance_rebond_industriel','Bpifrance'],['ademe','ADEME']
-]);
+const PUBLIC_UNLOCKED_SOURCE_IDS=new Set();
+const PUBLIC_UNLOCKED_GUICHETS=[];
+const CERTIFIED_SOURCE_NAMES=new Map();
 const TARGET_PUBLIC_INSTRUMENTS=new Set(['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO','APPEL_A_PROJET']);
 function applyCertificationLedger(ledger){
   if(!ledger||!Array.isArray(ledger.unlockedSourceIds))return;
@@ -35,7 +31,6 @@ function applyCertificationLedger(ledger){
   CERTIFIED_SOURCE_NAMES.clear();
   for(const cert of arr(ledger.certifications))for(const id of arr(cert.sourceIds))CERTIFIED_SOURCE_NAMES.set(id,cert.name||id);
 }
-function sourceAliasId(x){return typeof x==='string'?x:(x?.id||x?.sourceId||null)}
 function publicAidUnlocked(a){return Boolean(a?.sourceId&&PUBLIC_UNLOCKED_SOURCE_IDS.has(a.sourceId))}
 function targetFundingAid(a){return String(a?.kind||'').toUpperCase().includes('AAP')||String(a?.kind||'').toUpperCase().includes('AMI')||arr(a?.aidTypes).some(x=>TARGET_PUBLIC_INSTRUMENTS.has(x))}
 function loadProjectState(){
@@ -53,6 +48,17 @@ function loadProjectState(){
   return{...DEFAULT_PROJECT};
 }
 const state={route:'home',studyStep:1,lib:[],meta:{},coverage:[],changes:[],sources:[],readiness:null,certification:null,bpifranceCertification:null,certificationLedger:null,dailyReport:null,project:loadProjectState(),lastResults:[]};
+function currentLockCertification(){
+  const current=state.meta?.collectionLock||{};
+  const cert=state.certification;
+  if(!cert)return null;
+  const certLock=cert.lock||{};
+  const currentIds=uniq(arr(current.allowedSourceIds)).sort();
+  const certIds=uniq(arr(cert.configuredSources?.length?cert.configuredSources:certLock.allowedSourceIds)).sort();
+  const sameName=Boolean(current.name&&certLock.name===current.name);
+  const sameIds=currentIds.length===certIds.length&&currentIds.every((x,i)=>x===certIds[i]);
+  return sameName&&sameIds?cert:null;
+}
 const today=()=>new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Paris',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
 function isoDayNumber(v){
   if(!/^\d{4}-\d{2}-\d{2}$/.test(String(v||'')))return null;
@@ -85,9 +91,6 @@ const api=async p=>{
   try{return await fetchJsonStrict(p)}
   catch(e){const b=bootstrap();if(b){if(p.includes('coverage.json'))return b.coverage;if(p.includes('changes.json'))return b.changes;if(p.includes('sources.json'))return b.sources;if(p.includes('production-readiness.json')&&window.__LEYTON_RADAR_READINESS__)return window.__LEYTON_RADAR_READINESS__}throw e}
 };
-const idbOpen=()=>new Promise((resolve,reject)=>{try{const q=indexedDB.open(LIVE_DB,1);q.onupgradeneeded=()=>{const db=q.result;if(!db.objectStoreNames.contains(LIVE_STORE))db.createObjectStore(LIVE_STORE)};q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error)}catch(e){reject(e)}});
-async function liveGet(key){try{const db=await idbOpen();return await new Promise((resolve,reject)=>{const tx=db.transaction(LIVE_STORE,'readonly'),q=tx.objectStore(LIVE_STORE).get(key);q.onsuccess=()=>resolve(q.result??null);q.onerror=()=>reject(q.error)})}catch{return null}}
-async function liveSet(key,value){const db=await idbOpen();return new Promise((resolve,reject)=>{const tx=db.transaction(LIVE_STORE,'readwrite');tx.objectStore(LIVE_STORE).put(value,key);tx.oncomplete=()=>resolve(true);tx.onerror=()=>reject(tx.error)})}
 function clientDirectUrl(raw=''){
   if(!/^https?:\/\//i.test(String(raw||'')))return null;
   try{
@@ -97,11 +100,7 @@ function clientDirectUrl(raw=''){
     return u.href;
   }catch{return null}
 }
-async function loadClientLibrary(){return false}
-async function clientLiveRefresh(){await loadAll();toast('Les sources officielles sont collectées côté serveur. La bibliothèque publiée a été rechargée.')}
 const hostedProduction=()=>/^https?:$/.test(location.protocol);
-async function maybeAutoClientRefresh(){if(hostedProduction()||CONFIG.refreshEndpoint||!navigator.onLine)return;const last=Number(await liveGet(LIVE_REFRESH_KEY)||0);if(Date.now()-last<20*3600*1000)return;clientLiveRefresh({full:true,silent:true}).catch(()=>{})}
-function scheduleClientDailyRefresh(){if(hostedProduction()||CONFIG.refreshEndpoint)return;setInterval(async()=>{if(!navigator.onLine)return;const parts=Object.fromEntries(new Intl.DateTimeFormat('fr-FR',{timeZone:'Europe/Paris',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()).filter(x=>x.type!=='literal').map(x=>[x.type,x.value]));if(parts.hour!=='02'||Number(parts.minute)>4)return;const last=Number(await liveGet(LIVE_REFRESH_KEY)||0);if(Date.now()-last<6*3600*1000)return;clientLiveRefresh({full:true,silent:true}).catch(()=>{})},60000)}
 
 function toast(msg){const t=$('#toast');t.innerHTML=msg;t.classList.remove('hidden');clearTimeout(window.__toastTimer);window.__toastTimer=setTimeout(()=>t.classList.add('hidden'),4200)}
 function permanentVerified(a){return Boolean(a.permanent&&arr(a.verification?.fieldEvidence).some(e=>e.field==='calendar'&&['A','B'].includes(e.sourceTier)))}
@@ -203,7 +202,7 @@ async function loadAll(){
   const visibleIds=new Set(state.lib.map(a=>a.id));
   state.changes=arr(state.changes).filter(x=>visibleIds.has(x?.id));
   try{state.readiness=await api('./data/production-readiness.json')}catch{}
-  await loadClientLibrary();render();
+  render();
   const deep=new URLSearchParams(location.search).get('aid');
   if(deep&&state.lib.some(a=>a.id===deep))openAid(deep)
 }
@@ -233,7 +232,8 @@ function home(){
   const importedToday=arr(state.changes).filter(x=>x.type==='CREATION'&&String(x.at||'').slice(0,10)===todayKey).length;
   const lockName=state.meta?.collectionLock?.name||state.certification?.lock?.name||'—';
   const bpiStatus=state.bpifranceCertification?.status||'—';
-  const activeCert=state.certification?.status||'—';
+  const currentCert=currentLockCertification();
+  const activeCert=currentCert?.status||'PENDING';
 
   const instCounts={};
   for(const a of active)for(const t of arr(a.aidTypes))instCounts[t]=(instCounts[t]||0)+1;
@@ -320,7 +320,7 @@ function reporting(){
 }
 
 function certification(){
-  const c=state.certification,lock=c?.lock||state.meta?.collectionLock||{},srcId=lock?.allowedSourceIds?.[0],row=c?.bySource?.[srcId]||{};
+  const c=currentLockCertification(),lock=state.meta?.collectionLock||c?.lock||{},srcId=lock?.allowedSourceIds?.[0],row=c?.bySource?.[srcId]||{};
   const discovered=Number(row.discovered||0),imported=Number(row.imported||0),retained=Number(row.retained||0),errors=Number(row.errors||0),excluded=Number(row.excluded||0);
   const officialInventory=Number(row.enterpriseCatalogue||row.catalogueSection||row.listing||row.catalogue||row.rssActive||row.rss||discovered||0);
   const max=Math.max(1,discovered,imported,retained),status=c?.status||'NON GÉNÉRÉ';
@@ -804,8 +804,8 @@ function sources(){
 }
 function production(){const r=state.readiness;const gates=r?.gates||[];$('#app').innerHTML=`<div class="page-head"><div><div class="eyebrow">Production Readiness</div><h1>Validation interne</h1><p class="sub">Les 10 gates de passage en production. Un point n'est considéré validé qu'après preuve d'exécution réelle.</p></div><span class="badge ${r?.goProduction?'ok':'warn'}">${r?.goProduction?'GO PRODUCTION':'EN COURS'}</span></div>${gates.length?`<div class="grid g2">${gates.map(g=>`<div class="card"><div class="row between"><h3>Gate ${g.id}</h3><span class="badge ${/PASS/.test(g.status)?'ok':g.status==='FAIL'||g.status==='BLOCKED'?'block':'warn'}">${esc(g.status)}</span></div><b>${esc(g.name)}</b><p class="mini">${esc(g.detail)}</p></div>`).join('')}</div>`:'<div class="callout warn">Le rapport de readiness sera généré par le pipeline de production.</div>'}`}
 
-async function requestCollection(){if(CONFIG.refreshEndpoint){const token=window.prompt('Code administrateur (non enregistré)');if(!token)return;try{toast('Demande de collecte envoyée…');const r=await fetch(CONFIG.refreshEndpoint,{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+token},body:JSON.stringify({action:'full-refresh'})});const j=await r.json().catch(()=>({}));if(!r.ok)throw new Error(j.error||('HTTP '+r.status));toast('Collecte demandée. Le rapport sera mis à jour après le cycle.')}catch(e){toast(`Impossible de déclencher la collecte : ${esc(e.message)}`)}}else if(hostedProduction()){await loadAll();toast('Bibliothèque officielle publiée rechargée. La collecte complète reste exécutée côté serveur.')}else{clientLiveRefresh({full:true,silent:false}).catch(()=>{})}}
+async function requestCollection(){if(CONFIG.refreshEndpoint){const token=window.prompt('Code administrateur (non enregistré)');if(!token)return;try{toast('Demande de collecte envoyée…');const r=await fetch(CONFIG.refreshEndpoint,{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+token},body:JSON.stringify({action:'full-refresh'})});const j=await r.json().catch(()=>({}));if(!r.ok)throw new Error(j.error||('HTTP '+r.status));toast('Collecte demandée. Le rapport sera mis à jour après le cycle.')}catch(e){toast(`Impossible de déclencher la collecte : ${esc(e.message)}`)}}else{await loadAll();toast(hostedProduction()?'Bibliothèque officielle publiée rechargée. La collecte complète reste exécutée côté serveur.':'Bibliothèque publiée rechargée.')}}
 document.addEventListener('click',e=>{const t=e.target.closest('.open-result,.open-aid');if(t){e.preventDefault();openAid(t.dataset.id)}});
-loadAll().then(()=>{scheduleClientDailyRefresh();return maybeAutoClientRefresh()}).catch(e=>{$('#app').innerHTML=`<div class="callout warn"><b>Bibliothèque publiée indisponible.</b><br>${esc(e.message)}<br>La dernière version embarquée reste accessible si elle est présente.</div>`});
+loadAll().catch(e=>{$('#app').innerHTML=`<div class="callout warn"><b>Bibliothèque publiée indisponible.</b><br>${esc(e.message)}<br>La dernière version embarquée reste accessible si elle est présente.</div>`});
 
 

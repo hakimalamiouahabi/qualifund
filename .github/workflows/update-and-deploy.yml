@@ -25,7 +25,7 @@ on:
       - '.github/workflows/**'
 
 concurrency:
-  group: qualifund-production
+  group: funding-radar-production
   cancel-in-progress: true
 
 jobs:
@@ -34,7 +34,6 @@ jobs:
     timeout-minutes: 330
     permissions:
       contents: write
-      pages: read
     outputs:
       data_sha: ${{ steps.commit_data.outputs.sha }}
       collection_locked: ${{ steps.lock.outputs.locked }}
@@ -59,20 +58,19 @@ jobs:
         with:
           node-version: '22'
           package-manager-cache: false
-      - name: Purger et persister les anciennes sources avant toute collecte
-        if: ${{ steps.lock.outputs.locked != 'true' }}
+      - name: Purger et persister le stock hors sources certifiées / cycle courant
         shell: bash
         run: |
           set -euo pipefail
           node scripts/purge-indirect-sources.mjs
-          git config user.name "qualifund-bot"
-          git config user.email "qualifund-bot@users.noreply.github.com"
+          git config user.name "funding-radar-bot"
+          git config user.email "funding-radar-bot@users.noreply.github.com"
           git add -A site/data site/bibliotheque
           if git ls-files --error-unmatch LEYTON-RADAR-v12.2.0-AUTONOME-LIVE.html >/dev/null 2>&1; then
             git add -u -- LEYTON-RADAR-v12.2.0-AUTONOME-LIVE.html
           fi
           if ! git diff --cached --quiet; then
-            git commit -m "chore(data): purge definitive des sources tierces [skip ci]"
+            git commit -m "chore(data): purge du stock hors périmètre certifié [skip ci]"
             git push origin HEAD:main
           fi
       - name: Installer les dépendances de façon reproductible
@@ -91,8 +89,8 @@ jobs:
         run: |
           set -euo pipefail
           if ! git ls-files --error-unmatch package-lock.json >/dev/null 2>&1; then
-            git config user.name "qualifund-bot"
-            git config user.email "qualifund-bot@users.noreply.github.com"
+            git config user.name "funding-radar-bot"
+            git config user.email "funding-radar-bot@users.noreply.github.com"
             git add package-lock.json
             git commit -m "chore(deps): bootstrap package-lock [skip ci]"
             git pull --rebase origin main
@@ -106,8 +104,8 @@ jobs:
         run: npm run preflight:sources
       - name: Sauvegarder la bibliothèque précédente
         run: |
-          mkdir -p /tmp/qualifund
-          cp site/data/library.json /tmp/qualifund/library-before.json || echo '{"aaps":[]}' > /tmp/qualifund/library-before.json
+          mkdir -p /tmp/funding-radar
+          cp site/data/library.json /tmp/funding-radar/library-before.json || echo '{"aaps":[]}' > /tmp/funding-radar/library-before.json
       - name: Collecte complète quotidienne / manuelle
         env:
           QUALIFUND_FULL_REFRESH: '1'
@@ -116,7 +114,7 @@ jobs:
         if: ${{ steps.lock.outputs.locked == 'true' }}
         run: npm run certify:active
       - name: Rapport quotidien des changements
-        run: node scripts/generate-daily-report.mjs /tmp/qualifund/library-before.json site/data/library.json site/bibliotheque/rapports
+        run: node scripts/generate-daily-report.mjs /tmp/funding-radar/library-before.json site/data/library.json site/bibliotheque/rapports
       - name: Synchroniser les artefacts publics
         run: npm run sync:metadata
       - name: Reconstruire l'index de recherche
@@ -146,8 +144,8 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          git config user.name "qualifund-bot"
-          git config user.email "qualifund-bot@users.noreply.github.com"
+          git config user.name "funding-radar-bot"
+          git config user.email "funding-radar-bot@users.noreply.github.com"
           git add package-lock.json site/data site/bibliotheque site/runtime-config.js site/sw.js PRODUCTION_READINESS.md REMEDIATION_REPORT.md DATA_QUALITY_AUDIT.md || true
           if ! git diff --cached --quiet; then
             git commit -m "chore(data): actualisation FUNDING RADAR [skip ci]"
@@ -157,107 +155,66 @@ jobs:
           echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
       - name: Construire l'artefact public certifié
         run: npm run build:cloudflare
-      - name: Configurer GitHub Pages
-        id: pages
-        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
-      - name: Charger l'artefact Pages certifié
-        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
-        with:
-          path: dist
 
-  deploy:
+  verify-production:
     needs: build
     runs-on: ubuntu-latest
     permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    outputs:
-      page_url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
-
-  verify-production:
-    needs: [build, deploy]
-    runs-on: ubuntu-latest
-    permissions:
       contents: write
-      pages: read
+    env:
+      RADAR_PUBLIC_URL: https://qualifund.pages.dev
     steps:
       - name: Checkout du corpus réellement publié
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
           ref: ${{ needs.build.outputs.data_sha }}
-      - name: Lire le verrou de collecte publié
-        id: lock
-        shell: bash
-        run: |
-          node - <<'NODE' >> "$GITHUB_OUTPUT"
-          const fs=require('fs');
-          const j=JSON.parse(fs.readFileSync('config/collection-lock.json','utf8'));
-          console.log('locked='+(j.locked?'true':'false'));
-          console.log('name='+(j.name||'ALL'));
-          NODE
       - name: Node 22
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: '22'
           package-manager-cache: false
-      - name: Valider SIREN + site public après déploiement
+      - name: Installer les dépendances de validation
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Attendre le déploiement Cloudflare du SHA publié
+        shell: bash
         env:
-          RADAR_PUBLIC_URL: ${{ needs.deploy.outputs.page_url }}
+          EXPECTED_SHA: ${{ needs.build.outputs.data_sha }}
+        run: |
+          set -euo pipefail
+          echo "Attente Cloudflare Pages : $RADAR_PUBLIC_URL — SHA $EXPECTED_SHA"
+          for i in $(seq 1 60); do
+            payload="$(curl -fsS --max-time 15 "$RADAR_PUBLIC_URL/data/build-info.json?ts=$(date +%s)" || true)"
+            live_sha="$(printf '%s' "$payload" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{try{process.stdout.write(JSON.parse(s).commitSha||'')}catch{}})")"
+            if [ "$live_sha" = "$EXPECTED_SHA" ]; then
+              echo "Cloudflare Pages synchronisé sur $live_sha"
+              exit 0
+            fi
+            echo "Tentative $i/60 — SHA public: ${live_sha:-indisponible}"
+            sleep 10
+          done
+          echo "Cloudflare Pages n'a pas publié le SHA attendu dans le délai imparti." >&2
+          exit 1
+      - name: Valider SIREN + production Cloudflare
         run: node scripts/live-smoke.mjs --strict-company --strict-public
       - name: Recette UAT finale
         run: npm run uat
-      - name: Calculer la readiness finale sur le SHA publié
-        env:
-          RADAR_PUBLIC_URL: ${{ needs.deploy.outputs.page_url }}
+      - name: Calculer la readiness finale sur Cloudflare
         run: npm run production:gates >> "$GITHUB_STEP_SUMMARY"
       - name: Persister les preuves de production
         id: commit_proofs
         shell: bash
         run: |
           set -euo pipefail
-          git config user.name "qualifund-bot"
-          git config user.email "qualifund-bot@users.noreply.github.com"
+          git config user.name "funding-radar-bot"
+          git config user.email "funding-radar-bot@users.noreply.github.com"
           git add site/data/live-smoke.json site/data/uat-results.json site/data/production-readiness.json PRODUCTION_READINESS.md
           if ! git diff --cached --quiet; then
-            git commit -m "chore(validation): preuves production [skip ci]"
+            git commit -m "chore(validation): preuves production Cloudflare [skip ci]"
             git pull --rebase origin main
             git push origin HEAD:main
           fi
           echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
       - name: Certification production stricte
-        if: ${{ steps.lock.outputs.locked != 'true' }}
+        if: ${{ needs.build.outputs.collection_locked != 'true' }}
         run: npm run certify:production
-      - name: Reconstruire l'artefact public avec les preuves finales
-        run: npm run build:cloudflare
-      - name: Reconfigurer Pages pour l'artefact vérifié
-        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
-      - name: Charger le site certifié avec readiness finale
-        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
-        with:
-          name: github-pages-verified
-          path: dist
-
-  redeploy-verified:
-    needs: [build, verify-production]
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.final_deployment.outputs.page_url }}
-    steps:
-      - name: Publier la version avec preuves finales
-        id: final_deployment
-        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
-        with:
-          artifact_name: github-pages-verified
-

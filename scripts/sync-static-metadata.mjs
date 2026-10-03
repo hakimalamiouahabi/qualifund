@@ -91,11 +91,7 @@ meta.count=all.length;
 library.meta=meta;
 await fs.writeFile(libraryPath,JSON.stringify(library,null,2)+'\n','utf8');
 
-const publicLibrary={meta:{...meta,count:published.length,libraryCount:published.length,activeCount:publishedActive.length,archivedCount:published.length-publishedActive.length},aaps:published};
-const publicJson=JSON.stringify(publicLibrary,null,2)+'\n';
 await fs.mkdir(PUB,{recursive:true});
-await fs.writeFile(path.join(PUB,'radar-library.json'),publicJson,'utf8');
-await fs.writeFile(path.join(PUB,'qualifund-library.json'),publicJson,'utf8');
 
 const arr=v=>Array.isArray(v)?v:[];
 const csvEsc=v=>`"${String(v??'').replaceAll('"','""')}"`;
@@ -107,7 +103,6 @@ for(const a of published)csvRows.push([
   arr(a.cdcLinks).map(x=>x.url).join(' | '),a.verification?.status||'',a.verification?.completeness??'',a.verification?.confidence??''
 ].map(csvEsc).join(','));
 await fs.writeFile(path.join(PUB,'radar-library.csv'),csvRows.join('\n'),'utf8');
-await fs.writeFile(path.join(PUB,'qualifund-library.csv'),csvRows.join('\n'),'utf8');
 
 await fs.writeFile(path.join(DATA,'manifest.json'),JSON.stringify(meta,null,2)+'\n','utf8');
 const status={
