@@ -53,7 +53,7 @@ export async function purgeIndirectSources(root=ROOT){
   const meta={
     version:cfg.version,
     generatedAt:lib.meta?.generatedAt||null,
-    purgedAt:new Date().toISOString(),
+    purgedAt:changed?new Date().toISOString():(lib.meta?.purgedAt||null),
     repositoryUrl:lib.meta?.repositoryUrl||null,
     sourcePolicy:'DIRECT_OFFICIAL_ONLY',
     libraryMode:'DIRECT_OFFICIAL_CATALOG',
