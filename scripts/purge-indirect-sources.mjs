@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { assertDirectSources, filterDirectLibrary } from './lib/direct-sources.mjs';
+import { buildCertificationLedger } from './lib/publication.mjs';
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const read=async(p,fallback)=>{try{return JSON.parse(await fs.readFile(p,'utf8'))}catch(e){if(e.code==='ENOENT')return fallback;throw e}};
@@ -14,11 +15,18 @@ export async function purgeIndirectSources(root=ROOT){
   assertDirectSources(cfg);
 
   const lib=await read(path.join(data,'library.json'),{meta:{},aaps:[]});
-  const aaps=filterDirectLibrary(lib.aaps,cfg).map(a=>
-    lib.meta?.sourcePolicy==='DIRECT_OFFICIAL_ONLY'
+  const ledger=await buildCertificationLedger(data,cfg);
+  const retainedSourceIds=new Set([
+    ...(ledger.unlockedSourceIds||[]),
+    ...(lock.locked&&Array.isArray(lock.allowedSourceIds)?lock.allowedSourceIds:[])
+  ]);
+  const direct=filterDirectLibrary(lib.aaps,cfg);
+  const aaps=direct
+    .filter(a=>retainedSourceIds.has(a?.sourceId))
+    .map(a=>lib.meta?.sourcePolicy==='DIRECT_OFFICIAL_ONLY'
       ?a
       :{...a,verification:{...(a.verification||{}),status:'A_REVERIFIER'}}
-  );
+    );
   const ids=new Set(aaps.map(a=>a.id));
   const active=aaps.filter(a=>a.lifecycleStatus!=='ARCHIVE');
   const migrated=lib.meta?.sourcePolicy==='DIRECT_OFFICIAL_ONLY';
@@ -58,9 +66,8 @@ export async function purgeIndirectSources(root=ROOT){
 
   const changes=(await read(path.join(data,'changes.json'),[])).filter(x=>ids.has(x.id));
   await write(path.join(data,'changes.json'),changes);
-  const allowed=new Set(cfg.sources.map(s=>s.id));
   const coverage=(await read(path.join(data,'coverage.json'),[]))
-    .filter(x=>allowed.has(x.id))
+    .filter(x=>retainedSourceIds.has(x.id))
     .map(x=>({...x,message:String(x.message||'').replace(/Aides Entreprises/gi,'ancienne source retirée')}));
   await write(path.join(data,'coverage.json'),coverage);
   await write(path.join(data,'curated-aids.json'),{aaps:[]});
@@ -87,6 +94,8 @@ export async function purgeIndirectSources(root=ROOT){
     retained:aaps.length,
     removed:(lib.aaps?.length||0)-aaps.length,
     coverageRows:coverage.length,
+    certifiedSources:(ledger.unlockedSourceIds||[]).length,
+    retainedSources:retainedSourceIds.size,
     contentSanitized:changed,
     lock:collectionLock.name
   }));
