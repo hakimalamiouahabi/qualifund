@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T12:35:43.964Z",
+  "generatedAt": "2026-10-03T14:03:03.341Z",
   "status": "PASS",
   "lock": {
     "version": 12,
@@ -87,9 +87,9 @@
       },
       "requirePublicationReady": true
     },
-    "notes": "Recertification Bpifrance v12.9.3 publication-ready. Baseline officielle observée le 03/10/2026 : 27 AAP/AMI au listing maître, 17 fiches conservées après preuves métier et exclusions comptabilisées. Le listing reste protégé par minExpected=20 ; le corpus publiable par minImported/minRetained=17. ADEME est le cycle suivant ; AURA reste gelée jusqu’aux PASS Bpifrance puis ADEME.",
+    "notes": "Recertification technique Bpifrance après évolution du noyau de certification. Périmètre et seuils métier inchangés : 17 AAP/AMI publication-ready, au moins 15 aides catalogue, 1 Rebond Industriel. Maintenance ponctuelle ; ADEME reste le cycle actif sur main et AURA reste gelée.",
     "foundationBaseline": {
-      "version": "Foundation v3.2 / 12.9.3 Bpifrance publication-ready",
+      "version": "Foundation v3.4 / Bpifrance re-certification current basis",
       "status": "HARDENING",
       "validatedAt": null,
       "p0": null
@@ -101,8 +101,8 @@
     "bpifrance_rebond_industriel"
   ],
   "sourceConfigFingerprint": "ab4073aae0857eb20f56359e7a92cb124144594cf28cfbd14a77132e3947a6ae",
-  "certificationBasisFingerprint": "6d4831132105d95d3fe6bbd324d6206426e02c747e5fae478d3f9a0754c0e2a9",
-  "certifiedDataFingerprint": "5bd3e28a7e3f5443050e0a5ec16af2f47d5fb41fe28ab49dd44a759277a41ed9",
+  "certificationBasisFingerprint": "ebce4df7b46f582b17f7223013f79eed0eac15e4ad731808781555b33739724e",
+  "certifiedDataFingerprint": "c5dcd6cc14ea0e82c3660e35a3645132c53536f15d5f660ec44cf17656dd9b62",
   "libraryRecords": 36,
   "frozenUnselectedSha": "98b67062ebc7fb87821c37fcbfd1a597b3ea1f46ba828b295288bd7d22ad652e",
   "controlGaps": {
