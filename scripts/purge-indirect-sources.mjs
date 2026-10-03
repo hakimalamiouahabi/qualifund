@@ -28,7 +28,7 @@ export async function purgeIndirectSources(root=ROOT){
       :{...a,verification:{...(a.verification||{}),status:'A_REVERIFIER'}}
     );
   const ids=new Set(aaps.map(a=>a.id));
-  const active=aaps.filter(a=>a.lifecycleStatus!=='ARCHIVE');
+  const active=aaps.filter(a=>String(a.lifecycleStatus||'').toUpperCase()==='ACTIVE');
   const migrated=lib.meta?.sourcePolicy==='DIRECT_OFFICIAL_ONLY';
   const beforeRecords=lib.aaps||[];
   const changed=!migrated||aaps.length!==beforeRecords.length||JSON.stringify(aaps)!==JSON.stringify(beforeRecords);
