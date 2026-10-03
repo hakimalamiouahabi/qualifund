@@ -20,7 +20,6 @@ const MATURITY=['À préciser','Faisabilité','PoC','Prototype','Démonstrateur 
 const DEFAULT_PROJECT={company:'',siren:'',category:'À préciser',startup:false,region:'À préciser',projectSite:'',sector:'',naf:'',employees:'',turnover:'',balanceSheet:'',group:'À vérifier',creationDate:'',legalForm:'',name:'',budget:'',types:[],summary:'',expenses:'',startDate:'',endDate:'',maturity:'À préciser',partners:'',impacts:'',jobs:'',environment:'',digital:'',financing:'',otherAids:''};
 const STORAGE='leyton-as-project-v12.6';
 const LEGACY_STORAGES=['funding-radar-project-v12.5','qualifund-project-v12.4','leyton-radar-project-v12.3','leyton-radar-project-v12.2','leyton-radar-project-v12.1','leyton-radar-project-v12'];
-const LIVE_DB='funding-direct-sources-v1',LIVE_STORE='kv',LIVE_LIBRARY_KEY='library',LIVE_REFRESH_KEY='last-refresh';
 const FALLBACK_UNLOCKED_SOURCE_IDS=['bpifrance_aap','bpifrance_aides','bpifrance_rebond_industriel','ademe'];
 const PUBLIC_UNLOCKED_SOURCE_IDS=new Set(FALLBACK_UNLOCKED_SOURCE_IDS);
 const PUBLIC_UNLOCKED_GUICHETS=['Bpifrance','ADEME'];
@@ -35,7 +34,6 @@ function applyCertificationLedger(ledger){
   CERTIFIED_SOURCE_NAMES.clear();
   for(const cert of arr(ledger.certifications))for(const id of arr(cert.sourceIds))CERTIFIED_SOURCE_NAMES.set(id,cert.name||id);
 }
-function sourceAliasId(x){return typeof x==='string'?x:(x?.id||x?.sourceId||null)}
 function publicAidUnlocked(a){return Boolean(a?.sourceId&&PUBLIC_UNLOCKED_SOURCE_IDS.has(a.sourceId))}
 function targetFundingAid(a){return String(a?.kind||'').toUpperCase().includes('AAP')||String(a?.kind||'').toUpperCase().includes('AMI')||arr(a?.aidTypes).some(x=>TARGET_PUBLIC_INSTRUMENTS.has(x))}
 function loadProjectState(){
@@ -96,9 +94,6 @@ const api=async p=>{
   try{return await fetchJsonStrict(p)}
   catch(e){const b=bootstrap();if(b){if(p.includes('coverage.json'))return b.coverage;if(p.includes('changes.json'))return b.changes;if(p.includes('sources.json'))return b.sources;if(p.includes('production-readiness.json')&&window.__LEYTON_RADAR_READINESS__)return window.__LEYTON_RADAR_READINESS__}throw e}
 };
-const idbOpen=()=>new Promise((resolve,reject)=>{try{const q=indexedDB.open(LIVE_DB,1);q.onupgradeneeded=()=>{const db=q.result;if(!db.objectStoreNames.contains(LIVE_STORE))db.createObjectStore(LIVE_STORE)};q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error)}catch(e){reject(e)}});
-async function liveGet(key){try{const db=await idbOpen();return await new Promise((resolve,reject)=>{const tx=db.transaction(LIVE_STORE,'readonly'),q=tx.objectStore(LIVE_STORE).get(key);q.onsuccess=()=>resolve(q.result??null);q.onerror=()=>reject(q.error)})}catch{return null}}
-async function liveSet(key,value){const db=await idbOpen();return new Promise((resolve,reject)=>{const tx=db.transaction(LIVE_STORE,'readwrite');tx.objectStore(LIVE_STORE).put(value,key);tx.oncomplete=()=>resolve(true);tx.onerror=()=>reject(tx.error)})}
 function clientDirectUrl(raw=''){
   if(!/^https?:\/\//i.test(String(raw||'')))return null;
   try{
@@ -108,11 +103,7 @@ function clientDirectUrl(raw=''){
     return u.href;
   }catch{return null}
 }
-async function loadClientLibrary(){return false}
-async function clientLiveRefresh(){await loadAll();toast('Les sources officielles sont collectées côté serveur. La bibliothèque publiée a été rechargée.')}
 const hostedProduction=()=>/^https?:$/.test(location.protocol);
-async function maybeAutoClientRefresh(){if(hostedProduction()||CONFIG.refreshEndpoint||!navigator.onLine)return;const last=Number(await liveGet(LIVE_REFRESH_KEY)||0);if(Date.now()-last<20*3600*1000)return;clientLiveRefresh({full:true,silent:true}).catch(()=>{})}
-function scheduleClientDailyRefresh(){if(hostedProduction()||CONFIG.refreshEndpoint)return;setInterval(async()=>{if(!navigator.onLine)return;const parts=Object.fromEntries(new Intl.DateTimeFormat('fr-FR',{timeZone:'Europe/Paris',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()).filter(x=>x.type!=='literal').map(x=>[x.type,x.value]));if(parts.hour!=='02'||Number(parts.minute)>4)return;const last=Number(await liveGet(LIVE_REFRESH_KEY)||0);if(Date.now()-last<6*3600*1000)return;clientLiveRefresh({full:true,silent:true}).catch(()=>{})},60000)}
 
 function toast(msg){const t=$('#toast');t.innerHTML=msg;t.classList.remove('hidden');clearTimeout(window.__toastTimer);window.__toastTimer=setTimeout(()=>t.classList.add('hidden'),4200)}
 function permanentVerified(a){return Boolean(a.permanent&&arr(a.verification?.fieldEvidence).some(e=>e.field==='calendar'&&['A','B'].includes(e.sourceTier)))}
@@ -214,7 +205,7 @@ async function loadAll(){
   const visibleIds=new Set(state.lib.map(a=>a.id));
   state.changes=arr(state.changes).filter(x=>visibleIds.has(x?.id));
   try{state.readiness=await api('./data/production-readiness.json')}catch{}
-  await loadClientLibrary();render();
+  render();
   const deep=new URLSearchParams(location.search).get('aid');
   if(deep&&state.lib.some(a=>a.id===deep))openAid(deep)
 }
@@ -816,8 +807,8 @@ function sources(){
 }
 function production(){const r=state.readiness;const gates=r?.gates||[];$('#app').innerHTML=`<div class="page-head"><div><div class="eyebrow">Production Readiness</div><h1>Validation interne</h1><p class="sub">Les 10 gates de passage en production. Un point n'est considéré validé qu'après preuve d'exécution réelle.</p></div><span class="badge ${r?.goProduction?'ok':'warn'}">${r?.goProduction?'GO PRODUCTION':'EN COURS'}</span></div>${gates.length?`<div class="grid g2">${gates.map(g=>`<div class="card"><div class="row between"><h3>Gate ${g.id}</h3><span class="badge ${/PASS/.test(g.status)?'ok':g.status==='FAIL'||g.status==='BLOCKED'?'block':'warn'}">${esc(g.status)}</span></div><b>${esc(g.name)}</b><p class="mini">${esc(g.detail)}</p></div>`).join('')}</div>`:'<div class="callout warn">Le rapport de readiness sera généré par le pipeline de production.</div>'}`}
 
-async function requestCollection(){if(CONFIG.refreshEndpoint){const token=window.prompt('Code administrateur (non enregistré)');if(!token)return;try{toast('Demande de collecte envoyée…');const r=await fetch(CONFIG.refreshEndpoint,{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+token},body:JSON.stringify({action:'full-refresh'})});const j=await r.json().catch(()=>({}));if(!r.ok)throw new Error(j.error||('HTTP '+r.status));toast('Collecte demandée. Le rapport sera mis à jour après le cycle.')}catch(e){toast(`Impossible de déclencher la collecte : ${esc(e.message)}`)}}else if(hostedProduction()){await loadAll();toast('Bibliothèque officielle publiée rechargée. La collecte complète reste exécutée côté serveur.')}else{clientLiveRefresh({full:true,silent:false}).catch(()=>{})}}
+async function requestCollection(){if(CONFIG.refreshEndpoint){const token=window.prompt('Code administrateur (non enregistré)');if(!token)return;try{toast('Demande de collecte envoyée…');const r=await fetch(CONFIG.refreshEndpoint,{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+token},body:JSON.stringify({action:'full-refresh'})});const j=await r.json().catch(()=>({}));if(!r.ok)throw new Error(j.error||('HTTP '+r.status));toast('Collecte demandée. Le rapport sera mis à jour après le cycle.')}catch(e){toast(`Impossible de déclencher la collecte : ${esc(e.message)}`)}}else{await loadAll();toast(hostedProduction()?'Bibliothèque officielle publiée rechargée. La collecte complète reste exécutée côté serveur.':'Bibliothèque publiée rechargée.')}}
 document.addEventListener('click',e=>{const t=e.target.closest('.open-result,.open-aid');if(t){e.preventDefault();openAid(t.dataset.id)}});
-loadAll().then(()=>{scheduleClientDailyRefresh();return maybeAutoClientRefresh()}).catch(e=>{$('#app').innerHTML=`<div class="callout warn"><b>Bibliothèque publiée indisponible.</b><br>${esc(e.message)}<br>La dernière version embarquée reste accessible si elle est présente.</div>`});
+loadAll().catch(e=>{$('#app').innerHTML=`<div class="callout warn"><b>Bibliothèque publiée indisponible.</b><br>${esc(e.message)}<br>La dernière version embarquée reste accessible si elle est présente.</div>`});
 
 
