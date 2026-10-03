@@ -68,16 +68,22 @@ test('le collecteur AURA matérialise explicitement l’éligibilité entreprise
   assert.match(connector,/field:'enterpriseEligibility'/);
 });
 
-test('AURA reste gelée tant que Bpifrance puis ADEME ne sont pas recertifiés v12.9.3',()=>{
+test('AURA reste gelée pendant la recertification ADEME',()=>{
   const lock=JSON.parse(fs.readFileSync(new URL('../config/collection-lock.json',import.meta.url),'utf8'));
+  const bpi=JSON.parse(fs.readFileSync(new URL('../site/data/bpifrance-certification.json',import.meta.url),'utf8'));
   assert.equal(lock.locked,true);
   assert.equal(lock.mode,'GUICHET');
-  assert.equal(lock.name,'Bpifrance');
-  assert.equal(lock.version,12);
-  assert.deepEqual(lock.allowedSourceIds,['bpifrance_aap','bpifrance_aides','bpifrance_rebond_industriel']);
-  assert.equal(lock.next,'ADEME');
+  assert.equal(lock.name,'ADEME');
+  assert.equal(lock.version,13);
+  assert.deepEqual(lock.allowedSourceIds,['ademe']);
+  assert.equal(lock.next,'AURA');
   assert.equal(lock.allowedSourceIds.includes('aura'),false);
-  assert.match(lock.notes,/AURA reste gelée/i);
+  assert.match(lock.notes,/AURA demeure gelée jusqu.au PASS ADEME/i);
+  assert.equal(bpi.status,'PASS');
+  assert.equal(bpi.lock?.name,'Bpifrance');
+  assert.ok(bpi.sourceConfigFingerprint);
+  assert.ok(bpi.certificationBasisFingerprint);
+  assert.ok(bpi.certifiedDataFingerprint);
 });
 
 test('la source AURA est filtrée Entreprise et les sources fonds européens restent hors verrou',()=>{
