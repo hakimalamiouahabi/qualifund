@@ -116,8 +116,9 @@ test('le connecteur Bpifrance matérialise la preuve entreprise depuis la page d
   assert.match(connector,/a\.enterpriseEligible=true/);
 });
 
-test('le verrou Bpifrance exige désormais un corpus publication-ready et autorise les exclusions du listing AAP',()=>{
-  const lock=JSON.parse(fs.readFileSync(new URL('../config/collection-lock.json',import.meta.url),'utf8'));
+test('le verrou certifié Bpifrance exige un corpus publication-ready et autorise les exclusions du listing AAP',()=>{
+  const report=JSON.parse(fs.readFileSync(new URL('../site/data/bpifrance-certification.json',import.meta.url),'utf8'));
+  const lock=report.lock;
   assert.equal(lock.version,12);
   assert.equal(lock.certification.requirePublicationReady,true);
   assert.equal(lock.certification.requireEnterpriseScope,undefined);
@@ -125,8 +126,9 @@ test('le verrou Bpifrance exige désormais un corpus publication-ready et autori
   assert.equal(lock.certification.sourceRules.bpifrance_aap.minRetained,17);
 });
 
-test('Rebond Industriel est certifié comme page directe sans fausse exigence de catalogue maître',()=>{
-  const lock=JSON.parse(fs.readFileSync(new URL('../config/collection-lock.json',import.meta.url),'utf8'));
+test('Rebond Industriel reste certifié comme page directe sans fausse exigence de catalogue maître',()=>{
+  const report=JSON.parse(fs.readFileSync(new URL('../site/data/bpifrance-certification.json',import.meta.url),'utf8'));
+  const lock=report.lock;
   assert.equal(lock.certification.sourceRules.bpifrance_aap.requireMasterMembership,true);
   assert.equal(lock.certification.sourceRules.bpifrance_aides.requireMasterMembership,true);
   assert.equal(lock.certification.sourceRules.bpifrance_rebond_industriel.requireMasterMembership,undefined);
