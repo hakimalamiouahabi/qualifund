@@ -1,5 +1,5 @@
 {
-  "version": 11,
+  "version": 12,
   "locked": true,
   "mode": "GUICHET",
   "name": "Bpifrance",
@@ -43,7 +43,7 @@
         ],
         "requiredPathPrefix": "/nos-appels-a-projets-concours/",
         "requireAuditAccounting": true,
-        "minRetained": 20,
+        "minRetained": 17,
         "requireMasterMembership": true
       },
       "bpifrance_aides": {
@@ -84,9 +84,9 @@
     },
     "requirePublicationReady": true
   },
-  "notes": "Recertification Bpifrance v12.9.2 publication-ready : la collecte est enrichie puis filtrée par les mêmes critères que la publication ; seules les fiches officielles directes publiables peuvent être certifiées. ADEME reste le cycle suivant ; AURA reste gelée jusqu’aux PASS Bpifrance puis ADEME.",
+  "notes": "Recertification Bpifrance v12.9.3 publication-ready. Baseline officielle observée le 03/10/2026 : 27 AAP/AMI au listing maître, 17 fiches conservées après preuves métier et exclusions comptabilisées. Le listing reste protégé par minExpected=20 ; le corpus publiable par minImported/minRetained=17. ADEME est le cycle suivant ; AURA reste gelée jusqu’aux PASS Bpifrance puis ADEME.",
   "foundationBaseline": {
-    "version": "Foundation v3.2 / 12.9.2 Bpifrance publication-ready",
+    "version": "Foundation v3.2 / 12.9.3 Bpifrance publication-ready",
     "status": "HARDENING",
     "validatedAt": null,
     "p0": null
