@@ -58,8 +58,7 @@ jobs:
         with:
           node-version: '22'
           package-manager-cache: false
-      - name: Purger et persister les anciennes sources avant toute collecte
-        if: ${{ steps.lock.outputs.locked != 'true' }}
+      - name: Purger et persister le stock hors sources certifiées / cycle courant
         shell: bash
         run: |
           set -euo pipefail
@@ -71,7 +70,7 @@ jobs:
             git add -u -- LEYTON-RADAR-v12.2.0-AUTONOME-LIVE.html
           fi
           if ! git diff --cached --quiet; then
-            git commit -m "chore(data): purge definitive des sources tierces [skip ci]"
+            git commit -m "chore(data): purge du stock hors périmètre certifié [skip ci]"
             git push origin HEAD:main
           fi
       - name: Installer les dépendances de façon reproductible
