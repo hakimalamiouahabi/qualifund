@@ -48,8 +48,17 @@ export function hasEnterpriseEvidence(a){
   if(a?.enterpriseEligible===true&&evidence(a,'enterpriseEligibility').length>0)return true;
   if(evidence(a,'enterpriseEligibility').length>0)return true;
   const companyWords=/\b(?:entreprises?|tpe|pme|eti|grandes? entreprises?|start[- ]?ups?|soci[eé]t[eé]s?|artisans?|commer[cç]ants?|exploitations? agricoles?)\b/i;
+  const eligibilityWords=/\b(?:vous [eê]tes|votre profil|[eé]ligib|candidat|porteur|b[eé]n[eé]ficiaire|consortium|peuvent candidater|doivent [eê]tre|projets? port[eé]s?|partenariats?)\b/i;
+  const strongFields=new Set(['beneficiaries','prerequisites','projectsExpected','objective']);
+  const proofs=(Array.isArray(a?.verification?.fieldEvidence)?a.verification.fieldEvidence:[])
+    .filter(e=>strongFields.has(e?.field)&&['A','B'].includes(e?.sourceTier)&&/^https?:\/\//i.test(String(e?.sourceUrl||'')));
+  if(proofs.some(e=>{
+    const txt=String(e.evidenceText||'');
+    if(!companyWords.test(txt))return false;
+    if(['beneficiaries','prerequisites'].includes(e.field))return true;
+    return eligibilityWords.test(txt);
+  }))return true;
   const beneficiaryProof=evidence(a,'beneficiaries');
-  if(beneficiaryProof.some(e=>companyWords.test(String(e.evidenceText||''))))return true;
   if(Array.isArray(a?.companyCategories)&&a.companyCategories.length&&beneficiaryProof.length)return true;
   return false;
 }
