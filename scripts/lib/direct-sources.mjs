@@ -108,6 +108,25 @@ function sanitizeLinkArray(value,{removeGenericSourcePages=false,cfg}={}){
   return out;
 }
 
+function dedupeLinkFamilies(out){
+  const seen=new Set();
+  const take=(key)=>{
+    if(!Array.isArray(out[key]))return;
+    out[key]=out[key].filter(item=>{
+      const url=typeof item==='string'?item:item?.url;
+      const norm=normalizedUrl(url||'');
+      if(!norm||seen.has(norm))return false;
+      seen.add(norm);
+      return true;
+    });
+  };
+  // Les liens spécialisés priment sur les liens génériques de provenance.
+  take('cdcLinks');
+  take('regulationLinks');
+  take('formLinks');
+  take('sourceLinks');
+}
+
 export function sanitizeAidLinks(a,cfg){
   if(!a||typeof a!=='object')return a;
   const excluded=excludedSourceIds(cfg);
@@ -117,6 +136,7 @@ export function sanitizeAidLinks(a,cfg){
   if(Array.isArray(a.cdcLinks))out.cdcLinks=sanitizeLinkArray(a.cdcLinks,{cfg});
   if(Array.isArray(a.regulationLinks))out.regulationLinks=sanitizeLinkArray(a.regulationLinks,{cfg});
   if(Array.isArray(a.formLinks))out.formLinks=sanitizeLinkArray(a.formLinks,{cfg});
+  dedupeLinkFamilies(out);
 
   if(Array.isArray(a.sourceAliases))out.sourceAliases=a.sourceAliases.filter(x=>{
     const id=aliasId(x);
