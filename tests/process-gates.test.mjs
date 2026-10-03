@@ -29,3 +29,18 @@ test('Gate 3 exige un coverage rattaché au même cycle de collecte',()=>{
   assert.match(gates,/row\.cycleId/);
   assert.match(gates,/freshExecuted/);
 });
+
+test('un cycle verrouillé utilise le certificat fingerprinté et les preuves de publication',()=>{
+  const gates=fs.readFileSync(new URL('../scripts/production-gates.mjs',import.meta.url),'utf8');
+  assert.match(gates,/lockedCertificationMatch/);
+  assert.match(gates,/fingerprintStatus==='MATCH'/);
+  assert.match(gates,/publicationEvidenceIntegrity/);
+  assert.match(gates,/hasGuichetEvidence\(a\).*hasStatusEvidence\(a\).*hasTargetInstrumentEvidence\(a\).*hasEnterpriseEvidence\(a\)/s);
+});
+
+test('la certification production stricte n’est jamais sautée en cycle verrouillé',()=>{
+  const yml=fs.readFileSync(new URL('../.github/workflows/update-and-deploy.yml',import.meta.url),'utf8');
+  const block=yml.match(/- name: Certification production stricte[\s\S]*?run: npm run certify:production/)?.[0]||'';
+  assert.ok(block);
+  assert.doesNotMatch(block,/\bif:/);
+});
