@@ -39,5 +39,7 @@ jobs:
         run: npm test
       - name: Validation du schéma de données
         run: npm run validate
+      - name: Normaliser le workspace éphémère avant audit
+        run: node scripts/purge-indirect-sources.mjs
       - name: Audit structurel strict
         run: npm run audit:deep:strict
