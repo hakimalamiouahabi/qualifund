@@ -20,6 +20,7 @@ import { assessCollection } from './lib/source-cycle.mjs';
 import { shouldMarkStale } from './lib/lifecycle.mjs';
 import { loadCollectionLock, requireCollectionLock, validateCollectionLock, selectSources, selectedSourceSet, lockSummary } from './lib/collection-lock.mjs';
 import { isActiveAtJPlusOne, jPlusOneDate, parisDate } from './lib/jplus1.mjs';
+import { publicationReason } from './lib/publication.mjs';
 const KNOWN_AID_TYPES=new Set(['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO','PRET','BONIFICATION_INTERET','GARANTIE','ALLEGEMENT_FISCAL','PARTICIPATION_CAPITAL','APPEL_A_PROJET','ACCOMPAGNEMENT_GRATUIT','CREDIT_BAIL','AUTRE']);
 function sanitizeAidTypes(xs=[]){const vals=arr(xs).filter(x=>typeof x==='string'&&x);const known=vals.filter(x=>KNOWN_AID_TYPES.has(x));return uniq(known.length?known:['AUTRE']);}
 function unusableAidTitle(v=''){const t=String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[’']/g,"'").replace(/\s+/g,' ').trim();return !t||t.length<4||/(desole.*offre.*plus disponible|offre.*plus disponible|document officiel|page introuvable|page non trouvee|erreur 404|404 not found|access denied|forbidden|service indisponible|site en maintenance)/i.test(t);}
@@ -204,36 +205,56 @@ for(const a of aids){
   }));
 }
 
-// Une fiche qui devient expirée seulement après enrichissement n'est jamais certifiée.
-// Elle est reclassée comme exclusion comptable de la source avant le gate final.
+// Le gate final s'applique après enrichissement : cycle de vie puis critères exacts de publication.
 if(collectionLock.locked){
+  const configuredSourceIds=new Set((cfg.sources||[]).map(x=>x.id));
   for(const source of sourcesToRun){
     if(source.strategy==='control-only')continue;
     const row=coverage.find(x=>x.id===source.id);
     if(!row)continue;
 
     const sourceRows=aids.filter(a=>a?.sourceId===source.id);
-    const expired=sourceRows.filter(a=>String(a.lifecycleStatus||'').toUpperCase()==='ARCHIVE');
-    const retained=sourceRows.filter(a=>!['ARCHIVE','STALE','CLOSED','CLOS','EXPIRED'].includes(String(a.lifecycleStatus||'').toUpperCase()));
+    const terminal=new Set(['ARCHIVE','STALE','CLOSED','CLOS','EXPIRED']);
+    const lifecycleExcluded=sourceRows.filter(a=>terminal.has(String(a.lifecycleStatus||'').toUpperCase()));
+    const operational=sourceRows.filter(a=>!terminal.has(String(a.lifecycleStatus||'').toUpperCase()));
 
-    if(expired.length){
-      const exclusions=expired.map(a=>({
+    const publicationExcluded=[];
+    const retained=[];
+    for(const aid of operational){
+      const reason=collectionLock.certification?.requirePublicationReady
+        ? publicationReason(aid,{configuredSourceIds,unlockedSourceIds:null,now})
+        : null;
+      if(reason){
+        publicationExcluded.push({
+          url:aid.officialPage||null,
+          label:aid.title||'',
+          reason:`PUBLICATION_GATE_${reason}`
+        });
+      }else retained.push(aid);
+    }
+
+    const finalExclusions=[
+      ...lifecycleExcluded.map(a=>({
         url:a.officialPage||null,
         label:a.title||'',
         reason:'EXPIRED_AFTER_ENRICHMENT'
-      }));
-      row.imported=retained.length;
-      if(row.audit){
-        const oldExcluded=Array.isArray(row.audit.excluded)?row.audit.excluded:[];
-        const errors=Array.isArray(row.audit.errors)?row.audit.errors:[];
-        row.audit={
-          ...row.audit,
-          imported:retained.length,
-          excluded:[...oldExcluded,...exclusions],
-          accounted:retained.length+oldExcluded.length+exclusions.length+errors.length
-        };
-      }
-      row.message=`${source.name}: ${row.discovered} découverte(s), ${retained.length} retenue(s), ${expired.length} expiration(s) exclue(s) après enrichissement.`;
+      })),
+      ...publicationExcluded
+    ];
+
+    row.imported=retained.length;
+    if(row.audit){
+      const oldExcluded=Array.isArray(row.audit.excluded)?row.audit.excluded:[];
+      const errors=Array.isArray(row.audit.errors)?row.audit.errors:[];
+      row.audit={
+        ...row.audit,
+        imported:retained.length,
+        excluded:[...oldExcluded,...finalExclusions],
+        accounted:retained.length+oldExcluded.length+finalExclusions.length+errors.length
+      };
+    }
+    if(finalExclusions.length){
+      row.message=`${source.name}: ${row.discovered} découverte(s), ${retained.length} retenue(s), ${finalExclusions.length} exclusion(s) après enrichissement/publication.`;
     }
 
     const finalAssessment=assessCollection(source,{discovered:Number(row.discovered||0),aids:retained});
@@ -255,12 +276,12 @@ if(collectionLock.locked){
         imported:retained.length,
         lastSuccessfulAt:oldRow?.lastSuccessfulAt||null,
         consecutiveFailures:(oldRow?.consecutiveFailures||0)+1,
-        message:`${finalAssessment.reasons.join(' ; ')} — snapshot précédent restauré après finalisation.`
+        message:`${finalAssessment.reasons.join(' ; ')} — snapshot précédent restauré après gate publication-ready.`
       });
       continue;
     }
 
-    // Le snapshot validé de la source ne contient que les fiches opérationnelles finales.
+    // Le snapshot certifiable est exactement le corpus final publiable.
     aids=[
       ...aids.filter(a=>a?.sourceId!==source.id),
       ...retained
