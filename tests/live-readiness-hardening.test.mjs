@@ -44,10 +44,11 @@ test('exemple d’environnement documente le token admin requis',()=>{
   assert.match(env,/RADAR_ADMIN_TOKEN=/);
 });
 
-test('documentation opérationnelle est alignée sur le cycle quotidien 02:00',()=>{
+test('documentation opérationnelle est alignée sur deux mises à jour par mois',()=>{
   const ops=fs.readFileSync(new URL('../OPERATIONS.md',import.meta.url),'utf8');
-  assert.match(ops,/chaque jour à 02:00 Europe\/Paris/i);
-  assert.doesNotMatch(ops,/Toutes les 6 h/);
+  assert.match(ops,/deux fois par mois, le 1er et le 15 à 02:00 Europe\/Paris/i);
+  assert.match(ops,/Aucun push GitHub ne déclenche de collecte/i);
+  assert.doesNotMatch(ops,/chaque jour à 02:00 Europe\/Paris/i);
 });
 
 test('QA distingue sources configurées/probées d’un cycle live vide', async () => {
@@ -59,9 +60,10 @@ test('QA distingue sources configurées/probées d’un cycle live vide', async 
 });
 
 
-test('un premier push de code déclenche aussi la collecte complète sans lancement manuel supplémentaire',()=>{
+test('la collecte automatique ne peut partir que le 1er et le 15, jamais sur push',()=>{
   const yml=fs.readFileSync(new URL('../.github/workflows/update-and-deploy.yml',import.meta.url),'utf8');
-  assert.doesNotMatch(yml,/if: github\.event_name != 'push'/);
+  assert.match(yml,/cron: '0 2 1,15 \* \*'/);
+  assert.doesNotMatch(yml,/\n  push:/);
   assert.match(yml,/run: npm run update:full/);
 });
 
