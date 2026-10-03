@@ -3,7 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { isForbiddenAggregatorUrl } from './lib/direct-sources.mjs';
 import { sourceCalibration } from './lib/collection-lock.mjs';
-import { buildCertificationLedger, publicationReason, targetFunding, hasEnterpriseEvidence, hasGuichetEvidence, hasStatusEvidence, hasTargetInstrumentEvidence } from './lib/publication.mjs';
+import { buildCertificationLedger, publicationReason, targetFunding, hasEnterpriseEvidence, hasGuichetEvidence, hasStatusEvidence, hasTargetInstrumentEvidence, sourceConfigFingerprint, certificationBasisFingerprint } from './lib/publication.mjs';
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const DATA=path.join(ROOT,'site','data');
@@ -13,7 +13,8 @@ const lock=await read(path.join(ROOT,'config','collection-lock.json'),{});
 const lib=await read(path.join(DATA,'library.json'),{meta:{},aaps:[]});
 const coverage=await read(path.join(DATA,'coverage.json'),[]);
 const manifest=await read(path.join(DATA,'manifest.json'),{});
-const ledger=await buildCertificationLedger(DATA,cfg);
+const ledger=await buildCertificationLedger(DATA,cfg,{root:ROOT});
+const activeCertification=await read(path.join(DATA,'active-source-certification.json'),null);
 const pkg=await read(path.join(ROOT,'package.json'),{scripts:{}});
 let workflow='';try{workflow=await fs.readFile(path.join(ROOT,'.github','workflows','update-and-deploy.yml'),'utf8')}catch{}
 
@@ -157,6 +158,19 @@ for(const file of certFiles){
   const r=await read(path.join(DATA,file),null);
   historicalCertifications[file]=r?{status:r.status,generatedAt:r.generatedAt,problems:r.problems||[],libraryRecords:r.libraryRecords}:null;
 }
+const expectedActiveIds=[...(lock.allowedSourceIds||[])].sort();
+const activeIds=[...(activeCertification?.configuredSources||[])].sort();
+const expectedSourceFingerprint=sourceConfigFingerprint(cfg,expectedActiveIds);
+const expectedBasisFingerprint=await certificationBasisFingerprint(ROOT,cfg,expectedActiveIds);
+const activeCertificationIntegrity={
+  present:Boolean(activeCertification),
+  status:activeCertification?.status||null,
+  lockName:activeCertification?.lock?.name||null,
+  expectedLockName:lock.name||null,
+  sourceIdsMatch:expectedActiveIds.length===activeIds.length&&expectedActiveIds.every((x,i)=>x===activeIds[i]),
+  sourceFingerprintMatch:activeCertification?.sourceConfigFingerprint===expectedSourceFingerprint,
+  basisFingerprintMatch:activeCertification?.certificationBasisFingerprint===expectedBasisFingerprint
+};
 const p0=[];
 if(sourceDuplicates.length)p0.push(`${sourceDuplicates.length} URL(s) de source dupliquée(s)`);
 if(missingScriptTargets.length)p0.push(`${missingScriptTargets.length} script(s) package.json introuvable(s): ${missingScriptTargets.join(', ')}`);
@@ -190,6 +204,16 @@ if(counters.genericTitle)p0.push(`${counters.genericTitle} titre(s) générique(
 if(counters.sourceLinksAggregator)p0.push(`${counters.sourceLinksAggregator} fiche(s) avec lien imbriqué vers un agrégateur interdit`);
 if(counters.sourceLinksDuplicate)p0.push(`${counters.sourceLinksDuplicate} fiche(s) avec liens imbriqués dupliqués`);
 if(publishedDuplicates.length)p0.push(`${publishedDuplicates.length} doublon(s) dans le corpus certifié publiable`);
+if(activeCertification?.status==='PASS'){
+  if(activeCertificationIntegrity.lockName!==activeCertificationIntegrity.expectedLockName
+    || !activeCertificationIntegrity.sourceIdsMatch
+    || !activeCertificationIntegrity.sourceFingerprintMatch
+    || !activeCertificationIntegrity.basisFingerprintMatch){
+    p0.push('Le certificat actif PASS ne correspond pas exactement au verrou, à la configuration et au code courants');
+  }
+  const allCurrentUnlocked=expectedActiveIds.every(id=>unlocked.has(id));
+  if(!allCurrentUnlocked)p0.push('Le certificat actif annonce PASS mais le ledger fail-closed ne déverrouille pas toutes les sources du verrou');
+}
 
 const p1=[];
 const CERT_FRESHNESS_WARN_HOURS=72;
@@ -200,9 +224,13 @@ const certificationFreshness=(ledger.certifications||[]).map(c=>{
 });
 const staleCertifications=certificationFreshness.filter(c=>c.status==='STALE');
 if(staleCertifications.length)p1.push(`${staleCertifications.length} certificat(s) PASS datent de plus de ${CERT_FRESHNESS_WARN_HOURS} h — maintenance opérationnelle à rafraîchir`);
-const legacyUnboundCertifications=(ledger.certifications||[]).filter(c=>c.fingerprintStatus==='LEGACY_UNBOUND');
-if(legacyUnboundCertifications.length)p1.push(`${legacyUnboundCertifications.length} certificat(s) PASS historique(s) sans fingerprint de configuration — à recertifier lors de leur prochain cycle`);
-if((ledger.rejectedCertifications||[]).length)p0.push(`${ledger.rejectedCertifications.length} certificat(s) PASS rejeté(s) car la configuration source a changé`);
+if((ledger.rejectedCertifications||[]).length){
+  const byReason=Object.entries((ledger.rejectedCertifications||[]).reduce((m,x)=>(m[x.reason]=(m[x.reason]||0)+1,m),{}))
+    .map(([reason,count])=>`${reason}: ${count}`).join(', ');
+  p1.push(`${ledger.rejectedCertifications.length} certificat(s) historique(s) ne déverrouillent plus la publication et doivent être recertifiés (${byReason})`);
+}
+if(!activeCertification)p1.push('Certificat actif absent : le verrou courant reste non certifié');
+else if(activeCertification.status!=='PASS')p1.push(`Cycle courant ${lock.name||'inconnu'} non certifié : statut ${activeCertification.status||'PENDING'}`);
 const certifiedEvidenceDebt={
   missingGuichet:Number(reasons.MISSING_GUICHET_EVIDENCE||0),
   missingStatus:Number(reasons.MISSING_STATUS_EVIDENCE||0),
@@ -258,7 +286,7 @@ const report={
     manifestLock:manifest?.collectionLock||null
   },
   historicalCertifications,
-  certificationIntegrity:{freshnessWarningHours:CERT_FRESHNESS_WARN_HOURS,freshness:certificationFreshness,legacyUnbound:legacyUnboundCertifications,rejected:ledger.rejectedCertifications||[]},
+  certificationIntegrity:{freshnessWarningHours:CERT_FRESHNESS_WARN_HOURS,freshness:certificationFreshness,active:activeCertificationIntegrity,rejected:ledger.rejectedCertifications||[]},
   certifiedEvidenceDebt,
   publishedQuality,
   severity:{p0,p1,p2},
