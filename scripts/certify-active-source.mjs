@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { loadCollectionLock, validateCollectionLock } from './lib/collection-lock.mjs';
 import { sourceConfigFingerprint, certificationBasisFingerprint, sourceDataFingerprint } from './lib/publication.mjs';
+import { purgeIndirectSources } from './purge-indirect-sources.mjs';
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const DATA=path.join(ROOT,'site','data');
@@ -10,6 +11,9 @@ const cfg=JSON.parse(await fs.readFile(path.join(ROOT,'config','sources.json'),'
 const lock=await loadCollectionLock(ROOT);
 validateCollectionLock(cfg,lock);
 if(!lock?.locked)throw new Error('Aucun guichet/région n’est verrouillé.');
+
+// Certifier uniquement le corpus final, après toutes les normalisations déterministes.
+await purgeIndirectSources(ROOT);
 
 const coverage=JSON.parse(await fs.readFile(path.join(DATA,'coverage.json'),'utf8'));
 const lib=JSON.parse(await fs.readFile(path.join(DATA,'library.json'),'utf8'));
