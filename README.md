@@ -15,12 +15,12 @@ La collecte et la mise à jour fonctionnent sans LLM. Un seul guichet ou une seu
 7. publication uniquement des sources dont le certificat PASS correspond encore à cette base technique ;
 8. passage manuel au guichet ou à la région suivante.
 
-Une collecte échouée ou anormalement incomplète ne remplace jamais le dernier snapshot valide.
+Une collecte échouée ou anormalement incomplète est rejetée **avant toute fusion** : le snapshot précédent de la source reste strictement inchangé.
 
-## État du chantier — Foundation v3 / v12.8
+## État du chantier — Foundation v3.1 / v12.9 official-only
 
-- **Bpifrance : cycle de recertification actif.** Le PASS historique v2 est conservé comme preuve, mais ne déverrouille plus la publication tant qu'un nouveau PASS v12.8 n'est pas généré.
-- **ADEME : gelé jusqu'au PASS Bpifrance v12.8.** Le PASS historique v4 est conservé mais doit être recertifié sur la même base technique.
+- **Bpifrance : cycle de recertification actif.** Le PASS historique v2 est conservé comme preuve, mais ne déverrouille plus la publication tant qu'un nouveau PASS v12.9 n'est pas généré.
+- **ADEME : gelé jusqu'au PASS Bpifrance v12.9.** Le PASS historique v4 est conservé mais doit être recertifié sur la même base technique v12.9.
 - **Auvergne-Rhône-Alpes : gelée.** Le cycle AURA ne reprend qu'après les nouveaux PASS Bpifrance puis ADEME.
 - **Autres régions / FEDER / FEADER / FSE+ / FTJ / ANR : gelés** et activables uniquement après calibration explicite de leurs seuils et de leur référentiel maître.
 
@@ -28,7 +28,7 @@ La publication suit la règle **CERTIFIED_SOURCE_ONLY**. Un certificat ancien, s
 
 ## Politique source
 
-Sont admises comme sources de vérité : pages officielles directement rattachées au financeur ou à la région, API/Open Data officiels spécifiques, flux RSS officiels et documents réglementaires officiels. Les agrégateurs généralistes ne peuvent ni alimenter la bibliothèque ni servir de preuve de publication.
+Sont admises comme sources de vérité : pages officielles directement rattachées au financeur ou à la région, API/Open Data officiels spécifiques, flux RSS officiels, sitemaps officiels et documents réglementaires officiels. **Aucun LLM, moteur de recherche externe ou API payante n'entre dans la collecte ou la certification.** Les agrégateurs généralistes ne peuvent ni alimenter la bibliothèque ni servir de preuve de publication.
 
 Une donnée absente n'est pas inventée. Une fiche sans preuve minimale de guichet, de statut courant, d'instrument cible et d'éligibilité entreprise reste hors publication.
 
