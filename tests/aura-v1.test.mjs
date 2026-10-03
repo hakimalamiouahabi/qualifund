@@ -68,22 +68,26 @@ test('le collecteur AURA matérialise explicitement l’éligibilité entreprise
   assert.match(connector,/field:'enterpriseEligibility'/);
 });
 
-test('AURA devient le prochain cycle après le PASS ADEME',()=>{
+test('AURA v14 devient le cycle actif après les PASS Bpifrance et ADEME',()=>{
   const lock=JSON.parse(fs.readFileSync(new URL('../config/collection-lock.json',import.meta.url),'utf8'));
+  const ademe=JSON.parse(fs.readFileSync(new URL('../site/data/ademe-certification.json',import.meta.url),'utf8'));
   const bpi=JSON.parse(fs.readFileSync(new URL('../site/data/bpifrance-certification.json',import.meta.url),'utf8'));
+  const raw=JSON.stringify(lock);
   assert.equal(lock.locked,true);
-  assert.equal(lock.mode,'GUICHET');
-  assert.equal(lock.name,'ADEME');
-  assert.equal(lock.version,13);
-  assert.deepEqual(lock.allowedSourceIds,['ademe']);
-  assert.equal(lock.next,'AURA');
-  assert.equal(lock.allowedSourceIds.includes('aura'),false);
-  assert.match(lock.notes,/AURA est le prochain cycle/i);
+  assert.equal(lock.mode,'REGION');
+  assert.equal(lock.name,'Auvergne-Rhône-Alpes');
+  assert.equal(lock.version,14);
+  assert.deepEqual(lock.allowedSourceIds,['aura']);
+  assert.equal(lock.next,'Bourgogne-Franche-Comté');
+  assert.equal(lock.certification?.requirePublicationReady,true);
+  assert.equal(lock.certification?.sourceRules?.aura?.requireExpectedCount,true);
+  assert.equal(lock.certification?.sourceRules?.aura?.expectedCount,175);
+  assert.equal(lock.certification?.sourceRules?.aura?.requireMasterMembership,true);
+  assert.doesNotMatch(raw,/externalAudit|Exa|Tavily|Parallel|Firecrawl|TinyFish|OpenAI|Anthropic|Gemini/i);
+  assert.equal(ademe.status,'PASS');
+  assert.equal(ademe.lock?.name,'ADEME');
   assert.equal(bpi.status,'PASS');
   assert.equal(bpi.lock?.name,'Bpifrance');
-  assert.ok(bpi.sourceConfigFingerprint);
-  assert.ok(bpi.certificationBasisFingerprint);
-  assert.ok(bpi.certifiedDataFingerprint);
 });
 
 test('la source AURA est filtrée Entreprise et les sources fonds européens restent hors verrou',()=>{
@@ -130,4 +134,10 @@ test('AURA ne cumule pas retries HTTP longs et double fallback Playwright',()=>{
   assert.doesNotMatch(getHtmlBlock,/browserHtml/);
   assert.match(connector,/async function getListingHtml/);
   assert.match(connector,/async function getAidHtml/);
+});
+
+test('le cycle AURA ferme toujours Chromium après collecte',()=>{
+  const connector=fs.readFileSync(new URL('../scripts/connectors/aura.mjs',import.meta.url),'utf8');
+  assert.match(connector,/browserHtml, closeBrowser/);
+  assert.match(connector,/finally\s*\{[\s\S]*await closeBrowser\(\)/);
 });
