@@ -377,6 +377,24 @@ function directKindFromText(text=''){
   return null;
 }
 
+const ADEME_TARGET_INSTRUMENTS=new Set(['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO']);
+export function ademeInstrumentEvidence(text='',aidTypes=[]){
+  const wanted=(Array.isArray(aidTypes)?aidTypes:[]).filter(x=>ADEME_TARGET_INSTRUMENTS.has(x));
+  if(!wanted.length)return null;
+  const sentences=String(text||'').replace(/\s+/g,' ').split(/(?<=[.;:])\s+/).map(x=>x.trim()).filter(Boolean);
+  const patterns={
+    SUBVENTION:/\b(?:subvention|aide non remboursable|dotation)\b/i,
+    AVANCE_REMBOURSABLE:/\b(?:avance remboursable|avance r[eé]cup[eé]rable)\b/i,
+    PRET_TAUX_ZERO:/\b(?:pr[eê]t (?:d['’]honneur )?(?:à|a) taux (?:z[eé]ro|0)|sans int[eé]r[eê]t|taux d['’]int[eé]r[eê]t (?:z[eé]ro|0))\b/i
+  };
+  const proofs=[];
+  for(const type of wanted){
+    const hit=sentences.find(s=>patterns[type]?.test(s));
+    if(hit)proofs.push(`${type}: ${hit}`);
+  }
+  return proofs.length?proofs.join(' • ').slice(0,850):null;
+}
+
 function hasUsefulAidDetail(html=''){
   const text=pageText(html);
   if(text.length<500)return false;
@@ -526,6 +544,8 @@ async function extractOne(source,link){
     {field:'catalogueKind',sourceUrl:loaded?requested:membershipSource,sourceTier:'B',locator:loaded?'direct-page-type':'official-url-taxonomy',evidenceText:link.catalogueKind,checkedAt}
   ];
   if(territory.evidence)extra.push({field:'territory',sourceUrl:requested,sourceTier:'B',locator:'page-text-match:territory',evidenceText:territory.evidence.slice(0,850),checkedAt});
+  const instrumentEvidence=loaded?ademeInstrumentEvidence(text,a.aidTypes):null;
+  if(instrumentEvidence)extra.push({field:'instrument',sourceUrl:requested,sourceTier:'B',locator:'page-text-match:instrument',evidenceText:instrumentEvidence,checkedAt});
   a.verification={...(a.verification||{}),status:loaded?'VERIFIE':'A_REVERIFIER',sourceTier:'B',lastChecked:checkedAt,fieldEvidence:[...(a.verification?.fieldEvidence||[]),...extra]};
   a.guichetVerification={status:'VERIFIED',sourceUrl:membershipSource,evidenceText:membershipEvidence.slice(0,850),checkedAt};
   return{aid:a,excluded:null,detailWarning};
