@@ -20,12 +20,9 @@ const MATURITY=['À préciser','Faisabilité','PoC','Prototype','Démonstrateur 
 const DEFAULT_PROJECT={company:'',siren:'',category:'À préciser',startup:false,region:'À préciser',projectSite:'',sector:'',naf:'',employees:'',turnover:'',balanceSheet:'',group:'À vérifier',creationDate:'',legalForm:'',name:'',budget:'',types:[],summary:'',expenses:'',startDate:'',endDate:'',maturity:'À préciser',partners:'',impacts:'',jobs:'',environment:'',digital:'',financing:'',otherAids:''};
 const STORAGE='leyton-as-project-v12.6';
 const LEGACY_STORAGES=['funding-radar-project-v12.5','qualifund-project-v12.4','leyton-radar-project-v12.3','leyton-radar-project-v12.2','leyton-radar-project-v12.1','leyton-radar-project-v12'];
-const FALLBACK_UNLOCKED_SOURCE_IDS=['bpifrance_aap','bpifrance_aides','bpifrance_rebond_industriel','ademe'];
-const PUBLIC_UNLOCKED_SOURCE_IDS=new Set(FALLBACK_UNLOCKED_SOURCE_IDS);
-const PUBLIC_UNLOCKED_GUICHETS=['Bpifrance','ADEME'];
-const CERTIFIED_SOURCE_NAMES=new Map([
-  ['bpifrance_aap','Bpifrance'],['bpifrance_aides','Bpifrance'],['bpifrance_rebond_industriel','Bpifrance'],['ademe','ADEME']
-]);
+const PUBLIC_UNLOCKED_SOURCE_IDS=new Set();
+const PUBLIC_UNLOCKED_GUICHETS=[];
+const CERTIFIED_SOURCE_NAMES=new Map();
 const TARGET_PUBLIC_INSTRUMENTS=new Set(['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO','APPEL_A_PROJET']);
 function applyCertificationLedger(ledger){
   if(!ledger||!Array.isArray(ledger.unlockedSourceIds))return;
