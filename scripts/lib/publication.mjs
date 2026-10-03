@@ -9,7 +9,7 @@ export const TARGET_PUBLIC_INSTRUMENTS=new Set([
 ]);
 
 const CLOSED_STATES=new Set(['STALE','CLOSED','CLOS','EXPIRED']);
-const generic=/^(?:accueil|home|aide|aides|dispositif|document|page|sans titre|nos aides|toutes nos aides|contact et aide)$/i;
+const generic=/^(?:accueil|home|aide|aides|dispositif|document|conditions particuli[eè]res(?: bpifrance)?|page|sans titre|nos aides|toutes nos aides|contact et aide)$/i;
 
 function day(raw){
   if(!/^\d{4}-\d{2}-\d{2}$/.test(String(raw||'')))return null;
