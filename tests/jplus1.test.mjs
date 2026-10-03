@@ -31,3 +31,9 @@ test('une fiche STALE est exclue du compteur J+1',()=>{
 test('une fiche archivée est exclue même si elle est permanente',()=>{
   assert.equal(isActiveAtJPlusOne({lifecycleStatus:'ARCHIVE',permanent:true},now),false);
 });
+
+
+test('la date métier suit Europe/Paris autour de minuit UTC',()=>{
+  assert.equal(parisDate(new Date('2026-10-02T22:30:00Z')),'2026-10-03');
+  assert.equal(parisDate(new Date('2026-10-02T21:30:00Z')),'2026-10-02');
+});
