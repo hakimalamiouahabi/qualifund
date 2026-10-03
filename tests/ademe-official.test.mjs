@@ -6,7 +6,8 @@ import {
   parseAdemeCatalogueHtml,
   ademeStatusProof,
   ademeKindFromOfficialUrl,
-  selectAdemeInventory
+  selectAdemeInventory,
+  ademeInstrumentEvidence
 } from '../scripts/connectors/ademe.mjs';
 
 const NOW=new Date('2026-09-30T18:30:00Z');
@@ -140,4 +141,22 @@ test('une fiche directe indiquée close entre en conflit avec un inventaire acti
   const out=ademeStatusProof({deadlines:['2026-12-31'],finalClosingDate:'2026-12-31'},"Cet appel à projets est maintenant clos.",new Date('2026-09-30T12:00:00Z'));
   assert.equal(out.state,'STATUS_CONFLICT');
   assert.equal(out.retain,false);
+});
+
+test('ADEME matérialise seulement les instruments financiers explicitement prouvés',()=>{
+  const proof=ademeInstrumentEvidence(
+    "L'aide prend la forme d'une subvention de 40 %. Une avance remboursable peut compléter le financement.",
+    ['SUBVENTION','AVANCE_REMBOURSABLE']
+  );
+  assert.match(proof,/SUBVENTION:/);
+  assert.match(proof,/AVANCE_REMBOURSABLE:/);
+  assert.equal(ademeInstrumentEvidence("Une aide est proposée aux entreprises.",['AUTRE']),null);
+});
+
+test('la preuve instrument ADEME vient exclusivement de la page directe officielle',()=>{
+  const connector=fs.readFileSync(new URL('../scripts/connectors/ademe.mjs',import.meta.url),'utf8');
+  assert.match(connector,/field:'instrument'/);
+  assert.match(connector,/sourceUrl:requested/);
+  assert.match(connector,/loaded\?ademeInstrumentEvidence\(text,a\.aidTypes\):null/);
+  assert.doesNotMatch(connector,/catalogueKind.*SUBVENTION/);
 });
