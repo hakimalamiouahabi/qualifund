@@ -314,3 +314,11 @@ test('le deep audit bloque les compteurs de manifeste impossibles',()=>{
   assert.match(audit,/manifest\.jPlusOneActiveCount/);
   assert.match(audit,/jPlusOneActiveCount=.*> ACTIVE réels/);
 });
+
+
+test('le deep audit mesure la fraîcheur des certificats sans en faire un faux P0',()=>{
+  const audit=fs.readFileSync(path.join(ROOT,'scripts/deep-audit.mjs'),'utf8');
+  assert.match(audit,/CERT_FRESHNESS_WARN_HOURS=72/);
+  assert.match(audit,/maintenance opérationnelle à rafraîchir/);
+  assert.match(audit,/certificationFreshness/);
+});
