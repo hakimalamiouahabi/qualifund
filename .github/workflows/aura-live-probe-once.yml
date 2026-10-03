@@ -1,0 +1,48 @@
+name: AURA — probe officiel Entreprise ponctuel
+on:
+  push:
+    branches: [maintenance/aura-live-probe-once]
+    paths:
+      - '.github/workflows/aura-live-probe-once.yml'
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: Node 22
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - name: Dépendances
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Probe catalogue AURA
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import {discoverAura,collectAura} from './scripts/connectors/aura.mjs';
+          const cfg=JSON.parse(fs.readFileSync('./config/sources.json','utf8'));
+          const source=cfg.sources.find(s=>s.id==='aura');
+          const d=await discoverAura(source,{log:console.log});
+          console.log('AURA_DISCOVERY='+JSON.stringify({
+            count:d.links.length,
+            expectedCount:d.expectedCount,
+            pagesScanned:d.pagesScanned,
+            first:d.links.slice(0,8)
+          }));
+          const c=await collectAura(source,{log:console.log});
+          const byReason={};
+          for(const x of c.audit.excluded||[])byReason[x.reason]=(byReason[x.reason]||0)+1;
+          console.log('AURA_COLLECTION='+JSON.stringify({
+            discovered:c.discovered,
+            imported:c.aids.length,
+            excluded:(c.audit.excluded||[]).length,
+            errors:(c.audit.errors||[]).length,
+            byReason,
+            channels:c.audit.channels
+          }));
+          NODE
