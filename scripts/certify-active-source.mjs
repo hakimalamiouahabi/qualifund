@@ -23,7 +23,7 @@ const configuredSourceIds=new Set((cfg.sources||[]).map(x=>x.id));
 const primary=new Set(lock.certification?.primarySourceIds||lock.allowedSourceIds||[]);
 const cert=lock.certification||{};
 const problems=[];
-const generic=/^(document officiel|r[eè]glement|cahier des charges|annexe|formulaire|dossier de candidature|accueil|aides?|aides financières|catalogue|agir pour la transition)$/i;
+const generic=/^(document officiel|conditions particuli[eè]res(?: bpifrance)?|r[eè]glement|cahier des charges|annexe|formulaire|dossier de candidature|accueil|aides?|aides financières|catalogue|agir pour la transition)$/i;
 const byId=new Map(coverage.map(x=>[x.id,x]));
 const lockedCfg=(cfg.sources||[]).filter(s=>allowed.has(s.id));
 const records=(lib.aaps||[]).filter(a=>primary.has(a?.sourceId)||(Array.isArray(a?.sourceAliases)&&a.sourceAliases.some(x=>primary.has(x))));
