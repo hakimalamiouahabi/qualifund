@@ -23,7 +23,7 @@ import { isActiveAtJPlusOne, jPlusOneDate, parisDate } from './lib/jplus1.mjs';
 import { publicationReason } from './lib/publication.mjs';
 const KNOWN_AID_TYPES=new Set(['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO','PRET','BONIFICATION_INTERET','GARANTIE','ALLEGEMENT_FISCAL','PARTICIPATION_CAPITAL','APPEL_A_PROJET','ACCOMPAGNEMENT_GRATUIT','CREDIT_BAIL','AUTRE']);
 function sanitizeAidTypes(xs=[]){const vals=arr(xs).filter(x=>typeof x==='string'&&x);const known=vals.filter(x=>KNOWN_AID_TYPES.has(x));return uniq(known.length?known:['AUTRE']);}
-function unusableAidTitle(v=''){const t=String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[’']/g,"'").replace(/\s+/g,' ').trim();return !t||t.length<4||/(desole.*offre.*plus disponible|offre.*plus disponible|document officiel|page introuvable|page non trouvee|erreur 404|404 not found|access denied|forbidden|service indisponible|site en maintenance)/i.test(t);}
+function unusableAidTitle(v=''){const t=String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[’']/g,"'").replace(/\s+/g,' ').trim();return !t||t.length<4||/(desole.*offre.*plus disponible|offre.*plus disponible|document officiel|conditions particulieres(?: bpifrance)?|page introuvable|page non trouvee|erreur 404|404 not found|access denied|forbidden|service indisponible|site en maintenance)/i.test(t);}
 function repairTitleSpacing(text=''){
   let s=String(text||'').replace(/\s+/g,' ').trim();
   for(let i=0;i<3;i++)s=s.replace(/\b([A-ZÀ-ÖØ-Ý]{2,})\s+([ÉÈÊËÀÂÄÎÏÔÖÙÛÜÇ])\s+([A-ZÀ-ÖØ-Ý]{2,})\b/g,'$1$2$3');
