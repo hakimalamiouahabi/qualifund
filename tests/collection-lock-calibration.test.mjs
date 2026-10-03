@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { sourceCalibration, validateCollectionLock, requireCollectionLock } from '../scripts/lib/collection-lock.mjs';
+import { assessCollection } from '../scripts/lib/source-cycle.mjs';
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 
@@ -50,4 +51,25 @@ test('Bpifrance, ADEME et AURA ont tous des seuils de calibration exploitables e
     assert.ok(source,id+' absent du registre');
     assert.equal(sourceCalibration(source).calibrated,true,id+' non calibré');
   }
+});
+
+
+test('le compteur officiel dynamique prime sur le seuil historique sans perdre le fail-closed',()=>{
+  const source={id:'aura',minExpected:175,minImported:20,minImportRatio:0.1};
+  const legitimateDrop=assessCollection(source,{
+    discovered:170,
+    aids:Array.from({length:80},(_,i)=>({id:String(i)})),
+    audit:{channels:{enterpriseExpected:170}}
+  });
+  assert.equal(legitimateDrop.dynamicExpected,170);
+  assert.equal(legitimateDrop.suspiciousVolume,false);
+
+  const incompleteRise=assessCollection(source,{
+    discovered:175,
+    aids:Array.from({length:80},(_,i)=>({id:String(i)})),
+    audit:{channels:{enterpriseExpected:200}}
+  });
+  assert.equal(incompleteRise.dynamicExpected,200);
+  assert.equal(incompleteRise.suspiciousVolume,true);
+  assert.equal(incompleteRise.success,false);
 });
