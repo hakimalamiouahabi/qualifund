@@ -131,3 +131,18 @@ test('AURA ne cumule pas retries HTTP longs et double fallback Playwright',()=>{
   assert.match(connector,/async function getListingHtml/);
   assert.match(connector,/async function getAidHtml/);
 });
+
+test('AURA limite la concurrence des fiches directes pour ne pas saturer le portail',()=>{
+  const connector=fs.readFileSync(new URL('../scripts/connectors/aura.mjs',import.meta.url),'utf8');
+  assert.match(connector,/extractMany\(source,nonEuropean,\{log,workers:2\}\)/);
+  assert.match(connector,/async function extractMany\(source,links,\{log=console\.log,workers=2\}=\{\}\)/);
+  assert.doesNotMatch(connector,/workers:12/);
+});
+
+test('AURA retente le rendu navigateur après un reset réseau sans élargir le périmètre',()=>{
+  const connector=fs.readFileSync(new URL('../scripts/connectors/aura.mjs',import.meta.url),'utf8');
+  assert.match(connector,/browserAttempts=2/);
+  assert.match(connector,/await sleep\(900\*attempt\)/);
+  assert.match(connector,/FICHE_OFFICIELLE_NON_LUEE/);
+  assert.match(connector,/FONDS_EUROPEEN_CYCLE_DEDIE/);
+});
