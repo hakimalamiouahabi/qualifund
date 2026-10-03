@@ -5,6 +5,11 @@ function parisYmd(now=new Date()){
   return {year:Number(parts.year),month:Number(parts.month),day:Number(parts.day)};
 }
 
+export function parisDate(now=new Date()){
+  const {year,month,day}=parisYmd(now);
+  return [year,String(month).padStart(2,'0'),String(day).padStart(2,'0')].join('-');
+}
+
 export function jPlusOneDate(now=new Date()){
   const {year,month,day}=parisYmd(now);
   const d=new Date(Date.UTC(year,month-1,day+1));
