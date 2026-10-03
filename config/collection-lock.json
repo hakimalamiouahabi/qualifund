@@ -73,5 +73,11 @@
       }
     }
   },
-  "notes": "Verrou Région Auvergne-Rhône-Alpes v1 : catalogue officiel filtré Entreprise comme référentiel maître. FEDER/FEADER/FSE+/FTJ sont exclus du cycle régional et restent gelés pour leurs cycles dédiés. Les moteurs externes servent uniquement au contre-audit. ADEME et Bpifrance restent figés sur leurs certificats PASS."
+  "notes": "Verrou Région Auvergne-Rhône-Alpes v1 : catalogue officiel filtré Entreprise comme référentiel maître. FEDER/FEADER/FSE+/FTJ sont exclus du cycle régional et restent gelés pour leurs cycles dédiés. Les moteurs externes servent uniquement au contre-audit. ADEME et Bpifrance restent figés sur leurs certificats PASS. Cycle AURA repris après validation Foundation v2 (P0=0, AJV 2020-12, purge/quarantaine et calibration guard actifs).",
+  "foundationBaseline": {
+    "version": "Foundation v2",
+    "sha": "121e2638a83eb65ef758729b20b5897ea3f90cf2",
+    "validatedAt": "2026-10-03T09:10:49Z",
+    "p0": 0
+  }
 }
