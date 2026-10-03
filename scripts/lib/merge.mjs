@@ -17,7 +17,11 @@ function officialUrlRank(raw=''){
     return 3;
   }catch{return 0}
 }
+function documentUrl(raw=''){return /\.(?:pdf|docx?|xlsx?)(?:$|\?)/i.test(String(raw||''))}
 function bestOfficialPage(a,b){
+  // Une pièce documentaire ne remplace jamais une page HTML déjà identifiée comme canonique.
+  if(a&&!documentUrl(a)&&documentUrl(b))return a;
+  if(b&&!documentUrl(b)&&documentUrl(a))return b;
   const ra=officialUrlRank(a),rb=officialUrlRank(b);
   if(rb>ra)return b;
   return a||b||null;
@@ -31,7 +35,11 @@ function bestTitle(a,b,ta='?',tb='?'){
 export function mergeAid(base,incoming){
   if(!base)return incoming; if(!incoming)return base; const ta=base.verification?.sourceTier||'?',tb=incoming.verification?.sourceTier||'?';
   const out={...base};
-  out.title=bestTitle(base.title,incoming.title,ta,tb);
+  // Un PDF de niveau A peut enrichir les preuves sans remplacer l'intitulé maître
+  // déjà obtenu depuis un listing/catalogue/page HTML officielle.
+  out.title=documentUrl(incoming.officialPage)&&!genericTitle(base.title)
+    ? base.title
+    : bestTitle(base.title,incoming.title,ta,tb);
   // Une annexe PDF de niveau A enrichit la preuve mais ne remplace pas la page
   // officielle du dispositif déjà connue.
   out.officialPage=bestOfficialPage(base.officialPage,incoming.officialPage);
