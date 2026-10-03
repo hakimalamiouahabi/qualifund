@@ -1,0 +1,36 @@
+name: AURA — discovery-only ponctuel
+on:
+  push:
+    branches: [maintenance/aura-live-probe-once]
+    paths:
+      - '.github/workflows/aura-discovery-only-once.yml'
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Découvrir le catalogue Entreprise
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import {discoverAura,isEuropeanFundAid} from './scripts/connectors/aura.mjs';
+          const cfg=JSON.parse(fs.readFileSync('./config/sources.json','utf8'));
+          const source=cfg.sources.find(s=>s.id==='aura');
+          const d=await discoverAura(source,{log:console.log});
+          const european=d.links.filter(isEuropeanFundAid);
+          console.log('AURA_MASTER='+JSON.stringify({
+            expectedCount:d.expectedCount,
+            discovered:d.links.length,
+            pagesScanned:d.pagesScanned,
+            europeanCount:european.length,
+            nonEuropeanCount:d.links.length-european.length,
+            samples:d.links.slice(0,12).map(x=>({label:x.label,kind:x.kind,url:x.url,closingDate:x.closingDate}))
+          }));
+          NODE
