@@ -162,12 +162,37 @@ async function catalogueMaster(source,{log=console.log}={}){
   return links;
 }
 
-function bpifranceEnterpriseEvidence(text=''){
+export function bpifranceEnterpriseEvidence(text=''){
   const raw=cleanTitle(text);
+  if(!raw)return null;
+  // Cas explicitement hors cible entreprise : ne jamais transformer une mention secondaire
+  // d'entreprise en preuve d'éligibilité.
+  if(/\bne vise pas [àa] financer une entreprise\b/i.test(raw))return null;
+  // Les fonds de fonds / véhicules d'investissement ne constituent pas une aide
+  // directe à l'entreprise même si leur portefeuille cible des PME/ETI.
+  if(/\bfonds?\s+de\s+fonds?\b/i.test(raw)
+    ||/\binvest(?:it|issement(?:s)?)[^.;]{0,80}\bdans\s+des\s+fonds\b/i.test(raw)
+    ||/\bparticipe[^.;]{0,100}\b(?:création|constitution)\s+de\s+fonds\b/i.test(raw))return null;
+
+  const patterns=[
+    /\bprojets?[^.;]{0,180}port[eé]s?\s+par\s+(?:des|les|une?)\s+(?:tpe|pme|eti|start[- ]?ups?|entreprises?|soci[eé]t[eé]s?|industriels?)/i,
+    /\b(?:accompagne|soutient|finance|financer)[^.;]{0,140}(?:des|les|une?)\s+(?:tpe|pme|eti|start[- ]?ups?|entreprises?|soci[eé]t[eé]s?|industriels?)/i,
+    /\b(?:destin[eé]e?s?|r[eé]serv[eé]e?s?|adress[eé]e?s?|ouvert(?:e)?s?|accessible?s?)\s+(?:notamment\s+)?(?:aux?|pour\s+les?)\s+(?:tpe|pme|eti|start[- ]?ups?|entreprises?|soci[eé]t[eé]s?|industriels?)/i,
+    /\b(?:tpe|pme|eti|start[- ]?ups?|entreprises?|soci[eé]t[eé]s?|industriels?)[^.;]{0,150}\b(?:peuvent|doivent|sont|seront)\b[^.;]{0,100}\b(?:candidater|[eé]ligibles?|b[eé]n[eé]ficier|solliciter|d[eé]poser)/i,
+    /\bpour\s+une\s+entreprise\s+innovante\b/i,
+    /\bentreprises?\s+de\s+toutes\s+tailles\b/i,
+    /\bentreprises?\s+laur[eé]ates?\b/i
+  ];
+  for(const rx of patterns){
+    const m=raw.match(rx);if(!m)continue;
+    const i=Math.max(0,(m.index||0)-180),j=Math.min(raw.length,(m.index||0)+m[0].length+260);
+    return raw.slice(i,j);
+  }
+
   const company=/\b(?:entreprises?|tpe|pme|eti|start[- ]?ups?|soci[eé]t[eé]s?|industriels?)\b/i;
   const cue=/\b(?:vous [eê]tes|votre profil|[eé]ligib|candidat|porteur|b[eé]n[eé]ficiaire|consortium|partenariats?|projets? port[eé]s?|doivent [eê]tre|peuvent candidater)\b/i;
   const sentences=raw.split(/(?<=[.!?;:])\s+/).map(x=>x.trim()).filter(Boolean);
-  const hit=sentences.find(s=>company.test(s)&&cue.test(s));
+  const hit=sentences.find(x=>company.test(x)&&cue.test(x));
   return hit?hit.slice(0,850):null;
 }
 
@@ -254,7 +279,10 @@ async function extractDirect(source,link,kind,{requireTargetInstrument=false}={}
   const role=bpifranceRoleEvidence(text);
   if(role&&!a.operator)a.operator='Bpifrance';
   const enterpriseProof=bpifranceEnterpriseEvidence(text);
-  if(enterpriseProof)a.enterpriseEligible=true;
+  if(!enterpriseProof){
+    return{aid:null,excluded:{url:requested,title:a.title,reason:'ENTREPRISE_NON_PROUVEE'}};
+  }
+  a.enterpriseEligible=true;
   a.sourceLinks=[{label:'Page officielle Bpifrance',url:requested},...(a.sourceLinks||[]).filter(x=>x?.url&&canonicalUrl(x.url)!==requested)];
   const masterSource=kind==='AAP / AMI'
     ?'https://www.bpifrance.fr/nos-appels-a-projets-concours'

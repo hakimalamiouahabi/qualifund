@@ -3,7 +3,8 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {
   parseBpifranceAapListingHtml,
-  classifyBpifranceInstrument
+  classifyBpifranceInstrument,
+  bpifranceEnterpriseEvidence
 } from '../scripts/connectors/bpifrance.mjs';
 
 test('le listing Bpifrance extrait les AAP directs sans confondre pagination et catalogue',()=>{
@@ -30,6 +31,20 @@ test('la qualification financière distingue subvention, avance remboursable et 
   assert.equal(
     classifyBpifranceInstrument("Bpifrance ne finance pas directement mais accompagne.",'Horizon Europe').reason,
     'BPIFRANCE_NON_FINANCEUR_DIRECT'
+  );
+});
+
+test('la preuve entreprise Bpifrance est positive uniquement quand la page relie explicitement le dispositif aux entreprises',()=>{
+  assert.ok(bpifranceEnterpriseEvidence("Le présent AAP vise des projets portés par des entreprises de la filière automobile."));
+  assert.ok(bpifranceEnterpriseEvidence("Financer vos études de faisabilité pour une entreprise innovante sur un marché extra-européen."));
+  assert.ok(bpifranceEnterpriseEvidence("Cet appel accompagne les entreprises et consortiums souhaitant industrialiser leurs solutions."));
+  assert.equal(
+    bpifranceEnterpriseEvidence("Ce dispositif ne vise pas à financer une entreprise, mais à soutenir le développement business d'un projet deeptech."),
+    null
+  );
+  assert.equal(
+    bpifranceEnterpriseEvidence("Ce fonds de fonds réalise des investissements dans des fonds ciblant des PME et ETI industrielles."),
+    null
   );
 });
 
@@ -90,6 +105,24 @@ test('le connecteur Bpifrance matérialise la preuve entreprise depuis la page d
   assert.match(connector,/bpifranceEnterpriseEvidence/);
   assert.match(connector,/field:'enterpriseEligibility'/);
   assert.match(connector,/a\.enterpriseEligible=true/);
+});
+
+test('le verrou Bpifrance exige désormais un corpus publication-ready et autorise les exclusions du listing AAP',()=>{
+  const lock=JSON.parse(fs.readFileSync(new URL('../config/collection-lock.json',import.meta.url),'utf8'));
+  assert.equal(lock.version,11);
+  assert.equal(lock.certification.requirePublicationReady,true);
+  assert.equal(lock.certification.requireEnterpriseScope,true);
+  assert.equal(lock.certification.sourceRules.bpifrance_aap.requireImportedEqualsDiscovered,undefined);
+  assert.ok(lock.certification.sourceRules.bpifrance_aap.minRetained>=20);
+});
+
+test('Rebond Industriel force uniquement les deux instruments prouvés sur sa page officielle',()=>{
+  const cfg=JSON.parse(fs.readFileSync(new URL('../config/sources.json',import.meta.url),'utf8'));
+  const source=cfg.sources.find(x=>x.id==='bpifrance_rebond_industriel');
+  assert.deepEqual(source.forceAidTypes,['SUBVENTION','AVANCE_REMBOURSABLE']);
+  const connector=fs.readFileSync(new URL('../scripts/connectors/official-page.mjs',import.meta.url),'utf8');
+  assert.match(connector,/official-page-instrument/);
+  assert.match(connector,/forceAidTypes/);
 });
 
 test('Rebond Industriel déclare explicitement Bpifrance comme guichet vérifié',()=>{

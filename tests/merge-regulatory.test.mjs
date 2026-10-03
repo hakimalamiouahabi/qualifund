@@ -28,6 +28,24 @@ test('une annexe PDF générique ne remplace ni le nom ni la page officielle du 
 });
 
 
+test('un PDF nommé Conditions particulières ne remplace jamais le titre ni la page canonique HTML',()=>{
+  const base={
+    title:'France 2030 — Rebond Industriel — soutien à l’investissement industriel',
+    officialPage:'https://rebond-industriel.bpifrance.fr/',
+    verification:{sourceTier:'B',fieldEvidence:[]}
+  };
+  const pdf={
+    title:'CONDITIONS PARTICULIÈRES BPIFRANCE',
+    officialPage:'https://rebond-industriel.bpifrance.fr/storage/conditions.pdf',
+    objective:'Preuve documentaire',
+    verification:{sourceTier:'A',fieldEvidence:[]}
+  };
+  const out=mergeAid(base,pdf);
+  assert.equal(out.title,base.title);
+  assert.equal(out.officialPage,base.officialPage);
+  assert.equal(out.objective,'Preuve documentaire');
+});
+
 test('un lien officiel spécifique remplace un lien générique lors de la fusion',()=>{
   const base={title:'Aide innovation',officialPage:'https://data.aides-entreprises.fr/stock',verification:{sourceTier:'C',fieldEvidence:[]}};
   const inc={title:'Aide innovation',officialPage:'https://www.bpifrance.fr/catalogue-offres/aide-pour-le-developpement-de-linnovation',verification:{sourceTier:'B',fieldEvidence:[]}};

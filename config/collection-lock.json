@@ -1,5 +1,5 @@
 {
-  "version": 10,
+  "version": 11,
   "locked": true,
   "mode": "GUICHET",
   "name": "Bpifrance",
@@ -32,7 +32,6 @@
       "bpifrance_aap": {
         "master": "ACTIVE_AAP_LISTING",
         "requireListingDiscovery": true,
-        "requireImportedEqualsDiscovered": true,
         "requireGuichetEvidence": true,
         "requireCurrentStatusEvidence": true,
         "allowedSourceStates": [
@@ -43,7 +42,8 @@
           "AAP / AMI"
         ],
         "requiredPathPrefix": "/nos-appels-a-projets-concours/",
-        "requireAuditAccounting": true
+        "requireAuditAccounting": true,
+        "minRetained": 20
       },
       "bpifrance_aides": {
         "master": "CATALOGUE_SECTION_SUB_AR",
@@ -62,18 +62,30 @@
           "PRET_TAUX_ZERO"
         ],
         "requiredPathPrefix": "/catalogue-offres/",
-        "requireAuditAccounting": true
+        "requireAuditAccounting": true,
+        "minRetained": 15
       },
       "bpifrance_rebond_industriel": {
         "master": "DIRECT_OFFICIAL_PAGE",
         "minRetained": 1,
-        "requireAuditAccounting": false
+        "requireAuditAccounting": false,
+        "allowedKinds": [
+          "AIDE"
+        ],
+        "allowedAidTypes": [
+          "SUBVENTION",
+          "AVANCE_REMBOURSABLE"
+        ],
+        "requireGuichetEvidence": true,
+        "requireCurrentStatusEvidence": false
       }
-    }
+    },
+    "requirePublicationReady": true,
+    "requireEnterpriseScope": true
   },
-  "notes": "Recertification Foundation v3.1 / v12.9 officiel-only : Bpifrance est repris en premier sans aucun contre-audit externe payant/LLM. ADEME sera recertifié ensuite sur catalogue/RSS officiels, puis Auvergne-Rhône-Alpes sur son catalogue officiel Entreprise. AURA reste gelée jusqu'aux deux PASS v12.9.",
+  "notes": "Recertification Bpifrance v12.9.2 publication-ready : seules les fiches officielles directes avec preuves minimales de guichet, instrument, statut lorsque requis et éligibilité entreprise peuvent être certifiées. ADEME reste le cycle suivant ; AURA reste gelée jusqu’aux PASS Bpifrance puis ADEME.",
   "foundationBaseline": {
-    "version": "Foundation v3.1 / 12.9 official-only",
+    "version": "Foundation v3.2 / 12.9.2 Bpifrance publication-ready",
     "status": "HARDENING",
     "validatedAt": null,
     "p0": null

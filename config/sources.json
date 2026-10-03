@@ -1,5 +1,5 @@
 {
-  "version": "12.9.1",
+  "version": "12.9.2",
   "sources": [
     {
       "id": "bpifrance_aap",
@@ -14,10 +14,10 @@
       "browserFallback": true,
       "minExpected": 20,
       "minImported": 20,
-      "minImportRatio": 0.9,
+      "minImportRatio": 0.7,
       "webVerifiedAt": "2026-09-30",
       "webEvidenceUrl": "https://www.bpifrance.fr/nos-appels-a-projets-concours",
-      "notes": "Bpifrance v3 officiel-only : le listing officiel /nos-appels-a-projets-concours est le référentiel maître des AAP/AMI/concours actifs. Le sitemap officiel Bpifrance sert uniquement de contrôle de couverture. Chaque fiche retenue est vérifiée directement sur bpifrance.fr."
+      "notes": "Bpifrance v3.2 officiel-only : le listing officiel /nos-appels-a-projets-concours est le référentiel maître des AAP/AMI/concours actifs. Chaque page directe est contrôlée ; seules les fiches avec preuve officielle d'éligibilité entreprise sont retenues. Les fonds de fonds, dispositifs hors cible entreprise et fiches sans preuve suffisante sont des exclusions comptabilisées. Le sitemap officiel Bpifrance sert uniquement de contrôle de couverture."
     },
     {
       "id": "bpifrance_aides",
@@ -36,7 +36,7 @@
       "minImportRatio": 0.5,
       "webVerifiedAt": "2026-09-30",
       "webEvidenceUrl": "https://www.bpifrance.fr/catalogue-offres",
-      "notes": "Bpifrance v3 officiel-only : la section officielle « Subventions et avances remboursables » du catalogue est le référentiel maître. Les pages sont lues directement ; seules les subventions, avances remboursables/récupérables et prêts à taux zéro sont conservés. Le sitemap officiel Bpifrance sert uniquement de contrôle de couverture.",
+      "notes": "Bpifrance v3.2 officiel-only : la section officielle « Subventions et avances remboursables » du catalogue est le référentiel maître. Les pages sont lues directement ; seules les aides avec instrument cible et preuve officielle d'éligibilité entreprise sont retenues. Toute autre fiche est une exclusion comptabilisée. Le sitemap officiel Bpifrance sert uniquement de contrôle de couverture.",
       "canonicalAliases": {
         "https://www.bpifrance.fr/catalogue-offres/aide-pour-le-developpement-de-linnovation": "https://www.bpifrance.fr/catalogue-offres/aide-au-developpement-deeptech"
       }
@@ -55,13 +55,17 @@
       "kindOverride": "AIDE",
       "funder": "État · France 2030 · Bpifrance",
       "operator": "Bpifrance",
-      "notes": "Source officielle Bpifrance : Bpifrance est opérateur du volet soutien aux investissements ; subventions et avances remboursables selon le projet.",
+      "notes": "Source officielle Bpifrance Rebond Industriel : la page canonique confirme le soutien aux projets industriels sous forme de subventions et avances récupérables/remboursables. Les documents PDF restent des pièces justificatives et ne remplacent jamais la page canonique.",
       "webVerifiedAt": "2026-09-30",
       "webEvidenceUrl": "https://rebond-industriel.bpifrance.fr/",
       "guichetVerified": "Bpifrance",
       "minExpected": 1,
       "minImported": 1,
-      "minImportRatio": 1
+      "minImportRatio": 1,
+      "forceAidTypes": [
+        "SUBVENTION",
+        "AVANCE_REMBOURSABLE"
+      ]
     },
     {
       "id": "ademe",

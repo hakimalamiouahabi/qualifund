@@ -68,12 +68,12 @@ test('le collecteur AURA matérialise explicitement l’éligibilité entreprise
   assert.match(connector,/field:'enterpriseEligibility'/);
 });
 
-test('AURA reste gelée tant que Bpifrance puis ADEME ne sont pas recertifiés v12.9',()=>{
+test('AURA reste gelée tant que Bpifrance puis ADEME ne sont pas recertifiés v12.9.2',()=>{
   const lock=JSON.parse(fs.readFileSync(new URL('../config/collection-lock.json',import.meta.url),'utf8'));
   assert.equal(lock.locked,true);
   assert.equal(lock.mode,'GUICHET');
   assert.equal(lock.name,'Bpifrance');
-  assert.equal(lock.version,10);
+  assert.equal(lock.version,11);
   assert.deepEqual(lock.allowedSourceIds,['bpifrance_aap','bpifrance_aides','bpifrance_rebond_industriel']);
   assert.equal(lock.next,'ADEME');
   assert.equal(lock.allowedSourceIds.includes('aura'),false);
