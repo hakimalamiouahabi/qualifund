@@ -68,12 +68,12 @@ test('le collecteur AURA matérialise explicitement l’éligibilité entreprise
   assert.match(connector,/field:'enterpriseEligibility'/);
 });
 
-test('AURA reste gelée tant que Bpifrance puis ADEME ne sont pas recertifiés v12.8',()=>{
+test('AURA reste gelée tant que Bpifrance puis ADEME ne sont pas recertifiés v12.9',()=>{
   const lock=JSON.parse(fs.readFileSync(new URL('../config/collection-lock.json',import.meta.url),'utf8'));
   assert.equal(lock.locked,true);
   assert.equal(lock.mode,'GUICHET');
   assert.equal(lock.name,'Bpifrance');
-  assert.equal(lock.version,9);
+  assert.equal(lock.version,10);
   assert.deepEqual(lock.allowedSourceIds,['bpifrance_aap','bpifrance_aides','bpifrance_rebond_industriel']);
   assert.equal(lock.next,'ADEME');
   assert.equal(lock.allowedSourceIds.includes('aura'),false);
@@ -86,9 +86,16 @@ test('la source AURA est filtrée Entreprise et les sources fonds européens res
   assert.equal(aura.strategy,'aura-official');
   assert.match(aura.url,/profil%3A3/);
   assert.equal(aura.minExpected,175);
-  assert.match(aura.externalAuditFile,/aura-v1-external-audit\.json$/);
+  assert.equal(aura.externalAuditFile,undefined);
   assert.ok(cfg.sources.some(x=>x.id==='aura_feder'));
   assert.ok(!cfg.sources.some(x=>x.id==='aura_france2030'));
+});
+
+test('le connecteur AURA est strictement officiel-only',()=>{
+  const connector=fs.readFileSync(new URL('../scripts/connectors/aura.mjs',import.meta.url),'utf8');
+  assert.doesNotMatch(connector,/externalAudit|Exa|Tavily|Parallel|Firecrawl/i);
+  assert.match(connector,/enterpriseMaster/);
+  assert.match(connector,/getAidHtml/);
 });
 
 test('les anciens certificats ADEME et Bpifrance restent conservés comme historique',()=>{
