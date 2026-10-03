@@ -4,6 +4,7 @@ await purgeIndirectSources();
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { execSync } from 'node:child_process';
 import { buildCertificationLedger, isPublishableAid } from './lib/publication.mjs';
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
@@ -158,6 +159,17 @@ const manifest={
 };
 await fs.writeFile(path.join(DIST,'data','library-manifest.json'),JSON.stringify(manifest),'utf8');
 await fs.writeFile(path.join(DIST,'data','manifest.json'),JSON.stringify(publicMeta,null,2),'utf8');
+let commitSha=String(process.env.CF_PAGES_COMMIT_SHA||'').trim();
+if(!commitSha){try{commitSha=execSync('git rev-parse HEAD',{cwd:ROOT,encoding:'utf8'}).trim()}catch{}}
+await fs.writeFile(path.join(DIST,'data','build-info.json'),JSON.stringify({
+  product:'FUNDING RADAR',
+  deployment:'cloudflare-pages',
+  commitSha:commitSha||null,
+  generatedAt:new Date().toISOString(),
+  publicationPolicy:'CERTIFIED_SOURCE_ONLY',
+  publishedCount:records.length,
+  certifiedSources:[...unlockedSourceIds].sort()
+},null,2),'utf8');
 
 async function walk(dir){
   const out=[];
