@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T10:32:07.302Z",
+  "generatedAt": "2026-10-04T10:37:12.731Z",
   "version": "12.9.3",
   "currentLock": {
     "name": "AURA",
@@ -11,143 +11,24 @@
   "publication": {
     "policy": "CERTIFIED_SOURCE_ONLY",
     "certifiedSourceIds": [
-      "aura"
+      "ademe",
+      "aura",
+      "bpifrance_aap",
+      "bpifrance_aides",
+      "bpifrance_rebond_industriel"
     ],
     "certifiedGuichets": [
-      "AURA"
+      "ADEME",
+      "AURA",
+      "Bpifrance"
     ],
-    "reasons": {
-      "SOURCE_NOT_CERTIFIED": 104
-    },
-    "reasonSamples": {
-      "SOURCE_NOT_CERTIFIED": [
-        {
-          "id": "ademe_8c8a291c0a1e03c28352de9331a8e469db6bf5220a547f249de9d1e414a69c66",
-          "title": "AACT-AIR – Aide à l’action des collectivités territoriales en faveur de la qualité de l’air",
-          "sourceId": "ademe",
-          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/aact-air-aide-laction-des-collectivites-territoriales-en-faveur-de-la-qualite-de-lair"
-        },
-        {
-          "id": "ademe_70dbf42c2ff2a29e70e2b6cd80dd3862ba164201902ed994e0526e8cfaab86e9",
-          "title": "Acquisition de données Géologiques vers des Industries Bas Carbone (AGIBaC)",
-          "sourceId": "ademe",
-          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/acquisition-de-donnees-geologiques-vers-des-industries-bas-carbone-agibac"
-        },
-        {
-          "id": "ademe_6b8156486b6e56c87e22d55a7b085d10bc833a9a982b4f4d1e4535c7377923bd",
-          "title": "Aide à la création et au fonctionnement des observatoires territoriaux",
-          "sourceId": "ademe",
-          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/aide-la-creation-et-au-fonctionnement-des-observatoires-territoriaux"
-        },
-        {
-          "id": "bpifrance_aides_1c9f2eadbc578633515c2ee2b39148cc3ca83a0912c7e4464f5f094c31c0f3ab",
-          "title": "AIDE AU DEVELOPPEMENT DEEPTECH",
-          "sourceId": "bpifrance_aides",
-          "officialPage": "https://www.bpifrance.fr/catalogue-offres/aide-au-developpement-deeptech"
-        },
-        {
-          "id": "ademe_1f91ec87aa5c7152836f30820397b2def1a2476ceb3473a3c27579d7cf46f784",
-          "title": "Aides au changement de comportement",
-          "sourceId": "ademe",
-          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/aides-au-changement-de-comportement"
-        },
-        {
-          "id": "ademe_13ebd98f6d4417a273a2e6cef41c7b7c850182abc37b90770e951127f423d9f9",
-          "title": "Aides au réemploi des emballages",
-          "sourceId": "ademe",
-          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/aides-au-reemploi-des-emballages"
-        },
-        {
-          "id": "ademe_680e808fe8a95e6ed29b31f7974bcc5c40fdb528c41cecca4f1553d43f09e457",
-          "title": "Amélioration de la qualité de l’air dans les territoires en PPA ou dans ceux concernés par des dépassements actuels ou prévisionnels 2030",
-          "sourceId": "ademe",
-          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/amelioration-de-la-qualite-de-lair-dans-les-territoires-en-ppa-ou-dans-ceux-concernes-par-des-depassements-actuels-ou-previsionnels-2030"
-        },
-        {
-          "id": "ademe_1dc26899bf6a8255c6c378eb9b177a03a060d8cfd37eaad7648ee68d0f72cb3b",
-          "title": "AMI Low-tech 2026",
-          "sourceId": "ademe",
-          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/ami-low-tech-2026"
-        },
-        {
-          "id": "ademe_c48cc10ec1a72e5e359f8db8c1a07464e1eeb40a7bf61095bb9eb7f034c219f7",
-          "title": "AQACIA 2026 – Particules, ozone, produits phytopharmaceutiques et pollutions sectorielles",
-          "sourceId": "ademe",
-          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/aqacia-2026-particules-ozone-produits-phytopharmaceutiques-et-pollutions-sectorielles"
-        },
-        {
-          "id": "ademe_494b9f9bd2703c0139a63aa120cb33c3b55c4628450a2a744894d6053d984c97",
-          "title": "Audit et réhabilitation d'installations solaires thermiques collectives",
-          "sourceId": "ademe",
-          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/audit-et-rehabilitation-dinstallations-solaires-thermiques-collectives"
-        },
-        {
-          "id": "bpifrance_aides_8fb6599ddd818269121e1c4629f14670a304a001e1e491488dac52959e7c2cb9",
-          "title": "AVANCE INNOVATION CLASSIQUE",
-          "sourceId": "bpifrance_aides",
-          "officialPage": "https://www.bpifrance.fr/catalogue-offres/avance-innovation-classique"
-        },
-        {
-          "id": "bpifrance_aides_911764c5160af779287c4f25eafd2d01c81464707c2a26d8b2ac6ab5bf82bbd7",
-          "title": "BOURSE FRENCH TECH",
-          "sourceId": "bpifrance_aides",
-          "officialPage": "https://www.bpifrance.fr/catalogue-offres/bourse-french-tech"
-        },
-        {
-          "id": "bpifrance_aides_855a6c73e18caebd3f6a54b9009c5d7c5dd4d7ef6304bc9b9ca7935722587982",
-          "title": "BOURSE FRENCH TECH EMERGENCE",
-          "sourceId": "bpifrance_aides",
-          "officialPage": "https://www.bpifrance.fr/catalogue-offres/bourse-french-tech-emergence"
-        },
-        {
-          "id": "bpifrance_aap_2d3ae5c397bbbe5b06c4eb947ad53894bb4d1cf3f88737903e94b2d99316c13f",
-          "title": "Bpifrance et NEDO s’allient pour promouvoir et soutenir financièrement des partenariats en innovation entre entreprises françaises et japonaises. Prép...",
-          "sourceId": "bpifrance_aap",
-          "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-eureka-france-japon"
-        },
-        {
-          "id": "bpifrance_aap_ff32ef41aba364a34dc810bb89c620c9ceec782d820a596d73d21ef379f1d146",
-          "title": "Bpifrance et Taïwan s’allient pour promouvoir et soutenir financièrement des partenariats en innovation entre entreprises françaises et taïwanaises. P...",
-          "sourceId": "bpifrance_aap",
-          "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/partenariats-en-innovation-france-taiwan-nouvel-appel-a-projets"
-        },
-        {
-          "id": "bpifrance_aap_41b991a76312e50da7ca3a8e26cd30f07965c305b758e0006b404e7b1a7bd4cd",
-          "title": "Ce nouvel appel vise à promouvoir et financer les collaborations internationales ayant comme objet l’innovation logicielle.",
-          "sourceId": "bpifrance_aap",
-          "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-du-cluster-eureka-itea"
-        },
-        {
-          "id": "bpifrance_aap_b4a42221a4b39f1714b9dfcc36f4bf403433dfeaaa4ad3cf4b8afd67f06c4a15",
-          "title": "Ce nouvel appel vise à promouvoir et financer les collaborations internationales ayant comme objet la fabrication avancée.",
-          "sourceId": "bpifrance_aap",
-          "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-du-cluster-eureka-smart"
-        },
-        {
-          "id": "bpifrance_aap_325fd2cf78d1e69b6afbe96b509ab958f281d4bff30e50996b7713250d3ec9b3",
-          "title": "Ce nouvel appel vise à promouvoir et financer les collaborations internationales ayant comme objet les composants et systèmes électroniques.",
-          "sourceId": "bpifrance_aap",
-          "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-du-cluster-eureka-xecs"
-        },
-        {
-          "id": "bpifrance_aap_7476b30bbd237ff26c2d5fe5d85c4e454f9824060d78af08c1556bb59ed1a712",
-          "title": "Ce nouvel appel vise à promouvoir et financer les collaborations internationales ayant comme objet les technologies de l'information et de la communic...",
-          "sourceId": "bpifrance_aap",
-          "officialPage": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-du-cluster-eureka-celtic-next"
-        },
-        {
-          "id": "bpifrance_aides_f2687e4f85e00c1a14def0eecd18f2e3adb4ba80e190a1bdc2365ddc824af252",
-          "title": "Conseil européen de l’innovation (EIC)",
-          "sourceId": "bpifrance_aides",
-          "officialPage": "https://www.bpifrance.fr/catalogue-offres/conseil-europeen-de-linnovation-eic-0"
-        }
-      ]
-    }
+    "reasons": {},
+    "reasonSamples": {}
   },
   "library": {
     "raw": 164,
-    "publishable": 60,
-    "quarantined": 104,
+    "publishable": 164,
+    "quarantined": 0,
     "orphanSource": 0,
     "duplicateOfficialUrl": 0,
     "missingOfficialUrl": 0,
@@ -894,13 +775,13 @@
   "historicalCertifications": {
     "ademe-certification.json": {
       "status": "PASS",
-      "generatedAt": "2026-10-03T15:04:41.233Z",
+      "generatedAt": "2026-10-04T10:37:11.034Z",
       "problems": [],
       "libraryRecords": 68
     },
     "bpifrance-certification.json": {
       "status": "PASS",
-      "generatedAt": "2026-10-03T14:03:03.341Z",
+      "generatedAt": "2026-10-04T10:37:10.439Z",
       "problems": [],
       "libraryRecords": 36
     }
@@ -909,9 +790,23 @@
     "freshnessWarningHours": 72,
     "freshness": [
       {
+        "file": "ademe-certification.json",
+        "name": "ADEME",
+        "generatedAt": "2026-10-04T10:37:11.034Z",
+        "ageHours": 0,
+        "status": "FRESH"
+      },
+      {
         "file": "aura-certification.json",
         "name": "AURA",
         "generatedAt": "2026-10-04T10:32:05.478Z",
+        "ageHours": 0.1,
+        "status": "FRESH"
+      },
+      {
+        "file": "bpifrance-certification.json",
+        "name": "Bpifrance",
+        "generatedAt": "2026-10-04T10:37:10.439Z",
         "ageHours": 0,
         "status": "FRESH"
       }
@@ -926,32 +821,7 @@
       "basisFingerprintMatch": true,
       "dataFingerprintMatch": true
     },
-    "rejected": [
-      {
-        "file": "ademe-certification.json",
-        "name": "ADEME",
-        "generatedAt": "2026-10-03T15:04:41.233Z",
-        "sourceIds": [
-          "ademe"
-        ],
-        "reason": "CERTIFICATION_BASIS_CHANGED",
-        "certifiedBasisFingerprint": "004c1d56c447c75a30d86d287141785f03825e0f7a1d2bbcef3664aa919da5d9",
-        "currentBasisFingerprint": "3d533091be33bda5e21f49bb23f82b1f6b8c67be78820279ed214839d68fdf9f"
-      },
-      {
-        "file": "bpifrance-certification.json",
-        "name": "Bpifrance",
-        "generatedAt": "2026-10-03T14:03:03.341Z",
-        "sourceIds": [
-          "bpifrance_aap",
-          "bpifrance_aides",
-          "bpifrance_rebond_industriel"
-        ],
-        "reason": "CERTIFICATION_BASIS_CHANGED",
-        "certifiedBasisFingerprint": "ebce4df7b46f582b17f7223013f79eed0eac15e4ad731808781555b33739724e",
-        "currentBasisFingerprint": "ce2a7c50331124576e56b43eb55c7daa28478b35c5312e362749829810d6b359"
-      }
-    ]
+    "rejected": []
   },
   "certifiedEvidenceDebt": {
     "missingGuichet": 0,
@@ -971,12 +841,10 @@
   },
   "severity": {
     "p0": [],
-    "p1": [
-      "2 certificat(s) historique(s) ne déverrouillent plus la publication et doivent être recertifiés (CERTIFICATION_BASIS_CHANGED: 2)"
-    ],
+    "p1": [],
     "p2": [
       "92 source(s) future(s) non calibrée(s), bloquées automatiquement jusqu’à mesure du référentiel officiel",
-      "104 fiche(s) brutes en quarantaine de publication"
+      "0 fiche(s) brutes en quarantaine de publication"
     ]
   },
   "samples": {

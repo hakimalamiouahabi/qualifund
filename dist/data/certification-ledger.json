@@ -1,14 +1,37 @@
 {
-  "generatedAt": "2026-10-04T10:32:14.817Z",
+  "generatedAt": "2026-10-04T10:37:15.075Z",
   "version": "12.9.3",
   "policy": "CERTIFIED_SOURCE_ONLY",
   "unlockedSourceIds": [
-    "aura"
+    "ademe",
+    "aura",
+    "bpifrance_aap",
+    "bpifrance_aides",
+    "bpifrance_rebond_industriel"
   ],
   "guichets": [
-    "AURA"
+    "ADEME",
+    "AURA",
+    "Bpifrance"
   ],
   "certifications": [
+    {
+      "file": "ademe-certification.json",
+      "name": "ADEME",
+      "generatedAt": "2026-10-04T10:37:11.034Z",
+      "status": "PASS",
+      "sourceIds": [
+        "ademe"
+      ],
+      "libraryRecords": 68,
+      "fingerprintStatus": "MATCH",
+      "sourceConfigFingerprint": "f0d1cd6f6e119f57e75653b884a26a4a306c31fe8233d3b4815d566393f6030a",
+      "currentSourceConfigFingerprint": "f0d1cd6f6e119f57e75653b884a26a4a306c31fe8233d3b4815d566393f6030a",
+      "certificationBasisFingerprint": "3d533091be33bda5e21f49bb23f82b1f6b8c67be78820279ed214839d68fdf9f",
+      "currentCertificationBasisFingerprint": "3d533091be33bda5e21f49bb23f82b1f6b8c67be78820279ed214839d68fdf9f",
+      "certifiedDataFingerprint": "452f4970f40094846d3f513dd7332d66f5a482d53314090f934608daa3b1661e",
+      "currentDataFingerprint": "452f4970f40094846d3f513dd7332d66f5a482d53314090f934608daa3b1661e"
+    },
     {
       "file": "aura-certification.json",
       "name": "AURA",
@@ -25,32 +48,26 @@
       "currentCertificationBasisFingerprint": "b948da7cb23b16ac73bb590abd88ef01c2cf50e78f1950a91f2e6ea7c5584eef",
       "certifiedDataFingerprint": "6c9acfaff28b1f10847f8ea65c26db6c2f7b91342dac1d1754d7171c2092e07c",
       "currentDataFingerprint": "6c9acfaff28b1f10847f8ea65c26db6c2f7b91342dac1d1754d7171c2092e07c"
-    }
-  ],
-  "rejectedCertifications": [
-    {
-      "file": "ademe-certification.json",
-      "name": "ADEME",
-      "generatedAt": "2026-10-03T15:04:41.233Z",
-      "sourceIds": [
-        "ademe"
-      ],
-      "reason": "CERTIFICATION_BASIS_CHANGED",
-      "certifiedBasisFingerprint": "004c1d56c447c75a30d86d287141785f03825e0f7a1d2bbcef3664aa919da5d9",
-      "currentBasisFingerprint": "3d533091be33bda5e21f49bb23f82b1f6b8c67be78820279ed214839d68fdf9f"
     },
     {
       "file": "bpifrance-certification.json",
       "name": "Bpifrance",
-      "generatedAt": "2026-10-03T14:03:03.341Z",
+      "generatedAt": "2026-10-04T10:37:10.439Z",
+      "status": "PASS",
       "sourceIds": [
         "bpifrance_aap",
         "bpifrance_aides",
         "bpifrance_rebond_industriel"
       ],
-      "reason": "CERTIFICATION_BASIS_CHANGED",
-      "certifiedBasisFingerprint": "ebce4df7b46f582b17f7223013f79eed0eac15e4ad731808781555b33739724e",
-      "currentBasisFingerprint": "ce2a7c50331124576e56b43eb55c7daa28478b35c5312e362749829810d6b359"
+      "libraryRecords": 36,
+      "fingerprintStatus": "MATCH",
+      "sourceConfigFingerprint": "ab4073aae0857eb20f56359e7a92cb124144594cf28cfbd14a77132e3947a6ae",
+      "currentSourceConfigFingerprint": "ab4073aae0857eb20f56359e7a92cb124144594cf28cfbd14a77132e3947a6ae",
+      "certificationBasisFingerprint": "ce2a7c50331124576e56b43eb55c7daa28478b35c5312e362749829810d6b359",
+      "currentCertificationBasisFingerprint": "ce2a7c50331124576e56b43eb55c7daa28478b35c5312e362749829810d6b359",
+      "certifiedDataFingerprint": "c5dcd6cc14ea0e82c3660e35a3645132c53536f15d5f660ec44cf17656dd9b62",
+      "currentDataFingerprint": "c5dcd6cc14ea0e82c3660e35a3645132c53536f15d5f660ec44cf17656dd9b62"
     }
-  ]
+  ],
+  "rejectedCertifications": []
 }

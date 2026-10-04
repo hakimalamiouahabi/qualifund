@@ -1,9 +1,13 @@
 {
   "version": "12.9.3",
   "publicationPolicy": "CERTIFIED_SOURCE_ONLY",
-  "publishedCount": 60,
+  "publishedCount": 164,
   "certifiedSources": [
-    "aura"
+    "ademe",
+    "aura",
+    "bpifrance_aap",
+    "bpifrance_aides",
+    "bpifrance_rebond_industriel"
   ],
   "generatedAt": "2026-10-04T10:26:27.175Z"
 }

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T10:32:14.218Z",
+  "generatedAt": "2026-10-04T10:37:14.444Z",
   "version": "12.9.3",
   "mode": "LOCKED_CYCLE",
   "currentLock": {
@@ -34,13 +34,13 @@
       "id": 4,
       "name": "Bibliothèque certifiée publiable",
       "status": "PASS",
-      "detail": "60 fiches publiables J+1 sur 164 fiches brutes ; 104 en quarantaine. Certificat AURA : PASS — fingerprints MATCH."
+      "detail": "164 fiches publiables J+1 sur 164 fiches brutes ; 0 en quarantaine. Certificat AURA : PASS — fingerprints MATCH."
     },
     {
       "id": 5,
       "name": "Preuves obligatoires de publication",
       "status": "PASS",
-      "detail": "Preuves A/B obligatoires (guichet, statut/calendrier, instrument, entreprise) : 60/60. File de remédiation synchronisée : oui. CdC/règlement : 26/60."
+      "detail": "Preuves A/B obligatoires (guichet, statut/calendrier, instrument, entreprise) : 164/164. File de remédiation synchronisée : oui. CdC/règlement : 54/164."
     },
     {
       "id": 6,
@@ -77,25 +77,25 @@
     "sourcesConfigured": 118,
     "ingestiveSources": 102,
     "controlSources": 16,
-    "certifiedSources": 1,
+    "certifiedSources": 5,
     "evaluatedSources": 1,
     "executedSources": 1,
     "freshExecutedSources": 1,
     "successfulSources": 1,
     "collectionCycleId": null,
     "rawLibrary": 164,
-    "publishedLibrary": 60,
-    "quarantinedLibrary": 104,
-    "activeFiches": 60,
+    "publishedLibrary": 164,
+    "quarantinedLibrary": 0,
+    "activeFiches": 164,
     "jPlusOneDate": "2026-10-05",
-    "jPlusOneActiveFiches": 60,
+    "jPlusOneActiveFiches": 164,
     "verifiedFiches": 0,
     "verifiedIntegrity": 0,
     "verifiedEvidenceIntegrity": 0,
-    "publicationEvidenceIntegrity": 60,
+    "publicationEvidenceIntegrity": 164,
     "lockedCertificationMatch": true,
-    "withCdc": 26,
-    "withDeadline": 23,
+    "withCdc": 54,
+    "withDeadline": 108,
     "consultantCases": 10,
     "uatTotal": 10,
     "companySmokeOk": true,

@@ -1,16 +1,16 @@
 # FUNDING RADAR — Production Readiness v12.9.3
 
-Généré : 2026-10-04T10:32:37.070Z
+Généré : 2026-10-04T10:37:14.444Z
 
 - **Gate 1 — Dépôt GitHub et versionnement** : PASS — hakimalamiouahabi/qualifund
-- **Gate 2 — URL permanente** : PASS — https://qualifund.pages.dev — smoke HTTP concluant.
+- **Gate 2 — URL permanente** : BLOCKED — Déploiement permanent non confirmé.
 - **Gate 3 — Cycle de collecte — AURA** : PASS — 1/1 source(s) du verrou courant en succès sur le cycle non identifié ; 1/1 ligne(s) coverage fraîches ; 60 imports bruts. Les autres sources restent gelées.
-- **Gate 4 — Bibliothèque certifiée publiable** : PASS — 60 fiches publiables J+1 sur 164 fiches brutes ; 104 en quarantaine. Certificat AURA : PASS — fingerprints MATCH.
-- **Gate 5 — Preuves obligatoires de publication** : PASS — Preuves A/B obligatoires (guichet, statut/calendrier, instrument, entreprise) : 60/60. File de remédiation synchronisée : oui. CdC/règlement : 26/60.
+- **Gate 4 — Bibliothèque certifiée publiable** : PASS — 164 fiches publiables J+1 sur 164 fiches brutes ; 0 en quarantaine. Certificat AURA : PASS — fingerprints MATCH.
+- **Gate 5 — Preuves obligatoires de publication** : PASS — Preuves A/B obligatoires (guichet, statut/calendrier, instrument, entreprise) : 164/164. File de remédiation synchronisée : oui. CdC/règlement : 54/164.
 - **Gate 6 — Intégrité, déduplication et périmètre** : PASS — Aucune anomalie P0 détectée par l’audit approfondi.
 - **Gate 7 — Enrichissement SIREN/SIRET** : PASS — API Recherche d’entreprises DINUM validée par smoke live.
 - **Gate 8 — Qualification projet multi-financeurs** : PASS — Cas UAT réussis : 10/10. Les résultats orientent l’instruction sans conclure à l’attribution.
 - **Gate 9 — Exploitation automatisée** : PASS — Chaîne GitHub Actions exécutée sur workflow_dispatch avec le verrou courant.
-- **Gate 10 — Recette production** : PASS — Gates 1–9 validées ; recette finale autorisée.
+- **Gate 10 — Recette production** : NOT_STARTED — Autorisation uniquement lorsque les Gates 1–9 sont PASS.
 
-**GO PRODUCTION : OUI**
+**GO PRODUCTION : NON**

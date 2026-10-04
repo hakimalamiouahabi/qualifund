@@ -3,6 +3,46 @@
   "sourcePolicy": "CERTIFIED_SOURCE_ONLY",
   "sources": [
     {
+      "id": "bpifrance_aap",
+      "name": "Bpifrance — appels à projets, AMI et concours",
+      "scope": "France",
+      "type": "web",
+      "strategy": "bpifrance-aap",
+      "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours",
+      "official": true,
+      "priority": 0
+    },
+    {
+      "id": "bpifrance_aides",
+      "name": "Bpifrance — subventions, avances remboursables et aides à l'innovation",
+      "scope": "France",
+      "type": "web",
+      "strategy": "bpifrance-aides",
+      "url": "https://www.bpifrance.fr/catalogue-offres",
+      "official": true,
+      "priority": 0
+    },
+    {
+      "id": "bpifrance_rebond_industriel",
+      "name": "Bpifrance — France 2030 Rebond Industriel",
+      "scope": "France",
+      "type": "web",
+      "strategy": "official-page",
+      "url": "https://rebond-industriel.bpifrance.fr/",
+      "official": true,
+      "priority": 0
+    },
+    {
+      "id": "ademe",
+      "name": "ADEME — aides financières et appels à projets entreprises",
+      "scope": "France",
+      "type": "web",
+      "strategy": "ademe-official",
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue",
+      "official": true,
+      "priority": 0
+    },
+    {
       "id": "aura",
       "name": "Région Auvergne-Rhône-Alpes — catalogue des aides",
       "scope": "Auvergne-Rhône-Alpes",

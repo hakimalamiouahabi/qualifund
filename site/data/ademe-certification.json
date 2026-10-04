@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T15:04:41.233Z",
+  "generatedAt": "2026-10-04T10:37:11.034Z",
   "status": "PASS",
   "lock": {
     "version": 13,
@@ -61,11 +61,11 @@
         }
       }
     },
-    "notes": "ADEME v13 official-only certifié PASS le 03/10/2026 : 68 dispositifs actifs issus de l’inventaire RSS officiel (16 AAP/AMI, 52 Aides), 68/68 publication-ready, 0 erreur et 0 exclusion. Les fiches directes restent protégées côté runner GitHub par HTTP 403 / challenge Cloudflare ; aucun contournement n’est utilisé. Pour les cartes classées `Aide`, l’instrument SUBVENTION et le guichet ADEME reposent sur la politique institutionnelle officielle du catalogue Entreprises, versionnée le 03/10/2026, bornée à 120 jours et excluant explicitement ADEME Investissement/fonds propres. Bpifrance reste PASS ; AURA est le prochain cycle. Mises à jour automatiques : le 1er et le 15 uniquement.",
+    "notes": "Recertification technique ADEME sur noyau courant ; snapshot, règles métier et données inchangés.",
     "foundationBaseline": {
       "version": "Foundation v3.5 / ADEME official-only certified",
-      "status": "CERTIFIED",
-      "validatedAt": "2026-10-03T15:00:44Z",
+      "status": "CERTIFIED_CURRENT_BASIS",
+      "validatedAt": "2026-10-04T10:37:10.481Z",
       "p0": 0
     }
   },
@@ -73,10 +73,10 @@
     "ademe"
   ],
   "sourceConfigFingerprint": "f0d1cd6f6e119f57e75653b884a26a4a306c31fe8233d3b4815d566393f6030a",
-  "certificationBasisFingerprint": "004c1d56c447c75a30d86d287141785f03825e0f7a1d2bbcef3664aa919da5d9",
+  "certificationBasisFingerprint": "3d533091be33bda5e21f49bb23f82b1f6b8c67be78820279ed214839d68fdf9f",
   "certifiedDataFingerprint": "452f4970f40094846d3f513dd7332d66f5a482d53314090f934608daa3b1661e",
   "libraryRecords": 68,
-  "frozenUnselectedSha": "d31c4291c0d439df7b0a15ab6436a45e4440010f5fb9da677ce1d828666624bd",
+  "frozenUnselectedSha": "cb1f61c47a18e3054304b204a1aa3df945bdb4f1eede9ad08cb42e79acebea55",
   "controlGaps": {
     "rssOutsideCatalogue": []
   },
