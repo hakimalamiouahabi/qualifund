@@ -1,0 +1,173 @@
+name: AURA — certification production ponctuelle v14
+# rerun: 3
+
+on:
+  push:
+    branches: [maintenance/aura-certification-v14-once]
+    paths:
+      - '.github/workflows/aura-certification-v14-once.yml'
+
+concurrency:
+  group: funding-radar-aura-v14-once
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    permissions:
+      contents: write
+    outputs:
+      data_sha: ${{ steps.publish.outputs.sha }}
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Node 22
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - name: Dépendances
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Gate statique
+        run: |
+          set -euo pipefail
+          find scripts tests -type f -name '*.mjs' -print0 | xargs -0 -n1 node --check
+          npm test
+          npm run validate
+      - name: Purge déterministe
+        run: npm run purge:indirect
+      - name: Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Registre et préflight
+        run: |
+          npm run audit:sources
+          npm run preflight:sources
+      - name: Sauvegarder la bibliothèque précédente
+        run: |
+          mkdir -p /tmp/funding-radar
+          cp site/data/library.json /tmp/funding-radar/library-before.json || echo '{"aaps":[]}' > /tmp/funding-radar/library-before.json
+      - name: Collecte AURA official-only
+        env:
+          FUNDING_RADAR_FULL_REFRESH: '1'
+        run: npm run update:full
+      - name: Certifier AURA
+        run: npm run certify:active
+      - name: Rapport du cycle
+        run: node scripts/generate-daily-report.mjs /tmp/funding-radar/library-before.json site/data/library.json site/bibliotheque/rapports
+      - name: Synchroniser et auditer
+        run: |
+          npm run sync:metadata
+          npm run build:index
+          npm run audit:ingestion
+          npm run audit:criteria
+          npm run audit:deep:strict
+          npm test
+          npm run validate
+          npm run uat
+          npm run smoke:live -- --strict-company
+          npm run qa
+          npm run remediation
+          GITHUB_EVENT_NAME=workflow_dispatch npm run production:gates
+          npm run build:cloudflare
+      - name: Publier le corpus AURA sur main
+        id: publish
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "funding-radar-bot"
+          git config user.email "funding-radar-bot@users.noreply.github.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(data): certification AURA v14"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+  verify:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: write
+    env:
+      RADAR_PUBLIC_URL: https://qualifund.pages.dev
+    steps:
+      - name: Checkout corpus AURA publié
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ needs.build.outputs.data_sha }}
+          fetch-depth: 0
+      - name: Node 22
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - name: Dépendances
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Attendre Cloudflare corpus
+        shell: bash
+        env:
+          EXPECTED_SHA: ${{ needs.build.outputs.data_sha }}
+        run: |
+          set -euo pipefail
+          for i in $(seq 1 60); do
+            payload="$(curl -fsS --max-time 15 "$RADAR_PUBLIC_URL/data/build-info.json?ts=$(date +%s)" || true)"
+            live_sha="$(printf '%s' "$payload" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{try{process.stdout.write(JSON.parse(s).commitSha||'')}catch{}})")"
+            if [ "$live_sha" = "$EXPECTED_SHA" ]; then
+              echo "Cloudflare synchronisé sur $live_sha"
+              printf '%s' "$payload"
+              exit 0
+            fi
+            echo "Tentative $i/60 — SHA public: ${live_sha:-indisponible}"
+            sleep 10
+          done
+          exit 1
+      - name: Vérifier production AURA
+        run: |
+          node scripts/live-smoke.mjs --strict-company --strict-public
+          npm run uat
+          npm run remediation
+          GITHUB_EVENT_NAME=workflow_dispatch npm run production:gates
+          npm run certify:production
+      - name: Persister les preuves de production
+        id: proofs
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "funding-radar-bot"
+          git config user.email "funding-radar-bot@users.noreply.github.com"
+          git add site/data/live-smoke.json site/data/uat-results.json site/data/remediation.json site/data/production-readiness.json REMEDIATION_REPORT.md PRODUCTION_READINESS.md
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(validation): preuves production AURA v14"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Attendre Cloudflare preuves
+        shell: bash
+        env:
+          EXPECTED_SHA: ${{ steps.proofs.outputs.sha }}
+        run: |
+          set -euo pipefail
+          for i in $(seq 1 60); do
+            payload="$(curl -fsS --max-time 15 "$RADAR_PUBLIC_URL/data/build-info.json?ts=$(date +%s)" || true)"
+            live_sha="$(printf '%s' "$payload" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{try{process.stdout.write(JSON.parse(s).commitSha||'')}catch{}})")"
+            if [ "$live_sha" = "$EXPECTED_SHA" ]; then
+              echo "Cloudflare preuves synchronisées sur $live_sha"
+              exit 0
+            fi
+            sleep 10
+          done
+          exit 1
+      - name: Certification finale après preuves
+        run: |
+          node scripts/live-smoke.mjs --strict-company --strict-public
+          npm run uat
+          npm run remediation
+          GITHUB_EVENT_NAME=workflow_dispatch npm run production:gates
+          npm run certify:production
