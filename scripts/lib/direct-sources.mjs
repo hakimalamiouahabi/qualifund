@@ -81,7 +81,7 @@ export function assertDirectSources(cfg){
   if(cfg.sourceSelectionPolicy!=='GUICHET_OR_REGION_OFFICIAL_ONLY')throw new Error('Politique guichet/région spécifique manquante');
   const seen=new Map();
   for(const s of cfg.sources||[]){
-    if(!s.official||!s.url||containsForbiddenAggregator(s)||!['catalog-html','official-page','opendatasoft','control-only','bpifrance-aap','bpifrance-aides','ademe-official','aura-official'].includes(s.strategy))throw new Error('Source interdite: '+s.id);
+    if(!s.official||!s.url||containsForbiddenAggregator(s)||!['catalog-html','official-page','opendatasoft','control-only','bpifrance-aap','bpifrance-aides','ademe-official','aura-official','bfc-official'].includes(s.strategy))throw new Error('Source interdite: '+s.id);
     const u=normalizedUrl(s.url);
     if(seen.has(u))throw new Error('Source dupliquée: '+seen.get(u)+' / '+s.id+' -> '+u);
     seen.set(u,s.id);
