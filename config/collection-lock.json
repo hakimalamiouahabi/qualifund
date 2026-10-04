@@ -1,23 +1,23 @@
 {
-  "version": 14,
+  "version": 15,
   "locked": true,
   "mode": "REGION",
-  "name": "AURA",
+  "name": "Bourgogne-Franche-Comté",
   "allowedSourceIds": [
-    "aura"
+    "bfc"
   ],
   "preserveUnselectedSources": true,
   "preserveUnselectedCoverage": true,
   "freezeUnselectedLifecycle": true,
   "enrichSelectedOnly": true,
-  "next": "Bourgogne-Franche-Comté",
+  "next": "Bretagne",
   "certification": {
     "primarySourceIds": [
-      "aura"
+      "bfc"
     ],
     "allowedHosts": [
-      "www.auvergnerhonealpes.fr",
-      "auvergnerhonealpes.fr"
+      "www.bourgognefranchecomte.fr",
+      "bourgognefranchecomte.fr"
     ],
     "forbiddenPathFragments": [
       "/mentions-legales",
@@ -38,11 +38,10 @@
       "PERMANENT"
     ],
     "sourceRules": {
-      "aura": {
-        "master": "AURA_ENTERPRISE_CATALOGUE",
+      "bfc": {
+        "master": "BFC_PRIVATE_ENTERPRISE_CATALOGUE",
         "requireEnterpriseCatalogueDiscovery": true,
-        "requireExpectedCount": true,
-        "expectedCount": 175,
+        "requireOccurrenceCount": true,
         "requireMasterMembership": true,
         "requireAuditAccounting": true,
         "requireGuichetEvidence": true,
@@ -62,22 +61,22 @@
           "PRET_TAUX_ZERO",
           "APPEL_A_PROJET"
         ],
-        "requiredPathPrefix": "/aides/",
         "forbiddenTitleFragments": [
           "FEADER",
           "FEDER",
           "FSE",
           "FTJ",
           "LEADER",
+          "INTERREG",
           "PEI"
         ],
-        "minRetained": 55
+        "minRetained": 40
       }
     }
   },
-  "notes": "AURA v14 official-only. Baseline live du 04/10/2026 : compteur maître Entreprise 175/175, 60 dispositifs cibles prouvés (aides financières et AAP/AMI), 115 exclusions comptabilisées (26 fonds européens dédiés, 21 clos, 16 instruments hors périmètre, 52 instruments non suffisamment prouvés), 0 erreur. Le lecteur navigateur est limité à 2 workers avec retry contrôlé et fermeture explicite de Chromium. Bpifrance et ADEME restent gelés sur leurs certificats PASS. Aucune source agrégée, aucun LLM, aucune API payante, aucun moteur externe. Mise à jour automatique uniquement le 1er et le 15.",
+  "notes": "BFC v15 official-only. Baseline live du 04/10/2026 : Guide officiel filtré Organisme privé (87), 326 occurrences intégralement comptabilisées, 228 dispositifs uniques après normalisation des liens /node et /index.php/node, 46 dispositifs entreprise actuellement prouvés dans le périmètre subvention / avance remboursable / PTZ / AAP. 182 exclusions comptabilisées : 25 fonds européens dédiés, 23 clos, 10 instruments hors périmètre, 33 instruments non suffisamment prouvés, 91 dispositifs privés sans preuve entreprise exploitable. 0 erreur. Bpifrance, ADEME et AURA restent gelés sur leurs certificats PASS. Aucune source agrégée, aucun LLM, aucune API payante, aucun moteur externe. Mise à jour automatique uniquement le 1er et le 15.",
   "foundationBaseline": {
-    "version": "Foundation v3.6 / AURA official-only hardening",
+    "version": "Foundation v3.7 / BFC official-only hardening",
     "status": "HARDENING",
     "validatedAt": null,
     "p0": null
