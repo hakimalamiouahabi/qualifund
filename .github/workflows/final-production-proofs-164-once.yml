@@ -1,0 +1,99 @@
+name: FUNDING RADAR — preuves production finales 164
+
+on:
+  push:
+    branches: [maintenance/final-production-proofs-164-once]
+    paths:
+      - '.github/workflows/final-production-proofs-164-once.yml'
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    permissions:
+      contents: write
+    outputs:
+      proof_sha: ${{ steps.publish.outputs.sha }}
+    env:
+      RADAR_PUBLIC_URL: https://qualifund.pages.dev
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Node 22
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - name: Dépendances
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Vérifier le ledger complet
+        shell: bash
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const l=JSON.parse(fs.readFileSync('site/data/certification-ledger.json','utf8'));
+          const need=['ademe','aura','bpifrance_aap','bpifrance_aides','bpifrance_rebond_industriel'];
+          for(const id of need)if(!l.unlockedSourceIds.includes(id))throw new Error('source non certifiée: '+id);
+          if((l.rejectedCertifications||[]).length)throw new Error('certificats rejetés présents');
+          const lib=JSON.parse(fs.readFileSync('site/data/library.json','utf8'));
+          if((lib.aaps||[]).length!==164)throw new Error('bibliothèque != 164');
+          NODE
+      - name: Générer les preuves finales
+        run: |
+          node scripts/live-smoke.mjs --strict-company --strict-public
+          npm run uat
+          npm run remediation
+          GITHUB_EVENT_NAME=workflow_dispatch npm run production:gates
+          npm run certify:production
+      - name: Vérifier GO PRODUCTION
+        shell: bash
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const r=JSON.parse(fs.readFileSync('site/data/production-readiness.json','utf8'));
+          if(!r.goProduction)throw new Error('GO PRODUCTION = NON');
+          if(r.counts?.publishedLibrary!==164)throw new Error('publishedLibrary != 164');
+          if(r.counts?.certifiedSources!==5)throw new Error('certifiedSources != 5');
+          if(!r.counts?.publicSmokeOk)throw new Error('publicSmokeOk=false');
+          console.log('FINAL_READINESS_OK');
+          NODE
+      - name: Persister les preuves finales sur main
+        id: publish
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "funding-radar-bot"
+          git config user.email "funding-radar-bot@users.noreply.github.com"
+          git add site/data/live-smoke.json site/data/uat-results.json site/data/remediation.json site/data/production-readiness.json REMEDIATION_REPORT.md PRODUCTION_READINESS.md
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(validation): persister les preuves production finales 164"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Attendre Cloudflare du SHA de preuves
+        shell: bash
+        env:
+          EXPECTED_SHA: ${{ steps.publish.outputs.sha }}
+        run: |
+          set -euo pipefail
+          for i in $(seq 1 60); do
+            payload="$(curl -fsS --max-time 15 "$RADAR_PUBLIC_URL/data/build-info.json?ts=$(date +%s)" || true)"
+            live_sha="$(printf '%s' "$payload" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{try{process.stdout.write(JSON.parse(s).commitSha||'')}catch{}})")"
+            if [ "$live_sha" = "$EXPECTED_SHA" ]; then
+              printf '%s' "$payload" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const j=JSON.parse(s);if(Number(j.publishedCount)!==164)throw new Error('publishedCount='+j.publishedCount);console.log(JSON.stringify(j,null,2));})"
+              exit 0
+            fi
+            sleep 10
+          done
+          exit 1
+      - name: Certification finale après déploiement
+        run: |
+          node scripts/live-smoke.mjs --strict-company --strict-public
+          npm run uat
+          npm run remediation
+          GITHUB_EVENT_NAME=workflow_dispatch npm run production:gates
+          npm run certify:production
