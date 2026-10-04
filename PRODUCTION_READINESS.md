@@ -1,9 +1,9 @@
 # FUNDING RADAR — Production Readiness v12.9.3
 
-Généré : 2026-10-04T10:37:14.444Z
+Généré : 2026-10-04T10:39:22.248Z
 
 - **Gate 1 — Dépôt GitHub et versionnement** : PASS — hakimalamiouahabi/qualifund
-- **Gate 2 — URL permanente** : BLOCKED — Déploiement permanent non confirmé.
+- **Gate 2 — URL permanente** : PASS — https://qualifund.pages.dev — smoke HTTP concluant.
 - **Gate 3 — Cycle de collecte — AURA** : PASS — 1/1 source(s) du verrou courant en succès sur le cycle non identifié ; 1/1 ligne(s) coverage fraîches ; 60 imports bruts. Les autres sources restent gelées.
 - **Gate 4 — Bibliothèque certifiée publiable** : PASS — 164 fiches publiables J+1 sur 164 fiches brutes ; 0 en quarantaine. Certificat AURA : PASS — fingerprints MATCH.
 - **Gate 5 — Preuves obligatoires de publication** : PASS — Preuves A/B obligatoires (guichet, statut/calendrier, instrument, entreprise) : 164/164. File de remédiation synchronisée : oui. CdC/règlement : 54/164.
@@ -11,6 +11,6 @@ Généré : 2026-10-04T10:37:14.444Z
 - **Gate 7 — Enrichissement SIREN/SIRET** : PASS — API Recherche d’entreprises DINUM validée par smoke live.
 - **Gate 8 — Qualification projet multi-financeurs** : PASS — Cas UAT réussis : 10/10. Les résultats orientent l’instruction sans conclure à l’attribution.
 - **Gate 9 — Exploitation automatisée** : PASS — Chaîne GitHub Actions exécutée sur workflow_dispatch avec le verrou courant.
-- **Gate 10 — Recette production** : NOT_STARTED — Autorisation uniquement lorsque les Gates 1–9 sont PASS.
+- **Gate 10 — Recette production** : PASS — Gates 1–9 validées ; recette finale autorisée.
 
-**GO PRODUCTION : NON**
+**GO PRODUCTION : OUI**
