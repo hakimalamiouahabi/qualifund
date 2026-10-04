@@ -1,0 +1,70 @@
+name: BFC — baseline unique stricte ponctuelle
+on:
+  push:
+    branches: [maintenance/bfc-probe-once]
+    paths:
+      - '.github/workflows/bfc-unique-strict-once.yml'
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Baseline stricte 228 uniques
+        run: |
+          node --input-type=module <<'NODE'
+          import * as cheerio from 'cheerio';
+          import {detectDates,normalizeAidTypes,cleanTitle,norm} from './scripts/lib/utils.mjs';
+          const BASE='https://www.bourgognefranchecomte.fr',GUIDE=BASE+'/guide-des-aides',TODAY='2026-10-04';
+          const headers={'user-agent':'Mozilla/5.0','accept-language':'fr-FR,fr;q=0.9'};
+          const fetchHtml=async url=>{const r=await fetch(url,{headers});if(!r.ok)throw new Error('HTTP '+r.status+' '+url);return r.text();};
+          const canon=href=>new URL(href.replace(/^\/index\.php\/node\/(\d+)/,'/node/$1'),BASE).href;
+          const unique=new Map();let expected=0,occurrences=0,pages=0;
+          for(let page=0;page<60;page++){
+            const u=new URL(GUIDE);u.searchParams.set('field_domaine_target_id','All');u.searchParams.set('field_vous_etes_target_id','87');u.searchParams.set('field_types_value','All');u.searchParams.set('page',String(page));
+            const html=await fetchHtml(u);const $=cheerio.load(html);const body=cleanTitle($('body').text()||'');
+            if(!expected)expected=Number(body.match(/(\d+)\s+aide\(s\)\s*&\s*service\(s\)/i)?.[1]||0);
+            let n=0;
+            $('a[href]').each((_,a)=>{
+              const label=cleanTitle($(a).text()||'');if(!/^Plus de détails$/i.test(label))return;
+              n++;occurrences++;const href=$(a).attr('href')||'';const url=canon(href);
+              let box=$(a).parent();for(let k=0;k<5&&box.parent().length;k++)box=box.parent();
+              const raw=cleanTitle(box.text()||'');
+              const prev=unique.get(url);unique.set(url,{url,listingEvidence:cleanTitle([prev?.listingEvidence||'',raw].join(' '))});
+            });
+            pages++;if(n===0&&page>2)break;
+          }
+          const reasonCounts={},retained=[],errors=[];const add=r=>reasonCounts[r]=(reasonCounts[r]||0)+1;
+          const enterpriseRx=/\b(?:entreprise(?:s)?|pme|tpe|eti|start[- ]?up|micro[- ]?entreprise|artisan(?:s)?|commerçant(?:s)?|exploitant(?:e)?s? agricole(?:s)?|société(?:s)? commerciale(?:s)?|scop|scic)\b/i;
+          const nonEnterpriseRx=/\b(?:association(?:s)?|collectivité(?:s)?|commune(?:s)?|epci|établissement(?:s)? public(?:s)?|organisme(?:s)? public(?:s)?)\b/i;
+          const links=[...unique.values()];let cursor=0;
+          await Promise.all(Array.from({length:10},async()=>{while(true){
+            const i=cursor++;if(i>=links.length)return;const link=links[i];
+            let html;try{html=await fetchHtml(link.url)}catch(e){errors.push({url:link.url,error:e.message});add('DETAIL_FETCH_ERROR');continue;}
+            const $=cheerio.load(html);$('script,style,noscript,nav,header,footer,svg').remove();
+            const text=cleanTitle(($('main').first().length?$('main').first():$('body')).text()||'');
+            const title=cleanTitle($('h1').first().text()||link.url);const listing=norm(link.listingEvidence);
+            if(/tag feader|tag feder-fse|tag interreg|\bleader\b|\bpei\b/.test(listing)){add('EUROPEAN_DEDICATED');continue;}
+            const n=norm(text);
+            if(/dispositif clos|appel.{0,30}clos|aide.{0,30}close|cloture|clôtur|n.est plus ouvert/.test(n)){add('CLOSED_TEXT');continue;}
+            const dateSection=text.match(/Date\(s\) limite\(s\) de dépôt[\s:–-]*([\s\S]{0,700})/i)?.[1]||'';
+            const last=detectDates(dateSection).at(-1)||null;if(last&&last<TODAY){add('CLOSED_DATE');continue;}
+            const beneficiary=cleanTitle(text.match(/Vous êtes\s+([\s\S]{0,1800}?)(?=\s+Vous voulez\s+|\s+Ce qu.il faut savoir\s+|\s+Date\(s\) limite)/i)?.[1]||'');
+            if(!enterpriseRx.test(beneficiary)){add(beneficiary&&nonEnterpriseRx.test(beneficiary)?'NON_ENTERPRISE_PRIVATE':'ENTERPRISE_SCOPE_NOT_PROVEN');continue;}
+            const excluded=/\b(?:garantie de pr[eê]t|garantie bancaire|fonds propres|quasi[- ]fonds propres|augmentation de capital|prise de participation|capital-investissement|pr[eê]t classique|cr[eé]dit[- ]bail)\b/i.test(text);
+            const types=normalizeAidTypes(text);const isAap=/\b(?:appel(?:s)? à projets?|appel(?:s)? a projets?|appel(?:s)? à manifestation|appel(?:s)? a manifestation|\bami\b)\b/i.test(title+' '+text);
+            if(excluded&&!types.includes('PRET_TAUX_ZERO')){add('OUT_OF_SCOPE_INSTRUMENT');continue;}
+            const aidTypes=[...new Set([...types,...(isAap?['APPEL_A_PROJET']:[])])];if(!aidTypes.length){add('INSTRUMENT_NOT_PROVEN');continue;}
+            retained.push({url:link.url,title,beneficiary:beneficiary.slice(0,450),aidTypes,closing:last});
+          }}));
+          console.log('BFC_BASELINE='+JSON.stringify({
+            expectedOccurrences:expected,observedOccurrences:occurrences,uniqueDispositifs:links.length,
+            duplicateOccurrences:occurrences-links.length,pages,retained:retained.length,
+            excluded:links.length-retained.length,errors:errors.length,reasonCounts,retainedSample:retained.slice(0,60)
+          }));
+          NODE
