@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T19:36:56.040Z",
+  "generatedAt": "2026-10-04T19:39:12.066Z",
   "version": "12.9.3",
   "currentLock": {
     "name": "Bourgogne-Franche-Comté",
@@ -11,143 +11,26 @@
   "publication": {
     "policy": "CERTIFIED_SOURCE_ONLY",
     "certifiedSourceIds": [
-      "bfc"
+      "ademe",
+      "aura",
+      "bfc",
+      "bpifrance_aap",
+      "bpifrance_aides",
+      "bpifrance_rebond_industriel"
     ],
     "certifiedGuichets": [
-      "Bourgogne-Franche-Comté"
+      "ADEME",
+      "AURA",
+      "Bourgogne-Franche-Comté",
+      "Bpifrance"
     ],
-    "reasons": {
-      "SOURCE_NOT_CERTIFIED": 164
-    },
-    "reasonSamples": {
-      "SOURCE_NOT_CERTIFIED": [
-        {
-          "id": "aura_ac9711c4d7d6d94e03552ce499bac0b01ae861c2a572bea8042b68eb92bd58ef",
-          "title": "[ Région Commerce et Artisanat] Obtenir un prêt \"solidaire\" à taux zéro pour mon association",
-          "sourceId": "aura",
-          "officialPage": "https://www.auvergnerhonealpes.fr/aides/region-commerce-et-artisanat-obtenir-un-pret-solidaire-taux-zero-pour-mon-association"
-        },
-        {
-          "id": "aura_7120fb0e4ce6e0c9952d9c2897dba5ce73f53523ba5ec9fa5b397b12512de963",
-          "title": "[Pack relocalisation] - Trouver les compétences",
-          "sourceId": "aura",
-          "officialPage": "https://www.auvergnerhonealpes.fr/aides/pack-relocalisation-trouver-les-competences"
-        },
-        {
-          "id": "aura_7a01e61d91f77aa21cd76353af672bf56d463d80d6d9bfbab82b8d6eb6faec40",
-          "title": "[Région Commerce et Artisanat : Création | Reprise ] Financer ma TPE",
-          "sourceId": "aura",
-          "officialPage": "https://www.auvergnerhonealpes.fr/aides/region-commerce-et-artisanat-creation-reprise-financer-ma-tpe"
-        },
-        {
-          "id": "aura_fac4f292e3cff19e056fa74024f2d6b7b1fd5b78ab7038b93a6ecd12c10af789",
-          "title": "[Région Commerce et Artisanat : Création | Reprise ] Financer mon entreprise individuelle",
-          "sourceId": "aura",
-          "officialPage": "https://www.auvergnerhonealpes.fr/aides/region-commerce-et-artisanat-creation-reprise-financer-mon-entreprise-individuelle"
-        },
-        {
-          "id": "aura_9d913239338f9bef5017a7eefa1d02c54a5208b62ace0f774399d9b3205a98c0",
-          "title": "[Région Commerce et Artisanat ] Obtenir un prêt à taux zéro avec le Prêt Région Artisan et Commerçant Auvergne-Rhône-Alpes",
-          "sourceId": "aura",
-          "officialPage": "https://www.auvergnerhonealpes.fr/aides/region-commerce-et-artisanat-obtenir-un-pret-taux-zero-avec-le-pret-region-artisan-et"
-        },
-        {
-          "id": "aura_387642a13b9075392ff9b25fd37ee125a39cf2691acddf2c6e94de93618571dd",
-          "title": "[Région Commerce et Artisanat] Etre conseillé pour améliorer la performance de mon commerce de proximité",
-          "sourceId": "aura",
-          "officialPage": "https://www.auvergnerhonealpes.fr/aides/region-commerce-et-artisanat-etre-conseille-pour-ameliorer-la-performance-de-mon-commerce-de"
-        },
-        {
-          "id": "aura_23cfccb32f51e5f4f559a6d6b85d39b3c5dbb7187d4edd48766aaab59e351230",
-          "title": "[Région Industrie ] Chercher des financements européens",
-          "sourceId": "aura",
-          "officialPage": "https://www.auvergnerhonealpes.fr/aides/region-industrie-chercher-des-financements-europeens"
-        },
-        {
-          "id": "aura_23a24cef539b7b4a74771cbbfdfadb5d1b2686feb0076b3699b4cff46e4b0540",
-          "title": "[Région Industrie] Être accompagné dans mon projet \"Industrie du Futur\"",
-          "sourceId": "aura",
-          "officialPage": "https://www.auvergnerhonealpes.fr/aides/region-industrie-etre-accompagne-dans-mon-projet-industrie-du-futur"
-        },
-        {
-          "id": "aura_ebe96a057228744fce24557ad01d526f22b53b140fdd0c0273863d85f23c2dd1",
-          "title": "[Région Industrie] Financer les projets innovants pour mon entreprise",
-          "sourceId": "aura",
-          "officialPage": "https://www.auvergnerhonealpes.fr/aides/region-industrie-financer-les-projets-innovants-pour-mon-entreprise"
-        },
-        {
-          "id": "aura_5e7ed1810db4dfaa940df951188e3a71c4c5c458f757ed47726034aa2eb80b96",
-          "title": "[Région Industrie] Innover par les usages",
-          "sourceId": "aura",
-          "officialPage": "https://www.auvergnerhonealpes.fr/aides/region-industrie-innover-par-les-usages"
-        },
-        {
-          "id": "aura_bf0f475f5e39daebd61ecbea6187bb425b4c31ea28abf82e67fd66248ab71347",
-          "title": "[Région Industrie] Recruter un cadre export",
-          "sourceId": "aura",
-          "officialPage": "https://www.auvergnerhonealpes.fr/aides/region-industrie-recruter-un-cadre-export"
-        },
-        {
-          "id": "aura_e8c4029029cc883313ef7afdcf92f151d800315c3b9fe36582703d039c3b331d",
-          "title": "[Région Industrie] Recruter un Volontaire International en Entreprise (V.I.E)",
-          "sourceId": "aura",
-          "officialPage": "https://www.auvergnerhonealpes.fr/aides/region-industrie-recruter-un-volontaire-international-en-entreprise-vie"
-        },
-        {
-          "id": "ademe_8c8a291c0a1e03c28352de9331a8e469db6bf5220a547f249de9d1e414a69c66",
-          "title": "AACT-AIR – Aide à l’action des collectivités territoriales en faveur de la qualité de l’air",
-          "sourceId": "ademe",
-          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/aact-air-aide-laction-des-collectivites-territoriales-en-faveur-de-la-qualite-de-lair"
-        },
-        {
-          "id": "aura_7f102c9805f6bcac7786cbef4f7cb8ca7d1a5ab34cbd7a3fc9c54a1fc5014ac5",
-          "title": "Accompagner le développement durable des stations",
-          "sourceId": "aura",
-          "officialPage": "https://www.auvergnerhonealpes.fr/aides/accompagner-le-developpement-durable-des-stations"
-        },
-        {
-          "id": "aura_d7fb3106222bc943c16643c8e5e0826418a5b3ab7f7857476a43e6c822b31cdf",
-          "title": "Accompagner les artistes et les groupes émergents dans le domaine des musiques actuelles",
-          "sourceId": "aura",
-          "officialPage": "https://www.auvergnerhonealpes.fr/aides/accompagner-les-artistes-et-les-groupes-emergents-dans-le-domaine-des-musiques-actuelles"
-        },
-        {
-          "id": "aura_129e8a6d124f46ba023dfbce01f8481dcd7bfc8f431f71748dc1517666d93abf",
-          "title": "Acquérir de l’équipement adapté pour l’accès aux loisirs des personnes en situation de handicap",
-          "sourceId": "aura",
-          "officialPage": "https://www.auvergnerhonealpes.fr/aides/acquerir-de-lequipement-adapte-pour-lacces-aux-loisirs-des-personnes-en-situation-de-handicap"
-        },
-        {
-          "id": "ademe_70dbf42c2ff2a29e70e2b6cd80dd3862ba164201902ed994e0526e8cfaab86e9",
-          "title": "Acquisition de données Géologiques vers des Industries Bas Carbone (AGIBaC)",
-          "sourceId": "ademe",
-          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/acquisition-de-donnees-geologiques-vers-des-industries-bas-carbone-agibac"
-        },
-        {
-          "id": "aura_69f28b8b7fdbb80d409d4275bbe5867b39df54ba7e89e5541e431d33bce0bb73",
-          "title": "Agir pour l'insertion professionnelle des personnes en situation de handicap",
-          "sourceId": "aura",
-          "officialPage": "https://www.auvergnerhonealpes.fr/aides/agir-pour-linsertion-professionnelle-des-personnes-en-situation-de-handicap"
-        },
-        {
-          "id": "ademe_6b8156486b6e56c87e22d55a7b085d10bc833a9a982b4f4d1e4535c7377923bd",
-          "title": "Aide à la création et au fonctionnement des observatoires territoriaux",
-          "sourceId": "ademe",
-          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/aide-la-creation-et-au-fonctionnement-des-observatoires-territoriaux"
-        },
-        {
-          "id": "bpifrance_aides_1c9f2eadbc578633515c2ee2b39148cc3ca83a0912c7e4464f5f094c31c0f3ab",
-          "title": "AIDE AU DEVELOPPEMENT DEEPTECH",
-          "sourceId": "bpifrance_aides",
-          "officialPage": "https://www.bpifrance.fr/catalogue-offres/aide-au-developpement-deeptech"
-        }
-      ]
-    }
+    "reasons": {},
+    "reasonSamples": {}
   },
   "library": {
     "raw": 209,
-    "publishable": 45,
-    "quarantined": 164,
+    "publishable": 209,
+    "quarantined": 0,
     "orphanSource": 0,
     "duplicateOfficialUrl": 0,
     "missingOfficialUrl": 0,
@@ -887,13 +770,13 @@
   "historicalCertifications": {
     "ademe-certification.json": {
       "status": "PASS",
-      "generatedAt": "2026-10-04T10:37:11.034Z",
+      "generatedAt": "2026-10-04T19:39:09.582Z",
       "problems": [],
       "libraryRecords": 68
     },
     "bpifrance-certification.json": {
       "status": "PASS",
-      "generatedAt": "2026-10-04T10:37:10.439Z",
+      "generatedAt": "2026-10-04T19:39:08.950Z",
       "problems": [],
       "libraryRecords": 36
     }
@@ -902,9 +785,30 @@
     "freshnessWarningHours": 72,
     "freshness": [
       {
+        "file": "ademe-certification.json",
+        "name": "ADEME",
+        "generatedAt": "2026-10-04T19:39:09.582Z",
+        "ageHours": 0,
+        "status": "FRESH"
+      },
+      {
+        "file": "aura-certification.json",
+        "name": "AURA",
+        "generatedAt": "2026-10-04T19:39:10.204Z",
+        "ageHours": 0,
+        "status": "FRESH"
+      },
+      {
         "file": "bourgogne-franche-comte-certification.json",
         "name": "Bourgogne-Franche-Comté",
         "generatedAt": "2026-10-04T19:36:54.025Z",
+        "ageHours": 0,
+        "status": "FRESH"
+      },
+      {
+        "file": "bpifrance-certification.json",
+        "name": "Bpifrance",
+        "generatedAt": "2026-10-04T19:39:08.950Z",
         "ageHours": 0,
         "status": "FRESH"
       }
@@ -919,43 +823,7 @@
       "basisFingerprintMatch": true,
       "dataFingerprintMatch": true
     },
-    "rejected": [
-      {
-        "file": "ademe-certification.json",
-        "name": "ADEME",
-        "generatedAt": "2026-10-04T10:37:11.034Z",
-        "sourceIds": [
-          "ademe"
-        ],
-        "reason": "CERTIFICATION_BASIS_CHANGED",
-        "certifiedBasisFingerprint": "3d533091be33bda5e21f49bb23f82b1f6b8c67be78820279ed214839d68fdf9f",
-        "currentBasisFingerprint": "cae28eff4d403121bc3916a521be2c2010035426b9d3442e379ea11656519850"
-      },
-      {
-        "file": "aura-certification.json",
-        "name": "AURA",
-        "generatedAt": "2026-10-04T10:32:05.478Z",
-        "sourceIds": [
-          "aura"
-        ],
-        "reason": "CERTIFICATION_BASIS_CHANGED",
-        "certifiedBasisFingerprint": "b948da7cb23b16ac73bb590abd88ef01c2cf50e78f1950a91f2e6ea7c5584eef",
-        "currentBasisFingerprint": "d5b68112820af08290fec6a0d289baf00e332d781a548f4d1272a897e09b57f2"
-      },
-      {
-        "file": "bpifrance-certification.json",
-        "name": "Bpifrance",
-        "generatedAt": "2026-10-04T10:37:10.439Z",
-        "sourceIds": [
-          "bpifrance_aap",
-          "bpifrance_aides",
-          "bpifrance_rebond_industriel"
-        ],
-        "reason": "CERTIFICATION_BASIS_CHANGED",
-        "certifiedBasisFingerprint": "ce2a7c50331124576e56b43eb55c7daa28478b35c5312e362749829810d6b359",
-        "currentBasisFingerprint": "b4d0c7f43f75a0ad9be3cba2d67aa68873d3053ace67ae454b3abea8654c0343"
-      }
-    ]
+    "rejected": []
   },
   "certifiedEvidenceDebt": {
     "missingGuichet": 0,
@@ -975,12 +843,10 @@
   },
   "severity": {
     "p0": [],
-    "p1": [
-      "3 certificat(s) historique(s) ne déverrouillent plus la publication et doivent être recertifiés (CERTIFICATION_BASIS_CHANGED: 3)"
-    ],
+    "p1": [],
     "p2": [
       "91 source(s) future(s) non calibrée(s), bloquées automatiquement jusqu’à mesure du référentiel officiel",
-      "164 fiche(s) brutes en quarantaine de publication"
+      "0 fiche(s) brutes en quarantaine de publication"
     ]
   },
   "samples": {

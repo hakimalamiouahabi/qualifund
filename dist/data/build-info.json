@@ -1,13 +1,14 @@
 {
   "product": "FUNDING RADAR",
   "deployment": "cloudflare-pages",
-  "commitSha": "8ed1b1a3f0723aacd3bbc926f071a749f02e4cca",
-  "generatedAt": "2026-10-04T10:37:15.122Z",
+  "commitSha": "12a6e06f7e204bf845926d8be76eac3a1e1924f8",
+  "generatedAt": "2026-10-04T19:39:14.666Z",
   "publicationPolicy": "CERTIFIED_SOURCE_ONLY",
-  "publishedCount": 164,
+  "publishedCount": 209,
   "certifiedSources": [
     "ademe",
     "aura",
+    "bfc",
     "bpifrance_aap",
     "bpifrance_aides",
     "bpifrance_rebond_industriel"

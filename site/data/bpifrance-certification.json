@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T10:37:10.439Z",
+  "generatedAt": "2026-10-04T19:39:08.950Z",
   "status": "PASS",
   "lock": {
     "version": 12,
@@ -87,11 +87,11 @@
       },
       "requirePublicationReady": true
     },
-    "notes": "Recertification technique Bpifrance sur noyau courant ; snapshot, règles métier et données inchangés.",
+    "notes": "Recertification technique Bpifrance sur noyau courant après ajout BFC ; snapshot, règles métier et données inchangés.",
     "foundationBaseline": {
       "version": "Foundation v3.4 / Bpifrance re-certification current basis",
       "status": "CERTIFIED_CURRENT_BASIS",
-      "validatedAt": "2026-10-04T10:37:09.917Z",
+      "validatedAt": "2026-10-04T19:39:08.289Z",
       "p0": 0
     }
   },
@@ -101,10 +101,10 @@
     "bpifrance_rebond_industriel"
   ],
   "sourceConfigFingerprint": "ab4073aae0857eb20f56359e7a92cb124144594cf28cfbd14a77132e3947a6ae",
-  "certificationBasisFingerprint": "ce2a7c50331124576e56b43eb55c7daa28478b35c5312e362749829810d6b359",
+  "certificationBasisFingerprint": "b4d0c7f43f75a0ad9be3cba2d67aa68873d3053ace67ae454b3abea8654c0343",
   "certifiedDataFingerprint": "c5dcd6cc14ea0e82c3660e35a3645132c53536f15d5f660ec44cf17656dd9b62",
   "libraryRecords": 36,
-  "frozenUnselectedSha": "cb1f61c47a18e3054304b204a1aa3df945bdb4f1eede9ad08cb42e79acebea55",
+  "frozenUnselectedSha": "38b27623c70898741ee248ec4eeb1265e0ca17e337cf2c02a230a1e89fe291d9",
   "controlGaps": {
     "rssOutsideCatalogue": []
   },

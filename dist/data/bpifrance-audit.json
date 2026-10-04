@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-04T10:26:27.175Z",
+  "generatedAt": "2026-10-04T19:32:03.739Z",
   "collectionLock": {
     "locked": true,
     "mode": "REGION",
-    "name": "AURA",
+    "name": "Bourgogne-Franche-Comté",
     "allowedSourceIds": [
-      "aura"
+      "bfc"
     ],
-    "next": "Bourgogne-Franche-Comté"
+    "next": "Bretagne"
   },
   "sources": [
     {

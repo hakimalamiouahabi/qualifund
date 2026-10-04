@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T10:32:05.478Z",
+  "generatedAt": "2026-10-04T19:39:10.204Z",
   "status": "PASS",
   "lock": {
     "version": 14,
@@ -78,22 +78,22 @@
         }
       }
     },
-    "notes": "AURA v14 official-only. Baseline live du 04/10/2026 : compteur maître Entreprise 175/175, 60 dispositifs cibles prouvés (aides financières et AAP/AMI), 115 exclusions comptabilisées (26 fonds européens dédiés, 21 clos, 16 instruments hors périmètre, 52 instruments non suffisamment prouvés), 0 erreur. Le lecteur navigateur est limité à 2 workers avec retry contrôlé et fermeture explicite de Chromium. Bpifrance et ADEME restent gelés sur leurs certificats PASS. Aucune source agrégée, aucun LLM, aucune API payante, aucun moteur externe. Mise à jour automatique uniquement le 1er et le 15.",
+    "notes": "Recertification technique AURA sur noyau courant après ajout BFC ; snapshot, règles métier et données inchangés.",
     "foundationBaseline": {
       "version": "Foundation v3.6 / AURA official-only hardening",
-      "status": "HARDENING",
-      "validatedAt": null,
-      "p0": null
+      "status": "CERTIFIED_CURRENT_BASIS",
+      "validatedAt": "2026-10-04T19:39:09.607Z",
+      "p0": 0
     }
   },
   "configuredSources": [
     "aura"
   ],
   "sourceConfigFingerprint": "a506fd881f52d66daa867ad1e27f3c8e0c781861fd11944358227b10c47ce6b4",
-  "certificationBasisFingerprint": "b948da7cb23b16ac73bb590abd88ef01c2cf50e78f1950a91f2e6ea7c5584eef",
+  "certificationBasisFingerprint": "d5b68112820af08290fec6a0d289baf00e332d781a548f4d1272a897e09b57f2",
   "certifiedDataFingerprint": "6c9acfaff28b1f10847f8ea65c26db6c2f7b91342dac1d1754d7171c2092e07c",
   "libraryRecords": 60,
-  "frozenUnselectedSha": "cb1f61c47a18e3054304b204a1aa3df945bdb4f1eede9ad08cb42e79acebea55",
+  "frozenUnselectedSha": "38b27623c70898741ee248ec4eeb1265e0ca17e337cf2c02a230a1e89fe291d9",
   "controlGaps": {
     "rssOutsideCatalogue": []
   },

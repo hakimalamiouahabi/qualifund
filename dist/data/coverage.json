@@ -1297,5 +1297,959 @@
     "checkedAt": "2026-10-04T10:25:54.376Z",
     "lastSuccessfulAt": "2026-10-04T10:25:54.376Z",
     "consecutiveFailures": 0
+  },
+  {
+    "cycleId": "37228595310",
+    "id": "bfc",
+    "name": "Région Bourgogne-Franche-Comté — guide des aides",
+    "scope": "Bourgogne-Franche-Comté",
+    "success": true,
+    "lifecycleSafe": true,
+    "emptyIngestion": false,
+    "suspiciousVolume": false,
+    "lowImportedCount": false,
+    "lowImportRatio": false,
+    "importRatio": 0.19736842105263158,
+    "discovered": 228,
+    "imported": 45,
+    "audit": {
+      "discovered": 228,
+      "imported": 45,
+      "excluded": [
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/2654",
+          "label": "Participation à l’augmentation de capital dans les SEM immobilières",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/250",
+          "label": "Actions collectives et animation de la filière forêt-bois",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/4389",
+          "label": "Aide aux exploitations touchées par la dermatose nodulaire contagieuse (DNC)",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/4420",
+          "label": "ADDAPT : Acquisition Diffusion / Diffusion / AdaPTation",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2026-04-23"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3206",
+          "label": "Agriculture - Coopération et création de valeur ajoutée dans les filières agricoles",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2026-04-27"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3082",
+          "label": "Agriculture - Filières émergentes et biologiques",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3083",
+          "label": "Agriculture - Promotion des produits agricoles",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/281",
+          "label": "Aide à la qualification en agriculture biologique",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3875",
+          "label": "Aide aux investissements dans les petits équipements pour l’agriculture",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3948",
+          "label": "Aide financière à l’engraissement de bovins",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/4207",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/4180",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/4208",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3351",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/323",
+          "label": "Aides en faveur d’une gestion forestière exemplaire",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3553",
+          "label": "Agriculture – Audits Territoriaux Multi-Acteurs",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2024-07-29"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/326",
+          "label": "Aides individuelles aux entreprises de la 1ère transformation du bois - Aide à la création, croissance, transmission",
+          "reason": "INSTRUMENT_HORS_PERIMETRE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3956",
+          "label": "Appel à projets Conseils Engraissement",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2024-08-30"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3605",
+          "label": "Aide aux investissements pour le soutien au pastoralisme sur le Massif du Jura",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": null
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3972",
+          "label": "Débardage de bois à cheval ou par câble mat",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3865",
+          "label": "Développement des activités oenotouristiques",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/4265",
+          "label": "Mesure agroenvironnementale et climatique forfaitaire – transition des pratiques",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2025-10-29"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/2364",
+          "label": "Mise en place d'ilots d'avenir et de plantations mélangées expérimentales",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/4136",
+          "label": "Programme Régional pour une Alimentation de Proximité",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3890",
+          "label": "Protection des races menacées",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2024-09-18"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/1449",
+          "label": "Soutien à l’animation d’espaces tests agricoles",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3791",
+          "label": "Aménagement sportif du territoire",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3450",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3349",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3121",
+          "label": "Centralités rurales en région",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/4155",
+          "label": "Education à l’environnement 2026",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2026-04-13"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/601",
+          "label": "Ingénierie des territoires de projets (postes)",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/603",
+          "label": "Soutien aux Parcs Naturels Régionaux",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/4140",
+          "label": "Quartiers en transition",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2026-06-26"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3969",
+          "label": "Actions d'information, de découverte, de promotion des métiers et des formations ouvertes à tous les publics",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3288",
+          "label": "Aide au transport de collégiens, lycéens, apprentis et étudiants vers des événements dédiés à l'information sur les métiers",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3356",
+          "label": "E-formation, e-orientation, e-inclusion",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3920",
+          "label": "Partenariats, attractivité et vie étudiante (PAVE)",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/449",
+          "label": "Prime régionale aux employeurs d’apprentis (PREA)",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/329",
+          "label": "Aide à l'aménagement des structures de création et de diffusion culturelle",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/261",
+          "label": "Aide à l’émergence des compagnies – spectacle vivant",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/263",
+          "label": "Aide à l’emploi associatif",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/2492",
+          "label": "Aide à la création de films associatifs",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3438",
+          "label": "Aide à la création en arts visuels",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/278",
+          "label": "Aide à la production cinématographique de courts métrages",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/636",
+          "label": "Aide au documentaire cinématographique et audiovisuel : écriture, développement, production",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/276",
+          "label": "Aide à la production des compagnies – spectacle vivant",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/291",
+          "label": "Aide au fonctionnement des compagnies de spectacle vivant",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/635",
+          "label": "Aide à la fiction longue cinématographique et audiovisuelle : écriture, développement, production",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/282",
+          "label": "Aide au parcours de résidence(s) de création - spectacle vivant",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2026-06-15"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/4157",
+          "label": "Aide au parcours de résidence(s) de création – musique",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3870",
+          "label": "Aide aux emplois structurants",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/303",
+          "label": "Aide aux librairies indépendantes",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/304",
+          "label": "Aide aux lieux d’accueil en résidence - spectacle vivant",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/305",
+          "label": "Aide aux lieux de diffusion de musique - Fonctionnement",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/313",
+          "label": "Aide aux structures labellisées - spectacle vivant",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3375",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/316",
+          "label": "Aide aux structures ressources cinématographiques et audiovisuelles",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/318",
+          "label": "Aide aux structures ressources et aux réseaux de professionnels - spectacle vivant",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/319",
+          "label": "Aide aux structures ressources et réseaux de professionnels - Livre",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/253",
+          "label": "Aides aux actions de sensibilisation des arts visuels",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/480",
+          "label": "Aides aux réseaux structurant la filière des arts visuels",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/315",
+          "label": "Aides aux structures de diffusion intermédiaires d’intérêt régional - spectacle vivant",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3867",
+          "label": "Appel à projets - Soutien aux structures de développement artistique – musiques actuelles",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2024-10-21"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/344",
+          "label": "Chantiers patrimoniaux",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2026-07-15"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/4328",
+          "label": "Développement culturel territorial - Volet Territoires",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3448",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/411",
+          "label": "L’échappée littéraire",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3809",
+          "label": "Patrimoine protégé au titre des monuments historiques - Fonds incitatif et partenarial",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/362",
+          "label": "Développement culturel territorial - Volets Publics",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/474",
+          "label": "Soutien à l’édition indépendante",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/4156",
+          "label": "Soutien à la diffusion de musiques actuelles en territoire",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2025-10-20"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/475",
+          "label": "Soutien à la formation professionnalisante - Musique",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/314",
+          "label": "Soutien aux structures professionnelles des arts visuels – Centres d’art et structures de diffusion",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/248",
+          "label": "Actions collectives en faveur de l’internationalisation des entreprises de Bourgogne-Franche-Comté",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/251",
+          "label": "Actions collectives filières",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/252",
+          "label": "Actions d’accompagnement en faveur des TPE et de l'ESS",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/267",
+          "label": "Aide à l’investissement matériel",
+          "reason": "INSTRUMENT_HORS_PERIMETRE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/268",
+          "label": "Aide à la création",
+          "reason": "INSTRUMENT_HORS_PERIMETRE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/271",
+          "label": "Aide à la croissance",
+          "reason": "INSTRUMENT_HORS_PERIMETRE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3855",
+          "label": "Aide à la reprise : hôtellerie et hôtellerie de plein air",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/286",
+          "label": "Aide à la transmission",
+          "reason": "INSTRUMENT_HORS_PERIMETRE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/297",
+          "label": "Aide au recrutement de cadres",
+          "reason": "INSTRUMENT_HORS_PERIMETRE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/308",
+          "label": "Aide aux pôles d’innovation",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3353",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3745",
+          "label": "Aides à l’emploi pour l’insertion par l’activité économique",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3467",
+          "label": "Amélioration et transformation des filières - France 2030 régionalisé",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2024-06-30"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3903",
+          "label": "Appel à projets - Economie Sociale et Solidaire (ESS) 2025",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2025-09-15"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/283",
+          "label": "Financement de reprise d’entreprises à la barre du tribunal",
+          "reason": "INSTRUMENT_HORS_PERIMETRE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3440",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3383",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3748",
+          "label": "Pépinières labellisées à haut niveau de services",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/398",
+          "label": "Pass’export",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/419",
+          "label": "PRESTA’INNO",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/1901",
+          "label": "Programme de formation à la reprise des entreprises artisanales ou des exploitations agricoles",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/486",
+          "label": "Soutien régional aux investissements matériels des entreprises de l’ESS",
+          "reason": "INSTRUMENT_HORS_PERIMETRE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/372",
+          "label": "Tremplin SCOP/SCIC : soutien régional à la création ou à la reprise sous forme de SCOP/SCIC",
+          "reason": "INSTRUMENT_HORS_PERIMETRE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/485",
+          "label": "Zones et friches industrielles régionales (ZEFIR)",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/322",
+          "label": "Aides à l’hébergement et à la restauration des lycéens",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3973",
+          "label": "Forfait d’externat pour les établissements privés sous contrat avec le ministère de l’éducation nationale",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/447",
+          "label": "Premiers équipements pour les lycéens",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3378",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3350",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/4174",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/509",
+          "label": "Ressources pédagogiques",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/4186",
+          "label": "Subvention d’investissement pour les établissements prives agricoles sous contrat",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3377",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3374",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3970",
+          "label": "Subvention de fonctionnement dans les écoles de production",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/311",
+          "label": "Aide aux projets Egalité - Citoyenneté",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/2813",
+          "label": "Aide Région à la méthanisation",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3058",
+          "label": "Aide Région aux études et conseils pour les projets d’énergies renouvelables citoyens",
+          "reason": "INSTRUMENT_HORS_PERIMETRE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/355",
+          "label": "Constructions universitaires",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3441",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3381",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/4422",
+          "label": "Agir pour la Vie Etudiante",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/270",
+          "label": "Aide à la création et la gestion d’une réserve naturelle régionale",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/348",
+          "label": "Connaissance de la biodiversité",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/896",
+          "label": "Bocage et paysages",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/350",
+          "label": "Connaissance et éducation à l’environnement – Action 2 - Séjours classes environnement",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3954",
+          "label": "Plan d’action d’espèces protégées et/ou menacées",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3953",
+          "label": "Plan d’action d’espèces protégées et/ou menacées",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/375",
+          "label": "Effilogis",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/1302",
+          "label": "Evaluation d'impact sur la santé",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3123",
+          "label": "Festival des solutions",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3379",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/439",
+          "label": "Politique de l’eau - Adaptation au changement climatique - Aménagement de zones tampons",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3352",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3354",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/2631",
+          "label": "Politique de l'eau - Etudes, travaux et actions d'accompagnement",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3380",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3443",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3445",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/440",
+          "label": "Politique de l’eau - Connaissance des territoires",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3116",
+          "label": "Renaturation : une solution pour diminuer les ilots de chaleur",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3382",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/349",
+          "label": "Connaissance et éducation à l’environnement – Action 1 - Référencement des centres",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/1676",
+          "label": "Soutien aux manifestations et colloques",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/483",
+          "label": "Soutien en faveur de la faune sauvage blessée",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3431",
+          "label": "Education à la citoyenneté et à la solidarité internationale",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/232",
+          "label": "Solidarité internationale",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/1202",
+          "label": "Solidarité internationale – eau et assainissement avec les agences de l'eau Rhône méditerranée Corse et Seine Normandie",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/895",
+          "label": "Vergers de sauvegarde",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/491",
+          "label": "Trame verte",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/4237",
+          "label": "Appel à Projets - Compétences actives",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2025-09-30"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/4201",
+          "label": "PASS’VAE Accompagnement - Soutien aux démarches individuelles de validation des acquis de l’expérience (VAE)",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3064",
+          "label": "Information Conseil en Validation des Acquis de l’Expérience (VAE)",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/4461",
+          "label": "PASS’VAE Hybride - Soutien des parcours de VAE hybride",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/2986",
+          "label": "Soutien à l’émergence et au développement des Groupements d'employeurs pour l'insertion et la qualification (GEIQ)",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/4170",
+          "label": "Soutien aux démarches collectives de validation des acquis de l’expérience (VAE)",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/671",
+          "label": "Soutien aux démarches de gestion prévisionnelle des emplois et compétences (GPEC) de filières et de territoires",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/287",
+          "label": "Aide à projets jeunesse",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/256",
+          "label": "Actions de valorisation du patrimoine - Soutien aux outils de médiation",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/4144",
+          "label": "Patrimoine régional exceptionnel",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/426",
+          "label": "Patrimoine rural non protégé – Partenariat Fondation du patrimoine",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/254",
+          "label": "Soutien à l’animation du patrimoine à travers la création artistique",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/255",
+          "label": "Soutien aux expositions labellisées d’intérêt national et aux expositions valorisant les collections des musées de la région",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/670",
+          "label": "Soutien à la promotion sociale des actifs occupés",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/482",
+          "label": "Soutien aux structures ressources en matière de patrimoine",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3270",
+          "label": "Recherche clinique et translationnelle",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2026-05-21"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3664",
+          "label": "Appel à projets - Recherche et Développement",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2024-01-31"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/4036",
+          "label": "Soutien à la diffusion de la culture scientifique, technique et industrielle (CSTI)",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2026-01-20"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/1697",
+          "label": "Transfert de technologie – Incubation",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/1698",
+          "label": "Transfert de technologie – Itinéraires chercheurs entrepreneurs (ICE)",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/1699",
+          "label": "Transfert de technologie – Sensibilisation, détection et maturation",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/4167",
+          "label": "Accueil de Talents de la Recherche et Appui à la Coopération sur le Territoire (ATRACT)",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2026-01-10"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/334",
+          "label": "Autorisation des instituts de formation paramédicale et agrément des écoles de sages-femmes",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/385",
+          "label": "Fonctionnement des écoles sanitaires et sociales",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/392",
+          "label": "Formation des demandeurs d'emploi aux diplômes d'aide-soignant, d'auxiliaire puériculture, d'ambulancier et d’accompagnant éducatif et social",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/689",
+          "label": "Innovation pédagogique des formations sanitaires et sociales",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3790",
+          "label": "Aide à l'acquisition de véhicules de transport collectif (minibus)",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/258",
+          "label": "Agrément de formations initiales en travail social",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/476",
+          "label": "Soutien à la promotion du sport",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/400",
+          "label": "Investissement des écoles sanitaires et sociales",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3868",
+          "label": "Accompagnement de la transition touristique des territoires de montagne",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/238",
+          "label": "Soutien aux structures sportives – aide aux clubs – aide aux projets (AAP)",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3571",
+          "label": "Développement du tourisme de savoir-faire",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2026-06-30"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/4533",
+          "label": "Aide aux villages et centres de vacances (tourisme social)",
+          "reason": "HORS_CIBLE_ENTREPRISE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3869",
+          "label": "Développement des itinéraires touristiques fluviaux, vélo, pédestres et équestres",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/dispositif-ticket-mobilit%C3%A9",
+          "label": "Ticket mobilité",
+          "reason": "ELIGIBILITE_ENTREPRISE_NON_PROUVEE"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/4553",
+          "label": "Aide à la formation des bénévoles",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2026-09-25"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3420",
+          "label": "Aide à la structuration du mouvement sportif",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2025-02-23"
+        },
+        {
+          "url": "https://www.bourgognefranchecomte.fr/node/3464",
+          "label": "Appel à projets France 2030 (PIA4) : Aides à l’innovation « BOTTOM-UP », projets de formation professionnelle",
+          "reason": "EXPIRED_AFTER_ENRICHMENT"
+        }
+      ],
+      "errors": [],
+      "accounted": 228,
+      "channels": {
+        "enterpriseCatalogue": 228,
+        "enterpriseOccurrences": 326,
+        "enterpriseOccurrencesExpected": 326,
+        "pagesScanned": 19,
+        "duplicateOccurrences": 98,
+        "europeanExcluded": 25
+      },
+      "publicationRetained": 45,
+      "publicationDiscovered": 228,
+      "publicationExclusionCounts": {
+        "EXPIRED_AFTER_ENRICHMENT": 1
+      }
+    },
+    "message": "Région Bourgogne-Franche-Comté — guide des aides: 228 découverte(s), 45 retenue(s), 1 exclusion(s) après enrichissement/publication.",
+    "durationMs": 8940,
+    "checkedAt": "2026-10-04T19:32:02.123Z",
+    "lastSuccessfulAt": "2026-10-04T19:32:02.123Z",
+    "consecutiveFailures": 0
   }
 ]

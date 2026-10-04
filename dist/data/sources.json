@@ -51,6 +51,16 @@
       "url": "https://www.auvergnerhonealpes.fr/aides?f%5B0%5D=profil%3A3",
       "official": true,
       "priority": 1
+    },
+    {
+      "id": "bfc",
+      "name": "Région Bourgogne-Franche-Comté — guide des aides",
+      "scope": "Bourgogne-Franche-Comté",
+      "type": "region",
+      "strategy": "bfc-official",
+      "url": "https://www.bourgognefranchecomte.fr/guide-des-aides?field_domaine_target_id=All&field_vous_etes_target_id=87&field_types_value=All",
+      "official": true,
+      "priority": 1
     }
   ]
 }

@@ -1,0 +1,54 @@
+{
+  "summary": {
+    "generatedAt": "2026-10-04T19:31:52.249Z",
+    "version": "12.9.3",
+    "collectionLock": {
+      "locked": true,
+      "mode": "REGION",
+      "name": "Bourgogne-Franche-Comté",
+      "allowedSourceIds": [
+        "bfc"
+      ],
+      "next": "Bretagne"
+    },
+    "total": 1,
+    "probed": 1,
+    "conclusive": 1,
+    "ok": 1,
+    "failed": 0,
+    "protected": 0,
+    "unprobed": 0,
+    "timeouts": 0,
+    "networkErrors": 0,
+    "ingestion": {
+      "total": 1,
+      "ok": 1
+    },
+    "controls": {
+      "total": 0,
+      "ok": 0
+    },
+    "environmentSuspect": false,
+    "liveCycleExecuted": false
+  },
+  "results": [
+    {
+      "id": "bfc",
+      "name": "Région Bourgogne-Franche-Comté — guide des aides",
+      "scope": "Bourgogne-Franche-Comté",
+      "url": "https://www.bourgognefranchecomte.fr/guide-des-aides?field_domaine_target_id=All&field_vous_etes_target_id=87&field_types_value=All",
+      "official": true,
+      "priority": 1,
+      "strategy": "bfc-official",
+      "role": "INGESTION",
+      "ok": true,
+      "probeState": "OK",
+      "httpStatus": 200,
+      "finalUrl": "https://www.bourgognefranchecomte.fr/guide-des-aides?field_domaine_target_id=All&field_vous_etes_target_id=87&field_types_value=All",
+      "contentType": "text/html; charset=UTF-8",
+      "durationMs": 1700,
+      "checkedAt": "2026-10-04T19:31:52.249Z",
+      "note": null
+    }
+  ]
+}

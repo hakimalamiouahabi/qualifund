@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-04T10:37:12.731Z",
+  "generatedAt": "2026-10-04T19:39:12.066Z",
   "version": "12.9.3",
   "currentLock": {
-    "name": "AURA",
+    "name": "Bourgogne-Franche-Comté",
     "mode": "REGION",
     "allowedSourceIds": [
-      "aura"
+      "bfc"
     ]
   },
   "publication": {
@@ -13,6 +13,7 @@
     "certifiedSourceIds": [
       "ademe",
       "aura",
+      "bfc",
       "bpifrance_aap",
       "bpifrance_aides",
       "bpifrance_rebond_industriel"
@@ -20,14 +21,15 @@
     "certifiedGuichets": [
       "ADEME",
       "AURA",
+      "Bourgogne-Franche-Comté",
       "Bpifrance"
     ],
     "reasons": {},
     "reasonSamples": {}
   },
   "library": {
-    "raw": 164,
-    "publishable": 164,
+    "raw": 209,
+    "publishable": 209,
     "quarantined": 0,
     "orphanSource": 0,
     "duplicateOfficialUrl": 0,
@@ -60,13 +62,6 @@
       "primaryOutsideLock": []
     },
     "pendingCalibration": [
-      {
-        "id": "bfc",
-        "name": "Région Bourgogne-Franche-Comté — guide des aides",
-        "scope": "Bourgogne-Franche-Comté",
-        "strategy": "catalog-html",
-        "currentLock": false
-      },
       {
         "id": "bretagne",
         "name": "Région Bretagne — catalogue des aides",
@@ -752,36 +747,36 @@
     "forbiddenArtifactsPresent": []
   },
   "coverage": {
-    "rows": 5,
+    "rows": 6,
     "orphans": [],
     "missingCurrentCoverage": [],
     "failedCount": 0,
     "failed": []
   },
   "metadata": {
-    "manifestGeneratedAt": "2026-10-04T10:26:27.175Z",
+    "manifestGeneratedAt": "2026-10-04T19:32:03.739Z",
     "manifestSourceCount": 118,
     "manifestLock": {
       "locked": true,
       "mode": "REGION",
-      "name": "AURA",
+      "name": "Bourgogne-Franche-Comté",
       "allowedSourceIds": [
-        "aura"
+        "bfc"
       ],
-      "next": "Bourgogne-Franche-Comté",
-      "frozenUnselectedSha": "cb1f61c47a18e3054304b204a1aa3df945bdb4f1eede9ad08cb42e79acebea55"
+      "next": "Bretagne",
+      "frozenUnselectedSha": "38b27623c70898741ee248ec4eeb1265e0ca17e337cf2c02a230a1e89fe291d9"
     }
   },
   "historicalCertifications": {
     "ademe-certification.json": {
       "status": "PASS",
-      "generatedAt": "2026-10-04T10:37:11.034Z",
+      "generatedAt": "2026-10-04T19:39:09.582Z",
       "problems": [],
       "libraryRecords": 68
     },
     "bpifrance-certification.json": {
       "status": "PASS",
-      "generatedAt": "2026-10-04T10:37:10.439Z",
+      "generatedAt": "2026-10-04T19:39:08.950Z",
       "problems": [],
       "libraryRecords": 36
     }
@@ -792,21 +787,28 @@
       {
         "file": "ademe-certification.json",
         "name": "ADEME",
-        "generatedAt": "2026-10-04T10:37:11.034Z",
+        "generatedAt": "2026-10-04T19:39:09.582Z",
         "ageHours": 0,
         "status": "FRESH"
       },
       {
         "file": "aura-certification.json",
         "name": "AURA",
-        "generatedAt": "2026-10-04T10:32:05.478Z",
-        "ageHours": 0.1,
+        "generatedAt": "2026-10-04T19:39:10.204Z",
+        "ageHours": 0,
+        "status": "FRESH"
+      },
+      {
+        "file": "bourgogne-franche-comte-certification.json",
+        "name": "Bourgogne-Franche-Comté",
+        "generatedAt": "2026-10-04T19:36:54.025Z",
+        "ageHours": 0,
         "status": "FRESH"
       },
       {
         "file": "bpifrance-certification.json",
         "name": "Bpifrance",
-        "generatedAt": "2026-10-04T10:37:10.439Z",
+        "generatedAt": "2026-10-04T19:39:08.950Z",
         "ageHours": 0,
         "status": "FRESH"
       }
@@ -814,8 +816,8 @@
     "active": {
       "present": true,
       "status": "PASS",
-      "lockName": "AURA",
-      "expectedLockName": "AURA",
+      "lockName": "Bourgogne-Franche-Comté",
+      "expectedLockName": "Bourgogne-Franche-Comté",
       "sourceIdsMatch": true,
       "sourceFingerprintMatch": true,
       "basisFingerprintMatch": true,
@@ -843,7 +845,7 @@
     "p0": [],
     "p1": [],
     "p2": [
-      "92 source(s) future(s) non calibrée(s), bloquées automatiquement jusqu’à mesure du référentiel officiel",
+      "91 source(s) future(s) non calibrée(s), bloquées automatiquement jusqu’à mesure du référentiel officiel",
       "0 fiche(s) brutes en quarantaine de publication"
     ]
   },

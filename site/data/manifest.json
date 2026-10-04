@@ -72,12 +72,5 @@
     ],
     "next": "Bretagne",
     "frozenUnselectedSha": "38b27623c70898741ee248ec4eeb1265e0ca17e337cf2c02a230a1e89fe291d9"
-  },
-  "publishedCount": 45,
-  "publishedActiveCount": 45,
-  "quarantinedCount": 164,
-  "certifiedSourceCount": 1,
-  "certifiedSources": [
-    "bfc"
-  ]
+  }
 }
