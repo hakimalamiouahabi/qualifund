@@ -1,0 +1,55 @@
+name: BFC — comptabilité cartes ponctuelle
+on:
+  push:
+    branches: [maintenance/bfc-probe-once]
+    paths:
+      - '.github/workflows/bfc-card-accounting-once.yml'
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Comptabiliser toutes les cartes
+        run: |
+          node --input-type=module <<'NODE'
+          import * as cheerio from 'cheerio';
+          import {cleanTitle} from './scripts/lib/utils.mjs';
+          const base='https://www.bourgognefranchecomte.fr/guide-des-aides';
+          const headers={'user-agent':'Mozilla/5.0','accept-language':'fr-FR,fr;q=0.9'};
+          let expected=0,rows=0,nodeRows=0,noNodeRows=0,pages=0;const samples=[];
+          for(let page=0;page<60;page++){
+            const u=new URL(base);
+            u.searchParams.set('field_domaine_target_id','All');
+            u.searchParams.set('field_vous_etes_target_id','87');
+            u.searchParams.set('field_types_value','All');
+            u.searchParams.set('page',String(page));
+            const r=await fetch(u,{headers});const html=await r.text();const $=cheerio.load(html);
+            const body=cleanTitle($('body').text()||'');
+            if(!expected)expected=Number(body.match(/(\d+)\s+aide\(s\)\s*&\s*service\(s\)/i)?.[1]||0);
+            const candidates=$('.views-row');
+            if(!candidates.length&&page>2)break;
+            let onPage=0;
+            candidates.each((_,row)=>{
+              const raw=cleanTitle($(row).text()||'');
+              if(!raw||!/Plus de détails|Déposer un dossier/i.test(raw))return;
+              onPage++;rows++;
+              const node=$(row).find('a[href^="/node/"]').first().attr('href')||'';
+              if(node)nodeRows++;
+              else{
+                noNodeRows++;
+                const hrefs=[];
+                $(row).find('a[href]').each((__,a)=>hrefs.push({href:$(a).attr('href')||'',label:cleanTitle($(a).text()||'')}));
+                if(samples.length<50)samples.push({page,raw:raw.slice(0,700),hrefs});
+              }
+            });
+            pages++;
+            if(onPage===0&&page>2)break;
+          }
+          console.log('BFC_CARDS='+JSON.stringify({expected,rows,nodeRows,noNodeRows,pages,samples}));
+          NODE
