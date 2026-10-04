@@ -1,15 +1,11 @@
 {
   "version": "12.9.3",
-  "generatedAt": "2026-10-04T10:26:27.175Z",
-  "publishedCount": 164,
-  "publishedActiveCount": 164,
-  "certifiedSourceCount": 5,
+  "generatedAt": "2026-10-04T19:32:03.739Z",
+  "publishedCount": 45,
+  "publishedActiveCount": 45,
+  "certifiedSourceCount": 1,
   "certifiedSources": [
-    "ademe",
-    "aura",
-    "bpifrance_aap",
-    "bpifrance_aides",
-    "bpifrance_rebond_industriel"
+    "bfc"
   ],
   "sourcePolicy": "DIRECT_OFFICIAL_ONLY",
   "publicationPolicy": "CERTIFIED_SOURCE_ONLY",
@@ -23,11 +19,11 @@
   "collectionLock": {
     "locked": true,
     "mode": "REGION",
-    "name": "AURA",
+    "name": "Bourgogne-Franche-Comté",
     "allowedSourceIds": [
-      "aura"
+      "bfc"
     ],
-    "next": "Bourgogne-Franche-Comté",
-    "frozenUnselectedSha": "cb1f61c47a18e3054304b204a1aa3df945bdb4f1eede9ad08cb42e79acebea55"
+    "next": "Bretagne",
+    "frozenUnselectedSha": "38b27623c70898741ee248ec4eeb1265e0ca17e337cf2c02a230a1e89fe291d9"
   }
 }

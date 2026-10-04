@@ -1,554 +1,419 @@
 {
-  "generatedAt": "2026-10-04T10:32:05.644Z",
+  "generatedAt": "2026-10-04T19:36:54.164Z",
   "date": "2026-10-04",
   "baselineInitialized": false,
   "totals": {
-    "before": 104,
-    "after": 164,
-    "new": 60,
+    "before": 164,
+    "after": 209,
+    "new": 45,
     "modified": 0,
     "obsolete": 0
   },
   "nouvellesAides": [
     {
-      "id": "aura_ac9711c4d7d6d94e03552ce499bac0b01ae861c2a572bea8042b68eb92bd58ef",
-      "titre": "[ Région Commerce et Artisanat] Obtenir un prêt \"solidaire\" à taux zéro pour mon association",
+      "id": "bfc_fde59897f88eb699f34ff2b1b4ed0385523a8ef2d9393db368ff0bae8d93958e",
+      "titre": "Accélérateur à projets économie circulaire Bourgogne-Franche-Comté 2026 ADEME–Région",
       "statut": "ACTIVE",
       "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/region-commerce-et-artisanat-obtenir-un-pret-solidaire-taux-zero-pour-mon-association",
+      "source": "https://www.bourgognefranchecomte.fr/node/1050",
+      "verification": "A_REVERIFIER",
+      "confiance": 9
+    },
+    {
+      "id": "bfc_5dbbcd9cdc68e8940c14ec4a08db9b9d7563f1e497bde2c8921eaf919a3fc063",
+      "titre": "Accompagnement des entreprises sous-traitantes de la filière automobile",
+      "statut": "ACTIVE",
+      "echeance": "2026-12-31",
+      "source": "https://www.bourgognefranchecomte.fr/node/3562",
+      "verification": "A_REVERIFIER",
+      "confiance": 9
+    },
+    {
+      "id": "bfc_a34ca83b3705176f9338f206382be3d013556957cae9d005179e742462d8f95b",
+      "titre": "Action REgionale pour la Formation dans les Entreprises (AREFE)",
+      "statut": "ACTIVE",
+      "echeance": "",
+      "source": "https://www.bourgognefranchecomte.fr/node/3599",
+      "verification": "A_REVERIFIER",
+      "confiance": 9
+    },
+    {
+      "id": "bfc_5b23f9cd6fe34b35d585e7a7c57bb8b75a8fbd8582b0b1f39a771ff318184a85",
+      "titre": "Actions collectives en faveur des TPE et de l'ESS",
+      "statut": "ACTIVE",
+      "echeance": "",
+      "source": "https://www.bourgognefranchecomte.fr/node/249",
+      "verification": "A_REVERIFIER",
+      "confiance": 9
+    },
+    {
+      "id": "bfc_fb9ff713524b415e908ae15d5bb5c2a9d6e7f0c4df09c522b21452b7f18043e2",
+      "titre": "Aide à l’achat de reproducteurs pour la filière ovine",
+      "statut": "ACTIVE",
+      "echeance": "2027-12-31",
+      "source": "https://www.bourgognefranchecomte.fr/node/3981",
+      "verification": "A_REVERIFIER",
+      "confiance": 9
+    },
+    {
+      "id": "bfc_f627e2e1d9dceb7c1081d599236d815504b861d36f6ad31cdeea1686cb4014f8",
+      "titre": "Aide à l'hôtellerie de plein air",
+      "statut": "ACTIVE",
+      "echeance": "",
+      "source": "https://www.bourgognefranchecomte.fr/node/3854",
+      "verification": "A_REVERIFIER",
+      "confiance": 9
+    },
+    {
+      "id": "bfc_1cb65a8b04b01bd0caa91e0bd733bf091d65ca8a85e121317802f0c86ec8e35c",
+      "titre": "Aide à l’hôtellerie indépendante",
+      "statut": "ACTIVE",
+      "echeance": "",
+      "source": "https://www.bourgognefranchecomte.fr/node/3856",
+      "verification": "A_REVERIFIER",
+      "confiance": 9
+    },
+    {
+      "id": "bfc_aaa0d4ea0d798eec3e2663fd5fb80d32812856d8180689dde49fa043c5af1f91",
+      "titre": "Aide à l'investissement de projets collectifs pour la logistique en circuits courts des produits agricoles alimentaires régionaux",
+      "statut": "ACTIVE",
+      "echeance": "",
+      "source": "https://www.bourgognefranchecomte.fr/node/3667",
+      "verification": "A_REVERIFIER",
+      "confiance": 9
+    },
+    {
+      "id": "bfc_38f759c541dd06a830439db39a1aec92cbd76cc30051300522eeafedcceb7eb5",
+      "titre": "Aide à la modernisation des salles de cinéma et circuits itinérants",
+      "statut": "ACTIVE",
+      "echeance": "",
+      "source": "https://www.bourgognefranchecomte.fr/node/3853",
+      "verification": "A_REVERIFIER",
+      "confiance": 9
+    },
+    {
+      "id": "bfc_285926acb329e9ea44dd2d0172b5cc8e55817b8c9d05bafe4a803b530b8f0ba1",
+      "titre": "Aide au conseil stratégique",
+      "statut": "ACTIVE",
+      "echeance": "2026-12-31",
+      "source": "https://www.bourgognefranchecomte.fr/node/3825",
+      "verification": "A_REVERIFIER",
+      "confiance": 9
+    },
+    {
+      "id": "bfc_6984304d04f4f0e9a58b338269d5d6f3dd74e409e77da98a698e4a8dd6141eb5",
+      "titre": "Aide au déploiement de flottes hydrogène",
+      "statut": "ACTIVE",
+      "echeance": "2026-12-31",
+      "source": "https://www.bourgognefranchecomte.fr/node/3833",
+      "verification": "A_REVERIFIER",
+      "confiance": 9
+    },
+    {
+      "id": "bfc_e1503d4fda1e0d9906b3a032c3c2bda2c5dfa5cc3b1f70363b2f88ccf3c53013",
+      "titre": "Aide au fonctionnement des ensembles professionnels - Musique",
+      "statut": "ACTIVE",
+      "echeance": "",
+      "source": "https://www.bourgognefranchecomte.fr/node/292",
+      "verification": "A_REVERIFIER",
+      "confiance": 9
+    },
+    {
+      "id": "bfc_207af3319fb8e8282bf74a3bd7b56fa1775165412690996171d20ef3d6f45bad",
+      "titre": "Aide au recrutement de cadres et d’assistant(e)s export",
+      "statut": "ACTIVE",
+      "echeance": "",
+      "source": "https://www.bourgognefranchecomte.fr/node/298",
+      "verification": "A_REVERIFIER",
+      "confiance": 9
+    },
+    {
+      "id": "bfc_d3d0a0530ffcd2cb78ddf27e1476fea70baef73e527fb26588fd4aa6d113a92a",
+      "titre": "Aide aux études et à l'investissement - Chaufferie bois associée à un réseau de chaleur et réseaux de chaleur alimentés par énergies renouvelables ou de récupération",
+      "statut": "ACTIVE",
+      "echeance": "",
+      "source": "https://www.bourgognefranchecomte.fr/node/2624",
+      "verification": "A_REVERIFIER",
+      "confiance": 9
+    },
+    {
+      "id": "bfc_1d36074193a663e926125e60b56ed39326555fa6af3abe52004b1908f65b687a",
+      "titre": "Aide aux structures ressources et aux réseaux de professionnels - Musique",
+      "statut": "ACTIVE",
+      "echeance": "",
+      "source": "https://www.bourgognefranchecomte.fr/node/317",
+      "verification": "A_REVERIFIER",
+      "confiance": 9
+    },
+    {
+      "id": "bfc_a96d80547e5822d7846b35838d1ca6c33430a08b82c0e83acfc9765030f67da8",
+      "titre": "Aide pour les entreprises intégrant la démarche CEC",
+      "statut": "ACTIVE",
+      "echeance": "2026-12-31",
+      "source": "https://www.bourgognefranchecomte.fr/node/4443",
+      "verification": "A_REVERIFIER",
+      "confiance": 9
+    },
+    {
+      "id": "bfc_a2ed3de98139420b29329da52a1fac8d3274996dc7160090b0403415403a9d75",
+      "titre": "Aide Région aux études et à l'investissement - Hydroélectricité",
+      "statut": "ACTIVE",
+      "echeance": "",
+      "source": "https://www.bourgognefranchecomte.fr/node/397",
+      "verification": "A_REVERIFIER",
+      "confiance": 9
+    },
+    {
+      "id": "bfc_549396372c62dbd41e3a759b6c90fb83e2d66d9b7cf79f1394f8b6ef0490a0e4",
+      "titre": "Aide Région aux études et à l’investissement – Solaire thermique",
+      "statut": "ACTIVE",
+      "echeance": "",
+      "source": "https://www.bourgognefranchecomte.fr/node/685",
+      "verification": "A_REVERIFIER",
+      "confiance": 9
+    },
+    {
+      "id": "bfc_9155c21fdea418e70bfd4016891fd57344f8da9f4753818b429012eb46fc80f1",
+      "titre": "Aides en faveur des entreprises de travaux forestiers - Aide à l'équipement",
+      "statut": "ACTIVE",
+      "echeance": "",
+      "source": "https://www.bourgognefranchecomte.fr/node/3594",
+      "verification": "A_REVERIFIER",
+      "confiance": 9
+    },
+    {
+      "id": "bfc_75189617d0d582eeaf225f954952a1f379b9b6a8aecc6bc42ec06dace8a63a56",
+      "titre": "Aides en faveur des entreprises de travaux forestiers - Aide à l'installation",
+      "statut": "ACTIVE",
+      "echeance": "",
+      "source": "https://www.bourgognefranchecomte.fr/node/890",
+      "verification": "A_REVERIFIER",
+      "confiance": 9
+    },
+    {
+      "id": "bfc_27dfe1972d3b53a8f1fba3b616e0ea044f902f5422d7f832832a862625e803ef",
+      "titre": "Aides individuelles aux entreprises de la 1ère transformation du bois - Aide au recrutement de cadres et d'assistant(e) export",
+      "statut": "ACTIVE",
+      "echeance": "",
+      "source": "https://www.bourgognefranchecomte.fr/node/325",
+      "verification": "A_REVERIFIER",
+      "confiance": 9
+    },
+    {
+      "id": "bfc_6c565d6fa9d3edc9045d7da0b8fa22f340b832cc2459e71d8de1084bf7df933f",
+      "titre": "Aides individuelles aux entreprises de la première transformation du bois - Aide aux investissements matériels",
+      "statut": "ACTIVE",
+      "echeance": "",
+      "source": "https://www.bourgognefranchecomte.fr/node/3598",
+      "verification": "A_REVERIFIER",
+      "confiance": 9
+    },
+    {
+      "id": "bfc_a519915608991eca0cd27773301efc1fa4f85d14e2b62ce4d84179937a8e4dd3",
+      "titre": "Avance remboursable - Consolidation financière de l’entreprise",
+      "statut": "ACTIVE",
+      "echeance": "",
+      "source": "https://www.bourgognefranchecomte.fr/node/290",
+      "verification": "A_REVERIFIER",
+      "confiance": 9
+    },
+    {
+      "id": "bfc_1241411ed8a5d8c82a5cf892967243392928263d6bfca8816c5e4ea8ca847f57",
+      "titre": "Avance remboursable TPE création-reprise",
+      "statut": "ACTIVE",
+      "echeance": "",
+      "source": "https://www.bourgognefranchecomte.fr/node/337",
+      "verification": "A_REVERIFIER",
+      "confiance": 9
+    },
+    {
+      "id": "bfc_60ecb33a22190d6a2f0d0a24e10708154131b78d884e397ed0623045afbe1238",
+      "titre": "Avance remboursable TPE croissance",
+      "statut": "ACTIVE",
+      "echeance": "",
+      "source": "https://www.bourgognefranchecomte.fr/node/336",
+      "verification": "A_REVERIFIER",
+      "confiance": 9
+    },
+    {
+      "id": "bfc_18cf606d781805378605277148655a8df9ae40a83ef19b2bf373f78493077a8c",
+      "titre": "Contrats de territoire 2022-2028 – Territoires en action",
+      "statut": "ACTIVE",
+      "echeance": "2028-06-30",
+      "source": "https://www.bourgognefranchecomte.fr/node/3182",
+      "verification": "A_REVERIFIER",
+      "confiance": 9
+    },
+    {
+      "id": "bfc_96b7280c05e2c1dbcf9b7984045f8c4770f9397b9aed6447ee8cf1240ba6aa0c",
+      "titre": "Coopération internationale",
+      "statut": "ACTIVE",
+      "echeance": "",
+      "source": "https://www.bourgognefranchecomte.fr/node/228",
+      "verification": "A_REVERIFIER",
+      "confiance": 9
+    },
+    {
+      "id": "bfc_fa347dd33b8d6ae9236da8bc7d3addd502f0f8ba99712a4053e85887d4375e7c",
+      "titre": "Décarbonation des industries - Aide à l’investissement",
+      "statut": "ACTIVE",
+      "echeance": "2026-12-31",
+      "source": "https://www.bourgognefranchecomte.fr/node/3332",
+      "verification": "A_REVERIFIER",
+      "confiance": 9
+    },
+    {
+      "id": "bfc_384b63b076602dcfcd96300450a0d133c28970b3e5c8d11e350db9d28b60213b",
+      "titre": "Décarbonation des industries – Aide au conseil",
+      "statut": "ACTIVE",
+      "echeance": "2026-12-31",
+      "source": "https://www.bourgognefranchecomte.fr/node/3564",
+      "verification": "A_REVERIFIER",
+      "confiance": 9
+    },
+    {
+      "id": "bfc_b8cdd8f773b3c90f50645eef4e8c0b029ed614001d91d4a206d505190922003a",
+      "titre": "Développement culturel territorial - Volet Education artistique et culturelle pour les lycéens et apprentis",
+      "statut": "ACTIVE",
+      "echeance": "",
+      "source": "https://www.bourgognefranchecomte.fr/node/464",
+      "verification": "A_REVERIFIER",
+      "confiance": 9
+    },
+    {
+      "id": "bfc_7f9df7e9ef1f24e3b76d587488e31047dce2cfb837162c189557e86211c84db0",
+      "titre": "ENVI – Espaces Nouveaux Villages Innovants",
+      "statut": "ACTIVE",
+      "echeance": "",
+      "source": "https://www.bourgognefranchecomte.fr/node/380",
       "verification": "A_REVERIFIER",
       "confiance": 19
     },
     {
-      "id": "aura_7120fb0e4ce6e0c9952d9c2897dba5ce73f53523ba5ec9fa5b397b12512de963",
-      "titre": "[Pack relocalisation] - Trouver les compétences",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/pack-relocalisation-trouver-les-competences",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_7a01e61d91f77aa21cd76353af672bf56d463d80d6d9bfbab82b8d6eb6faec40",
-      "titre": "[Région Commerce et Artisanat : Création | Reprise ] Financer ma TPE",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/region-commerce-et-artisanat-creation-reprise-financer-ma-tpe",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_fac4f292e3cff19e056fa74024f2d6b7b1fd5b78ab7038b93a6ecd12c10af789",
-      "titre": "[Région Commerce et Artisanat : Création | Reprise ] Financer mon entreprise individuelle",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/region-commerce-et-artisanat-creation-reprise-financer-mon-entreprise-individuelle",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_9d913239338f9bef5017a7eefa1d02c54a5208b62ace0f774399d9b3205a98c0",
-      "titre": "[Région Commerce et Artisanat ] Obtenir un prêt à taux zéro avec le Prêt Région Artisan et Commerçant Auvergne-Rhône-Alpes",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/region-commerce-et-artisanat-obtenir-un-pret-taux-zero-avec-le-pret-region-artisan-et",
-      "verification": "A_REVERIFIER",
-      "confiance": 19
-    },
-    {
-      "id": "aura_387642a13b9075392ff9b25fd37ee125a39cf2691acddf2c6e94de93618571dd",
-      "titre": "[Région Commerce et Artisanat] Etre conseillé pour améliorer la performance de mon commerce de proximité",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/region-commerce-et-artisanat-etre-conseille-pour-ameliorer-la-performance-de-mon-commerce-de",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_23cfccb32f51e5f4f559a6d6b85d39b3c5dbb7187d4edd48766aaab59e351230",
-      "titre": "[Région Industrie ] Chercher des financements européens",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/region-industrie-chercher-des-financements-europeens",
-      "verification": "A_REVERIFIER",
-      "confiance": 19
-    },
-    {
-      "id": "aura_23a24cef539b7b4a74771cbbfdfadb5d1b2686feb0076b3699b4cff46e4b0540",
-      "titre": "[Région Industrie] Être accompagné dans mon projet \"Industrie du Futur\"",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/region-industrie-etre-accompagne-dans-mon-projet-industrie-du-futur",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_ebe96a057228744fce24557ad01d526f22b53b140fdd0c0273863d85f23c2dd1",
-      "titre": "[Région Industrie] Financer les projets innovants pour mon entreprise",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/region-industrie-financer-les-projets-innovants-pour-mon-entreprise",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_5e7ed1810db4dfaa940df951188e3a71c4c5c458f757ed47726034aa2eb80b96",
-      "titre": "[Région Industrie] Innover par les usages",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/region-industrie-innover-par-les-usages",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_bf0f475f5e39daebd61ecbea6187bb425b4c31ea28abf82e67fd66248ab71347",
-      "titre": "[Région Industrie] Recruter un cadre export",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/region-industrie-recruter-un-cadre-export",
-      "verification": "A_REVERIFIER",
-      "confiance": 19
-    },
-    {
-      "id": "aura_e8c4029029cc883313ef7afdcf92f151d800315c3b9fe36582703d039c3b331d",
-      "titre": "[Région Industrie] Recruter un Volontaire International en Entreprise (V.I.E)",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/region-industrie-recruter-un-volontaire-international-en-entreprise-vie",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_7f102c9805f6bcac7786cbef4f7cb8ca7d1a5ab34cbd7a3fc9c54a1fc5014ac5",
-      "titre": "Accompagner le développement durable des stations",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/accompagner-le-developpement-durable-des-stations",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_d7fb3106222bc943c16643c8e5e0826418a5b3ab7f7857476a43e6c822b31cdf",
-      "titre": "Accompagner les artistes et les groupes émergents dans le domaine des musiques actuelles",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/accompagner-les-artistes-et-les-groupes-emergents-dans-le-domaine-des-musiques-actuelles",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_129e8a6d124f46ba023dfbce01f8481dcd7bfc8f431f71748dc1517666d93abf",
-      "titre": "Acquérir de l’équipement adapté pour l’accès aux loisirs des personnes en situation de handicap",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/acquerir-de-lequipement-adapte-pour-lacces-aux-loisirs-des-personnes-en-situation-de-handicap",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_69f28b8b7fdbb80d409d4275bbe5867b39df54ba7e89e5541e431d33bce0bb73",
-      "titre": "Agir pour l'insertion professionnelle des personnes en situation de handicap",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/agir-pour-linsertion-professionnelle-des-personnes-en-situation-de-handicap",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_5614cdc84eb71782eb26f4704e9802ef200522fd3b48c7f83142c8bc88576e2b",
-      "titre": "Aménager des plateformes logistiques - Plan forêt-bois 2023-2027",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/amenager-des-plateformes-logistiques-plan-foret-bois-2023-2027",
-      "verification": "A_REVERIFIER",
-      "confiance": 38
-    },
-    {
-      "id": "aura_fe3bf35fe0fef2919452b3429b75ddfb434f4c8eddc78719878b40bae22bbd53",
-      "titre": "Aménager des sites touristiques dédiés aux activités sportives et de loisirs de nature",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/amenager-des-sites-touristiques-dedies-aux-activites-sportives-et-de-loisirs-de-nature",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_63568dab0a754a13662a49e73491c706bfb3afc7cf4b2c494b4238494df3be46",
-      "titre": "Appel à manifestation d’intérêt pour « Développer des formations innovantes en coopération avec l'Académie de l'Organisation Mondiale de la Santé »",
-      "statut": "ACTIVE",
-      "echeance": "2026-10-30",
-      "source": "https://www.auvergnerhonealpes.fr/aides/appel-manifestation-dinteret-pour-developper-des-formations-innovantes-en-cooperation-avec",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_7aca373b43945564854ee84124e741bd9fd47064e49c47a6a318199c8131bbe0",
-      "titre": "Bénéficier d'un investissement d'Auvergne-Rhône-Alpes Cinéma pour produire votre long-métrage ou votre projet audiovisuel de fiction et d'animation",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/beneficier-dun-investissement-dauvergne-rhone-alpes-cinema-pour-produire-votre-long-metrage",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_243e5031c6f6ffa71f2c7a00286fb34cb44d83fdbd90d42fa0666f2ec7ac9eca",
-      "titre": "Concevoir, créer ou reprendre un spectacle professionnel de musiques actuelles",
+      "id": "bfc_af19db7739090e7016a0b8b75c71bd554b5f9dc0f75850644fcb8ef8c1685ae7",
+      "titre": "Festivals et manifestations culturelles - Cinéma",
       "statut": "ACTIVE",
       "echeance": "2027-01-31",
-      "source": "https://www.auvergnerhonealpes.fr/aides/creation-musiques-actuelles",
+      "source": "https://www.bourgognefranchecomte.fr/node/384",
       "verification": "A_REVERIFIER",
-      "confiance": 28
+      "confiance": 9
     },
     {
-      "id": "aura_d1ea6b03e162d7977b5a7ea21186045eae584bdf4abc2752a48844eb26616342",
-      "titre": "Créer ou aménager l'accès aux stations par des ascenseurs valléens",
+      "id": "bfc_70d5d20e15b3bf090a48ee38eeff237917a8176a2f3d39febd80aa6977b351a1",
+      "titre": "Festivals et manifestations culturelles - Livre",
       "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/creer-ou-amenager-lacces-aux-stations-par-des-ascenseurs-valleens",
+      "echeance": "2027-01-31",
+      "source": "https://www.bourgognefranchecomte.fr/node/301",
       "verification": "A_REVERIFIER",
-      "confiance": 28
+      "confiance": 9
     },
     {
-      "id": "aura_a43cb5ca59baf0d1f3a11eb074fdf43d52d624975ce6355dcd7cce007b7b22c9",
-      "titre": "Créer ou développer une activité dans le secteur du tourisme gourmand",
+      "id": "bfc_cd419771bd01692d886ecdb6fb2601309d447bd3ce5610bf77197ebc9cd72d59",
+      "titre": "Festivals et manifestations culturelles - spectacle vivant",
       "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/creer-ou-developper-une-activite-dans-le-secteur-du-tourisme-gourmand",
+      "echeance": "2027-01-31",
+      "source": "https://www.bourgognefranchecomte.fr/node/302",
       "verification": "A_REVERIFIER",
-      "confiance": 28
+      "confiance": 9
     },
     {
-      "id": "aura_a4f61b884c93dee0536e3cb2570ce932d484d700e9ee815af6425af3e57fa8d7",
-      "titre": "Créer ou développer une maison ou un centre de santé pluriprofessionnels",
+      "id": "bfc_d7fc751db86dc67c2b77219e7086e16907a8dc16518ca6e9a9be1b35003d9708",
+      "titre": "Fonds d’aide aux projets (FAP)",
       "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/creer-ou-developper-une-maison-ou-un-centre-de-sante-pluriprofessionnels",
+      "echeance": "2027-02-05",
+      "source": "https://www.bourgognefranchecomte.fr/node/387",
       "verification": "A_REVERIFIER",
-      "confiance": 28
+      "confiance": 9
     },
     {
-      "id": "aura_bad1fbc2f2b0f3b7f0e6c416d4ba03acb7a28623208eb4590d95b4008e8d2d93",
-      "titre": "Créer ou maintenir des centres de vacances accueillant des classes de neige ou de découverte de la montagne",
+      "id": "bfc_2143d9c4027466520947e1c1c1bbc8ae9bed2aa7135a5ce6297f199fb86094d0",
+      "titre": "Fonds régional d’aide à l’innovation (FRI)",
       "statut": "ACTIVE",
       "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/creer-ou-maintenir-des-centres-de-vacances-accueillant-des-classes-de-neige-ou-de-decouverte",
+      "source": "https://www.bourgognefranchecomte.fr/node/386",
       "verification": "A_REVERIFIER",
-      "confiance": 28
+      "confiance": 9
     },
     {
-      "id": "aura_57a8d89ca9acd46a6f47e083709441c3e76808cc026775e735e15f01ff5580fe",
-      "titre": "Créer un emploi partagé en agriculture",
+      "id": "bfc_bd2470f42afbff50a1582ceab4a6382407af31c091b2c9d670c04e7fdba8c913",
+      "titre": "Fonds régional d’expérimentation en santé (FRES)",
       "statut": "ACTIVE",
       "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/creer-un-emploi-partage-en-agriculture",
+      "source": "https://www.bourgognefranchecomte.fr/node/2024",
       "verification": "A_REVERIFIER",
-      "confiance": 28
+      "confiance": 9
     },
     {
-      "id": "aura_5ab15f4353402789c053ec50e890da8485b8272b5a19811243d32bdad413098f",
-      "titre": "Développer l'attractivité des grandes itinérances emblématiques dans notre région",
+      "id": "bfc_9a92d65120138adbf53066284cee8596a056a0376abade183d6ce8ae30e4d693",
+      "titre": "Implantation de nouvelles activités dans les territoires « rebond industriel »",
       "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/developper-lattractivite-des-grandes-itinerances-emblematiques-dans-notre-region",
+      "echeance": "2026-12-31",
+      "source": "https://www.bourgognefranchecomte.fr/node/4351",
       "verification": "A_REVERIFIER",
-      "confiance": 28
+      "confiance": 9
     },
     {
-      "id": "aura_45bd4a0a375bee6226e75e4ef6134eb35aac283d76072d3198a4441c221cdf61",
-      "titre": "Développer ma start-up",
+      "id": "bfc_b66312c5172730bce1dbff3adb9df1646833b318aea061d01d1491e001ca411a",
+      "titre": "Prestation de conseil",
       "statut": "ACTIVE",
       "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/developper-ma-start",
+      "source": "https://www.bourgognefranchecomte.fr/node/3561",
       "verification": "A_REVERIFIER",
-      "confiance": 28
+      "confiance": 9
     },
     {
-      "id": "aura_d20f974941e19d5b56e169d8ab3089dd7e652d89e9b5d649c5c574cdfc3bb5f8",
-      "titre": "Développer ou créer une activité vétérinaire en zone rurale",
+      "id": "bfc_8abc602dc86b25b521dc6cdcf8982890a12e8c45f99ed44426988b150adb5dd0",
+      "titre": "Prime à la création-reprise dans les territoires fragilisés (PCRTF)",
       "statut": "ACTIVE",
       "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/developper-ou-creer-une-activite-veterinaire-en-zone-rurale",
+      "source": "https://www.bourgognefranchecomte.fr/node/448",
       "verification": "A_REVERIFIER",
-      "confiance": 28
+      "confiance": 9
     },
     {
-      "id": "aura_2a56e0c1099a3aeef40cd047fab64d47b28e46bb3f30f390459fbd09e66be760",
-      "titre": "Diversifier l'assolement",
+      "id": "bfc_5cd85f92a419a568cc99a4bfb7007170de2a462e8f71ac628bb35a33bf4d6896",
+      "titre": "Projet d’Innovation – France 2030 régionalisé",
       "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/diversifier-lassolement",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_1fc4164e17da7580846702a152ab3966c39265966e6da73db7fa99e4a7236bb1",
-      "titre": "Diversifier l’offre touristique des territoires de montagne en toute saison",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/diversifier-loffre-touristique-des-territoires-de-montagne-en-toute-saison",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_0faa3e6f39275e69d0dd18d10141a02eb7c4cada9ab74153e01092031eafd6b2",
-      "titre": "Equiper ma station de ski d’enneigeurs, créer des retenues d’altitude",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/equiper-ma-station-de-ski-denneigeurs-creer-des-retenues-daltitude",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_7618ecdafce900a8895b022d2c771352907a1810fd947a95ab03f7980781fc7f",
-      "titre": "Etre conseillé en autonomie alimentaire",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/etre-conseille-en-autonomie-alimentaire",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_a86faf11c01fd1c29f5d35a9310f6a331d76fc0d03ef90f72613a28ed3645432",
-      "titre": "Etre conseillé pour mon projet d'installation en agriculture",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/etre-conseille-pour-mon-projet-dinstallation-en-agriculture",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_fddbf8a70d8dd0e7d09b72f561a85f90d83a918c25aff6cbb0538f233186bd30",
-      "titre": "Etre conseillé pour transmettre mon exploitation",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/etre-conseille-pour-transmettre-mon-exploitation",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_91c16ee8e40933515b4e99d74e50e6797a78a5caa39a5af9ff68e4ab16e077f8",
-      "titre": "Etre conseillé sur notre activité de transformation et de commercialisation",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/etre-conseille-sur-notre-activite-de-transformation-et-de-commercialisation",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_b91705cccdb456ff40f027079d75b4cbac189324dd56dcad6b20202338c38f40",
-      "titre": "Favoriser l’insertion avec le Contrat Région Emploi",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/favoriser-linsertion-avec-le-contrat-region-emploi",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_adb677977bce1585964f2b95951ba86b49785c570f47417a5df750d924e3024f",
-      "titre": "Financer des projets de désamiantage de toiture en cas d'installation photovoltaïque",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/financer-des-projets-de-desamiantage-de-toiture-en-cas-dinstallation-photovoltaique",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_f07a2bd1ebb56bf0dfc2f993b9158e1e0a576b8ffcd7cf1f66d778547d838f4b",
-      "titre": "Financer des projets innovants et/ou expérimentaux autour de l'énergie",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/financer-des-projets-innovants-etou-experimentaux-autour-de-lenergie",
+      "echeance": "2026-12-31",
+      "source": "https://www.bourgognefranchecomte.fr/node/3468",
       "verification": "A_REVERIFIER",
       "confiance": 19
     },
     {
-      "id": "aura_353ab3edf97a08c2c2a022bd2202961c4bf529a8772f424b882453336338ba12",
-      "titre": "Financer le développement d’outils numériques de valorisation et de médiation des patrimoines",
+      "id": "bfc_1ebcf39af7bad33aa0c2fadd61a19d3128fcded08d0ea89bb68ed17b02e2b4e7",
+      "titre": "Projets collaboratifs i-Démo régionalisé – France 2030 régionalisé",
       "statut": "ACTIVE",
       "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/patrimoine-numerique",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_372e32b1a0c191cd0888fbf89185c6eaa02f3c12c874f0a4e6a690a1f7dd5717",
-      "titre": "Financer le développement de prototypes fonctionnels, avec les partenariats d’innovation Auvergne-Rhône-Alpes",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/financer-le-developpement-de-prototypes-fonctionnels-avec-les-partenariats-dinnovation",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_2a8bb3b71377368ae35bfd24226cafcfda51d5cb6b26063b9f654b4c31c428ed",
-      "titre": "Financer les activités de mon lieu culturel labellisé",
-      "statut": "ACTIVE",
-      "echeance": "2026-11-30",
-      "source": "https://www.auvergnerhonealpes.fr/aides/financer-activites-lieux-culturels-labellises",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_58de1f3e5395616ef8d67287bd51e09b82b683d80a45d051030d086f7dddfb5f",
-      "titre": "Financer les laboratoires en commun avec des entreprises : Pactes de recherche Auvergne-Rhône-Alpes",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/financer-les-laboratoires-en-commun-avec-des-entreprises-pactes-de-recherche-auvergne-rhone",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_a5e8daa8d0abd16ae37583416916458a356617cc33291ea308b6d544ffacace8",
-      "titre": "Financer une création en environnement numérique, interactive et immersive en Auvergne-Rhône-Alpes",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/financer-une-creation-en-environnement-numerique-interactive-et-immersive-en-auvergne-rhone",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_22ce4ed3a3c4f1a6d432c83f202b129a92f597db04c91ae2d6bb79e845ba3164",
-      "titre": "Innover pour compenser le handicap",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/innover-pour-compenser-le-handicap",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_782316e205cc6acc98924d68d989c1ed762a97d0e80fbca6908261bc1d518a11",
-      "titre": "Investir dans les exploitations apicoles",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/investir-dans-les-exploitations-apicoles",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_d42d2bf8e1f73365d8d7eeeab8e3115632595e0a85b1711c669d5e11bedd99c9",
-      "titre": "Investir dans mon entreprise de travaux forestiers manuels - Plan forêt-bois 2023-2027",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/investir-dans-mon-entreprise-de-travaux-forestiers-manuels-plan-foret-bois-2023-2027",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_c08f55608b7a5d7865158ab726b93009bc18feab4feaee83d555a42f430cde12",
-      "titre": "M’installer en tant que médecin thermal en Auvergne-Rhône-Alpes",
-      "statut": "ACTIVE",
-      "echeance": "2026-11-15",
-      "source": "https://www.auvergnerhonealpes.fr/aides/minstaller-en-tant-que-medecin-thermal-en-auvergne-rhone-alpes",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_600f31bf184a74478efba33a1830d2642d73386d06b026c0a9ebb2502defa4d9",
-      "titre": "Mettre en œuvre un contrat Natura 2000",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/mettre-en-oeuvre-un-contrat-natura-2000",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_9926f22943aec4a71f22d8e6db16df148952364c87430396dea7d8f75e3d6ea1",
-      "titre": "Optimiser l'usage de l'eau en élevage",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/optimiser-lusage-de-leau-en-elevage",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_cdc39d2eddc407b2fb66b9e6cb71b43e091cbc0b178c2ac2d3832ceed1a39f76",
-      "titre": "Organiser un festival ou une fête du livre",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/festivals",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_a35b9d2f7706fc2c657111d1e0c7ae9771b9dce02463d114d0af98f4556fc3fb",
-      "titre": "Pacte Allier 2024-2027 - volet agricole",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/pacte-allier-2024-2027-volet-agricole",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_ded295df44279f67ca14a5a73ed2a49c5d91fb4d85178234f29ddd9089f1aea4",
-      "titre": "Pacte Cantal 2022-2027 - Volet agricole",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/pacte-cantal-2022-2027-volet-agricole",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_f14a2b9bc3af063cfeb82b87460628256d953c35d0ef0f7ceb53551985d51940",
-      "titre": "Plan Montagne - Diversifier l’offre touristique des stations été comme hiver",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/plan-montagne-diversifier-loffre-touristique-des-stations-ete-comme-hiver",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_8f5a024861427fdaf3876edd7b8c2739fd9f47f55663ccb3c69743d651781d40",
-      "titre": "Porter un projet collaboratif d’expérimentations ou de recherche appliquée en agriculture avec le dispositif PEPIT (Pôles d'Expérimentations agricoles Partenariales pour l'Innovation et le Transfert) - Etape AAP 2026",
-      "statut": "ACTIVE",
-      "echeance": "2026-10-12",
-      "source": "https://www.auvergnerhonealpes.fr/aides/porter-un-projet-collaboratif-dexperimentations-ou-de-recherche-appliquee-en-agriculture-0",
+      "source": "https://www.bourgognefranchecomte.fr/node/3469",
       "verification": "A_REVERIFIER",
       "confiance": 19
     },
     {
-      "id": "aura_4eb82d18a1b75decfd9d2f1aeacd3230f32d9695512ca76f429344cdffaffee6",
-      "titre": "S’équiper pour développer l’approvisionnement local",
+      "id": "bfc_1b9113f9b99784a116f390f013ee6baa0673665d8bd7cdc76fcd5554ea47c7d3",
+      "titre": "Soutien au développement des activités touristiques",
       "statut": "ACTIVE",
       "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/sequiper-pour-developper-lapprovisionnement-local",
+      "source": "https://www.bourgognefranchecomte.fr/node/3993",
       "verification": "A_REVERIFIER",
-      "confiance": 28
+      "confiance": 9
     },
     {
-      "id": "aura_6f362f9320ea8785fcd0babd46b154f9219436e861218b645007289f2aacb55d",
-      "titre": "Soutenir la filière fruits - Plan régional filière fruits 2023-2027",
+      "id": "bfc_05b9e6bd1d9bd2ec3b5532beb7bf79ac89768abe0b2c519cf3b29c7b1e197c99",
+      "titre": "Soutien régional aux projets immobiliers des entreprises de l’ESS",
       "statut": "ACTIVE",
       "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/soutenir-la-filiere-fruits-plan-regional-filiere-fruits-2023-2027",
+      "source": "https://www.bourgognefranchecomte.fr/node/1936",
       "verification": "A_REVERIFIER",
-      "confiance": 28
+      "confiance": 9
     },
     {
-      "id": "aura_563a784d0c27fd3dc3f4f70d2427e02f402059442e7c45c4fa5014dec602f5c4",
-      "titre": "Soutenir la filière grandes cultures – Plan régional filière grandes cultures 2024-2027",
+      "id": "bfc_bcb77e3f4d04a82c0ca0bafe6a1457cb4785a5b92bec646284a24b4d7f076c97",
+      "titre": "Usages innovants du numérique",
       "statut": "ACTIVE",
       "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/soutenir-la-filiere-grandes-cultures-plan-regional-filiere-grandes-cultures-2024-2027",
+      "source": "https://www.bourgognefranchecomte.fr/node/1038",
       "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_fe455deb820c5972ddadf01475d8e32a7202628f9226d328c426e205c15c0637",
-      "titre": "Soutenir les projets économiques en AB",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/soutenir-les-projets-economiques-en-ab",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
-    },
-    {
-      "id": "aura_f40b3ec93135ab485fefef63c0de5b3bd6bb23b5e8242ba4b39b845759157598",
-      "titre": "Trouver une exploitation à acheter ou à louer",
-      "statut": "ACTIVE",
-      "echeance": "",
-      "source": "https://www.auvergnerhonealpes.fr/aides/trouver-une-exploitation-acheter-ou-louer",
-      "verification": "A_REVERIFIER",
-      "confiance": 28
+      "confiance": 9
     }
   ],
   "aidesModifiees": [],

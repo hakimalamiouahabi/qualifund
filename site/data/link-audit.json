@@ -1,0 +1,20 @@
+{
+  "generatedAt": "2026-10-04T19:32:03.739Z",
+  "total": 209,
+  "directLinkCount": 208,
+  "missingDirectLinkCount": 1,
+  "missing": [
+    {
+      "id": "bpifrance_rebond_industriel_official",
+      "title": "France 2030 — Rebond Industriel — soutien à l’investissement industriel",
+      "funder": [
+        "État · France 2030 · Bpifrance"
+      ],
+      "scope": "NATIONAL",
+      "regions": [
+        "Toutes les Régions"
+      ],
+      "sourceId": "bpifrance_rebond_industriel"
+    }
+  ]
+}

@@ -1,73 +1,67 @@
 {
-  "generatedAt": "2026-10-04T10:37:15.075Z",
+  "generatedAt": "2026-10-04T19:36:54.862Z",
   "version": "12.9.3",
   "policy": "CERTIFIED_SOURCE_ONLY",
   "unlockedSourceIds": [
-    "ademe",
-    "aura",
-    "bpifrance_aap",
-    "bpifrance_aides",
-    "bpifrance_rebond_industriel"
+    "bfc"
   ],
   "guichets": [
-    "ADEME",
-    "AURA",
-    "Bpifrance"
+    "Bourgogne-Franche-Comté"
   ],
   "certifications": [
+    {
+      "file": "bourgogne-franche-comte-certification.json",
+      "name": "Bourgogne-Franche-Comté",
+      "generatedAt": "2026-10-04T19:36:54.025Z",
+      "status": "PASS",
+      "sourceIds": [
+        "bfc"
+      ],
+      "libraryRecords": 45,
+      "fingerprintStatus": "MATCH",
+      "sourceConfigFingerprint": "a83245515b67a4b4dba0fe8ed5ba97d06a46ffb325de0bd6a224cc89bf4d35dc",
+      "currentSourceConfigFingerprint": "a83245515b67a4b4dba0fe8ed5ba97d06a46ffb325de0bd6a224cc89bf4d35dc",
+      "certificationBasisFingerprint": "60c44f0a3cbe46358c472c122df5e81289bcf632b0f8f6510a8df314cf505b77",
+      "currentCertificationBasisFingerprint": "60c44f0a3cbe46358c472c122df5e81289bcf632b0f8f6510a8df314cf505b77",
+      "certifiedDataFingerprint": "87a80c616a35c77b58d228ba6498fcd73480cb536dbf34f9511229869b88ea91",
+      "currentDataFingerprint": "87a80c616a35c77b58d228ba6498fcd73480cb536dbf34f9511229869b88ea91"
+    }
+  ],
+  "rejectedCertifications": [
     {
       "file": "ademe-certification.json",
       "name": "ADEME",
       "generatedAt": "2026-10-04T10:37:11.034Z",
-      "status": "PASS",
       "sourceIds": [
         "ademe"
       ],
-      "libraryRecords": 68,
-      "fingerprintStatus": "MATCH",
-      "sourceConfigFingerprint": "f0d1cd6f6e119f57e75653b884a26a4a306c31fe8233d3b4815d566393f6030a",
-      "currentSourceConfigFingerprint": "f0d1cd6f6e119f57e75653b884a26a4a306c31fe8233d3b4815d566393f6030a",
-      "certificationBasisFingerprint": "3d533091be33bda5e21f49bb23f82b1f6b8c67be78820279ed214839d68fdf9f",
-      "currentCertificationBasisFingerprint": "3d533091be33bda5e21f49bb23f82b1f6b8c67be78820279ed214839d68fdf9f",
-      "certifiedDataFingerprint": "452f4970f40094846d3f513dd7332d66f5a482d53314090f934608daa3b1661e",
-      "currentDataFingerprint": "452f4970f40094846d3f513dd7332d66f5a482d53314090f934608daa3b1661e"
+      "reason": "CERTIFICATION_BASIS_CHANGED",
+      "certifiedBasisFingerprint": "3d533091be33bda5e21f49bb23f82b1f6b8c67be78820279ed214839d68fdf9f",
+      "currentBasisFingerprint": "cae28eff4d403121bc3916a521be2c2010035426b9d3442e379ea11656519850"
     },
     {
       "file": "aura-certification.json",
       "name": "AURA",
       "generatedAt": "2026-10-04T10:32:05.478Z",
-      "status": "PASS",
       "sourceIds": [
         "aura"
       ],
-      "libraryRecords": 60,
-      "fingerprintStatus": "MATCH",
-      "sourceConfigFingerprint": "a506fd881f52d66daa867ad1e27f3c8e0c781861fd11944358227b10c47ce6b4",
-      "currentSourceConfigFingerprint": "a506fd881f52d66daa867ad1e27f3c8e0c781861fd11944358227b10c47ce6b4",
-      "certificationBasisFingerprint": "b948da7cb23b16ac73bb590abd88ef01c2cf50e78f1950a91f2e6ea7c5584eef",
-      "currentCertificationBasisFingerprint": "b948da7cb23b16ac73bb590abd88ef01c2cf50e78f1950a91f2e6ea7c5584eef",
-      "certifiedDataFingerprint": "6c9acfaff28b1f10847f8ea65c26db6c2f7b91342dac1d1754d7171c2092e07c",
-      "currentDataFingerprint": "6c9acfaff28b1f10847f8ea65c26db6c2f7b91342dac1d1754d7171c2092e07c"
+      "reason": "CERTIFICATION_BASIS_CHANGED",
+      "certifiedBasisFingerprint": "b948da7cb23b16ac73bb590abd88ef01c2cf50e78f1950a91f2e6ea7c5584eef",
+      "currentBasisFingerprint": "d5b68112820af08290fec6a0d289baf00e332d781a548f4d1272a897e09b57f2"
     },
     {
       "file": "bpifrance-certification.json",
       "name": "Bpifrance",
       "generatedAt": "2026-10-04T10:37:10.439Z",
-      "status": "PASS",
       "sourceIds": [
         "bpifrance_aap",
         "bpifrance_aides",
         "bpifrance_rebond_industriel"
       ],
-      "libraryRecords": 36,
-      "fingerprintStatus": "MATCH",
-      "sourceConfigFingerprint": "ab4073aae0857eb20f56359e7a92cb124144594cf28cfbd14a77132e3947a6ae",
-      "currentSourceConfigFingerprint": "ab4073aae0857eb20f56359e7a92cb124144594cf28cfbd14a77132e3947a6ae",
-      "certificationBasisFingerprint": "ce2a7c50331124576e56b43eb55c7daa28478b35c5312e362749829810d6b359",
-      "currentCertificationBasisFingerprint": "ce2a7c50331124576e56b43eb55c7daa28478b35c5312e362749829810d6b359",
-      "certifiedDataFingerprint": "c5dcd6cc14ea0e82c3660e35a3645132c53536f15d5f660ec44cf17656dd9b62",
-      "currentDataFingerprint": "c5dcd6cc14ea0e82c3660e35a3645132c53536f15d5f660ec44cf17656dd9b62"
+      "reason": "CERTIFICATION_BASIS_CHANGED",
+      "certifiedBasisFingerprint": "ce2a7c50331124576e56b43eb55c7daa28478b35c5312e362749829810d6b359",
+      "currentBasisFingerprint": "b4d0c7f43f75a0ad9be3cba2d67aa68873d3053ace67ae454b3abea8654c0343"
     }
-  ],
-  "rejectedCertifications": []
+  ]
 }

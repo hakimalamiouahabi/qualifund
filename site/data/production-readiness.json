@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-04T10:39:22.248Z",
+  "generatedAt": "2026-10-04T19:37:03.406Z",
   "version": "12.9.3",
   "mode": "LOCKED_CYCLE",
   "currentLock": {
     "locked": true,
-    "name": "AURA",
+    "name": "Bourgogne-Franche-Comté",
     "mode": "REGION",
     "allowedSourceIds": [
-      "aura"
+      "bfc"
     ]
   },
   "publicationPolicy": "CERTIFIED_SOURCE_ONLY",
@@ -21,26 +21,26 @@
     {
       "id": 2,
       "name": "URL permanente",
-      "status": "PASS",
-      "detail": "https://qualifund.pages.dev — smoke HTTP concluant."
+      "status": "BLOCKED",
+      "detail": "Déploiement permanent non confirmé."
     },
     {
       "id": 3,
-      "name": "Cycle de collecte — AURA",
+      "name": "Cycle de collecte — Bourgogne-Franche-Comté",
       "status": "PASS",
-      "detail": "1/1 source(s) du verrou courant en succès sur le cycle non identifié ; 1/1 ligne(s) coverage fraîches ; 60 imports bruts. Les autres sources restent gelées."
+      "detail": "1/1 source(s) du verrou courant en succès sur le cycle non identifié ; 1/1 ligne(s) coverage fraîches ; 45 imports bruts. Les autres sources restent gelées."
     },
     {
       "id": 4,
       "name": "Bibliothèque certifiée publiable",
       "status": "PASS",
-      "detail": "164 fiches publiables J+1 sur 164 fiches brutes ; 0 en quarantaine. Certificat AURA : PASS — fingerprints MATCH."
+      "detail": "45 fiches publiables J+1 sur 209 fiches brutes ; 164 en quarantaine. Certificat Bourgogne-Franche-Comté : PASS — fingerprints MATCH."
     },
     {
       "id": 5,
       "name": "Preuves obligatoires de publication",
       "status": "PASS",
-      "detail": "Preuves A/B obligatoires (guichet, statut/calendrier, instrument, entreprise) : 164/164. File de remédiation synchronisée : oui. CdC/règlement : 54/164."
+      "detail": "Preuves A/B obligatoires (guichet, statut/calendrier, instrument, entreprise) : 45/45. File de remédiation synchronisée : oui. CdC/règlement : 38/45."
     },
     {
       "id": 6,
@@ -69,41 +69,41 @@
     {
       "id": 10,
       "name": "Recette production",
-      "status": "PASS",
-      "detail": "Gates 1–9 validées ; recette finale autorisée."
+      "status": "NOT_STARTED",
+      "detail": "Autorisation uniquement lorsque les Gates 1–9 sont PASS."
     }
   ],
   "counts": {
     "sourcesConfigured": 118,
     "ingestiveSources": 102,
     "controlSources": 16,
-    "certifiedSources": 5,
+    "certifiedSources": 1,
     "evaluatedSources": 1,
     "executedSources": 1,
     "freshExecutedSources": 1,
     "successfulSources": 1,
     "collectionCycleId": null,
-    "rawLibrary": 164,
-    "publishedLibrary": 164,
-    "quarantinedLibrary": 0,
-    "activeFiches": 164,
+    "rawLibrary": 209,
+    "publishedLibrary": 45,
+    "quarantinedLibrary": 164,
+    "activeFiches": 45,
     "jPlusOneDate": "2026-10-05",
-    "jPlusOneActiveFiches": 164,
+    "jPlusOneActiveFiches": 45,
     "verifiedFiches": 0,
     "verifiedIntegrity": 0,
     "verifiedEvidenceIntegrity": 0,
-    "publicationEvidenceIntegrity": 164,
+    "publicationEvidenceIntegrity": 45,
     "lockedCertificationMatch": true,
-    "withCdc": 54,
-    "withDeadline": 108,
+    "withCdc": 38,
+    "withDeadline": 19,
     "consultantCases": 10,
     "uatTotal": 10,
     "companySmokeOk": true,
-    "publicSmokeOk": true,
+    "publicSmokeOk": false,
     "workflowEvent": "workflow_dispatch",
     "inActions": true,
     "remediationFresh": true,
     "deepAuditP0": 0
   },
-  "goProduction": true
+  "goProduction": false
 }

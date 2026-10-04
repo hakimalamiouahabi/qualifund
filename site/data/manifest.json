@@ -1,22 +1,22 @@
 {
   "version": "12.9.3",
-  "generatedAt": "2026-10-04T10:26:27.175Z",
-  "purgedAt": "2026-10-04T10:32:05.315Z",
+  "generatedAt": "2026-10-04T19:32:03.739Z",
+  "purgedAt": null,
   "repositoryUrl": "https://github.com/hakimalamiouahabi/qualifund",
   "sourcePolicy": "DIRECT_OFFICIAL_ONLY",
   "libraryMode": "DIRECT_OFFICIAL_CATALOG",
-  "count": 164,
-  "libraryCount": 164,
-  "rawLibraryCount": 164,
-  "activeCount": 164,
+  "count": 209,
+  "libraryCount": 209,
+  "rawLibraryCount": 209,
+  "activeCount": 209,
   "jPlusOneDate": "2026-10-05",
-  "jPlusOneActiveCount": 164,
+  "jPlusOneActiveCount": 209,
   "archivedCount": 0,
   "staleCount": 0,
-  "aapCount": 34,
+  "aapCount": 40,
   "verifiedCount": 0,
-  "withCdc": 54,
-  "withDeadline": 108,
+  "withCdc": 92,
+  "withDeadline": 127,
   "sourceCount": 118,
   "activeCollectionSourceCount": 1,
   "libraryInstruments": [
@@ -31,24 +31,24 @@
     "PRET_TAUX_ZERO",
     "APPEL_A_PROJET"
   ],
-  "targetInstrumentCount": 164,
-  "directLinkCount": 164,
+  "targetInstrumentCount": 209,
+  "directLinkCount": 209,
   "missingDirectLinkCount": 0,
   "categoryCounts": {
     "STARTUP": 9,
-    "PME": 47,
-    "ETI": 32,
-    "GE": 6
+    "PME": 71,
+    "ETI": 36,
+    "GE": 8
   },
   "scopeCounts": {
     "NATIONAL": 104,
-    "REGIONAL": 60
+    "REGIONAL": 105
   },
   "instrumentCounts": {
-    "APPEL_A_PROJET": 34,
-    "AVANCE_REMBOURSABLE": 12,
-    "PRET_TAUX_ZERO": 8,
-    "SUBVENTION": 139
+    "APPEL_A_PROJET": 40,
+    "AVANCE_REMBOURSABLE": 23,
+    "PRET_TAUX_ZERO": 9,
+    "SUBVENTION": 175
   },
   "targetRule": "ACTIVE_SANS_ECHEANCE_OU_PERMANENT_OU_CLOTURE_GTE_J_PLUS_1",
   "targetCount": null,
@@ -56,21 +56,28 @@
   "coverageGap": null,
   "coverageCertified": false,
   "purgeStats": {
-    "input": 164,
-    "afterDirectSanitization": 164,
-    "afterCertifiedScope": 164,
+    "input": 209,
+    "afterDirectSanitization": 209,
+    "afterCertifiedScope": 209,
     "removedOutOfTarget": 0,
     "removedCertifiedQuarantine": 0,
-    "retainedOperational": 164
+    "retainedOperational": 209
   },
   "collectionLock": {
     "locked": true,
     "mode": "REGION",
-    "name": "AURA",
+    "name": "Bourgogne-Franche-Comté",
     "allowedSourceIds": [
-      "aura"
+      "bfc"
     ],
-    "next": "Bourgogne-Franche-Comté",
-    "frozenUnselectedSha": "cb1f61c47a18e3054304b204a1aa3df945bdb4f1eede9ad08cb42e79acebea55"
-  }
+    "next": "Bretagne",
+    "frozenUnselectedSha": "38b27623c70898741ee248ec4eeb1265e0ca17e337cf2c02a230a1e89fe291d9"
+  },
+  "publishedCount": 45,
+  "publishedActiveCount": 45,
+  "quarantinedCount": 164,
+  "certifiedSourceCount": 1,
+  "certifiedSources": [
+    "bfc"
+  ]
 }
