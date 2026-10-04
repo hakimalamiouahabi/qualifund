@@ -1,14 +1,11 @@
 {
   "version": "12.9.3",
-  "generatedAt": "2026-10-03T14:58:21.695Z",
-  "publishedCount": 104,
-  "publishedActiveCount": 104,
-  "certifiedSourceCount": 4,
+  "generatedAt": "2026-10-04T10:26:27.175Z",
+  "publishedCount": 60,
+  "publishedActiveCount": 60,
+  "certifiedSourceCount": 1,
   "certifiedSources": [
-    "ademe",
-    "bpifrance_aap",
-    "bpifrance_aides",
-    "bpifrance_rebond_industriel"
+    "aura"
   ],
   "sourcePolicy": "DIRECT_OFFICIAL_ONLY",
   "publicationPolicy": "CERTIFIED_SOURCE_ONLY",
@@ -21,12 +18,12 @@
   "qualificationRule": "éligibilité, critères et preuves officielles séparés",
   "collectionLock": {
     "locked": true,
-    "mode": "GUICHET",
-    "name": "ADEME",
+    "mode": "REGION",
+    "name": "AURA",
     "allowedSourceIds": [
-      "ademe"
+      "aura"
     ],
-    "next": "AURA",
-    "frozenUnselectedSha": "d31c4291c0d439df7b0a15ab6436a45e4440010f5fb9da677ce1d828666624bd"
+    "next": "Bourgogne-Franche-Comté",
+    "frozenUnselectedSha": "cb1f61c47a18e3054304b204a1aa3df945bdb4f1eede9ad08cb42e79acebea55"
   }
 }

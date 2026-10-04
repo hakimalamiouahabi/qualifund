@@ -1,0 +1,635 @@
+[
+  {
+    "cycleId": "37195082630",
+    "id": "aura",
+    "name": "Région Auvergne-Rhône-Alpes — catalogue des aides",
+    "scope": "Auvergne-Rhône-Alpes",
+    "success": true,
+    "lifecycleSafe": true,
+    "emptyIngestion": false,
+    "suspiciousVolume": false,
+    "lowImportedCount": false,
+    "lowImportRatio": false,
+    "importRatio": 0.34285714285714286,
+    "discovered": 175,
+    "imported": 60,
+    "audit": {
+      "discovered": 175,
+      "imported": 60,
+      "excluded": [
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/transmettre-mon-savoir-faire-agricole-feader-dispositif-103",
+          "label": "Transmettre mon savoir-faire agricole (FEADER - Dispositif 103)",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/investir-pour-mon-exploitation-delevage-demande-de-paiement-feader-dispositif-201",
+          "label": "Investir pour mon exploitation d’élevage – Demande de paiement (FEADER - Dispositif 201)",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/proteger-collectivement-le-foncier-agricole-feader-dispositif-104",
+          "label": "Protéger collectivement le foncier agricole (FEADER - Dispositif 104)",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/mener-des-projets-cooperatifs-et-collectifs-valorisant-les-produits-agricoles-feader",
+          "label": "Mener des projets coopératifs et collectifs valorisant les produits agricoles (FEADER - Dispositif 304)",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/demander-un-agrement-pour-realiser-laccompagnement-des-exploitations-agricoles-au-titre-de-la",
+          "label": "Demander un agrément pour réaliser l’accompagnement des exploitations agricoles au titre de la MAEC forfaitaire du programme FEADER 2023-2027 (appel à candidatures)",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/porter-un-projet-leader-feader-dispositif-501",
+          "label": "Porter un projet LEADER (FEADER - Dispositif 501)",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/transformer-et-valoriser-mes-productions-agricoles-feader-dispositif-302",
+          "label": "Transformer et valoriser mes productions agricoles (FEADER - Dispositif 302)",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/investir-en-collectif-dagriculteurs-feader-dispositif-204",
+          "label": "Investir en collectif d'agriculteurs (FEADER - Dispositif 204)",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/adapter-mon-exploitation-agricole-face-aux-changements-maec-forfaitaire-feader-dispositif-209",
+          "label": "Adapter mon exploitation agricole face aux changements (MAEC forfaitaire) (FEADER - Dispositif 209)",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/developper-lagroforesterie-et-la-plantation-de-haies-feader-dispositif-208",
+          "label": "Développer l'agroforesterie et la plantation de haies (FEADER - Dispositif 208)",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/proteger-la-foret-contre-les-incendies-feader-dispositif-402",
+          "label": "Protéger la forêt contre les incendies (FEADER - Dispositif 402)",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/porter-un-projet-europeen-dinnovation-agri-foret-pei-feader-dispositif-601-etape-ami-2025",
+          "label": "Porter un Projet Européen d’Innovation (agri-forêt) - PEI (FEADER - Dispositif 601) - étape AMI 2025",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/deployer-une-strategie-locale-de-developpement-agri-foret-feader-dispositif-t01",
+          "label": "Déployer une stratégie locale de développement \"agri-forêt\" (FEADER - Dispositif T01)",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/investir-dans-mon-entreprise-de-seconde-transformation-bois-feader-dispositif-405",
+          "label": "Investir dans mon entreprise de seconde transformation bois (FEADER - Dispositif 405)",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/promouvoir-les-signes-officiels-de-qualite-feader-dispositif-305",
+          "label": "Promouvoir les signes officiels de qualité (FEADER - Dispositif 305)",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/investir-dans-des-productions-vegetales-enjeu-de-souverainete-regionale-feader-dispositif-301",
+          "label": "Investir dans des productions végétales à enjeu de souveraineté régionale (FEADER - Dispositif 301)",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/investir-sur-mon-exploitation-dans-les-systemes-dirrigation-agricole-feader-dispositif-205",
+          "label": "Investir sur mon exploitation dans les systèmes d’irrigation agricole (FEADER - Dispositif 205)",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/investir-dans-mon-entreprise-agroalimentaire-feader-dispositif-303",
+          "label": "Investir dans mon entreprise agroalimentaire (FEADER - Dispositif 303)",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/creer-des-dessertes-forestieres-feader-dispositif-401",
+          "label": "Créer des dessertes forestières (FEADER - Dispositif 401)",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/investir-dans-les-productions-vegetales-pour-limiter-les-risques-climatiques-et-sanitaires",
+          "label": "Investir dans les productions végétales pour limiter les risques climatiques et sanitaires (FEADER - Dispositif 203)",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/investir-dans-ma-scierie-feader-dispositif-404",
+          "label": "Investir dans ma scierie (FEADER - Dispositif 404)",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/investir-pour-mon-exploitation-delevage-feader-dispositif-201",
+          "label": "Investir pour mon exploitation d'élevage (FEADER - Dispositif 201)",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/investir-dans-les-productions-vegetales-feader-dispositif-202",
+          "label": "Investir dans les productions végétales (FEADER - Dispositif 202)",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/ameliorer-les-conditions-des-eleveurs-en-espace-pastoral-feader-dispositif-207",
+          "label": "Améliorer les conditions des éleveurs en espace pastoral (FEADER - Dispositif 207)",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/investir-dans-mon-entreprise-forestiere-feader-dispositif-403",
+          "label": "Investir dans mon entreprise forestière (FEADER - Dispositif 403)",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/faire-face-un-besoin-de-tresorerie-avec-le-pret-relance-auvergne-rhone-alpes-react-eu-feder",
+          "label": "Faire face à un besoin de trésorerie avec le Prêt Relance Auvergne-Rhône-Alpes REACT EU FEDER",
+          "reason": "FONDS_EUROPEEN_CYCLE_DEDIE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/obtenir-lagrement-pour-le-dispositif-transmettre-mon-savoir-faire-agricole",
+          "label": "Obtenir l'agrément pour le dispositif \"Transmettre mon savoir-faire agricole\"",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/soutenir-des-projets-partenariaux-de-progres-experimentation-recherche-innovation-plan-foret",
+          "label": "Soutenir des projets partenariaux de progrès (expérimentation, recherche, innovation) – Plan forêt-bois 2023-2027",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/soutenir-la-filiere-maraichage-plan-regional-filiere-maraichage-2024-2027",
+          "label": "Soutenir la filière maraîchage – Plan régional filière maraîchage 2024-2027",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/soutenir-la-filiere-castaneicole-plan-regional-filiere-chataigneraies-traditionnelles-2023",
+          "label": "Soutenir la filière castanéicole - Plan régional filière châtaigneraies traditionnelles 2023-2027",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/maintenir-une-exploitation-par-cable-forestier-plan-foret-bois-2023-2027",
+          "label": "Maintenir une exploitation par câble forestier - Plan forêt-bois 2023-2027",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/soutenir-la-filiere-porcine-plan-regional-filiere-porcine-2023-2027",
+          "label": "Soutenir la filière porcine- Plan régional filière porcine 2023-2027",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/soutenir-la-filiere-avicole-plan-regional-filiere-avicole-2023-2027",
+          "label": "Soutenir la filière avicole - Plan régional filière avicole 2023-2027",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/soutenir-la-filiere-horticole-plan-regional-filiere-horticole-2023-2027",
+          "label": "Soutenir la filière horticole - Plan régional filière horticole 2023-2027",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/soutenir-la-filiere-caprin-ovin-lait-plan-regional-caprin-ovin-lait-2023-2027",
+          "label": "Soutenir la filière caprin-ovin lait - Plan régional caprin-ovin lait 2023-2027",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/soutenir-la-filiere-chevreaux-plan-regional-filiere-chevreaux-2023-2027",
+          "label": "Soutenir la filière Chevreaux - Plan régional filière Chevreaux 2023-2027",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/soutenir-la-filiere-cunicole-plan-regional-filiere-cunicole-2023-2027",
+          "label": "Soutenir la filière cunicole - Plan régional filière cunicole 2023-2027",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/soutenir-la-filiere-trufficole-plan-regional-filiere-truffe-2023-2027",
+          "label": "Soutenir la filière trufficole - Plan régional Filière Truffe 2023-2027",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/soutenir-la-filiere-plantes-parfum-aromatiques-et-medicinales-ppam-plan-regional-filiere-ppam",
+          "label": "Soutenir la filière Plantes à Parfum, Aromatiques et Médicinales (PPAM) - Plan régional filière PPAM 2023-2027",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/soutenir-la-filiere-equine-plan-regional-filiere-equine-2023-2027",
+          "label": "Soutenir la filière équine - Plan régional filière équine 2023-2027",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2026-02-28"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/soutenir-la-filiere-viticole-plan-regional-filiere-viticole-2023-2027",
+          "label": "Soutenir la filière viticole - Plan régional filière viticole 2023-2027",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/soutenir-la-filiere-bovins-lait-plan-regional-filiere-bovins-lait-2023-2027",
+          "label": "Soutenir la filière Bovins Lait - Plan régional filière Bovins Lait 2023-2027",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/region-industrie-accompagner-mon-entreprise-dans-sa-mise-en-conformite-relative-au-marquage",
+          "label": "[Région Industrie] Accompagner mon entreprise dans sa mise en conformité relative au marquage médical UE 2017/745",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2026-06-12"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/region-industrie-etre-accompagne-vers-lobtention-dune-autorisation-dentree-en-essais",
+          "label": "[Région Industrie] Etre accompagné vers l'obtention d'une autorisation d'entrée en essais cliniques",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2026-09-18"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/region-industrie-etre-conseille-pour-ameliorer-la-performance-de-mon-entreprise",
+          "label": "Région Industrie - Être conseillé pour améliorer la performance de mon entreprise.",
+          "reason": "INSTRUMENT_HORS_PERIMETRE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/pack-relocalisation-renforcer-les-filieres-strategiques",
+          "label": "[Pack relocalisation] Renforcer les filières stratégiques",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/pack-relocalisation-impulser-un-partenariat-pme-innovantes-et-donneurs-dordre",
+          "label": "[Pack relocalisation] Impulser un partenariat PME Innovantes et donneurs d'ordre",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/produire-un-court-metrage",
+          "label": "Produire un court-métrage",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2026-09-29"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/restauration-patrimoine",
+          "label": "Financer la restauration de mon patrimoine protégé \"Monument Historique\"",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/etre-labellise-formations-du-campus-region-du-numerique",
+          "label": "Être labellisé \"formations du Campus Région du numérique\"",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2026-10-01"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/culture-en-territoire",
+          "label": "Développer des projets culturels à destination des territoires ruraux",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2026-09-20"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/region-industrie-renforcer-son-action-commerciale-linternational",
+          "label": "[Région Industrie] Renforcer son action commerciale à l'international",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/former-des-demandeurs-demploi-nouvellement-recrutes",
+          "label": "Former des demandeurs d'emploi nouvellement recrutés",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/region-commerce-et-artisanat-financer-linvestissement-de-mon-point-de-vente",
+          "label": "[Région Commerce et Artisanat] Financer l'investissement de mon point de vente",
+          "reason": "INSTRUMENT_HORS_PERIMETRE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/region-commerce-et-artisanat-developpement-transmission-mettre-en-oeuvre-un-projet-numerique",
+          "label": "[Région Commerce et Artisanat : Développement |Transmission] Mettre en œuvre un projet numérique avec Atouts Numériques",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/region-industrie-obtenir-un-pret-croissance",
+          "label": "[Région Industrie] Obtenir un Prêt Croissance",
+          "reason": "INSTRUMENT_HORS_PERIMETRE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/region-industrie-obtenir-un-pret-region-energie-en-auvergne-rhone-alpes",
+          "label": "[Région Industrie] Obtenir un prêt Région Energie en Auvergne-Rhône-Alpes",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/renover-des-centres-de-vacances-accueillant-des-classes-de-neige-ou-de-decouverte-de-la",
+          "label": "Rénover des centres de vacances accueillant des classes de neige ou de découverte de la montagne",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/developper-ou-produire-un-documentaire-de-creation-ou-une-adaptation-de-spectacle-vivant-pour",
+          "label": "Développer ou produire un documentaire de création ou une adaptation de spectacle vivant pour l’audiovisuel",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2026-08-31"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/soutenir-les-projets-de-mediation-pour-mon-cinema-dart-et-dessai",
+          "label": "Soutenir les projets de médiation pour mon cinéma d'art et d'essai",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2026-07-10"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/financer-la-publication-dun-ouvrage-dune-revue-ou-imprimer-un-catalogue-dediteur",
+          "label": "Financer la publication d'un ouvrage, d'une revue ou imprimer un catalogue d'éditeur",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2026-06-26"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/reprendre-creer-et-developper-ma-librairie-independante",
+          "label": "Reprendre, créer et développer ma librairie indépendante",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2026-05-04"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/region-industrie-planifier-mon-developpement-linternational",
+          "label": "[Région Industrie] Planifier mon développement à l'international",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/developper-ma-maison-dedition-independante",
+          "label": "Développer ma maison d'édition indépendante",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2026-09-07"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/soutenir-la-filiere-ovin-viande-plan-regional-de-filiere-ovin-viande-2023-2027",
+          "label": "Soutenir la filière ovin viande - Plan régional de filière ovin viande 2023-2027",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/developper-un-catalogue-de-projets-de-documentaires-pour-laudiovisuel-etou-de-courts-metrages",
+          "label": "Développer un catalogue de projets de documentaires pour l’audiovisuel et/ou de courts-métrages",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2026-05-07"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/region-industrie-renforcer-les-fonds-propres-de-mon-entreprise-avec-le-fonds-souverain",
+          "label": "[Région Industrie] Renforcer les fonds propres de mon entreprise avec le Fonds souverain Auvergne-Rhône-Alpes",
+          "reason": "INSTRUMENT_HORS_PERIMETRE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/biodiversite-mettre-en-oeuvre-des-actions-danimation-nature-sur-les-sites-emblematiques",
+          "label": "Biodiversité: mettre en œuvre des actions d’animation nature sur les sites emblématiques Natura 2000",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2026-03-31"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/region-industrie-etre-accompagne-dans-ma-fonction-rh",
+          "label": "[Région Industrie] Etre accompagné dans ma fonction RH",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/mequiper-pour-ma-primo-installation-en-tant-que-medecin-generaliste-liberal-en-auvergne-rhone",
+          "label": "M’équiper pour ma primo installation en tant que médecin généraliste libéral en Auvergne-Rhône-Alpes",
+          "reason": "INSTRUMENT_HORS_PERIMETRE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/mequiper-en-materiel-en-tant-quinfirmier-liberal-exercant-de-facon-groupee-en-auvergne-rhone",
+          "label": "M’équiper en matériel en tant qu’infirmier libéral exerçant de façon groupée en Auvergne-Rhône-Alpes",
+          "reason": "INSTRUMENT_HORS_PERIMETRE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/investir-dans-une-unite-de-methanisation-agricole",
+          "label": "Investir dans une unité de méthanisation agricole",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2026-07-31"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/financer-lorganisation-dun-forum-de-lemploi",
+          "label": "Financer l'organisation d'un forum de l'emploi",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/recruter-autrement-un-accompagnement-sur-mesure-pour-votre-entreprise",
+          "label": "\"Recruter autrement\": un accompagnement sur mesure pour votre entreprise",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/soutenir-la-modernisation-laccueil-et-les-conditions-de-travail-des-apprenants-dans-les",
+          "label": "Soutenir la modernisation, l’accueil et les conditions de travail des apprenants dans les organismes de formations sanitaires et sociales",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2026-05-18"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/financer-le-prototype-ou-la-production-dun-jeu-video",
+          "label": "Financer le prototype ou la production d’un jeu vidéo",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2023-12-13"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/region-industrie-accelerer-ma-transformation-en-eti",
+          "label": "[Région Industrie] Accélérer ma transformation en ETI",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/soutenir-la-filiere-bovins-viande-plan-regional-filiere-bovins-viande-2023-2027",
+          "label": "Soutenir la filière bovins viande - Plan régional filière bovins viande 2023-2027",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/moderniser-mon-officine-dans-les-zones-rurales-dauvergne-rhone-alpes",
+          "label": "Moderniser mon officine dans les zones rurales d’Auvergne-Rhône-Alpes",
+          "reason": "INSTRUMENT_HORS_PERIMETRE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/recruter-du-personnel-forme-avec-le-pacte-region-pour-lemploi-pour-repondre-aux-besoins-de",
+          "label": "Recruter du personnel formé avec le Pacte Région pour l'emploi pour répondre aux besoins de l'entreprise",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/inondation-2025-financer-ma-perte-de-chiffre-daffaires",
+          "label": "[Inondation 2025] Financer ma perte de chiffre d'affaires",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2025-12-31"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/inondation-2025-financer-mon-investissement-materiel-et-mes-travaux-de-renovation",
+          "label": "[Inondation 2025] Financer mon investissement matériel et mes travaux de rénovation",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2026-03-30"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/etudier-la-faisabilite-douverture-de-mon-entreprise-au-public",
+          "label": "Etudier la faisabilité d'ouverture de mon entreprise au public",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/developper-le-tourisme-de-savoir-faire-en-auvergne-rhone-alpes",
+          "label": "Développer le tourisme de savoir-faire en Auvergne-Rhône-Alpes",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/region-industrie-pack-relocalisation-former-les-salaries",
+          "label": "REGION INDUSTRIE - [Pack relocalisation] Former les salariés",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/region-commerce-artisanat-inondation-2024-financer-mon-materiel-et-mes-travaux-de-renovation",
+          "label": "[Région Commerce & Artisanat : Inondation 2024] Financer mon matériel et mes travaux de rénovation pour le territoire de l'Oisans",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2025-12-31"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/region-commerce-et-artisanat-financer-mon-materiel-en-tant-que-professionnel-des-marches",
+          "label": "[Région Commerce et Artisanat ] Financer mon matériel en tant que professionnel des marchés",
+          "reason": "INSTRUMENT_HORS_PERIMETRE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/region-commerce-artisanat-financer-lachat-de-mon-nouveau-taxi",
+          "label": "[Région Commerce & Artisanat] Financer l'achat de mon nouveau taxi",
+          "reason": "INSTRUMENT_HORS_PERIMETRE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/creer-renover-ou-moderniser-mon-hebergement-touristique",
+          "label": "Créer, rénover ou moderniser mon hébergement touristique",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/region-commerce-et-artisanat-creation-reprise-structurer-son-projet",
+          "label": "[Région Commerce et Artisanat : Création | Reprise] Structurer son projet",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/etre-mis-en-relation-avec-des-partenaires-bancaires-en-mobilisant-le-cercle-des-financeurs-de",
+          "label": "Être mis en relation avec des partenaires bancaires en mobilisant le Cercle des financeurs de l’investissement touristique",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/etudier-la-faisabilite-de-mon-projet-dhebergement-touristique",
+          "label": "Etudier la faisabilité de mon projet d'hébergement touristique",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/etudier-lopportunite-de-mon-projet-dhebergement-touristique",
+          "label": "Etudier l'opportunité de mon projet d'hébergement touristique",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/financer-lorganisation-dune-manifestation-ou-dun-concours",
+          "label": "Financer l’organisation d’une manifestation ou d’un concours",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/financer-lorganisation-dune-manifestation-sportive",
+          "label": "Financer l'organisation d'une manifestation sportive",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/renforcer-les-fonds-propres-de-mon-entreprise-du-numerique",
+          "label": "Renforcer les fonds propres de mon entreprise du numérique",
+          "reason": "INSTRUMENT_HORS_PERIMETRE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/pack-relocalisation-soutenir-linvestissement-industriel",
+          "label": "[Pack relocalisation] Soutenir l'investissement industriel",
+          "reason": "INSTRUMENT_HORS_PERIMETRE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/promouvoir-vos-produits-lagrement-ma-region-ses-terroirs",
+          "label": "Promouvoir vos produits via l'agrément \"MA RÉGION, SES TERROIRS\"",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/financer-la-dette-de-ma-pme-en-croissance",
+          "label": "Financer la dette de ma PME en croissance",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/transformer-mon-entreprise-par-linnovation-avec-france-2030-regionalise",
+          "label": "Transformer mon entreprise par l'innovation avec France 2030 régionalisé",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2025-12-31"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/lever-les-fonds-necessaires-ma-transformation-en-eti",
+          "label": "Lever les fonds nécessaires à ma transformation en ETI",
+          "reason": "INSTRUMENT_HORS_PERIMETRE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/obtenir-une-garantie-de-pret-bancaire",
+          "label": "Obtenir une garantie de prêt bancaire",
+          "reason": "INSTRUMENT_HORS_PERIMETRE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/lever-les-fonds-necessaires-au-developpement-ou-la-transmission-de-mon-entreprise-avec-le-fri",
+          "label": "Lever les fonds nécessaires au développement ou à la transmission de mon entreprise avec le FRI",
+          "reason": "DISPOSITIF_CLOS",
+          "closingDate": "2024-01-18"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/financer-lelaboration-de-projets-forestiers-de-territoires",
+          "label": "Financer l'élaboration de projets forestiers de territoires",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/me-defendre-juridiquement",
+          "label": "Me défendre juridiquement",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/minformer-sur-les-enjeux-et-les-usages-du-numerique-en-entreprise-le-portail-campus-region-du",
+          "label": "M'informer sur les enjeux et les usages du numérique en entreprise via le portail Campus Région du numérique",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/me-formerformer-mes-collaborateurs-sur-les-usages-et-les-outils-du-numerique-en-entreprise-le",
+          "label": "Me former/former mes collaborateurs sur les usages et les outils du numérique en entreprise via le portail Campus Région du numérique",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/financer-mes-actions-de-sauvegarde-despeces-prioritaires",
+          "label": "Financer mes actions de sauvegarde d'espèces prioritaires",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/obtenir-une-garantie-de-pret-bancaire-pour-ma-scop-ou-ma-scic",
+          "label": "Obtenir une garantie de prêt bancaire pour ma SCOP ou ma SCIC",
+          "reason": "INSTRUMENT_HORS_PERIMETRE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/obtenir-une-garantie-de-pret-bancaire-pour-mon-entreprise-industrielle",
+          "label": "Obtenir une garantie de prêt bancaire pour mon entreprise industrielle",
+          "reason": "INSTRUMENT_HORS_PERIMETRE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/etre-accompagne-dans-le-developpement-de-mon-activite-touristique-en-auvergne-rhone-alpes",
+          "label": "Être accompagné dans le développement de mon activité touristique en Auvergne-Rhône-Alpes",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/minformer-sur-les-evenements-autour-du-numerique",
+          "label": "M'informer sur les évènements autour du numérique",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/consolider-developper-mon-association-ou-mon-entreprise-finalite-sociale",
+          "label": "Consolider, développer mon association ou mon entreprise à finalité sociale",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/optimiser-la-gestion-financiere-de-mon-entreprise-artisanale",
+          "label": "Optimiser la gestion financière de mon entreprise artisanale",
+          "reason": "INSTRUMENT_CIBLE_NON_PROUVE"
+        },
+        {
+          "url": "https://www.auvergnerhonealpes.fr/aides/renforcer-les-fonds-propres-de-ma-jeune-entreprise-innovante",
+          "label": "Renforcer les fonds propres de ma jeune entreprise innovante",
+          "reason": "INSTRUMENT_HORS_PERIMETRE"
+        }
+      ],
+      "errors": [],
+      "accounted": 175,
+      "channels": {
+        "enterpriseCatalogue": 175,
+        "enterpriseExpected": 175,
+        "pagesScanned": 30,
+        "europeanExcluded": 26
+      },
+      "publicationRetained": 60,
+      "publicationDiscovered": 175,
+      "publicationExclusionCounts": {}
+    },
+    "message": "AURA v14: 175/175 dispositifs Entreprise comptabilisés, 60 aides/AAP cible(s) importés, 115 exclusion(s), 0 erreur(s)",
+    "durationMs": 229560,
+    "checkedAt": "2026-10-04T10:25:54.376Z",
+    "lastSuccessfulAt": "2026-10-04T10:25:54.376Z",
+    "consecutiveFailures": 0
+  }
+]

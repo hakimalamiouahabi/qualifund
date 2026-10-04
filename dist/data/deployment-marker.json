@@ -1,0 +1,11 @@
+{
+  "requestedAt": "2026-10-03T15:13:00Z",
+  "reason": "Publication exceptionnelle du corpus certifié ADEME après squash contenant des marqueurs [skip ci]",
+  "sourceCommit": "f50cd2d3365a514b38121721393413583cfe7eac",
+  "certifiedGuichets": [
+    "Bpifrance",
+    "ADEME"
+  ],
+  "publishedCorpusExpected": 104,
+  "collectionTriggered": false
+}

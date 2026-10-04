@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#052f4b">
+  <title>FUNDING RADAR | Leyton France</title>
+  <meta name="description" content="FUNDING RADAR cartographie, qualifie et suit les aides publiques et appels à projets pour les entreprises en France.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css?v=20260930-premium">
+  <link rel="stylesheet" href="premium.css?v=20260930-premium">
+</head>
+<body>
+<div class="layout premium-shell">
+  <aside class="sidebar premium-sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="radar-mark" aria-hidden="true"><span></span></div>
+      <div><strong>FUNDING <em>RADAR</em></strong><small>Par Leyton France</small></div>
+    </div>
+
+    <nav class="premium-nav" aria-label="Navigation principale">
+      <button data-route="home" class="nav active"><span class="nav-icon">▥</span><span>Tableau de bord</span></button>
+      <button data-route="library" class="nav"><span class="nav-icon">▦</span><span>Bibliothèque officielle</span></button>
+      <button data-route="study" class="nav"><span class="nav-icon">⌕</span><span>Recherche avancée</span></button>
+      <button data-route="watch" class="nav"><span class="nav-icon">◌</span><span>Alertes & veille</span></button>
+      <button data-route="sources" class="nav"><span class="nav-icon">◎</span><span>Sources officielles</span></button>
+      <button data-route="reporting" class="nav"><span class="nav-icon">◫</span><span>Reporting</span></button>
+      <button data-route="certification" class="nav"><span class="nav-icon">◇</span><span>Certifications</span></button>
+    </nav>
+
+    <div class="sidebar-separator"></div>
+    <div class="sidebar-secondary">
+      <button class="nav" data-route="production"><span class="nav-icon">⚙</span><span>Administration</span></button>
+      <a class="nav nav-link" href="./bibliotheque/radar-library.csv"><span class="nav-icon">⇩</span><span>Export CSV</span></a>
+    </div>
+
+    <div class="impact-card">
+      <div class="impact-icon">◒</div>
+      <strong>Accélérez vos projets à impact</strong>
+      <span>Innovation, transition et performance.</span>
+    </div>
+  </aside>
+
+  <section class="premium-workspace">
+    <header class="topbar premium-topbar">
+      <button id="mobileNav" class="icon-btn mobile-only" aria-label="Ouvrir le menu">☰</button>
+      <div class="top-brand">
+        <strong>FUNDING <em>RADAR</em></strong>
+        <span>Financements publics · France</span>
+      </div>
+      <div class="top-tagline desktop-only">TOUS LES FINANCEMENTS<br>POUR VOS PROJETS<br>EN UN SEUL ENDROIT</div>
+      <label class="global-search">
+        <span>⌕</span>
+        <input id="globalSearch" type="search" placeholder="Rechercher un dispositif, un guichet, une thématique…" autocomplete="off">
+      </label>
+      <div class="top-actions">
+        <span id="today" class="desktop-only"></span>
+        <span class="badge info desktop-only" id="engineBadge">Sources officielles</span>
+        <button class="icon-action" id="refreshBtn" title="Recharger les données" aria-label="Recharger">↻</button>
+        <button class="btn primary collect-action" id="collectBtn">Actualiser</button>
+        <button class="btn ghost desktop-only" id="sidebarToggle" type="button" aria-pressed="false">Masquer</button>
+      </div>
+    </header>
+
+    <main id="app"></main>
+  </section>
+</div>
+
+<div id="toast" class="toast hidden"></div>
+<div id="modal" class="modal hidden">
+  <div class="modal-panel">
+    <button class="modal-close" id="modalClose" aria-label="Fermer">×</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script src="./runtime-config.js"></script>
+<script src="scoring-core.js?v=20260930-premium"></script>
+<script src="app.js?v=20260930-premium"></script>
+<script>
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.getRegistrations().then(rs=>Promise.all(rs.map(r=>r.unregister()))).catch(()=>{});
+}
+if('caches' in window){caches.keys().then(keys=>Promise.all(keys.map(k=>caches.delete(k)))).catch(()=>{});}
+</script>
+</body>
+</html>

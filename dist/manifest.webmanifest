@@ -1,0 +1,10 @@
+{
+  "name": "FUNDING RADAR | Leyton — Financements publics",
+  "short_name": "FUNDING RADAR",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#F3F6F8",
+  "theme_color": "#102D3F",
+  "lang": "fr",
+  "description": "Radar Leyton des aides, subventions et appels à projets publics en France"
+}
