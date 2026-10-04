@@ -1,0 +1,42 @@
+name: BFC — compteur privé officiel ponctuel
+on:
+  push:
+    branches: [maintenance/bfc-probe-once]
+    paths:
+      - '.github/workflows/bfc-private-count-once.yml'
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Compter et échantillonner Organisme privé
+        run: |
+          node --input-type=module <<'NODE'
+          import * as cheerio from 'cheerio';
+          const base='https://www.bourgognefranchecomte.fr/guide-des-aides';
+          const u=new URL(base);
+          u.searchParams.set('field_domaine_target_id','All');
+          u.searchParams.set('field_vous_etes_target_id','87');
+          u.searchParams.set('field_types_value','All');
+          const r=await fetch(u,{headers:{'user-agent':'Mozilla/5.0','accept-language':'fr-FR,fr;q=0.9'}});
+          const html=await r.text();
+          const $=cheerio.load(html);
+          const body=$('body').text().replace(/\s+/g,' ').trim();
+          const count=Number(body.match(/(\d+)\s+aide\(s\)\s*&\s*service\(s\)/i)?.[1]||0);
+          const items=[];
+          $('a[href^="/node/"]').each((_,a)=>{
+            const href=$(a).attr('href')||'';
+            const label=$(a).text().replace(/\s+/g,' ').trim();
+            if(!label||/plus de détails/i.test(label))return;
+            const article=$(a).closest('article, .views-row, li, div').first();
+            const raw=article.text().replace(/\s+/g,' ').trim();
+            items.push({href,label,raw:raw.slice(0,700)});
+          });
+          console.log('BFC_PRIVATE='+JSON.stringify({status:r.status,bytes:html.length,count,firstPage:[...new Map(items.map(x=>[x.href,x])).values()].slice(0,20)}));
+          NODE
