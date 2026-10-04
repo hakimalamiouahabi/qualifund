@@ -27,8 +27,12 @@ test('BFC extrait la preuve entreprise depuis la section Vous êtes',()=>{
 
 test('BFC conserve uniquement les instruments cibles et les AAP',()=>{
   assert.deepEqual(
-    classifyBfcInstrument('Aide création','Aide sous forme d’avance remboursable à taux zéro sans garantie.').aidTypes.sort(),
-    ['AVANCE_REMBOURSABLE','PRET_TAUX_ZERO'].sort()
+    classifyBfcInstrument('Aide création','Aide sous forme d’avance remboursable à taux zéro sans garantie.').aidTypes,
+    ['AVANCE_REMBOURSABLE']
+  );
+  assert.deepEqual(
+    classifyBfcInstrument('Prêt création','Prêt à taux zéro sans intérêt pour financer le projet.').aidTypes,
+    ['PRET_TAUX_ZERO']
   );
   assert.deepEqual(
     classifyBfcInstrument('Appel à projets innovation','Une subvention finance les projets.').aidTypes.sort(),
