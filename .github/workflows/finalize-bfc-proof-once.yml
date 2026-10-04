@@ -10,6 +10,8 @@ jobs:
   finalize:
     runs-on: ubuntu-latest
     timeout-minutes: 40
+    env:
+      RADAR_PUBLIC_URL: https://qualifund.pages.dev
     permissions:
       contents: write
     outputs:
