@@ -93,7 +93,8 @@ const sourceWorkers=Array.from({length:sourceWorkerCount},async()=>{
     const source=sourcesToRun[i],started=Date.now(),old=prevCov.get(source.id);
     log(`[collecte ${i+1}/${sourcesToRun.length}] ${source.name}`);
     try{
-      const r=await withTimeout(collect(source),source.priority===0?240000:160000,source.id);
+      const timeoutMs=Math.max(30000,Number(source.collectionTimeoutMs||(source.priority===0?240000:160000)));
+      const r=await withTimeout(collect(source),timeoutMs,source.id);
       sourceRuns[i]={source,old,r,durationMs:Date.now()-started,error:null};
     }catch(error){
       sourceRuns[i]={source,old,r:null,assessment:null,durationMs:Date.now()-started,error};
