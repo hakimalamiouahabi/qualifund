@@ -1,0 +1,131 @@
+name: BFC — finaliser verrou et preuves production
+
+on:
+  push:
+    branches: [maintenance/finalize-bfc-proof-once]
+    paths:
+      - '.github/workflows/finalize-bfc-proof-once.yml'
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: write
+    outputs:
+      publish_sha: ${{ steps.publish.outputs.sha }}
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Node 22
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - name: Dépendances
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Finaliser le verrou BFC
+        shell: bash
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const p='config/collection-lock.json';
+          const lock=JSON.parse(fs.readFileSync(p,'utf8'));
+          if(lock.name!=='Bourgogne-Franche-Comté'||lock.version!==15)throw new Error('verrou BFC v15 attendu');
+          lock.notes="BFC v15 official-only certifié PASS le 04/10/2026 : 326 occurrences officielles intégralement comptabilisées, 228 dispositifs uniques après normalisation, 45 dispositifs entreprise publication-ready retenus après enrichissement. 183 exclusions comptabilisées, dont 25 fonds européens dédiés, 23 dispositifs clos au scan initial, 10 instruments hors périmètre, 33 instruments insuffisamment prouvés, 91 dispositifs privés sans preuve entreprise exploitable et 1 expiration détectée après enrichissement. 0 erreur d’extraction. Bpifrance, ADEME et AURA restent PASS et fingerprint MATCH. Corpus cumulatif attendu : 209 fiches. Aucune source agrégée, aucun LLM, aucune API payante, aucun moteur externe. Mise à jour automatique uniquement le 1er et le 15.";
+          lock.foundationBaseline={
+            version:'Foundation v3.7 / BFC official-only certified',
+            status:'CERTIFIED',
+            validatedAt:new Date().toISOString(),
+            p0:0
+          };
+          fs.writeFileSync(p,JSON.stringify(lock,null,2)+'\n');
+          NODE
+      - name: Réémettre le certificat BFC sur le verrou final
+        run: npm run certify:active
+      - name: Recalculer les preuves cumulatives
+        run: |
+          npm run sync:metadata
+          npm run build:index
+          npm run audit:ingestion
+          npm run audit:criteria
+          npm run audit:deep:strict
+          npm run uat
+          npm run qa
+          npm run remediation
+          node scripts/live-smoke.mjs --strict-company --strict-public
+          GITHUB_EVENT_NAME=workflow_dispatch npm run production:gates
+          npm run certify:production
+      - name: Vérifier l'état final avant publication
+        shell: bash
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const ledger=JSON.parse(fs.readFileSync('site/data/certification-ledger.json','utf8'));
+          const readiness=JSON.parse(fs.readFileSync('site/data/production-readiness.json','utf8'));
+          const cert=JSON.parse(fs.readFileSync('site/data/bourgogne-franche-comte-certification.json','utf8'));
+          const need=['ademe','aura','bfc','bpifrance_aap','bpifrance_aides','bpifrance_rebond_industriel'];
+          for(const id of need)if(!ledger.unlockedSourceIds.includes(id))throw new Error('source non certifiée '+id);
+          if((ledger.rejectedCertifications||[]).length)throw new Error('certificat rejeté '+JSON.stringify(ledger.rejectedCertifications));
+          if(cert.status!=='PASS'||cert.libraryRecords!==45)throw new Error('certificat BFC incohérent');
+          if(!readiness.goProduction)throw new Error('GO PRODUCTION NON');
+          if(readiness.counts?.publishedLibrary!==209)throw new Error('publishedLibrary='+readiness.counts?.publishedLibrary);
+          console.log('FINAL_OK=209');
+          NODE
+      - name: Publier les preuves finales sur main
+        id: publish
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "funding-radar-bot"
+          git config user.email "funding-radar-bot@users.noreply.github.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(validation): finaliser BFC et preuves production 209"
+            git pull --rebase --autostash origin main
+            git push origin HEAD:main
+          fi
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+  verify:
+    needs: finalize
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      RADAR_PUBLIC_URL: https://qualifund.pages.dev
+      EXPECTED_SHA: ${{ needs.finalize.outputs.publish_sha }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ needs.finalize.outputs.publish_sha }}
+          fetch-depth: 0
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Attendre Cloudflare 209
+        shell: bash
+        run: |
+          set -euo pipefail
+          for i in $(seq 1 60); do
+            payload="$(curl -fsS --max-time 15 "$RADAR_PUBLIC_URL/data/build-info.json?ts=$(date +%s)" || true)"
+            live_sha="$(printf '%s' "$payload" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{try{process.stdout.write(JSON.parse(s).commitSha||'')}catch{}})")"
+            if [ "$live_sha" = "$EXPECTED_SHA" ]; then
+              printf '%s' "$payload" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const j=JSON.parse(s);if(Number(j.publishedCount)!==209)throw new Error('publishedCount='+j.publishedCount);console.log(JSON.stringify(j,null,2));})"
+              exit 0
+            fi
+            echo "Tentative $i/60 — SHA public: ${live_sha:-indisponible}"
+            sleep 10
+          done
+          exit 1
+      - name: Vérification production finale
+        run: |
+          node scripts/live-smoke.mjs --strict-company --strict-public
+          npm run uat
+          npm run remediation
+          GITHUB_EVENT_NAME=workflow_dispatch npm run production:gates
+          npm run certify:production
