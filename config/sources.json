@@ -129,7 +129,8 @@
       "minExpected": 175,
       "minImported": 55,
       "minImportRatio": 0.3,
-      "notes": "AURA official-only — baseline live 04/10/2026 : catalogue officiel Région filtré profil Entreprise = 175/175 fiches sur 30 pages ; 60 dispositifs cibles lus avec preuve financière, 26 fonds européens réservés à leurs cycles dédiés, 21 dispositifs clos, 16 instruments hors périmètre et 52 instruments cibles non suffisamment prouvés ; 0 erreur d’extraction. Seuls subventions, avances remboursables/récupérables et prêts à taux zéro prouvés sont conservés."
+      "notes": "AURA official-only — baseline live 04/10/2026 : catalogue officiel Région filtré profil Entreprise = 175/175 fiches sur 30 pages ; 60 dispositifs cibles lus avec preuve financière, 26 fonds européens réservés à leurs cycles dédiés, 21 dispositifs clos, 16 instruments hors périmètre et 52 instruments cibles non suffisamment prouvés ; 0 erreur d’extraction. Seuls subventions, avances remboursables/récupérables et prêts à taux zéro prouvés sont conservés ; budget d’exécution source : 10 min, calibré sur une collecte live ~5 min 47 s.",
+      "collectionTimeoutMs": 600000
     },
     {
       "id": "bfc",
