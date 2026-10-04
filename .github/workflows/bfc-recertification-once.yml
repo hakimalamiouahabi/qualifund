@@ -1,0 +1,163 @@
+name: BFC — recertification et publication ponctuelle
+
+on:
+  push:
+    branches: [maintenance/bfc-recertification-once]
+    paths:
+      - '.github/workflows/bfc-recertification-once.yml'
+
+concurrency:
+  group: funding-radar-bfc-maintenance
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    permissions:
+      contents: write
+    outputs:
+      data_sha: ${{ steps.commit_data.outputs.sha }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 0
+      - name: Node 22
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - name: Installer les dépendances
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Gate statique
+        run: |
+          set -euo pipefail
+          find scripts tests -type f -name '*.mjs' -print0 | xargs -0 -n1 node --check
+          npm test
+          npm run validate
+      - name: Purge déterministe locale
+        run: npm run purge:indirect
+      - name: Auditer le registre maître
+        run: npm run audit:sources
+      - name: Préflight santé des sources directes
+        run: npm run preflight:sources
+      - name: Sauvegarder la bibliothèque précédente
+        run: |
+          mkdir -p /tmp/funding-radar
+          cp site/data/library.json /tmp/funding-radar/library-before.json || echo '{"aaps":[]}' > /tmp/funding-radar/library-before.json
+      - name: Collecte complète BFC
+        env:
+          FUNDING_RADAR_FULL_REFRESH: '1'
+        run: npm run update:full
+      - name: Certifier BFC
+        run: npm run certify:active
+      - name: Rapport du cycle
+        run: node scripts/generate-daily-report.mjs /tmp/funding-radar/library-before.json site/data/library.json site/bibliotheque/rapports
+      - name: Synchroniser les artefacts publics
+        run: npm run sync:metadata
+      - name: Reconstruire l'index
+        run: npm run build:index
+      - name: Auditer l'ingestion
+        run: npm run audit:ingestion
+      - name: Auditer les critères
+        run: npm run audit:criteria
+      - name: Audit approfondi strict
+        run: npm run audit:deep:strict
+      - name: Tests finaux
+        run: npm test
+      - name: Validation schéma finale
+        run: npm run validate
+      - name: UAT
+        run: npm run uat
+      - name: Smoke SIREN
+        run: npm run smoke:live -- --strict-company
+      - name: QA
+        run: npm run qa
+      - name: Remédiation
+        run: npm run remediation
+      - name: Readiness avant publication
+        run: GITHUB_EVENT_NAME=workflow_dispatch npm run production:gates
+      - name: Commit propre des données BFC vers main
+        id: commit_data
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "funding-radar-bot"
+          git config user.email "funding-radar-bot@users.noreply.github.com"
+          git fetch origin main
+          git reset --soft origin/main
+          git reset -- .github/workflows/bfc-recertification-once.yml || true
+          rm -f .github/workflows/bfc-recertification-once.yml
+          git add package-lock.json site/data site/bibliotheque site/runtime-config.js site/sw.js PRODUCTION_READINESS.md REMEDIATION_REPORT.md DATA_QUALITY_AUDIT.md || true
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(data): recertification BFC official-only"
+            git push origin HEAD:main
+          fi
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Construire l'artefact Cloudflare
+        run: npm run build:cloudflare
+
+  verify-production:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    env:
+      RADAR_PUBLIC_URL: https://qualifund.pages.dev
+    steps:
+      - name: Checkout du corpus publié
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 0
+          ref: ${{ needs.build.outputs.data_sha }}
+      - name: Node 22
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - name: Installer les dépendances
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Attendre Cloudflare
+        shell: bash
+        env:
+          EXPECTED_SHA: ${{ needs.build.outputs.data_sha }}
+        run: |
+          set -euo pipefail
+          for i in $(seq 1 60); do
+            payload="$(curl -fsS --max-time 15 "$RADAR_PUBLIC_URL/data/build-info.json?ts=$(date +%s)" || true)"
+            live_sha="$(printf '%s' "$payload" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{try{process.stdout.write(JSON.parse(s).commitSha||'')}catch{}})")"
+            if [ "$live_sha" = "$EXPECTED_SHA" ]; then
+              echo "Cloudflare synchronisé sur $live_sha"
+              printf '%s' "$payload"
+              exit 0
+            fi
+            echo "Tentative $i/60 — SHA public: ${live_sha:-indisponible}"
+            sleep 10
+          done
+          exit 1
+      - name: Smoke public + SIREN
+        run: node scripts/live-smoke.mjs --strict-company --strict-public
+      - name: UAT finale
+        run: npm run uat
+      - name: Remédiation finale
+        run: npm run remediation
+      - name: Readiness finale
+        run: GITHUB_EVENT_NAME=workflow_dispatch npm run production:gates
+      - name: Persister les preuves production
+        id: proofs
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "funding-radar-bot"
+          git config user.email "funding-radar-bot@users.noreply.github.com"
+          git add site/data/live-smoke.json site/data/uat-results.json site/data/remediation.json site/data/production-readiness.json REMEDIATION_REPORT.md PRODUCTION_READINESS.md
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(validation): preuves production BFC"
+            git pull --rebase --autostash origin main
+            git push origin HEAD:main
+          fi
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Certification production stricte
+        run: npm run certify:production
