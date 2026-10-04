@@ -137,12 +137,17 @@
       "name": "Région Bourgogne-Franche-Comté — guide des aides",
       "scope": "Bourgogne-Franche-Comté",
       "type": "region",
-      "strategy": "catalog-html",
-      "url": "https://www.bourgognefranchecomte.fr/guide-des-aides",
+      "strategy": "bfc-official",
+      "url": "https://www.bourgognefranchecomte.fr/guide-des-aides?field_domaine_target_id=All&field_vous_etes_target_id=87&field_types_value=All",
       "orgQuery": "Région Bourgogne-Franche-Comté",
       "official": true,
       "priority": 1,
-      "browserFallback": true
+      "browserFallback": false,
+      "minExpected": 220,
+      "minImported": 40,
+      "minImportRatio": 0.17,
+      "collectionTimeoutMs": 300000,
+      "notes": "BFC official-only : référentiel maître = Guide officiel des aides de la Région filtré Organisme privé (87). Baseline live 04/10/2026 : 326 occurrences, 228 dispositifs uniques après normalisation, 46 dispositifs entreprise dans le périmètre financier, 182 exclusions comptabilisées. Les fonds européens restent dans leurs cycles dédiés."
     },
     {
       "id": "bretagne",
