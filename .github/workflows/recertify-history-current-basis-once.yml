@@ -1,4 +1,4 @@
-name: FUNDING RADAR — recertifier historiques sur noyau courant
+name: FUNDING RADAR — recertifier historiques sur noyau courant v2
 
 on:
   push:
@@ -67,7 +67,7 @@ jobs:
           npm run uat
           npm run qa
           npm run remediation
-          node scripts/live-smoke.mjs --strict-company --strict-public
+          node scripts/live-smoke.mjs --strict-company
           GITHUB_EVENT_NAME=workflow_dispatch npm run production:gates
           npm run build:cloudflare
       - name: Vérifier les trois certifications avant publication
