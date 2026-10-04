@@ -288,12 +288,12 @@ test('le workflow PR unique est non destructif et bloque les régressions avant 
   assert.equal(fs.existsSync(path.join(ROOT,'.github/workflows/ci.yml')),false);
 });
 
-test('Bpifrance ADEME et AURA ne dépendent d’aucun fichier de contre-audit externe',()=>{
+test('Bpifrance ADEME AURA et BFC ne dépendent d’aucun fichier de contre-audit externe',()=>{
   const cfg=JSON.parse(fs.readFileSync(path.join(ROOT,'config','sources.json'),'utf8'));
-  for(const id of ['bpifrance_aap','bpifrance_aides','ademe','aura']){
+  for(const id of ['bpifrance_aap','bpifrance_aides','ademe','aura','bfc']){
     assert.equal(cfg.sources.find(x=>x.id===id)?.externalAuditFile,undefined,id);
   }
-  for(const p of ['scripts/connectors/bpifrance.mjs','scripts/connectors/ademe.mjs','scripts/connectors/aura.mjs','scripts/certify-active-source.mjs']){
+  for(const p of ['scripts/connectors/bpifrance.mjs','scripts/connectors/ademe.mjs','scripts/connectors/aura.mjs','scripts/connectors/bfc.mjs','scripts/certify-active-source.mjs']){
     const src=fs.readFileSync(path.join(ROOT,p),'utf8');
     assert.doesNotMatch(src,/externalAudit|Exa|Tavily|Parallel Search|Firecrawl/i,p);
   }

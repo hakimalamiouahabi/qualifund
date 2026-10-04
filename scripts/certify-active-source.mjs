@@ -91,6 +91,12 @@ for(const s of lockedCfg){
     if(expected<=0)problems.push(`${s.id}: compteur officiel Entreprise absent`);
     else if(found!==expected)problems.push(`${s.id}: catalogue Entreprise incomplet — ${found}/${expected}`);
   }
+  if(rule.requireOccurrenceCount){
+    const observed=Number(row.audit?.channels?.enterpriseOccurrences||0);
+    const expected=Number(row.audit?.channels?.enterpriseOccurrencesExpected||0);
+    if(expected<=0)problems.push(`${s.id}: compteur officiel des occurrences absent`);
+    else if(observed!==expected)problems.push(`${s.id}: occurrences du catalogue incomplètes — ${observed}/${expected}`);
+  }
   if(rule.requireImportedEqualsDiscovered){
     const discovered=Number(row.audit?.discovered??row.discovered??0);
     const imported=Number(row.audit?.imported??row.imported??0);

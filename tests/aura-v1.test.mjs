@@ -68,11 +68,13 @@ test('le collecteur AURA matérialise explicitement l’éligibilité entreprise
   assert.match(connector,/field:'enterpriseEligibility'/);
 });
 
-test('AURA v14 est le cycle actif après les PASS Bpifrance et ADEME',()=>{
-  const lock=JSON.parse(fs.readFileSync(new URL('../config/collection-lock.json',import.meta.url),'utf8'));
+test('AURA v14 reste un certificat historique PASS après le passage à BFC',()=>{
+  const cert=JSON.parse(fs.readFileSync(new URL('../site/data/aura-certification.json',import.meta.url),'utf8'));
+  const lock=cert.lock;
   const ademe=JSON.parse(fs.readFileSync(new URL('../site/data/ademe-certification.json',import.meta.url),'utf8'));
   const bpi=JSON.parse(fs.readFileSync(new URL('../site/data/bpifrance-certification.json',import.meta.url),'utf8'));
   const raw=JSON.stringify(lock);
+  assert.equal(cert.status,'PASS');
   assert.equal(lock.locked,true);
   assert.equal(lock.mode,'REGION');
   assert.equal(lock.name,'AURA');
@@ -85,10 +87,11 @@ test('AURA v14 est le cycle actif après les PASS Bpifrance et ADEME',()=>{
   assert.equal(lock.certification?.sourceRules?.aura?.minRetained,55);
   assert.equal(lock.certification?.sourceRules?.aura?.requireMasterMembership,true);
   assert.doesNotMatch(raw,/externalAudit|Exa|Tavily|Parallel|Firecrawl|TinyFish|OpenAI|Anthropic|Gemini/i);
+  assert.ok(cert.sourceConfigFingerprint);
+  assert.ok(cert.certificationBasisFingerprint);
+  assert.ok(cert.certifiedDataFingerprint);
   assert.equal(ademe.status,'PASS');
-  assert.equal(ademe.lock?.name,'ADEME');
   assert.equal(bpi.status,'PASS');
-  assert.equal(bpi.lock?.name,'Bpifrance');
 });
 
 test('la source AURA est filtrée Entreprise et les sources fonds européens restent hors verrou',()=>{
@@ -169,10 +172,10 @@ test('AURA conserve le libellé régional officiel tout en certifiant le guichet
   assert.match(connector,/a\.sourcePortal=REGION;a\.guichetVerified=GUICHET/);
 });
 
-test('le verrou AURA autorise explicitement le marqueur APPEL_A_PROJET sans élargir les instruments financiers',()=>{
-  const lock=JSON.parse(fs.readFileSync(new URL('../config/collection-lock.json',import.meta.url),'utf8'));
+test('le certificat AURA autorise explicitement APPEL_A_PROJET sans élargir les instruments financiers',()=>{
+  const cert=JSON.parse(fs.readFileSync(new URL('../site/data/aura-certification.json',import.meta.url),'utf8'));
   assert.deepEqual(
-    lock.certification.sourceRules.aura.allowedAidTypes,
+    cert.lock.certification.sourceRules.aura.allowedAidTypes,
     ['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO','APPEL_A_PROJET']
   );
 });
