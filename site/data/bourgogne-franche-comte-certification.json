@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T19:36:54.025Z",
+  "generatedAt": "2026-10-04T19:42:38.486Z",
   "status": "PASS",
   "lock": {
     "version": 15,
@@ -77,12 +77,12 @@
         }
       }
     },
-    "notes": "BFC v15 official-only. Baseline live du 04/10/2026 : Guide officiel filtré Organisme privé (87), 326 occurrences intégralement comptabilisées, 228 dispositifs uniques après normalisation des liens /node et /index.php/node, 46 dispositifs entreprise actuellement prouvés dans le périmètre subvention / avance remboursable / PTZ / AAP. 182 exclusions comptabilisées : 25 fonds européens dédiés, 23 clos, 10 instruments hors périmètre, 33 instruments non suffisamment prouvés, 91 dispositifs privés sans preuve entreprise exploitable. 0 erreur. Bpifrance, ADEME et AURA restent gelés sur leurs certificats PASS. Aucune source agrégée, aucun LLM, aucune API payante, aucun moteur externe. Mise à jour automatique uniquement le 1er et le 15.",
+    "notes": "BFC v15 official-only certifié PASS le 04/10/2026 : 326 occurrences officielles intégralement comptabilisées, 228 dispositifs uniques après normalisation, 45 dispositifs entreprise publication-ready retenus après enrichissement. 183 exclusions comptabilisées, dont 25 fonds européens dédiés, 23 dispositifs clos au scan initial, 10 instruments hors périmètre, 33 instruments insuffisamment prouvés, 91 dispositifs privés sans preuve entreprise exploitable et 1 expiration détectée après enrichissement. 0 erreur d’extraction. Bpifrance, ADEME et AURA restent PASS et fingerprint MATCH. Corpus cumulatif attendu : 209 fiches. Aucune source agrégée, aucun LLM, aucune API payante, aucun moteur externe. Mise à jour automatique uniquement le 1er et le 15.",
     "foundationBaseline": {
-      "version": "Foundation v3.7 / BFC official-only hardening",
-      "status": "HARDENING",
-      "validatedAt": null,
-      "p0": null
+      "version": "Foundation v3.7 / BFC official-only certified",
+      "status": "CERTIFIED",
+      "validatedAt": "2026-10-04T19:42:37.206Z",
+      "p0": 0
     }
   },
   "configuredSources": [

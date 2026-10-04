@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T19:39:14.616Z",
+  "generatedAt": "2026-10-04T19:42:39.059Z",
   "version": "12.9.3",
   "policy": "CERTIFIED_SOURCE_ONLY",
   "unlockedSourceIds": [
@@ -54,7 +54,7 @@
     {
       "file": "bourgogne-franche-comte-certification.json",
       "name": "Bourgogne-Franche-Comté",
-      "generatedAt": "2026-10-04T19:36:54.025Z",
+      "generatedAt": "2026-10-04T19:42:38.486Z",
       "status": "PASS",
       "sourceIds": [
         "bfc"

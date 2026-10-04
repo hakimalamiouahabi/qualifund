@@ -1,6 +1,6 @@
 {
   "version": "12.9.3",
-  "generatedAt": "2026-10-04T19:39:13.701Z",
+  "generatedAt": "2026-10-04T19:42:41.397Z",
   "companyApi": {
     "ok": true,
     "status": 200,
@@ -10,10 +10,20 @@
     "sampleSiren": "751500851"
   },
   "publicSite": {
-    "ok": false,
-    "skipped": true,
-    "url": null,
-    "index": null,
-    "readiness": null
+    "ok": true,
+    "skipped": false,
+    "url": "https://qualifund.pages.dev",
+    "index": {
+      "ok": true,
+      "status": 200,
+      "bytes": 4212,
+      "error": null
+    },
+    "readiness": {
+      "ok": true,
+      "status": 200,
+      "bytes": 3243,
+      "error": null
+    }
   }
 }

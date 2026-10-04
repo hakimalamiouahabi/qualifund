@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T19:39:13.904Z",
+  "generatedAt": "2026-10-04T19:42:41.546Z",
   "version": "12.9.3",
   "mode": "LOCKED_CYCLE",
   "currentLock": {
@@ -21,8 +21,8 @@
     {
       "id": 2,
       "name": "URL permanente",
-      "status": "BLOCKED",
-      "detail": "Déploiement permanent non confirmé."
+      "status": "PASS",
+      "detail": "https://qualifund.pages.dev — smoke HTTP concluant."
     },
     {
       "id": 3,
@@ -69,8 +69,8 @@
     {
       "id": 10,
       "name": "Recette production",
-      "status": "NOT_STARTED",
-      "detail": "Autorisation uniquement lorsque les Gates 1–9 sont PASS."
+      "status": "PASS",
+      "detail": "Gates 1–9 validées ; recette finale autorisée."
     }
   ],
   "counts": {
@@ -99,11 +99,11 @@
     "consultantCases": 10,
     "uatTotal": 10,
     "companySmokeOk": true,
-    "publicSmokeOk": false,
+    "publicSmokeOk": true,
     "workflowEvent": "workflow_dispatch",
     "inActions": true,
     "remediationFresh": true,
     "deepAuditP0": 0
   },
-  "goProduction": false
+  "goProduction": true
 }

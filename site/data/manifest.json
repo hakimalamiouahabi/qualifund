@@ -72,5 +72,17 @@
     ],
     "next": "Bretagne",
     "frozenUnselectedSha": "38b27623c70898741ee248ec4eeb1265e0ca17e337cf2c02a230a1e89fe291d9"
-  }
+  },
+  "publishedCount": 209,
+  "publishedActiveCount": 209,
+  "quarantinedCount": 0,
+  "certifiedSourceCount": 6,
+  "certifiedSources": [
+    "ademe",
+    "aura",
+    "bfc",
+    "bpifrance_aap",
+    "bpifrance_aides",
+    "bpifrance_rebond_industriel"
+  ]
 }

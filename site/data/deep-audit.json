@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T19:39:12.066Z",
+  "generatedAt": "2026-10-04T19:42:39.882Z",
   "version": "12.9.3",
   "currentLock": {
     "name": "Bourgogne-Franche-Comté",
@@ -788,20 +788,20 @@
         "file": "ademe-certification.json",
         "name": "ADEME",
         "generatedAt": "2026-10-04T19:39:09.582Z",
-        "ageHours": 0,
+        "ageHours": 0.1,
         "status": "FRESH"
       },
       {
         "file": "aura-certification.json",
         "name": "AURA",
         "generatedAt": "2026-10-04T19:39:10.204Z",
-        "ageHours": 0,
+        "ageHours": 0.1,
         "status": "FRESH"
       },
       {
         "file": "bourgogne-franche-comte-certification.json",
         "name": "Bourgogne-Franche-Comté",
-        "generatedAt": "2026-10-04T19:36:54.025Z",
+        "generatedAt": "2026-10-04T19:42:38.486Z",
         "ageHours": 0,
         "status": "FRESH"
       },
@@ -809,7 +809,7 @@
         "file": "bpifrance-certification.json",
         "name": "Bpifrance",
         "generatedAt": "2026-10-04T19:39:08.950Z",
-        "ageHours": 0,
+        "ageHours": 0.1,
         "status": "FRESH"
       }
     ],
