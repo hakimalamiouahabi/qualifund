@@ -1,0 +1,48 @@
+name: BFC — probe catalogue officiel ponctuel
+on:
+  push:
+    branches: [maintenance/bfc-probe-once]
+    paths:
+      - '.github/workflows/bfc-probe-once.yml'
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Probe HTTP du guide BFC
+        run: |
+          node --input-type=module <<'NODE'
+          import * as cheerio from 'cheerio';
+          const url='https://www.bourgognefranchecomte.fr/guide-des-aides';
+          const r=await fetch(url,{headers:{'user-agent':'Mozilla/5.0','accept-language':'fr-FR,fr;q=0.9'}});
+          const html=await r.text();
+          const $=cheerio.load(html);
+          const body=$('body').text().replace(/\s+/g,' ').trim();
+          const count=body.match(/(\d+)\s+aide\(s\)\s*&\s*service\(s\)/i)?.[1]||null;
+          const selects={};
+          $('select').each((_,s)=>{
+            const name=$(s).attr('name')||$(s).attr('id')||'';
+            const opts=[];
+            $(s).find('option').each((__,o)=>opts.push({value:$(o).attr('value')||'',label:$(o).text().replace(/\s+/g,' ').trim()}));
+            selects[name]=opts;
+          });
+          const links=[];
+          $('a[href]').each((_,a)=>{
+            const href=$(a).attr('href')||'';
+            const label=$(a).text().replace(/\s+/g,' ').trim();
+            if(/\/node\/\d+|\/aides\//.test(href))links.push({href,label});
+          });
+          console.log('BFC_ROOT='+JSON.stringify({
+            status:r.status,
+            bytes:html.length,
+            count,
+            selects,
+            sampleLinks:links.slice(0,30)
+          }));
+          NODE
