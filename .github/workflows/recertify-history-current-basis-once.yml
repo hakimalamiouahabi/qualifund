@@ -1,0 +1,143 @@
+name: FUNDING RADAR — recertifier historiques sur noyau courant
+
+on:
+  push:
+    branches: [maintenance/recertify-history-current-basis-once]
+    paths:
+      - '.github/workflows/recertify-history-current-basis-once.yml'
+
+jobs:
+  recertify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    permissions:
+      contents: write
+    outputs:
+      publish_sha: ${{ steps.publish.outputs.sha }}
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Node 22
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - name: Dépendances
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Gate statique
+        run: |
+          set -euo pipefail
+          find scripts tests -type f -name '*.mjs' -print0 | xargs -0 -n1 node --check
+          npm test
+          npm run validate
+      - name: Réémettre Bpifrance et ADEME sans recollecte
+        shell: bash
+        run: |
+          set -euo pipefail
+          cp config/collection-lock.json /tmp/aura-lock.json
+          cp site/data/aura-certification.json /tmp/aura-certification.json
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const targets=[
+            ['site/data/bpifrance-certification.json','Bpifrance','Recertification technique Bpifrance sur noyau courant ; snapshot, règles métier et données inchangés.'],
+            ['site/data/ademe-certification.json','ADEME','Recertification technique ADEME sur noyau courant ; snapshot, règles métier et données inchangés.']
+          ];
+          for(const [file,name,note] of targets){
+            const cert=JSON.parse(fs.readFileSync(file,'utf8'));
+            const lock={...cert.lock,notes:note,foundationBaseline:{...(cert.lock?.foundationBaseline||{}),status:'CERTIFIED_CURRENT_BASIS',validatedAt:new Date().toISOString(),p0:0}};
+            fs.writeFileSync('config/collection-lock.json',JSON.stringify(lock,null,2)+'\n');
+            console.log('LOCK_READY='+name);
+            const {spawnSync}=await import('node:child_process');
+            const r=spawnSync('npm',['run','certify:active'],{stdio:'inherit',env:process.env});
+            if(r.status!==0)process.exit(r.status||1);
+          }
+          NODE
+          cp /tmp/aura-lock.json config/collection-lock.json
+          cp /tmp/aura-certification.json site/data/active-source-certification.json
+      - name: Reconstruire ledger et artefacts publics
+        run: |
+          npm run sync:metadata
+          npm run build:index
+          npm run audit:ingestion
+          npm run audit:criteria
+          npm run audit:deep:strict
+          npm run uat
+          npm run qa
+          npm run remediation
+          node scripts/live-smoke.mjs --strict-company --strict-public
+          GITHUB_EVENT_NAME=workflow_dispatch npm run production:gates
+          npm run build:cloudflare
+      - name: Vérifier les trois certifications avant publication
+        shell: bash
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const l=JSON.parse(fs.readFileSync('site/data/certification-ledger.json','utf8'));
+          const need=['ademe','aura','bpifrance_aap','bpifrance_aides','bpifrance_rebond_industriel'];
+          for(const id of need)if(!l.unlockedSourceIds.includes(id))throw new Error('source non certifiée: '+id);
+          if((l.rejectedCertifications||[]).length)throw new Error('certificat rejeté: '+JSON.stringify(l.rejectedCertifications));
+          const lib=JSON.parse(fs.readFileSync('site/data/library.json','utf8'));
+          if((lib.aaps||[]).length!==164)throw new Error('bibliothèque attendue 164, obtenue '+(lib.aaps||[]).length);
+          console.log('LEDGER_OK='+JSON.stringify(l.unlockedSourceIds));
+          console.log('LIBRARY_OK=164');
+          NODE
+      - name: Publier le corpus complet sur main
+        id: publish
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "funding-radar-bot"
+          git config user.email "funding-radar-bot@users.noreply.github.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(certification): réémettre Bpifrance et ADEME sur noyau courant"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+  verify:
+    needs: recertify
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      RADAR_PUBLIC_URL: https://qualifund.pages.dev
+      EXPECTED_SHA: ${{ needs.recertify.outputs.publish_sha }}
+    steps:
+      - name: Checkout corpus complet
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ needs.recertify.outputs.publish_sha }}
+          fetch-depth: 0
+      - name: Node 22
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - name: Dépendances
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Attendre Cloudflare 164 fiches
+        shell: bash
+        run: |
+          set -euo pipefail
+          for i in $(seq 1 60); do
+            payload="$(curl -fsS --max-time 15 "$RADAR_PUBLIC_URL/data/build-info.json?ts=$(date +%s)" || true)"
+            live_sha="$(printf '%s' "$payload" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{try{process.stdout.write(JSON.parse(s).commitSha||'')}catch{}})")"
+            if [ "$live_sha" = "$EXPECTED_SHA" ]; then
+              printf '%s' "$payload" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const j=JSON.parse(s);if(Number(j.publishedCount)!==164)throw new Error('publishedCount='+j.publishedCount);const need=['ademe','aura','bpifrance_aap','bpifrance_aides','bpifrance_rebond_industriel'];for(const id of need)if(!j.certifiedSources?.includes(id))throw new Error('certified source missing '+id);console.log(JSON.stringify(j,null,2));})"
+              exit 0
+            fi
+            echo "Tentative $i/60 — SHA public: ${live_sha:-indisponible}"
+            sleep 10
+          done
+          exit 1
+      - name: Certification production complète
+        run: |
+          node scripts/live-smoke.mjs --strict-company --strict-public
+          npm run uat
+          npm run remediation
+          GITHUB_EVENT_NAME=workflow_dispatch npm run production:gates
+          npm run certify:production
