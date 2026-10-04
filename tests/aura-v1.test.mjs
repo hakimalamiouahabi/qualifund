@@ -176,3 +176,13 @@ test('le verrou AURA autorise explicitement le marqueur APPEL_A_PROJET sans éla
     ['SUBVENTION','AVANCE_REMBOURSABLE','PRET_TAUX_ZERO','APPEL_A_PROJET']
   );
 });
+
+test('AURA dispose d’un budget source compatible avec la baseline live sans modifier les autres sources',()=>{
+  const cfg=JSON.parse(fs.readFileSync(new URL('../config/sources.json',import.meta.url),'utf8'));
+  const aura=cfg.sources.find(x=>x.id==='aura');
+  assert.equal(aura.collectionTimeoutMs,600000);
+  const update=fs.readFileSync(new URL('../scripts/update-library.mjs',import.meta.url),'utf8');
+  assert.match(update,/source\.collectionTimeoutMs/);
+  assert.match(update,/source\.priority===0\?240000:160000/);
+  assert.doesNotMatch(update,/source\.id===['"]aura['"]/);
+});
