@@ -25,3 +25,15 @@ L'inventaire des outils n'est pas une installation effective. Ne pas utiliser `g
 
 ## Pourquoi aucune purge automatique ?
 Les opérations `DELETE`, `VACUUM`, `DROP`, `git push --force`, `wp db clean` et effacement de médias WordPress n'appartiennent PAS aux opérations autorisées. L'accord général sur l'autonomie n'est pas un accord irrévocable pour des suppressions irréversibles.
+
+## Complément : vérification directe des schémas D1 — 13 octobre 2026
+Requêtes `SELECT type, COUNT(*) FROM sqlite_master ... GROUP BY type` exécutées en lecture seule ; aucune ligne métier consultée.
+
+| Base | Taille déclarée | Tables | Index | Vues |
+|---|---:|---:|---:|---:|
+| artscan-rd | 4,2 Mio | 12 | 9 | 2 |
+| artscan-rd-staging | 10,4 Mio | 12 | 9 | 2 |
+| ap-leyton-prod | 15,3 Mio | 10 | 11 | 0 |
+| mnin-nbda-staging | 1,1 Mio | 42 | 30 | 0 |
+
+**Point important :** la liste initiale D1 indiquait `num_tables: 0` pour chaque base, mais la lecture directe du schéma confirme les nombres ci-dessus. Ne pas interpréter le zéro initial comme une base vide. Ces chiffres ne démontrent aucun besoin de purge. Aucun enregistrement, document ou contenu utilisateur n'a été demandé.
