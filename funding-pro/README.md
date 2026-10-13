@@ -38,3 +38,10 @@ Validation humaine, revue de sécurité, confidentialité des dossiers, sauvegar
 - `official_apis.mjs` prépare l'interrogation HTTPS des API publiques officielles **Recherche d'entreprises** et **Catalogue data.gouv.fr**, avec contrôle de délai et réduction des données.
 - Les tests utilisent des réponses simulées. **Aucun dossier réel ni taux d'aide n'est récupéré ou déduit automatiquement**.
 - `sqlite-utils==4.2.1` et `sqlfluff==4.4.0` sont exécutés sur un runner GitHub Actions éphémère avec une base fictive. Ils ne sont pas installés dans ChatGPT.
+
+## Interface réparée : utilisation sans ligne de commande
+
+- **Ouvrir** `funding-pro/preview/Funding_Pro_Atelier.html` dans un navigateur. Aucune installation : formulaires, budget, alertes, import/export et copier-coller vers ChatGPT Pro.
+- **Mode 100 % chat :** lire `funding-pro/CHATGPT_PRO_MODE_EMPLOI.md`, puis écrire « Funding Pro : prépare mon dossier de subvention ou d'avance remboursable » dans ChatGPT. Les profils mobilisés sont ceux du référentiel MNIN existant, sans nouveau profil ni sessions IA indépendantes.
+- **Tests :** `funding-pro/tests/atelier-ui.test.mjs` vérifie le chargement structurel et la syntaxe JS ; les exports ont également été testés dans Chromium local sur des données fictives. Cette page reste un **prototype HTML statique**, non un site déployé.
+- **Sécurité :** les données saisies dans l'interface ne sont ni enregistrées automatiquement ni envoyées sur Internet ; les exports sont des fichiers sensibles à protéger localement. Ne jamais publier un dossier réel dans GitHub public.
