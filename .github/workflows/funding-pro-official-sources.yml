@@ -33,19 +33,19 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p .funding-artifacts
-          node funding-pro/sources/ingest_official.mjs --offline --out .funding-artifacts/offline.json
-          python3 funding-pro/sources/build_sqlite.py .funding-artifacts/offline.json .funding-artifacts/offline.sqlite
+          mkdir -p funding-artifacts
+          node funding-pro/sources/ingest_official.mjs --offline --out funding-artifacts/offline.json
+          python3 funding-pro/sources/build_sqlite.py funding-artifacts/offline.json funding-artifacts/offline.sqlite
       - name: Lire les API publiques en direct (aucune cle)
         shell: bash
         run: |
           set -euo pipefail
-          node funding-pro/sources/ingest_official.mjs --live --include-at --max 3 --out .funding-artifacts/live.json
-          python3 funding-pro/sources/build_sqlite.py .funding-artifacts/live.json .funding-artifacts/live.sqlite
+          node funding-pro/sources/ingest_official.mjs --live --include-at --max 3 --out funding-artifacts/live.json
+          python3 funding-pro/sources/build_sqlite.py funding-artifacts/live.json funding-artifacts/live.sqlite
       - name: Publier uniquement des metadonnees PUBLIQUES
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: funding-pro-sources-publiques
-          path: .funding-artifacts/
+          path: funding-artifacts/
           if-no-files-found: error
           retention-days: 7
