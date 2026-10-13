@@ -1,0 +1,77 @@
+name: FUNDING PRO — prototype non destructif
+on:
+  push:
+    branches: [feature/funding-pro-oss-bridge-v01]
+    paths:
+      - 'funding-pro/**'
+      - '.github/workflows/funding-pro-prototype.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'funding-pro/**'
+      - '.github/workflows/funding-pro-prototype.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  non_destructive_smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout lecture seule
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Node 22
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: '22'
+      - name: Récupérer le catalogue MNIN public existant (lecture seule)
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: hakimalamiouahabi/mnin-nbda-brevet-3ac
+          ref: feature/mnin-bridge-agentgrid-700-v08
+          path: _existing_mnin_roster
+          persist-credentials: false
+      - name: Attester les 700 profils existants par SHA Git
+        run: |
+          node --check funding-pro/agentgrid.mjs
+          node funding-pro/agentgrid.mjs _existing_mnin_roster/mnin-bridge/agentgrid/profiles-700.json funding-pro/agentgrid-existing.ref.json
+      - name: Syntaxe Node
+        run: node --check funding-pro/engine.mjs
+      - name: Tests Node
+        run: node --test funding-pro/tests/*.test.mjs
+      - name: Génération fictive, fichier temporaire uniquement
+        shell: bash
+        run: |
+          set -euo pipefail
+          node funding-pro/engine.mjs funding-pro/fixtures/fictional-case.json "$RUNNER_TEMP/funding-pro-smoke.md"
+          grep -q "BROUILLON NON CERTIFIÉ" "$RUNNER_TEMP/funding-pro-smoke.md"
+      - name: Tests Python de la copie SQLite factice
+        run: python3 -m unittest discover -s funding-pro/tests -p 'test_*.py' -v
+
+  oss_sandbox:
+    name: OSS SQLFluff + SQLite Utils — jeu fictif
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Installer 2 outils open source sur runner éphémère
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m venv "$RUNNER_TEMP/funding-oss-venv"
+          "$RUNNER_TEMP/funding-oss-venv/bin/python" -m pip install --disable-pip-version-check --no-cache-dir --no-input 'sqlite-utils==4.2.1' 'sqlfluff==4.4.0'
+      - name: Inspecter une base SQLite fictive hors production
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -c "import sqlite3,sys; c=sqlite3.connect(sys.argv[1]); c.execute('CREATE TABLE mock(id INTEGER PRIMARY KEY)'); c.commit(); c.close()" "$RUNNER_TEMP/mock.sqlite"
+          "$RUNNER_TEMP/funding-oss-venv/bin/sqlite-utils" "$RUNNER_TEMP/mock.sqlite" "select count(*) as n from sqlite_master"
+      - name: Parser une requête SQLite fictive
+        shell: bash
+        run: |
+          set -euo pipefail
+          printf 'SELECT 1 AS ready;\n' > "$RUNNER_TEMP/funding.sql"
+          "$RUNNER_TEMP/funding-oss-venv/bin/sqlfluff" parse --dialect sqlite "$RUNNER_TEMP/funding.sql"

@@ -1,0 +1,52 @@
+{
+  "company": {
+    "name": "ENTREPRISE FICTIVE — TEST",
+    "region": "Région de démonstration",
+    "activity": "Activité fictive"
+  },
+  "project": {
+    "name": "Projet purement fictif",
+    "summary": "Scénario technique sans demande réelle.",
+    "problem": "Problème fictif pour tester le générateur.",
+    "innovation": "Hypothèse de test sans allégation de nouveauté.",
+    "workplan": "Lot A : préparation ; lot B : démonstration.",
+    "impact": "Indicateurs non déterminés.",
+    "schedule": "Dates à définir.",
+    "risks": "Points non établis."
+  },
+  "scheme": {
+    "issuer": "ADEME",
+    "name": "DISPOSITIF FICTIF — PAS UNE AIDE RÉELLE",
+    "instrument": "SUBVENTION",
+    "official_url": "https://agirpourlatransition.ademe.fr/",
+    "checked_on": "2026-10-13",
+    "verification_status": "UNVERIFIED",
+    "rules": [
+      {
+        "label": "Critère fictif à vérifier",
+        "status": "UNVERIFIED"
+      }
+    ]
+  },
+  "budget": {
+    "expenses": [
+      {
+        "label": "Etude fictive",
+        "amount_eur": 100000,
+        "eligibility_status": "UNVERIFIED"
+      },
+      {
+        "label": "Pilotage fictif",
+        "amount_eur": 30000,
+        "eligibility_status": "UNVERIFIED"
+      }
+    ],
+    "requested_eur": 40000,
+    "contributions": [
+      {
+        "label": "Apport privé fictif",
+        "amount_eur": 90000
+      }
+    ]
+  }
+}

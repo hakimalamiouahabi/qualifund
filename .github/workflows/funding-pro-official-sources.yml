@@ -1,0 +1,51 @@
+name: FUNDING PRO — catalogue public officiel (sans écriture externe)
+on:
+  push:
+    branches: [feature/funding-pro-oss-bridge-v01]
+    paths:
+      - 'funding-pro/sources/**'
+      - 'funding-pro/tests/public_sources.test.mjs'
+      - 'funding-pro/tests/test_source_catalog.py'
+      - '.github/workflows/funding-pro-official-sources.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  catalogue_non_destructif:
+    name: Metadonnees publiques vers SQLite temporaire
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Lire GitHub sans sauvegarder de jeton
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Node 22
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: '22'
+      - name: Tests syntaxes et sources officielles simulees
+        run: |
+          node --check funding-pro/sources/ingest_official.mjs
+          node --test funding-pro/tests/public_sources.test.mjs
+          python3 -m unittest discover -s funding-pro/tests -p 'test_source_catalog.py' -v
+      - name: Base publique offline, sans reseau
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p funding-artifacts
+          node funding-pro/sources/ingest_official.mjs --offline --out funding-artifacts/offline.json
+          python3 funding-pro/sources/build_sqlite.py funding-artifacts/offline.json funding-artifacts/offline.sqlite
+      - name: Lire les API publiques en direct (aucune cle)
+        shell: bash
+        run: |
+          set -euo pipefail
+          node funding-pro/sources/ingest_official.mjs --live --include-at --max 3 --out funding-artifacts/live.json
+          python3 funding-pro/sources/build_sqlite.py funding-artifacts/live.json funding-artifacts/live.sqlite
+      - name: Publier uniquement des metadonnees PUBLIQUES
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: funding-pro-sources-publiques
+          path: funding-artifacts/
+          if-no-files-found: error
+          retention-days: 7

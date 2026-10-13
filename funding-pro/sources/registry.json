@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "purpose": "Catalogue public sans dossier client; liens documentaires + metadonnees, eligibilite jamais deduite",
+  "sources": [
+    {
+      "id": "datagouv",
+      "name": "Catalogue public data.gouv.fr",
+      "kind": "api_dataset_metadata",
+      "base_url": "https://www.data.gouv.fr/api/1/datasets/",
+      "status": "documented",
+      "queries": [
+        "FEDER",
+        "aides entreprises",
+        "ADEME",
+        "Bpifrance"
+      ],
+      "verified_with": "https://www.data.gouv.fr/dataservices/api-catalogue-des-donnees-ouvertes-data-gouv-fr",
+      "note": "Metadonnees de jeux de donnees, pas liste d'appels ouverts; chercher large pour maximiser decouverte, verifier source primaire."
+    },
+    {
+      "id": "ademe_data",
+      "name": "ADEME Data Fair catalogue",
+      "kind": "api_dataset_metadata",
+      "base_url": "https://data.ademe.fr/data-fair/api/v1/catalog/datasets",
+      "status": "documented_pending_live_validation",
+      "verified_with": "https://data.ademe.fr/openapi-viewer/?urlType=catalog",
+      "note": "Donnees ouvertes, notamment aides historiques; ne donnent pas les regles des appels ouverts"
+    },
+    {
+      "id": "aides_territoires",
+      "name": "Aides-territoires",
+      "kind": "api_aids_candidates",
+      "base_url": "https://aides-territoires.beta.gouv.fr/api/aids/",
+      "status": "requires_authorization_http_401_observed",
+      "verified_with": "https://www.data.gouv.fr/dataservices/api-aides-territoires",
+      "note": "API documentee comme ouverte mais endpoint /api/aids/ retourne HTTP 401 au test sans cle du 13/10/2026. Aucune cle contournee; collecte desactivee par defaut. Service prioritairement collectivites depuis mars 2026."
+    },
+    {
+      "id": "feder",
+      "name": "L'Europe s'engage en France",
+      "kind": "official_portal",
+      "base_url": "https://www.europe-en-france.gouv.fr/fr/appels-projets",
+      "status": "curated_official_portal",
+      "verified_with": "https://www.europe-en-france.gouv.fr/fr/ressources/fiches-programmes-regionaux-nationaux-feder-fse-ftj-2021-2027",
+      "note": "FEDER regional: autorite de gestion regionale fait foi; pas d'API gratuite publique verifiee"
+    },
+    {
+      "id": "ademe_aap",
+      "name": "ADEME aides et appels",
+      "kind": "official_portal",
+      "base_url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue",
+      "status": "curated_official_portal",
+      "verified_with": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue",
+      "note": "Pages officielles, cahiers des charges et PDF: liens seulement, analyse humaine necessaire"
+    },
+    {
+      "id": "bpifrance",
+      "name": "Bpifrance appels et cahiers des charges",
+      "kind": "official_portal",
+      "base_url": "https://www.bpifrance.fr/nos-appels-a-projets-concours",
+      "status": "curated_official_portal",
+      "verified_with": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-defi-flagships",
+      "note": "Aucune API ouverte exhaustive verifiee; collecte documentaire controlee, pas de scraping indiscrimine"
+    },
+    {
+      "id": "regional",
+      "name": "Autorites de gestion et aides regionales",
+      "kind": "official_portal",
+      "base_url": "https://www.europe-en-france.gouv.fr/fr/ressources/fiches-programmes-regionaux-nationaux-feder-fse-ftj-2021-2027",
+      "status": "regional_review_required",
+      "verified_with": "https://www.europe-en-france.gouv.fr/fr/ressources/fiches-programmes-regionaux-nationaux-feder-fse-ftj-2021-2027",
+      "note": "Chaque Region a son calendrier et son portail; connecteurs a ajouter apres verification de l'API ou du flux public"
+    }
+  ],
+  "document_references": [
+    {
+      "source_id": "ademe_aap",
+      "type": "AAP_OFFICIEL",
+      "title": "EcoIDEN - Infrastructures et equipements numeriques resilients et durables",
+      "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/infrastructures-de-donnees-et-equipements-numeriques-resilients-et-durables",
+      "note": "Contient lien cahier des charges 2026, guides de depot et FAQ. A verifier a la date du dossier."
+    },
+    {
+      "source_id": "bpifrance",
+      "type": "AAP_OFFICIEL",
+      "title": "Defi Flagships - appel a projets Bpifrance",
+      "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/appel-a-projets-defi-flagships",
+      "note": "Appel publie en 2026, cahier des charges et dossier de candidature accessibles depuis le site."
+    },
+    {
+      "source_id": "feder",
+      "type": "GUIDE_OFFICIEL",
+      "title": "Fiches des programmes regionaux FEDER-FSE+-FTJ 2021-2027",
+      "url": "https://www.europe-en-france.gouv.fr/fr/ressources/fiches-programmes-regionaux-nationaux-feder-fse-ftj-2021-2027",
+      "note": "Liste des autorites et programmes; pas des conditions d'un AAP particulier."
+    },
+    {
+      "source_id": "ademe_aap",
+      "type": "CAHIER_DES_CHARGES_PDF",
+      "title": "EcoIDEN 2026 - Cahier des charges officiel",
+      "url": "https://agirpourlatransition.ademe.fr/sites/default/files/EcoIDEN%20-%20Cahier%20des%20charges%20-%20Infrastructures%20et%20%C3%A9quipements%20num%C3%A9riques%20-%202026.pdf",
+      "note": "26 pages. Fiche officielle: subventions et avances remboursables, predepot obligatoire; extraction des conditions a valider dans le PDF."
+    },
+    {
+      "source_id": "ademe_aap",
+      "type": "GUIDE_DEPOT_PDF",
+      "title": "Guide de depot ADEME - PDF",
+      "url": "https://agirpourlatransition.ademe.fr/sites/default/files/Guide%20de%20d%C3%A9p%C3%B4t.pdf",
+      "note": "Guide public 4 pages lie depuis le dispositif EcoIDEN, sans hypothese de validite pour tous les appels."
+    }
+  ]
+}
