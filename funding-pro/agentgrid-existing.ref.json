@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "status": "CATALOGUED_NOT_RUNNING",
+  "source_project": "MNIN NBDA",
+  "repository": "hakimalamiouahabi/mnin-nbda-brevet-3ac",
+  "ref": "feature/mnin-bridge-agentgrid-700-v08",
+  "path": "mnin-bridge/agentgrid/profiles-700.json",
+  "verified_blob_sha": "11953d30c7897e99de31315844e363b069f2aafc",
+  "count": 700,
+  "breakdown": {
+    "dsi": 5,
+    "senior_manager": 30,
+    "manager": 60,
+    "team_leader": 60,
+    "expert": 545
+  },
+  "link_mode": "REFERENCE_ONLY_NO_NEW_AGENTS_NO_EXECUTION",
+  "meaning": "Catalogue de fonctions MNIN existant ; aucune réaffectation automatique à la rédaction des financements publics",
+  "allowed_roles": "ONLY_EXISTING_RELEVANT_ROLES_SELECTED_MANUALLY",
+  "execution_limit": "NO_AUTONOMOUS_RUNTIME_WITHOUT_AUTHORIZED_COMPUTE",
+  "paid_ai_api": false,
+  "requires_human_approval_for_sensitive_operations": true
+}
