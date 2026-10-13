@@ -29,6 +29,7 @@ test('references de portails: acces indirect, aucune eligibilite',()=>{
  const data=collectOffline(registry);
  assert.equal(data.collection_mode,'OFFLINE_REFERENCES_ONLY');
  assert.ok(data.records.length>=7);
+ assert.ok(data.records.some(r=>r.category==='DOCUMENT_PDF_OFFICIEL' && r.documents.some(d=>d.format==='pdf')));
  assert.ok(data.records.every(r=>r.eligibility==='NON_ETABLIE' && r.funding_rate===null && r.funding_cap===null));
 });
 test('live avec API simulees: collecteur traite les sources et les echecs sans inventer',async()=>{
