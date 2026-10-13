@@ -33,3 +33,8 @@ Voir `integrations.json` pour les dépôts publics, les outils accessibles et le
 
 ## Conditions de mise en production
 Validation humaine, revue de sécurité, confidentialité des dossiers, sauvegardes/restauration, sources officielles contrôlées, tests de non-régression et autorisations propres à chaque service.
+
+## Connexions officielles supplémentaires
+- `official_apis.mjs` prépare l'interrogation HTTPS des API publiques officielles **Recherche d'entreprises** et **Catalogue data.gouv.fr**, avec contrôle de délai et réduction des données.
+- Les tests utilisent des réponses simulées. **Aucun dossier réel ni taux d'aide n'est récupéré ou déduit automatiquement**.
+- `sqlite-utils==4.2.1` et `sqlfluff==4.4.0` sont exécutés sur un runner GitHub Actions éphémère avec une base fictive. Ils ne sont pas installés dans ChatGPT.
