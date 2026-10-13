@@ -1,0 +1,42 @@
+name: FUNDING PRO — prototype non destructif
+on:
+  push:
+    branches: [feature/funding-pro-oss-bridge-v01]
+    paths:
+      - 'funding-pro/**'
+      - '.github/workflows/funding-pro-prototype.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'funding-pro/**'
+      - '.github/workflows/funding-pro-prototype.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  non_destructive_smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout lecture seule
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Node 22
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: '22'
+      - name: Syntaxe Node
+        run: node --check funding-pro/engine.mjs
+      - name: Tests Node
+        run: node --test funding-pro/tests/engine.test.mjs
+      - name: Génération fictive, fichier temporaire uniquement
+        shell: bash
+        run: |
+          set -euo pipefail
+          node funding-pro/engine.mjs funding-pro/fixtures/fictional-case.json "$RUNNER_TEMP/funding-pro-smoke.md"
+          grep -q "BROUILLON NON CERTIFIÉ" "$RUNNER_TEMP/funding-pro-smoke.md"
+      - name: Tests Python de la copie SQLite factice
+        run: python3 -m unittest discover -s funding-pro/tests -p 'test_*.py' -v
