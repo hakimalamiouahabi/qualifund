@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "verified_on": "2026-10-13",
+  "policy": "REFERENCE_NOT_AUTO_INSTALL",
+  "native_connected_integrations": [
+    {
+      "name": "GitHub",
+      "status": "CONNECTED_READ_WRITE_SCOPED",
+      "purpose": "Git et CI, permission du compte"
+    },
+    {
+      "name": "Cloudflare",
+      "status": "CONNECTED_READ_ONLY_AUDIT_COMPLETED",
+      "purpose": "Workers et D1, autorisations propres"
+    },
+    {
+      "name": "WordPress.com",
+      "status": "CONNECTED_SITE_DISCOVERED",
+      "purpose": "Contrôles en lecture seule ; aucune mutation"
+    }
+  ],
+  "public_open_source_repositories": [
+    {
+      "repo": "github/github-mcp-server",
+      "url": "https://github.com/github/github-mcp-server",
+      "role": "Reference GitHub MCP; not a Pro entitlement bypass",
+      "status": "REFERENCED_NOT_INSTALLED"
+    },
+    {
+      "repo": "cloudflare/mcp",
+      "url": "https://github.com/cloudflare/mcp",
+      "role": "Reference Cloudflare API MCP; connection already exists independently",
+      "status": "REFERENCED_NOT_INSTALLED"
+    },
+    {
+      "repo": "cloudflare/workers-sdk",
+      "url": "https://github.com/cloudflare/workers-sdk",
+      "role": "Wrangler, Workers, D1",
+      "status": "REFERENCED_NOT_INSTALLED"
+    },
+    {
+      "repo": "wp-cli/wp-cli",
+      "url": "https://github.com/wp-cli/wp-cli",
+      "role": "Self-hosted WordPress CLI where supported",
+      "status": "REFERENCED_NOT_INSTALLED"
+    },
+    {
+      "repo": "simonw/sqlite-utils",
+      "url": "https://github.com/simonw/sqlite-utils",
+      "role": "SQLite review of safe offline snapshots",
+      "status": "REFERENCED_NOT_INSTALLED"
+    },
+    {
+      "repo": "OpenRefine/OpenRefine",
+      "url": "https://github.com/OpenRefine/OpenRefine",
+      "role": "Offline controlled dataset quality",
+      "status": "REFERENCED_NOT_INSTALLED"
+    },
+    {
+      "repo": "github/git-sizer",
+      "url": "https://github.com/github/git-sizer",
+      "role": "Git repository size analysis",
+      "status": "REFERENCED_NOT_INSTALLED"
+    },
+    {
+      "repo": "gitleaks/gitleaks",
+      "url": "https://github.com/gitleaks/gitleaks",
+      "role": "Git secret scanning on an approved clone",
+      "status": "REFERENCED_NOT_INSTALLED"
+    },
+    {
+      "repo": "sqlfluff/sqlfluff",
+      "url": "https://github.com/sqlfluff/sqlfluff",
+      "role": "SQL lint and review",
+      "status": "REFERENCED_NOT_INSTALLED"
+    }
+  ],
+  "official_free_endpoints": [
+    {
+      "product": "Recherche d'entreprises",
+      "url": "https://recherche-entreprises.api.gouv.fr/docs/",
+      "status": "PUBLIC_API_VERIFIED",
+      "scope": "Identification entreprise, pas de droit automatique à l'aide"
+    },
+    {
+      "product": "Catalogue data.gouv.fr",
+      "url": "https://www.data.gouv.fr/api/1/datasets/",
+      "status": "PUBLIC_API_VERIFIED",
+      "scope": "Métadonnées open data, pas preuve suffisante d'éligibilité"
+    },
+    {
+      "product": "Bpifrance",
+      "url": "https://www.bpifrance.fr/",
+      "status": "OFFICIAL_WEB_SOURCE",
+      "scope": "Dispositifs et textes officiels à vérifier individuellement, pas d'API publique présumée"
+    },
+    {
+      "product": "ADEME",
+      "url": "https://agirpourlatransition.ademe.fr/",
+      "status": "OFFICIAL_WEB_SOURCE",
+      "scope": "Dispositifs et pièces officielles à vérifier individuellement, pas d'API publique présumée"
+    }
+  ],
+  "cleanup_policy": {
+    "default": "READ_ONLY",
+    "automatic_delete": false,
+    "production_mutations": false,
+    "require_approved_snapshot": true,
+    "require_restore_test": true,
+    "require_per_resource_approval": true,
+    "public_git_personal_data": false
+  }
+}
