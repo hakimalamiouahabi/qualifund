@@ -28,6 +28,17 @@ jobs:
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
         with:
           node-version: '22'
+      - name: Récupérer le catalogue MNIN public existant (lecture seule)
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: hakimalamiouahabi/mnin-nbda-brevet-3ac
+          ref: feature/mnin-bridge-agentgrid-700-v08
+          path: _existing_mnin_roster
+          persist-credentials: false
+      - name: Attester les 700 profils existants par SHA Git
+        run: |
+          node --check funding-pro/agentgrid.mjs
+          node funding-pro/agentgrid.mjs _existing_mnin_roster/mnin-bridge/agentgrid/profiles-700.json funding-pro/agentgrid-existing.ref.json
       - name: Syntaxe Node
         run: node --check funding-pro/engine.mjs
       - name: Tests Node
