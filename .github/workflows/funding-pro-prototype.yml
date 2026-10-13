@@ -42,7 +42,7 @@ jobs:
       - name: Syntaxe Node
         run: node --check funding-pro/engine.mjs
       - name: Tests Node
-        run: node --test funding-pro/tests/engine.test.mjs
+        run: node --test funding-pro/tests/*.test.mjs
       - name: Génération fictive, fichier temporaire uniquement
         shell: bash
         run: |
