@@ -9,13 +9,13 @@
       "base_url": "https://www.data.gouv.fr/api/1/datasets/",
       "status": "documented",
       "queries": [
-        "appels à projets FEDER",
-        "aides régionales entreprises",
-        "aides ADEME",
-        "Bpifrance subventions"
+        "FEDER",
+        "aides entreprises",
+        "ADEME",
+        "Bpifrance"
       ],
       "verified_with": "https://www.data.gouv.fr/dataservices/api-catalogue-des-donnees-ouvertes-data-gouv-fr",
-      "note": "Catalogue de jeux de donnees, pas liste certifiee des appels ouverts"
+      "note": "Metadonnees de jeux de donnees, pas liste d'appels ouverts; chercher large pour maximiser decouverte, verifier source primaire."
     },
     {
       "id": "ademe_data",
@@ -31,9 +31,9 @@
       "name": "Aides-territoires",
       "kind": "api_aids_candidates",
       "base_url": "https://aides-territoires.beta.gouv.fr/api/aids/",
-      "status": "documented_pending_live_validation",
+      "status": "requires_authorization_http_401_observed",
       "verified_with": "https://www.data.gouv.fr/dataservices/api-aides-territoires",
-      "note": "Depuis mars 2026 priorite collectivites; schema et acces a confirmer en direct; aucune eligibilite deduite"
+      "note": "API documentee comme ouverte mais endpoint /api/aids/ retourne HTTP 401 au test sans cle du 13/10/2026. Aucune cle contournee; collecte desactivee par defaut. Service prioritairement collectivites depuis mars 2026."
     },
     {
       "id": "feder",
