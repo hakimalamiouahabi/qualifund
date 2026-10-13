@@ -12,10 +12,10 @@ const VERIFIED = 'VERIFIED';
 const money = value => new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(value);
 const number = value => typeof value === 'number' && Number.isFinite(value) && value >= 0;
 const trim = value => typeof value === 'string' ? value.trim() : '';
-const md = value => trim(value).replaceAll('|', '\\|').replace(/\\r?\\n/g, ' ').replace(/[<>]/g, '');
+const md = value => trim(value).replaceAll('|', '&#124;').replace(/\r?\n/g, ' ').replace(/[<>]/g, '');
 const noGuess = value => trim(value) || 'À COMPLÉTER — aucune information fournie';
 const sum = items => items.reduce((s, x) => s + x.amount_eur, 0);
-const hasValidDate = value => /^\\d{4}-\\d{2}-\\d{2}$/.test(value || '') && !Number.isNaN(Date.parse(value + 'T00:00:00Z'));
+const hasValidDate = value => /^\d{4}-\d{2}-\d{2}$/.test(value || '') && !Number.isNaN(Date.parse(value + 'T00:00:00Z'));
 const https = url => {
   try {
     const u = new URL(url);
@@ -36,7 +36,7 @@ export function validateDossier(data) {
   if (scheme.checked_on && !hasValidDate(scheme.checked_on)) errors.push('scheme.checked_on date invalid');
   if (!scheme.checked_on) alerts.push('Source non datée : relecture officielle obligatoire');
   if (scheme.verification_status !== VERIFIED) alerts.push('Dispositif non certifié : éligibilité et plafonds indéterminés');
-  if (trim(company.siren) && !/^\\d{9}$/.test(company.siren)) errors.push('company.siren must have 9 digits');
+  if (trim(company.siren) && !/^\d{9}$/.test(company.siren)) errors.push('company.siren must have 9 digits');
   if (!Array.isArray(budget.expenses) || budget.expenses.length === 0) errors.push('budget.expenses required');
   const expenses = Array.isArray(budget.expenses) ? budget.expenses : [];
   for (const [i, x] of expenses.entries()) {
@@ -90,7 +90,7 @@ export function renderDossier(data) {
   const f = report.figures;
   const contributions = Array.isArray(budget.contributions) ? budget.contributions : [];
   const rules = Array.isArray(scheme.rules) ? scheme.rules : [];
-  const table = lines => lines.length ? lines.join('\\n') : '| Aucun élément documenté |';
+  const table = lines => lines.length ? lines.join('\n') : '| Aucun élément documenté |';
   const output = [
     '# DOSSIER DE FINANCEMENT PUBLIC — BROUILLON NON CERTIFIÉ',
     '',
@@ -164,7 +164,7 @@ export function renderDossier(data) {
     '**STATUT FINAL : BROUILLON — AUCUNE SOUMISSION AUTOMATIQUE.**',
     ''
   ];
-  return output.join('\\n');
+  return output.join('\n');
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
