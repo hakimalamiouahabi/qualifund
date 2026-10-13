@@ -61,8 +61,11 @@ export function staticReferences(registry) {
     if(e) refs.push(e);
   }
   for(const d of registry.document_references){
-    const e=entry(d.source_id,'reference:'+d.url,d.title,d.url,'DOCUMENT_SOURCE_OFFICIELLE',{
-      description:d.note,provenance:'DOCUMENT_REFERENCEMENT_LIEN_SEULEMENT'});
+    const isPdf=/\.pdf(?:[?#]|$)/i.test(d.url);
+    const e=entry(d.source_id,'reference:'+d.url,d.title,d.url,
+      isPdf?'DOCUMENT_PDF_OFFICIEL':'DOCUMENT_SOURCE_OFFICIELLE',{
+      description:d.note,provenance:'DOCUMENT_REFERENCEMENT_LIEN_SEULEMENT',
+      documents:isPdf?[{title:d.title,url:d.url,format:'pdf',review:'A_VERIFIER'}]:[]});
     if(e)refs.push(e);
   }
   return refs;
