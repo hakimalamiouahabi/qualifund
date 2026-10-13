@@ -93,6 +93,20 @@
       "title": "Fiches des programmes regionaux FEDER-FSE+-FTJ 2021-2027",
       "url": "https://www.europe-en-france.gouv.fr/fr/ressources/fiches-programmes-regionaux-nationaux-feder-fse-ftj-2021-2027",
       "note": "Liste des autorites et programmes; pas des conditions d'un AAP particulier."
+    },
+    {
+      "source_id": "ademe_aap",
+      "type": "CAHIER_DES_CHARGES_PDF",
+      "title": "EcoIDEN 2026 - Cahier des charges officiel",
+      "url": "https://agirpourlatransition.ademe.fr/sites/default/files/EcoIDEN%20-%20Cahier%20des%20charges%20-%20Infrastructures%20et%20%C3%A9quipements%20num%C3%A9riques%20-%202026.pdf",
+      "note": "26 pages. Fiche officielle: subventions et avances remboursables, predepot obligatoire; extraction des conditions a valider dans le PDF."
+    },
+    {
+      "source_id": "ademe_aap",
+      "type": "GUIDE_DEPOT_PDF",
+      "title": "Guide de depot ADEME - PDF",
+      "url": "https://agirpourlatransition.ademe.fr/sites/default/files/Guide%20de%20d%C3%A9p%C3%B4t.pdf",
+      "note": "Guide public 4 pages lie depuis le dispositif EcoIDEN, sans hypothese de validite pour tous les appels."
     }
   ]
 }
