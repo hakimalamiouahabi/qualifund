@@ -45,3 +45,15 @@ Validation humaine, revue de sécurité, confidentialité des dossiers, sauvegar
 - **Mode 100 % chat :** lire `funding-pro/CHATGPT_PRO_MODE_EMPLOI.md`, puis écrire « Funding Pro : prépare mon dossier de subvention ou d'avance remboursable » dans ChatGPT. Les profils mobilisés sont ceux du référentiel MNIN existant, sans nouveau profil ni sessions IA indépendantes.
 - **Tests :** `funding-pro/tests/atelier-ui.test.mjs` vérifie le chargement structurel et la syntaxe JS ; les exports ont également été testés dans Chromium local sur des données fictives. Cette page reste un **prototype HTML statique**, non un site déployé.
 - **Sécurité :** les données saisies dans l'interface ne sont ni enregistrées automatiquement ni envoyées sur Internet ; les exports sont des fichiers sensibles à protéger localement. Ne jamais publier un dossier réel dans GitHub public.
+
+
+## Base des financements publics — version expérimentale
+
+Le module \`sources/\` référence **7 canaux officiels** et fabrique un fichier SQLite temporaire avec les résultats d'API gratuites et les liens vers des cahiers des charges / guides officiels. Les deux APIs accessibles sans clé et testées en direct sont **data.gouv.fr** et **ADEME Data Fair** ; l'accès anonyme d'**Aides-territoires** a retourné **HTTP 401** lors du contrôle du 13/10/2026.
+
+- Guide simple, statuts réels, limites et usage depuis ChatGPT Pro : [sources/README.md](sources/README.md).
+- Registre des sources : [sources/registry.json](sources/registry.json).
+- Modèle SQL de **future** base Cloudflare D1 isolée : [sources/d1_staging_schema.sql](sources/d1_staging_schema.sql). **Non exécuté sur Cloudflare.**
+- Action GitHub de collecte : \`.github/workflows/funding-pro-official-sources.yml\`. Résultats dans des artefacts **temporaires** ; **pas de base Cloudflare synchronisée** pour le moment.
+
+Aucune demande client, donnée privée, taux d'aide présumé ou prétention de 700 modèles IA actifs. Une fiche de financement doit être vérifiée sur la page et les pièces officielles **du financeur** avant qualification.
