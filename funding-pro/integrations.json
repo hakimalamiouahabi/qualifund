@@ -48,7 +48,8 @@
       "repo": "simonw/sqlite-utils",
       "url": "https://github.com/simonw/sqlite-utils",
       "role": "SQLite review of safe offline snapshots",
-      "status": "REFERENCED_NOT_INSTALLED"
+      "status": "TESTED_IN_EPHEMERAL_GITHUB_ACTIONS_ON_SYNTHETIC_DATA",
+      "verification_run": "https://github.com/hakimalamiouahabi/qualifund/actions/runs/38327567330"
     },
     {
       "repo": "OpenRefine/OpenRefine",
@@ -72,7 +73,8 @@
       "repo": "sqlfluff/sqlfluff",
       "url": "https://github.com/sqlfluff/sqlfluff",
       "role": "SQL lint and review",
-      "status": "REFERENCED_NOT_INSTALLED"
+      "status": "TESTED_IN_EPHEMERAL_GITHUB_ACTIONS_ON_SYNTHETIC_DATA",
+      "verification_run": "https://github.com/hakimalamiouahabi/qualifund/actions/runs/38327567330"
     }
   ],
   "official_free_endpoints": [
