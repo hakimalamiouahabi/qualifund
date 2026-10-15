@@ -1,11 +1,10 @@
 {
   "version": "12.9.3",
-  "generatedAt": "2026-10-04T19:32:03.739Z",
-  "publishedCount": 209,
-  "publishedActiveCount": 209,
-  "certifiedSourceCount": 6,
+  "generatedAt": "2026-10-15T04:09:50.406Z",
+  "publishedCount": 141,
+  "publishedActiveCount": 141,
+  "certifiedSourceCount": 5,
   "certifiedSources": [
-    "ademe",
     "aura",
     "bfc",
     "bpifrance_aap",
@@ -29,6 +28,6 @@
       "bfc"
     ],
     "next": "Bretagne",
-    "frozenUnselectedSha": "38b27623c70898741ee248ec4eeb1265e0ca17e337cf2c02a230a1e89fe291d9"
+    "frozenUnselectedSha": "189b87081f1a7814c0a69c1150c830104c6bf9948d0b2b8eb37afe5ac278508a"
   }
 }

@@ -1,12 +1,12 @@
 # FUNDING RADAR — Audit approfondi de qualité des données
 
-Généré : 2026-10-04T19:42:39.882Z
+Généré : 2026-10-15T04:14:35.076Z
 
-- Stock brut : **209**
-- Corpus publiable certifié : **209**
-- Quarantaine : **0**
+- Stock brut : **206**
+- Corpus publiable certifié : **141**
+- Quarantaine : **65**
 - Sources configurées : **118**
-- Sources certifiées publiables : **6**
+- Sources certifiées publiables : **5**
 
 ## P0 — incohérences bloquantes
 
@@ -14,12 +14,14 @@ Généré : 2026-10-04T19:42:39.882Z
 
 ## P1 — dette de qualité à remédier
 
-- Aucune
+- 2 certificat(s) PASS datent de plus de 72 h — maintenance opérationnelle à rafraîchir
+- 1 certificat(s) historique(s) ne déverrouillent plus la publication et doivent être recertifiés (CERTIFIED_DATA_CHANGED: 1)
 
 ## P2 — dette historique en quarantaine
 
 - 91 source(s) future(s) non calibrée(s), bloquées automatiquement jusqu’à mesure du référentiel officiel
-- 0 fiche(s) brutes en quarantaine de publication
+- 65 fiche(s) brutes en quarantaine de publication
 
 ## Quarantaine par motif
 
+- SOURCE_NOT_CERTIFIED: 65

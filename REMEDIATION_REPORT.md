@@ -1,17 +1,17 @@
 # FUNDING RADAR — Rapport de remédiation v12.9.3
 
-Généré : 2026-10-04T19:42:40.335Z
+Généré : 2026-10-15T04:14:38.646Z
 
-- Stock brut conservé : **209**
-- Corpus certifié publiable : **209**
-- Quarantaine : **0**
-- Fiches actives publiables : **209**
+- Stock brut conservé : **206**
+- Corpus certifié publiable : **141**
+- Quarantaine : **65**
+- Fiches actives publiables : **141**
 - Fiches VÉRIFIÉES : **0**
-- File de remédiation : **209**
+- File de remédiation : **141**
 - Sources certifiées mais fiches bloquées pour preuve manquante : **0**
-- Permanences sans preuve calendrier A/B : **27**
+- Permanences sans preuve calendrier A/B : **26**
 - Avances remboursables / PTZ sans modalités de remboursement : **24**
-- Fiches sans CdC/règlement rattaché : **117**
+- Fiches sans CdC/règlement rattaché : **48**
 
 ## Blocages de publication des sources certifiées
 
@@ -19,25 +19,25 @@ Généré : 2026-10-04T19:42:40.335Z
 ## Preuves A/B manquantes par champ
 
 - objective: 6
-- beneficiaries: 145
-- financialTerms: 122
-- projectsExpected: 203
-- eligibleExpenses: 205
-- calendar: 198
-- prerequisites: 183
-- selectionCriteria: 203
+- beneficiaries: 77
+- financialTerms: 54
+- projectsExpected: 135
+- eligibleExpenses: 137
+- calendar: 130
+- prerequisites: 115
+- selectionCriteria: 135
 
 ## Principaux drapeaux QA
 
-- MISSING_DISBURSEMENT_TERMS: 207
-- MISSING_ELIGIBLE_EXPENSES: 205
-- MISSING_SELECTION_CRITERIA: 203
-- MISSING_PREREQUISITES: 183
-- MISSING_BENEFICIARIES: 145
-- MISSING_COMPANY_CATEGORY: 136
-- MISSING_FINANCIAL_TERMS: 122
-- MISSING_CDC: 117
-- MISSING_DEADLINE: 82
+- MISSING_DISBURSEMENT_TERMS: 139
+- MISSING_ELIGIBLE_EXPENSES: 137
+- MISSING_SELECTION_CRITERIA: 135
+- MISSING_PREREQUISITES: 115
+- MISSING_DEADLINE: 83
+- MISSING_BENEFICIARIES: 77
+- MISSING_COMPANY_CATEGORY: 69
+- MISSING_FINANCIAL_TERMS: 54
+- MISSING_CDC: 48
 - MISSING_REPAYMENT_TERMS: 24
 - MISSING_OBJECTIVE: 6
 

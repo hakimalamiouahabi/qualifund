@@ -1,0 +1,256 @@
+{
+  "generatedAt": "2026-10-15T04:14:33.627Z",
+  "date": "2026-10-15",
+  "baselineInitialized": false,
+  "totals": {
+    "before": 206,
+    "after": 206,
+    "new": 1,
+    "modified": 11,
+    "obsolete": 1
+  },
+  "nouvellesAides": [
+    {
+      "id": "bfc_69ff416511b4ef135471eb90a8fad934c842fb92fc5688da33fc80ad059a7c1e",
+      "titre": "Aides en faveur des entreprises de travaux forestiers - Aide à l'installation",
+      "statut": "ACTIVE",
+      "echeance": "",
+      "source": "https://www.bourgognefranchecomte.fr/index%2ephp/node/890",
+      "verification": "A_REVERIFIER",
+      "confiance": 9
+    }
+  ],
+  "aidesModifiees": [
+    {
+      "avant": {
+        "id": "bfc_5dbbcd9cdc68e8940c14ec4a08db9b9d7563f1e497bde2c8921eaf919a3fc063",
+        "titre": "Accompagnement des entreprises sous-traitantes de la filière automobile",
+        "statut": "ACTIVE",
+        "echeance": "2026-12-31",
+        "source": "https://www.bourgognefranchecomte.fr/node/3562",
+        "verification": "A_REVERIFIER",
+        "confiance": 9
+      },
+      "apres": {
+        "id": "bfc_5dbbcd9cdc68e8940c14ec4a08db9b9d7563f1e497bde2c8921eaf919a3fc063",
+        "titre": "Accompagnement des entreprises sous-traitantes de la filière automobile",
+        "statut": "ACTIVE",
+        "echeance": "2026-12-31",
+        "source": "https://www.bourgognefranchecomte.fr/node/3562",
+        "verification": "A_REVERIFIER",
+        "confiance": 9
+      }
+    },
+    {
+      "avant": {
+        "id": "bfc_a34ca83b3705176f9338f206382be3d013556957cae9d005179e742462d8f95b",
+        "titre": "Action REgionale pour la Formation dans les Entreprises (AREFE)",
+        "statut": "ACTIVE",
+        "echeance": "",
+        "source": "https://www.bourgognefranchecomte.fr/node/3599",
+        "verification": "A_REVERIFIER",
+        "confiance": 9
+      },
+      "apres": {
+        "id": "bfc_a34ca83b3705176f9338f206382be3d013556957cae9d005179e742462d8f95b",
+        "titre": "Action REgionale pour la Formation dans les Entreprises (AREFE)",
+        "statut": "ACTIVE",
+        "echeance": "",
+        "source": "https://www.bourgognefranchecomte.fr/node/3599",
+        "verification": "A_REVERIFIER",
+        "confiance": 9
+      }
+    },
+    {
+      "avant": {
+        "id": "bfc_fb9ff713524b415e908ae15d5bb5c2a9d6e7f0c4df09c522b21452b7f18043e2",
+        "titre": "Aide à l’achat de reproducteurs pour la filière ovine",
+        "statut": "ACTIVE",
+        "echeance": "2027-12-31",
+        "source": "https://www.bourgognefranchecomte.fr/node/3981",
+        "verification": "A_REVERIFIER",
+        "confiance": 9
+      },
+      "apres": {
+        "id": "bfc_fb9ff713524b415e908ae15d5bb5c2a9d6e7f0c4df09c522b21452b7f18043e2",
+        "titre": "Aide à l’achat de reproducteurs pour la filière ovine",
+        "statut": "ACTIVE",
+        "echeance": "2027-12-31",
+        "source": "https://www.bourgognefranchecomte.fr/node/3981",
+        "verification": "A_REVERIFIER",
+        "confiance": 9
+      }
+    },
+    {
+      "avant": {
+        "id": "bfc_9155c21fdea418e70bfd4016891fd57344f8da9f4753818b429012eb46fc80f1",
+        "titre": "Aides en faveur des entreprises de travaux forestiers - Aide à l'équipement",
+        "statut": "ACTIVE",
+        "echeance": "",
+        "source": "https://www.bourgognefranchecomte.fr/node/3594",
+        "verification": "A_REVERIFIER",
+        "confiance": 9
+      },
+      "apres": {
+        "id": "bfc_9155c21fdea418e70bfd4016891fd57344f8da9f4753818b429012eb46fc80f1",
+        "titre": "Aides en faveur des entreprises de travaux forestiers - Aide à l'équipement",
+        "statut": "ACTIVE",
+        "echeance": "",
+        "source": "https://www.bourgognefranchecomte.fr/node/3594",
+        "verification": "A_REVERIFIER",
+        "confiance": 9
+      }
+    },
+    {
+      "avant": {
+        "id": "bfc_27dfe1972d3b53a8f1fba3b616e0ea044f902f5422d7f832832a862625e803ef",
+        "titre": "Aides individuelles aux entreprises de la 1ère transformation du bois - Aide au recrutement de cadres et d'assistant(e) export",
+        "statut": "ACTIVE",
+        "echeance": "",
+        "source": "https://www.bourgognefranchecomte.fr/node/325",
+        "verification": "A_REVERIFIER",
+        "confiance": 9
+      },
+      "apres": {
+        "id": "bfc_27dfe1972d3b53a8f1fba3b616e0ea044f902f5422d7f832832a862625e803ef",
+        "titre": "Aides individuelles aux entreprises de la 1ère transformation du bois - Aide au recrutement de cadres et d'assistant(e) export",
+        "statut": "ACTIVE",
+        "echeance": "",
+        "source": "https://www.bourgognefranchecomte.fr/node/325",
+        "verification": "A_REVERIFIER",
+        "confiance": 9
+      }
+    },
+    {
+      "avant": {
+        "id": "bfc_6c565d6fa9d3edc9045d7da0b8fa22f340b832cc2459e71d8de1084bf7df933f",
+        "titre": "Aides individuelles aux entreprises de la première transformation du bois - Aide aux investissements matériels",
+        "statut": "ACTIVE",
+        "echeance": "",
+        "source": "https://www.bourgognefranchecomte.fr/node/3598",
+        "verification": "A_REVERIFIER",
+        "confiance": 9
+      },
+      "apres": {
+        "id": "bfc_6c565d6fa9d3edc9045d7da0b8fa22f340b832cc2459e71d8de1084bf7df933f",
+        "titre": "Aides individuelles aux entreprises de la première transformation du bois - Aide aux investissements matériels",
+        "statut": "ACTIVE",
+        "echeance": "",
+        "source": "https://www.bourgognefranchecomte.fr/node/3598",
+        "verification": "A_REVERIFIER",
+        "confiance": 9
+      }
+    },
+    {
+      "avant": {
+        "id": "bfc_a519915608991eca0cd27773301efc1fa4f85d14e2b62ce4d84179937a8e4dd3",
+        "titre": "Avance remboursable - Consolidation financière de l’entreprise",
+        "statut": "ACTIVE",
+        "echeance": "",
+        "source": "https://www.bourgognefranchecomte.fr/node/290",
+        "verification": "A_REVERIFIER",
+        "confiance": 9
+      },
+      "apres": {
+        "id": "bfc_a519915608991eca0cd27773301efc1fa4f85d14e2b62ce4d84179937a8e4dd3",
+        "titre": "Avance remboursable - Consolidation financière de l’entreprise",
+        "statut": "ACTIVE",
+        "echeance": "",
+        "source": "https://www.bourgognefranchecomte.fr/node/290",
+        "verification": "A_REVERIFIER",
+        "confiance": 9
+      }
+    },
+    {
+      "avant": {
+        "id": "bfc_af19db7739090e7016a0b8b75c71bd554b5f9dc0f75850644fcb8ef8c1685ae7",
+        "titre": "Festivals et manifestations culturelles - Cinéma",
+        "statut": "ACTIVE",
+        "echeance": "2027-01-31",
+        "source": "https://www.bourgognefranchecomte.fr/node/384",
+        "verification": "A_REVERIFIER",
+        "confiance": 9
+      },
+      "apres": {
+        "id": "bfc_af19db7739090e7016a0b8b75c71bd554b5f9dc0f75850644fcb8ef8c1685ae7",
+        "titre": "Festivals et manifestations culturelles - Cinéma",
+        "statut": "ACTIVE",
+        "echeance": "2027-01-31",
+        "source": "https://www.bourgognefranchecomte.fr/node/384",
+        "verification": "A_REVERIFIER",
+        "confiance": 9
+      }
+    },
+    {
+      "avant": {
+        "id": "bfc_70d5d20e15b3bf090a48ee38eeff237917a8176a2f3d39febd80aa6977b351a1",
+        "titre": "Festivals et manifestations culturelles - Livre",
+        "statut": "ACTIVE",
+        "echeance": "2027-01-31",
+        "source": "https://www.bourgognefranchecomte.fr/node/301",
+        "verification": "A_REVERIFIER",
+        "confiance": 9
+      },
+      "apres": {
+        "id": "bfc_70d5d20e15b3bf090a48ee38eeff237917a8176a2f3d39febd80aa6977b351a1",
+        "titre": "Festivals et manifestations culturelles - Livre",
+        "statut": "ACTIVE",
+        "echeance": "2027-01-31",
+        "source": "https://www.bourgognefranchecomte.fr/node/301",
+        "verification": "A_REVERIFIER",
+        "confiance": 9
+      }
+    },
+    {
+      "avant": {
+        "id": "bfc_cd419771bd01692d886ecdb6fb2601309d447bd3ce5610bf77197ebc9cd72d59",
+        "titre": "Festivals et manifestations culturelles - spectacle vivant",
+        "statut": "ACTIVE",
+        "echeance": "2027-01-31",
+        "source": "https://www.bourgognefranchecomte.fr/node/302",
+        "verification": "A_REVERIFIER",
+        "confiance": 9
+      },
+      "apres": {
+        "id": "bfc_cd419771bd01692d886ecdb6fb2601309d447bd3ce5610bf77197ebc9cd72d59",
+        "titre": "Festivals et manifestations culturelles - spectacle vivant",
+        "statut": "ACTIVE",
+        "echeance": "2027-01-31",
+        "source": "https://www.bourgognefranchecomte.fr/node/302",
+        "verification": "A_REVERIFIER",
+        "confiance": 9
+      }
+    },
+    {
+      "avant": {
+        "id": "bfc_b66312c5172730bce1dbff3adb9df1646833b318aea061d01d1491e001ca411a",
+        "titre": "Prestation de conseil",
+        "statut": "ACTIVE",
+        "echeance": "",
+        "source": "https://www.bourgognefranchecomte.fr/node/3561",
+        "verification": "A_REVERIFIER",
+        "confiance": 9
+      },
+      "apres": {
+        "id": "bfc_b66312c5172730bce1dbff3adb9df1646833b318aea061d01d1491e001ca411a",
+        "titre": "Prestation de conseil",
+        "statut": "ACTIVE",
+        "echeance": "",
+        "source": "https://www.bourgognefranchecomte.fr/node/3561",
+        "verification": "A_REVERIFIER",
+        "confiance": 9
+      }
+    }
+  ],
+  "aidesObsoletes": [
+    {
+      "id": "bfc_75189617d0d582eeaf225f954952a1f379b9b6a8aecc6bc42ec06dace8a63a56",
+      "titre": "Aides en faveur des entreprises de travaux forestiers - Aide à l'installation",
+      "statut": "ACTIVE",
+      "echeance": "",
+      "source": "https://www.bourgognefranchecomte.fr/node/890",
+      "verification": "A_REVERIFIER",
+      "confiance": 9
+    }
+  ]
+}

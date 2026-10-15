@@ -1,7 +1,7 @@
 {
   "version": "12.9.3",
-  "generatedAt": "2026-10-04T19:32:03.739Z",
-  "purgedAt": "2026-10-15T04:09:07.059Z",
+  "generatedAt": "2026-10-15T04:09:50.406Z",
+  "purgedAt": null,
   "repositoryUrl": "https://github.com/hakimalamiouahabi/qualifund",
   "sourcePolicy": "DIRECT_OFFICIAL_ONLY",
   "libraryMode": "DIRECT_OFFICIAL_CATALOG",
@@ -15,8 +15,8 @@
   "staleCount": 0,
   "aapCount": 37,
   "verifiedCount": 0,
-  "withCdc": 92,
-  "withDeadline": 124,
+  "withCdc": 93,
+  "withDeadline": 123,
   "sourceCount": 118,
   "activeCollectionSourceCount": 1,
   "libraryInstruments": [
@@ -36,7 +36,7 @@
   "missingDirectLinkCount": 0,
   "categoryCounts": {
     "STARTUP": 9,
-    "PME": 71,
+    "PME": 70,
     "ETI": 36,
     "GE": 8
   },
@@ -56,11 +56,11 @@
   "coverageGap": null,
   "coverageCertified": false,
   "purgeStats": {
-    "input": 209,
-    "afterDirectSanitization": 209,
-    "afterCertifiedScope": 209,
+    "input": 206,
+    "afterDirectSanitization": 206,
+    "afterCertifiedScope": 206,
     "removedOutOfTarget": 0,
-    "removedCertifiedQuarantine": 3,
+    "removedCertifiedQuarantine": 0,
     "retainedOperational": 206
   },
   "collectionLock": {
@@ -71,6 +71,17 @@
       "bfc"
     ],
     "next": "Bretagne",
-    "frozenUnselectedSha": "38b27623c70898741ee248ec4eeb1265e0ca17e337cf2c02a230a1e89fe291d9"
-  }
+    "frozenUnselectedSha": "189b87081f1a7814c0a69c1150c830104c6bf9948d0b2b8eb37afe5ac278508a"
+  },
+  "publishedCount": 141,
+  "publishedActiveCount": 141,
+  "quarantinedCount": 65,
+  "certifiedSourceCount": 5,
+  "certifiedSources": [
+    "aura",
+    "bfc",
+    "bpifrance_aap",
+    "bpifrance_aides",
+    "bpifrance_rebond_industriel"
+  ]
 }

@@ -1,0 +1,987 @@
+{
+  "generatedAt": "2026-10-15T04:14:35.076Z",
+  "version": "12.9.3",
+  "currentLock": {
+    "name": "Bourgogne-Franche-Comté",
+    "mode": "REGION",
+    "allowedSourceIds": [
+      "bfc"
+    ]
+  },
+  "publication": {
+    "policy": "CERTIFIED_SOURCE_ONLY",
+    "certifiedSourceIds": [
+      "aura",
+      "bfc",
+      "bpifrance_aap",
+      "bpifrance_aides",
+      "bpifrance_rebond_industriel"
+    ],
+    "certifiedGuichets": [
+      "AURA",
+      "Bourgogne-Franche-Comté",
+      "Bpifrance"
+    ],
+    "reasons": {
+      "SOURCE_NOT_CERTIFIED": 65
+    },
+    "reasonSamples": {
+      "SOURCE_NOT_CERTIFIED": [
+        {
+          "id": "ademe_8c8a291c0a1e03c28352de9331a8e469db6bf5220a547f249de9d1e414a69c66",
+          "title": "AACT-AIR – Aide à l’action des collectivités territoriales en faveur de la qualité de l’air",
+          "sourceId": "ademe",
+          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/aact-air-aide-laction-des-collectivites-territoriales-en-faveur-de-la-qualite-de-lair"
+        },
+        {
+          "id": "ademe_70dbf42c2ff2a29e70e2b6cd80dd3862ba164201902ed994e0526e8cfaab86e9",
+          "title": "Acquisition de données Géologiques vers des Industries Bas Carbone (AGIBaC)",
+          "sourceId": "ademe",
+          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/acquisition-de-donnees-geologiques-vers-des-industries-bas-carbone-agibac"
+        },
+        {
+          "id": "ademe_6b8156486b6e56c87e22d55a7b085d10bc833a9a982b4f4d1e4535c7377923bd",
+          "title": "Aide à la création et au fonctionnement des observatoires territoriaux",
+          "sourceId": "ademe",
+          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/aide-la-creation-et-au-fonctionnement-des-observatoires-territoriaux"
+        },
+        {
+          "id": "ademe_1f91ec87aa5c7152836f30820397b2def1a2476ceb3473a3c27579d7cf46f784",
+          "title": "Aides au changement de comportement",
+          "sourceId": "ademe",
+          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/aides-au-changement-de-comportement"
+        },
+        {
+          "id": "ademe_13ebd98f6d4417a273a2e6cef41c7b7c850182abc37b90770e951127f423d9f9",
+          "title": "Aides au réemploi des emballages",
+          "sourceId": "ademe",
+          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/aides-au-reemploi-des-emballages"
+        },
+        {
+          "id": "ademe_680e808fe8a95e6ed29b31f7974bcc5c40fdb528c41cecca4f1553d43f09e457",
+          "title": "Amélioration de la qualité de l’air dans les territoires en PPA ou dans ceux concernés par des dépassements actuels ou prévisionnels 2030",
+          "sourceId": "ademe",
+          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/amelioration-de-la-qualite-de-lair-dans-les-territoires-en-ppa-ou-dans-ceux-concernes-par-des-depassements-actuels-ou-previsionnels-2030"
+        },
+        {
+          "id": "ademe_c48cc10ec1a72e5e359f8db8c1a07464e1eeb40a7bf61095bb9eb7f034c219f7",
+          "title": "AQACIA 2026 – Particules, ozone, produits phytopharmaceutiques et pollutions sectorielles",
+          "sourceId": "ademe",
+          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/aqacia-2026-particules-ozone-produits-phytopharmaceutiques-et-pollutions-sectorielles"
+        },
+        {
+          "id": "ademe_494b9f9bd2703c0139a63aa120cb33c3b55c4628450a2a744894d6053d984c97",
+          "title": "Audit et réhabilitation d'installations solaires thermiques collectives",
+          "sourceId": "ademe",
+          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/audit-et-rehabilitation-dinstallations-solaires-thermiques-collectives"
+        },
+        {
+          "id": "ademe_43c25362e43ca0a32ee7512e342761d39a97f2851c558148d6de4a26d382d7bb",
+          "title": "Contrat Chaleur Renouvelable",
+          "sourceId": "ademe",
+          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/contrat-chaleur-renouvelable"
+        },
+        {
+          "id": "ademe_65482feb3c9bf96e0c1ac787d10be3c87898bb5bbf7f842d6cdaf2115b4f083a",
+          "title": "Création, extension ou modernisation d’un centre de tri de déchets d’activité économique et déchèteries pour professionnels",
+          "sourceId": "ademe",
+          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/creation-extension-ou-modernisation-dun-centre-de-tri-de-dechets-dactivite-economique-et-decheteries-pour-professionnels"
+        },
+        {
+          "id": "ademe_4bcc8e980a10675fc0b69624bf6d551654c130b782a868a611081bd5bc103905",
+          "title": "DECARB FLASH 2025-2027",
+          "sourceId": "ademe",
+          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/decarb-flash-2025-2027"
+        },
+        {
+          "id": "ademe_d1a653cad878dafd0cde571ad3a6b445a60f73ed34d6920ab733493ced00fcce",
+          "title": "Decarb Flash Artisan",
+          "sourceId": "ademe",
+          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/decarb-flash-artisan"
+        },
+        {
+          "id": "ademe_6613b3fc9af3350d119843ff57c6e06ce62a7356559e9faa7cc7a7198b092826",
+          "title": "DÉTER - DÉcarboner le TERtiaire",
+          "sourceId": "ademe",
+          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/deter-decarboner-le-tertiaire"
+        },
+        {
+          "id": "ademe_b560455b7e6f876f5dccdd74f3ec69d2945ce4bcc163f1f9ecc54556bb5ccdf6",
+          "title": "Développement de briques technologiques et démonstrateurs - Réalisations de premières industrielles associant l'offre et la demande (DEMIBaC)",
+          "sourceId": "ademe",
+          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/developpement-de-briques-technologiques-et-demonstrateurs-realisations-de-premieres-industrielles-associant-loffre-et-la-demande-demibac"
+        },
+        {
+          "id": "ademe_91d48a13944f2049d277528f42910ad0af150b70ba80e80499d3427c49f96eab",
+          "title": "Développement de briques technologiques et services par des PME pour la décarbonation de l’industrie (IBaC PME)",
+          "sourceId": "ademe",
+          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/developpement-de-briques-technologiques-et-services-par-des-pme-pour-la-decarbonation-de-lindustrie-ibac-pme"
+        },
+        {
+          "id": "ademe_2ad5c5e68cdd9a5128f64be826a01b2f3b3c18bb989bdd4fd2a6f71b3973bb09",
+          "title": "Diagnostic énergétique et étude d'opportunité multi-EnR pour les serres",
+          "sourceId": "ademe",
+          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/diagnostic-energetique-et-etude-dopportunite-multi-enr-pour-les-serres"
+        },
+        {
+          "id": "ademe_c25746780d4fc5d08263cf71eeac960cfd169ea1b9508f5bd0756823c10ef0b8",
+          "title": "Émergence et consolidation d'une économie circulaire en Outre-mer et Corse",
+          "sourceId": "ademe",
+          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse"
+        },
+        {
+          "id": "ademe_b0326313e4f848ff92b99e97abca534127525bf83234aaf05dcc6d9ad46877b2",
+          "title": "Engins de chantier électriques 2026 – Programme CEE E-Trans",
+          "sourceId": "ademe",
+          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/engins-de-chantier-electriques-2026-programme-cee-e-trans"
+        },
+        {
+          "id": "ademe_6c7e408db130206201b445d6aac17bbfe249ea1b397c6e8878b6991557c34ecd",
+          "title": "Équipements pour l’approvisionnement de chaufferies bois du Fonds chaleur et/ou Plan de relance et/ou France 2030",
+          "sourceId": "ademe",
+          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/equipements-pour-lapprovisionnement-de-chaufferies-bois-du-fonds-chaleur-etou-plan-de-relance-etou-france-2030"
+        },
+        {
+          "id": "ademe_80e598917a965f4fcb3a91b94b2325f5f4400029866c12aca95cf722391d268a",
+          "title": "Étude d'aide à la décision pour les projets de géothermie de surface, d'aérothermie ou de thalassothermie",
+          "sourceId": "ademe",
+          "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etude-daide-la-decision-pour-les-projets-de-geothermie-de-surface-daerothermie-ou-de-thalassothermie"
+        }
+      ]
+    }
+  },
+  "library": {
+    "raw": 206,
+    "publishable": 141,
+    "quarantined": 65,
+    "orphanSource": 0,
+    "duplicateOfficialUrl": 0,
+    "missingOfficialUrl": 0,
+    "invalidOfficialUrl": 0,
+    "forbiddenAggregator": 0,
+    "genericTitle": 0,
+    "outOfTargetInstrument": 0,
+    "staleOrInactive": 0,
+    "expiredButActive": 0,
+    "dateInversion": 0,
+    "regionalWithoutRegion": 0,
+    "invalidCompanyCategory": 0,
+    "noEvidence": 0,
+    "noGuichetEvidence": 0,
+    "noStatusEvidence": 0,
+    "noInstrumentEvidence": 0,
+    "noEnterpriseEvidence": 0,
+    "sourceLinksAggregator": 0,
+    "sourceLinksDuplicate": 0
+  },
+  "publicationDuplicates": [],
+  "sourceRegistry": {
+    "configured": 118,
+    "duplicateUrls": [],
+    "excludedStillConfigured": [],
+    "lock": {
+      "missingSources": [],
+      "controlSources": [],
+      "primaryOutsideLock": []
+    },
+    "pendingCalibration": [
+      {
+        "id": "bretagne",
+        "name": "Région Bretagne — catalogue des aides",
+        "scope": "Bretagne",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "cvl",
+        "name": "Région Centre-Val de Loire — guide des aides",
+        "scope": "Centre-Val de Loire",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "corse",
+        "name": "Corse — ADEC aides et financements entreprises",
+        "scope": "Corse",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "grand_est",
+        "name": "Région Grand Est — aides régionales",
+        "scope": "Grand Est",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "hdf",
+        "name": "Région Hauts-de-France — guide des aides",
+        "scope": "Hauts-de-France",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "naquitaine",
+        "name": "Région Nouvelle-Aquitaine — Guide des aides",
+        "scope": "Nouvelle-Aquitaine",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "paca",
+        "name": "Région Sud — aides et appels à projets entreprises",
+        "scope": "Provence-Alpes-Côte d'Azur",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "guadeloupe",
+        "name": "Région Guadeloupe — guide des aides",
+        "scope": "Guadeloupe",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "guyane",
+        "name": "Collectivité Territoriale de Guyane — AAP / AMI",
+        "scope": "Guyane",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "martinique",
+        "name": "Collectivité Territoriale de Martinique — aides aux entreprises",
+        "scope": "Martinique",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "reunion",
+        "name": "Région Réunion — Aides & Services entreprises",
+        "scope": "La Réunion",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "mayotte",
+        "name": "Département-Région de Mayotte — aides aux entreprises",
+        "scope": "Mayotte",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "anr_france2030",
+        "name": "ANR — France 2030",
+        "scope": "France",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "aura_feder",
+        "name": "Auvergne-Rhône-Alpes — FEDER/FSE+/FTJ",
+        "scope": "Auvergne-Rhône-Alpes",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "bfc_subventions",
+        "name": "Bourgogne-Franche-Comté — portail subventions/règlements",
+        "scope": "Bourgogne-Franche-Comté",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "bfc_europe",
+        "name": "Bourgogne-Franche-Comté — FEDER/FEADER",
+        "scope": "Bourgogne-Franche-Comté",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "bretagne_europe",
+        "name": "Bretagne — FEDER/FEADER/FEAMPA",
+        "scope": "Bretagne",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "cvl_france2030",
+        "name": "Centre-Val de Loire — France 2030 régionalisé",
+        "scope": "Centre-Val de Loire",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "cvl_europe",
+        "name": "Centre-Val de Loire — FEDER/FEADER",
+        "scope": "Centre-Val de Loire",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "corse_europa",
+        "name": "Corse — FEDER/FSE+/FEADER",
+        "scope": "Corse",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "corse_odarc",
+        "name": "Corse — ODARC / FEADER",
+        "scope": "Corse",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "grand_est_europe",
+        "name": "Grand Est — BE EUROPE FEDER/FSE+/FTJ/FEADER",
+        "scope": "Grand Est",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "guadeloupe_france2030",
+        "name": "Guadeloupe — France 2030 régionalisé",
+        "scope": "Guadeloupe",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "guadeloupe_europe",
+        "name": "Guadeloupe — FEDER/FSE+/FEADER/FEAMPA",
+        "scope": "Guadeloupe",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "guadeloupe_feder",
+        "name": "Guadeloupe — FEDER compétitivité entreprises",
+        "scope": "Guadeloupe",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "guadeloupe_feader",
+        "name": "Guadeloupe — FEADER 2023-2027",
+        "scope": "Guadeloupe",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "guyane_europe",
+        "name": "Europe Guyane — fonds européens",
+        "scope": "Guyane",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "guyane_europe_aap",
+        "name": "Europe Guyane — appels à projets",
+        "scope": "Guyane",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "guyane_feder",
+        "name": "Guyane — FEDER 2021-2027",
+        "scope": "Guyane",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "guyane_feader",
+        "name": "Guyane — FEADER / PSN 2023-2027",
+        "scope": "Guyane",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "hdf_hdfid_aap",
+        "name": "Hauts-de-France Innovation Développement — appels à projets",
+        "scope": "Hauts-de-France",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "hdf_europe",
+        "name": "Europe en Hauts-de-France — FEDER/FSE+/FTJ/FEADER",
+        "scope": "Hauts-de-France",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "hdf_feder_programme",
+        "name": "Hauts-de-France — Programme FEDER/FSE+/FTJ 2021-2027",
+        "scope": "Hauts-de-France",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "idf_france2030",
+        "name": "Île-de-France — France 2030 régionalisé",
+        "scope": "Île-de-France",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "idf_europe",
+        "name": "L’Europe en Île-de-France — FEDER/FSE+/FEADER",
+        "scope": "Île-de-France",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "idf_europe_aap",
+        "name": "Île-de-France — appels FEDER/FSE+/FEADER",
+        "scope": "Île-de-France",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "reunion_aap",
+        "name": "Région Réunion — appels à projets",
+        "scope": "La Réunion",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "reunion_france2030",
+        "name": "La Réunion — France 2030 régionalisé",
+        "scope": "La Réunion",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "reunion_feder",
+        "name": "La Réunion — FEDER/FSE+ 2021-2027",
+        "scope": "La Réunion",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "reunion_europe_filter",
+        "name": "La Réunion — Aides & Services Fonds européens",
+        "scope": "La Réunion",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "reunion_feader",
+        "name": "La Réunion — FEADER 2023-2027",
+        "scope": "La Réunion",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "martinique_europe",
+        "name": "Europe Martinique — portail des fonds européens",
+        "scope": "Martinique",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "martinique_europe_aap",
+        "name": "Europe Martinique — AAP / AMI 2021-2027",
+        "scope": "Martinique",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "martinique_feder",
+        "name": "Martinique — FEDER 2021-2027",
+        "scope": "Martinique",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "martinique_feder_domo",
+        "name": "Martinique — fiches DOMO FEDER 2021-2027",
+        "scope": "Martinique",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "martinique_feader",
+        "name": "Martinique — FEADER 2023-2027 / PSN",
+        "scope": "Martinique",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "mayotte_aap",
+        "name": "Département-Région de Mayotte — appels à projets / AMI",
+        "scope": "Mayotte",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "mayotte_adim",
+        "name": "ADIM Mayotte — aides aux entreprises",
+        "scope": "Mayotte",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "mayotte_france2030",
+        "name": "Mayotte — France 2030 régionalisé",
+        "scope": "Mayotte",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "mayotte_europe",
+        "name": "L'Europe à Mayotte — FEDER / fonds européens",
+        "scope": "Mayotte",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "mayotte_europe_aap",
+        "name": "L'Europe à Mayotte — appels à projets",
+        "scope": "Mayotte",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "mayotte_feder_actions",
+        "name": "Préfecture de Mayotte — fiches actions FEDER/FSE+ 2021-2027",
+        "scope": "Mayotte",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "mayotte_feader",
+        "name": "DAAF Mayotte — FEADER / PSN 2023-2027",
+        "scope": "Mayotte",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "normandie_entreprises",
+        "name": "Région Normandie — accompagner les entreprises",
+        "scope": "Normandie",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "normandie_europe",
+        "name": "Europe en Normandie — FEDER/FSE+/FTJ/FEADER",
+        "scope": "Normandie",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "normandie_feader",
+        "name": "Normandie — FEADER 2023-2027",
+        "scope": "Normandie",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "normandie_europe_ressources",
+        "name": "Europe en Normandie — ressources / DOMO / CdC",
+        "scope": "Normandie",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "nouvelle_aquitaine_entreprises",
+        "name": "Nouvelle-Aquitaine — portail entreprises / aides",
+        "scope": "Nouvelle-Aquitaine",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "nouvelle_aquitaine_france2030_innovation",
+        "name": "France 2030 régionalisé — Projets d’innovation — Nouvelle-Aquitaine",
+        "scope": "Nouvelle-Aquitaine",
+        "strategy": "official-page",
+        "currentLock": false
+      },
+      {
+        "id": "nouvelle_aquitaine_europe_aap",
+        "name": "Nouvelle-Aquitaine — appels à projets FEDER/FEADER",
+        "scope": "Nouvelle-Aquitaine",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "nouvelle_aquitaine_feader",
+        "name": "Nouvelle-Aquitaine — FEADER 2023-2027",
+        "scope": "Nouvelle-Aquitaine",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "nouvelle_aquitaine_europe",
+        "name": "Europe en Nouvelle-Aquitaine — portail des fonds européens",
+        "scope": "Nouvelle-Aquitaine",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "occitanie_site_aides",
+        "name": "Région Occitanie — catalogue web aides et appels à projets",
+        "scope": "Occitanie",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "occitanie_feder_feader",
+        "name": "Europe en Occitanie — FEDER/FSE+/FEADER",
+        "scope": "Occitanie",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "occitanie_feader",
+        "name": "Occitanie — FEADER 2023-2027",
+        "scope": "Occitanie",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "occitanie_france2030_innovation",
+        "name": "Occitanie — France 2030 régionalisé Projets d'innovation",
+        "scope": "Occitanie",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "occitanie_france2030_idemo",
+        "name": "Occitanie — France 2030 régionalisé I-Démo",
+        "scope": "Occitanie",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "occitanie_foster",
+        "name": "Occitanie — FOSTER prêts innovation / instruments financiers",
+        "scope": "Occitanie",
+        "strategy": "official-page",
+        "currentLock": false
+      },
+      {
+        "id": "occitanie_contrat_innovation",
+        "name": "Occitanie — Contrat Innovation",
+        "scope": "Occitanie",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "occitanie_transformation_ecologique",
+        "name": "Occitanie — Pass Transformation Écologique",
+        "scope": "Occitanie",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "pdl_feder",
+        "name": "Pays de la Loire — FEDER 2021-2027",
+        "scope": "Pays de la Loire",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "pdl_feader",
+        "name": "Pays de la Loire — FEADER 2023-2027",
+        "scope": "Pays de la Loire",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "pdl_innovation",
+        "name": "Pays de la Loire Innovation — Région / Bpifrance",
+        "scope": "Pays de la Loire",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "paca_aides_master",
+        "name": "Région Sud — catalogue Vos Aides",
+        "scope": "Provence-Alpes-Côte d'Azur",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "paca_france2030_innovation",
+        "name": "Région Sud — France 2030 régionalisé Projets d'innovation",
+        "scope": "Provence-Alpes-Côte d'Azur",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "paca_france2030_filieres",
+        "name": "Région Sud — France 2030 régionalisé Filières",
+        "scope": "Provence-Alpes-Côte d'Azur",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "paca_france2030_idemo",
+        "name": "Région Sud — France 2030 régionalisé I-Démo",
+        "scope": "Provence-Alpes-Côte d'Azur",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "paca_europe_calendar",
+        "name": "Europe en Région Sud — calendrier FEDER/FSE+/FTJ",
+        "scope": "Provence-Alpes-Côte d'Azur",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "paca_feader",
+        "name": "Europe en Région Sud — FEADER 2023-2027",
+        "scope": "Provence-Alpes-Côte d'Azur",
+        "strategy": "catalog-html",
+        "currentLock": false
+      },
+      {
+        "id": "paca_feder_loan",
+        "name": "Région Sud — Prêt FEDER Sud Innovation",
+        "scope": "Provence-Alpes-Côte d'Azur",
+        "strategy": "official-page",
+        "currentLock": false
+      },
+      {
+        "id": "nouvelle_aquitaine_france2030_filieres",
+        "name": "France 2030 régionalisé — Projets de filières — Nouvelle-Aquitaine",
+        "scope": "Nouvelle-Aquitaine",
+        "strategy": "official-page",
+        "currentLock": false
+      },
+      {
+        "id": "nouvelle_aquitaine_france2030_idemo",
+        "name": "France 2030 régionalisé — I-Démo — Nouvelle-Aquitaine",
+        "scope": "Nouvelle-Aquitaine",
+        "strategy": "official-page",
+        "currentLock": false
+      },
+      {
+        "id": "bfc_france2030_innovation_direct",
+        "name": "Bourgogne-Franche-Comté — France 2030 — Projets d’innovation",
+        "scope": "Bourgogne-Franche-Comté",
+        "strategy": "official-page",
+        "currentLock": false
+      },
+      {
+        "id": "bretagne_france2030_innovation_direct",
+        "name": "Bretagne — France 2030 — INNO AVENIR Projets",
+        "scope": "Bretagne",
+        "strategy": "official-page",
+        "currentLock": false
+      },
+      {
+        "id": "grand_est_france2030_innovation_direct",
+        "name": "Grand Est — France 2030 — Projets d’innovation",
+        "scope": "Grand Est",
+        "strategy": "official-page",
+        "currentLock": false
+      },
+      {
+        "id": "guyane_france2030_innovation_direct",
+        "name": "Guyane — France 2030 — Projets d’innovation",
+        "scope": "Guyane",
+        "strategy": "official-page",
+        "currentLock": false
+      },
+      {
+        "id": "hdf_france2030_innovation_direct",
+        "name": "Hauts-de-France — France 2030 — Projets d’innovation",
+        "scope": "Hauts-de-France",
+        "strategy": "official-page",
+        "currentLock": false
+      },
+      {
+        "id": "martinique_france2030_innovation_direct",
+        "name": "Martinique — France 2030 — Projets d’innovation",
+        "scope": "Martinique",
+        "strategy": "official-page",
+        "currentLock": false
+      },
+      {
+        "id": "normandie_france2030_innovation_direct",
+        "name": "Normandie — France 2030 — Projets d’innovation",
+        "scope": "Normandie",
+        "strategy": "official-page",
+        "currentLock": false
+      },
+      {
+        "id": "pdl_france2030_innovation_direct",
+        "name": "Pays de la Loire — France 2030 — Projets d’innovation",
+        "scope": "Pays de la Loire",
+        "strategy": "official-page",
+        "currentLock": false
+      },
+      {
+        "id": "grand_est_cinemas_independants",
+        "name": "Grand Est — Aide en investissement des cinémas indépendants",
+        "scope": "Grand Est",
+        "strategy": "official-page",
+        "currentLock": false
+      }
+    ]
+  },
+  "architecture": {
+    "packageScriptTargets": [
+      "scripts/update-library.mjs",
+      "scripts/validate-library.mjs",
+      "scripts/quality-report.mjs",
+      "scripts/audit-sources.mjs",
+      "scripts/generate-daily-report.mjs",
+      "scripts/build-search-index.mjs",
+      "scripts/preflight-sources.mjs",
+      "scripts/production-gates.mjs",
+      "scripts/audit-ingestion.mjs",
+      "scripts/sync-static-metadata.mjs",
+      "scripts/uat-relevance.mjs",
+      "scripts/live-smoke.mjs",
+      "scripts/remediation-report.mjs",
+      "scripts/certify-production.mjs",
+      "scripts/audit-criteria.mjs",
+      "scripts/build-cloudflare-pages.mjs",
+      "scripts/purge-indirect-sources.mjs",
+      "scripts/certify-active-source.mjs",
+      "scripts/deep-audit.mjs"
+    ],
+    "missingScriptTargets": [],
+    "workflowNpmScripts": [
+      "validate",
+      "audit:sources",
+      "preflight:sources",
+      "update:full",
+      "certify:active",
+      "sync:metadata",
+      "build:index",
+      "audit:ingestion",
+      "audit:criteria",
+      "audit:deep:strict",
+      "uat",
+      "smoke:live",
+      "qa",
+      "remediation",
+      "production:gates",
+      "build:cloudflare",
+      "certify:production"
+    ],
+    "missingWorkflowScripts": [],
+    "forbiddenArtifactsPresent": []
+  },
+  "coverage": {
+    "rows": 6,
+    "orphans": [],
+    "missingCurrentCoverage": [],
+    "failedCount": 0,
+    "failed": []
+  },
+  "metadata": {
+    "manifestGeneratedAt": "2026-10-15T04:09:50.406Z",
+    "manifestSourceCount": 118,
+    "manifestLock": {
+      "locked": true,
+      "mode": "REGION",
+      "name": "Bourgogne-Franche-Comté",
+      "allowedSourceIds": [
+        "bfc"
+      ],
+      "next": "Bretagne",
+      "frozenUnselectedSha": "189b87081f1a7814c0a69c1150c830104c6bf9948d0b2b8eb37afe5ac278508a"
+    }
+  },
+  "historicalCertifications": {
+    "ademe-certification.json": {
+      "status": "PASS",
+      "generatedAt": "2026-10-04T19:39:09.582Z",
+      "problems": [],
+      "libraryRecords": 68
+    },
+    "bpifrance-certification.json": {
+      "status": "PASS",
+      "generatedAt": "2026-10-04T19:39:08.950Z",
+      "problems": [],
+      "libraryRecords": 36
+    }
+  },
+  "certificationIntegrity": {
+    "freshnessWarningHours": 72,
+    "freshness": [
+      {
+        "file": "aura-certification.json",
+        "name": "AURA",
+        "generatedAt": "2026-10-04T19:39:10.204Z",
+        "ageHours": 248.6,
+        "status": "STALE"
+      },
+      {
+        "file": "bourgogne-franche-comte-certification.json",
+        "name": "Bourgogne-Franche-Comté",
+        "generatedAt": "2026-10-15T04:14:33.515Z",
+        "ageHours": 0,
+        "status": "FRESH"
+      },
+      {
+        "file": "bpifrance-certification.json",
+        "name": "Bpifrance",
+        "generatedAt": "2026-10-04T19:39:08.950Z",
+        "ageHours": 248.6,
+        "status": "STALE"
+      }
+    ],
+    "active": {
+      "present": true,
+      "status": "PASS",
+      "lockName": "Bourgogne-Franche-Comté",
+      "expectedLockName": "Bourgogne-Franche-Comté",
+      "sourceIdsMatch": true,
+      "sourceFingerprintMatch": true,
+      "basisFingerprintMatch": true,
+      "dataFingerprintMatch": true
+    },
+    "rejected": [
+      {
+        "file": "ademe-certification.json",
+        "name": "ADEME",
+        "generatedAt": "2026-10-04T19:39:09.582Z",
+        "sourceIds": [
+          "ademe"
+        ],
+        "reason": "CERTIFIED_DATA_CHANGED",
+        "certifiedDataFingerprint": "452f4970f40094846d3f513dd7332d66f5a482d53314090f934608daa3b1661e",
+        "currentDataFingerprint": "876585e23c2bf600a5d224fb3af2f51ff76b1c99a132d001d176ce756772757c"
+      }
+    ]
+  },
+  "certifiedEvidenceDebt": {
+    "missingGuichet": 0,
+    "missingStatus": 0,
+    "missingInstrument": 0,
+    "missingEnterprise": 0
+  },
+  "publishedQuality": {
+    "noEvidence": 0,
+    "noGuichetEvidence": 0,
+    "noStatusEvidence": 0,
+    "noInstrumentEvidence": 0,
+    "noEnterpriseEvidence": 0,
+    "expiredButActive": 0,
+    "invalidCompanyCategory": 0,
+    "regionalWithoutRegion": 0
+  },
+  "severity": {
+    "p0": [],
+    "p1": [
+      "2 certificat(s) PASS datent de plus de 72 h — maintenance opérationnelle à rafraîchir",
+      "1 certificat(s) historique(s) ne déverrouillent plus la publication et doivent être recertifiés (CERTIFIED_DATA_CHANGED: 1)"
+    ],
+    "p2": [
+      "91 source(s) future(s) non calibrée(s), bloquées automatiquement jusqu’à mesure du référentiel officiel",
+      "65 fiche(s) brutes en quarantaine de publication"
+    ]
+  },
+  "samples": {
+    "raw": {},
+    "published": {}
+  }
+}

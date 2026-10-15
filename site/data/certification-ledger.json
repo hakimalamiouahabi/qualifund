@@ -1,9 +1,8 @@
 {
-  "generatedAt": "2026-10-15T04:09:06.909Z",
+  "generatedAt": "2026-10-15T04:14:34.167Z",
   "version": "12.9.3",
   "policy": "CERTIFIED_SOURCE_ONLY",
   "unlockedSourceIds": [
-    "ademe",
     "aura",
     "bfc",
     "bpifrance_aap",
@@ -11,29 +10,11 @@
     "bpifrance_rebond_industriel"
   ],
   "guichets": [
-    "ADEME",
     "AURA",
     "Bourgogne-Franche-Comté",
     "Bpifrance"
   ],
   "certifications": [
-    {
-      "file": "ademe-certification.json",
-      "name": "ADEME",
-      "generatedAt": "2026-10-04T19:39:09.582Z",
-      "status": "PASS",
-      "sourceIds": [
-        "ademe"
-      ],
-      "libraryRecords": 68,
-      "fingerprintStatus": "MATCH",
-      "sourceConfigFingerprint": "f0d1cd6f6e119f57e75653b884a26a4a306c31fe8233d3b4815d566393f6030a",
-      "currentSourceConfigFingerprint": "f0d1cd6f6e119f57e75653b884a26a4a306c31fe8233d3b4815d566393f6030a",
-      "certificationBasisFingerprint": "cae28eff4d403121bc3916a521be2c2010035426b9d3442e379ea11656519850",
-      "currentCertificationBasisFingerprint": "cae28eff4d403121bc3916a521be2c2010035426b9d3442e379ea11656519850",
-      "certifiedDataFingerprint": "452f4970f40094846d3f513dd7332d66f5a482d53314090f934608daa3b1661e",
-      "currentDataFingerprint": "452f4970f40094846d3f513dd7332d66f5a482d53314090f934608daa3b1661e"
-    },
     {
       "file": "aura-certification.json",
       "name": "AURA",
@@ -54,7 +35,7 @@
     {
       "file": "bourgogne-franche-comte-certification.json",
       "name": "Bourgogne-Franche-Comté",
-      "generatedAt": "2026-10-04T19:42:38.486Z",
+      "generatedAt": "2026-10-15T04:14:33.515Z",
       "status": "PASS",
       "sourceIds": [
         "bfc"
@@ -65,8 +46,8 @@
       "currentSourceConfigFingerprint": "a83245515b67a4b4dba0fe8ed5ba97d06a46ffb325de0bd6a224cc89bf4d35dc",
       "certificationBasisFingerprint": "60c44f0a3cbe46358c472c122df5e81289bcf632b0f8f6510a8df314cf505b77",
       "currentCertificationBasisFingerprint": "60c44f0a3cbe46358c472c122df5e81289bcf632b0f8f6510a8df314cf505b77",
-      "certifiedDataFingerprint": "87a80c616a35c77b58d228ba6498fcd73480cb536dbf34f9511229869b88ea91",
-      "currentDataFingerprint": "87a80c616a35c77b58d228ba6498fcd73480cb536dbf34f9511229869b88ea91"
+      "certifiedDataFingerprint": "7fa3e8000bf944759b77501cf9225a2144cc9af109ed42ea6fc9fc7932a51e3c",
+      "currentDataFingerprint": "7fa3e8000bf944759b77501cf9225a2144cc9af109ed42ea6fc9fc7932a51e3c"
     },
     {
       "file": "bpifrance-certification.json",
@@ -88,5 +69,17 @@
       "currentDataFingerprint": "c5dcd6cc14ea0e82c3660e35a3645132c53536f15d5f660ec44cf17656dd9b62"
     }
   ],
-  "rejectedCertifications": []
+  "rejectedCertifications": [
+    {
+      "file": "ademe-certification.json",
+      "name": "ADEME",
+      "generatedAt": "2026-10-04T19:39:09.582Z",
+      "sourceIds": [
+        "ademe"
+      ],
+      "reason": "CERTIFIED_DATA_CHANGED",
+      "certifiedDataFingerprint": "452f4970f40094846d3f513dd7332d66f5a482d53314090f934608daa3b1661e",
+      "currentDataFingerprint": "876585e23c2bf600a5d224fb3af2f51ff76b1c99a132d001d176ce756772757c"
+    }
+  ]
 }
