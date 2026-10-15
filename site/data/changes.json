@@ -105,12 +105,6 @@
   },
   {
     "type": "CREATION",
-    "id": "ademe_1dc26899bf6a8255c6c378eb9b177a03a060d8cfd37eaad7648ee68d0f72cb3b",
-    "title": "AMI Low-tech 2026",
-    "at": "2026-09-30T18:57:23.532Z"
-  },
-  {
-    "type": "CREATION",
     "id": "ademe_c48cc10ec1a72e5e359f8db8c1a07464e1eeb40a7bf61095bb9eb7f034c219f7",
     "title": "AQACIA 2026 – Particules, ozone, produits phytopharmaceutiques et pollutions sectorielles",
     "at": "2026-09-30T18:57:23.532Z"
@@ -178,12 +172,6 @@
   },
   {
     "type": "CREATION",
-    "id": "ademe_947a613dda9eabaf876a70de7b269d69ba65ddc0ce5404ddef39512b0a19a3f4",
-    "title": "Mobili'Pro : optimisation des déplacements professionnels",
-    "at": "2026-09-30T18:57:23.533Z"
-  },
-  {
-    "type": "CREATION",
     "id": "ademe_e2a707273a0b537ce7158c746a91357ee0d322f5c10cec005eb1bc2054eac45e",
     "title": "Plan d’aides à la modernisation et à l’innovation de la flotte (PAMI)",
     "at": "2026-09-30T18:57:23.533Z"
@@ -192,12 +180,6 @@
     "type": "CREATION",
     "id": "ademe_d9427ca755dd4d5c2dc1a522fb8fb0961e3c064d50314c3fcd4631a91078b7d0",
     "title": "Promouvoir des solutions de mobilité à forts co-bénéfices qualité de l’air et santé en Occitanie - Dépôt",
-    "at": "2026-09-30T18:57:23.533Z"
-  },
-  {
-    "type": "CREATION",
-    "id": "ademe_f718d9114d92a75d69528b8ad5c50ab619be41e46b7105afa719b3d6639b8b09",
-    "title": "Systèmes performants de production de froid en Outre-mer et Corse",
     "at": "2026-09-30T18:57:23.533Z"
   },
   {
@@ -1446,13 +1428,6 @@
   },
   {
     "type": "MODIFICATION",
-    "id": "ademe_1dc26899bf6a8255c6c378eb9b177a03a060d8cfd37eaad7648ee68d0f72cb3b",
-    "title": "AMI Low-tech 2026",
-    "fields": [],
-    "at": "2026-10-03T14:58:21.693Z"
-  },
-  {
-    "type": "MODIFICATION",
     "id": "ademe_c48cc10ec1a72e5e359f8db8c1a07464e1eeb40a7bf61095bb9eb7f034c219f7",
     "title": "AQACIA 2026 – Particules, ozone, produits phytopharmaceutiques et pollutions sectorielles",
     "fields": [],
@@ -1726,13 +1701,6 @@
     "at": "2026-10-03T14:58:21.693Z"
   },
   {
-    "type": "MODIFICATION",
-    "id": "ademe_947a613dda9eabaf876a70de7b269d69ba65ddc0ce5404ddef39512b0a19a3f4",
-    "title": "Mobili'Pro : optimisation des déplacements professionnels",
-    "fields": [],
-    "at": "2026-10-03T14:58:21.693Z"
-  },
-  {
     "type": "CREATION",
     "id": "ademe_262799eb2237ae09ec800afe442e7d0b5b4053be5aeafbd10778468f0a98c4a7",
     "title": "Mon parcours économies d'énergie - Accompagnements ACT® Pas-à-Pas et ACT® Évaluation des structures non industrielles",
@@ -1822,13 +1790,6 @@
     "type": "CREATION",
     "id": "ademe_5d14eddc86f2e1efd4f9dde0c186df3a3a8e0ad9f99f53a55a0fab3561a0842b",
     "title": "Soutien aux investissements pour le réemploi-réutilisation et la réparation (hors emballages)",
-    "at": "2026-10-03T14:58:21.693Z"
-  },
-  {
-    "type": "MODIFICATION",
-    "id": "ademe_f718d9114d92a75d69528b8ad5c50ab619be41e46b7105afa719b3d6639b8b09",
-    "title": "Systèmes performants de production de froid en Outre-mer et Corse",
-    "fields": [],
     "at": "2026-10-03T14:58:21.693Z"
   },
   {

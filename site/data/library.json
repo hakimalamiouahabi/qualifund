@@ -2,22 +2,22 @@
   "meta": {
     "version": "12.9.3",
     "generatedAt": "2026-10-04T19:32:03.739Z",
-    "purgedAt": null,
+    "purgedAt": "2026-10-15T04:09:07.059Z",
     "repositoryUrl": "https://github.com/hakimalamiouahabi/qualifund",
     "sourcePolicy": "DIRECT_OFFICIAL_ONLY",
     "libraryMode": "DIRECT_OFFICIAL_CATALOG",
-    "count": 209,
-    "libraryCount": 209,
-    "rawLibraryCount": 209,
-    "activeCount": 209,
-    "jPlusOneDate": "2026-10-05",
-    "jPlusOneActiveCount": 209,
+    "count": 206,
+    "libraryCount": 206,
+    "rawLibraryCount": 206,
+    "activeCount": 206,
+    "jPlusOneDate": "2026-10-16",
+    "jPlusOneActiveCount": 206,
     "archivedCount": 0,
     "staleCount": 0,
-    "aapCount": 40,
+    "aapCount": 37,
     "verifiedCount": 0,
     "withCdc": 92,
-    "withDeadline": 127,
+    "withDeadline": 124,
     "sourceCount": 118,
     "activeCollectionSourceCount": 1,
     "libraryInstruments": [
@@ -32,8 +32,8 @@
       "PRET_TAUX_ZERO",
       "APPEL_A_PROJET"
     ],
-    "targetInstrumentCount": 209,
-    "directLinkCount": 209,
+    "targetInstrumentCount": 206,
+    "directLinkCount": 206,
     "missingDirectLinkCount": 0,
     "categoryCounts": {
       "STARTUP": 9,
@@ -42,11 +42,11 @@
       "GE": 8
     },
     "scopeCounts": {
-      "NATIONAL": 104,
+      "NATIONAL": 101,
       "REGIONAL": 105
     },
     "instrumentCounts": {
-      "APPEL_A_PROJET": 40,
+      "APPEL_A_PROJET": 37,
       "AVANCE_REMBOURSABLE": 23,
       "PRET_TAUX_ZERO": 9,
       "SUBVENTION": 175
@@ -61,8 +61,8 @@
       "afterDirectSanitization": 209,
       "afterCertifiedScope": 209,
       "removedOutOfTarget": 0,
-      "removedCertifiedQuarantine": 0,
-      "retainedOperational": 209
+      "removedCertifiedQuarantine": 3,
+      "retainedOperational": 206
     },
     "collectionLock": {
       "locked": true,
@@ -73,19 +73,7 @@
       ],
       "next": "Bretagne",
       "frozenUnselectedSha": "38b27623c70898741ee248ec4eeb1265e0ca17e337cf2c02a230a1e89fe291d9"
-    },
-    "publishedCount": 209,
-    "publishedActiveCount": 209,
-    "quarantinedCount": 0,
-    "certifiedSourceCount": 6,
-    "certifiedSources": [
-      "ademe",
-      "aura",
-      "bfc",
-      "bpifrance_aap",
-      "bpifrance_aides",
-      "bpifrance_rebond_industriel"
-    ]
+    }
   },
   "aaps": [
     {
@@ -10412,230 +10400,6 @@
         "MISSING_DISBURSEMENT_TERMS"
       ],
       "contentHash": "d1922f9ba9bdcfba47d76cf5fed79004f8f029d132ffc6186f9302cca3facf81"
-    },
-    {
-      "id": "ademe_1dc26899bf6a8255c6c378eb9b177a03a060d8cfd37eaad7648ee68d0f72cb3b",
-      "canonicalId": "ademe_1dc26899bf6a8255c6c378eb9b177a03a060d8cfd37eaad7648ee68d0f72cb3b",
-      "sourceId": "ademe",
-      "sourceRecordId": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/ami-low-tech-2026",
-      "title": "AMI Low-tech 2026",
-      "kind": "AAP / AMI",
-      "programme": null,
-      "operator": null,
-      "objective": "du 20/07/2026 - 08:00 au 15/10/2026 - 23:55 - Heure de Paris &lt;p&gt;L'appel à manifestation d'intérêt (AMI) vise à offrir un soutien et un accompagnement&nbsp;financier au développement de produits, procédés, services et pratiques low-tech, en région Centre-Val-de-Loire.&lt;/p&gt;",
-      "beneficiaries": null,
-      "companyCategories": [],
-      "themes": [
-        "Transition numérique"
-      ],
-      "scope": "NATIONAL",
-      "regions": [
-        "Toutes les Régions"
-      ],
-      "aidTypes": [
-        "APPEL_A_PROJET"
-      ],
-      "openingDate": "2026-07-20",
-      "closingDate": "2026-10-15",
-      "finalClosingDate": "2026-10-15",
-      "deadlines": [
-        "2026-10-15"
-      ],
-      "permanent": false,
-      "cdcLinks": [],
-      "sourceLinks": [
-        {
-          "label": "Page officielle ADEME",
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/ami-low-tech-2026"
-        }
-      ],
-      "regulationLinks": [],
-      "formLinks": [],
-      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/ami-low-tech-2026",
-      "funder": [
-        "ADEME"
-      ],
-      "lifecycleStatus": "ACTIVE",
-      "verification": {
-        "status": "A_REVERIFIER",
-        "sourceTier": "B",
-        "lastChecked": "2026-10-03T14:57:14.037Z",
-        "fieldEvidence": [
-          {
-            "field": "catalogueMembership",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/rss/appels-a-projet",
-            "sourceTier": "B",
-            "locator": "rss-active-item",
-            "evidenceText": "Délai de dépôt des dossiers : du 20/07/2026 - 08:00 au 15/10/2026 - 23:55 - Heure de Paris &lt;p&gt;L'appel à manifestation d'intérêt (AMI) vise à offrir un soutien et un accompagnement&nbsp;financier au développement de produits, procédés, services et pratiques low-tech, en région Centre-Val-de-Loire.&lt;/p&gt;",
-            "checkedAt": "2026-09-30T18:56:33.056Z"
-          },
-          {
-            "field": "guichet",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/rss/appels-a-projet",
-            "sourceTier": "B",
-            "locator": "ademe-enterprises-inventory",
-            "evidenceText": "Référencé par le portail officiel ADEME Entreprises",
-            "checkedAt": "2026-09-30T18:56:33.056Z"
-          },
-          {
-            "field": "sourceStatus",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/rss/appels-a-projet",
-            "sourceTier": "B",
-            "locator": "rss-deadline",
-            "evidenceText": "Délai de dépôt des dossiers : du 20/07/2026 - 08:00 au 15/10/2026 - 23:55 - Heure de Paris &lt;p&gt;L'appel à manifestation d'intérêt (AMI) vise à offrir un soutien et un accompagnement&nbsp;financier au développement de produits, procédés, services et pratiques low-tech, en région Centre-Val-de-Loire.&lt;/p&gt;",
-            "checkedAt": "2026-09-30T18:56:33.056Z"
-          },
-          {
-            "field": "enterpriseEligibility",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue",
-            "sourceTier": "B",
-            "locator": "catalogue-entreprises",
-            "evidenceText": "Référencé dans le catalogue ADEME Entreprises",
-            "checkedAt": "2026-09-30T18:56:33.056Z"
-          },
-          {
-            "field": "catalogueKind",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/rss/appels-a-projet",
-            "sourceTier": "B",
-            "locator": "official-url-taxonomy",
-            "evidenceText": "AAP / AMI",
-            "checkedAt": "2026-09-30T18:56:33.056Z"
-          },
-          {
-            "field": "objective",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/ami-low-tech-2026",
-            "sourceTier": "B",
-            "locator": "section:objective",
-            "evidenceText": "Ce site utilise un service de sécurité pour se protéger contre les bots malveillants. Cette page s’affiche pendant que le site vérifie que vous n’êtes pas un bot.",
-            "checkedAt": "2026-09-30T18:56:41.966Z"
-          },
-          {
-            "field": "themes",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/ami-low-tech-2026",
-            "sourceTier": "B",
-            "locator": "page-text-match:themes",
-            "evidenceText": "Transition numérique",
-            "checkedAt": "2026-09-30T18:56:41.966Z"
-          },
-          {
-            "field": "catalogueMembership",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/rss/appels-a-projet",
-            "sourceTier": "B",
-            "locator": "rss-active-item",
-            "evidenceText": "Délai de dépôt des dossiers : du 20/07/2026 - 08:00 au 15/10/2026 - 23:55 - Heure de Paris &lt;p&gt;L'appel à manifestation d'intérêt (AMI) vise à offrir un soutien et un accompagnement&nbsp;financier au développement de produits, procédés, services et pratiques low-tech, en région Centre-Val-de-Loire.&lt;/p&gt;",
-            "checkedAt": "2026-10-03T14:57:14.037Z"
-          },
-          {
-            "field": "sourceStatus",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/rss/appels-a-projet",
-            "sourceTier": "B",
-            "locator": "rss-deadline",
-            "evidenceText": "Délai de dépôt des dossiers : du 20/07/2026 - 08:00 au 15/10/2026 - 23:55 - Heure de Paris &lt;p&gt;L'appel à manifestation d'intérêt (AMI) vise à offrir un soutien et un accompagnement&nbsp;financier au développement de produits, procédés, services et pratiques low-tech, en région Centre-Val-de-Loire.&lt;/p&gt;",
-            "checkedAt": "2026-10-03T14:57:14.037Z"
-          },
-          {
-            "field": "enterpriseEligibility",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue",
-            "sourceTier": "B",
-            "locator": "catalogue-entreprises",
-            "evidenceText": "Référencé dans le catalogue ADEME Entreprises",
-            "checkedAt": "2026-10-03T14:57:14.037Z"
-          },
-          {
-            "field": "catalogueKind",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/rss/appels-a-projet",
-            "sourceTier": "B",
-            "locator": "official-url-taxonomy",
-            "evidenceText": "AAP / AMI",
-            "checkedAt": "2026-10-03T14:57:14.037Z"
-          },
-          {
-            "field": "guichet",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres",
-            "sourceTier": "B",
-            "locator": "ademe-catalogue-policy",
-            "evidenceText": "Le référentiel Entreprises ADEME présente les subventions et appels à projets de l’ADEME ; les offres ADEME Investissement en fonds propres sont distinctes du catalogue d’aides financières.",
-            "checkedAt": "2026-10-03T14:57:14.037Z"
-          },
-          {
-            "field": "objective",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/ami-low-tech-2026",
-            "sourceTier": "B",
-            "locator": "section:objective",
-            "evidenceText": "Ce site utilise un service de sécurité pour se protéger contre les bots malveillants. Cette page s’affiche pendant que le site vérifie que vous n’êtes pas un bot.",
-            "checkedAt": "2026-10-03T14:57:45.932Z"
-          },
-          {
-            "field": "themes",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/ami-low-tech-2026",
-            "sourceTier": "B",
-            "locator": "page-text-match:themes",
-            "evidenceText": "Transition numérique",
-            "checkedAt": "2026-10-03T14:57:45.932Z"
-          }
-        ],
-        "completeness": 44,
-        "confidence": 9,
-        "coverage": {
-          "objective": "B",
-          "beneficiaries": null,
-          "financialTerms": null,
-          "projectsExpected": null,
-          "eligibleExpenses": null,
-          "calendar": null,
-          "prerequisites": null,
-          "selectionCriteria": null
-        }
-      },
-      "guichetVerified": "ADEME",
-      "sourcePortal": "ADEME",
-      "enterpriseEligible": true,
-      "catalogueVerified": true,
-      "catalogueKind": "AAP / AMI",
-      "catalogueStatus": "OPEN",
-      "catalogueInventoryMode": "RSS_ACTIVE_MIRROR",
-      "sourceState": "OPEN",
-      "guichetVerification": {
-        "status": "VERIFIED",
-        "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/rss/appels-a-projet",
-        "evidenceText": "Délai de dépôt des dossiers : du 20/07/2026 - 08:00 au 15/10/2026 - 23:55 - Heure de Paris &lt;p&gt;L'appel à manifestation d'intérêt (AMI) vise à offrir un soutien et un accompagnement&nbsp;financier au développement de produits, procédés, services et pratiques low-tech, en région Centre-Val-de-Loire.&lt;/p&gt;",
-        "checkedAt": "2026-09-30T18:56:33.056Z"
-      },
-      "lastSeenAt": "2026-10-03T14:57:38.413Z",
-      "projectsExpected": [],
-      "attentionPoints": [
-        "Bénéficiaires à vérifier.",
-        "Dépenses éligibles non documentées.",
-        "Pré-requis non documentés.",
-        "Cahier des charges / règlement non rattaché.",
-        "Modalités financières à vérifier."
-      ],
-      "sourceAliases": [
-        "ademe"
-      ],
-      "aidRate": {
-        "min": null,
-        "max": null,
-        "raw": null,
-        "byCompanySize": []
-      },
-      "aidAmount": {
-        "min": null,
-        "max": null,
-        "raw": null,
-        "byCompanySize": []
-      },
-      "qaFlags": [
-        "MISSING_BENEFICIARIES",
-        "MISSING_ELIGIBLE_EXPENSES",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_COMPANY_CATEGORY",
-        "MISSING_FINANCIAL_TERMS",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "contentHash": "fe321ba4aa073f0d78f7ee8d94eb8a2b7527588f971122db23f0d273951e768b"
     },
     {
       "title": "Appel à manifestation d’intérêt pour « Développer des formations innovantes en coopération avec l'Académie de l'Organisation Mondiale de la Santé »",
@@ -50591,230 +50355,6 @@
       "contentHash": "f60b6e30a4dc1b832b11d2e630066635a476b1248536f42f3ec16eddbb2db124"
     },
     {
-      "id": "ademe_947a613dda9eabaf876a70de7b269d69ba65ddc0ce5404ddef39512b0a19a3f4",
-      "canonicalId": "ademe_947a613dda9eabaf876a70de7b269d69ba65ddc0ce5404ddef39512b0a19a3f4",
-      "sourceId": "ademe",
-      "sourceRecordId": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/mobilipro-optimisation-des-deplacements-professionnels",
-      "title": "Mobili'Pro : optimisation des déplacements professionnels",
-      "kind": "AAP / AMI",
-      "programme": null,
-      "operator": null,
-      "objective": "du 22/06/2026 - 12:00 au 12/10/2026 - 12:00 - Heure de Paris &lt;p&gt;Le programme Mobili'Pro s’adresse aux employeurs privés ou publics disposant d’une flotte de véhicules professionnels. Il propose un diagnostic, des outils de suivi de la flotte et un plan d’action sur 3 ans pour engager une réduction de l’impact environnemental des déplacements professionnels.&lt;br&gt;&lt;/p&gt;",
-      "beneficiaries": null,
-      "companyCategories": [],
-      "themes": [
-        "Transition numérique"
-      ],
-      "scope": "NATIONAL",
-      "regions": [
-        "Toutes les Régions"
-      ],
-      "aidTypes": [
-        "APPEL_A_PROJET"
-      ],
-      "openingDate": "2026-06-22",
-      "closingDate": "2026-10-12",
-      "finalClosingDate": "2026-10-12",
-      "deadlines": [
-        "2026-10-12"
-      ],
-      "permanent": false,
-      "cdcLinks": [],
-      "sourceLinks": [
-        {
-          "label": "Page officielle ADEME",
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/mobilipro-optimisation-des-deplacements-professionnels"
-        }
-      ],
-      "regulationLinks": [],
-      "formLinks": [],
-      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/mobilipro-optimisation-des-deplacements-professionnels",
-      "funder": [
-        "ADEME"
-      ],
-      "lifecycleStatus": "ACTIVE",
-      "verification": {
-        "status": "A_REVERIFIER",
-        "sourceTier": "B",
-        "lastChecked": "2026-10-03T14:57:14.375Z",
-        "fieldEvidence": [
-          {
-            "field": "catalogueMembership",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/rss/appels-a-projet",
-            "sourceTier": "B",
-            "locator": "rss-active-item",
-            "evidenceText": "Délai de dépôt des dossiers : du 22/06/2026 - 12:00 au 12/10/2026 - 12:00 - Heure de Paris &lt;p&gt;Le programme Mobili'Pro s’adresse aux employeurs privés ou publics disposant d’une flotte de véhicules professionnels. Il propose un diagnostic, des outils de suivi de la flotte et un plan d’action sur 3 ans pour engager une réduction de l’impact environnemental des déplacements professionnels.&lt;br&gt;&lt;/p&gt;",
-            "checkedAt": "2026-09-30T18:56:33.707Z"
-          },
-          {
-            "field": "guichet",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/rss/appels-a-projet",
-            "sourceTier": "B",
-            "locator": "ademe-enterprises-inventory",
-            "evidenceText": "Référencé par le portail officiel ADEME Entreprises",
-            "checkedAt": "2026-09-30T18:56:33.707Z"
-          },
-          {
-            "field": "sourceStatus",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/rss/appels-a-projet",
-            "sourceTier": "B",
-            "locator": "rss-deadline",
-            "evidenceText": "Délai de dépôt des dossiers : du 22/06/2026 - 12:00 au 12/10/2026 - 12:00 - Heure de Paris &lt;p&gt;Le programme Mobili'Pro s’adresse aux employeurs privés ou publics disposant d’une flotte de véhicules professionnels. Il propose un diagnostic, des outils de suivi de la flotte et un plan d’action sur 3 ans pour engager une réduction de l’impact environnemental des déplacements professionnels.&lt;br&gt;&lt;/p&gt;",
-            "checkedAt": "2026-09-30T18:56:33.707Z"
-          },
-          {
-            "field": "enterpriseEligibility",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue",
-            "sourceTier": "B",
-            "locator": "catalogue-entreprises",
-            "evidenceText": "Référencé dans le catalogue ADEME Entreprises",
-            "checkedAt": "2026-09-30T18:56:33.707Z"
-          },
-          {
-            "field": "catalogueKind",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/rss/appels-a-projet",
-            "sourceTier": "B",
-            "locator": "official-url-taxonomy",
-            "evidenceText": "AAP / AMI",
-            "checkedAt": "2026-09-30T18:56:33.707Z"
-          },
-          {
-            "field": "objective",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/mobilipro-optimisation-des-deplacements-professionnels",
-            "sourceTier": "B",
-            "locator": "section:objective",
-            "evidenceText": "Ce site utilise un service de sécurité pour se protéger contre les bots malveillants. Cette page s’affiche pendant que le site vérifie que vous n’êtes pas un bot.",
-            "checkedAt": "2026-09-30T18:56:49.174Z"
-          },
-          {
-            "field": "themes",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/mobilipro-optimisation-des-deplacements-professionnels",
-            "sourceTier": "B",
-            "locator": "page-text-match:themes",
-            "evidenceText": "Transition numérique",
-            "checkedAt": "2026-09-30T18:56:49.174Z"
-          },
-          {
-            "field": "catalogueMembership",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/rss/appels-a-projet",
-            "sourceTier": "B",
-            "locator": "rss-active-item",
-            "evidenceText": "Délai de dépôt des dossiers : du 22/06/2026 - 12:00 au 12/10/2026 - 12:00 - Heure de Paris &lt;p&gt;Le programme Mobili'Pro s’adresse aux employeurs privés ou publics disposant d’une flotte de véhicules professionnels. Il propose un diagnostic, des outils de suivi de la flotte et un plan d’action sur 3 ans pour engager une réduction de l’impact environnemental des déplacements professionnels.&lt;br&gt;&lt;/p&gt;",
-            "checkedAt": "2026-10-03T14:57:14.375Z"
-          },
-          {
-            "field": "sourceStatus",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/rss/appels-a-projet",
-            "sourceTier": "B",
-            "locator": "rss-deadline",
-            "evidenceText": "Délai de dépôt des dossiers : du 22/06/2026 - 12:00 au 12/10/2026 - 12:00 - Heure de Paris &lt;p&gt;Le programme Mobili'Pro s’adresse aux employeurs privés ou publics disposant d’une flotte de véhicules professionnels. Il propose un diagnostic, des outils de suivi de la flotte et un plan d’action sur 3 ans pour engager une réduction de l’impact environnemental des déplacements professionnels.&lt;br&gt;&lt;/p&gt;",
-            "checkedAt": "2026-10-03T14:57:14.375Z"
-          },
-          {
-            "field": "enterpriseEligibility",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue",
-            "sourceTier": "B",
-            "locator": "catalogue-entreprises",
-            "evidenceText": "Référencé dans le catalogue ADEME Entreprises",
-            "checkedAt": "2026-10-03T14:57:14.375Z"
-          },
-          {
-            "field": "catalogueKind",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/rss/appels-a-projet",
-            "sourceTier": "B",
-            "locator": "official-url-taxonomy",
-            "evidenceText": "AAP / AMI",
-            "checkedAt": "2026-10-03T14:57:14.375Z"
-          },
-          {
-            "field": "guichet",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres",
-            "sourceTier": "B",
-            "locator": "ademe-catalogue-policy",
-            "evidenceText": "Le référentiel Entreprises ADEME présente les subventions et appels à projets de l’ADEME ; les offres ADEME Investissement en fonds propres sont distinctes du catalogue d’aides financières.",
-            "checkedAt": "2026-10-03T14:57:14.375Z"
-          },
-          {
-            "field": "objective",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/mobilipro-optimisation-des-deplacements-professionnels",
-            "sourceTier": "B",
-            "locator": "section:objective",
-            "evidenceText": "Ce site utilise un service de sécurité pour se protéger contre les bots malveillants. Cette page s’affiche pendant que le site vérifie que vous n’êtes pas un bot.",
-            "checkedAt": "2026-10-03T14:57:49.407Z"
-          },
-          {
-            "field": "themes",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/mobilipro-optimisation-des-deplacements-professionnels",
-            "sourceTier": "B",
-            "locator": "page-text-match:themes",
-            "evidenceText": "Transition numérique",
-            "checkedAt": "2026-10-03T14:57:49.407Z"
-          }
-        ],
-        "completeness": 44,
-        "confidence": 9,
-        "coverage": {
-          "objective": "B",
-          "beneficiaries": null,
-          "financialTerms": null,
-          "projectsExpected": null,
-          "eligibleExpenses": null,
-          "calendar": null,
-          "prerequisites": null,
-          "selectionCriteria": null
-        }
-      },
-      "guichetVerified": "ADEME",
-      "sourcePortal": "ADEME",
-      "enterpriseEligible": true,
-      "catalogueVerified": true,
-      "catalogueKind": "AAP / AMI",
-      "catalogueStatus": "OPEN",
-      "catalogueInventoryMode": "RSS_ACTIVE_MIRROR",
-      "sourceState": "OPEN",
-      "guichetVerification": {
-        "status": "VERIFIED",
-        "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/rss/appels-a-projet",
-        "evidenceText": "Délai de dépôt des dossiers : du 22/06/2026 - 12:00 au 12/10/2026 - 12:00 - Heure de Paris &lt;p&gt;Le programme Mobili'Pro s’adresse aux employeurs privés ou publics disposant d’une flotte de véhicules professionnels. Il propose un diagnostic, des outils de suivi de la flotte et un plan d’action sur 3 ans pour engager une réduction de l’impact environnemental des déplacements professionnels.&lt;br&gt;&lt;/p&gt;",
-        "checkedAt": "2026-09-30T18:56:33.707Z"
-      },
-      "lastSeenAt": "2026-10-03T14:57:38.413Z",
-      "projectsExpected": [],
-      "attentionPoints": [
-        "Bénéficiaires à vérifier.",
-        "Dépenses éligibles non documentées.",
-        "Pré-requis non documentés.",
-        "Cahier des charges / règlement non rattaché.",
-        "Modalités financières à vérifier."
-      ],
-      "sourceAliases": [
-        "ademe"
-      ],
-      "aidRate": {
-        "min": null,
-        "max": null,
-        "raw": null,
-        "byCompanySize": []
-      },
-      "aidAmount": {
-        "min": null,
-        "max": null,
-        "raw": null,
-        "byCompanySize": []
-      },
-      "qaFlags": [
-        "MISSING_BENEFICIARIES",
-        "MISSING_ELIGIBLE_EXPENSES",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_COMPANY_CATEGORY",
-        "MISSING_FINANCIAL_TERMS",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "contentHash": "16e327b3538ac9071260ac441deb3d3f052e0986ae71925812afa460b5733a15"
-    },
-    {
       "id": "ademe_262799eb2237ae09ec800afe442e7d0b5b4053be5aeafbd10778468f0a98c4a7",
       "canonicalId": "ademe_262799eb2237ae09ec800afe442e7d0b5b4053be5aeafbd10778468f0a98c4a7",
       "sourceId": "ademe",
@@ -63032,230 +62572,6 @@
         "MISSING_DISBURSEMENT_TERMS"
       ],
       "contentHash": "2d8944c587de17e862ff631f6d1daab31e610c71c12015027fbad9805291b6fc"
-    },
-    {
-      "id": "ademe_f718d9114d92a75d69528b8ad5c50ab619be41e46b7105afa719b3d6639b8b09",
-      "canonicalId": "ademe_f718d9114d92a75d69528b8ad5c50ab619be41e46b7105afa719b3d6639b8b09",
-      "sourceId": "ademe",
-      "sourceRecordId": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/systemes-performants-de-production-de-froid-en-outre-mer-et-corse",
-      "title": "Systèmes performants de production de froid en Outre-mer et Corse",
-      "kind": "AAP / AMI",
-      "programme": null,
-      "operator": null,
-      "objective": "du 16/02/2026 - 12:00 au 15/10/2026 - 15:00 - Heure de Paris &lt;p&gt;Cet appel à projets vise à soutenir la réalisation d’installations de climatisation à haute efficacité énergétique dans le cadre d’opérations de rénovation de bâtiments tertiaires, ayant une surface de plus de 1 000&nbsp;m².&lt;/p&gt;",
-      "beneficiaries": null,
-      "companyCategories": [],
-      "themes": [
-        "Transition numérique"
-      ],
-      "scope": "NATIONAL",
-      "regions": [
-        "Toutes les Régions"
-      ],
-      "aidTypes": [
-        "APPEL_A_PROJET"
-      ],
-      "openingDate": "2026-02-16",
-      "closingDate": "2026-10-15",
-      "finalClosingDate": "2026-10-15",
-      "deadlines": [
-        "2026-10-15"
-      ],
-      "permanent": false,
-      "cdcLinks": [],
-      "sourceLinks": [
-        {
-          "label": "Page officielle ADEME",
-          "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/systemes-performants-de-production-de-froid-en-outre-mer-et-corse"
-        }
-      ],
-      "regulationLinks": [],
-      "formLinks": [],
-      "officialPage": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/systemes-performants-de-production-de-froid-en-outre-mer-et-corse",
-      "funder": [
-        "ADEME"
-      ],
-      "lifecycleStatus": "ACTIVE",
-      "verification": {
-        "status": "A_REVERIFIER",
-        "sourceTier": "B",
-        "lastChecked": "2026-10-03T14:57:18.870Z",
-        "fieldEvidence": [
-          {
-            "field": "catalogueMembership",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/rss/appels-a-projet",
-            "sourceTier": "B",
-            "locator": "rss-active-item",
-            "evidenceText": "Délai de dépôt des dossiers : du 16/02/2026 - 12:00 au 15/10/2026 - 15:00 - Heure de Paris &lt;p&gt;Cet appel à projets vise à soutenir la réalisation d’installations de climatisation à haute efficacité énergétique dans le cadre d’opérations de rénovation de bâtiments tertiaires, ayant une surface de plus de 1 000&nbsp;m².&lt;/p&gt;",
-            "checkedAt": "2026-09-30T18:56:34.001Z"
-          },
-          {
-            "field": "guichet",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/rss/appels-a-projet",
-            "sourceTier": "B",
-            "locator": "ademe-enterprises-inventory",
-            "evidenceText": "Référencé par le portail officiel ADEME Entreprises",
-            "checkedAt": "2026-09-30T18:56:34.001Z"
-          },
-          {
-            "field": "sourceStatus",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/rss/appels-a-projet",
-            "sourceTier": "B",
-            "locator": "rss-deadline",
-            "evidenceText": "Délai de dépôt des dossiers : du 16/02/2026 - 12:00 au 15/10/2026 - 15:00 - Heure de Paris &lt;p&gt;Cet appel à projets vise à soutenir la réalisation d’installations de climatisation à haute efficacité énergétique dans le cadre d’opérations de rénovation de bâtiments tertiaires, ayant une surface de plus de 1 000&nbsp;m².&lt;/p&gt;",
-            "checkedAt": "2026-09-30T18:56:34.001Z"
-          },
-          {
-            "field": "enterpriseEligibility",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue",
-            "sourceTier": "B",
-            "locator": "catalogue-entreprises",
-            "evidenceText": "Référencé dans le catalogue ADEME Entreprises",
-            "checkedAt": "2026-09-30T18:56:34.001Z"
-          },
-          {
-            "field": "catalogueKind",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/rss/appels-a-projet",
-            "sourceTier": "B",
-            "locator": "official-url-taxonomy",
-            "evidenceText": "AAP / AMI",
-            "checkedAt": "2026-09-30T18:56:34.001Z"
-          },
-          {
-            "field": "objective",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/systemes-performants-de-production-de-froid-en-outre-mer-et-corse",
-            "sourceTier": "B",
-            "locator": "section:objective",
-            "evidenceText": "Ce site utilise un service de sécurité pour se protéger contre les bots malveillants. Cette page s’affiche pendant que le site vérifie que vous n’êtes pas un bot.",
-            "checkedAt": "2026-09-30T18:56:50.618Z"
-          },
-          {
-            "field": "themes",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/systemes-performants-de-production-de-froid-en-outre-mer-et-corse",
-            "sourceTier": "B",
-            "locator": "page-text-match:themes",
-            "evidenceText": "Transition numérique",
-            "checkedAt": "2026-09-30T18:56:50.618Z"
-          },
-          {
-            "field": "catalogueMembership",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/rss/appels-a-projet",
-            "sourceTier": "B",
-            "locator": "rss-active-item",
-            "evidenceText": "Délai de dépôt des dossiers : du 16/02/2026 - 12:00 au 15/10/2026 - 15:00 - Heure de Paris &lt;p&gt;Cet appel à projets vise à soutenir la réalisation d’installations de climatisation à haute efficacité énergétique dans le cadre d’opérations de rénovation de bâtiments tertiaires, ayant une surface de plus de 1 000&nbsp;m².&lt;/p&gt;",
-            "checkedAt": "2026-10-03T14:57:18.870Z"
-          },
-          {
-            "field": "sourceStatus",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/rss/appels-a-projet",
-            "sourceTier": "B",
-            "locator": "rss-deadline",
-            "evidenceText": "Délai de dépôt des dossiers : du 16/02/2026 - 12:00 au 15/10/2026 - 15:00 - Heure de Paris &lt;p&gt;Cet appel à projets vise à soutenir la réalisation d’installations de climatisation à haute efficacité énergétique dans le cadre d’opérations de rénovation de bâtiments tertiaires, ayant une surface de plus de 1 000&nbsp;m².&lt;/p&gt;",
-            "checkedAt": "2026-10-03T14:57:18.870Z"
-          },
-          {
-            "field": "enterpriseEligibility",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue",
-            "sourceTier": "B",
-            "locator": "catalogue-entreprises",
-            "evidenceText": "Référencé dans le catalogue ADEME Entreprises",
-            "checkedAt": "2026-10-03T14:57:18.870Z"
-          },
-          {
-            "field": "catalogueKind",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/rss/appels-a-projet",
-            "sourceTier": "B",
-            "locator": "official-url-taxonomy",
-            "evidenceText": "AAP / AMI",
-            "checkedAt": "2026-10-03T14:57:18.870Z"
-          },
-          {
-            "field": "guichet",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres",
-            "sourceTier": "B",
-            "locator": "ademe-catalogue-policy",
-            "evidenceText": "Le référentiel Entreprises ADEME présente les subventions et appels à projets de l’ADEME ; les offres ADEME Investissement en fonds propres sont distinctes du catalogue d’aides financières.",
-            "checkedAt": "2026-10-03T14:57:18.870Z"
-          },
-          {
-            "field": "objective",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/systemes-performants-de-production-de-froid-en-outre-mer-et-corse",
-            "sourceTier": "B",
-            "locator": "section:objective",
-            "evidenceText": "Ce site utilise un service de sécurité pour se protéger contre les bots malveillants. Cette page s’affiche pendant que le site vérifie que vous n’êtes pas un bot.",
-            "checkedAt": "2026-10-03T14:57:52.479Z"
-          },
-          {
-            "field": "themes",
-            "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/systemes-performants-de-production-de-froid-en-outre-mer-et-corse",
-            "sourceTier": "B",
-            "locator": "page-text-match:themes",
-            "evidenceText": "Transition numérique",
-            "checkedAt": "2026-10-03T14:57:52.479Z"
-          }
-        ],
-        "completeness": 44,
-        "confidence": 9,
-        "coverage": {
-          "objective": "B",
-          "beneficiaries": null,
-          "financialTerms": null,
-          "projectsExpected": null,
-          "eligibleExpenses": null,
-          "calendar": null,
-          "prerequisites": null,
-          "selectionCriteria": null
-        }
-      },
-      "guichetVerified": "ADEME",
-      "sourcePortal": "ADEME",
-      "enterpriseEligible": true,
-      "catalogueVerified": true,
-      "catalogueKind": "AAP / AMI",
-      "catalogueStatus": "OPEN",
-      "catalogueInventoryMode": "RSS_ACTIVE_MIRROR",
-      "sourceState": "OPEN",
-      "guichetVerification": {
-        "status": "VERIFIED",
-        "sourceUrl": "https://agirpourlatransition.ademe.fr/entreprises/rss/appels-a-projet",
-        "evidenceText": "Délai de dépôt des dossiers : du 16/02/2026 - 12:00 au 15/10/2026 - 15:00 - Heure de Paris &lt;p&gt;Cet appel à projets vise à soutenir la réalisation d’installations de climatisation à haute efficacité énergétique dans le cadre d’opérations de rénovation de bâtiments tertiaires, ayant une surface de plus de 1 000&nbsp;m².&lt;/p&gt;",
-        "checkedAt": "2026-09-30T18:56:34.001Z"
-      },
-      "lastSeenAt": "2026-10-03T14:57:38.413Z",
-      "projectsExpected": [],
-      "attentionPoints": [
-        "Bénéficiaires à vérifier.",
-        "Dépenses éligibles non documentées.",
-        "Pré-requis non documentés.",
-        "Cahier des charges / règlement non rattaché.",
-        "Modalités financières à vérifier."
-      ],
-      "sourceAliases": [
-        "ademe"
-      ],
-      "aidRate": {
-        "min": null,
-        "max": null,
-        "raw": null,
-        "byCompanySize": []
-      },
-      "aidAmount": {
-        "min": null,
-        "max": null,
-        "raw": null,
-        "byCompanySize": []
-      },
-      "qaFlags": [
-        "MISSING_BENEFICIARIES",
-        "MISSING_ELIGIBLE_EXPENSES",
-        "MISSING_PREREQUISITES",
-        "MISSING_SELECTION_CRITERIA",
-        "MISSING_CDC",
-        "MISSING_COMPANY_CATEGORY",
-        "MISSING_FINANCIAL_TERMS",
-        "MISSING_DISBURSEMENT_TERMS"
-      ],
-      "contentHash": "a6478d2e2139f7fdeba7d82ba758a3ffc8304497cd61325c57b10dca4b611699"
     },
     {
       "title": "Trouver une exploitation à acheter ou à louer",
