@@ -1,22 +1,22 @@
 {
   "version": "12.9.3",
   "generatedAt": "2026-10-15T04:09:50.406Z",
-  "purgedAt": null,
+  "purgedAt": "2026-11-01T07:16:59.909Z",
   "repositoryUrl": "https://github.com/hakimalamiouahabi/qualifund",
   "sourcePolicy": "DIRECT_OFFICIAL_ONLY",
   "libraryMode": "DIRECT_OFFICIAL_CATALOG",
-  "count": 206,
-  "libraryCount": 206,
-  "rawLibraryCount": 206,
-  "activeCount": 206,
-  "jPlusOneDate": "2026-10-16",
-  "jPlusOneActiveCount": 206,
+  "count": 201,
+  "libraryCount": 201,
+  "rawLibraryCount": 201,
+  "activeCount": 201,
+  "jPlusOneDate": "2026-11-02",
+  "jPlusOneActiveCount": 201,
   "archivedCount": 0,
   "staleCount": 0,
-  "aapCount": 37,
+  "aapCount": 32,
   "verifiedCount": 0,
-  "withCdc": 93,
-  "withDeadline": 123,
+  "withCdc": 89,
+  "withDeadline": 118,
   "sourceCount": 118,
   "activeCollectionSourceCount": 1,
   "libraryInstruments": [
@@ -31,24 +31,24 @@
     "PRET_TAUX_ZERO",
     "APPEL_A_PROJET"
   ],
-  "targetInstrumentCount": 206,
-  "directLinkCount": 206,
+  "targetInstrumentCount": 201,
+  "directLinkCount": 201,
   "missingDirectLinkCount": 0,
   "categoryCounts": {
     "STARTUP": 9,
-    "PME": 70,
-    "ETI": 36,
-    "GE": 8
+    "PME": 66,
+    "ETI": 32,
+    "GE": 7
   },
   "scopeCounts": {
-    "NATIONAL": 101,
-    "REGIONAL": 105
+    "NATIONAL": 97,
+    "REGIONAL": 104
   },
   "instrumentCounts": {
-    "APPEL_A_PROJET": 37,
-    "AVANCE_REMBOURSABLE": 23,
+    "APPEL_A_PROJET": 32,
+    "AVANCE_REMBOURSABLE": 22,
     "PRET_TAUX_ZERO": 9,
-    "SUBVENTION": 175
+    "SUBVENTION": 170
   },
   "targetRule": "ACTIVE_SANS_ECHEANCE_OU_PERMANENT_OU_CLOTURE_GTE_J_PLUS_1",
   "targetCount": null,
@@ -60,8 +60,8 @@
     "afterDirectSanitization": 206,
     "afterCertifiedScope": 206,
     "removedOutOfTarget": 0,
-    "removedCertifiedQuarantine": 0,
-    "retainedOperational": 206
+    "removedCertifiedQuarantine": 5,
+    "retainedOperational": 201
   },
   "collectionLock": {
     "locked": true,
@@ -72,16 +72,5 @@
     ],
     "next": "Bretagne",
     "frozenUnselectedSha": "189b87081f1a7814c0a69c1150c830104c6bf9948d0b2b8eb37afe5ac278508a"
-  },
-  "publishedCount": 141,
-  "publishedActiveCount": 141,
-  "quarantinedCount": 65,
-  "certifiedSourceCount": 5,
-  "certifiedSources": [
-    "aura",
-    "bfc",
-    "bpifrance_aap",
-    "bpifrance_aides",
-    "bpifrance_rebond_industriel"
-  ]
+  }
 }
