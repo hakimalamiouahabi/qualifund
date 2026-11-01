@@ -1,22 +1,22 @@
 {
   "version": "12.9.3",
-  "generatedAt": "2026-10-15T04:09:50.406Z",
-  "purgedAt": "2026-11-01T07:16:59.909Z",
+  "generatedAt": "2026-11-01T07:17:44.696Z",
+  "purgedAt": null,
   "repositoryUrl": "https://github.com/hakimalamiouahabi/qualifund",
   "sourcePolicy": "DIRECT_OFFICIAL_ONLY",
   "libraryMode": "DIRECT_OFFICIAL_CATALOG",
-  "count": 201,
-  "libraryCount": 201,
-  "rawLibraryCount": 201,
-  "activeCount": 201,
+  "count": 202,
+  "libraryCount": 202,
+  "rawLibraryCount": 202,
+  "activeCount": 202,
   "jPlusOneDate": "2026-11-02",
-  "jPlusOneActiveCount": 201,
+  "jPlusOneActiveCount": 202,
   "archivedCount": 0,
   "staleCount": 0,
   "aapCount": 32,
   "verifiedCount": 0,
-  "withCdc": 89,
-  "withDeadline": 118,
+  "withCdc": 90,
+  "withDeadline": 119,
   "sourceCount": 118,
   "activeCollectionSourceCount": 1,
   "libraryInstruments": [
@@ -31,24 +31,24 @@
     "PRET_TAUX_ZERO",
     "APPEL_A_PROJET"
   ],
-  "targetInstrumentCount": 201,
-  "directLinkCount": 201,
+  "targetInstrumentCount": 202,
+  "directLinkCount": 202,
   "missingDirectLinkCount": 0,
   "categoryCounts": {
     "STARTUP": 9,
-    "PME": 66,
+    "PME": 67,
     "ETI": 32,
     "GE": 7
   },
   "scopeCounts": {
     "NATIONAL": 97,
-    "REGIONAL": 104
+    "REGIONAL": 105
   },
   "instrumentCounts": {
     "APPEL_A_PROJET": 32,
     "AVANCE_REMBOURSABLE": 22,
     "PRET_TAUX_ZERO": 9,
-    "SUBVENTION": 170
+    "SUBVENTION": 171
   },
   "targetRule": "ACTIVE_SANS_ECHEANCE_OU_PERMANENT_OU_CLOTURE_GTE_J_PLUS_1",
   "targetCount": null,
@@ -56,12 +56,12 @@
   "coverageGap": null,
   "coverageCertified": false,
   "purgeStats": {
-    "input": 206,
-    "afterDirectSanitization": 206,
-    "afterCertifiedScope": 206,
+    "input": 202,
+    "afterDirectSanitization": 202,
+    "afterCertifiedScope": 202,
     "removedOutOfTarget": 0,
-    "removedCertifiedQuarantine": 5,
-    "retainedOperational": 201
+    "removedCertifiedQuarantine": 0,
+    "retainedOperational": 202
   },
   "collectionLock": {
     "locked": true,
@@ -71,6 +71,13 @@
       "bfc"
     ],
     "next": "Bretagne",
-    "frozenUnselectedSha": "189b87081f1a7814c0a69c1150c830104c6bf9948d0b2b8eb37afe5ac278508a"
-  }
+    "frozenUnselectedSha": "a3956c2ed7cccba5410940e995bc097168f4ccec694823d24c9b6c34c4c245e7"
+  },
+  "publishedCount": 46,
+  "publishedActiveCount": 46,
+  "quarantinedCount": 156,
+  "certifiedSourceCount": 1,
+  "certifiedSources": [
+    "bfc"
+  ]
 }

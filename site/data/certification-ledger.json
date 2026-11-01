@@ -1,72 +1,30 @@
 {
-  "generatedAt": "2026-11-01T07:16:59.708Z",
+  "generatedAt": "2026-11-01T07:22:22.859Z",
   "version": "12.9.3",
   "policy": "CERTIFIED_SOURCE_ONLY",
   "unlockedSourceIds": [
-    "aura",
-    "bfc",
-    "bpifrance_aap",
-    "bpifrance_aides",
-    "bpifrance_rebond_industriel"
+    "bfc"
   ],
   "guichets": [
-    "AURA",
-    "Bourgogne-Franche-Comté",
-    "Bpifrance"
+    "Bourgogne-Franche-Comté"
   ],
   "certifications": [
     {
-      "file": "aura-certification.json",
-      "name": "AURA",
-      "generatedAt": "2026-10-04T19:39:10.204Z",
-      "status": "PASS",
-      "sourceIds": [
-        "aura"
-      ],
-      "libraryRecords": 60,
-      "fingerprintStatus": "MATCH",
-      "sourceConfigFingerprint": "a506fd881f52d66daa867ad1e27f3c8e0c781861fd11944358227b10c47ce6b4",
-      "currentSourceConfigFingerprint": "a506fd881f52d66daa867ad1e27f3c8e0c781861fd11944358227b10c47ce6b4",
-      "certificationBasisFingerprint": "d5b68112820af08290fec6a0d289baf00e332d781a548f4d1272a897e09b57f2",
-      "currentCertificationBasisFingerprint": "d5b68112820af08290fec6a0d289baf00e332d781a548f4d1272a897e09b57f2",
-      "certifiedDataFingerprint": "6c9acfaff28b1f10847f8ea65c26db6c2f7b91342dac1d1754d7171c2092e07c",
-      "currentDataFingerprint": "6c9acfaff28b1f10847f8ea65c26db6c2f7b91342dac1d1754d7171c2092e07c"
-    },
-    {
       "file": "bourgogne-franche-comte-certification.json",
       "name": "Bourgogne-Franche-Comté",
-      "generatedAt": "2026-10-15T04:14:33.515Z",
+      "generatedAt": "2026-11-01T07:22:22.003Z",
       "status": "PASS",
       "sourceIds": [
         "bfc"
       ],
-      "libraryRecords": 45,
+      "libraryRecords": 46,
       "fingerprintStatus": "MATCH",
       "sourceConfigFingerprint": "a83245515b67a4b4dba0fe8ed5ba97d06a46ffb325de0bd6a224cc89bf4d35dc",
       "currentSourceConfigFingerprint": "a83245515b67a4b4dba0fe8ed5ba97d06a46ffb325de0bd6a224cc89bf4d35dc",
       "certificationBasisFingerprint": "60c44f0a3cbe46358c472c122df5e81289bcf632b0f8f6510a8df314cf505b77",
       "currentCertificationBasisFingerprint": "60c44f0a3cbe46358c472c122df5e81289bcf632b0f8f6510a8df314cf505b77",
-      "certifiedDataFingerprint": "7fa3e8000bf944759b77501cf9225a2144cc9af109ed42ea6fc9fc7932a51e3c",
-      "currentDataFingerprint": "7fa3e8000bf944759b77501cf9225a2144cc9af109ed42ea6fc9fc7932a51e3c"
-    },
-    {
-      "file": "bpifrance-certification.json",
-      "name": "Bpifrance",
-      "generatedAt": "2026-10-04T19:39:08.950Z",
-      "status": "PASS",
-      "sourceIds": [
-        "bpifrance_aap",
-        "bpifrance_aides",
-        "bpifrance_rebond_industriel"
-      ],
-      "libraryRecords": 36,
-      "fingerprintStatus": "MATCH",
-      "sourceConfigFingerprint": "ab4073aae0857eb20f56359e7a92cb124144594cf28cfbd14a77132e3947a6ae",
-      "currentSourceConfigFingerprint": "ab4073aae0857eb20f56359e7a92cb124144594cf28cfbd14a77132e3947a6ae",
-      "certificationBasisFingerprint": "b4d0c7f43f75a0ad9be3cba2d67aa68873d3053ace67ae454b3abea8654c0343",
-      "currentCertificationBasisFingerprint": "b4d0c7f43f75a0ad9be3cba2d67aa68873d3053ace67ae454b3abea8654c0343",
-      "certifiedDataFingerprint": "c5dcd6cc14ea0e82c3660e35a3645132c53536f15d5f660ec44cf17656dd9b62",
-      "currentDataFingerprint": "c5dcd6cc14ea0e82c3660e35a3645132c53536f15d5f660ec44cf17656dd9b62"
+      "certifiedDataFingerprint": "f0b9b9f0219dd678801d8da527236ee42ceebe51dd82acae550ce7631148a72f",
+      "currentDataFingerprint": "f0b9b9f0219dd678801d8da527236ee42ceebe51dd82acae550ce7631148a72f"
     }
   ],
   "rejectedCertifications": [
@@ -80,6 +38,30 @@
       "reason": "CERTIFIED_DATA_CHANGED",
       "certifiedDataFingerprint": "452f4970f40094846d3f513dd7332d66f5a482d53314090f934608daa3b1661e",
       "currentDataFingerprint": "876585e23c2bf600a5d224fb3af2f51ff76b1c99a132d001d176ce756772757c"
+    },
+    {
+      "file": "aura-certification.json",
+      "name": "AURA",
+      "generatedAt": "2026-10-04T19:39:10.204Z",
+      "sourceIds": [
+        "aura"
+      ],
+      "reason": "CERTIFIED_DATA_CHANGED",
+      "certifiedDataFingerprint": "6c9acfaff28b1f10847f8ea65c26db6c2f7b91342dac1d1754d7171c2092e07c",
+      "currentDataFingerprint": "55f4cecbca491962090a3866e317f06d47ba3a8ff6d87a6af1bfce3d3a1a99bb"
+    },
+    {
+      "file": "bpifrance-certification.json",
+      "name": "Bpifrance",
+      "generatedAt": "2026-10-04T19:39:08.950Z",
+      "sourceIds": [
+        "bpifrance_aap",
+        "bpifrance_aides",
+        "bpifrance_rebond_industriel"
+      ],
+      "reason": "CERTIFIED_DATA_CHANGED",
+      "certifiedDataFingerprint": "c5dcd6cc14ea0e82c3660e35a3645132c53536f15d5f660ec44cf17656dd9b62",
+      "currentDataFingerprint": "2b8f7a766ea2ac616a59ff020e3740b33a047f08ef85b30bd830f637002b2576"
     }
   ]
 }

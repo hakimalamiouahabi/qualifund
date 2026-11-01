@@ -1,15 +1,11 @@
 {
   "version": "12.9.3",
-  "generatedAt": "2026-10-15T04:09:50.406Z",
-  "publishedCount": 141,
-  "publishedActiveCount": 141,
-  "certifiedSourceCount": 5,
+  "generatedAt": "2026-11-01T07:17:44.696Z",
+  "publishedCount": 46,
+  "publishedActiveCount": 46,
+  "certifiedSourceCount": 1,
   "certifiedSources": [
-    "aura",
-    "bfc",
-    "bpifrance_aap",
-    "bpifrance_aides",
-    "bpifrance_rebond_industriel"
+    "bfc"
   ],
   "sourcePolicy": "DIRECT_OFFICIAL_ONLY",
   "publicationPolicy": "CERTIFIED_SOURCE_ONLY",
@@ -28,6 +24,6 @@
       "bfc"
     ],
     "next": "Bretagne",
-    "frozenUnselectedSha": "189b87081f1a7814c0a69c1150c830104c6bf9948d0b2b8eb37afe5ac278508a"
+    "frozenUnselectedSha": "a3956c2ed7cccba5410940e995bc097168f4ccec694823d24c9b6c34c4c245e7"
   }
 }

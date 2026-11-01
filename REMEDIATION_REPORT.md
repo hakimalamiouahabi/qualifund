@@ -1,44 +1,43 @@
 # FUNDING RADAR — Rapport de remédiation v12.9.3
 
-Généré : 2026-10-15T04:14:38.646Z
+Généré : 2026-11-01T07:22:28.034Z
 
-- Stock brut conservé : **206**
-- Corpus certifié publiable : **141**
-- Quarantaine : **65**
-- Fiches actives publiables : **141**
+- Stock brut conservé : **202**
+- Corpus certifié publiable : **46**
+- Quarantaine : **156**
+- Fiches actives publiables : **46**
 - Fiches VÉRIFIÉES : **0**
-- File de remédiation : **141**
+- File de remédiation : **46**
 - Sources certifiées mais fiches bloquées pour preuve manquante : **0**
-- Permanences sans preuve calendrier A/B : **26**
-- Avances remboursables / PTZ sans modalités de remboursement : **24**
-- Fiches sans CdC/règlement rattaché : **48**
+- Permanences sans preuve calendrier A/B : **6**
+- Avances remboursables / PTZ sans modalités de remboursement : **11**
+- Fiches sans CdC/règlement rattaché : **6**
 
 ## Blocages de publication des sources certifiées
 
 
 ## Preuves A/B manquantes par champ
 
-- objective: 6
-- beneficiaries: 77
-- financialTerms: 54
-- projectsExpected: 135
-- eligibleExpenses: 137
-- calendar: 130
-- prerequisites: 115
-- selectionCriteria: 135
+- objective: 0
+- beneficiaries: 46
+- financialTerms: 46
+- projectsExpected: 46
+- eligibleExpenses: 46
+- calendar: 46
+- prerequisites: 46
+- selectionCriteria: 43
 
 ## Principaux drapeaux QA
 
-- MISSING_DISBURSEMENT_TERMS: 139
-- MISSING_ELIGIBLE_EXPENSES: 137
-- MISSING_SELECTION_CRITERIA: 135
-- MISSING_PREREQUISITES: 115
-- MISSING_DEADLINE: 83
-- MISSING_BENEFICIARIES: 77
-- MISSING_COMPANY_CATEGORY: 69
-- MISSING_FINANCIAL_TERMS: 54
-- MISSING_CDC: 48
-- MISSING_REPAYMENT_TERMS: 24
-- MISSING_OBJECTIVE: 6
+- MISSING_BENEFICIARIES: 46
+- MISSING_ELIGIBLE_EXPENSES: 46
+- MISSING_PREREQUISITES: 46
+- MISSING_DISBURSEMENT_TERMS: 45
+- MISSING_SELECTION_CRITERIA: 43
+- MISSING_DEADLINE: 27
+- MISSING_COMPANY_CATEGORY: 22
+- MISSING_FINANCIAL_TERMS: 16
+- MISSING_REPAYMENT_TERMS: 11
+- MISSING_CDC: 6
 
 La file détaillée priorisée est publiée dans `site/data/remediation.json`.

@@ -1,29 +1,19 @@
 {
   "version": "12.9.3",
-  "generatedAt": "2026-10-15T04:15:11.201Z",
+  "generatedAt": "2026-11-01T07:22:27.602Z",
   "companyApi": {
     "ok": true,
     "status": 200,
     "url": "https://recherche-entreprises.api.gouv.fr/search?q=751500851&per_page=1",
-    "bytes": 3195,
+    "bytes": 3250,
     "error": null,
     "sampleSiren": "751500851"
   },
   "publicSite": {
-    "ok": true,
-    "skipped": false,
-    "url": "https://qualifund.pages.dev",
-    "index": {
-      "ok": true,
-      "status": 200,
-      "bytes": 4212,
-      "error": null
-    },
-    "readiness": {
-      "ok": true,
-      "status": 200,
-      "bytes": 3226,
-      "error": null
-    }
+    "ok": false,
+    "skipped": true,
+    "url": null,
+    "index": null,
+    "readiness": null
   }
 }

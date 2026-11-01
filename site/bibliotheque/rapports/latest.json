@@ -1,0 +1,85 @@
+{
+  "generatedAt": "2026-11-01T07:22:22.154Z",
+  "date": "2026-11-01",
+  "baselineInitialized": false,
+  "totals": {
+    "before": 201,
+    "after": 202,
+    "new": 2,
+    "modified": 2,
+    "obsolete": 1
+  },
+  "nouvellesAides": [
+    {
+      "id": "bfc_75189617d0d582eeaf225f954952a1f379b9b6a8aecc6bc42ec06dace8a63a56",
+      "titre": "Aides en faveur des entreprises de travaux forestiers - Aide à l'installation",
+      "statut": "ACTIVE",
+      "echeance": "",
+      "source": "https://www.bourgognefranchecomte.fr/node/890",
+      "verification": "A_REVERIFIER",
+      "confiance": 9
+    },
+    {
+      "id": "bfc_0ed39ae000757bb329604487586cc4c07d5e36a4245472aecabfab3b74be98d5",
+      "titre": "Développement du tourisme de savoir-faire",
+      "statut": "ACTIVE",
+      "echeance": "2027-06-30",
+      "source": "https://www.bourgognefranchecomte.fr/node/3571",
+      "verification": "A_REVERIFIER",
+      "confiance": 9
+    }
+  ],
+  "aidesModifiees": [
+    {
+      "avant": {
+        "id": "bfc_285926acb329e9ea44dd2d0172b5cc8e55817b8c9d05bafe4a803b530b8f0ba1",
+        "titre": "Aide au conseil stratégique",
+        "statut": "ACTIVE",
+        "echeance": "2026-12-31",
+        "source": "https://www.bourgognefranchecomte.fr/node/3825",
+        "verification": "A_REVERIFIER",
+        "confiance": 9
+      },
+      "apres": {
+        "id": "bfc_285926acb329e9ea44dd2d0172b5cc8e55817b8c9d05bafe4a803b530b8f0ba1",
+        "titre": "Aide au conseil stratégique",
+        "statut": "ACTIVE",
+        "echeance": "2026-12-31",
+        "source": "https://www.bourgognefranchecomte.fr/node/3825",
+        "verification": "A_REVERIFIER",
+        "confiance": 9
+      }
+    },
+    {
+      "avant": {
+        "id": "bfc_9155c21fdea418e70bfd4016891fd57344f8da9f4753818b429012eb46fc80f1",
+        "titre": "Aides en faveur des entreprises de travaux forestiers - Aide à l'équipement",
+        "statut": "ACTIVE",
+        "echeance": "",
+        "source": "https://www.bourgognefranchecomte.fr/node/3594",
+        "verification": "A_REVERIFIER",
+        "confiance": 9
+      },
+      "apres": {
+        "id": "bfc_9155c21fdea418e70bfd4016891fd57344f8da9f4753818b429012eb46fc80f1",
+        "titre": "Aides en faveur des entreprises de travaux forestiers - Aide à l'équipement",
+        "statut": "ACTIVE",
+        "echeance": "",
+        "source": "https://www.bourgognefranchecomte.fr/node/3594",
+        "verification": "A_REVERIFIER",
+        "confiance": 9
+      }
+    }
+  ],
+  "aidesObsoletes": [
+    {
+      "id": "bfc_69ff416511b4ef135471eb90a8fad934c842fb92fc5688da33fc80ad059a7c1e",
+      "titre": "Aides en faveur des entreprises de travaux forestiers - Aide à l'installation",
+      "statut": "ACTIVE",
+      "echeance": "",
+      "source": "https://www.bourgognefranchecomte.fr/index%2ephp/node/890",
+      "verification": "A_REVERIFIER",
+      "confiance": 9
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T04:14:33.515Z",
+  "generatedAt": "2026-11-01T07:22:22.003Z",
   "status": "PASS",
   "lock": {
     "version": 15,
@@ -90,17 +90,17 @@
   ],
   "sourceConfigFingerprint": "a83245515b67a4b4dba0fe8ed5ba97d06a46ffb325de0bd6a224cc89bf4d35dc",
   "certificationBasisFingerprint": "60c44f0a3cbe46358c472c122df5e81289bcf632b0f8f6510a8df314cf505b77",
-  "certifiedDataFingerprint": "7fa3e8000bf944759b77501cf9225a2144cc9af109ed42ea6fc9fc7932a51e3c",
-  "libraryRecords": 45,
-  "frozenUnselectedSha": "189b87081f1a7814c0a69c1150c830104c6bf9948d0b2b8eb37afe5ac278508a",
+  "certifiedDataFingerprint": "f0b9b9f0219dd678801d8da527236ee42ceebe51dd82acae550ce7631148a72f",
+  "libraryRecords": 46,
+  "frozenUnselectedSha": "a3956c2ed7cccba5410940e995bc097168f4ccec694823d24c9b6c34c4c245e7",
   "controlGaps": {
     "rssOutsideCatalogue": []
   },
   "bySource": {
     "bfc": {
-      "discovered": 229,
-      "imported": 45,
-      "retained": 45,
+      "discovered": 228,
+      "imported": 46,
+      "retained": 46,
       "success": true,
       "rss": 0,
       "rssActive": 0,
@@ -110,7 +110,7 @@
       "listing": 0,
       "catalogueSection": 0,
       "sitemap": 0,
-      "enterpriseCatalogue": 229,
+      "enterpriseCatalogue": 228,
       "enterpriseExpected": 0,
       "enterprisePagesScanned": 19,
       "europeanExcluded": 25,
@@ -123,7 +123,7 @@
       "catalogueHtmlExpected": 0,
       "detailWarnings": 0,
       "errors": 0,
-      "excluded": 184
+      "excluded": 182
     }
   },
   "duplicates": [],

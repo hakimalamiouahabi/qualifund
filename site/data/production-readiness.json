@@ -1,0 +1,109 @@
+{
+  "generatedAt": "2026-11-01T07:22:28.249Z",
+  "version": "12.9.3",
+  "mode": "LOCKED_CYCLE",
+  "currentLock": {
+    "locked": true,
+    "name": "Bourgogne-Franche-Comté",
+    "mode": "REGION",
+    "allowedSourceIds": [
+      "bfc"
+    ]
+  },
+  "publicationPolicy": "CERTIFIED_SOURCE_ONLY",
+  "gates": [
+    {
+      "id": 1,
+      "name": "Dépôt GitHub et versionnement",
+      "status": "PASS",
+      "detail": "hakimalamiouahabi/qualifund"
+    },
+    {
+      "id": 2,
+      "name": "URL permanente",
+      "status": "BLOCKED",
+      "detail": "Déploiement permanent non confirmé."
+    },
+    {
+      "id": 3,
+      "name": "Cycle de collecte — Bourgogne-Franche-Comté",
+      "status": "PASS",
+      "detail": "1/1 source(s) du verrou courant en succès sur le cycle non identifié ; 1/1 ligne(s) coverage fraîches ; 46 imports bruts. Les autres sources restent gelées."
+    },
+    {
+      "id": 4,
+      "name": "Bibliothèque certifiée publiable",
+      "status": "PASS",
+      "detail": "46 fiches publiables J+1 sur 202 fiches brutes ; 156 en quarantaine. Certificat Bourgogne-Franche-Comté : PASS — fingerprints MATCH."
+    },
+    {
+      "id": 5,
+      "name": "Preuves obligatoires de publication",
+      "status": "PASS",
+      "detail": "Preuves A/B obligatoires (guichet, statut/calendrier, instrument, entreprise) : 46/46. File de remédiation synchronisée : oui. CdC/règlement : 40/46."
+    },
+    {
+      "id": 6,
+      "name": "Intégrité, déduplication et périmètre",
+      "status": "PASS",
+      "detail": "Aucune anomalie P0 détectée par l’audit approfondi."
+    },
+    {
+      "id": 7,
+      "name": "Enrichissement SIREN/SIRET",
+      "status": "PASS",
+      "detail": "API Recherche d’entreprises DINUM validée par smoke live."
+    },
+    {
+      "id": 8,
+      "name": "Qualification projet multi-financeurs",
+      "status": "PASS",
+      "detail": "Cas UAT réussis : 10/10. Les résultats orientent l’instruction sans conclure à l’attribution."
+    },
+    {
+      "id": 9,
+      "name": "Exploitation automatisée",
+      "status": "PASS",
+      "detail": "Chaîne GitHub Actions exécutée sur schedule avec le verrou courant."
+    },
+    {
+      "id": 10,
+      "name": "Recette production",
+      "status": "NOT_STARTED",
+      "detail": "Autorisation uniquement lorsque les Gates 1–9 sont PASS."
+    }
+  ],
+  "counts": {
+    "sourcesConfigured": 118,
+    "ingestiveSources": 102,
+    "controlSources": 16,
+    "certifiedSources": 1,
+    "evaluatedSources": 1,
+    "executedSources": 1,
+    "freshExecutedSources": 1,
+    "successfulSources": 1,
+    "collectionCycleId": null,
+    "rawLibrary": 202,
+    "publishedLibrary": 46,
+    "quarantinedLibrary": 156,
+    "activeFiches": 46,
+    "jPlusOneDate": "2026-11-02",
+    "jPlusOneActiveFiches": 46,
+    "verifiedFiches": 0,
+    "verifiedIntegrity": 0,
+    "verifiedEvidenceIntegrity": 0,
+    "publicationEvidenceIntegrity": 46,
+    "lockedCertificationMatch": true,
+    "withCdc": 40,
+    "withDeadline": 19,
+    "consultantCases": 10,
+    "uatTotal": 10,
+    "companySmokeOk": true,
+    "publicSmokeOk": false,
+    "workflowEvent": "schedule",
+    "inActions": true,
+    "remediationFresh": true,
+    "deepAuditP0": 0
+  },
+  "goProduction": false
+}
