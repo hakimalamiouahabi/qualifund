@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T07:22:58.822Z",
+  "generatedAt": "2026-11-15T07:42:52.315Z",
   "version": "12.9.3",
   "mode": "LOCKED_CYCLE",
   "currentLock": {
@@ -87,7 +87,7 @@
     "publishedLibrary": 46,
     "quarantinedLibrary": 156,
     "activeFiches": 46,
-    "jPlusOneDate": "2026-11-02",
+    "jPlusOneDate": "2026-11-16",
     "jPlusOneActiveFiches": 46,
     "verifiedFiches": 0,
     "verifiedIntegrity": 0,

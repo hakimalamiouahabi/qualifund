@@ -9,14 +9,14 @@
   "libraryCount": 202,
   "rawLibraryCount": 202,
   "activeCount": 202,
-  "jPlusOneDate": "2026-11-02",
-  "jPlusOneActiveCount": 202,
+  "jPlusOneDate": "2026-11-16",
+  "jPlusOneActiveCount": 199,
   "archivedCount": 0,
   "staleCount": 0,
-  "aapCount": 32,
+  "aapCount": 30,
   "verifiedCount": 0,
-  "withCdc": 90,
-  "withDeadline": 119,
+  "withCdc": 89,
+  "withDeadline": 116,
   "sourceCount": 118,
   "activeCollectionSourceCount": 1,
   "libraryInstruments": [
@@ -72,12 +72,5 @@
     ],
     "next": "Bretagne",
     "frozenUnselectedSha": "a3956c2ed7cccba5410940e995bc097168f4ccec694823d24c9b6c34c4c245e7"
-  },
-  "publishedCount": 46,
-  "publishedActiveCount": 46,
-  "quarantinedCount": 156,
-  "certifiedSourceCount": 1,
-  "certifiedSources": [
-    "bfc"
-  ]
+  }
 }
